@@ -6,7 +6,7 @@ type: maker
 ![](assets/featured.jpg)
 
 # Description 
-Nano 33 IoT and Nano 33 IoT with headers is a miniature sized module containing a Cortex M0+ SAMD21 processor, a WiFi+BT module based on ESP32, a crypto chip which can securely store certificates and pre-shared keys and a 6 axis IMU. The module can either be mounted as a DIP component (when mounting pin headers), or as a SMT component, directly soldering it via the castellated pads.
+Arduino® Nano 33 IoT is a miniature sized module containing a Cortex M0+ SAMD21 processor, a WiFi+BT module based on ESP32, a crypto chip which can securely store certificates and pre-shared keys and a 6 axis IMU. The module can either be mounted as a DIP component (when mounting pin headers), or as a SMT component, directly soldering it via the castellated pads.
 
 # Target areas:
 Maker, enhancements, basic IoT application scenarios
@@ -74,12 +74,12 @@ Maker, enhancements, basic IoT application scenarios
 # Contents
 
 ## The Board
-As all Nano form factor boards, Nano 33 IoT and Nano 33 IoT with headers does not have a battery charger but can be powered through USB or headers.
+As all Nano form factor boards, Nano 33 IoT does not have a battery charger but can be powered through USB or headers.
 
-**NOTE:** Arduino Nano 33 IoT and Nano 33 IoT with headers only supports 3.3V I/Os and is **NOT** 5V tolerant so please make sure you are not directly connecting 5V signals to this board or it will be damaged. Also, as opposed to Arduino Nano boards that support 5V operation, the 5V pin does NOT supply voltage but is rather connected, through a jumper, to the USB power input.
+**NOTE:** Arduino Nano 33 IoT only supports 3.3V I/Os and is **NOTE** 5V tolerant so please make sure you are not directly connecting 5V signals to this board or it will be damaged. Also, as opposed to Arduino Nano boards that support 5V operation, the 5V pin does NOT supply voltage but is rather connected, through a jumper, to the USB power input.
 
 ### Application Examples
-**Weather station:** Using the Arduino Nano 33 IoT or Nano 33 IoT with headers together with a sensor and a OLED display, we can create a small weather station communicating temperature, humidity etc. directly  to your phone.
+**Weather station:** Using the Arduino Nano 33 IoT together with a sensor and a OLED display, we can create a small weather station communicating temperature, humidity etc. directly  to your phone.
 
 **Air quality monitor:** Bad air quality may have serious effects on your health. By assembling the board, with a sensor and monitor you can make sure that the air quality is kept in indoor-environments. By connecting the hardware assembly to an IoT application/API, you will receive real time values.
 
