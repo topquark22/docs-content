@@ -97,7 +97,7 @@ void setup(){
 
 void loop(){
   unsigned long currentMillis = millis();
-  
+
   if (currentMillis - previousMillis >= interval) {
     previousMillis = currentMillis;
 
@@ -229,8 +229,8 @@ To read the location values, we can use the following method `Location coordinat
 
 ***The format of the `lat` and `lon` is in Decimal Degrees (DD), for example `41.40338`, `2.17403`.***
 
-#### Television    
-   
+#### Television
+
 Declared as `CloudTelevision x;`
 
 | Property         | Type                                                                                                                                                                                      | Read Value               | Set value                |
@@ -285,7 +285,7 @@ void loop() {
   }
   else{
     digitalWrite(LED_BUILTIN, LOW);
-    messageString = "LED OFF!";  
+    messageString = "LED OFF!";
   }
 }
 ```
@@ -313,12 +313,12 @@ void setup() {
   ArduinoCloud.begin(ArduinoIoTPreferredConnection);
   setDebugMessageLevel(2);
   ArduinoCloud.printDebugInfo();
-  
+
   if (!MATRIX.begin()) {
     Serial.println("Failed to initialize MKR RGB shield!");
     while (1);
   }
-  
+
   // set the brightness, supported values are 0 - 255
   MATRIX.brightness(10);
 }
@@ -330,9 +330,9 @@ void loop() {
 void onCLightChange() {
   uint8_t r, g, b;
   cLight.getValue().getRGB(r, g, b);
-  
+
   MATRIX.beginDraw();
-  
+
   if (cLight.getSwitch()) {
     Serial.println("R:"+String(r)+" G:"+String(g)+ " B:"+String(b));
     MATRIX.fill(r, g, b);
@@ -340,10 +340,9 @@ void onCLightChange() {
   }else{
     MATRIX.clear();
   }
-  
+
   MATRIX.endDraw();
 }
-    
 ```
 
 ### Television
@@ -361,7 +360,7 @@ const unsigned int chan[9][67] = {};
 const unsigned int volUp[67] = {};
 const unsigned int chanUp[67] = {};
 const unsigned int onoff[67] = {};
-                        
+
 IRsend irsend;
 const int freq = 38;
 bool first;
@@ -402,14 +401,14 @@ void sendIR(const unsigned int buf[]) {
 }
 
 void onTvChange() {
-  
+
   Serial.println("==================");
   Serial.println("Switch:"+String(tv.getSwitch()));
   Serial.println("Volume:"+String(tv.getVolume()));
   Serial.println("Channel:"+String(tv.getChannel()));
   Serial.println("Mute:"+String(tv.getMute()));
   Serial.println("==================");
-  
+
   if (first){
       prevSwitch = tv.getSwitch();
       prevVolume = tv.getVolume();
@@ -417,16 +416,16 @@ void onTvChange() {
       prevMute = tv.getMute();
       first = false;
       return;
-  } 
-  
-  
+  }
+
+
   // Volume changed
   if (tv.getVolume() > prevVolume) {
     tv.setMute(false);
     prevMute = false;
     for (int k = prevVolume + 1 ; k<=tv.getVolume(); k++) {
       sendIR(volUp);
-      Serial.println("Volume requested:"+String(tv.getVolume())+" Set:"+String(k));  
+      Serial.println("Volume requested:"+String(tv.getVolume())+" Set:"+String(k));
     }
     prevVolume = tv.getVolume();
   }
@@ -435,12 +434,12 @@ void onTvChange() {
     prevMute = false;
     for (int k = prevVolume - 1; k>=tv.getVolume(); k--) {
       sendIR(volDown);
-      Serial.println("Volume changed:"+String(tv.getVolume())+" Set:"+String(k));  
+      Serial.println("Volume changed:"+String(tv.getVolume())+" Set:"+String(k));
     }
     prevVolume = tv.getVolume();
   }
-  
-  
+
+
   // Mute changed
   if (tv.getMute() != prevMute && tv.getMute()) {
     prevMute = tv.getMute();
@@ -452,8 +451,8 @@ void onTvChange() {
     sendIR(mute);
     Serial.println("Mute changed:"+String(tv.getMute()));
   }
-  
-  
+ 
+
   // Channel changed
   if (tv.getChannel() != prevChannel) {
     int newChannel = tv.getChannel();
@@ -463,20 +462,20 @@ void onTvChange() {
       if (newChannel > prevChannel) {
         for (int ch = prevChannel; ch < newChannel; ch++) {
           sendIR(chanUp);
-          Serial.println("Chan requested:"+String(newChannel)+" Set:"+String(ch));  
-        }  
+          Serial.println("Chan requested:"+String(newChannel)+" Set:"+String(ch));
+        }
       } else if (newChannel < prevChannel) {
           for (int ch = prevChannel; ch > newChannel; ch--) {
             sendIR(chanDown);
-            Serial.println("Chan requested:"+String(newChannel)+" Set:"+String(ch));  
+            Serial.println("Chan requested:"+String(newChannel)+" Set:"+String(ch));
           }
       }
     }
     prevChannel = newChannel;
     Serial.println("Channel changed:"+String(tv.getChannel()));
   }
-  
-  
+
+
   // On/Off changed
   if (tv.getSwitch() != prevSwitch) {
     prevSwitch = tv.getSwitch();
@@ -515,4 +514,4 @@ In this article, we have covered how to use variables in the Arduino IoT Cloud, 
 
 We have also shown some code examples and good practices to keep variable synchronization optimal, such as using the `millis()` function.
 
-The use of cloud variables is almost identical to how you use variables in a regular sketch, with the exception that they are synchronized with the Arduino IoT Cloud. 
+The use of cloud variables is almost identical to how you use variables in a regular sketch, with the exception that they are synchronized with the Arduino IoT Cloud.

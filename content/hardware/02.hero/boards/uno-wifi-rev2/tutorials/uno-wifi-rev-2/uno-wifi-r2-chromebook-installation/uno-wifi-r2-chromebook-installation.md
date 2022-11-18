@@ -14,7 +14,7 @@ software:
 
 ## Introduction 
 
-> This tutorial is only relevant for Chromebook users that uses an Arduino UNO WiFi Rev 2 board.  
+> This tutorial is only relevant for Chromebook users that uses an Arduino UNO WiFi Rev 2 board.
 
 The [UNO WiFi Rev 2](https://store.arduino.cc/arduino-uno-wifi-rev2) is the connected version of the classic UNO board. If you are using a **Chromebook**, setting up your board is a bit different for this particular board:
 

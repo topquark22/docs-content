@@ -19,7 +19,7 @@ software:
   - web-editor
 ---
 
-In this tutorial, we will use two MKR WAN 1310's to set up a simple message service over the LoRa® network. This communication will be achieved through the Serial Monitor, where you can send and receive messages directly.  
+In this tutorial, we will use two MKR WAN 1310's to set up a simple message service over the LoRa® network. This communication will be achieved through the Serial Monitor, where you can send and receive messages directly.
  
 We will use the **LoRa** library to for the communication, and we will not use any external services. Additionally, we will also create specific addresses for each board. This will help ensure that the messages that we send and receive are only displayed on the corresponding devices.
 
@@ -90,7 +90,7 @@ The table below provides a better explanation to this:
 
 In the initialization we will include the **SPI** and **LoRa** libraries. We will also create a string named `message`, which will be used to store outgoing messages.
 
-We will also create two bytes: `localAddress` and `destination`. As mentioned above, these hold the addresses `0xFF` and `0xBB`.   
+We will also create two bytes: `localAddress` and `destination`. As mentioned above, these hold the addresses `0xFF` and `0xBB`.
 
 > **Important:** these addresses need to be switched on the sketches we upload to the board.
 
@@ -100,7 +100,7 @@ We will also create two bytes: `localAddress` and `destination`. As mentioned ab
 
 String message;
 
-byte localAddress = 0xBB;  
+byte localAddress = 0xBB;
 byte destination = 0xFF;
 ```
 
@@ -137,7 +137,7 @@ void loop() {
   if (message.length() > 0) {
     Serial.println("Peter: " + message); //name seen in the Serial Monitor
     LoRa.beginPacket();
-    LoRa.write(destination);              
+    LoRa.write(destination);
     LoRa.write(localAddress);
     LoRa.print("Peter: " + message); //name seen on the receiving end
     LoRa.endPacket();
@@ -192,7 +192,7 @@ As mentioned earlier, the code is almost identical for both devices. The only di
 
 String message;
 
-byte localAddress = 0xFF;  
+byte localAddress = 0xFF;
 byte destination = 0xBB;
 
 void setup() {
@@ -214,7 +214,7 @@ void loop() {
   if (message.length() > 0) {
     Serial.println("Juan: " + message); //name seen in Serial Monitor
     LoRa.beginPacket();
-    LoRa.write(destination);            
+    LoRa.write(destination);
     LoRa.write(localAddress);
     LoRa.print("Juan: " + message); //name seen on the receiving end
     LoRa.endPacket();
@@ -264,12 +264,12 @@ int buttonState;
 
 void setup() {
   pinMode(button, INPUT_PULLUP);
-  
+
   Serial.begin(9600);
-  
+
   while (!Serial);
   Serial.println("LoRa Sender");
-  
+
   if (!LoRa.begin(868E6)) {
     Serial.println("Starting LoRa failed!");
     while (1);
@@ -279,7 +279,7 @@ void setup() {
 
 void loop() {
   buttonState = digitalRead(button);
-  
+
   if (buttonState == LOW) {
     // send packet
     LoRa.beginPacket();
@@ -327,10 +327,10 @@ void loop() {
     Serial.print("Received packet '");
 
     // read packet
-    while (LoRa.available()) {  
+    while (LoRa.available()) {
       contents += (char)LoRa.read();
     }
-    
+
     // print RSSI of packet
     Serial.print("' with RSSI ");
     Serial.println(LoRa.packetRssi());
@@ -348,7 +348,7 @@ void loop() {
       digitalWrite(led, LOW);
       Serial.println("led off");
     }
-    
+
     contents = "";
   }
 }
@@ -371,7 +371,7 @@ It also happens that we pick up messages that were not intended for us. Earlier 
 ```cpp
   if (recipient != localAddress && recipient != 0xBB) {
     Serial.println("This message is not for me.");
-    return;                             
+    return;
   }
 ```
 

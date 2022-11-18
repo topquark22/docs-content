@@ -16,7 +16,7 @@ The classic high-performance, low-power AVR® microcontroller.
 
 <Feature title="Replaceable chip" image="configurability">
 
-The ATmega328P can easily be replaced, as it is not soldered to the board.  
+The ATmega328P can easily be replaced, as it is not soldered to the board.
 
 </Feature>
 

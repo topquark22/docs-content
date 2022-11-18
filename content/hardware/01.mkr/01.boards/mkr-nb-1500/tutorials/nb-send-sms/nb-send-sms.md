@@ -70,7 +70,7 @@ In this tutorial, we will use one of the examples from the **MKRNB** library. Th
 - `NB nbAccess` - base class for all NB functions.
 - `NB_SMS sms` - base class for all NB functions for SMS.
 - `nbAccess.begin(pin)` - connects to the selected network with the pin number as a parameter, e.g. 0123.
-- `sms.beginSMS(number);` - creates an SMS for a specific number  
+- `sms.beginSMS(number);` - creates an SMS for a specific number
 - `sms.print(message);` - prints the content of the SMS.
 - `sms.endSMS()` - sends the SMS.
 

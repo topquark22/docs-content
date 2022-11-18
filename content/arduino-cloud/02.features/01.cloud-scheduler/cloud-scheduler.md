@@ -50,7 +50,7 @@ if (schedule_variable.isActive()) {
    digitalWrite(LED, HIGH);
 } else {
    // whenever the job is "not active", turn off the LED
-   digitalWrite(LED, LOW);  
+   digitalWrite(LED, LOW);
 }
 ```
 
@@ -93,7 +93,7 @@ if (schedule_variable.isActive()) {
    digitalWrite(relay, HIGH);
 } else {
    //can be set to OFF between 5pm - 8am the next morning
-   digitalWrite(relay, LOW);  
+   digitalWrite(relay, LOW);
 }
 ```
 
@@ -241,8 +241,8 @@ void loop() {
   }
 }
 
-void onScheduleTestChange()  {
-  
+void onScheduleTestChange() {
+
 }
 ```
 

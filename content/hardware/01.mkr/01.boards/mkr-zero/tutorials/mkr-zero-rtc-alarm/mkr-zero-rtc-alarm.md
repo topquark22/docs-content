@@ -101,14 +101,12 @@ void loop()
 
 void alarmMatch()
 {
-  
   Serial.println("Alarm Matched at: ");
   print2digits(rtc.getHours()); //retrieve hours
   Serial.print(":");
   print2digits(rtc.getMinutes()); //retrieve minutes
   Serial.print(":");
   print2digits(rtc.getSeconds()); //retrieve seconds
-  
 }
 
 void print2digits(int number) {

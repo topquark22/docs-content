@@ -134,7 +134,7 @@ Copy and paste the code below, and upload the program to the board, by clicking 
 void setup() {
   // Initialize serial and wait for port to open:
   Serial.begin(9600);
-  
+
   while(!Serial);
   // This delay gives the chance to wait for a Serial Monitor without blocking if none is found
   delay(1500); 
@@ -144,7 +144,7 @@ void setup() {
 
   // Connect to Arduino IoT Cloud
   ArduinoCloud.begin(ArduinoIoTPreferredConnection);
-  
+
   /*
      The following function allows you to obtain more information
      related to the state of network and IoT Cloud connection and errors
@@ -154,12 +154,12 @@ void setup() {
  */
   setDebugMessageLevel(2);
   ArduinoCloud.printDebugInfo();
-  
+
     if (!ENV.begin()) {
     Serial.println("Failed to initialize MKR ENV shield!");
     while (1);
   }
-  
+
 }
 
 void loop() {

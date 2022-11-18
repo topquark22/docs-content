@@ -158,10 +158,10 @@ When we open the Serial Monitor, we will see data from the three analog pins bei
 
 Now if we are seeing these values, and no error messages, we can assume the data logging on the SD card has gone well. To check this, let's follow a few simple steps:
 
-**1.** Cut the power to the MKR family board.  
-**2.** Remove the micro SD card from the shield.  
-**3.** Insert the micro SD card to an adapter that fits your computer.  
-**4.** Insert the card into a computer, and open up the `datalog.txt` file.  
+**1.** Cut the power to the MKR family board.
+**2.** Remove the micro SD card from the shield.
+**3.** Insert the micro SD card to an adapter that fits your computer.
+**4.** Insert the card into a computer, and open up the `datalog.txt` file.
 
 This file should now show the same values that we saw in the Serial Monitor.
 

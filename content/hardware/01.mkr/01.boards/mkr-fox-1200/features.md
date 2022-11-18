@@ -20,7 +20,7 @@ The MKR FOX 1200 adds Sigfox connectivity to your projects. Using the popular <b
 
 <Feature title="Coverage" image="world-map">
 
-SigFox covers most parts of Europe, South Africa, Japan and is being introduced in many more countries.  
+SigFox covers most parts of Europe, South Africa, Japan and is being introduced in many more countries.
 
   <FeatureLink title="Link to Map" url="https://www.sigfox.com/en/coverage"/>
 </Feature>

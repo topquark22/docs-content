@@ -141,6 +141,6 @@ If the code is not working, there are some common issues we can troubleshoot:
 
 ## Conclusion
 
-In this tutorial, we have used a popular fading method together with the MKR RGB Shield and the help of `for` loops. There are several other cool ways of using the `for` loop in this scenario, such as fading from one color to the other.  
+In this tutorial, we have used a popular fading method together with the MKR RGB Shield and the help of `for` loops. There are several other cool ways of using the `for` loop in this scenario, such as fading from one color to the other.
 
 Feel free to explore the [Arduino_MKRRGB](https://www.arduino.cc/en/Reference/ArduinoMKRRGB) and [ArduinoGraphics](https://www.arduino.cc/en/Reference/ArduinoGraphics) libraries further, and try out some of the many cool functions.

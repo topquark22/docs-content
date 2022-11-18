@@ -146,7 +146,7 @@ The MKR IoT Carrier makes use of the power management features of the Arduino MK
 
 ![Solution overview](assets/solution_overview.png)
 
-The MKR IoT Carrier is also a part of the Arduino® Oplá IoT Kit, that in addition to the carrier contains an Arduino MKR WiFi 1010, a motion sensor, moisture sensor, USB cable and a protective case.  
+The MKR IoT Carrier is also a part of the Arduino® Oplá IoT Kit, that in addition to the carrier contains an Arduino MKR WiFi 1010, a motion sensor, moisture sensor, USB cable and a protective case.
 
 ## Board Operation
 
@@ -302,7 +302,7 @@ Le présent appareil est conforme aux CNR d’Industrie Canada applicables aux a
 **IC SAR Warning:**
 
 **English** 
-This equipment should be installed and operated with minimum distance 20 cm between the radiator and your body.  
+This equipment should be installed and operated with minimum distance 20 cm between the radiator and your body.
 
 **French**: 
 Lors de l’ installation et de l’ exploitation de ce dispositif, la distance entre le radiateur et le corps est d ’au moins 20 cm.

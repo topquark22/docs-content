@@ -129,10 +129,9 @@ void setup() {
 }
 
 void loop() {
-  
   // read magnetic field in all three directions
   IMU.readMagneticField(x, y, z);
-  
+
   if(x < 0)
   {
     ledvalue = -(x);
@@ -140,7 +139,7 @@ void loop() {
   else{
     ledvalue = x;
   }
-  
+
   analogWrite(LED_BUILTIN, ledvalue);
   delay(500);
 }

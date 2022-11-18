@@ -59,12 +59,12 @@ We will now get to the programming part of this tutorial.
 
 **2.** Now, we need to install the libraries needed. If we are using the Web Editor, there is no need to install anything. If we are using an offline editor, simply go to **Tools > Manage libraries..**, and search for **MKRGSM** and install it.
 
-**3.** We can now go to **File > Examples > MKRGSM > ReceiveSMS** in the editor. This will open a new window, which has a sketch tab, but also a header file, called `arduino_secrets.h`. Inside this file, we need to enter our pin number between the " ". 
-   
+**3.** We can now go to **File > Examples > MKRGSM > ReceiveSMS** in the editor. This will open a new window, which has a sketch tab, but also a header file, called `arduino_secrets.h`. Inside this file, we need to enter our pin number between the " ".
+
 ```cpp
 #define SECRET_PINNUMBER     "" //enter pin code between ""
 ```
-   
+
 The pin number is often 1234 or 0000, but for more information, check the SIM plan that you bought.
 
 **4.** Let's take a look at some of the core functions of this sketch:
@@ -73,8 +73,8 @@ The pin number is often 1234 or 0000, but for more information, check the SIM pl
 - `GSM_SMS sms` - base class for all GSM functions for SMS.
 - `gsmAccess.begin(pin)` - connects to the GSM network with the pin number as a parameter, e.g. 0123.
 - `sms.available()` - checks to see if there is a SMS messages on the SIM card to be read.
-- `sms.remoteNumber(number, 20)` - retrieves a sender's number. 
-- `sms.beginSMS(number);` - creates an SMS for a specific number.  
+- `sms.remoteNumber(number, 20)` - retrieves a sender's number.
+- `sms.beginSMS(number);` - creates an SMS for a specific number.
 - `sms.endSMS()` - sends the SMS.
 - `sms.flush()` - deletes the message from the modem memory.
 

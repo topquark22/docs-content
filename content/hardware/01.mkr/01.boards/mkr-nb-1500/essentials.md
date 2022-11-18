@@ -2,8 +2,6 @@
   <EssentialElement title="Quickstart Guide" type="getting-started">
     All you need to know to get started with your new Arduino board.
   </EssentialElement>
-
-  
 </EssentialsColumn>
 
 <EssentialsColumn title="Suggested Libraries">

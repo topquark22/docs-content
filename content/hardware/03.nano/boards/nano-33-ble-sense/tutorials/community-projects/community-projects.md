@@ -7,7 +7,7 @@ tags: [Picovoice, Magic Wand]
 
 The Nano BLE Sense is a fantastic, versatile board that can be used for environmental & gesture sensing, machine learning and connectivity projects. In this article you will find great videos and articles related to the [Nano BLE Sense board](https://store.arduino.cc/products/arduino-nano-33-ble-sense), made by our amazing community of makers.
 
-***Videos and external links found in this article are not maintained by Arduino. You can visit the [official documentantion for Nano BLE Sense](/hardware/nano-33-ble-sense).***  
+***Videos and external links found in this article are not maintained by Arduino. You can visit the [official documentantion for Nano BLE Sense](/hardware/nano-33-ble-sense).***
 
 ## Voice Control
 

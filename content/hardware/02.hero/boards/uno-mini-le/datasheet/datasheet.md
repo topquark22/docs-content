@@ -81,7 +81,7 @@ The UNO Mini is a smaller version of the Arduino UNO - to celebrate a successful
 
 **Industry-standard development board:** The Arduino UNO Mini board can be used in a range of different companies and industries, as the brain for various PLC’s.
 
-**Education purposes:** This is a perfect board to use for various education purposes and scientific projects. The board's high standard and top quality performance makes it a great resource to capture real time from sensors and to trigger complex laboratory equipment to mention a few examples.  
+**Education purposes:** This is a perfect board to use for various education purposes and scientific projects. The board's high standard and top quality performance makes it a great resource to capture real time from sensors and to trigger complex laboratory equipment to mention a few examples.
 
 ### Related Products
 * Starter Kit
@@ -243,7 +243,7 @@ Le présent appareil est conforme aux CNR d’Industrie Canada applicables aux a
 **IC SAR Warning:**
 
 English 
-This equipment should be installed and operated with minimum distance 20 cm between the radiator and your body.  
+This equipment should be installed and operated with minimum distance 20 cm between the radiator and your body.
 
 French: 
 Lors de l’ installation et de l’ exploitation de ce dispositif, la distance entre le radiateur et le corps est d ’au moins 20 cm.

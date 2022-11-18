@@ -54,7 +54,7 @@ Before we begin, let's take a look at some of the core functions in the program:
 - `USBHost` - USBHost is the base class for all calls that rely on USB host communication. When invoked, it initializes a USB controller.
 
 - `MouseController mouse(usb);` - MouseController is the class for all calls to the USBHost relating to an attached mouse.
-  
+
 - `mouseMoved()` - A function that is called whenever a connected USB mouse moves.
 
 ```arduino

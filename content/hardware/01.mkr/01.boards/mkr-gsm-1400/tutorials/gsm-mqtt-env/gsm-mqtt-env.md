@@ -106,7 +106,7 @@ We will now get to the programming part of this tutorial.
 - `MQTTClient client` - creates a client that can connect to a broker, and publish/subscribe to topics and messages.
 - `client.begin(broker, net)` - connects to the broker.
 - `client.publish(topic, message)` - publishes a topic with a message.
-- `client.subscribe(topic)` - subscribes to a topic.  
+- `client.subscribe(topic)` - subscribes to a topic.
 
 - `ENV.begin()` - initializes the **Arduino_MKRENV** library.
 - `ENV.readTemperature()` - retrieves temperature from the MKR ENV shield.
@@ -206,8 +206,6 @@ void loop() {
   char humiStr[16];
   itoa(humidity, humiStr, 10);
 
-  
-  
   // publish a message roughly every 8 seconds.
 
   if (millis() - lastMillis > 8000) {
@@ -231,7 +229,7 @@ Now, we can actually go and see a live visualization of the data that goes throu
 To make things easy in this tutorial, we only recorded the temperature and humidity from the MKR ENV shield, but we can also record UVA, UVB, UVindex, LUX & atmospheric pressure. All we have to do is to read the values, create a topic to publish, and subscribe to the same topic. 
 
 >**Note:** In this tutorial, we are only using one single board and sketch. If we have two boards with Internet access, we can simply subscribe to the same topic. You can for example setup one publish device and one subscribe device, and transfer data between them using MQTT.
-  
+
 ### Troubleshoot
 
 If the code is not working, there are some common issues we can troubleshoot:

@@ -15,7 +15,7 @@ The powerful, low-power processor that is used in all MKR Family boards.
 
 <Feature title="Micro SD card holder" image="file-icon">
 
-Store large media files, build advanced UIs for displays or log data offline: extra space is always useful.  
+Store large media files, build advanced UIs for displays or log data offline: extra space is always useful.
 
 </Feature>
 

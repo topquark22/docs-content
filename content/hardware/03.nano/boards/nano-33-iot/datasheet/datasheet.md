@@ -57,7 +57,7 @@ Maker, enhancements, basic IoT application scenarios
         - Up to 1 Mbit/ 
     - **MPM3610** (DC-DC)
         - Regulates input voltage from up to 21V with a minimum of 65% efficiency @minimum load
-        - More than 85% efficiency @12V        
+        - More than 85% efficiency @12V
     - **ATECC608A** (Crypto Chip)
         - Cryptographic co-processor with secure hardware based key storage
         - Protected storage for up to 16 keys, certificates or data
@@ -336,7 +336,7 @@ Le présent appareil est conforme aux CNR d’Industrie Canada applicables aux a
 **IC SAR Warning:**
 
 English 
-This equipment should be installed and operated with minimum distance 20 cm between the radiator and your body.  
+This equipment should be installed and operated with minimum distance 20 cm between the radiator and your body.
 
 French: 
 Lors de l’ installation et de l’ exploitation de ce dispositif, la distance entre le radiateur et le corps est d ’au moins 20 cm.

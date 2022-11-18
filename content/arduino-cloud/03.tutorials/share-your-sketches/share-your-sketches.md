@@ -14,11 +14,11 @@ When someone [shares a sketch with you](https://create.arduino.cc/editor/Arduino
 ## How to Share Your Sketch
 
 * If you don’t have one yet, create your brand new Arduino account [here](https://id.arduino.cc/auth/signup).
-  
+
 * Log in on Arduino the Web Editor [here](https://create.arduino.cc/editor/).
-  
+
 * Once you are successfully logged in the Web Editor, hit the ‘New Sketch’ button and code on
-  
+
 * When done with writing your sketch, click the **‘Share’** button on the toolbar in the editor area. Press **'Copy Link'** and you can now share your Arduino code with the rest of the world!
 
 ![sharing_sketches_img_1](assets/sharing_sketches_img_1.jpg)

@@ -102,7 +102,7 @@ int brakePin = 9;
 bool directionState;
 
 void setup() {
-  
+
 //define pins
 pinMode(directionPin, OUTPUT);
 pinMode(pwmPin, OUTPUT);

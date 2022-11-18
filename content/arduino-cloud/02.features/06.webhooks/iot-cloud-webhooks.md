@@ -105,7 +105,6 @@ The Arduino IoT Cloud will share **five sets of values** through the assigned we
 The fifth value contains an array of objects, each representing a Variable in your Thing, as the following:
 
 - `"values":`
-   
   ```js
       [
       {

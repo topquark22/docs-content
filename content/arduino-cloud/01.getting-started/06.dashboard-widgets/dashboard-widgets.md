@@ -114,7 +114,7 @@ An example of how it is used in a sketch:
 
 ```arduino
 if(stepperVariable == 10){
-    activateThisFunction();    
+    activateThisFunction();
 }
 
 //activate another function
@@ -195,7 +195,7 @@ An example of how it is used in a sketch:
 
   //then check if switch is on/off 
   if (dimmedVariable.getSwitch()) {
-    analogWrite(6, brightness); //write brightness value to pin 6    
+    analogWrite(6, brightness); //write brightness value to pin 6
   }
   else{
     analogWrite(6, LOW); //turn off lamp completely

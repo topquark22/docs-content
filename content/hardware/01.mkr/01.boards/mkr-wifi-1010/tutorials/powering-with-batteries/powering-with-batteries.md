@@ -83,7 +83,7 @@ The NINA module can just turn off the WiFi, but has no deep sleep mode, while th
 
 Use `WiFi.lowPowerMode()`
 
-- This is an automatically managed mode where the Wi-Fi NINA Module reduces its power drain, bringing the overall power consumption to 30mA. Any incoming data is received and the device regularly sends out to the beacon signal, each 100ms, to keep the AP connection alive.   
+- This is an automatically managed mode where the Wi-Fi NINA Module reduces its power drain, bringing the overall power consumption to 30mA. Any incoming data is received and the device regularly sends out to the beacon signal, each 100ms, to keep the AP connection alive.
 
 Use `WiFi.end()`
 
@@ -92,11 +92,11 @@ Use `WiFi.end()`
 Use `LowPower.sleep()`
 
 - Puts the MCU in sleep mode. The sleep mode allows power optimization with a slower wakeup time. Only the chosen peripherals are on.
-        
+
 Use `LowPower.deepSleep()`
 
 - Puts the MCU in deep sleep mode. The deep sleep mode allows power optimization with the slowest wake-up time. All but the RTC peripherals are stopped. The CPU can wakeup only using RTC or wakeup on interrupt capable pins.
-  
+
 You find full reference for these APIs in the libraries documentation: here for [WiFiNINA](https://www.arduino.cc/en/Reference/WiFiNINA) and here for [ArduinoLowPower](https://www.arduino.cc/en/Reference/ArduinoLowPower).
 
 These APIs can be combined, one for each type, to achieve the power saving you are looking for. Each one has its pros and cons, especially in terms of how long it take to get back the full functionalities versus the minimum mA used. As a reference, just the green power LED near the USB connector, consumes around 8 mA.
@@ -176,8 +176,8 @@ void dummy() {
 
 **WiFi.lowPowerMode()** is capable of putting the Wi-Fi NINA module in a self managed low power mode. The data is transmitted and received, while the beacon is transmitted at regular intervals to keep the AP mode effective. To use this feature, it is enough to put this API in your sketch after the initialization procedure of the WiFi. Please note that there is no parameter passed to the function; to disable this low power mode you need to use the **WiFi.noLowPowerMode()** function.
 
-In the following example we keep asking the content of the home page of example.org every 20 seconds, allowing the NINA module to manage its power consumption autonomously.  
-  
+In the following example we keep asking the content of the home page of example.org every 20 seconds, allowing the NINA module to manage its power consumption autonomously.
+
 ```arduino
 #include <WiFiNINA.h>
  

@@ -1,5 +1,4 @@
 <EssentialsColumn title="First Steps">
-  
   <EssentialElement title="Quickstart Guide" type="getting-started" link="https://www.arduino.cc/en/Guide/ArduinoUno">
     All you need to know to get started with your new Arduino board.
   </EssentialElement>
@@ -14,7 +13,7 @@ This library allows you to communicate with I2C / TWI devices.
 
 <EssentialElement title="SPI" type="library" link="https://www.arduino.cc/en/reference/SPI">
 The SPI library allows you to communicate with SPI devices, with the Arduino as the controller device.
-</EssentialElement>  
+</EssentialElement>
 
   <EssentialElement title="Servo" type="library" link="https://www.arduino.cc/reference/en/libraries/servo/">
 The Servo library allows an Arduino board to control RC (hobby) servo motors.

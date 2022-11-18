@@ -69,7 +69,7 @@ In this tutorial, we will be using the **Keyboard** library, which is already in
 
 Before we begin, let's take a look at the functions used in this program:
 
-- `Keyboard.press(97)` - simulates **pressing** the 'a' key.  
+- `Keyboard.press(97)` - simulates **pressing** the 'a' key.
 - `Keyboard.release(97)` - simulates **releasing** the 'a' key.
 
 The sketch can be found in the snippet below. Upload the sketch to the board.
@@ -80,20 +80,20 @@ The sketch can be found in the snippet below. Upload the sketch to the board.
 #include "Keyboard.h"
 
 //declaring button pins
-const int buttonPin = 2;          
+const int buttonPin = 2;
 
 int previousButtonState = HIGH; 
 
 void setup() {
   //declare the buttons as input_pullup
-  pinMode(buttonPin, INPUT_PULLUP);  
+  pinMode(buttonPin, INPUT_PULLUP);
   Keyboard.begin();
 }
 
 void loop() {
   //checking the state of the button
   int buttonState = digitalRead(buttonPin);
-  
+
  //replaces button press with UP arrow
   if (buttonState == LOW && previousButtonState == HIGH) {
       // and it's currently pressed:

@@ -146,7 +146,7 @@ void setup() {
   wateringToggleWidget.attachValue(watering);
   wateringToggleWidget.setTitle("PUMP");
   wateringToggleWidget.onValueChange(onWateringChange);
-  
+
   // Initialize Oplà
   CARRIER_CASE = true;
   opla.begin();
@@ -160,7 +160,7 @@ void setup() {
 void loop() {
   ArduinoCloud.update();
   app.loop();
-  
+
   // Read the sensor and convert its value to a percentage 
   // (0% = dry; 100% = wet)
   int raw_moisture = analogRead(moistPin);
@@ -178,12 +178,12 @@ void loop() {
     opla.leds.setPixelColor(1, 0, 50 , 0);  // red
   }
   opla.leds.show();
-  
+
   // Stop watering after the configured duration
   if (watering && (millis() - startedWatering) >= waterTime*1000) {
     stopWatering();
   }
-  
+
   delay(100);
 }
 

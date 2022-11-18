@@ -3,7 +3,7 @@ Shield:
   SKU: A000079
   Compatibility: UNO
   Motor controller: L298P 
-Power:  
+Power:
   Operating voltage: 5-12V
   Max current: 2A per channel or 4A max (with external power supply)
   Max voltage (VIN): 18V

@@ -14,7 +14,7 @@ You can also visit the [MKRGSM GitHub repository](https://github.com/arduino-lib
 - [Arduino MKR GSM 1400](https://store.arduino.cc/mkr-gsm-1400)
 - Antenna
 - SIM card enable for Data
-- (optional) 6 potentiometers or other analog inputs attached to A0-A5  
+- (optional) 6 potentiometers or other analog inputs attached to A0-A5
 
 ## Circuit
 

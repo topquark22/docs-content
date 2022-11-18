@@ -54,7 +54,7 @@ void loop() {
     noteOn(0x90, note, 0x45);
     delay(100);
     //Note on channel 1 (0x90), some note value (note), silent velocity (0x00):
-    noteOn(0x90, note, 0x00);  
+    noteOn(0x90, note, 0x00);
     delay(100);
   }
 }

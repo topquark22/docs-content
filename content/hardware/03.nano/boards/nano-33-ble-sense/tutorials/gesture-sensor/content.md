@@ -124,30 +124,30 @@ If the sensor detects motions (up, down, left or right) we can add the following
 
 In the `GESTURE_UP` case, the RGB LED will glow **red** for a second: 
 ```arduino
-digitalWrite(LEDR, LOW);  
+digitalWrite(LEDR, LOW);
 delay(1000);
-digitalWrite(LEDR, HIGH);  
+digitalWrite(LEDR, HIGH);
 ```
 
 In the `GESTURE_DOWN` case, the RGB LED will glow **green** for one second:
 ```arduino
-digitalWrite(LEDG, LOW);  
+digitalWrite(LEDG, LOW);
 delay(1000);
 digitalWrite(LEDG, HIGH); 
 ```
 
 In the `GESTURE_LEFT` case, the RGB LED will glow **blue** for one second: 
 ```arduino
-digitalWrite(LEDB, LOW);  
+digitalWrite(LEDB, LOW);
 delay(1000);
-digitalWrite(LEDB, HIGH);  
+digitalWrite(LEDB, HIGH);
 ```
 
 Lastly, in the `GESTURE_RIGHT` case, the small built-in LED will glow **orange** for one second:
 ```arduino
-digitalWrite(LED_BUILTIN, HIGH);  
+digitalWrite(LED_BUILTIN, HIGH);
 delay(1000);
-digitalWrite(LED_BUILTIN, LOW);  
+digitalWrite(LED_BUILTIN, LOW);
 ```
 
 Now the code is complete!
@@ -183,7 +183,7 @@ void setup() {
   pinMode(LEDG, OUTPUT);
   //Blue
   pinMode(LEDB, OUTPUT);
-  
+
   while (!Serial);
   if (!APDS.begin()) {
     Serial.println("Error initializing APDS9960 sensor!");

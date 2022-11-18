@@ -61,13 +61,13 @@ Within each service will exist a list of **characteristics**. Each one of these 
 
 ### Information Exchange in Bluetooth® Low Energy
 
-There are three ways data can be exchanged between two connected devices: **reading**, **writing**, or **notifying**. **Reading** occurs when a peripheral device asks the central device for specific information, think about a smartphone asking a smartwatch for the physical activity information, this is an example of reading. **Writing** occurs when a peripheral device writes specific information in the central device, think about a smartphone changing the password of a smartwatch, this is an example of writing. **Notifying** occurs when a central device offers information to the peripheral device using a notification, think about a smartwatch notifying a smartphone its battery is low and needs to be recharged.  
+There are three ways data can be exchanged between two connected devices: **reading**, **writing**, or **notifying**. **Reading** occurs when a peripheral device asks the central device for specific information, think about a smartphone asking a smartwatch for the physical activity information, this is an example of reading. **Writing** occurs when a peripheral device writes specific information in the central device, think about a smartphone changing the password of a smartwatch, this is an example of writing. **Notifying** occurs when a central device offers information to the peripheral device using a notification, think about a smartwatch notifying a smartphone its battery is low and needs to be recharged.
 
 Well, that's what we need to know about Bluetooth® Low Energy for now. Bluetooth® specifications are quite extensive but interesting to read and learn about. If you want to know more about Bluetooth® Low Energy, check out [**Getting Started with Bluetooth® Low Energy** by Kevin Townsend, Carles Cufí, Akiba, and Robert Davidson](https://www.oreilly.com/library/view/getting-started-with/9781491900550/).
 
 ## Using Bluetooth® Low Energy and Arduino
 
-Now, let's use Bluetooth® Low Energy with Arduino. In this example, we are going to use two Arduino boards, the **Nano 33 BLE** and the **Nano 33 BLE Sense** to exchange information between them. One of the boards, the Nano 33 BLE Sense, is going to be set up as a central device while the other board, the Nano 33 BLE, is going to be set up as a peripheral device. The information that we are going to share between the boards will come from the embedded **gesture sensor** of the Nano 33 BLE Sense board. For this, we are going to create a service called **gestureService** that will have one characteristic called **gesture_type**.   
+Now, let's use Bluetooth® Low Energy with Arduino. In this example, we are going to use two Arduino boards, the **Nano 33 BLE** and the **Nano 33 BLE Sense** to exchange information between them. One of the boards, the Nano 33 BLE Sense, is going to be set up as a central device while the other board, the Nano 33 BLE, is going to be set up as a peripheral device. The information that we are going to share between the boards will come from the embedded **gesture sensor** of the Nano 33 BLE Sense board. For this, we are going to create a service called **gestureService** that will have one characteristic called **gesture_type**.
 
 ![Gesture example architecture.](assets/nano_ble_sense_t2_img03.png)
 
@@ -106,23 +106,23 @@ const char* deviceServiceUuid = "19b10000-e8f2-537e-4f6c-d104768a1214";
 const char* deviceServiceCharacteristicUuid = "19b10001-e8f2-537e-4f6c-d104768a1214";
 
 int gesture = -1;
-int oldGestureValue = -1;   
+int oldGestureValue = -1;
 
 void setup() {
   Serial.begin(9600);
   while (!Serial);
-  
+
   if (!APDS.begin()) {
     Serial.println("* Error initializing APDS9960 sensor!");
   } 
 
   APDS.setGestureSensitivity(80); 
-  
+
   if (!BLE.begin()) {
     Serial.println("* Starting Bluetooth® Low Energy module failed!");
     while (1);
   }
-  
+
   BLE.setLocalName("Nano 33 BLE (Central)"); 
   BLE.advertise();
 
@@ -136,7 +136,7 @@ void loop() {
 
 void connectToPeripheral(){
   BLEDevice peripheral;
-  
+
   Serial.println("- Discovering peripheral device...");
 
   do
@@ -144,7 +144,7 @@ void connectToPeripheral(){
     BLE.scanForUuid(deviceServiceUuid);
     peripheral = BLE.available();
   } while (!peripheral);
-  
+
   if (peripheral) {
     Serial.println("* Peripheral device found!");
     Serial.print("* Device MAC address: ");
@@ -183,7 +183,7 @@ void controlPeripheral(BLEDevice peripheral) {
   }
 
   BLECharacteristic gestureCharacteristic = peripheral.characteristic(deviceServiceCharacteristicUuid);
-    
+
   if (!gestureCharacteristic) {
     Serial.println("* Peripheral device does not have gesture_type characteristic!");
     peripheral.disconnect();
@@ -193,11 +193,11 @@ void controlPeripheral(BLEDevice peripheral) {
     peripheral.disconnect();
     return;
   }
-  
+
   while (peripheral.connected()) {
     gesture = gestureDetectection();
 
-    if (oldGestureValue != gesture) {  
+    if (oldGestureValue != gesture) {
       oldGestureValue = gesture;
       Serial.print("* Writing value to gesture_type characteristic: ");
       Serial.println(gesture);
@@ -205,11 +205,11 @@ void controlPeripheral(BLEDevice peripheral) {
       Serial.println("* Writing value to gesture_type characteristic done!");
       Serial.println(" ");
     }
-  
+
   }
   Serial.println("- Peripheral device disconnected!");
 }
-  
+
 int gestureDetectection() {
   if (APDS.gestureAvailable()) {
     gesture = APDS.readGesture();
@@ -255,7 +255,7 @@ The complete peripheral device code can be found below:
 */
 
 #include <ArduinoBLE.h>
-      
+
 enum {
   GESTURE_NONE  = -1,
   GESTURE_UP    = 0,
@@ -275,19 +275,18 @@ BLEByteCharacteristic gestureCharacteristic(deviceServiceCharacteristicUuid, BLE
 
 void setup() {
   Serial.begin(9600);
-  while (!Serial);  
-  
+  while (!Serial);
+
   pinMode(LEDR, OUTPUT);
   pinMode(LEDG, OUTPUT);
   pinMode(LEDB, OUTPUT);
   pinMode(LED_BUILTIN, OUTPUT);
-  
+
   digitalWrite(LEDR, HIGH);
   digitalWrite(LEDG, HIGH);
   digitalWrite(LEDB, HIGH);
   digitalWrite(LED_BUILTIN, LOW);
 
-  
   if (!BLE.begin()) {
     Serial.println("- Starting Bluetooth® Low Energy module failed!");
     while (1);
@@ -321,14 +320,14 @@ void loop() {
          writeGesture(gesture);
        }
     }
-    
+
     Serial.println("* Disconnected to central device!");
   }
 }
 
 void writeGesture(int gesture) {
   Serial.println("- Characteristic <gesture_type> has changed!");
-  
+
    switch (gesture) {
       case GESTURE_UP:
         Serial.println("* Actual value: UP (red LED on)");
@@ -368,7 +367,7 @@ void writeGesture(int gesture) {
         digitalWrite(LEDB, HIGH);
         digitalWrite(LED_BUILTIN, LOW);
         break;
-    }      
+    }
 }
 ```
 

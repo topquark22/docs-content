@@ -32,7 +32,7 @@ For this this tutorial we will be using the Arduino Zero's built-in debugger int
 
 **4.** Your Arduino Zero is now ready to be debugged using the Arduino IDE 2.0.
 
-To learn more about using the Debugger, you can continue on to the [main article on Debugging with IDE 2.0](/software/ide-v2/tutorials/ide-v2-debugger). This article goes more in-depth on how to use the different Debugger features, and provides a good overview of the tool.  
+To learn more about using the Debugger, you can continue on to the [main article on Debugging with IDE 2.0](/software/ide-v2/tutorials/ide-v2-debugger). This article goes more in-depth on how to use the different Debugger features, and provides a good overview of the tool.
 
 ## Conclusion
 

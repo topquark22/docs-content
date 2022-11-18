@@ -150,7 +150,7 @@ void setup() {
 
   // Connect to Arduino IoT Cloud
   ArduinoCloud.begin(ArduinoIoTPreferredConnection);
-  
+
   /*
      The following function allows you to obtain more information
      related to the state of network and IoT Cloud connection and errors

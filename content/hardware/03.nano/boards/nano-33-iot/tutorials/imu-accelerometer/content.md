@@ -242,7 +242,7 @@ In order to get a correct reading of the board data, before uploading the sketch
 
 ![Interacting with the X and Y axes.](./assets/nano33IOT_01_illustration.png)
 
-Now, you can verify and upload the sketch to the board and open the Monitor from the menu on the left.  
+Now, you can verify and upload the sketch to the board and open the Monitor from the menu on the left.
 
 If you tilt the board upwards, downwards, right or left, you will see the results printing every second according to the direction of your movement!
 

@@ -85,7 +85,7 @@ The MKR GSM 1400 and MKR NB 1500 require a **SIM card** to connect to the cloud,
 - [MKR GSM 1400](https://store.arduino.cc/arduino-mkr-gsm-1400)
 - [MKR NB 1500](https://store.arduino.cc/arduino-mkr-nb-1500-1413)
 
-Connection through mobile networks can be considered in remote areas where there's no Wi-Fi, or in mobile projects (such as cargo tracking).  
+Connection through mobile networks can be considered in remote areas where there's no Wi-Fi, or in mobile projects (such as cargo tracking).
 
 ***For more information, visit the [Arduino SIM page](https://store.arduino.cc/digital/sim).***
 

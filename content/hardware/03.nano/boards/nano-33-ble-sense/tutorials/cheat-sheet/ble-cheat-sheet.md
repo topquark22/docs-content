@@ -409,7 +409,7 @@ And to write to the device:
 
 ```arduino
   digitalWrite(chipSelectPin, LOW); //pull down the CS pin
-  
+
   SPI.transfer(address); // address for device, for example 0x00
   SPI.transfer(value); // value to write
 
@@ -510,7 +510,7 @@ BLE.advertise();
 
 Listen for Bluetooth® Low Energy peripherals to connect:
 
-```arduino  
+```arduino
 BLEDevice central = BLE.central();
 ```
 

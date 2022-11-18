@@ -38,11 +38,11 @@ You need to connect 6 pins on the Arduino Mini to six pins on the ISP. The six p
 
 ![Arduino Mini pins](./assets/image002.jpg)
 
-    
+
 These pins on the Arduino have to be connected to the corresponding pins on the 6-pin connector coming from the ISP, shown below.
 
 ![Connector](./assets/image004.jpg)
-   
+
 Note that this is the view from the *back* of the connector. If you hold the connector by the ribbon, with the red stripe uppermost, and the connector facing *away* from you, this is what you will see.
 
 A simple way to make the connecting cable is to start with 6 pieces of wire, a piece of male header strip with 12 pins, and two pieces of header strip with 6 pins. Remove the 2nd through the 4th pins of the long strip using needle nose pliers. Remove the 9th through the 11th pins as well. Remove all the pins from the two smaller sections of male header.
@@ -50,7 +50,7 @@ A simple way to make the connecting cable is to start with 6 pieces of wire, a p
 Insert the wires corresponding to ground, reset and power (in that order) in the holes left by the 2nd through 4th pins. Insert the wires corresponding to SCK, MISO and MOSI (in that order) into the holes left by the 9th through 11th pins. Then, take the other ends of the wires, and put MISO, SCK, and RESET into piece, and Power, MOSI, and Ground into the other pieces. (Note that MOSI and Reset "swap sides", so to speak.) Trim the wires so they are all the same length. It is a good idea to use some hot glue to keep everything in place. It is easiest do this by plugging the two segments with 3 headers into the ISP cable (double-check they are correct!) and adding a drop of glue. (Don't glue the ISP cable itself.) You should have a cable that looks like this:
 
 ![Cable](./assets/image006.jpg)
-  
+
 Note that the pins on the ends are not connected to anything - I did this so that the header would be exact length of the Arduino Mini, making it easier to align. Note the order of the wires relative to the red strand on the programmer cable. When the red strand is on the top, and the cable is on the far side of the connector, the colors are white (MISO), green (SCK) and yellow (RESET). In the picture below, with the red strand on the bottom, and the ribbon cable on the near side, the cables are black (GND), blue (MOSI) and red (+5V):
 
 ![Ribbon](./assets/image008.jpg)
@@ -78,7 +78,7 @@ You can now bootload the Arduino using the Arduino environment. Open Arduino on 
 
 ![Bootloading](./assets/image016.jpg)
 
-   
+
 Unlike regular Arduino programming, you don't have to press the reset switch. The programmer resets the Arduino for you. This will install (or restore) the original Arduino bootloader. However, this is of little benefit, unless you are trying repair the bootloader, or your mini somehow came without one.
 
 ## How to Load the Bootloader Using AVRStudio?

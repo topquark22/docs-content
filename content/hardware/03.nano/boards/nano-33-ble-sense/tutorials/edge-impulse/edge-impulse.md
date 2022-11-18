@@ -72,7 +72,7 @@ In this type of learning, **training data is labeled**. It consists of mapping i
 - **Unsupervised learning**: 
 In this type of learning, **training data is not labeled**. It consists in finding inherent patterns in data. An example of this type of learning is anomaly detection such as flagging unusual credit card transactions to prevent fraud. 
 
-In this tutorial, we are going to use the supervised learning style to generate a ML system or model. Now that we have talked about how a ML system can learn, let's talk about the possible outputs they can have.  
+In this tutorial, we are going to use the supervised learning style to generate a ML system or model. Now that we have talked about how a ML system can learn, let's talk about the possible outputs they can have.
 
 ### Types of ML Outputs
 
@@ -207,7 +207,7 @@ Now, open the Arduino library you just created with Edge Impulse. Remember to di
 
 ![Importing the library (the .zip file).](./assets/nano33BS_TML_15.png)
 
-Navigate to **File**, select **Examples** and navigate to **Examples from Custom Libraries**. Here you should see an example named **"speech_detection Inferencing"**. Select the **nano_ble_33_sense_microphone_continuous**. This should open a sketch with the code that will let you test the ML model you trained before with Edge Impulse. Compile it and upload it to your Nano 33 BLE Sense board. Remember to select the **Arduino Nano 33 BLE Sense** as your board and associated serial port.  
+Navigate to **File**, select **Examples** and navigate to **Examples from Custom Libraries**. Here you should see an example named **"speech_detection Inferencing"**. Select the **nano_ble_33_sense_microphone_continuous**. This should open a sketch with the code that will let you test the ML model you trained before with Edge Impulse. Compile it and upload it to your Nano 33 BLE Sense board. Remember to select the **Arduino Nano 33 BLE Sense** as your board and associated serial port.
 
 Open the **Serial Monitor**, you should now see the ML model working. In order to make sure its working properly, after the keyword labels (green, noise, red and yellow) you should see the predictions being printed to the screen. When the ML model detects the keywords green, red or yellow on speech, one of the predictions output, or probability, should go up and get closer to one.
 

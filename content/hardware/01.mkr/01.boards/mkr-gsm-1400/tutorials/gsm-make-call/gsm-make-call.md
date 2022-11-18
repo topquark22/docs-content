@@ -22,7 +22,7 @@ software:
 
 ## Introduction 
 
-In this tutorial, we will use an example from the **MKRGSM** library called **MakeVoiceCall**. With it, we will set up the MKR GSM 1400 to create outgoing calls to a number of our liking. The example includes a serial interface that allows us to enter a number, place a call, and hang up on the call.  
+In this tutorial, we will use an example from the **MKRGSM** library called **MakeVoiceCall**. With it, we will set up the MKR GSM 1400 to create outgoing calls to a number of our liking. The example includes a serial interface that allows us to enter a number, place a call, and hang up on the call.
 
 Special thanks to Javier Zorzano for providing the sample code in this tutorial.
 
@@ -56,7 +56,7 @@ In this tutorial we will focus on just making an outgoing call. There are some s
 
 - **Security alert** - Similar to a system alert, we can set up the board to call you in case a sensor has detected any activity. 
 
->**Note:** The above are suggestions on what to use the MKR GSM 1400's voice call functionality. Please consult an expert if you attempt to build a security system for your home or business.  
+>**Note:** The above are suggestions on what to use the MKR GSM 1400's voice call functionality. Please consult an expert if you attempt to build a security system for your home or business.
 
 
 ### Circuit
@@ -75,11 +75,11 @@ We will now get to the programming part of this tutorial.
 **2.** Now, we need to install the libraries needed. If we are using the Web Editor, there is no need to install anything. If we are using an offline editor, simply go to **Tools > Manage libraries..**, and search for **MKRGSM** and install it.
 
 **3.** We can now go to **File > Examples > MKRGSM > MakeVoiceCall** in the editor. This will open a new window, which has a sketch tab, but also a header file, called `arduino_secrets.h`. Inside this file, we need to enter our pin number between the "". 
-   
+
 ```cpp
 #define SECRET_PINNUMBER     "" //enter pin code between ""
 ```
-   
+
 The pin number is often 1234 or 0000, but for more information, check the SIM plan that you bought.
 
 **4.** We can now take a look at some of the core functions of this sketch:

@@ -60,7 +60,7 @@ ___
 
 ## Let's Start
 
-This tutorial barely uses any external hardware: we only need an LED that we will control remotely. But the most interesting aspects lie in the library we are going to use: **WiFiNINA**. This library can be used for many different connectivity projects, where we can both connect to WiFi, make GET requests and - as we will explore in this tutorial - create an access point (AP) and hosting a web server that we can connect to.  
+This tutorial barely uses any external hardware: we only need an LED that we will control remotely. But the most interesting aspects lie in the library we are going to use: **WiFiNINA**. This library can be used for many different connectivity projects, where we can both connect to WiFi, make GET requests and - as we will explore in this tutorial - create an access point (AP) and hosting a web server that we can connect to.
 
 We will go through the following steps in order to create a web server on our MKR WiFi 1010:
 

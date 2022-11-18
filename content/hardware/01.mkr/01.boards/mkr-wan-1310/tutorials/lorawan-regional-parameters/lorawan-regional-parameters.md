@@ -104,7 +104,7 @@ void setup() {
   while (!Serial);
 
   loraSetup();
-  
+
   Serial.println("--------------------------------");
   Serial.println("- MKR WAN 1310 Channel Masking -");
   Serial.println("--------------------------------");
@@ -114,18 +114,18 @@ void setup() {
   Serial.println(modem.getChannelMask());
 
   // Disable all channels
-  Serial.println("- Disabling all channels...");  
+  Serial.println("- Disabling all channels...");
   for (unsigned int i = 0; i < 72; i++) {
     modem.disableChannel(i);
   }
-  
+
   // Print current channels configuration
   Serial.print("- Current mask: ");
   Serial.println(modem.getChannelMask());
-  
+
   // Enable AU915-928 channels
   // LoRaWAN® Regional Parameters and TTN specification: channels 8 to 15 plus 65 
-  Serial.println("- Enabling channels 8 to 15 plus 65...");  
+  Serial.println("- Enabling channels 8 to 15 plus 65...");
   for (unsigned int i = 8; i <= 15; i++) {
     modem.enableChannel(i);
   }
@@ -144,7 +144,7 @@ void loraSetup() {
     while (1);
   };
 
-  delay(5000);  
+  delay(5000);
 }
 
 void loop() {}
@@ -170,7 +170,7 @@ void setup() {
   // Initialize serial port at 9600 bauds
   Serial.begin(9600);
   while (!Serial);
-  
+
   // Initialize LoRa module with the AU915-928 region parameters
   if (!modem.begin(AU915)) {
     Serial.println("Failed to start module");

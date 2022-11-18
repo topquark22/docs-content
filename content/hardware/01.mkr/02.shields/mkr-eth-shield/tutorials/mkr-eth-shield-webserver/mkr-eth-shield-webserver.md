@@ -94,7 +94,7 @@ The circuit in this tutorial is easy to follow. First mount the MKR ETH Shield o
 
 ![Mount the shield on a MKR board.](assets/MKRETH_T1_IMG02.png)
 
-Then, connect an Ethernet cable to the connector on the shield.  
+Then, connect an Ethernet cable to the connector on the shield.
 
 ![Connect it to a router.](assets/MKRETH_T1_IMG03.png)
 
@@ -233,7 +233,7 @@ Let's copy the IP address and go to the browser of your choice (needs to be conn
 
 ![Interacting through browser.](assets/MKRETH_T1_IMG05.png)
 
-The content is simply the recent reading of pin A0-A5 on the board, which is then printed to the client. Congratulations, you have now managed to access data from your MKR board from a different device. The page is set to refresh every 5 seconds, so the values update along with it.  
+The content is simply the recent reading of pin A0-A5 on the board, which is then printed to the client. Congratulations, you have now managed to access data from your MKR board from a different device. The page is set to refresh every 5 seconds, so the values update along with it.
 
 If we go back to the Serial Monitor, we can see information on what is going on when a client is connecting to the server. 
 

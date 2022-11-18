@@ -174,5 +174,5 @@ Note that the board does not always find a way to connect to the network. There 
 
 ## Conclusion
 
-In this tutorial, we have simply made a GET request to a server, received it, and printed it in the Serial Monitor. There are many different ways we can build on this, such as making requests to servers that has live data updated every so often.  
+In this tutorial, we have simply made a GET request to a server, received it, and printed it in the Serial Monitor. There are many different ways we can build on this, such as making requests to servers that has live data updated every so often.
 

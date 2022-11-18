@@ -6,8 +6,6 @@
   <EssentialElement title="FPGA & HDL basics" type="getting-started" link="/learn/programming/vidor">
     Learn and understand the basics of FPGA and HDL.
   </EssentialElement>
-
-  
 </EssentialsColumn>
 
 <EssentialsColumn title="Suggested Libraries">

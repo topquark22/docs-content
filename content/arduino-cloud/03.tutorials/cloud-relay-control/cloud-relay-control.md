@@ -127,17 +127,17 @@ void setup() {
   Serial.begin(9600);
   // This delay gives the chance to wait for a Serial Monitor without blocking if none is found
   delay(1500); 
-  
+
   pinMode(1, OUTPUT);
   pinMode(2, OUTPUT);
-  
+
   // Defined in thingProperties.h
   initProperties();
 
   // Connect to Arduino IoT Cloud
   ArduinoCloud.begin(ArduinoIoTPreferredConnection);
-  
-  /*
+
+7  /*
      The following function allows you to obtain more information
      related to the state of network and IoT Cloud connection and errors
      the higher number the more granular information you’ll get.
@@ -151,7 +151,7 @@ void setup() {
 void loop() {
   ArduinoCloud.update();
   // Your code here 
-  
+
 }
 
 void onRelay1Change() {

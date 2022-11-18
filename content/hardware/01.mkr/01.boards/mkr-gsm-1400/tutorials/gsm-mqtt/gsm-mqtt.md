@@ -99,7 +99,7 @@ We will now get to the programming part of this tutorial.
 - `MQTTClient client` - creates a client that can connect to a broker, and publish/subscribe to topics and messages.
 - `client.begin(broker, net)` - connects to the broker.
 - `client.publish(topic, message)` - publishes a topic with a message.
-- `client.subscribe(topic)` - subscribes to a topic.  
+- `client.subscribe(topic)` - subscribes to a topic.
 
 The sketch can be found in the snippet below. Upload the sketch to the board.
 
@@ -195,10 +195,10 @@ This means that we have successfully published, and subscribed to a topic, using
 
 We can now start experimenting with the code, to make it a bit more interesting. Some changes we can make include:
 
-- Changing the topic (hello) and message (world). This can be done by editing the commands `client.subscribe("/hello")` and `client.publish("/hello", "world")`.  
+- Changing the topic (hello) and message (world). This can be done by editing the commands `client.subscribe("/hello")` and `client.publish("/hello", "world")`.
 
 - Create more topics to publish and subscribe to. Just duplicate the same two commands as above, but create unique topics, such as "pinkfoxtail" or "funkybanana". This will further decrease the likelihood that someone is using the same topics!
-  
+
 ### Troubleshoot
 
 If the code is not working, there are some common issues we can troubleshoot:

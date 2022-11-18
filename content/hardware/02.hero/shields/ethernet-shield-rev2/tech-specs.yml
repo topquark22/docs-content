@@ -11,7 +11,7 @@ Ethernet:
   Maximum sockets: 8 individual
   Supported protocols: IPv4, ICMP, TCP, UDP, ARP, IGMP, PPPoE, MQTT
 Storage: Micro SD card slot
-Power:  
+Power:
   Operating voltage: 5V
 Connectors:
   TinkerKit: Yes, 6x

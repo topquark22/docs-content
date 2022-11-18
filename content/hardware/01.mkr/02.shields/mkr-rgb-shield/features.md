@@ -17,7 +17,7 @@ The LEDs are very dense and bright, and with full RGB colors.
 
 <Feature title="Scrolling text" image="mcu">
 
-With the **MKR_RGB** library, simply write the text you want to appear on the matrix.  
+With the **MKR_RGB** library, simply write the text you want to appear on the matrix.
 
 </Feature>
 

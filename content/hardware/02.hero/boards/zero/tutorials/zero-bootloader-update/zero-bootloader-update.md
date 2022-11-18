@@ -17,11 +17,9 @@ On the Zero you can write the bootloader on the main microcontroller without the
 
 ## Goals
 
-
 - How to update the bootloader on the Arduino Zero.
-  
 
- ## Hardware & Software needed
+## Hardware & Software needed
 
 - [Arduino Zero](https://store.arduino.cc/arduino-zero) board.
 - Arduino IDE ([online](https://create.arduino.cc/) or [offline](https://www.arduino.cc/en/main/software)).
@@ -30,8 +28,8 @@ On the Zero you can write the bootloader on the main microcontroller without the
 ### Circuit
 
 This tutorial requires only an Arduino Zero board.
- 
- ![The Arduino Zero.](assets/zero.png)
+
+![The Arduino Zero.](assets/zero.png)
 
 ## Core Download
 

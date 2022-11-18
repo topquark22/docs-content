@@ -317,7 +317,7 @@ String calculateClientId() {
 
 String calculateJWT() {
   unsigned long now = getTime();
-  
+
   // calculate the JWT, based on:
   //   https://cloud.google.com/iot/docs/how-tos/credentials/jwts
   JSONVar jwtHeader;

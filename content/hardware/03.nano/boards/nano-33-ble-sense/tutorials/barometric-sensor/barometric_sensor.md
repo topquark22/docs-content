@@ -143,10 +143,8 @@ void setup() {
 void loop() {
   // read the sensor value
   float pressure = BARO.readPressure();
-  
- 
+
   float altitude = 44330 * ( 1 - pow(pressure/101.325, 1/5.255) );
-  
 
   // print the sensor value
   Serial.print("Altitude according to kPa is = ");

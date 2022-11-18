@@ -46,7 +46,7 @@ These four blocks will be running locally on the [Arduino® Portenta X8](https:/
 - ADB or SSH
 - Command-line interface
 - [Arduino IDE 2.0](https://www.arduino.cc/en/software)
-  
+
 ***If you are new to the Portenta X8 board, check out this [getting started tutorial](/tutorials/portenta-x8/out-of-the-box#controlling-portenta-x8-through-the-terminal) on controlling your board using a terminal or command-line interface.***
 
 ## IoT Architecture 101

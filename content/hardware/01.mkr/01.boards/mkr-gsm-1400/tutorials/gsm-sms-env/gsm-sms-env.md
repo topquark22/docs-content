@@ -78,8 +78,8 @@ We will now get to the programming part of this tutorial.
 - `gsmAccess.begin(pin)` - connects to the GSM network with the pin number as a parameter, e.g. 0123.
 - `sms.available()`
 - `sms.remoteNumber(number, 20)` - retrieves a sender's number. 
-- `equals()` - function that checks if a `string` is exactly the same as `string2`.  
-- `sms.beginSMS(number);` - creates an SMS for a specific number.  
+- `equals()` - function that checks if a `string` is exactly the same as `string2`.
+- `sms.beginSMS(number);` - creates an SMS for a specific number.
 - `sms.print(message);` - prints the content of the SMS.
 - `sms.endSMS()` - sends the SMS.
 - `sms.flush()` - deletes the message from the modem memory.

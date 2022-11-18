@@ -99,12 +99,12 @@ void setup() {
   Serial.begin(9600);
   while (!Serial);
   Serial.println("LoRa Sender");
-  
+
   if (!LoRa.begin(868E6)) {
     Serial.println("Starting LoRa failed!");
     while (1);
   }
-  
+
 delay(1000);
 
   if (!ENV.begin()) {
@@ -126,7 +126,7 @@ void loop() {
   Serial.println(counter);
 
   double temperature = ENV.readTemperature();
-  
+
   // send packet
   LoRa.beginPacket();
   LoRa.print(temperature);
@@ -198,12 +198,12 @@ void setup() {
   Serial.begin(9600);
   while (!Serial);
   Serial.println("LoRa Sender");
-  
+
   if (!LoRa.begin(868E6)) {
     Serial.println("Starting LoRa failed!");
     while (1);
   }
-  
+
 delay(1000);
 
   if (!ENV.begin()) {
@@ -301,4 +301,4 @@ If the code is not working, there are some common issues we might need to troubl
 
 ## Conclusion
 
-This tutorial demonstrates a simple communication between two MKR WAN 1300 boards and a MKR ENV shield, using LoRa® technology.   
+This tutorial demonstrates a simple communication between two MKR WAN 1300 boards and a MKR ENV shield, using LoRa® technology.

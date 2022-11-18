@@ -58,7 +58,7 @@ The J2 header pins of the MKR WiFi 1010 board are located on the **underside** o
 
 There are several methods to connect the J2 header pins of the MKR WiFi 1010 board to the SWD interface of the Atmel-ICE development tool. For example, one method can be **soldering wires directly on the exposed pads**; in this tutorial, we are going to explain how to set up two different methods: **one that requires soldering and one that doesn't**. 
 
-> Note: The goal is to **reach** the exposed pads that are located on the underside of the board, feel free to choose one of the two methods that are explained in this tutorial or to implement another solution not mentioned here.  
+> Note: The goal is to **reach** the exposed pads that are located on the underside of the board, feel free to choose one of the two methods that are explained in this tutorial or to implement another solution not mentioned here.
 
 ### Method 1: Soldering 2.54mm Right-Angle Male Headers
 
@@ -159,7 +159,7 @@ With the **Optimize for Debugging** option selected, now its time to upload the 
 
 ### 3. Using the Debugger Tool with the Test Code
 
-We can easily access to the Debugger Tool menu from the left sidebar of the Arduino IDE 2.0 where we can find also the **Board Manager**, **Library Manager**, **Search** and **Sketchbook Explorer**.  
+We can easily access to the Debugger Tool menu from the left sidebar of the Arduino IDE 2.0 where we can find also the **Board Manager**, **Library Manager**, **Search** and **Sketchbook Explorer**.
 
 ![The debugger tool menu option in the left sidebar of the Arduino IDE 2.0](assets/ide_v2_t1_img07.png)
 

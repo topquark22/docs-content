@@ -105,7 +105,7 @@ void setup() {
   // Initialize serial and wait for port to open:
   pinMode(buttonPin, INPUT_PULLUP);
   pinMode(ledPin, OUTPUT);
-  
+
   // Initialize serial and wait for port to open:
   Serial.begin(9600);
   // This delay gives the chance to wait for a Serial Monitor without blocking if none is found
@@ -116,7 +116,7 @@ void setup() {
 
   // Connect to Arduino IoT Cloud
   ArduinoCloud.begin(ArduinoIoTPreferredConnection);
-  
+
   /*
      The following function allows you to obtain more information
      related to the state of network and IoT Cloud connection and errors
@@ -131,19 +131,19 @@ void setup() {
 void loop() {
   ArduinoCloud.update();
   // Your code here 
-  
+
   int buttonState = digitalRead(buttonPin);
-  
+
   if(buttonState == LOW) {
     switch_1 = !switch_1;
     delay(500);
   }
-  
+
 }
 
 void onSwitch2Change() {
   // Do something
-  
+
 }
 
 void onSwitch1Change() {
@@ -203,7 +203,7 @@ void setup() {
   // Initialize serial and wait for port to open:
   pinMode(buttonPin, INPUT_PULLUP);
   pinMode(ledPin, OUTPUT);
-  
+
   // Initialize serial and wait for port to open:
   Serial.begin(9600);
   // This delay gives the chance to wait for a Serial Monitor without blocking if none is found
@@ -214,7 +214,7 @@ void setup() {
 
   // Connect to Arduino IoT Cloud
   ArduinoCloud.begin(ArduinoIoTPreferredConnection);
-  
+
   /*
      The following function allows you to obtain more information
      related to the state of network and IoT Cloud connection and errors
@@ -229,20 +229,18 @@ void setup() {
 void loop() {
   ArduinoCloud.update();
   // Your code here 
-  
+
   int buttonState = digitalRead(buttonPin);
-  
+
   if(buttonState == LOW) {
     switch_2 = !switch_2;
     delay(500);
   }
-  
-  
 }
 
 void onSwitch2Change() {
   // Do something
-  
+
 }
 
 void onSwitch1Change() {

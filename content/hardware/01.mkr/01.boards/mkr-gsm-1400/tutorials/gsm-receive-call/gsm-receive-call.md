@@ -66,17 +66,17 @@ We will now get to the programming part of this tutorial.
 **1.** First, let's make sure we have the drivers installed. If we are using the Web Editor, we do not need to install anything. If we are using an offline editor, we need to install it manually. This can be done by navigating to **Tools > Board > Board Manager...**. Here we need to look for the **Arduino SAMD boards (32-bits ARM Cortex M0+)** and install it. 
 
 **2.** Now, we need to install the libraries needed. If we are using the Web Editor, there is no need to install anything. If we are using an offline editor, simply go to **Tools > Manage libraries..**, and search for **MKRGSM** and install it.
-   
+
 **3.** We can now go to **File > Examples > MKRGSM > ReceiveVoiceCall** in the editor. This will open a new window, which has a sketch tab, but also a header file, called `arduino_secrets.h`.
 
 ![Opening the arduino_secrets.h file.](assets/MKRGSM_T8_IMG02.png)
 
-Inside this file, we need to enter our pin number between the " ". 
-   
+Inside this file, we need to enter our pin number between the " ".
+
 ```arduino
 #define SECRET_PINNUMBER     "" //enter pin code between " "
 ```
-   
+
 The pin number is often 1234 or 0000, but for more information, check the SIM plan that you bought.
 
 **4.** We can now take a look at some of the core functions of this sketch:
@@ -179,7 +179,7 @@ After the code has successfully uploaded, open the Serial Monitor. There should 
 
 ![Arduino IDE, serial monitor waiting for a call.](assets/MKRGSM_T8_IMG03.png)
 
-Now, all we need to do is placing a call to the MKR GSM 1400 board. Simply check the phone number of the SIM card that you connected to your board, and call it. When the call is received by the board, it automatically answers it, and prints the caller's number in the Serial Monitor, as shown in the image below.  
+Now, all we need to do is placing a call to the MKR GSM 1400 board. Simply check the phone number of the SIM card that you connected to your board, and call it. When the call is received by the board, it automatically answers it, and prints the caller's number in the Serial Monitor, as shown in the image below.
 
 ![Arduino IDE, serial monitor receiving a call.](assets/MKRGSM_T8_IMG04.png)
 
@@ -199,7 +199,7 @@ If the code is not working, there are some common issues we can troubleshoot:
 
 ## Conclusion
 
-In this tutorial, we went through the **ReceiveVoiceCall** example that allows us to receive voice calls on the MKR GSM 1400 board. This feature can be easily configured to handle tasks on the board, such as executing functions, and is relatively easy to setup in terms of hardware and software.  
+In this tutorial, we went through the **ReceiveVoiceCall** example that allows us to receive voice calls on the MKR GSM 1400 board. This feature can be easily configured to handle tasks on the board, such as executing functions, and is relatively easy to setup in terms of hardware and software.
 
 Feel free to explore the [MKRGSM](https://www.arduino.cc/en/Reference/GSM) library further, and try out some of the many cool functions in this library.
 

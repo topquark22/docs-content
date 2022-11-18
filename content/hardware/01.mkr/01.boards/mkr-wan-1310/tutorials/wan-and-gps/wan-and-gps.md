@@ -84,10 +84,10 @@ Some of the main functions of this sketch are listed below:
 - `LoRa.print()` - prints data to the LoRa® packet.
 - `LoRa.endPacket()` - sends the LoRa® packet.
 
-We can now upload the code below to the MKR WAN 1310 board that has the GPS shield connected to it. 
+We can now upload the code below to the MKR WAN 1310 board that has the GPS shield connected to it.
 
 
-```cpp    
+```cpp
 #include <SPI.h>
 #include <LoRa.h>
 #include <Arduino_MKRGPS.h>
@@ -131,7 +131,7 @@ void loop() {
 
     // print GPS values
     printValues();
-    
+
     // Create and send LoRa packet
     LoRa_send();
   }
@@ -177,7 +177,7 @@ Now that we have successfully uploaded the code to the first board (the sender),
 
 - The second sketch we need to upload is a bit more basic. It basically only listens for incoming messages, and if we receive a message from the other board, we print it in the Serial Monitor. Some of the core functions of this sketch are:
 
-- `byte localAddress = 0xFF;` - create a local address.  
+- `byte localAddress = 0xFF;` - create a local address.
 - `LoRa.available()` - checks if there's any available data.
 - `LoRa.parsePacket()` - parses the incoming data.
 - `LoRa.read()` - reads the incoming data.
@@ -191,7 +191,7 @@ We can now copy and paste the code from below and upload it to the second MKR WA
 
 String message;
 
-byte localAddress = 0xFF;  
+byte localAddress = 0xFF;
 
 
 void setup() {
@@ -245,7 +245,7 @@ Now the two MKR WAN 1310s have two unique sketches uploaded to each board. We wi
 
 Congratulations, you have now managed to combine the tracking of GPS signals, and transfer the coordinates over LoRa, to another board. This setup can be extremely useful for remote areas, where we for example need to send an emergency signal to notify our location. 
 
-This tutorial combines both the use of LoRa® and GPS technologies, but you can of course explore them separately as well. The GPS shield can for example be used for more than just positioning, it can also be used to measure speed, for example how fast we are traveling by bike.  
+This tutorial combines both the use of LoRa® and GPS technologies, but you can of course explore them separately as well. The GPS shield can for example be used for more than just positioning, it can also be used to measure speed, for example how fast we are traveling by bike.
 
 ### Troubleshoot
 
@@ -258,4 +258,4 @@ If the code is not working, there are some common issues we can troubleshoot:
 
 ## Conclusion
 
-This tutorial combines both the LoRa® and GPS technologies, but you can of course explore them separately as well. The MKR GPS Shield can for example be used for more than just positioning, it can also be used to measure speed, for example how fast we are traveling by bike.  
+This tutorial combines both the LoRa® and GPS technologies, but you can of course explore them separately as well. The MKR GPS Shield can for example be used for more than just positioning, it can also be used to measure speed, for example how fast we are traveling by bike.

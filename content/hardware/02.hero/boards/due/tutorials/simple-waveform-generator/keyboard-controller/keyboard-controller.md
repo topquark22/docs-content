@@ -54,9 +54,9 @@ Before we begin, let's take a look at some of the core functions in the program:
 - `USBHost` - USBHost is the base class for all calls that rely on USB host communication. When invoked, it initializes a USB controller.
 
 - `KeyboardController keyboard(usb);` - KeyboardController is the class for all calls to the USBHost relating to an attached USB keyboard.
-  
+
 - `keyPressed()` - A function that is called whenever a key is pressed on a connected USB keyboard.
-  
+
 ```arduino
 /*
 

@@ -35,7 +35,7 @@ An example of a workflow using this tool can be:
 
 Let's for example say that you have created a "smart plug" setup, that includes 100 devices in a large building. The firmware running on the devices is not optimal, and needs an update. 
 
-With the Arduino Cloud CLI tool, you can not only automate the initial setup of these devices, but also be able to automate the maintenance sequence as well.   
+With the Arduino Cloud CLI tool, you can not only automate the initial setup of these devices, but also be able to automate the maintenance sequence as well.
 
 ***If you are new to the Arduino Cloud as well, you can follow the [Getting Started guide](/arduino-cloud/getting-started/iot-cloud-getting-started).***
 
@@ -372,7 +372,7 @@ With the `arduino-cloud-cli`, you can:
 
 ### Upload
 
-To upload a sketch, you will need to specify the `--device-id` and `--file`.  
+To upload a sketch, you will need to specify the `--device-id` and `--file`.
 
 ```
 arduino-cloud-cli ota upload --device-id <deviceID> --file <sketch-file.ino.bin>

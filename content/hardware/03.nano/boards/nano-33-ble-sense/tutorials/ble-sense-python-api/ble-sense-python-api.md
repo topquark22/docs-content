@@ -19,7 +19,7 @@ The [Nano 33 BLE Sense board](https://store.arduino.cc/arduino-nano-33-ble-sense
 - [Arduino Nano 33 BLE Sense](https://store.arduino.cc/nano-33-ble-sense).
 - [OpenMV IDE](https://openmv.io/pages/download)
 
-***This guide does not cover the installation of OpenMV and MicroPython on your board. Please refer to [Getting started with OpenMV and Nano 33 BLE Sense](/tutorials/nano-33-ble-sense/getting-started-omv) for a detailed guide.***   
+***This guide does not cover the installation of OpenMV and MicroPython on your board. Please refer to [Getting started with OpenMV and Nano 33 BLE Sense](/tutorials/nano-33-ble-sense/getting-started-omv) for a detailed guide.***
 
 ## API
 
@@ -105,7 +105,7 @@ adc_pin = machine.Pin(29) # A3
 adc = machine.ADC(adc_pin)
 
 while True:
-    reading = adc.read_u16()     
+    reading = adc.read_u16()
     print("ADC: ",reading)
     time.sleep_ms(500)
 ```
@@ -135,7 +135,7 @@ led_pwr = Pin(41, Pin.OUT)
 
 ### RGB
 
-Blink all RGB lights every 0.25 seconds.  
+Blink all RGB lights every 0.25 seconds.
 
 ```python
 from board import LED
@@ -146,7 +146,6 @@ led_green = LED(2)
 led_blue = LED(3)
 
 while (True):
-   
     # Turn on LEDs
     led_red.on()
     led_green.on()
@@ -154,7 +153,7 @@ while (True):
 
     # Wait 0.25 seconds
     time.sleep_ms(250)
-    
+
     # Turn off LEDs
     led_red.off()
     led_green.off()
@@ -175,13 +174,12 @@ import time
 led_builtin = LED(4)
 
 while (True):
-   
     # Turn on LED
     led_builtin.on()
 
     # Wait 0.25 seconds
     time.sleep_ms(250)
-    
+
     # Turn off LED
     led_builtin.off()
 

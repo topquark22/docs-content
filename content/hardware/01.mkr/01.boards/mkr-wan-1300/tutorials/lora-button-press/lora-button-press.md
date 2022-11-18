@@ -197,10 +197,10 @@ void loop() {
     Serial.print("Received packet '");
 
     // read packet
-    while (LoRa.available()) {  
+    while (LoRa.available()) {
       contents += (char)LoRa.read();
     }
-    
+
     // print RSSI of packet
     Serial.print("' with RSSI ");
     Serial.println(LoRa.packetRssi());
@@ -218,7 +218,7 @@ void loop() {
       digitalWrite(led, LOW);
       Serial.println("led off");
     }
-    
+
     contents = "";
   }
 }
@@ -240,12 +240,12 @@ int buttonState;
 
 void setup() {
   pinMode(button, INPUT_PULLUP);
-  
+
   Serial.begin(9600);
-  
+
   while (!Serial);
   Serial.println("LoRa Sender");
-  
+
   if (!LoRa.begin(868E6)) {
     Serial.println("Starting LoRa failed!");
     while (1);
@@ -255,7 +255,7 @@ void setup() {
 
 void loop() {
   buttonState = digitalRead(button);
-  
+
   if (buttonState == LOW) {
     // send packet
     LoRa.beginPacket();
@@ -303,10 +303,10 @@ void loop() {
     Serial.print("Received packet '");
 
     // read packet
-    while (LoRa.available()) {  
+    while (LoRa.available()) {
       contents += (char)LoRa.read();
     }
-    
+
     // print RSSI of packet
     Serial.print("' with RSSI ");
     Serial.println(LoRa.packetRssi());
@@ -324,7 +324,7 @@ void loop() {
       digitalWrite(led, LOW);
       Serial.println("led off");
     }
-    
+
     contents = "";
   }
 }

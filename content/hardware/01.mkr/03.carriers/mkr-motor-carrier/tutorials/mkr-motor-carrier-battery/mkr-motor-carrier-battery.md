@@ -185,7 +185,7 @@ void loop() {
 
 After successfully uploading the sketch, open the Serial Monitor.
 
-In this sketch we are turning the DC motor (M1) ON, and constantly check whether the battery is at an acceptable level.  
+In this sketch we are turning the DC motor (M1) ON, and constantly check whether the battery is at an acceptable level.
 
 In case the battery is discharged, we are turning OFF all the motors and sending an error message. This is visible in the Serial Monitor.
 

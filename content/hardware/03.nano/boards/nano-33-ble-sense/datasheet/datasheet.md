@@ -199,7 +199,7 @@ All Arduino boards have a built-in bootloader which allows flashing the board vi
 ## Connector Pinouts
 
 ![Pinout](assets/pinout.png)
-    
+
 ### USB
 
 | Pin  | **Function** | **Type**     | **Description**                                              |

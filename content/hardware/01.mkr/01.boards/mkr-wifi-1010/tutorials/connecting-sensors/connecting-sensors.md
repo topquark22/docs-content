@@ -54,7 +54,7 @@ The first type of sensor, the simplest one, is basically a contact that can be o
 
 What is important to remember is that the inputs can’t be left “floating” (unconnected) and read reliably: if your pushbutton or sensor is connected and normally open, the reading could pick a random value of High or Low. To avoid these uncertainties it is necessary to use a pullup or pulldown resistor: a high value resistor that keeps the input at a known level when the sensor circuit is open.
 
-To make things easier, the microcontroller has an internal pullup resistor that can be enabled or disabled via software. With a NO (Normally Open) pushbutton we should connect it to ground and enable the pullup resistor with the `pinMode(pin, INPUT_PULLUP)`.  At reset or powerup the pullup resistors are disabled.  
+To make things easier, the microcontroller has an internal pullup resistor that can be enabled or disabled via software. With a NO (Normally Open) pushbutton we should connect it to ground and enable the pullup resistor with the `pinMode(pin, INPUT_PULLUP)`.  At reset or powerup the pullup resistors are disabled.
 
 ### Analog
 
@@ -64,7 +64,7 @@ In all these cases we have to take in account some details: the sensor can be ac
 
 If a voltage is the consequence of a resistance of some passive component (soil moisture, photoresistor) we need to consider that the voltage read is proportional to the current that flows into the resistor. Arduino analog inputs have a very high input resistance and therefore they do not represent a load. In other words with a negligible flow of current, the voltage read at the analog input will almost always be the same to the sensor. To get a variation in the reading we need to create a resistive divider. It is a simple circuit where we have two resistors connected in series, as shown in the graphic.
 
-![Open circuit behavior.](assets/mkr_tutorial_06_img_07.png)     
+![Open circuit behavior.](assets/mkr_tutorial_06_img_07.png)
 
 We have the open circuit formula because the Arduino Analog Input has a negligible load. If the R1 and R2 have a fixed value, **Vout** will have a fixed value as well, but if we have our photoresistor as one of the two resistors, we will have a varying Vout according to the change of illumination on the sensor. The variation direction depends on where you put the photoresistor in this circuit: R1 to get a higher value from `analogRead()` when light goes up, R2 to get a lower value from `analogRead()` when light goes up.
 
@@ -80,13 +80,11 @@ The nice thing about I2C is that we can also have actuators, like an LCD screen,
 
 The number of addresses available for I2C devices is 127 (7 bit) and 0 is the “general call” address. As you may imagine, the number of devices that use I2C are more than 127 and there are many cases where you need to use more than one device of the same type in the same circuit. Addressing, offers some flexibility and it is possible to change the address of some devices by hardware or software. An alternative is to use I2C on different buses (connections) with a circuit that allows us to select the proper bus.
 
-Last, but not least important, every Arduino can be either the controller or the controlled device on an I2C bus; the software library that takes care of I2C communication is **Wire** and supports both roles.  
+Last, but not least important, every Arduino can be either the controller or the controlled device on an I2C bus; the software library that takes care of I2C communication is **Wire** and supports both roles.
 
 ## Creating the Programs
 
-First, let's make sure we have the drivers installed. If we are using the Web Editor, we do not need to install anything. If we are using an offline editor, we need to install it manually. This can be done by navigating to **Tools > Board > Board Manager...**. Here we need to look for the **Arduino SAMD boards (32-bits ARM Cortex M0+)** and install it. 
-
----
+First, let's make sure we have the drivers installed. If we are using the Web Editor, we do not need to install anything. If we are using an offline editor, we need to install it manually. This can be done by navigating to **Tools > Board > Board Manager...**. Here we need to look for the **Arduino SAMD boards (32-bits ARM Cortex M0+)** and install it.
 
 ### Digital Sensor Example
 
@@ -171,7 +169,7 @@ Bme280BoschWrapper bme280(true);
 void setup() {
   Serial.begin(9600);
   Serial.println("BME280 Bosch test");
-  
+
   while(!bme280.beginI2C(0x76))
   {
     Serial.println("Cannot find sensor.");
@@ -199,7 +197,7 @@ void loop() {
   {
     Serial.println("Measuring failed.");
   }
-  
+
   delay(5000);
 }
 ```

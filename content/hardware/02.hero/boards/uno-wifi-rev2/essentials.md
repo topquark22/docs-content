@@ -16,7 +16,7 @@ The ArduinoBLE library is designed for Arduino boards that have hardware enabled
   </EssentialElement>
 
 <EssentialElement title="Arduino_LSM6DS3" type="library" link="https://www.arduino.cc/en/Reference/ArduinoLSM6DS3">
-The Arduino_LSM6DS3 library allows you to use the LSM6DS3 IMU module, which includes a 3-axis accelerometer and gyroscope.  
+The Arduino_LSM6DS3 library allows you to use the LSM6DS3 IMU module, which includes a 3-axis accelerometer and gyroscope.
 </EssentialElement>
 
   <EssentialElement title="ArduinoMqttClient" type="library" link="https://www.arduino.cc/reference/en/libraries/arduinomqttclient/">

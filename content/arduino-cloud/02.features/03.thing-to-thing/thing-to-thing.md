@@ -105,7 +105,7 @@ Here we will also need to enter our network details, and select our device (whic
 
 Then we can move on to the sketch. Inside the sketch we actually **don't need to edit anything**. Simply upload the sketch to **Device_2**.
 
-Once the upload is successful, we can move on to the next step!  
+Once the upload is successful, we can move on to the next step!
 
 ## Creating a dashboard
 

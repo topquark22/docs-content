@@ -195,7 +195,7 @@ void setup() {
   pinMode(LEDG, OUTPUT);
   pinMode(LEDB, OUTPUT);
   pinMode(LED_BUILTIN, OUTPUT);
-  
+
   digitalWrite(LED_BUILTIN, LOW);         // when the central disconnects, turn off the LED
   digitalWrite(LEDR, HIGH);               // will turn the LED off
   digitalWrite(LEDG, HIGH);               // will turn the LED off

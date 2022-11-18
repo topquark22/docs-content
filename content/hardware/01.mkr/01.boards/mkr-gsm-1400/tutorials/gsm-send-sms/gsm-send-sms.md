@@ -78,7 +78,7 @@ In this tutorial, we will use one of the examples from the **MKRGSM** library. T
 - `GSM gsmAccess` - base class for all GSM functions.
 - `GSM_SMS sms` - base class for all GSM functions for SMS.
 - `gsmAccess.begin(pin)` - connects to the GSM network with the pin number as a parameter, e.g. 0123.
-- `sms.beginSMS(number);` - creates an SMS for a specific number.  
+- `sms.beginSMS(number);` - creates an SMS for a specific number.
 - `sms.print(message);` - prints the content of the SMS.
 - `sms.endSMS()` - sends the SMS.
 
@@ -94,7 +94,7 @@ In this tutorial, we will use one of the examples from the **MKRGSM** library. T
 
 **5.** We can now upload the sketch to the board. The code can also be found in the snippet below. 
 
-```cpp    
+```cpp
 
 // Include the GSM library
 #include <MKRGSM.h>

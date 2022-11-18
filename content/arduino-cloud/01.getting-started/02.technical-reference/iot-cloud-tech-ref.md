@@ -49,7 +49,7 @@ The MKR GSM 1400 and MKR NB 1500 require a **SIM card** to connect to the cloud,
 - [MKR GSM 1400](https://store.arduino.cc/arduino-mkr-gsm-1400)
 - [MKR NB 1500](https://store.arduino.cc/arduino-mkr-nb-1500-1413)
 
-Connection through mobile networks can be considered in remote areas where there's no Wi-Fi, or in mobile projects (such as cargo tracking).  
+Connection through mobile networks can be considered in remote areas where there's no Wi-Fi, or in mobile projects (such as cargo tracking).
 
 ***For more information, visit the [Arduino SIM page](https://store.arduino.cc/digital/sim).***
 
@@ -322,7 +322,7 @@ Let's see how to blink a LED. The traditional way involves the `delay()` functio
 
     void loop() {
       ArduinoCloud.update();
-  
+
       digitalWrite(LED_BUILTIN, HIGH);
       delay(1000);
       digitalWrite(LED_BUILTIN, LOW);
@@ -335,7 +335,6 @@ This can be rewritten in a non-blocking way as follows:
 
     void loop() {
       ArduinoCloud.update();
-  
       digitalWrite(LED_PIN, (millis() % 2000) < 1000);
     }
 
@@ -360,7 +359,7 @@ We provide two Arduino Iot Cloud APIs:
   - [Javascript NPM package](https://www.npmjs.com/package/@arduino/arduino-iot-client).
   - [Python® PYPI Package](https://pypi.org/project/arduino-iot-client/).
   - [Golang Module](https://github.com/arduino/iot-client-go).
-  
+
 **2.** The second is the **Data API (MQTT)** which allows you to send/receive Variables' data. An example of this API's use is sending IoT Cloud Variables' updates to the browser. A full [documentation of the Arduino IoT Cloud Data API (MQTT)](https://www.npmjs.com/package/arduino-iot-js) is available for advanced users.
 
 

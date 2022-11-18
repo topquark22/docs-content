@@ -106,7 +106,7 @@ With some basic knowledge of the sketch, we can now upload the sketch below to o
 
 >**Note:** Uploading the code to the board takes a few seconds. Try to sync with the time on your computer or watch and allow a couple of extra seconds before starting the uploading process.
 
-```cpp    
+```cpp
 
 #include <RTCZero.h>
 #include <SPI.h>
@@ -162,7 +162,7 @@ void setup()
 
 void loop()
 {
-  
+
   display.clearDisplay(); //clears display
   display.setTextColor(SSD1306_WHITE); //sets color to white
   display.setTextSize(2); //sets text size to 2
@@ -173,7 +173,7 @@ void loop()
   print2digits(rtc.getMonth()); //retrieve month
   display.print("/");
   print2digits(rtc.getYear()); //retrieve year
-  
+
 
   display.setCursor(0, 18); //change cursor to second row
   print2digits(rtc.getHours()); //retrieve hours
@@ -181,7 +181,7 @@ void loop()
   print2digits(rtc.getMinutes()); //retrieve minutes
   display.print(":");
   print2digits(rtc.getSeconds()); //retrieve seconds
-  
+
   display.display(); //print to display
 
   delay(10);

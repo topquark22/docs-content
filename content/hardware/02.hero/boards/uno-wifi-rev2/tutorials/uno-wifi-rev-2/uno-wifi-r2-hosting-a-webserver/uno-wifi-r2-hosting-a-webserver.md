@@ -90,7 +90,7 @@ void setup() {
   Serial.begin(9600);
   pinMode(ledPin, OUTPUT);
   while (!Serial);
-  
+
   enable_WiFi();
   connect_WiFi();
 
@@ -174,17 +174,14 @@ void printWEB() {
             client.println("HTTP/1.1 200 OK");
             client.println("Content-type:text/html");
             client.println();
-           
+
             //create the buttons
             client.print("Click <a href=\"/H\">here</a> turn the LED on<br>");
             client.print("Click <a href=\"/L\">here</a> turn the LED off<br><br>");
-            
+
             int randomReading = analogRead(A1);
             client.print("Random reading from analog pin: ");
             client.print(randomReading);
-           
-            
-            
 
             // The HTTP response ends with another blank line:
             client.println();
@@ -200,10 +197,10 @@ void printWEB() {
         }
 
         if (currentLine.endsWith("GET /H")) {
-        digitalWrite(ledPin, HIGH);        
+        digitalWrite(ledPin, HIGH);
         }
         if (currentLine.endsWith("GET /L")) {
-        digitalWrite(ledPin, LOW);       
+        digitalWrite(ledPin, LOW);
         }
 
       }

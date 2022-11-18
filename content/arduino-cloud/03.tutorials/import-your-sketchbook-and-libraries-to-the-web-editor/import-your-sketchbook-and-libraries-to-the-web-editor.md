@@ -14,9 +14,9 @@ Once your sketchbook is online it will be available on any device and backed up.
 What can you import to the [Web Editor](https://create.arduino.cc/editor)?
 
 * Single sketches in `.ino`, `.pde` and `.zip` format.
-  
+
 * Libraries in `.zip` format.
-  
+
 * Zipped folders containing sketches and libraries. Make sure your libraries are in a folder called `‘libraries’`. Be sure not to mix sketches and libraries in the same folder.
 
 But let’s import your whole sketchbook in a few clicks, so you will be all set up to start using the Arduino Web Editor.

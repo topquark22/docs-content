@@ -91,7 +91,7 @@ The TEMT6000 sensor is a phototransistor, a component that will allow electrons 
 
 The sensor’s range and accuracy makes is suitable for a lot of scientific experiments. The sensor’s opening angle is ±60 °, and while it peaks up at 570 nm, it is detecting light in the range from 440 nm to 800 nm, in the temperature range from -40 °C to +100 °C.
 
-Using the command `readIlluminance()` will by default return a value measured in `LUX`. This unit represents one lumen per square meter. Unlike a measurement of Watts per square meter, which weights the power of signals in different frequencies of the spectrum differently, the lumens are calculated by looking at the mathematical response of the human eye to different wavelengths. In that way, LUX comes to be a measurement of how intense the light is for the human eye.  
+Using the command `readIlluminance()` will by default return a value measured in `LUX`. This unit represents one lumen per square meter. Unlike a measurement of Watts per square meter, which weights the power of signals in different frequencies of the spectrum differently, the lumens are calculated by looking at the mathematical response of the human eye to different wavelengths. In that way, LUX comes to be a measurement of how intense the light is for the human eye.
 
 You can find more information about this sensor by reading it's <a href="https://www.vishay.com/docs/81579/temt6000.pdf" target="_blank">datasheet</a>.
 
@@ -156,7 +156,7 @@ void loop() {
   float illuminance = ENV.readIlluminance();
   float uva         = ENV.readUVA();
   float uvb         = ENV.readUVB();
-  float uvIndex     = ENV.readUVIndex();     
+  float uvIndex     = ENV.readUVIndex();
 
   // print each of the sensor values
   Serial.print("Temperature = ");

@@ -106,21 +106,21 @@ Once it is done, select the "**DONE**" button, we will be redirected to the "Dev
 
 After our board is configured in the Arduino Cloud IoT, we can move on to the next step: creating a "Thing". Let's select the "**Things**" tab and then select the "**CREATE THING**" button.
 
-![Creation of a "Thing" in the Arduino Cloud IoT complete](assets/modbus-energy-meter_img13.png)  
+![Creation of a "Thing" in the Arduino Cloud IoT complete](assets/modbus-energy-meter_img13.png)
 
 We will be redirected to a page with our "Thing" configuration overview. Here we can define our "Thing" name, select to what network we are connecting to, what device we are using with out "Thing" and create variables that we want to to connect from our board to our "Thing" in the Arduino Cloud IoT. 
 
-![Overview of a "Thing" in the Arduino Cloud IoT](assets/modbus-energy-meter_img14.png)  
+![Overview of a "Thing" in the Arduino Cloud IoT](assets/modbus-energy-meter_img14.png)
 
 Let's start by giving a name to our "Thing" and linking our freshly configured device. We named our Thing as "**Energy Thing**", this can be done by clicking in "**Untitled**". To link out freshly configured device, we select the "**Select Device**" button located to the right. This will open up a window where we can associate a previously configured device with our "Thing" by selecting the "**ASSOCIATE**" button.
 
-![Associating a device to a "Thing" in the Arduino Cloud IoT](assets/modbus-energy-meter_img15.png)  
+![Associating a device to a "Thing" in the Arduino Cloud IoT](assets/modbus-energy-meter_img15.png)
 
 ### Creating Variables for a "Thing" in the Arduino Cloud IoT
 
 Now, let's create **variables** for the "Energy Thing". The variables we are going to create will be synced, automatically, with the Arduino Cloud IoT as long as the board is connected to Internet and the Arduino Cloud IoT. Let's create create a new variable by selecting the "**Add Variable**" button.
 
-!["ADD VARIABLE" button in the Arduino Cloud IoT](assets/modbus-energy-meter_img16.png)  
+!["ADD VARIABLE" button in the Arduino Cloud IoT](assets/modbus-energy-meter_img16.png)
 
 This will open up a window where we can create new variables and define its characteristics. The first variable we are going to create will be named "**voltage**"; this variable will have the following characteristics:
 
@@ -128,7 +128,7 @@ This will open up a window where we can create new variables and define its char
 - **Variable permission**: read only.
 - **Variable update policy**: on change (threshold do not changes).
 
-![Adding a variable to the "Energy Thing"](assets/modbus-energy-meter_img17.png)  
+![Adding a variable to the "Energy Thing"](assets/modbus-energy-meter_img17.png)
 
   Repeat this process for the variables and its characteristics shown in the table below:
 
@@ -143,7 +143,7 @@ This will open up a window where we can create new variables and define its char
 
 The created variables should appear now in the "Energy Thing" overview.
 
-![Variables of the "Energy Thing"](assets/modbus-energy-meter_img18.png)  
+![Variables of the "Energy Thing"](assets/modbus-energy-meter_img18.png)
 
 ### Network Credentials for a "Thing" in the Arduino Cloud IoT
 
@@ -185,20 +185,20 @@ Created by Alberto Perro (Officine Innesto)
 Modified by José Bagur
 */
 
-float readCurrent() {        
+float readCurrent() {
   float ampere = 0.;
-  // Send reading request over RS485      
+  // Send reading request over RS485
     if (!ModbusRTUClient.requestFrom(0x01, HOLDING_REGISTERS, 0x0016, 2)) {
-      // Error handling   
-      Serial.print("- Failed to read the current! ");    
-      Serial.println(ModbusRTUClient.lastError());         
-    } else {        
+      // Error handling
+      Serial.print("- Failed to read the current! ");
+      Serial.println(ModbusRTUClient.lastError());
+    } else {
       // Response handler 
       uint16_t word1 = ModbusRTUClient.read();  // Read word1 from buffer
       uint16_t word2 = ModbusRTUClient.read();  // Read word2 from buffer
       int32_t milliamp = word1 << 16 | word2;   // Join word1 and word2 to retrieve current value in milliampere
       ampere = milliamp/1000.0;                 // Convert current to ampere
-    }        
+    }
 return ampere;
 }
 ```
@@ -240,7 +240,7 @@ void setup() {
 
   // Connect to Arduino Cloud IoT
   ArduinoCloud.begin(ArduinoIoTPreferredConnection);
-  
+
   /*
      The following function allows you to obtain more information
      related to the state of network and Cloud IoT connection and errors
@@ -250,7 +250,7 @@ void setup() {
  */
   setDebugMessageLevel(2);
   ArduinoCloud.printDebugInfo();
-  
+
   // Start Modbus RTU client
   if (!ModbusRTUClient.begin(9600)) {
     Serial.println("- Failed to start Modbus RTU Client!");
@@ -261,11 +261,11 @@ void setup() {
 void loop() {
   // Update "Energy Thing" variables connected to Arduino Cloud IoT
   ArduinoCloud.update();
-  
+
   // Update energy meter data and show it via the Serial Monitor
   if (millis() - lastMillis > rate) {
     lastMillis = millis();
-  
+
     voltage = readVoltage();
     delay(100);
     current = readCurrent();
@@ -275,11 +275,11 @@ void loop() {
     frequency = readFreq();
     delay(100);
     energy = readEnergy();
-  
+
     Serial.print("- " + String(voltage, 3) + "V " + String(current, 3) + "A " + String(power, 3) + "W ");
     Serial.println(String(frequency, 3) + "Hz " + String(power, 3) + "kWh");
     delay(100);
-  }   
+  }
 }
 
 /* Functions to read Finder energy meter holding registers
@@ -312,15 +312,15 @@ float readVoltage() {
 Function readCurrent()
 Description: read current value from the Finder energy meter holding registers
 */
-float readCurrent() {        
+float readCurrent() {
   float ampere = 0.;
-  // Send reading request over RS485      
+  // Send reading request over RS485
   if (!ModbusRTUClient.requestFrom(0x01, HOLDING_REGISTERS, 0x0016, 2)) {
-    // Error handling   
-    Serial.print("- Failed to read the current! ");    
-    Serial.println(ModbusRTUClient.lastError());         
-  } else {        
-    // Response handler 
+    // Error handling
+    Serial.print("- Failed to read the current! ");
+    Serial.println(ModbusRTUClient.lastError());
+  } else {
+    // Response handler
     uint16_t word1 = ModbusRTUClient.read();  // Read word1 from buffer
     uint16_t word2 = ModbusRTUClient.read();  // Read word2 from buffer
     int32_t milliamp = word1 << 16 | word2;   // Join word1 and word2 to retrieve current value in milliampere
@@ -338,7 +338,7 @@ double readPower() {
   double watt = 0.;
   // Send reading request over RS485
   if (!ModbusRTUClient.requestFrom(0x01, HOLDING_REGISTERS, 0x0025, 3)) {
-    // Error handling   
+    // Error handling
     Serial.print("- Failed to read power! ");
     Serial.println(ModbusRTUClient.lastError());
   } else {
@@ -371,7 +371,7 @@ float readFreq() {
   float freq = 0.;
   // Send reading request over RS485
   if (!ModbusRTUClient.requestFrom(0x01, HOLDING_REGISTERS, 0x0040, 2)) {
-    // Error handling   
+    // Error handling
     Serial.print("- Failed to read frequency! ");
     Serial.println(ModbusRTUClient.lastError());
   } else {
@@ -390,7 +390,7 @@ double readEnergy() {
   double kwh = 0.;
   // Send reading request over RS485
   if (!ModbusRTUClient.requestFrom(0x01, HOLDING_REGISTERS, 0x0109, 3)) {
-    // Error handling   
+    // Error handling
     Serial.print("- Failed to read energy! ");
     Serial.println(ModbusRTUClient.lastError());
   } else {

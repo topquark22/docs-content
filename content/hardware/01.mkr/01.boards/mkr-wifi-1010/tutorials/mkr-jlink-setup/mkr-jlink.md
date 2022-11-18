@@ -71,7 +71,7 @@ Now go to the folder where the sketch is located. Add a `.json` file in the same
 
 ```arduino
 {
-      "servertype": "jlink",     
+      "servertype": "jlink",
       "device": "ATSAMD21G18",
       "interface": "SWD",
       "serverpath": "C:/Program Files (x86)/SEGGER/JLink/JLinkGDBServer"

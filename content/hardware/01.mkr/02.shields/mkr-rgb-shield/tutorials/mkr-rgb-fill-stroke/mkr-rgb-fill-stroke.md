@@ -161,7 +161,7 @@ void loop() {
   delay(1000);
 
   // fill a green rectangle
-  MATRIX.beginDraw();  
+  MATRIX.beginDraw();
   MATRIX.clear();
   MATRIX.noStroke();
   MATRIX.fill(255, 0, 0);

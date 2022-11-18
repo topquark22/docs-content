@@ -24,9 +24,7 @@ This tutorial gives an overview on how to determine the duration of a rechargeab
 
 ### What You Will Learn
 
-
 - Learn how to calculate and determine the battery life of a rechargeable battery.
-  
 
 ## Hardware & Software Needed
 

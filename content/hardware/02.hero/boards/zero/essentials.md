@@ -16,7 +16,7 @@ The Servo library allows an Arduino board to control RC (hobby) servo motors.
 
   <EssentialElement title="ArduinoLowPower" type="library" link="https://www.arduino.cc/en/Reference/ArduinoLowPower">
     The ArduinoLowPower library allows you to use the low power features of the SAMD21 MCU to minimize power consumption and maximize battery duration.
-  </EssentialElement>  
+  </EssentialElement>
 
 </EssentialsColumn>
 

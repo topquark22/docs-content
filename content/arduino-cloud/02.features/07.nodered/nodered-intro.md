@@ -134,7 +134,7 @@ Follow the steps below to set up the Thing:
 - Go to the Arduino IoT Cloud -> Thing -> Create a Thing
 - Add your Device and your Network credentials
 - Add an integer Variable, with the name humidity, and set permissions to Read Only
-- Go to the **"Sketch"** tab and replace the code with the code below:  
+- Go to the **"Sketch"** tab and replace the code with the code below:
 
 ```arduino
 
@@ -154,13 +154,13 @@ Follow the steps below to set up the Thing:
 
     // Defined in thingProperties.h
     initProperties();
-    
+
     // Connect to Arduino IoT Cloud
     ArduinoCloud.begin(ArduinoIoTPreferredConnection);
-    
+
     setDebugMessageLevel(2);
     ArduinoCloud.printDebugInfo();
-    
+
     carrier.begin();
   }
 

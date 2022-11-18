@@ -190,7 +190,6 @@ void setup() {
 
 
 void loop() {
-  
   if (IMU.gyroscopeAvailable()) {
     IMU.readGyroscope(x, y, z);
   }
@@ -214,7 +213,6 @@ void loop() {
     Serial.println("Collision left");
     delay(500);
   }
-  
 }
 ```
 
@@ -224,7 +222,7 @@ In order to get a correct reading of the board data, before uploading the sketch
 
 ![Positioning of the board.](./assets/nano33BLE_02_illustration.png)
 
-Next, you can verify and upload the sketch to the board and open the Monitor from the menu on the left.  
+Next, you can verify and upload the sketch to the board and open the Monitor from the menu on the left.
 
 Now with the board parallel to the ground you can swiftly move it towards one direction: forward, backwards, right or left. According to the movement of your choice, the results will print every second to your monitor!
 

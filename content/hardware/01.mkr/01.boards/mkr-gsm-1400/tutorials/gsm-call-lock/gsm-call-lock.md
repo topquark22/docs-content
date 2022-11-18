@@ -80,7 +80,7 @@ We will now get to the programming part of this tutorial. The sketch we will cre
 - `vcs.getvoiceCallStatus()` - checks if there's a call, and returns: `IDLE_CALL` (no call) or `RECEIVINGCALL` (a call is incoming). 
 - `vcs.retrieveCallingNumber(caller, 20)` - retrieves the number of the caller and stores it in `caller` variable. 
 - `vcs.hangCall()` - used to hang up on calls.
-- `sms.beginSMS(number);` - creates an SMS for a specific number.  
+- `sms.beginSMS(number);` - creates an SMS for a specific number.
 - `sms.endSMS()` - sends the SMS.
 
 The sketch can be found in the snippet below. Upload the sketch to the board.
@@ -232,7 +232,7 @@ If the code is not working, there are some common issues we can troubleshoot:
 - We have tried to call the wrong number.
 - SIM card may not be activated.
 - The `safeNumber` contains the wrong number (this should be exactly the number that you are calling from).
-  
+
 ## Conclusion
 
 In this tutorial, we set up a **remote lock** that can only be unlocked when a call from a specific number occurs. The "lock" is unlocked if the `caller` number matches the `safeNumber` variable, and sends a reply to the caller to whether it was successful or not. 

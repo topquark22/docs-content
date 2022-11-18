@@ -94,7 +94,7 @@ We will now go through the steps required to setup one board as a publisher, and
 - `mqttClient.connect(broker, port)` - connects to broker (and port).
 - `mqttClient.poll()` - keeps the connection alive, used in the `loop()`. 
 - `mqttClient.beginMessage(topic)` - creates a new message to be published.
-- `mqttClient.print()` - prints the content of message between the ().  
+- `mqttClient.print()` - prints the content of message between the ().
 - `mqttClient.endMessage()` - publishes the message to the broker.
 - `mqttClient.subscribe(topic)` - subscribes to a topic. 
 - `mqttClient.available()` - checks if any messages are available from the topic.
@@ -121,7 +121,7 @@ Then, name the file "arduino_secrets.h".
 
 >**Note:** The char `topic[]`, `topic2[]` and `topic3[]`, created here may be used by someone else. If we change this, we will also need to change the name of the topic we subscribe to in the **subscriber sketch**.
 
-```cpp    
+```cpp
 #include <ArduinoMqttClient.h>
 #include <WiFi101.h>
 #include "arduino_secrets.h"

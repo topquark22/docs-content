@@ -30,7 +30,7 @@ This tutorial is a great starting point for any maker interested in creating the
 ## Hardware & Software Needed
 
 - Arduino IDE ([online](https://create.arduino.cc/) or [offline](https://www.arduino.cc/en/main/software)).
-- [ArduinoBLE](https://www.arduino.cc/en/Reference/ArduinoBLE) library installed.  
+- [ArduinoBLE](https://www.arduino.cc/en/Reference/ArduinoBLE) library installed.
 - Arduino MKR WiFi 1010 ([link to store](https://store.arduino.cc/mkr-wifi-1010)).
 - Micro USB cable
 - LED
@@ -160,21 +160,21 @@ If our device (smartphone) disconnects, we exit the `while` loop. Once it exits,
 
 ```cpp
 void loop() {
-  
+
   BLEDevice central = BLE.central(); // wait for a Bluetooth® Low Energy central
 
   if (central) {  // if a central is connected to the peripheral
     Serial.print("Connected to central: ");
-    
+
     Serial.println(central.address()); // print the central's BT address
-    
+
     digitalWrite(LED_BUILTIN, HIGH); // turn on the LED to indicate the connection
 
 
-    
+
     while (central.connected()) { // while the central is connected:
       long currentMillis = millis();
-      
+
       if (currentMillis - previousMillis >= 200) { 
         previousMillis = currentMillis;
 
@@ -193,7 +193,7 @@ void loop() {
 
       }
     }
-    
+
     digitalWrite(LED_BUILTIN, LOW); // when the central disconnects, turn off the LED
     Serial.print("Disconnected from central: ");
     Serial.println(central.address());
@@ -246,21 +246,21 @@ void setup() {
 }
 
 void loop() {
-  
+
   BLEDevice central = BLE.central(); // wait for a Bluetooth® Low Energy central
 
   if (central) {  // if a central is connected to the peripheral
     Serial.print("Connected to central: ");
-    
+
     Serial.println(central.address()); // print the central's BT address
-    
+
     digitalWrite(LED_BUILTIN, HIGH); // turn on the LED to indicate the connection
 
     // check the battery level every 200ms
     // while the central is connected:
     while (central.connected()) {
       long currentMillis = millis();
-      
+
       if (currentMillis - previousMillis >= 200) { // if 200ms have passed, we check the battery level
         previousMillis = currentMillis;
 
@@ -279,7 +279,7 @@ void loop() {
 
       }
     }
-    
+
     digitalWrite(LED_BUILTIN, LOW); // when the central disconnects, turn off the LED
     Serial.print("Disconnected from central: ");
     Serial.println(central.address());

@@ -75,7 +75,7 @@ Then, name the file "arduino_secrets.h".
 ![Renaming new tab in offline IDE.](assets/mkr_tutorial_11_img_05.png)
 
 Inside this file, we need to enter our pin number between the " ". 
-   
+
 ```cpp
 #define SECRET_PINNUMBER     "" //enter pin code between ""
 ```
@@ -91,8 +91,8 @@ Note that if you are using the Web Editor, the `arduino_secrets.h` tab will look
 - `gsmAccess.begin(pin)` - connects to the GSM network with the pin number as a parameter, e.g. 0123.
 - `sms.available()` - checks to see if there is a SMS messages on the SIM card to be read.
 - `sms.remoteNumber(number, 20)` - retrieves a sender's number. 
-- `equals()` - function that checks if a `string` is exactly the same as `string2`.  
-- `sms.beginSMS(number);` - creates an SMS for a specific number.  
+- `equals()` - function that checks if a `string` is exactly the same as `string2`.
+- `sms.beginSMS(number);` - creates an SMS for a specific number.
 - `sms.print(message);` - prints the content of the SMS.
 - `sms.endSMS()` - sends the SMS.
 - `sms.flush()` - deletes the message from the modem memory.
@@ -175,7 +175,7 @@ void loop() {
     if (message.equals("ON")) {
       digitalWrite(LED_BUILTIN, HIGH);
       Serial.println("LED: ON");
-      
+
       sms.beginSMS(senderNumber);
       sms.print("LED has been turned ON!");
       sms.endSMS();
@@ -186,7 +186,7 @@ void loop() {
     else if (message.equals("OFF")) {
       digitalWrite(LED_BUILTIN, LOW);
       Serial.println("LED: OFF");
-      
+
       sms.beginSMS(senderNumber);
       sms.print("LED has been turned OFF!");
       sms.endSMS();

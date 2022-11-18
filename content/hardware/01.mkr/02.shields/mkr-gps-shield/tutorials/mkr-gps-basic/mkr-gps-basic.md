@@ -49,7 +49,7 @@ There is, of course, much more behind the GPS technology. If we want to read mor
 
 ### Circuit
 
-The circuit in this tutorial is pretty simple, and the simplest assembly is to connect an I2C cable from a MKR board directly to the MKR GPS Shield. This cable comes with every GPS shield, and has an ESLOV connector at each  
+The circuit in this tutorial is pretty simple, and the simplest assembly is to connect an I2C cable from a MKR board directly to the MKR GPS Shield. This cable comes with every GPS shield, and has an ESLOV connector at each
 
 ![Simple circuit of board and GPS shield.](assets/MKRGPS_T1_IMG01.png)
 
@@ -126,7 +126,7 @@ void loop() {
 
 ## Testing It Out
 
-After we have uploaded the code to the board, we need to open the Serial Monitor to start the program. It is a good idea to have our setup close to a window. Once the data is available, it will start printing the values in the Serial Monitor.  
+After we have uploaded the code to the board, we need to open the Serial Monitor to start the program. It is a good idea to have our setup close to a window. Once the data is available, it will start printing the values in the Serial Monitor.
 
 ![GPS data printed in the Serial Monitor.](assets/MKRGPS_T1_IMG02.png)
 
