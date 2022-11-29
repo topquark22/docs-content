@@ -5,7 +5,7 @@ tags:
   - GPRS
   - Location tracking
 author: 'Karl Söderby'
-libraries: 
+libraries:
   - name: MKRGSM
     url: https://www.arduino.cc/reference/en/libraries/mkrgsm/
 hardware:
@@ -19,7 +19,7 @@ software:
 ---
 
 
-## Introduction 
+## Introduction
 
 In this tutorial, we will use the `GSMLocation` class that is part of the [MKRGSM](https://www.arduino.cc/en/Reference/MKRGSM) library. Through `GSMLocation`, we can access data such as longitude, latitude, altitude and the accuracy of the location. This feature is valuable for tracking projects, where location data can be essential for your project to function.
 
@@ -34,18 +34,18 @@ The goals of this project are:
 ## Hardware & Software Needed
 
 - Arduino IDE ([online](https://create.arduino.cc/) or [offline](https://www.arduino.cc/en/main/software)).
-- [MKRGSM](https://www.arduino.cc/en/Reference/GSM) library installed. 
+- [MKRGSM](https://www.arduino.cc/en/Reference/GSM) library installed.
 - [Arduino MKR GSM 1400](https://store.arduino.cc/mkr-gsm-1400).
 - [Antenna](https://store.arduino.cc/antenna).
 - SIM card from an operator in your country.
 
 ## Using GPRS to Track Location
 
-GPRS, short for General Packet Radio Service, is a platform for mobile communication, which is used to transfer data to and from mobile devices. In comparison to using a Global Positioning System (GPS), GPRS is not quite as accurate. While GPS can pinpoint your exact location with incredible accuracy, GPRS can only give an estimate. It is because the location data is only provided based on cellular networks, while GPS uses several satellites in orbit. 
+GPRS, short for General Packet Radio Service, is a platform for mobile communication, which is used to transfer data to and from mobile devices. In comparison to using a Global Positioning System (GPS), GPRS is not quite as accurate. While GPS can pinpoint your exact location with incredible accuracy, GPRS can only give an estimate. It is because the location data is only provided based on cellular networks, while GPS uses several satellites in orbit.
 
 However, as GPRS is also connected to the Internet, the location can be viewed as an additional feature that can be used for projects that does not require high accuracy. When running the code sample in this tutorial, we started of with an accuracy of **868km** (not very helpful), but after a few minutes, it was able to get within **200 meters** (a bit more helpful).
 
-Using GPRS as a location tracking of course does not guarantee 100% accuracy, but as an additional feature, it does the job quite well. 
+Using GPRS as a location tracking of course does not guarantee 100% accuracy, but as an additional feature, it does the job quite well.
 
 ## Circuit
 
@@ -59,7 +59,7 @@ We will now get to the programming part of this tutorial, in which we will need 
 - Connect to the GPRS network.
 - Print location data in the Serial Monitor.
 
-**1.** First, let's make sure we have the drivers installed. If we are using the Web Editor, we do not need to install anything. If we are using an offline editor, we need to install it manually. This can be done by navigating to **Tools > Board > Board Manager...**. Here we need to look for the **Arduino SAMD boards (32-bits ARM Cortex M0+)** and install it. 
+**1.** First, let's make sure we have the drivers installed. If we are using the Web Editor, we do not need to install anything. If we are using an offline editor, we need to install it manually. This can be done by navigating to **Tools > Board > Board Manager...**. Here we need to look for the **Arduino SAMD boards (32-bits ARM Cortex M0+)** and install it.
 
 **2.** Now, we need to install the libraries needed. If we are using the Web Editor, there is no need to install anything. If we are using an offline editor, simply go to **Tools > Manage libraries..**, and search for **MKRGSM** and install it.
 
@@ -165,6 +165,6 @@ If the code is not working, there are some common issues we can troubleshoot:
 
 ## Conclusion
 
-In this tutorial we have used the `GSMlocation` class to retrieve a series of location data that can be used to estimate the whereabouts of the MKR GSM 1400 board. While GPRS may not be the most accurate form of location tracking, the major benefit is its capability of connecting directly to the Internet. This means that we can see where our device approximately is, from anywhere in the world, using only the MKR GSM 1400 board + antenna alone. 
+In this tutorial we have used the `GSMlocation` class to retrieve a series of location data that can be used to estimate the whereabouts of the MKR GSM 1400 board. While GPRS may not be the most accurate form of location tracking, the major benefit is its capability of connecting directly to the Internet. This means that we can see where our device approximately is, from anywhere in the world, using only the MKR GSM 1400 board + antenna alone.
 
 For more accurate location tracking, you can check out the [MKR GPS basics tutorial](/tutorials/mkr-gps-shield/mkr-gps-basic), which uses the [MKR GPS Shield](https://store.arduino.cc/arduino-mkr-gps-shield) to track location in a very accurate fashion. This shield can be used directly with the MKR GSM 1400.

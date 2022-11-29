@@ -8,7 +8,7 @@ tags:
   - CAT-M1
   - Configuration
 author: 'Benjamin Dannegård'
-libraries: 
+libraries:
   - name: MKRNB
     url: https://www.arduino.cc/reference/en/libraries/mkrnb/
 hardware:
@@ -21,13 +21,13 @@ software:
   - web-editor
 ---
 
-## Introduction 
+## Introduction
 
 In this tutorial, we will learn how to set the preferred Narrowband Radio Access Technology (RAT) for the MKR NB 1500 board.
 
-Before we can start using our MKR NB 1500 board with a SIM card, we need to set the preferred RAT. You can choose among LTE CAT-M1, NB-IoT or a combination of both. The chosen configuration will be saved in the modem's internal memory and will be preserved through MKR NB 1500 sketch uploads. 
+Before we can start using our MKR NB 1500 board with a SIM card, we need to set the preferred RAT. You can choose among LTE CAT-M1, NB-IoT or a combination of both. The chosen configuration will be saved in the modem's internal memory and will be preserved through MKR NB 1500 sketch uploads.
 
-If you are unsure about what setting is best for your location, please refer to this [mobile IoT deployment map](https://www.gsma.com/iot/deployment-map/). Here we can for example see that most parts of Western Europe, North America and Australia can use both LTE-M and NB-IoT, which means we have multiple options to choose from. Most parts of Asia however, can only use the NB-IoT access technology, while Africa in general does not have much coverage. 
+If you are unsure about what setting is best for your location, please refer to this [mobile IoT deployment map](https://www.gsma.com/iot/deployment-map/). Here we can for example see that most parts of Western Europe, North America and Australia can use both LTE-M and NB-IoT, which means we have multiple options to choose from. Most parts of Asia however, can only use the NB-IoT access technology, while Africa in general does not have much coverage.
 
 ## Goals
 
@@ -69,11 +69,11 @@ Every time we decide to change the RAT, we can run this sketch again.
 
 We will now get to the programming part of this tutorial. It focuses on two main parts: choosing what RAT the board will use, and saving it to the modem's internal memory.
 
-**1.** First, let's make sure we have the drivers installed. If we are using the Web Editor, we do not need to install anything. If we are using an offline editor, we need to install it manually. This can be done by navigating to **Tools > Board > Board Manager...**. Here we need to look for the **Arduino SAMD boards (32-bits ARM Cortex M0+)** and install it. 
+**1.** First, let's make sure we have the drivers installed. If we are using the Web Editor, we do not need to install anything. If we are using an offline editor, we need to install it manually. This can be done by navigating to **Tools > Board > Board Manager...**. Here we need to look for the **Arduino SAMD boards (32-bits ARM Cortex M0+)** and install it.
 
 **2.** Now, we need to install the libraries needed. If we are using the Web Editor, there is no need to install anything. If we are using an offline editor, simply go to **Tools > Manage libraries..**, and search for **MKRNB** and install it.
 
-**3.** With the drivers and library installed, we can now move on to create the sketch. This sketch is available as an example in the **MKRNB** library, and can be accessed directly through the editor by navigating to **File > Examples > MKRNB > Tools > ChangeRadioAccessTechnology**. 
+**3.** With the drivers and library installed, we can now move on to create the sketch. This sketch is available as an example in the **MKRNB** library, and can be accessed directly through the editor by navigating to **File > Examples > MKRNB > Tools > ChangeRadioAccessTechnology**.
 
 The full code is also available further down this tutorial. But we will now also go through it step by step to understand the sketch a bit better.
 
@@ -270,7 +270,7 @@ bool apply()
 
 ![Choosing the RAT through the Serial Monitor.](assets/MKRNB_T5_IMG02.png)
 
-After uploading the code, open the Serial Monitor, and make sure that it is open with the 115200 baud option selected. If this is correctly set up, you should see the options being printed in the Serial Monitor. 
+After uploading the code, open the Serial Monitor, and make sure that it is open with the 115200 baud option selected. If this is correctly set up, you should see the options being printed in the Serial Monitor.
 
 Now it is as simple as writing the number corresponding with your desired option. Writing the number and entering it into the serial monitor, will apply the setting to the board. It automatically saves it in the internal memory so that you don't have to run this code more than once, or include it in sketches that you will later upload.
 

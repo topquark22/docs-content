@@ -25,7 +25,7 @@ We are going to control and monitor all data from the device using the popular b
 
 ### Install the App
 
-After you create account / log in to the app, you'll be ask to input the hardware you are using. 
+After you create account / log in to the app, you'll be ask to input the hardware you are using.
 
 ![Select your hardware.](assets/immagine_ELLHIf1Paf.png)
 
@@ -43,22 +43,22 @@ In the Arduino IDE, open the Library Manager, and look for the Blynk library.
 
 Then open `File>Examples>Blynk>Boards_wifi>Arduino_MKR 1010`
 
-Input your data (ssid, password, and token), then upload the code to the board. 
+Input your data (ssid, password, and token), then upload the code to the board.
 
 ![I'm assuming you have connected the board to the Environmental Shield and to the Proto Carrier. ](assets/immagine_0tcA5YFF1g.png)
 
 
-In order to check if the connection between the Blynk servers and your board is actually working, you have to press the play button in the top right corner and check if the little red dot disappeared from the lower right corner of the menu, as well as the notification area empty. 
+In order to check if the connection between the Blynk servers and your board is actually working, you have to press the play button in the top right corner and check if the little red dot disappeared from the lower right corner of the menu, as well as the notification area empty.
 
 ![Press the playbutton in the top right corner.](assets/immagine_bPi0FOY5XG.png)
 
-I'd like to test if the connection is really working by creating two pushbutton to control relay on D1 and D2. 
+I'd like to test if the connection is really working by creating two pushbutton to control relay on D1 and D2.
 
 ![Test the connection by creating two pushbuttons.](assets/foto1_FpviEl3Oym.png)
 
 ![Select pin.](assets/foto2_wqLQ7CQyjW.png)
 
-If everything is working, by pressing I can hear the Relays ticking on the board. 
+If everything is working, by pressing I can hear the Relays ticking on the board.
 
 ### Let's Add the Extra Data the Environmental Shield Is Providing
 
@@ -101,7 +101,7 @@ In the `setup()`, we simply remind the board to update Blynk on a certain interv
  timer.setInterval(1000L, sendSensor);
 ```
 
-Last but not least, we need to update our `loop() function `using timer. 
+Last but not least, we need to update our `loop() function `using timer.
 
 ```arduino
 void loop()
@@ -117,7 +117,7 @@ void loop()
 
 ## What If You Want to Automate a Process?
 
-Blynk is really handy if you want to monitor data. If you want to be notified or create an action based on the behavior of the data, you'll have to create this heuristic on Blynk Cloud. 
+Blynk is really handy if you want to monitor data. If you want to be notified or create an action based on the behavior of the data, you'll have to create this heuristic on Blynk Cloud.
 
 For example, if I want the relay to close when the light is growing over a certain threshold, I'll have to create an event.
 

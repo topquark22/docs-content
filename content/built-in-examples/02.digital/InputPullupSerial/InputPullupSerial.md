@@ -3,7 +3,7 @@ title: 'InputPullupSerial'
 compatible-products: [all-boards]
 difficulty: beginner
 description: 'Demonstrates the use of INPUT_PULLUP with pinMode()'
-tags: 
+tags:
   - Digital
   - Input
 ---

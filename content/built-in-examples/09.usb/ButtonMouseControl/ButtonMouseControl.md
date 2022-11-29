@@ -3,9 +3,9 @@ title: 'Button Mouse Control'
 compatible-products: [due, micro, leonardo]
 difficulty: beginner
 description: 'Control cursor movement with 5 pushbuttons.'
-tags: 
+tags:
   - USB
-  - Mouse 
+  - Mouse
   - Pushbutton
 ---
 
@@ -38,7 +38,7 @@ Connect your board to your computer with a micro-USB cable. The buttons are conn
 
 ![](assets/circuit.png)
 
-### Schematic 
+### Schematic
 
 ![](assets/schematic.png)
 

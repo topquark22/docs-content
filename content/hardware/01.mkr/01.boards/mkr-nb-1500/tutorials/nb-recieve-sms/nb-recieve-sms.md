@@ -8,7 +8,7 @@ tags:
   - CAT-M1
   - SMS
 author: 'Benjamin Dannegård'
-libraries: 
+libraries:
   - name: MKRNB
     url: https://www.arduino.cc/reference/en/libraries/mkrnb/
 hardware:
@@ -21,7 +21,7 @@ software:
   - web-editor
 ---
 
-## Introduction 
+## Introduction
 
 This tutorial is a continuation of the [Send an SMS with MKR NB 1500](/tutorials/mkr-nb-1500/nb-send-sms) tutorial, where you can read more about how the available networks for the NB 1500 work. In the previous tutorial we set up the MKR NB 1500 to send a text message to a phone, and in this tutorial, we will see how we can also receive text messages!
 
@@ -35,7 +35,7 @@ The goals of this project are:
 ## Hardware & Software Needed
 
 - Arduino IDE ([online](https://create.arduino.cc/) or [offline](https://www.arduino.cc/en/main/software)).
-- [MKRNB](https://www.arduino.cc/en/Reference/MKRNB) library installed. 
+- [MKRNB](https://www.arduino.cc/en/Reference/MKRNB) library installed.
 - Arduino MKR NB 1500 ([link to store](https://store.arduino.cc/arduino-mkr-nb-1500-1413)).
 - Antenna ([link to store](https://store.arduino.cc/antenna))
 - SIM card from an operator in your country.
@@ -56,13 +56,13 @@ The circuit for this tutorial is easy: simply attach the dipole antenna to the b
 
 ## Creating the Program
 
-We will now get to the programming part of this tutorial. 
+We will now get to the programming part of this tutorial.
 
-**1.** First, let's make sure we have the drivers installed. If we are using the Web Editor, we do not need to install anything. If we are using an offline editor, we need to install it manually. This can be done by navigating to **Tools > Board > Board Manager...**. Here we need to look for the **Arduino SAMD boards (32-bits ARM Cortex M0+)** and install it. 
+**1.** First, let's make sure we have the drivers installed. If we are using the Web Editor, we do not need to install anything. If we are using an offline editor, we need to install it manually. This can be done by navigating to **Tools > Board > Board Manager...**. Here we need to look for the **Arduino SAMD boards (32-bits ARM Cortex M0+)** and install it.
 
 **2.** Now, we need to install the libraries needed. If we are using the Web Editor, there is no need to install anything. If we are using an offline editor, simply go to **Tools > Manage libraries..**, and search for **MKRNB** and install it.
 
-**3.** We can now go to **File > Examples > MKRNB > ReceiveSMS** in the editor. This will open a new window, which has a sketch tab, but also a header file, called `arduino_secrets.h`. Inside this file, we need to enter our pin number between the "". 
+**3.** We can now go to **File > Examples > MKRNB > ReceiveSMS** in the editor. This will open a new window, which has a sketch tab, but also a header file, called `arduino_secrets.h`. Inside this file, we need to enter our pin number between the "".
 
 ```cpp
 #define SECRET_PINNUMBER     "" //enter pin code between ""
@@ -87,7 +87,7 @@ The sketch can also be found in the snippet below. Select the right board and po
 // include the NB library
 #include <MKRNB.h>
 
-#include "arduino_secrets.h" 
+#include "arduino_secrets.h"
 // Please enter your sensitive data in the Secret tab or arduino_secrets.h
 // PIN Number
 const char PINNUMBER[] = SECRET_PINNUMBER;
@@ -168,9 +168,9 @@ After we open the Serial Monitor, the board will attempt to connect to the selec
 
 ![Waiting for messages.](assets/MKRNB_T2_IMG02.png)
 
-This means that we are ready to receive text messages. Now, we can open our phone, and send a text message to the number attached to your SIM card. 
+This means that we are ready to receive text messages. Now, we can open our phone, and send a text message to the number attached to your SIM card.
 
-We can send something simple, such as: 
+We can send something simple, such as:
 
 ```
 Hi there NB 1500, can you read?
@@ -187,7 +187,7 @@ If the code is not working, there are some common issues we can troubleshoot:
 - Wrong pin number.
 - SIM card lacking a data plan.
 - Wrong network technology was selected when running the RAT example
-- Antenna not attached properly. 
+- Antenna not attached properly.
 - We have sent the message to the wrong number.
 
 ## Conclusion

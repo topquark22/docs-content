@@ -99,7 +99,7 @@ void loop()
 
   delay(1000);
 }
- 
+
 ```
 
 ---
@@ -135,7 +135,7 @@ void loop()
 
   delay(1000);
 }
- 
+
 ```
 
 ---
@@ -174,7 +174,7 @@ void loop()
 
   delay(1000);
 }
- 
+
 ```
 
 ---
@@ -210,7 +210,7 @@ void loop()
 
   delay(1000);
 }
- 
+
 ```
 
 ---
@@ -357,7 +357,7 @@ button: the associated button that you wanto read. Valid argument are:
 - SWITCH_2 or SWITCH_LEFT
 - SWITCH_3 or SWITCH_UP
 - SWITCH_4 or SWITCH_RIGHT
- 
+
 - JOYSTICK_DOWN = JOYSTICK_BASE
 - JOYSTICK_LEFT = JOYSTICK_BASE+1
 - JOYSTICK_UP = JOYSTICK_BASE+2

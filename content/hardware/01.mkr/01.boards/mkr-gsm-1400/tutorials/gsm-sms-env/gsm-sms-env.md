@@ -8,7 +8,7 @@ tags:
  - SMS
  - Environmental data
 author: 'Karl Söderby'
-libraries: 
+libraries:
   - name: MKRGSM
     url: https://www.arduino.cc/reference/en/libraries/mkrgsm/
   - name: Arduino_MKRENV
@@ -25,7 +25,7 @@ software:
 ---
 
 
-## Introduction 
+## Introduction
 
 In this tutorial, we will focus on retrieving environmental data over the GSM network, using the [MKR GSM 1400](https://store.arduino.cc/mkr-gsm-1400) and [MKR ENV shield](https://store.arduino.cc/arduino-mkr-env-shield). We will set it up so that when a phone sends an SMS to the board, it will read the sensors on the shield, and reply to the sender with a list of the sensor data inside an SMS.
 
@@ -48,16 +48,16 @@ The goals of this project are:
 
 ## Requesting Data over GSM
 
-Practically speaking, the setup we will create is very basic: 
+Practically speaking, the setup we will create is very basic:
 
-- An SMS containing a specific keyword, which we name `data`, is sent to the board. 
+- An SMS containing a specific keyword, which we name `data`, is sent to the board.
 - The board checks if the content of the SMS is equal to `data`.
 - If it is a match, the board reads the sensors on the MKR ENV shield, and replies with a text message to the sender.
 - The text message contains sensor data a description of what type of data it is.
 
 ![Requesting data from the board.](assets/MKRGSM_T10_IMG02.png)
 
-The SMS request method is quite practical, easy to setup and as it operates within the GSM, there is almost always coverage, even in more rural parts. 
+The SMS request method is quite practical, easy to setup and as it operates within the GSM, there is almost always coverage, even in more rural parts.
 
 ## Circuit
 
@@ -65,9 +65,9 @@ The SMS request method is quite practical, easy to setup and as it operates with
 
 ## Programming the Board
 
-We will now get to the programming part of this tutorial. 
+We will now get to the programming part of this tutorial.
 
-**1.** First, let's make sure we have the drivers installed. If we are using the Web Editor, we do not need to install anything. If we are using an offline editor, we need to install it manually. This can be done by navigating to **Tools > Board > Board Manager...**. Here we need to look for the **Arduino SAMD boards (32-bits ARM Cortex M0+)** and install it. 
+**1.** First, let's make sure we have the drivers installed. If we are using the Web Editor, we do not need to install anything. If we are using an offline editor, we need to install it manually. This can be done by navigating to **Tools > Board > Board Manager...**. Here we need to look for the **Arduino SAMD boards (32-bits ARM Cortex M0+)** and install it.
 
 **2.** Now, we need to install the libraries needed. If we are using the Web Editor, there is no need to install anything. If we are using an offline editor, simply go to **Tools > Manage libraries..**, and search for **MKRGSM** and **Arduino_MKRENV** and install them.
 
@@ -77,7 +77,7 @@ We will now get to the programming part of this tutorial.
 - `GSM_SMS sms` - base class for all GSM functions for SMS.
 - `gsmAccess.begin(pin)` - connects to the GSM network with the pin number as a parameter, e.g. 0123.
 - `sms.available()`
-- `sms.remoteNumber(number, 20)` - retrieves a sender's number. 
+- `sms.remoteNumber(number, 20)` - retrieves a sender's number.
 - `equals()` - function that checks if a `string` is exactly the same as `string2`.
 - `sms.beginSMS(number);` - creates an SMS for a specific number.
 - `sms.print(message);` - prints the content of the SMS.
@@ -244,7 +244,7 @@ After we have successfully uploaded the code to the board, open the Serial Monit
 
 Now we need to create a new SMS that **only** contains the phrase `data`. This needs to be case sensitive, and can't include any spaces etc, because we are using the `equal()` function. This function compares one string to the other, and if it is **an exact match**, it will trigger the rest of the code.
 
-If the incoming message is exactly `data`, the program will first read the sensors and then construct a reply, containing all sensor data. It is then sent to the number which requested it (the sender). 
+If the incoming message is exactly `data`, the program will first read the sensors and then construct a reply, containing all sensor data. It is then sent to the number which requested it (the sender).
 
 ![Request received, environmental data sent back to requester.](assets/MKRGSM_T10_IMG04.png)
 
@@ -263,7 +263,7 @@ If the code is not working, there are some common issues we can troubleshoot:
 
 ## Conclusion
 
-In this tutorial, we have created a very basic setup for requesting environmental data, using the MKR GSM 1400 board and the MKR ENV shield. The request, using the GSM_SMS class, simply allows anyone on a phone to send the phrase `data` to a board, and receives a list of environmental data freshly recorded. This setup can be very useful for projects that are used in rural parts, where e.g. Wi-Fi is not available. 
+In this tutorial, we have created a very basic setup for requesting environmental data, using the MKR GSM 1400 board and the MKR ENV shield. The request, using the GSM_SMS class, simply allows anyone on a phone to send the phrase `data` to a board, and receives a list of environmental data freshly recorded. This setup can be very useful for projects that are used in rural parts, where e.g. Wi-Fi is not available.
 
 Feel free to explore the [MKRGSM](https://www.arduino.cc/en/Reference/GSM) library further, and try out some of the many cool functions in this library.
 

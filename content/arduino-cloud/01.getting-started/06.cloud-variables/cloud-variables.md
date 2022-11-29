@@ -10,9 +10,9 @@ difficulty: beginner
 
 An essential component of the [Arduino Cloud](https://create.arduino.cc/iot/) is a **cloud variable**.
 
-A cloud variable is synced between your Arduino board and the Arduino IoT Cloud. If a variable is updated on your board (like reading a sensor), the Arduino Cloud will also receive this value. Similarly, if you update a variable from the cloud, it also updates on your board. 
+A cloud variable is synced between your Arduino board and the Arduino IoT Cloud. If a variable is updated on your board (like reading a sensor), the Arduino Cloud will also receive this value. Similarly, if you update a variable from the cloud, it also updates on your board.
 
-As long as your board maintains connection to the Arduino IoT Cloud, variables can be updated. 
+As long as your board maintains connection to the Arduino IoT Cloud, variables can be updated.
 
 **In this article, we will cover:**
 - How to sync variables between your board and the Arduino IoT Cloud.
@@ -37,18 +37,18 @@ Inside a variable configuration, we have several options:
   - [**Specialized:**](#specialized-types) e.g. `CloudAcceleration`, `CloudTemperature`, `CloudFrequency`.
   - [**Complex:**](#complex-types) e.g. `CloudColor`, `CloudTelevision`.
 - **Declaration:** the declaration of your variable. This is what you will use in a sketch.
-- **Variable Permission:** 
+- **Variable Permission:**
   - **Read & Write:** variable can be updated from board and cloud.
   - **Read Only:** variable can only be updated from the board.
 - **Variable Update Policy:**
   - **On Change:** variable synchronizes whenever value changes (threshold is `0` by default).
-  - **Periodically:** variable synchronizes every `x` seconds. 
+  - **Periodically:** variable synchronizes every `x` seconds.
 
 ### Automatic Sketch Generation
 
 Whenever you add, change or remove a variable, a file called `thingProperties.h` is updated automatically. This is a configuration file that should always be included in your main sketch (it is generated automatically).
 
-Since it is defined in `thingProperties.h`, you do not need to declare it in your `.ino` file. 
+Since it is defined in `thingProperties.h`, you do not need to declare it in your `.ino` file.
 
 Let's say we create an integer variable called `sensor_value`. To use this in a sketch, we simply use:
 
@@ -81,7 +81,7 @@ void onButtonSwitch(){
 
 ## How is Data Synchronized?
 
-Data between a board and the cloud synchronizes whenever the `ArduinoCloud.update()` function is executed. This is automatically included in your sketch, inside the `void loop()`. 
+Data between a board and the cloud synchronizes whenever the `ArduinoCloud.update()` function is executed. This is automatically included in your sketch, inside the `void loop()`.
 
 It is a good practice to **not** use the `delay()` function in a cloud sketch. Please refer to the [millis()](https://www.arduino.cc/reference/en/language/functions/time/millis/) function that can be used to create non-blocking delays.
 
@@ -119,7 +119,7 @@ This is done in the configuration of a variable, in the **Sync With Other Things
 
 ## List of Variables
 
-Cloud variables are divided into three categories: **basic, specialized** and **complex** types. 
+Cloud variables are divided into three categories: **basic, specialized** and **complex** types.
 
 ### Basic Types
 
@@ -254,7 +254,7 @@ In this example, we are using the following cloud variables:
 
 - `buttonSwitch` - boolean.
 - `sensorVal` - int.
-- `messageString` - string. 
+- `messageString` - string.
 
 ```arduino
 #include "thingProperties.h"
@@ -263,7 +263,7 @@ void setup() {
   // Initialize serial and wait for port to open:
   Serial.begin(9600);
   // This delay gives the chance to wait for a Serial mood without blocking if none is found
-  delay(1500); 
+  delay(1500);
 
   // Defined in thingProperties.h
   initProperties();
@@ -295,7 +295,7 @@ void loop() {
 ColoredLight is a complex variable declared automatically in the `thingProperties.h` file as `CloudColoredLight variableName;`. The example below shows how the ColoredLight variable (declared with the variableName `cLight`) can be used and modified in the sketch. Note that the `onCLightChange()` function is automatically added and is triggered whenever the value of the Light variable is updated in the Cloud.
 
 ```arduino
-#include <ArduinoGraphics.h> 
+#include <ArduinoGraphics.h>
 #include <Arduino_MKRRGB.h> // Arduino_MKRRGB depends on ArduinoGraphics
 
 #include "thingProperties.h"
@@ -304,7 +304,7 @@ void setup() {
   // Initialize serial and wait for port to open:
   Serial.begin(9600);
   // This delay gives the chance to wait for a Serial mood without blocking if none is found
-  delay(1500); 
+  delay(1500);
 
   // Defined in thingProperties.h
   initProperties();
@@ -347,7 +347,7 @@ void onCLightChange() {
 
 ### Television
 
-CloudTelevision is an automation variable declared automatically in the `thingProperties.h` file as `CloudTelevision variableName;`. The example below shows how the CloudTelevision variable (declared with the variableName `tv`) can be used and modified in the sketch. The example simulates a remote controller by using an IR receiver to read the signals sent from the a remote controller and save them in arrays of unsigned integers. An IR transmitter is then used to send IR signals using the Arduino IoT Cloud. To view the full documentation of the project, [you can check this page](https://create.arduino.cc/projecthub/313276/full-control-of-your-tv-using-alexa-and-arduino-iot-cloud-9e7c4d). 
+CloudTelevision is an automation variable declared automatically in the `thingProperties.h` file as `CloudTelevision variableName;`. The example below shows how the CloudTelevision variable (declared with the variableName `tv`) can be used and modified in the sketch. The example simulates a remote controller by using an IR receiver to read the signals sent from the a remote controller and save them in arrays of unsigned integers. An IR transmitter is then used to send IR signals using the Arduino IoT Cloud. To view the full documentation of the project, [you can check this page](https://create.arduino.cc/projecthub/313276/full-control-of-your-tv-using-alexa-and-arduino-iot-cloud-9e7c4d).
 
 Note that the `onTvChange()` function is automatically added and is triggered whenever the value of the tv variable is updated in the Cloud.
 
@@ -374,7 +374,7 @@ void setup() {
   // Initialize serial and wait for port to open:
   Serial.begin(9600);
   // This delay gives the chance to wait for a Serial Monitor without blocking if none is found
-  delay(1500); 
+  delay(1500);
 
   // Defined in thingProperties.h
   initProperties();
@@ -383,7 +383,7 @@ void setup() {
   ArduinoCloud.begin(ArduinoIoTPreferredConnection);
   setDebugMessageLevel(2);
   ArduinoCloud.printDebugInfo();
- 
+
   first = true;
   pinMode(LED_BUILTIN, OUTPUT);
 }
@@ -451,7 +451,7 @@ void onTvChange() {
     sendIR(mute);
     Serial.println("Mute changed:"+String(tv.getMute()));
   }
- 
+
 
   // Channel changed
   if (tv.getChannel() != prevChannel) {

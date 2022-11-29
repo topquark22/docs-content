@@ -11,7 +11,7 @@ Arduino language has grown far beyond expectations and gathered a huge community
 The original platform has born around a tiny 8 bit microcontroller while now Arduino is running on almost any microcontroller and its API have expanded rapidly and sometimes wildly.
 For the above reasons a few years ago Project Chainsaw was started, drawing a clear separation line between hardware related code and high level API that form the core of the Arduino language.
 More recently clever scripting allowed to base Arduino Core API on top of mbed OS, thus making it extremely easy to port Arduino Core on top of any mbed OS supported platform.
-The next goal is to expand Arduino Core API to provide a unified API around more functions such as file systems, string manipulation, time management, etc. 
+The next goal is to expand Arduino Core API to provide a unified API around more functions such as file systems, string manipulation, time management, etc.
 This effort aims to unify the calling conventions so that ideally every library that implements a platform specific variation of a functionality will expose the same base functions thus easing code portability and reusability.
 In order to avoid locking in functionality and allow contributors to expand on APIs the programming model is centered around base classes which provide only general use function implementations, leaving specifics to library implementation.
 

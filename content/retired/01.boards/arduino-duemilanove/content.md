@@ -31,15 +31,15 @@ The Arduino Duemilanove ("2009") is a microcontroller board based on the ATmega1
 
 ### Schematic & Reference Design
 
-EAGLE files: [arduino-duemilanove-reference-design.zip](//www.arduino.cc/en/uploads/Main/arduino-duemilanove-reference-design.zip) 
+EAGLE files: [arduino-duemilanove-reference-design.zip](//www.arduino.cc/en/uploads/Main/arduino-duemilanove-reference-design.zip)
 
-Schematic: [arduino-duemilanove-schematic.pdf](//www.arduino.cc/en/uploads/Main/arduino-duemilanove-schematic.pdf) 
+Schematic: [arduino-duemilanove-schematic.pdf](//www.arduino.cc/en/uploads/Main/arduino-duemilanove-schematic.pdf)
 
 ### Power
 
 The Arduino Duemilanove can be powered via the USB connection or with an external power supply. The power source is selected automatically.
 
-External (non-USB) power can come either from an AC-to-DC adapter (wall-wart) or battery. The adapter can be connected by plugging a 2.1mm center-positive plug into the board's power jack. Leads from a battery can be inserted in the Gnd and Vin pin headers of the POWER connector. 
+External (non-USB) power can come either from an AC-to-DC adapter (wall-wart) or battery. The adapter can be connected by plugging a 2.1mm center-positive plug into the board's power jack. Leads from a battery can be inserted in the Gnd and Vin pin headers of the POWER connector.
 
 The board can operate on an external supply of 6 to 20 volts. If supplied with less than 7V, however, the 5V pin may supply less than five volts and the board may be unstable. If using more than 12V, the voltage regulator may overheat and damage the board. The recommended range is 7 to 12 volts.
 
@@ -93,7 +93,7 @@ You can also bypass the bootloader and program the microcontroller through the I
 
 ### Automatic (Software) Reset
 
-Rather then requiring a physical press of the reset button before an upload, the Arduino Duemilanove is designed in a way that allows it to be reset by software running on a connected computer. One of the hardware flow control lines (DTR) of the FT232RL is connected to the reset line of the ATmega168 or ATmega328 via a 100 nanofarad capacitor. When this line is asserted (taken low), the reset line drops long enough to reset the chip. The Arduino software uses this capability to allow you to upload code by simply pressing the upload button in the Arduino environment. This means that the bootloader can have a shorter timeout, as the lowering of DTR can be well-coordinated with the start of the upload. 
+Rather then requiring a physical press of the reset button before an upload, the Arduino Duemilanove is designed in a way that allows it to be reset by software running on a connected computer. One of the hardware flow control lines (DTR) of the FT232RL is connected to the reset line of the ATmega168 or ATmega328 via a 100 nanofarad capacitor. When this line is asserted (taken low), the reset line drops long enough to reset the chip. The Arduino software uses this capability to allow you to upload code by simply pressing the upload button in the Arduino environment. This means that the bootloader can have a shorter timeout, as the lowering of DTR can be well-coordinated with the start of the upload.
 
 This setup has other implications. When the Duemilanove is connected to either a computer running Mac OS X or Linux, it resets each time a connection is made to it from software (via USB). For the following half-second or so, the bootloader is running on the Duemilanove. While it is programmed to ignore malformed data (i.e. anything besides an upload of new code), it will intercept the first few bytes of data sent to the board after a connection is opened. If a sketch running on the board receives one-time configuration or other data when it first starts, make sure that the software with which it communicates waits a second after opening the connection and before sending this data.
 
@@ -101,7 +101,7 @@ The Duemilanove contains a trace that can be cut to disable the auto-reset. The 
 
 ### USB Overcurrent Protection
 
-The Arduino Duemilanove has a resettable polyfuse that protects your computer's USB ports from shorts and overcurrent. Although most computers provide their own internal protection, the fuse provides an extra layer of protection. If more than 500 mA is applied to the USB port, the fuse will automatically break the connection until the short or overload is removed. 
+The Arduino Duemilanove has a resettable polyfuse that protects your computer's USB ports from shorts and overcurrent. Although most computers provide their own internal protection, the fuse provides an extra layer of protection. If more than 500 mA is applied to the USB port, the fuse will automatically break the connection until the short or overload is removed.
 
 ### Physical Characteristics
 

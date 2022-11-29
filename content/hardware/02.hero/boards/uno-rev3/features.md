@@ -8,7 +8,7 @@ Arduino UNO is a microcontroller board based on the **ATmega328P**. It has 14 di
 
 <Feature title="ATmega328P" image="core">
 
-The classic high-performance, low-power AVR® microcontroller. 
+The classic high-performance, low-power AVR® microcontroller.
 
 <FeatureLink title="Datasheet" url="https://content.arduino.cc/assets/Atmel-7810-Automotive-Microcontrollers-ATmega328P_Datasheet.pdf" download blank/>
 

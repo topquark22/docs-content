@@ -7,13 +7,13 @@ The Portenta Cat. M1/NB IoT GNSS Shield brings cellular communication and locali
 <FeatureList>
 <Feature title="Low power global community" image="world-map">
 
-NB-IoT and Cat-M1 are both 3GPP standardized technologies built on next generation network architecture for low power IoT connectivity. 
+NB-IoT and Cat-M1 are both 3GPP standardized technologies built on next generation network architecture for low power IoT connectivity.
 
 </Feature>
 
 <Feature title="Portenta Form Factor" image="mkr-form-factor">
 
-The Portenta Cat.M1/NB IoT GNSS Shield has been specifically designed to provide reliable connectivity to the Portenta family of boards for a wide range of telemetry applications. 
+The Portenta Cat.M1/NB IoT GNSS Shield has been specifically designed to provide reliable connectivity to the Portenta family of boards for a wide range of telemetry applications.
 
 </Feature>
 

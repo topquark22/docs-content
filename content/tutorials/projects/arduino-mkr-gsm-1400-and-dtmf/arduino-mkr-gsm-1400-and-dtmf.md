@@ -27,7 +27,7 @@ source: "https://create.arduino.cc/projecthub/Arduino_Genuino/arduino-mkr-gsm-14
 
 ### Introduction
 
-Like every phone, the GSM module on your Arduino MKR GSM 1400 can recognize DTMF tones. These are the tones that you can hear whenever you press a key on your phone's keyboard during a call. 
+Like every phone, the GSM module on your Arduino MKR GSM 1400 can recognize DTMF tones. These are the tones that you can hear whenever you press a key on your phone's keyboard during a call.
 
 ## How It Works
 
@@ -49,8 +49,8 @@ The setup to use this code is very simple. You just have to:
 * Load the code on the board using the Arduino Java or Web IDE
 * Open the serial monitor
 * Call the board and enjoy pressing buttons on your keyboard!
-  
-## Code 
+
+## Code
 <iframe src='https://create.arduino.cc/editor/Arduino_Genuino/8e87bd19-988e-4082-a2be-d0525519d369/preview?embed&snippet' style='height:510px;width:100%;margin:10px 0' frameborder='0'></iframe>
 
 ### Schematics

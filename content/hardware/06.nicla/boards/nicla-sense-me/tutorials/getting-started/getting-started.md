@@ -2,7 +2,7 @@
 title: 'Getting Started with Nicla Sense ME'
 description: 'Tutorial for getting started with the Nicla Sense ME, getting readings from the sensor on the board'
 difficulty: beginner
-tags: 
+tags:
   - Nicla Sense ME
   - Getting Started
   - Setup
@@ -19,7 +19,7 @@ software:
   - iot-cloud
 ---
 
-## Introduction 
+## Introduction
 
 This tutorial will show you how to get started with your Nicla Sense ME board and how it can be utilized by itself. It will showcase the board's IMU and other sensors to get readings which we can be easily displayed. We will go through a basic sketch for the Nicla Sense ME and see the potential of the board.
 
@@ -51,8 +51,8 @@ The **Arduino_BHY2** library contains these sensors:
 
 #### Sensor
 
-`value()` - Returns the data. For example, if you use the Temperature sensor, it will give you the Temperature reading.  
-`toString()` - Prints the value(s) in a String. You can use it to print all the data into the Serial Monitor.  
+`value()` - Returns the data. For example, if you use the Temperature sensor, it will give you the Temperature reading.
+`toString()` - Prints the value(s) in a String. You can use it to print all the data into the Serial Monitor.
 
 **Syntax example**
 ```arduino
@@ -75,14 +75,14 @@ The **Arduino_BHY2** library contains these sensors:
     Serial.println(temperatureValue);
   }
 ```
-  
+
 ***All of the following Sensor types also have the Sensor functions `value()` and `toString()`.***
 
 #### SensorXYZ
 
-`x()` - gives X-axis  
-`y()` - gives Y-axis  
-`z()` - gives Z-axis  
+`x()` - gives X-axis
+`y()` - gives Y-axis
+`z()` - gives Z-axis
 
 **Syntax example**
 ```arduino
@@ -114,17 +114,17 @@ The **Arduino_BHY2** library contains these sensors:
 
 #### SensorOrientation
 
-`heading()` - returns Z-axis rotation  
-`pitch()` - returns X-axis rotation  
-`roll()` - returns Y-axies rotation  
+`heading()` - returns Z-axis rotation
+`pitch()` - returns X-axis rotation
+`roll()` - returns Y-axies rotation
 
 **Syntax example**
 ```arduino
   #include "Arduino_BHY2.h"
 
   Sensor device_orientation(SENSOR_ID_DEVICE_ORI);
-  SensorOrientation orientation(SENSOR_ID_ORI);  
-  
+  SensorOrientation orientation(SENSOR_ID_ORI);
+
   void setup(){
     Serial.begin(115200);
     BHY2.begin();
@@ -133,7 +133,7 @@ The **Arduino_BHY2** library contains these sensors:
 
   void loop(){
     BHY2.update();
-    
+
     Serial.print("orientation pitch :");
     Serial.println(orientation.pitch());
     delay(500);
@@ -142,10 +142,10 @@ The **Arduino_BHY2** library contains these sensors:
 
 #### SensorQuaternion
 
-`x()` - gives X quaternion (0-1 signed float)  
-`y()` - gives Y quaternion (0-1 signed float)  
-`z()` - gives Z quaternion (0-1 signed float)  
-`w()` - gives W quaternion (0-1 signed float)  
+`x()` - gives X quaternion (0-1 signed float)
+`y()` - gives Y quaternion (0-1 signed float)
+`z()` - gives Z quaternion (0-1 signed float)
+`w()` - gives W quaternion (0-1 signed float)
 
 **Syntax example**
 ```arduino
@@ -161,7 +161,7 @@ The **Arduino_BHY2** library contains these sensors:
 
   void loop(){
     BHY2.update();
-    
+
     Serial.print("quaternion w :");
     Serial.println(orientation.w());
     delay(500);
@@ -237,7 +237,7 @@ In the setup part of the sketch you first use:
 
 ```arduino
   #include "Arduino_BHY2.h"
-  
+
   SensorXYZ accel(SENSOR_ID_ACC);
   SensorXYZ gyro(SENSOR_ID_GYRO);
   Sensor temp(SENSOR_ID_TEMP);

@@ -3,7 +3,7 @@ title: 'String Character Functions'
 compatible-products: [all-boards]
 difficulty: intermediate
 description: 'Get/set the value of a specific character in a string.'
-tags: 
+tags:
   - Strings
   - Serial monitor
   - Get character

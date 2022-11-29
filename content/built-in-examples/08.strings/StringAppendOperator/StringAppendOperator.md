@@ -3,7 +3,7 @@ title: 'String Appending Operators'
 compatible-products: [all-boards]
 difficulty: intermediate
 description: 'Use the += operator and the concat() method to append things to Strings.'
-tags: 
+tags:
   - Strings
   - Append
   - Operators

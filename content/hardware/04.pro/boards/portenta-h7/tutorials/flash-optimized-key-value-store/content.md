@@ -49,10 +49,10 @@ Begin by plugging in your Portenta board to the computer using a USB-C® cable a
 ### 2. Create the Structure of the Program
 Let's program the Portenta with a sketch. You will also define a few helper functions in a supporting header file.
 
-* Create a new sketch named `FlashKeyValue.ino` 
+* Create a new sketch named `FlashKeyValue.ino`
 * Create a new file named `FlashIAPLimits.h` to store the helper functions in a reusable file.
 
-**Note:** Finished sketch its inside the tutorials library wrapper at:  
+**Note:** Finished sketch its inside the tutorials library wrapper at:
 **Examples > Arduino_Pro_Tutorials > Creating a Flash-Optimized Key-Value Store > FlashKeyValueStore**
 
 ### 3. Populate the Helper Functions
@@ -64,7 +64,7 @@ Helper functions for calculating FlashIAP block device limits
 **/
 
 // Ensures that this file is only included once
-#pragma once 
+#pragma once
 
 #include <Arduino.h>
 #include <FlashIAP.h>
@@ -191,7 +191,7 @@ After that, initialize the TDBstore (our storage space), set the key for the sto
   SketchStats previousStats;
 ```
 
-Now that you have everything ready, let's retrieve the previous values from the store and update the store with the new values. 
+Now that you have everything ready, let's retrieve the previous values from the store and update the store with the new values.
 
 ```cpp
   // Get previous run stats from the key-value store
@@ -218,9 +218,9 @@ Now that you have everything ready, let's retrieve the previous values from the 
   }
 
   // Update the stats and save them to the store
-  SketchStats currentStats { millis(), rand(), ++runCount };  
+  SketchStats currentStats { millis(), rand(), ++runCount };
   result = setSketchStats(statsKey, currentStats);
-  
+
   if (result == MBED_SUCCESS) {
     Serial.println("Sketch Stats updated");
     Serial.println("Current Stats");
@@ -238,7 +238,7 @@ Now that you have everything ready, let's retrieve the previous values from the 
 }
 ```
 
-To finish the sketch, create `getSketchStats` and `setSketchStats` functions at the bottom of the sketch (after the `setup()` and `loop()`). 
+To finish the sketch, create `getSketchStats` and `setSketchStats` functions at the bottom of the sketch (after the `setup()` and `loop()`).
 
 The `getSketchStats` function tries to retrieve the stats values stored in the Flash using the key `key` and returns them via the `stats` pointer parameter. Our `SketchStats` data struct is very simple and has a fixed size. You can therefore deserialize the buffer with a simple `memcpy`.
 
@@ -271,7 +271,7 @@ int getSketchStats(const char* key, SketchStats* stats)
 // Store a SketchStats to the the k/v store
 int setSketchStats(const char* key, SketchStats stats)
 {
-  return store.set(key, reinterpret_cast<uint8_t*>(&stats), sizeof(SketchStats), 0);  
+  return store.set(key, reinterpret_cast<uint8_t*>(&stats), sizeof(SketchStats), 0);
 }
 ```
 

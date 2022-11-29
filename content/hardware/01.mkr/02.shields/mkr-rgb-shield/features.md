@@ -11,7 +11,7 @@ This shield mounts directly on top of any MKR board that can easily transform it
 
 <Feature title="Brightness" image="uv-sensor">
 
-The LEDs are very dense and bright, and with full RGB colors. 
+The LEDs are very dense and bright, and with full RGB colors.
 
 </Feature>
 

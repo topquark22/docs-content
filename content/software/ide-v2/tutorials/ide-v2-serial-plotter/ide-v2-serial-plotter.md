@@ -32,7 +32,7 @@ The goal with this tutorial is:
 
 ## Example Sketch
 
-To use the Serial Plotter, we will need to create a sketch and upload it to our board. This sketch needs to include at least one **numerical variable**, such as an `int` or `float`. 
+To use the Serial Plotter, we will need to create a sketch and upload it to our board. This sketch needs to include at least one **numerical variable**, such as an `int` or `float`.
 
 Below you will find two sketches, one using a potentiometer and `analogRead()` function, the other using the `random()` function. Both sketches have a variable named `static_variable` which has a permanent value of `500`, used as a reference value.
 
@@ -40,7 +40,7 @@ Below you will find two sketches, one using a potentiometer and `analogRead()` f
 
 ### Sketch (With Potentiometer)
 
-- `int potentiometer` - variable to store value from a potentiometer, connected to an analog pin (gives a value between 0-1023). 
+- `int potentiometer` - variable to store value from a potentiometer, connected to an analog pin (gives a value between 0-1023).
 - `int static_variable = 500` -  variable that has an unchanged value of 500.
 
 ```arduino
@@ -64,7 +64,7 @@ void loop() {
 
 ### Sketch (Without Potentiometer)
 
-- `int random_variable` - variable that stores a randomized value between 0-1000. 
+- `int random_variable` - variable that stores a randomized value between 0-1000.
 - `int static_variable = 500` -  variable that has an unchanged value of 500.
 
 ```arduino
@@ -101,7 +101,7 @@ If you choose the **potentiometer example sketch**, when turning the knob, you s
 
 ![The potentiometer example.](assets/potentiometer_plotter.gif)
 
-If you chose the **random example sketch**, when you open the plotter you will see very random spikes, as the values fluctuate rapidly. 
+If you chose the **random example sketch**, when you open the plotter you will see very random spikes, as the values fluctuate rapidly.
 
 ![The random example.](assets/random_plotter.gif)
 

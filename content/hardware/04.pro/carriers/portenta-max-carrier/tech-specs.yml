@@ -3,7 +3,7 @@ Board:
   SKU: ABX00043
 Audio:
   Mic: 3.5 mm
-  Line in: 3.5 mm   
+  Line in: 3.5 mm
   Headphone: 3.5 mm headphone output
   Speaker: "Speaker connector (Grove format)"
 Connectivity:
@@ -21,7 +21,7 @@ Power:
   Operating logic level: 3.3V/5V
   Battery Support: 3.7V 18650 Li-ion/LiPo
 Memory:
-  Removable media: 1x microSD 
+  Removable media: 1x microSD
 Dimensions:
   Weight: 85 gr
   Width: 101.6 mm

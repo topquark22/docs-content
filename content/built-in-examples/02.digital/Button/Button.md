@@ -3,7 +3,7 @@ title: 'How to Wire and Program a Button'
 compatible-products: [all-boards]
 difficulty: beginner
 description: 'Learn how to wire and program a pushbutton to control an LED.'
-tags: 
+tags:
   - Digital
   - Input
   - Pushbutton

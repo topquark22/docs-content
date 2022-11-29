@@ -3,7 +3,7 @@ title: 'Web Server AP Mode with Arduino Nano RP2040 Connect'
 difficulty: advanced
 compatible-products: [nano-rp2040-connect]
 description: 'Learn how to set up your board as an access point, allowing other clients to connect via browser, to control and monitor data.'
-tags: 
+tags:
   - Access point
   - Wi-Fi
   - IoT
@@ -19,7 +19,7 @@ software:
   - web-editor
 ---
 
-## Introduction 
+## Introduction
 
 The Nano RP2040 Connect features a Wi-Fi module and an RGB LED among many other things. In this tutorial we will take a look at how we turn our board into an access point, and control the built-in RGB through a browser connected to the access point.
 
@@ -47,11 +47,11 @@ The goals of this project are:
 
 ## Controlling over Wi-Fi
 
-There are multiple ways we can access our board over Wi-Fi. In this tutorial, we will turn our board into a web server, that will listen for incoming GET requests. 
+There are multiple ways we can access our board over Wi-Fi. In this tutorial, we will turn our board into a web server, that will listen for incoming GET requests.
 
 Simply explained, we will set up our board as an access point, and start hosting a web server on a specific IP address. The device will now show up in the list of available Wi-Fi networks on for example your smartphone or computer.
 
-If we connect to this access point, and enter the board's address in the browser of a computer/browser on the same network, we make a request to this server. The server responds with a set of HTML instructions, which can then be viewed in the browser.  
+If we connect to this access point, and enter the board's address in the browser of a computer/browser on the same network, we make a request to this server. The server responds with a set of HTML instructions, which can then be viewed in the browser.
 
 ### Controlling an Arduino Through the Browser
 
@@ -73,9 +73,9 @@ By using this method, we can set up many more buttons that can control different
 
 ## Programming the Board
 
-We will now get to the programming part of this tutorial. 
+We will now get to the programming part of this tutorial.
 
-1. First, let's make sure we have the drivers installed. If we are using the Web Editor, we do not need to install anything. If we are using an offline editor, we need to install it manually. This can be done by navigating to **Tools > Board > Board Manager...**. Here we need to look for the **Arduino Mbed OS Nano Boards** and install it.  
+1. First, let's make sure we have the drivers installed. If we are using the Web Editor, we do not need to install anything. If we are using an offline editor, we need to install it manually. This can be done by navigating to **Tools > Board > Board Manager...**. Here we need to look for the **Arduino Mbed OS Nano Boards** and install it.
 
 2. Now, we need to install the libraries needed. If we are using the Web Editor, there is no need to install anything. If we are using an offline editor, simply go to **Tools > Manage libraries..**, and search for **WiFiNINA** and install it.
 
@@ -93,9 +93,9 @@ We will now get to the programming part of this tutorial.
 - `client.print()` - print something to the client (e.g. html code).
 - `client.stop()` - closes the connection.
 
-The sketch can be found in the snippet below. Upload the sketch to the board. 
+The sketch can be found in the snippet below. Upload the sketch to the board.
 
-***Note: both `ssid` and `pass` needs to be a minimum of 8 characters long***  
+***Note: both `ssid` and `pass` needs to be a minimum of 8 characters long***
 
 ```arduino
 #include <SPI.h>
@@ -174,7 +174,7 @@ void loop() {
       Serial.println("Device disconnected from AP");
     }
   }
-  
+
   WiFiClient client = server.available();   // listen for incoming clients
 
    if (client) {                             // if you get a client,
@@ -231,19 +231,19 @@ void loop() {
           digitalWrite(LEDR, HIGH);
         }
         if (currentLine.endsWith("GET /RL")) {
-          digitalWrite(LEDR, LOW);              
+          digitalWrite(LEDR, LOW);
         }
         if (currentLine.endsWith("GET /GH")) {
-          digitalWrite(LEDG, HIGH);              
+          digitalWrite(LEDG, HIGH);
         }
         if (currentLine.endsWith("GET /GL")) {
-          digitalWrite(LEDG, LOW);           
+          digitalWrite(LEDG, LOW);
         }
         if (currentLine.endsWith("GET /BH")) {
-          digitalWrite(LEDB, HIGH);              
+          digitalWrite(LEDB, HIGH);
         }
         if (currentLine.endsWith("GET /BL")) {
-          digitalWrite(LEDB, LOW);             
+          digitalWrite(LEDB, LOW);
         }
       }
     }
@@ -286,7 +286,7 @@ Once we have connected, we need to copy the enter the address that was printed i
 
 ![Accessing the board from the browser.](assets/rp2040-ap-mode-img-05.png)
 
-We can now interact with the different buttons. The buttons available are used to control the built-in RGB LED on the Nano RP2040 Connect. There's six buttons in total, three to turn ON the different colors, and three to turn them off.  
+We can now interact with the different buttons. The buttons available are used to control the built-in RGB LED on the Nano RP2040 Connect. There's six buttons in total, three to turn ON the different colors, and three to turn them off.
 
 ### Troubleshoot
 
@@ -300,4 +300,4 @@ If the code is not working, there are some common issues we can troubleshoot:
 
 In this tutorial, we have turned our Nano RP2040 Connect into a web server, which different clients can connect to. We have then used the /GET method in order to change the RGB LED on the board, through a set of buttons accessible from the browser.
 
-This method can be quite useful for turning something ON or OFF remotely, and can be an ideal solution for building smart home applications. You can easily replace the control of the RGB LED with something else, such as controlling a motor, relays or other actuators. 
+This method can be quite useful for turning something ON or OFF remotely, and can be an ideal solution for building smart home applications. You can easily replace the control of the RGB LED with something else, such as controlling a motor, relays or other actuators.

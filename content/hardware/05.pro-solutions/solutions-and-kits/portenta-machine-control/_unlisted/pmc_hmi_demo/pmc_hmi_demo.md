@@ -1,6 +1,6 @@
 ---
 title: Connecting and Getting Started With HMI & PMC
-tags: 
+tags:
 - Getting Started
 - IDE
 - Setup
@@ -145,7 +145,7 @@ The digital inputs will change color from red to green when it detects that thos
 void readDigitalInput(int ch_PMC, String imageName, int ch){
   uint16_t reading;
   reading = digital_inputs.read(ch_PMC);
-  
+
   if (reading != prevReadDig[ch]){
     if (reading == true){
       hmi.setImageValue(imageName, "icons8_green_circle_48");
@@ -196,10 +196,10 @@ In this tutorial you learned how to connect the HMI and PMC so that they can com
 
 /**
  * Stone HMI demo for Arduino Portenta Machine Control
- * 
+ *
  * Description:
  *  The sketch allows to Set and read Analog/Digital Inputs/Outputs from the HMI
- * 
+ *
  * Prerequisites:
  *  Load the stone dashboard in the HMI (link: )
 */
@@ -343,7 +343,7 @@ void readDigitalInput(int ch){
 void readDigitalInput(int ch_PMC, String imageName, int ch){
   uint16_t reading;
   reading = digital_inputs.read(ch_PMC);
-  
+
   if (reading != prevReadDig[ch]){
     if (reading == true){
       hmi.setImageValue(imageName, "icons8_green_circle_48");
@@ -357,7 +357,7 @@ void readDigitalInput(int ch_PMC, String imageName, int ch){
 /**
  * Analog read when input configured for 4-20mA sensors
  * channels available: 0,1.
- */ 
+ */
 void read_4_20_Input(int ch){
   //4-20mA read
   float raw_voltage_ch = analog_in.read(ch);

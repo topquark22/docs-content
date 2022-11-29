@@ -10,7 +10,7 @@ hardware:
 
 ![The Nano Screw Terminal Adapter.](assets/hero.png)
 
-If you love the Nano form factor but are tired of spaghetti-monster looking breadboards: [Nano Screw Terminal Adapter](https://store.arduino.cc/nano-screw-terminal) is here to help. 
+If you love the Nano form factor but are tired of spaghetti-monster looking breadboards: [Nano Screw Terminal Adapter](https://store.arduino.cc/nano-screw-terminal) is here to help.
 
 In this guide, we will have a look at how this adapter functions, some inspiration for use cases, and some important considerations to take into account while using this adapter.
 
@@ -32,7 +32,7 @@ The Nano Screw Terminal Adapter is compatible with the following boards:
 
 ## Overview
 
-The [Nano Screw Terminal Adapter](https://store.arduino.cc/nano-screw-terminal) serves a simple purpose: provide screw terminal connections with clear markings to your Nano board. This makes it easy to assemble robust circuits that can be used for finished projects. 
+The [Nano Screw Terminal Adapter](https://store.arduino.cc/nano-screw-terminal) serves a simple purpose: provide screw terminal connections with clear markings to your Nano board. This makes it easy to assemble robust circuits that can be used for finished projects.
 
 As a bonus, it also comes with a smaller prototyping area that you can solder components to (through hole). Perfect for adding a tiny display, LEDs or sensors.
 
@@ -69,7 +69,7 @@ An example of this is the [Nano RP2040 Connect](https://store.arduino.cc/nano-rp
 
 ### PWM
 
-There are no PWM markings (~) on the adapter. This is because the PWM supported pins varies from board to board. 
+There are no PWM markings (~) on the adapter. This is because the PWM supported pins varies from board to board.
 
 To know which pins are PWM, please refer to the pinout of your board (available in the [hardware documentation](/)), or the markings on your board.
 

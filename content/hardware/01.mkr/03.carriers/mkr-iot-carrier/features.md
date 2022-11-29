@@ -21,7 +21,7 @@ Create graphical UIs with a 240x240 resolution display.
 
 <Feature title="LSM6DS3" image="imu">
 
-The LSM6DS3 is a low power IMU that features a 3D digital accelerometer and a 3D digital gyroscope. 
+The LSM6DS3 is a low power IMU that features a 3D digital accelerometer and a 3D digital gyroscope.
 
 <FeatureLink title="Datasheet" url="https://docs.arduino.cc/resources/datasheets/LSM6DS3-datasheet.pdf" download blank/>
 </Feature>
@@ -40,14 +40,14 @@ A relative humidity and temperature sensor with high accuracy.
 
 <Feature title="APDS-9960" image="color-sensor">
 
-An ambient light and RGB color sensor with gesture detection and proximity sensing capabilities. 
+An ambient light and RGB color sensor with gesture detection and proximity sensing capabilities.
 
 <FeatureLink title="Datasheet" url="https://docs.broadcom.com/doc/AV02-4191EN"download blank/>
 </Feature>
 
 <Feature title="3x Grove connectors" image="connection">
 
-The carrier features two analog I/O and one I2C Grove connector. 
+The carrier features two analog I/O and one I2C Grove connector.
 
 </Feature>
 

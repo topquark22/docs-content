@@ -8,7 +8,7 @@ tags:
   - Color detection
   - Sensor
 author: 'Fabricio Troya'
-libraries: 
+libraries:
   - name: Arduino APDS9960
     url: https://www.arduino.cc/en/Reference/ArduinoAPDS9960
 hardware:
@@ -19,7 +19,7 @@ software:
   - ide-v2
 ---
 
-In this tutorial we will use an **Arduino Nano 33 BLE Sense** board to measure the main component of the light projected from an item in our environment, using the on-board [**APDS9960**](https://docs.broadcom.com/doc/AV02-4191EN) sensor. This will turn on the red, green or blue on-board LEDs depending on what color the item close to the sensor is.. 
+In this tutorial we will use an **Arduino Nano 33 BLE Sense** board to measure the main component of the light projected from an item in our environment, using the on-board [**APDS9960**](https://docs.broadcom.com/doc/AV02-4191EN) sensor. This will turn on the red, green or blue on-board LEDs depending on what color the item close to the sensor is..
 
 ## Goals
 The goals of this project are:
@@ -206,7 +206,7 @@ void loop() {
 
 ## Testing It Out
 
-After you have successfully verified and uploaded the sketch to the board, open the Serial Monitor from the menu on the left. You will now see the new values printed as shown in the image below. 
+After you have successfully verified and uploaded the sketch to the board, open the Serial Monitor from the menu on the left. You will now see the new values printed as shown in the image below.
 
 ![Serial Monitor output.](assets/nano33BS_10_printing_values.png)
 
@@ -220,7 +220,7 @@ If you want to test out whether it is working, you could point the board to diff
 Sometimes errors occur, if the project is not working as intended there are some common issues we can troubleshoot:
 - Missing a bracket or a semicolon.
 - If your Arduino board is not recognized, check that the Create plugin is running properly on your computer.
-- The room is too dark 
+- The room is too dark
 
 
 ## Conclusion

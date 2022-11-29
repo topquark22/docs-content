@@ -4,7 +4,7 @@ description: 'Learn about different methods when embedding your sketches in a we
 author: 'Karl Söderby'
 ---
 
-The Web Editor is a great tool for creating and uploading programs while also collecting all of your sketches in one place. Another great feature is embedding them as iframes, such as articles, blogposts or journals. 
+The Web Editor is a great tool for creating and uploading programs while also collecting all of your sketches in one place. Another great feature is embedding them as iframes, such as articles, blogposts or journals.
 
 To embed an iframe is very easy, and we just need to copy and paste a link from our sketch in the Web Editor. But we can also do a series of modifications to that iframe, and in this tutorial we will take a look at how to do that.
 
@@ -74,25 +74,25 @@ You can highlight as many lines as you want, and it is easily configurable. For 
 
 ## Manually changing the size of your widget
 
-If we want to change the size of the widget, we just need to modify the dimensions of the iframe. 
+If we want to change the size of the widget, we just need to modify the dimensions of the iframe.
 
 The following dimensions are default:
 
 ```markup
-style="height:510px;width:100%;margin:10px 0" 
+style="height:510px;width:100%;margin:10px 0"
 ```
 
 But we can change them up a bit:
 
 ```
-style="height:200px;width:50%;margin:10px 0" 
+style="height:200px;width:50%;margin:10px 0"
 ```
 
 Which will look like this:
 
 <iframe src="https://create.arduino.cc/editor/FT-CONTENT/189d16e1-ba13-421a-9413-7de6e9e46ed7/preview?embed&snippet" style="height:200px;width:50%;margin:10px 0" frameborder="0"></iframe>
 
-## Automatically re-sizing your sketches 
+## Automatically re-sizing your sketches
 
 We can also choose to automatically re-size our iframes. This is simply done by first including this script in your HTML file:
 
@@ -100,11 +100,11 @@ We can also choose to automatically re-size our iframes. This is simply done by 
 <script src="https://content.arduino.cc/assets/arduinoSketchIframeResizer.js"></script>
 ```
 
-And then using the class `arduino-sketch-iframe` in your HTML element. 
+And then using the class `arduino-sketch-iframe` in your HTML element.
 
 ## Summary
 
-There are several cool ways of working with iframes from the Web Editor, and it is a really easy process that requires very little coding. 
+There are several cool ways of working with iframes from the Web Editor, and it is a really easy process that requires very little coding.
 
 The Web Editor helps you keep track on all of your sketches, and with the iframes, including your projects on other pages has never been easier.
 

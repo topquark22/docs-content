@@ -8,7 +8,7 @@ tags:
   - Communication
 author: 'Fabricio Troya'
 libraries:
-  - name: Arduino SoftwareSerial 
+  - name: Arduino SoftwareSerial
     url: https://www.arduino.cc/en/Reference/SoftwareSerial
 hardware:
   - hardware/03.nano/boards/nano-every

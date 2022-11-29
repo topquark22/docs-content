@@ -1,7 +1,7 @@
 ---
 title: 'ATmega328P Pin Mapping'
 description: 'The pinout for the ATmega328P, the microcontroller used for Arduino UNO.'
-tags: 
+tags:
   - ATmega328P
 ---
 

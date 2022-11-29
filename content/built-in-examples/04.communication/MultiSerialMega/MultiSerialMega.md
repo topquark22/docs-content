@@ -3,7 +3,7 @@ title: 'Use Multiple Serial Ports on the Arduino Mega'
 compatible-products: [mega-2560]
 difficulty: intermediate
 description: 'Use two of the serial ports available on the Arduino Mega.'
-tags: 
+tags:
   - Communication
   - Arduino Mega
   - Serial monitor

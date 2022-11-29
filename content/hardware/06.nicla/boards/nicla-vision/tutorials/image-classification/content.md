@@ -6,7 +6,7 @@ description: This tutorial teaches you how to train a custom machine learning mo
 author: Sebastian Romero
 ---
 
-## Overview 
+## Overview
 
 This tutorial teaches you how to train a custom machine learning model with Edge Impulse and to do image classification on the Arduino Nicla Vision. The Machine Learning (ML) model will use the TensorFlow Lite format and the classification example will run on OpenMV.
 
@@ -42,7 +42,7 @@ To train a ML model to classify an image we need to feed it with image data of t
 
 One thing to consider is overfitting. If a machine learning model is overfitting, it means that it is too well geared towards your training data and won't perform well with unseen input data. To get back to the above example, once the toddler has seen many donkeys and all of them had perfectly gray fur, all were 170 cm long and 127 cm tall, they have learned that a donkey must be exactly like that, otherwise it's not a donkey. If now a donkey shows up that is slightly taller, the toddler would have to think that it's not a donkey. And even if there was one brownish, slightly taller donkey that the toddler has seen many times, it wouldn't necessarily help as the toddler may just remember that one specific donkey that looks a bit odd. It may not have learned that donkeys can actually have different shades of color in their fur.
 
-You need some variation in the training dataset and adjust the parameters so that it doesn't just learn all input data by heart and makes the classification based on that but you rather want the model to learn the concept of an object. Luckily in the real world this rarely ever happens. In machine learning however, it's a common pitfall. 
+You need some variation in the training dataset and adjust the parameters so that it doesn't just learn all input data by heart and makes the classification based on that but you rather want the model to learn the concept of an object. Luckily in the real world this rarely ever happens. In machine learning however, it's a common pitfall.
 
 To find the right configuration for your application often requires trial and error. Edge Impulse shows in [this article](https://docs.edgeimpulse.com/docs/increasing-model-performance) how to improve poorly performing machine learning models.
 
@@ -107,7 +107,7 @@ It's recommended to adjust the image size to 48x48 for improved performance. You
 ### 5. Generate Features
 
 In this step you will adjust the image settings and generate the features from the input data. Features are unique properties that will be used by the classification algorithm to detect the objects. A feature can be the round shape of an orange or the fact that an image of a banana has many bright pixels as bananas are mostly yellow.
-In the menu navigate to "Image" under "Impulse Design". Set the color depth to "RGB" and save the parameters. 
+In the menu navigate to "Image" under "Impulse Design". Set the color depth to "RGB" and save the parameters.
 
 ![In the image inspection tool you can set the color depth according to the input data](assets/dsp_parameters.png)
 
@@ -117,7 +117,7 @@ Then click on "Generate Features". The analysis process will take a while to com
 
 ### 6. Train the Model
 
-Now that the features of your image data are ready to be used for the actual training you can navigate to "Transfer Learning" in the menu. You need to tweak the settings slightly. Set the "Number of training cycles" to a number that yields good results. In this example we chose 80. This defines how many times the model is being trained. The model gets better with each cycle the same way you get better when learning how to ride a bike and you practice it the first couple of times. 
+Now that the features of your image data are ready to be used for the actual training you can navigate to "Transfer Learning" in the menu. You need to tweak the settings slightly. Set the "Number of training cycles" to a number that yields good results. In this example we chose 80. This defines how many times the model is being trained. The model gets better with each cycle the same way you get better when learning how to ride a bike and you practice it the first couple of times.
 
 ***Choose `MobileNetV2 96x96 0.1` as model type. This will use roughly 200 KB of flash memory. A model with higher ROM usage will likely not fit in the flash!***
 
@@ -129,7 +129,7 @@ Click on "Start Training" to train the machine learning model. A small amount of
 
 ## 7. Test the Model
 
-After training the model, you will have an idea of how well the model performs on the data that it knows from the training. That is only half of the story. You also need to know how well it performs on unseen data. In almost any real-world application a model will be confronted only with unseen data. Being able to cope with that is crucial. Edge Impulse studio provides a tool to easily test the model. You can find it under "Model Testing". The model testing results will give you an insight on the performance. If the model gets bad results while testing, but had a good accuracy after training it may be overfitting. 
+After training the model, you will have an idea of how well the model performs on the data that it knows from the training. That is only half of the story. You also need to know how well it performs on unseen data. In almost any real-world application a model will be confronted only with unseen data. Being able to cope with that is crucial. Edge Impulse studio provides a tool to easily test the model. You can find it under "Model Testing". The model testing results will give you an insight on the performance. If the model gets bad results while testing, but had a good accuracy after training it may be overfitting.
 
 You may ask yourself why this model performs so well even if the model is not robust at all. It's because the data used for testing comes from the same controlled environment as the learning data. The test images have the same background and feature the exact same fruits as the training images. If you wait a few days until the banana becomes brown, you will see a decrease in performance.
 

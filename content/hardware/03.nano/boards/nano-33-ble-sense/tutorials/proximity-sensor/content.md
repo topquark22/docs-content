@@ -7,7 +7,7 @@ tags:
   - Proximity
   - Sensor
 author: 'Fabricio Troya'
-libraries: 
+libraries:
   - name: Arduino APDS9960
     url: https://www.arduino.cc/en/Reference/ArduinoAPDS9960
 hardware:
@@ -72,7 +72,7 @@ setLEDBoost()
 
 If you want a deeper understanding on any of the functions of the library, you can check the Arduino [reference](https://www.arduino.cc/en/Reference/ArduinoAPDS9960) for more information.
 
-For the purposes of this tutorial we will only focus on the proximity readings, which are based on the detection of an object over four photodiodes and then converted to millimeters inside the sensor for our usage. 
+For the purposes of this tutorial we will only focus on the proximity readings, which are based on the detection of an object over four photodiodes and then converted to millimeters inside the sensor for our usage.
 
 
 ## Creating the Program

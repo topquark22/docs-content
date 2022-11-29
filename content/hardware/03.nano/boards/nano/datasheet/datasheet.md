@@ -1,6 +1,6 @@
 ---
 identifier: A000005
-title: Arduino® Nano 
+title: Arduino® Nano
 type: maker
 ---
 
@@ -10,7 +10,7 @@ type: maker
 
 **Arduino® Nano** is an intelligent development board designed for building faster prototypes with the smallest dimension. Arduino Nano being the oldest member of the Nano family, provides enough interfaces for your breadboard-friendly applications. At the heart of the board is **ATmega328 microcontroller** clocked at a frequency of 16 MHz featuring more or less the same functionalities as the Arduino Duemilanove. The board offers 22 digital input/output pins, 8 analog pins, and a mini-USB port.
 
-# Target Areas 
+# Target Areas
 Maker, Security, Environmental, Robotics and Control Systems
 
 # Features
@@ -41,7 +41,7 @@ Maker, Security, Environmental, Robotics and Control Systems
   - 8 Analog
   - 6 PWM Output
 
-# Contents 
+# Contents
 
 ## The Board
 ### Application Examples
@@ -68,7 +68,7 @@ to environmental issues.
 
 ### Recommended Operating Conditions
 | Symbol | Description                                       | Min        | Max     |
-| ------ | ------------------------------------------------- | ---------- | ------- | 
+| ------ | ------------------------------------------------- | ---------- | ------- |
 |        |  Conservative thermal limits for the whole board: |  -40 °C    | 85 °C   |
 
 ### Power Consumption
@@ -160,10 +160,10 @@ Now that you have gone through the basics of what you can do with the board you 
 
 ## Certifications
 ### Declaration of Conformity CE DoC (EU)
-We declare under our sole responsibility that the products above are in conformity with the essential requirements of the following EU Directives and therefore qualify for free movement within markets comprising the European Union (EU) and European Economic Area (EEA). 
+We declare under our sole responsibility that the products above are in conformity with the essential requirements of the following EU Directives and therefore qualify for free movement within markets comprising the European Union (EU) and European Economic Area (EEA).
 
 ### Declaration of Conformity to EU RoHS & REACH 211 01/19/2021
-Arduino boards are in compliance with RoHS 2 Directive 2011/65/EU of the European Parliament and RoHS 3 Directive 2015/863/EU of the Council of 4 June 2015 on the restriction of the use of certain hazardous substances in electrical and electronic equipment. 
+Arduino boards are in compliance with RoHS 2 Directive 2011/65/EU of the European Parliament and RoHS 3 Directive 2015/863/EU of the Council of 4 June 2015 on the restriction of the use of certain hazardous substances in electrical and electronic equipment.
 
 | **Substance**                          | **Maximum Limit (ppm)** |
 | -------------------------------------- | ----------------------- |
@@ -178,17 +178,17 @@ Arduino boards are in compliance with RoHS 2 Directive 2011/65/EU of the Europea
 | Dibutyl phthalate (DBP)                | 1000                    |
 | Diisobutyl phthalate (DIBP)            | 1000                    |
 
-Exemptions : No exemptions are claimed. 
+Exemptions : No exemptions are claimed.
 
 Arduino Boards are fully compliant with the related requirements of European Union Regulation (EC) 1907 /2006 concerning the Registration, Evaluation, Authorization and Restriction of Chemicals (REACH). We declare none of the SVHCs (https://echa.europa.eu/web/guest/candidate-list-table), the Candidate List of Substances of Very High Concern for authorization currently released by ECHA, is present in all products (and also package) in quantities totaling in a concentration equal or above 0.1%. To the best of our knowledge, we also declare that our products do not contain any of the substances listed on the "Authorization List" (Annex XIV of the REACH regulations) and Substances of Very High Concern (SVHC) in any significant amounts as specified by the Annex XVII of Candidate list published by ECHA (European Chemical Agency) 1907 /2006/EC.
 
-### Conflict Minerals Declaration 
-As a global supplier of electronic and electrical components, Arduino is aware of our obligations with regards to laws and regulations regarding Conflict Minerals, specifically the Dodd-Frank Wall Street Reform and Consumer Protection Act, Section 1502. Arduino does not directly source or process conflict minerals such as Tin, Tantalum, Tungsten, or Gold. Conflict minerals are contained in our products in the form of solder, or as a component in metal alloys. As part of our reasonable due diligence Arduino has contacted component suppliers within our supply chain to verify their continued compliance with the regulations. Based on the information received thus far we declare that our products contain Conflict Minerals sourced from conflict-free areas. 
+### Conflict Minerals Declaration
+As a global supplier of electronic and electrical components, Arduino is aware of our obligations with regards to laws and regulations regarding Conflict Minerals, specifically the Dodd-Frank Wall Street Reform and Consumer Protection Act, Section 1502. Arduino does not directly source or process conflict minerals such as Tin, Tantalum, Tungsten, or Gold. Conflict minerals are contained in our products in the form of solder, or as a component in metal alloys. As part of our reasonable due diligence Arduino has contacted component suppliers within our supply chain to verify their continued compliance with the regulations. Based on the information received thus far we declare that our products contain Conflict Minerals sourced from conflict-free areas.
 
 ### FCC Caution
 Any Changes or modifications not expressly approved by the party responsible for compliance could void the user’s authority to operate the equipment.
 
-This device complies with part 15 of the FCC Rules. Operation is subject to the following two conditions: 
+This device complies with part 15 of the FCC Rules. Operation is subject to the following two conditions:
 
 (1) This device may not cause harmful interference
 
@@ -202,14 +202,14 @@ This device complies with part 15 of the FCC Rules. Operation is subject to the 
 
 3. This equipment should be installed and operated with minimum distance 20cm between the radiator & your body.
 
-English: 
+English:
 User manuals for license-exempt radio apparatus shall contain the following or equivalent notice in a conspicuous location in the user manual or alternatively on the device or both. This device complies with Industry Canada license-exempt RSS standard(s). Operation is subject to the following two conditions:
 
 (1) this device may not cause interference
 
 (2) this device must accept any interference, including interference that may cause undesired operation of the device.
 
-French: 
+French:
 Le présent appareil est conforme aux CNR d’Industrie Canada applicables aux appareils radio exempts de licence. L’exploitation est autorisée aux deux conditions suivantes :
 
 (1) l’ appareil nedoit pas produire de brouillage
@@ -218,15 +218,15 @@ Le présent appareil est conforme aux CNR d’Industrie Canada applicables aux a
 
 **IC SAR Warning:**
 
-English 
+English
 This equipment should be installed and operated with minimum distance 20 cm between the radiator and your body.
 
-French: 
+French:
 Lors de l’ installation et de l’ exploitation de ce dispositif, la distance entre le radiateur et le corps est d ’au moins 20 cm.
 
 **Important:** The operating temperature of the EUT can’t exceed 80℃ and shouldn’t be lower than -20℃.
 
-Hereby, Arduino S.r.l. declares that this product is in compliance with essential requirements and other relevant provisions of Directive 2014/53/EU. This product is allowed to be used in all EU member states. 
+Hereby, Arduino S.r.l. declares that this product is in compliance with essential requirements and other relevant provisions of Directive 2014/53/EU. This product is allowed to be used in all EU member states.
 
 ## Company Information
 

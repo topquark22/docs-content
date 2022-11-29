@@ -6,7 +6,7 @@ tags: [IoT Cloud, Historical Data, CSV]
 author: 'Benjamin Dannegård'
 ---
 
-## Introduction 
+## Introduction
 
 It is possible to download historical data from your [Arduino IoT Cloud]((https://create.arduino.cc/iot/)) Things and Variables. It is downloaded in `.csv` format, and can be used for data comparison.
 

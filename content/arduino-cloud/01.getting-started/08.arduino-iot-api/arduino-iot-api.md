@@ -34,13 +34,13 @@ To connect with the Arduino Cloud API, we will need one of the following clients
 
 With the Arduino Cloud API, you are able to interface with the Arduino Cloud service through JavaScript, Python® and Golang.
 
-You can for example write custom scripts that can: 
+You can for example write custom scripts that can:
 
 - Fetch latest data from a specific selection of properties.
-- Switch a large number of booleans at the same time. 
+- Switch a large number of booleans at the same time.
 - Automatically notify you if a Thing has stopped updating values.
 
-Mainly, it can be used to **integrate an existing software project** with the Arduino Cloud service. You can for example display real time data from your Arduino on your website, or create automatic email triggers whenever a threshold value is met. 
+Mainly, it can be used to **integrate an existing software project** with the Arduino Cloud service. You can for example display real time data from your Arduino on your website, or create automatic email triggers whenever a threshold value is met.
 
 ## API Keys & Authentication
 
@@ -89,8 +89,8 @@ Finally, click on the **"Get New Access Token"**.
 
 You now have an access token that has an expiry of `300` seconds, and we can make requests to the API.
 
-You can for example try 
-- **GET** | `https://api2.arduino.cc/iot/v2/dashboards` 
+You can for example try
+- **GET** | `https://api2.arduino.cc/iot/v2/dashboards`
 
 Which should look like this in the Postman UI:
 
@@ -111,7 +111,7 @@ To install the `arduino-iot-client`, run the following command:
 npm install @arduino/arduino-iot-client
 ```
 
-After it is installed, you can create a `.js` file, e.g. `main.js` that you can write your script in. 
+After it is installed, you can create a `.js` file, e.g. `main.js` that you can write your script in.
 
 First, we need to authenticate with the Arduino Cloud API:
 
@@ -159,7 +159,7 @@ async function listProperties() {
       'showDeleted': true // {Boolean} If true, shows the soft deleted properties
     };
     api.propertiesV2List(id, opts).then(function(data) {
-      console.log(data); 
+      console.log(data);
     });
 }
 
@@ -198,7 +198,7 @@ In your terminal, you will now receive a response akin to:
 As this is a `json` object, we can access it by changing the following line from the example above to access the different values. We can for example retrieve the `last_value` from the first property like this:
 
 ```js
-console.log(data[0].last_value); 
+console.log(data[0].last_value);
 ```
 
 This is one of many examples of how to interact with the API. Now that you are setup, you can go on to explore the rest of the [Arduino IoT Cloud API](https://www.arduino.cc/reference/en/iot/api/).
@@ -233,7 +233,7 @@ import iot_api_client as iot
 from iot_api_client.rest import ApiException
 from iot_api_client.configuration import Configuration
 
-# Get your token 
+# Get your token
 
 oauth_client = BackendApplicationClient(client_id="YOUR_CLIENT_ID")
 token_url = "https://api2.arduino.cc/iot/v1/clients/token"
@@ -280,7 +280,7 @@ As this is a `json` object, we can access it by changing the following line from
 print(resp[0].last_value)
 ```
 
-The following script lists out **Properties** attached to your **Thing**. Simply replace `YOUR_CLIENT_ID`, `YOUR_CLIENT_SECRET` and `YOUR_THING_ID` with your credentials and this script will work out of the box. 
+The following script lists out **Properties** attached to your **Thing**. Simply replace `YOUR_CLIENT_ID`, `YOUR_CLIENT_SECRET` and `YOUR_THING_ID` with your credentials and this script will work out of the box.
 
 ```py
 from oauthlib.oauth2 import BackendApplicationClient
@@ -291,7 +291,7 @@ import iot_api_client as iot
 from iot_api_client.rest import ApiException
 from iot_api_client.configuration import Configuration
 
-# Get your token 
+# Get your token
 
 oauth_client = BackendApplicationClient(client_id="YOUR_CLIENT_ID")
 token_url = "https://api2.arduino.cc/iot/v1/clients/token"
@@ -327,9 +327,9 @@ except ApiException as e:
 
 ## Golang
 
-To access the Arduino Cloud API via the Go client, you can refer to the [arduino/iot-client-go](https://github.com/arduino/iot-client-go) client on GitHub. 
+To access the Arduino Cloud API via the Go client, you can refer to the [arduino/iot-client-go](https://github.com/arduino/iot-client-go) client on GitHub.
 
-Below is an example that will authenticate with the API and list out all your devices. 
+Below is an example that will authenticate with the API and list out all your devices.
 
 ```go
 package main

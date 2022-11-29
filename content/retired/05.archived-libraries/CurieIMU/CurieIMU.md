@@ -5,7 +5,7 @@ author: Arduino
 ---
 
 
-***This library is included in the [Arc32 core](https://github.com/arduino/ArduinoCore-arc32/tree/master/libraries). This core can be installed through the Arduino IDEs , where the package is named "Intel Curie Boards".*** 
+***This library is included in the [Arc32 core](https://github.com/arduino/ArduinoCore-arc32/tree/master/libraries). This core can be installed through the Arduino IDEs , where the package is named "Intel Curie Boards".***
 
 The Curie IMU library enables an Arduino or Genuino 101 to read the output of the on-board IMU [(Inertial Measurement Unit)](https://en.wikipedia.org/wiki/Inertial_measurement_unit) containing an accelerometer and a gyroscope and elaborate the raw data coming from it.
 
@@ -27,7 +27,7 @@ To use this library:
 - [Curie IMU Tap Detect](https://www.arduino.cc/en/Tutorial/Genuino101CurieIMUTapDetect)
 
 
-## Functions 
+## Functions
 
 ---
 
@@ -242,7 +242,7 @@ CurieIMU.autoCalibrateAccelerometerOffset(int, axis, int target)
 #### Parameters
 axis: the axis to calibrate. It can assume one of these values:
 ```
-X_AXIS 
+X_AXIS
 Y_AXIS
 Z_AXIS
 ```
@@ -809,7 +809,7 @@ direction: the direction to check for tap detection. It must have one of these v
 POSITIVE from zero to positive axis values
 NEGATIVE from zero to negative axis values
 #### Returns
-True or false if the tap is detected or not on the axis and direction specified. 
+True or false if the tap is detected or not on the axis and direction specified.
 
 ---
 

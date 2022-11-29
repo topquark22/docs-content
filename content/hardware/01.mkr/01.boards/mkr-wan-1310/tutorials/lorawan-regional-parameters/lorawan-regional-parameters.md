@@ -1,7 +1,7 @@
 ---
 title: 'LoRaWAN® Regional Parameters in the Arduino® MKRWAN 1310'
 description: 'Learn how to set up specific LoRaWAN® regional parameters in the LoRa® module of the Arduino® MKR WAN 1310 board using the Arduino MKRWAN library.'
-tags: 
+tags:
   - LoRaWAN®
   - Regional parameters
   - MKR WAN 1310
@@ -11,11 +11,11 @@ author: 'José Bagur'
 
 ## Introduction
 
-In this tutorial, we will learn how to set up specific LoRaWAN® regional parameters for the LoRa® module (Murata CMWX1ZZABZ-078) of the [Arduino® MKR WAN 1310](https://store.arduino.cc/mkr-wan-1310) and [Arduino® MKR WAN 1300](https://store.arduino.cc/arduino-mkr-wan-1300-lora-connectivity-1414) boards. For doing this, we are going to use the [Arduino MKRWAN library](https://github.com/arduino-libraries/MKRWAN) functionalities. 
+In this tutorial, we will learn how to set up specific LoRaWAN® regional parameters for the LoRa® module (Murata CMWX1ZZABZ-078) of the [Arduino® MKR WAN 1310](https://store.arduino.cc/mkr-wan-1310) and [Arduino® MKR WAN 1300](https://store.arduino.cc/arduino-mkr-wan-1300-lora-connectivity-1414) boards. For doing this, we are going to use the [Arduino MKRWAN library](https://github.com/arduino-libraries/MKRWAN) functionalities.
 
 ### Goals
 
-- Learn LoRaWAN® networking protocol basics. 
+- Learn LoRaWAN® networking protocol basics.
 - Learn about the [LoRaWAN® Regional Parameters](https://lora-alliance.org/wp-content/uploads/2020/11/RP_2-1.0.2.pdf) specification.
 - Use the Arduino [MKRWAN library](https://github.com/arduino-libraries/MKRWAN) for setting up specific LoRaWAN® regional parameters in the LoRa® module (Murata CMWX1ZZABZ-078) of the [Arduino® MKR WAN 1310](https://store.arduino.cc/mkr-wan-1310) board.
 
@@ -28,30 +28,30 @@ In this tutorial, we will learn how to set up specific LoRaWAN® regional parame
 
 ## LoRaWAN® Networking Protocol Overview
 
-LoRaWAN® is a "Low Power Wide Area (LPWA) end-to-end system architecture designed to wirelessly connect battery operated "things" to the internet in regional, national or global networks. The architecture includes protocol standards and features that support low-cost, mobile, and secure bi-directional communication for Internet of Things (IoT), machine-to-machine (M2M), smart city & industrial applications". LoRaWAN® is optimized for low-power consumption and it is designed to scale from a simple gateway up to a large global network of billions of connected devices. 
+LoRaWAN® is a "Low Power Wide Area (LPWA) end-to-end system architecture designed to wirelessly connect battery operated "things" to the internet in regional, national or global networks. The architecture includes protocol standards and features that support low-cost, mobile, and secure bi-directional communication for Internet of Things (IoT), machine-to-machine (M2M), smart city & industrial applications". LoRaWAN® is optimized for low-power consumption and it is designed to scale from a simple gateway up to a large global network of billions of connected devices.
 
 LoRaWAN® **fundamental characteristics** are the following:
 
 * **Long-range**: typically two to 5 km in urban areas (obstacles) and 5 to 15 km in rural areas.
 * **Long battery duration**: up to 10 years without a replacement (note that long battery duration will require an increased downlink latency configuration).
 * **Low cost**: regarding sensors and maintenance.
-* **License-free spectrum**: LoRaWAN® networks operates on license-free and cost-​free ISM (Industrial, Scientific, Medical) bands; however, **region-specific regulations apply**. 
+* **License-free spectrum**: LoRaWAN® networks operates on license-free and cost-​free ISM (Industrial, Scientific, Medical) bands; however, **region-specific regulations apply**.
 * **Limited payload**: 51 to 256 bytes (depending on data rate).
 * **Limited data rate**: 0.3 to 27 Kbps.
 
-The LoRa Alliance® specifies the LoRaWAN® networking protocol in the **LoRaWAN® specification** documents. These documents are developed and maintained by the LoRa® Alliance, an open association of collaborating members. As stated before, though LoRaWAN® operates on **license-free and cost-​free ISM bands**, **manufacturers and operators of LoRaWAN® devices still have to fulfill various country-specific regulations**. 
+The LoRa Alliance® specifies the LoRaWAN® networking protocol in the **LoRaWAN® specification** documents. These documents are developed and maintained by the LoRa® Alliance, an open association of collaborating members. As stated before, though LoRaWAN® operates on **license-free and cost-​free ISM bands**, **manufacturers and operators of LoRaWAN® devices still have to fulfill various country-specific regulations**.
 
 ## LoRa Alliance® Regional Parameters Overview
 
-The **LoRaWAN® Regional Parameters specification** is a companion to the LoRaWAN® Link Layer specification. While the LoRaWAN® Link Layer specification defines the air interface between a compliant end-device (sensor, actuator, tracker, etc.) and a compliant network core, the LoRaWAN® Regional Parameters specification defines the **adaptation of the LoRaWAN® Link Layer specification to comply with the various regulations enforced throughout the world on the use of various frequency bands of the unlicensed spectrum which are available**. 
+The **LoRaWAN® Regional Parameters specification** is a companion to the LoRaWAN® Link Layer specification. While the LoRaWAN® Link Layer specification defines the air interface between a compliant end-device (sensor, actuator, tracker, etc.) and a compliant network core, the LoRaWAN® Regional Parameters specification defines the **adaptation of the LoRaWAN® Link Layer specification to comply with the various regulations enforced throughout the world on the use of various frequency bands of the unlicensed spectrum which are available**.
 
-Also, the LoRaWAN® Regional Parameters specification documents the **physical layer configurations required for the compliant operation of LoRaWAN® Link Layer radios** using various radio frequency modulation techniques. 
+Also, the LoRaWAN® Regional Parameters specification documents the **physical layer configurations required for the compliant operation of LoRaWAN® Link Layer radios** using various radio frequency modulation techniques.
 
 ***The idea behind the LoRaWAN® Regional Parameters specification is to create the smallest number of regional channel plans covering the largest possible number of regulatory regions. With this, complexity is decreased to implementers as well as the certification cost (end-device certification is enumerated by Link Layer, Regional Parameters and channel plan revision).***
 
-LoRaWAN® Regional Parameters specifications do not specify everything. They only cover a region by specifying the common denominator. For example, the LoRaWAN® Regional Parameters for Asia only specify a common subset of channels, but there are variations between regulations in Asian countries. Furthermore, each **network server operator**, for example [The Things Network](https://www.thethingsnetwork.org/) (TTN), is free to select additional parameters, such as additional emission channels. 
+LoRaWAN® Regional Parameters specifications do not specify everything. They only cover a region by specifying the common denominator. For example, the LoRaWAN® Regional Parameters for Asia only specify a common subset of channels, but there are variations between regulations in Asian countries. Furthermore, each **network server operator**, for example [The Things Network](https://www.thethingsnetwork.org/) (TTN), is free to select additional parameters, such as additional emission channels.
 
-For more information, you can read the RP002-1.0.2 LoRaWAN® Regional Parameters document [here](https://lora-alliance.org/wp-content/uploads/2020/11/RP_2-1.0.2.pdf). 
+For more information, you can read the RP002-1.0.2 LoRaWAN® Regional Parameters document [here](https://lora-alliance.org/wp-content/uploads/2020/11/RP_2-1.0.2.pdf).
 
 ## Regional Parameters Configuration Example: Australia
 
@@ -75,13 +75,13 @@ As stated in [section 2.8](https://lora-alliance.org/wp-content/uploads/2020/11/
 | **Downlink Sub-Bands** | **Frequency Range (MHz)** | **Channels** |
 |  Downlink Sub-Band |     923.3 - 927.5     | 0 - 7 |
 
-![AU915-928 channel frequencies (source: lora-alliance.org)](assets/au-frequency-spectrum.png) 
+![AU915-928 channel frequencies (source: lora-alliance.org)](assets/au-frequency-spectrum.png)
 
 For **8 channel gateways**, TTN in Australia uses **sub-band 2 plus channel 65 only** (uplink). This means that **we need to program those specific channels (channel masking) in our MKR WAN 1310 board in order to make it work with a gateway connected to TTN**. This can be easily done for our MKR WAN 1310 board using the Arduino MKRWAN library. Note that the downlink channels don't need to be configured.
 
 ### Channel Masking on the MKR WAN 1310 Board
 
-First, let's make sure our board drivers are installed. If we are using the online IDE, we do not need to install anything. If we are using the offline IDE, we need to go to **Tools > Board > Board Manager...**. Here we need to look for **Arduino SAMD boards (32-bits ARM Cortex M0+)** and install the latest version. After installing the drivers remember to select the board and the port, to which it is connected, in the **Tools** menu. 
+First, let's make sure our board drivers are installed. If we are using the online IDE, we do not need to install anything. If we are using the offline IDE, we need to go to **Tools > Board > Board Manager...**. Here we need to look for **Arduino SAMD boards (32-bits ARM Cortex M0+)** and install the latest version. After installing the drivers remember to select the board and the port, to which it is connected, in the **Tools** menu.
 
 After installing our board drivers, we need to install also the MKRWAN library. If we are using the online IDE, there is no need to install anything. If we are using the offline IDE, we need to go to **Tools > Manage Libraries...**. Here we need to search for **MKRWAN** and install the latest version.
 
@@ -91,7 +91,7 @@ Before we can use the MKRWAN library a firmware update of the LoRa® module of o
 
 For **enabling** or **disabling**, or masking, specific LoRaWAN® frequency spectrum channels in our MKR WAN 1310 board we can use the `enableChannel()` and `disableChannel()` functions from the [MKRWAN library](https://github.com/arduino-libraries/MKRWAN). Channel masking should be made in the initialization function like in the example code shown below:
 
-```arduino 
+```arduino
 #include <MKRWAN.h>
 
 LoRaModem modem;
@@ -124,7 +124,7 @@ void setup() {
   Serial.println(modem.getChannelMask());
 
   // Enable AU915-928 channels
-  // LoRaWAN® Regional Parameters and TTN specification: channels 8 to 15 plus 65 
+  // LoRaWAN® Regional Parameters and TTN specification: channels 8 to 15 plus 65
   Serial.println("- Enabling channels 8 to 15 plus 65...");
   for (unsigned int i = 8; i <= 15; i++) {
     modem.enableChannel(i);
@@ -185,7 +185,7 @@ void setup() {
   Serial.println(modem.deviceEUI());
 
   // Enable AU915-928 channels
-  // LoRaWAN® Regional Parameters and TTN specification: channels 8 to 15 plus 65 
+  // LoRaWAN® Regional Parameters and TTN specification: channels 8 to 15 plus 65
   modem.sendMask("ff000001f000ffff00020000");
   Serial.println(modem.getChannelMask());
   modem.setADR(true);

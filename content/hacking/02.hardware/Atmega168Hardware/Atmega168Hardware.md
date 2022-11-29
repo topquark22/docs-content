@@ -1,7 +1,7 @@
 ---
 title: 'ATmega168-Arduino Pin Mapping'
 description: 'A diagram showing the correspondence between the pins on an Arduino board and those of the ATmega168 microcontroller.'
-tags: 
+tags:
   - ATmega168
 ---
 

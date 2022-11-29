@@ -10,7 +10,7 @@ author: 'Karl Söderby'
 
 ## Introduction
 
-The Thing to Thing communication is a great feature that allows you to synchronize your Arduino devices. It enables you to pair **variables** of the same data type between things and with the Arduino IoT Cloud, creating a two-way communication between your devices has never been easier. 
+The Thing to Thing communication is a great feature that allows you to synchronize your Arduino devices. It enables you to pair **variables** of the same data type between things and with the Arduino IoT Cloud, creating a two-way communication between your devices has never been easier.
 
 ## Goals
 
@@ -24,7 +24,7 @@ The goals of this project are:
 
 - [Arduino IoT Cloud](https://create.arduino.cc/iot/) (with a Maker subscription, read more [here](https://store.arduino.cc/digital/create)).
 - 2x [Arduino MKR WiFi 1010](https://store.arduino.cc/mkr-wifi-1010) or,
-- 2x [Arduino MKR WiFi 1000](https://store.arduino.cc/arduino-mkr1000-wifi) or, 
+- 2x [Arduino MKR WiFi 1000](https://store.arduino.cc/arduino-mkr1000-wifi) or,
 - 2x [Arduino Nano 33 IoT](https://store.arduino.cc/arduino-nano-33-iot) or,
 - 2x [Arduino Nano RP2040 Connect](https://store.arduino.cc/nano-rp2040-connect-with-headers).
 
@@ -54,7 +54,7 @@ It is a good idea to place a label on the physical board to remember which one i
 
 ### Step 2: Creating the first Thing
 
-Let's start by creating a new Thing, for simplicity, let's name it **Thing Number One**. 
+Let's start by creating a new Thing, for simplicity, let's name it **Thing Number One**.
 
 ![Creating Thing number one.](assets/thing-to-thing-img-01.png)
 
@@ -83,7 +83,7 @@ When it is finished uploading, we can move on to the next step.
 
 ### Step 3: Creating the second Thing
 
-To create our second Thing, we need to click on the **"Things"** tab, and click on **"Create Thing"**. We can name this one **Thing Number Two**. 
+To create our second Thing, we need to click on the **"Things"** tab, and click on **"Create Thing"**. We can name this one **Thing Number Two**.
 
 ![Creating a second Thing.](assets/thing-to-thing-img-03.png)
 
@@ -101,7 +101,7 @@ Finally, we need to name it something fitting, such as **analog_value_2**, and c
 
 Next, we can repeat the same process for the boolean variable, but instead of selecting the **analog_value** variable to sync with, select the **boolean_sync** variable. Now we should have two variables that are synced with our other Thing.
 
-Here we will also need to enter our network details, and select our device (which should be **Device_2**). 
+Here we will also need to enter our network details, and select our device (which should be **Device_2**).
 
 Then we can move on to the sketch. Inside the sketch we actually **don't need to edit anything**. Simply upload the sketch to **Device_2**.
 
@@ -109,11 +109,11 @@ Once the upload is successful, we can move on to the next step!
 
 ## Creating a dashboard
 
-With both **Device_1** and **Device_2** up and running, we can go on to **create a dashboard**. Navigate to the **"Dashboards"** tab, and click on the **"Build Dashboard"** button. 
+With both **Device_1** and **Device_2** up and running, we can go on to **create a dashboard**. Navigate to the **"Dashboards"** tab, and click on the **"Build Dashboard"** button.
 
 ### Step 1: Creating widgets for Thing Number One
 
-In the new, empty dashboard, click on **"Add"** and select **"Gauge"** from the list. 
+In the new, empty dashboard, click on **"Add"** and select **"Gauge"** from the list.
 
 ![Adding a gauge widget.](assets/thing-to-thing-img-07.png)
 
@@ -121,7 +121,7 @@ Then, we need to click on the **"Link Variable"** button.
 
 ![Click on](assets/thing-to-thing-img-08.png)
 
-Now, let's link it to the **analog_value** variable, inside **Thing Number One**. Then click on the **"Link Variable"** button. 
+Now, let's link it to the **analog_value** variable, inside **Thing Number One**. Then click on the **"Link Variable"** button.
 
 ![Linking the variable.](assets/thing-to-thing-img-09.png)
 
@@ -135,7 +135,7 @@ Our widget will now appear in the dashboard. Next, let's add a **Switch** widget
 
 ### Step 2: Creating widgets for Thing Number Two
 
-Now that we have created the widgets and linked them to the variables from **Thing Number One**, we need to do the same for the variables that we sync from **Thing Number Two**. 
+Now that we have created the widgets and linked them to the variables from **Thing Number One**, we need to do the same for the variables that we sync from **Thing Number Two**.
 
 The process of creating them is identical to the previous steps, but we need to select the variables inside **Thing Number Two**. When it is finished, the complete dashboard should look like this:
 
@@ -143,7 +143,7 @@ The process of creating them is identical to the previous steps, but we need to 
 
 ## Testing it out
 
-Now that everything is set up, let's test it out. First of all, we can verify that the two **gauge widgets** are updating continuously, and that they show the same values (with a short delay). 
+Now that everything is set up, let's test it out. First of all, we can verify that the two **gauge widgets** are updating continuously, and that they show the same values (with a short delay).
 
 This is because they are only recorded by **Device_1**, linked with **Thing Number One**, which has the variable **analog_value**. Since **analog_value** and **analog_value_2** are synced, the values in the widgets are the same!
 

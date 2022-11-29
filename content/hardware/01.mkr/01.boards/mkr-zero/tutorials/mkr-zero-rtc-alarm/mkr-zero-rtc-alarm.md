@@ -7,7 +7,7 @@ tags:
   - RTC
   - Alarm
 author: 'Karl Söderby'
-libraries: 
+libraries:
   - name: RTCZero
     url: https://www.arduino.cc/reference/en/libraries/rtczero
 hardware:
@@ -35,7 +35,7 @@ This tutorial requires only a MKR Zero board.
 
 We will now get to the programming part of this tutorial.
 
-**1.** First, let's make sure we have the drivers installed. If we are using the Web Editor, we do not need to install anything. If we are using an offline editor, we need to install it manually. This can be done by navigating to **Tools > Board > Board Manager...**. Here we need to look for the **Arduino SAMD boards (32-bits ARM Cortex M0+)** and install it. 
+**1.** First, let's make sure we have the drivers installed. If we are using the Web Editor, we do not need to install anything. If we are using an offline editor, we need to install it manually. This can be done by navigating to **Tools > Board > Board Manager...**. Here we need to look for the **Arduino SAMD boards (32-bits ARM Cortex M0+)** and install it.
 
 **2.** Now, we need to install the libraries needed. If we are using the Web Editor, there is no need to install anything. If we are using an offline editor, simply go to **Tools > Manage libraries..**, and search for **RTCZero** and install it.
 
@@ -127,7 +127,7 @@ Alarm matched at:
 16:00:11
 ```
 
-Now, as you can see, the time printed is `16:00:11` and not `16:00:10`. This is because it takes some time to retrieve the data from the module, process it in the `print2digits()` function and then print it. 
+Now, as you can see, the time printed is `16:00:11` and not `16:00:10`. This is because it takes some time to retrieve the data from the module, process it in the `print2digits()` function and then print it.
 
 ![Alarm triggered.](assets/MKRZERO_T3_IMG_02.png)
 
@@ -143,4 +143,4 @@ If the code is not working, there are some common issues we can troubleshoot:
 
 ## Conclusion
 
-This tutorial covers some basics on RTC and how to print the time and date continuously on an OLED display. But this technology is heavily used in modern designs, and knowing just the basics of it can be very beneficial. 
+This tutorial covers some basics on RTC and how to print the time and date continuously on an OLED display. But this technology is heavily used in modern designs, and knowing just the basics of it can be very beneficial.

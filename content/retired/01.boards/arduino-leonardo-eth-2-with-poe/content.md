@@ -16,6 +16,6 @@ The Arduino Leonardo ETH is the Leonardo with a built-in ethernet controller (Wi
 
 The Arduino Leonardo ETH is open-source hardware! You can build your own board using the following files (Please note that the schematics are revision 1):
 
-[EAGLE FILES IN .ZIP](https://content.arduino.cc/assets/LeonardoEth_V1.0.zip) 
+[EAGLE FILES IN .ZIP](https://content.arduino.cc/assets/LeonardoEth_V1.0.zip)
 
 [SCHEMATICS IN .PDF](https://content.arduino.cc/assets/LeonardoEth_V1.0_sch.pdf)

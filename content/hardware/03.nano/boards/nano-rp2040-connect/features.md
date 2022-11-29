@@ -8,7 +8,7 @@ The feature packed **Arduino Nano RP2040 Connect** brings the new **Raspberry Pi
 <FeatureList>
 <Feature title="Raspberry Pi RP2040 Microcontroller" image="mcu">
 
-  The all-new low-cost Raspberry Pi silicon is the first microcontroller developed by the Raspberry Pi Foundation.  
+  The all-new low-cost Raspberry Pi silicon is the first microcontroller developed by the Raspberry Pi Foundation.
 
   <FeatureLink title="Datasheet" url="https://datasheets.raspberrypi.org/rp2040/rp2040-datasheet.pdf" download blank/>
 </Feature>
@@ -44,7 +44,7 @@ The feature packed **Arduino Nano RP2040 Connect** brings the new **Raspberry Pi
 
 <Feature title="Omnidirectional Digital Microphone" image="microphone">
 
-  The MP34DT05 microphone allows to capture and analyze sound in real time and can be used to create a voice interface for your project.  
+  The MP34DT05 microphone allows to capture and analyze sound in real time and can be used to create a voice interface for your project.
 
   <FeatureLink title="Datasheet" url="https://content.arduino.cc/assets/Nano_BLE_Sense_mp34dt05-a.pdf" download blank/>
 </Feature>

@@ -94,7 +94,7 @@ To write a article for the Arduino Documentation website, you should follow thes
 
 ## Markdown
 
-We write all of our content in markdown. To be able to contribute properly to our website, we suggest you to do the same. Practice your markdown skills here: https://commonmark.org/help/tutorial/ 
+We write all of our content in markdown. To be able to contribute properly to our website, we suggest you to do the same. Practice your markdown skills here: https://commonmark.org/help/tutorial/
 
 You should use the following markdown styling for our content:
 
@@ -150,7 +150,7 @@ Right: `1.75 μm pixel size`
 
 ***Note that this table will be updated with more examples in the future.***
 
-### Other 
+### Other
 
 These are some other naming structures that we recommend using:
 
@@ -170,7 +170,7 @@ All graphics should be **1920x1080**. All graphics are stored in an assets folde
 |Type|Purpose|Example|
 |----|-------|----------|
 |Circuit/Schematic|**Circuit diagrams** represent how Arduino products work with components in order to function. <br> A **schematic** is a stylized electronic diagram explaining electric circuits.|![Example of circuit](_assets/circuit1.png)<br>![Example of circuit](_assets/circuit2.png)|
-|Screenshot|**Screenshots** are most often used to show the program in the Arduino IDE or any other chosen software.|![Example of screenshot](_assets/screenshot1.png)<br>![Example of screenshot](_assets/screenshot2.png)<br>![](_assets/screenshot3.png)| 
+|Screenshot|**Screenshots** are most often used to show the program in the Arduino IDE or any other chosen software.|![Example of screenshot](_assets/screenshot1.png)<br>![Example of screenshot](_assets/screenshot2.png)<br>![](_assets/screenshot3.png)|
 
 
 ## Naming Guidelines

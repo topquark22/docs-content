@@ -23,7 +23,7 @@ Only your Arduino Esplora is needed for this example. Connect the Esplora to you
 
 ![RGB led on the Esplora](./assets/Esplora_Blink.png)
 
- 
+
 
 ## Code
 

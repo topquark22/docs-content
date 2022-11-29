@@ -1,7 +1,7 @@
 ---
 title: 'Burning sketches to the Arduino board with an external programmer'
 description: 'How to use the Arduino software with a hardware programmer (eliminating the need for the bootloader and saving program space on the chip).'
-tags: 
+tags:
   - Bootloader
   - ISP
 ---

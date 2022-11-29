@@ -3,7 +3,7 @@ title: 'String Object Constructors'
 compatible-products: [all-boards]
 difficulty: intermediate
 description: 'Initialize string objects.'
-tags: 
+tags:
   - Strings
   - String objects
   - Code

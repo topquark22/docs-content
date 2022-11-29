@@ -198,7 +198,7 @@ int intervalLED = WiFi.RSSI() * -10;
 Lastly, we create another `if()` statement to check if the time after the last blink is bigger than the interval, in the same way we did before. Inside the `if()` statement we add a new `else if()` statement to turn the LED on if it was off and vice-versa, and a `digitalWrite()` function to set the state of the LED.
 
 ```arduino
-// check if the time after the last blink is bigger the interval 
+// check if the time after the last blink is bigger the interval
   if (currentMillisLED - previousMillisLED >= intervalLED) {
     previousMillisLED = currentMillisLED;
 
@@ -280,13 +280,13 @@ void loop() {
     Serial.println(rssi);
     Serial.println("---------------------------------------");
   }
-  
+
   unsigned long currentMillisLED = millis();
-  
+
   // measure the signal strength and convert it into a time interval
   int intervalLED = WiFi.RSSI() * -10;
- 
-  // check if the time after the last blink is bigger the interval 
+
+  // check if the time after the last blink is bigger the interval
   if (currentMillisLED - previousMillisLED >= intervalLED) {
     previousMillisLED = currentMillisLED;
 

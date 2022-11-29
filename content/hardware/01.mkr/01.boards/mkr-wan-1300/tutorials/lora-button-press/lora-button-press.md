@@ -8,7 +8,7 @@ tags:
   - LoRa®
   - LED
 author: 'Karl Söderby'
-libraries: 
+libraries:
   - name: LoRa
     url: https://github.com/sandeepmistry/arduino-LoRa
 hardware:
@@ -24,9 +24,9 @@ software:
   - web-editor
 ---
 
-In this tutorial, we will set up two Arduino MKR WAN 1300 to host a remote LED control. One board will be set up as a sender with a pushbutton that when it is pressed, an LED on the other board will turn on or off. 
- 
-We will use the **LoRa** library for the communication, and we will not use any external service. 
+In this tutorial, we will set up two Arduino MKR WAN 1300 to host a remote LED control. One board will be set up as a sender with a pushbutton that when it is pressed, an LED on the other board will turn on or off.
+
+We will use the **LoRa** library for the communication, and we will not use any external service.
 ___
 
 ## Hardware & Software Needed
@@ -43,7 +43,7 @@ ___
 
 ### Circuit
 
-Follow the wiring diagrams below to create the circuits for the sender and receiver boards. 
+Follow the wiring diagrams below to create the circuits for the sender and receiver boards.
 
 ### Sender Circuit
 
@@ -57,7 +57,7 @@ ___
 
 ## Let's Start
 
-In this tutorial, we will achieve a basic trigger over the LoRa® network. When we press a button on one of the MKR WAN 1300 boards, an LED will light up on another. This is quite a simple setup, but it can be useful for long range, low power communication! 
+In this tutorial, we will achieve a basic trigger over the LoRa® network. When we press a button on one of the MKR WAN 1300 boards, an LED will light up on another. This is quite a simple setup, but it can be useful for long range, low power communication!
 
 But let's take a look at what we need to include in the code. As we are using two different boards, we will also need to create two separate sketches.
 
@@ -83,9 +83,9 @@ But let's take a look at what we need to include in the code. As we are using tw
 
 ## Creating the Program
 
-**1.** First, let's make sure we have the drivers installed. If we are using the Web Editor, we do not need to install anything. If we are using an offline editor, we need to install it manually. This can be done by navigating to **Tools > Board > Board Manager...**. Here we need to look for the **Arduino SAMD boards (32-bits ARM Cortex M0+)** and install it. 
+**1.** First, let's make sure we have the drivers installed. If we are using the Web Editor, we do not need to install anything. If we are using an offline editor, we need to install it manually. This can be done by navigating to **Tools > Board > Board Manager...**. Here we need to look for the **Arduino SAMD boards (32-bits ARM Cortex M0+)** and install it.
 
-**2.** Now we need to download the **LoRa** library from [this repository](https://github.com/sandeepmistry/arduino-LoRa), where you can install it by navigating to **Sketch > Include Library > Add .ZIP Library...** in the offline IDE. 
+**2.** Now we need to download the **LoRa** library from [this repository](https://github.com/sandeepmistry/arduino-LoRa), where you can install it by navigating to **Sketch > Include Library > Add .ZIP Library...** in the offline IDE.
 
 ### Programming the Sender
 
@@ -124,7 +124,7 @@ void setup() {
 
 In the `loop()` we start by reading the button, and store the state in the `buttonState` variable.
 
-If the button is pressed, we begin a packet by using the command, `LoRa.beginPacket()`. We then print the message "button pressed", which is done by using the `LoRa.print()` function. We then broadcast the package, using the `LoRa.endPacket()` command. 
+If the button is pressed, we begin a packet by using the command, `LoRa.beginPacket()`. We then print the message "button pressed", which is done by using the `LoRa.print()` function. We then broadcast the package, using the `LoRa.endPacket()` command.
 
 ```arduino
 void loop() {
@@ -148,7 +148,7 @@ void loop() {
 
 In the initialization we will first include the **SPI** and **LoRa** libraries. Then we will create two strings: one empty, and one with the message "button pressed" stored. The `contents` string will be used to store incoming data, and the `buttonPress` string will be used to compare the contents with the incoming data.
 
-We then create the boolean `x`, which will switch from true to false each time `buttonPress` matches `contents`. We will also assign the `led` variable to pin 2. 
+We then create the boolean `x`, which will switch from true to false each time `buttonPress` matches `contents`. We will also assign the `led` variable to pin 2.
 
 ```arduino
 
@@ -184,7 +184,7 @@ void setup() {
 
 Inside the `loop()`, we will not be creating any packets. Instead, we will listen to incoming ones. This is done by first using the command `int packetSize = LoRa.parsePacket();`, and then checking for an incoming packet. If a packet comes in, it is then stored in the `contents` string. After that, we also check the RSSI (Received Signal Strength Indication), and print in the Serial Monitor.
 
-We then compare the `contents` string to the `buttonPress` string. If it matches, we switch the `x` variable by using the command `x = !x;`. A conditional then checks whether `x` is `true` or `false` and turns on or off the LED attached to pin 2. 
+We then compare the `contents` string to the `buttonPress` string. If it matches, we switch the `x` variable by using the command `x = !x;`. A conditional then checks whether `x` is `true` or `false` and turns on or off the LED attached to pin 2.
 
 Finally, after the action has happened, we reset the `contents` string, otherwise, we would just pile up the messages inside the string.
 
@@ -332,11 +332,11 @@ void loop() {
 
 ## Upload Sketch and Testing the Program
 
-Once we are finished with the coding, we can upload the sketches to each board. The easiest way to go forward is to have two separate computers, as we will need to have the Serial Monitor open for both boards. Alternatively, we can use a Serial interfacing program called Putty. But for demonstration purposes, it is good to use two computers. This way, you can move the boards further away from each other while testing the signal. 
+Once we are finished with the coding, we can upload the sketches to each board. The easiest way to go forward is to have two separate computers, as we will need to have the Serial Monitor open for both boards. Alternatively, we can use a Serial interfacing program called Putty. But for demonstration purposes, it is good to use two computers. This way, you can move the boards further away from each other while testing the signal.
 
 ### Sending Package
 
-After we have uploaded the code to the **sender**, we need to open the Serial Monitor to initialize the program. If everything is working, it will start listening for button presses. If the button is pressed, it will print the message `"Sending packet: x" `where `x` represents the number of times the packet has been sent. 
+After we have uploaded the code to the **sender**, we need to open the Serial Monitor to initialize the program. If everything is working, it will start listening for button presses. If the button is pressed, it will print the message `"Sending packet: x" `where `x` represents the number of times the packet has been sent.
 
 ![Sending packets.](assets/WAN1300_T3_IMG03.png)
 
@@ -349,7 +349,7 @@ After we have uploaded the code to the **receiver**, we need to open the Serial 
 
 ## Experimenting with This Setup
 
-Now that we have communication between the boards, we can do a simple test with the signal. If we move the sender device away from the receiver device, we will start noticing changes in the RSSI. For example, while conducting this test, the sender device was moved around 20 meters away from the receiver, which decreased the RSSI to about -60. 
+Now that we have communication between the boards, we can do a simple test with the signal. If we move the sender device away from the receiver device, we will start noticing changes in the RSSI. For example, while conducting this test, the sender device was moved around 20 meters away from the receiver, which decreased the RSSI to about -60.
 
 ### Troubleshoot
 

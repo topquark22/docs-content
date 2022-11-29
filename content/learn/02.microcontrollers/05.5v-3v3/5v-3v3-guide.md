@@ -37,15 +37,15 @@ Every electronic designer driving the power lines of electronic circuits and dev
 
 ### Color Coded Power Lines
 
-**Color coding** the power lines is the easiest yet most effective visual method to avoid an incorrect connection in the power lines of electronic circuits or devices. When prototyping an electronic circuit or device, some developers make the common mistake of using the same color on every cable while being jumbled all over the place, making it impossible to identify which. 
+**Color coding** the power lines is the easiest yet most effective visual method to avoid an incorrect connection in the power lines of electronic circuits or devices. When prototyping an electronic circuit or device, some developers make the common mistake of using the same color on every cable while being jumbled all over the place, making it impossible to identify which.
 
-Color coding power lines makes it much easier to identify the voltage and Ground (GND) lines. According to industry regulations and standards, red is typically used to indicate a voltage line, while black is used to indicate a GND line; colors vary depending on the regulation or standard. 
+Color coding power lines makes it much easier to identify the voltage and Ground (GND) lines. According to industry regulations and standards, red is typically used to indicate a voltage line, while black is used to indicate a GND line; colors vary depending on the regulation or standard.
 
 ***For more information on electrical regulations and standards, please check out the [National Electrical Safety Code®](https://standards.ieee.org/products-programs/nesc/) from the Institute of Electrical and Electronics Engineers (IEEE).***
 
 ### Fuse Integration
 
-One easy way to protect electronic devices is to integrate an onboard power protection circuit into the device. Several circuit designs can be implemented to achieve this; one of the easiest circuits to implement is using a fuse. 
+One easy way to protect electronic devices is to integrate an onboard power protection circuit into the device. Several circuit designs can be implemented to achieve this; one of the easiest circuits to implement is using a fuse.
 
 Fuse integration to electronic devices is not a complicated design process. The following schematic shows a **simple reverse polarity protection** circuit that can be used in low-power DC circuits:
 
@@ -65,19 +65,19 @@ The key points of the circuit presented above are the Transient Voltage Suppress
 
 ### Over-Voltage and Over-Current Protection
 
-Sometimes the electronic device, that should receive 3.3V level of input from the supply may receive a "dirty" tension. This causes the electronic device to suffer abnormal electronic behaviour. As it could destabilise the system completely or change the logic forcefully due to changed logic range to be unrecognised. There are more of this undesired behaviour, if over-voltage or over-current is introduced to the system. 
+Sometimes the electronic device, that should receive 3.3V level of input from the supply may receive a "dirty" tension. This causes the electronic device to suffer abnormal electronic behaviour. As it could destabilise the system completely or change the logic forcefully due to changed logic range to be unrecognised. There are more of this undesired behaviour, if over-voltage or over-current is introduced to the system.
 
-So for this matter, how do we protect the system? The solution can be based of the proper Reverse Polarity Protection showed previously. The proper Polarity Reverse Polarith Protection implements a bidirectional Transient Voltage Suppressor while adding the P-Channel MOSFET with a zenerdiode and two resistors to get all its flavours. 
+So for this matter, how do we protect the system? The solution can be based of the proper Reverse Polarity Protection showed previously. The proper Polarity Reverse Polarith Protection implements a bidirectional Transient Voltage Suppressor while adding the P-Channel MOSFET with a zenerdiode and two resistors to get all its flavours.
 
 ***To give quick explanation on Transient Voltage Suppressor - It is a type of a diode that helps to protect high-spike voltages generated at the output of Power Supply.***
 
-But a simple Reverse Polarity Protection, with a Transient Voltage Suppressor diode can be used to protect the over-voltage and over-current issues. If you want to go further into protecting the Load from over-voltage and over-current, it is possible to integrate **Surge Stopper** to provide active protection. May increase the cost, however it is a good measure to protect the Load. 
+But a simple Reverse Polarity Protection, with a Transient Voltage Suppressor diode can be used to protect the over-voltage and over-current issues. If you want to go further into protecting the Load from over-voltage and over-current, it is possible to integrate **Surge Stopper** to provide active protection. May increase the cost, however it is a good measure to protect the Load.
 
 ## Stepping the Voltage - Level Shifters
 
-Arduino boards relies on 3.3V and 5V levels. But sometimes there may not be available pins that matches the voltage requirement to adequately drive the sensor or any such line. In this section, we will take a look at how we can **step up and down voltages.**   
+Arduino boards relies on 3.3V and 5V levels. But sometimes there may not be available pins that matches the voltage requirement to adequately drive the sensor or any such line. In this section, we will take a look at how we can **step up and down voltages.**
 
-We will use a bidirectional Logic Level Converter to step the voltage level, to be able to use sensors or logics at higher or lower voltage levels. This is an option to use if tight electric specification is implemented on the board. 
+We will use a bidirectional Logic Level Converter to step the voltage level, to be able to use sensors or logics at higher or lower voltage levels. This is an option to use if tight electric specification is implemented on the board.
 
 ***The bidirectional Logic Level Converter used can be found [here](https://www.sparkfun.com/products/12009) (SparkFun).***
 
@@ -89,7 +89,7 @@ A **voltage divider** is the simplest yet easy to implement solution. It uses 2 
 
 ![Voltage/Resistive Divider](assets/StepDown.png)
 
-When using this circuit, you will still need to be cautious of the residing capacitance that is connected at the output of this circuit and with the quick rise times, as for certain applications with cautious timing requirements or modules non-response to quick rise times will be affected. 
+When using this circuit, you will still need to be cautious of the residing capacitance that is connected at the output of this circuit and with the quick rise times, as for certain applications with cautious timing requirements or modules non-response to quick rise times will be affected.
 
 ### Stepping Up
 
@@ -97,11 +97,11 @@ To **step up** voltage, you will need to use a little bit more constructive elec
 
 ![Step Up Circuit - Diode Implementation](assets/StepUpDiode.png)
 
-You will need to biase the diodes with precaution and the resistor that is much lower than the input impedance of the 5V gate. One of the know-hows shared by Microchip is to use **Schottky** diodes to gain slight high-level voltage and reduce low-level voltage from incrementing. Following circuit uses a different setup. 
+You will need to biase the diodes with precaution and the resistor that is much lower than the input impedance of the 5V gate. One of the know-hows shared by Microchip is to use **Schottky** diodes to gain slight high-level voltage and reduce low-level voltage from incrementing. Following circuit uses a different setup.
 
 ![Step Up Circuit - MOSFET](assets/StepUpMOSFET.png)
 
-This circuit uses the MOSFET as a switch and takes the 5V logic from the drain. It is useful if the logic inversion can be treated, as 3.3V logic becomes inverted. To begin with MOSFET, a 2N7000 or a BSS138 MOSFET can be used for this circuit. 
+This circuit uses the MOSFET as a switch and takes the 5V logic from the drain. It is useful if the logic inversion can be treated, as 3.3V logic becomes inverted. To begin with MOSFET, a 2N7000 or a BSS138 MOSFET can be used for this circuit.
 
 ### Bi-Directional Logic Level Converter
 
@@ -111,20 +111,20 @@ You can use the [Bi-Directional Logic Level Shifter](https://www.sparkfun.com/pr
 
 ![Voltage Stepping- Logic Shifter](assets/BD_LC.png)
 
-The circuit above uses the bi-directional logic shifter to establish I2C interface with any sensor capable of the protocol. The SCL and SDA lines go through a High Voltage channel and establishes communication with the sensor that is connected at its respective Low Voltage Channel. 
+The circuit above uses the bi-directional logic shifter to establish I2C interface with any sensor capable of the protocol. The SCL and SDA lines go through a High Voltage channel and establishes communication with the sensor that is connected at its respective Low Voltage Channel.
 
-The configuration of the Logic Shifter usually does not change, as the the purpose is to transmit the signal from a High to a Low Level or vice-versa, depending on the architecture operation. Thus, the previous schematic illustrates usual global connection configuration. As it can be to interface the Arduino board with another computing module working on a different voltage level. Below schematic shows the specific of each channel and focus the scope inside the schematic symbol box of the Logic Shifter. 
+The configuration of the Logic Shifter usually does not change, as the the purpose is to transmit the signal from a High to a Low Level or vice-versa, depending on the architecture operation. Thus, the previous schematic illustrates usual global connection configuration. As it can be to interface the Arduino board with another computing module working on a different voltage level. Below schematic shows the specific of each channel and focus the scope inside the schematic symbol box of the Logic Shifter.
 
 ![Logic Shifter Insight](assets/BDLC_Insight.png)
 
-Each channel is composed by two resistors and a MOSFET that will use the reference High and Low voltages to transfer the signal from the respective module. 
+Each channel is composed by two resistors and a MOSFET that will use the reference High and Low voltages to transfer the signal from the respective module.
 
 ## Further Reading and Resources
 
 Handling different voltage levels covers vast electronic department, and without exception for 3.3V and 5V levels which are the most used voltage levels. To get deeper into the topic handling voltage levels, you can follow some of the links that might get our attention.
 
 - If you want to know about some know-hows from Microchip, you can read [Microchip: 3V Tips 'n Tricks](https://www.newark.com/pdfs/techarticles/microchip/3_3vto5vAnalogTipsnTricksBrchr.pdf) to learn about wide variety of techniques used with 3.3V and 5V levels.
-- Level Shifting the voltage has its own science dedicated to it and Philips Semiconductor welcomes you if you are ready learn deeper about [Bi-Directional Level Shifter for I2C Bus and Other Systems](http://cdn.sparkfun.com/tutorialimages/BD-LogicLevelConverter/an97055.pdf) with their Application Note AN97055.  
+- Level Shifting the voltage has its own science dedicated to it and Philips Semiconductor welcomes you if you are ready learn deeper about [Bi-Directional Level Shifter for I2C Bus and Other Systems](http://cdn.sparkfun.com/tutorialimages/BD-LogicLevelConverter/an97055.pdf) with their Application Note AN97055.
 
 ## References
 

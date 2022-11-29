@@ -1,7 +1,7 @@
 ---
 title: 'Article Template'
 description: 'This is the template for creating an article for the Arduino Documentation website.'
-tags: 
+tags:
   - article
 author: 'Arduino'
 ---
@@ -16,7 +16,7 @@ Note that **plagiarism is unacceptable**, and we encourage you to provide refere
 
 ***This section is optional, since articles may not directly include the use of an Arduino board or the software.***
 
-List the hardware and software needed. This could be the IDEs, libraries but also the hardware such as the board for example. Make sure to link to whatever you are listing. 
+List the hardware and software needed. This could be the IDEs, libraries but also the hardware such as the board for example. Make sure to link to whatever you are listing.
 
 - Arduino IDE ([online](https://create.arduino.cc/) or [offline](https://www.arduino.cc/en/main/software)).
 - [Arduino Nano RP2040 Connect](https://store.arduino.cc/nano-rp2040-connect).

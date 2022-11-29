@@ -3,7 +3,7 @@ title: 'String Addition Operator'
 compatible-products: [all-boards]
 difficulty: intermediate
 description: 'Add strings together in a variety of ways.'
-tags: 
+tags:
   - Strings
   - Concatenation
   - Operators

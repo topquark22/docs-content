@@ -1,7 +1,7 @@
 ---
 title: 'MKR 1000 WiFi Battery Life'
 description: 'Determine the duration of a rechargeable battery.'
-tags: 
+tags:
   - Battery Life
   - Rechargeable batteries
 libraries:

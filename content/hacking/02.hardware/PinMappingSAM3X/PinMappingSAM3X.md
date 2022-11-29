@@ -1,7 +1,7 @@
 ---
 title: SAM3X-Arduino Pin Mapping
 description: a diagram showing the correspondence between the pins on an Arduino board and those of the SAM3X microcontroller.
-tags: 
+tags:
   - SAM3X
 ---
 

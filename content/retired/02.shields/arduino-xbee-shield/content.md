@@ -17,9 +17,9 @@ The Xbee shield was created in collaboration with [Libelium](http://www.libelium
 
 ### Jumper Settings
 
-The Xbee shield has two jumpers (the small removable plastic sleeves that each fit onto two of the three pins labelled Xbee/USB). These determine how the Xbee's serial communication connects to the serial communication between the microcontroller (ATmega8 or ATmega168) and FTDI USB-to-serial chip on the Arduino board. 
+The Xbee shield has two jumpers (the small removable plastic sleeves that each fit onto two of the three pins labelled Xbee/USB). These determine how the Xbee's serial communication connects to the serial communication between the microcontroller (ATmega8 or ATmega168) and FTDI USB-to-serial chip on the Arduino board.
 
-With the jumpers in the **Xbee** position (i.e. on the two pins towards the interior of the board), the DOUT pin of the Xbee module is connected to the RX pin of the microcontroller; and DIN is connected to TX. Note that the RX and TX pins of the microcontroller are still connected to the TX and RX pins (respectively) of the FTDI chip - data sent from the microcontroller will be transmitted to the computer via USB as well as being sent wirelessly by the Xbee module. The microcontroller, however, will only be able to receive data from the Xbee module, not over USB from the computer. 
+With the jumpers in the **Xbee** position (i.e. on the two pins towards the interior of the board), the DOUT pin of the Xbee module is connected to the RX pin of the microcontroller; and DIN is connected to TX. Note that the RX and TX pins of the microcontroller are still connected to the TX and RX pins (respectively) of the FTDI chip - data sent from the microcontroller will be transmitted to the computer via USB as well as being sent wirelessly by the Xbee module. The microcontroller, however, will only be able to receive data from the Xbee module, not over USB from the computer.
 
 With the jumpers in the **USB** position (i.e. on the two pins nearest the edge of the board), the DOUT pin the Xbee module is connected to the RX pin of the *FTDI chip*, and DIN on the Xbee module is connected to the TX pin of the FTDI chip. This means that the Xbee module can communicate directly with the computer - however, *this only works if the microcontroller has been removed from the Arduino board*. If the microcontroller is left in the Arduino board, it will be able to talk to the computer normally via USB, but neither the computer nor the microcontroller will be able to talk to the Xbee module.
 
@@ -70,7 +70,7 @@ The Arduino Xbee shield allows your Arduino board to communicate wirelessly usin
 
 ### A Simple Example
 
-You should be able to get two Arduino boards with Xbee shields talking to each other without any configuration, using just the standard Arduino serial commands (described in the [reference](//www.arduino.cc/en/Reference/HomePage)). 
+You should be able to get two Arduino boards with Xbee shields talking to each other without any configuration, using just the standard Arduino serial commands (described in the [reference](//www.arduino.cc/en/Reference/HomePage)).
 
 To upload a sketch to an Arduino board with a Xbee shield, you'll need to put both jumpers on the shield to the "USB" setting (i.e. place them on the two pins closest to the edge of the board) or remove them completely (but be sure not to lose them!). Then, you can upload a sketch normally from the Arduino environment. In this case, upload the **Communication | Physical Pixel** sketch to one of the boards. This sketch instructs the board to turn on the LED attached to pin 13 whenever it receives an 'H' over its serial connection, and turn the LED off when it gets an 'L'. You can test it by connecting to the board with the Arduino serial monitor (be sure it's set at 9600 baud), typing an H, and pressing enter (or clicking send). The LED should turn on. Send an L and the LED should turn off. If nothing happens, you may have an Arduino board that doesn't have a built-in LED on pin 13, in this case you'll need to supply your own.
 
@@ -91,11 +91,11 @@ void loop()
 }
 ```
 
-When it's finished uploading, you can check that it's working with the Arduino serial monitor. You should see H's and L's arriving one a second. Turn off the serial monitor and unplug the board. Switch the jumpers to the Xbee setting. Now connect both boards to the computer. After a few seconds, you should see the LED on the first board turn on and off, once a second. (This is the LED on the Arduino board itself, not the one on the Xbee shield, which conveys information about the state of the Xbee module.) If so, congratulations, your Arduino boards are communicating wirelessly. This may not seem that exciting when both boards are connected to the same computer, but if you connect them to different computers (or power them with an external power supply - being sure to switch the power jumper on the Arduino board), they should still be able to communicate. 
+When it's finished uploading, you can check that it's working with the Arduino serial monitor. You should see H's and L's arriving one a second. Turn off the serial monitor and unplug the board. Switch the jumpers to the Xbee setting. Now connect both boards to the computer. After a few seconds, you should see the LED on the first board turn on and off, once a second. (This is the LED on the Arduino board itself, not the one on the Xbee shield, which conveys information about the state of the Xbee module.) If so, congratulations, your Arduino boards are communicating wirelessly. This may not seem that exciting when both boards are connected to the same computer, but if you connect them to different computers (or power them with an external power supply - being sure to switch the power jumper on the Arduino board), they should still be able to communicate.
 
 ### A Few Notes
 
-You can use any of the standard Arduino serial commands with the Xbee shield. With the shield's jumpers in the Xbee position, the print and println commands will send data over the Xbee shield and the USB connection (i.e. to other Xbee shields and to the computer at the same time). In this configuration, however, the board will only receive data from the Xbee shield not from the USB connection (you'll need to switch the jumpers to allow the board to receive data from the computer). 
+You can use any of the standard Arduino serial commands with the Xbee shield. With the shield's jumpers in the Xbee position, the print and println commands will send data over the Xbee shield and the USB connection (i.e. to other Xbee shields and to the computer at the same time). In this configuration, however, the board will only receive data from the Xbee shield not from the USB connection (you'll need to switch the jumpers to allow the board to receive data from the computer).
 
 The Xbee module on the shield is set up to work at 9600 baud by default, so unless you reconfigure it, you'll need to make sure you're passing 9600 to the Serial.begin() command in your sketch.
 
@@ -103,67 +103,67 @@ To allow your computer to communicate directly with the Xbee shield, connect it 
 
 ### Configuring the Xbee Module
 
-You can configure the Xbee module from code running on the Arduino board or from software on the computer. To configure it from the Arduino board, you'll need to have the jumpers in the Xbee position. To configure it from the computer, you'll need to have the jumpers in the USB configuration and have removed the microcontroller from your Arduino board. 
+You can configure the Xbee module from code running on the Arduino board or from software on the computer. To configure it from the Arduino board, you'll need to have the jumpers in the Xbee position. To configure it from the computer, you'll need to have the jumpers in the USB configuration and have removed the microcontroller from your Arduino board.
 
 To get the module into configuration mode, you need to send it three plus signs: +++ and there needs to be at least one second before and after during which you send no other character to the module. Note that this includes newlines or carriage return characters. Thus, if you're trying to configure the module from the computer, you need to make sure your terminal software is configured to send characters as you type them, without waiting for you to press enter. Otherwise, it will send the plus signs immediately followed by a newline (i.e. you won't get the needed one second delay after the +++). If you successfully enter configuration mode, the module will send back the two characters 'OK', followed by a carriage return.
 
 Send Command
 
-`+++` 
+`+++`
 
-Expected Response 
+Expected Response
 
-`OK` *CR* 
+`OK` *CR*
 
 Once in configuration mode, you can send AT commands to the module. Command strings have the form ATxx (where xx is the name of a setting). To read the current value of the setting, send the command string followed by a carriage return. To write a new value to the setting, send the command string, immediately followed by the new setting (with no spaces or newlines in-between), followed by a carriage return. For example, to read the network ID of the module (which determines which other Xbee modules it will communicate with), use the *'ATID* command:
 
  Send Command
 
- Expected Response 
+ Expected Response
 
-`ATID` *enter* 
+`ATID` *enter*
 
-`3332` *CR* 
+`3332` *CR*
 
 To change the network ID of the module:
 
  Send Command
 
- Expected Response 
+ Expected Response
 
-`ATID3331` *enter* 
+`ATID3331` *enter*
 
-`OK` *CR* 
+`OK` *CR*
 
 Now, check that the setting has taken effect:
 
  Send Command
 
- Expected Response 
+ Expected Response
 
-`ATID` *enter* 
+`ATID` *enter*
 
-`3331` *CR* 
+`3331` *CR*
 
 Unless you tell the module to write the changes to non-volatile (long-term) memory, they will only be in effect until the module loses power. To save the changes permanently (until you explicitly modify them again), use the **ATWR** command:
 
  Send Command
 
- Expected Response 
+ Expected Response
 
-`ATWR` *enter* 
+`ATWR` *enter*
 
-`OK` *CR* 
+`OK` *CR*
 
 To reset the module to the factory settings, use the **ATRE** command:
 
  Send Command
 
- Expected Response 
+ Expected Response
 
-`ATRE` *enter* 
+`ATRE` *enter*
 
-`OK` *CR* 
+`OK` *CR*
 
 Note that like the other commands, the reset will not be permanent unless you follow it with the **ATWR** comamand.
 

@@ -31,9 +31,9 @@ You can find in the [Getting Started section](https://www.arduino.cc/en/Guide/Ho
 
 Arduino UNO is open-source hardware! You can build your own board using the following files:
 
-[EAGLE FILES IN .ZIP](https://content.arduino.cc/assets/UNO-TH_Rev3e-reference.zip) 
+[EAGLE FILES IN .ZIP](https://content.arduino.cc/assets/UNO-TH_Rev3e-reference.zip)
 
-[SCHEMATICS IN .PDF](https://content.arduino.cc/assets/UNO-TH_Rev3e_sch.pdf) 
+[SCHEMATICS IN .PDF](https://content.arduino.cc/assets/UNO-TH_Rev3e_sch.pdf)
 
 [BOARD SIZE IN .DXF](http://arduino.cc/documents/ArduinoUno.dxf)
 

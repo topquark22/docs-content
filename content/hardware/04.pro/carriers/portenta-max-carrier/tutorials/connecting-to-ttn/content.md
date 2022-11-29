@@ -32,12 +32,12 @@ This tutorial explains how to connect your [Arduino® Max Carrier](http://store.
 - 868-915 MHz antenna with SMA connector.
 - USB-C® cable (either USB-A to USB-C® or USB-C® to USB-C®).
 - Arduino IDE ([online](https://create.arduino.cc/) or [offline](https://www.arduino.cc/en/main/software)).
-- [Arduino MKRWAN library](https://github.com/arduino-libraries/MKRWAN).  
+- [Arduino MKRWAN library](https://github.com/arduino-libraries/MKRWAN).
 - An active account in [TTN](https://www.thethingsnetwork.org/).
 
 ## The Arduino® Portenta Max Carrier LoRaWAN® Module
 
-The Portenta Max Carrier provides you with an unlimited range of applications, from robotics and medical devices to industrial or automotive applications; the Max Carrier possibilities are endless. One feature that boosts Portenta's Max Carrier possibilities is its **onboard LoRaWAN® module**, the [CMWX1ZZABZ-078](https://www.murata.com/products/connectivitymodule/lpwa/overview/lineup/type-abz-078) from Murata®. LoRaWAN® is a Low Power Wide Area Network (LPWAN) designed to connect low power devices to the Internet. It was developed to meet and fulfill Internet of Things (IoT) devices' requirements, such as low-power consumption and low data throughput. 
+The Portenta Max Carrier provides you with an unlimited range of applications, from robotics and medical devices to industrial or automotive applications; the Max Carrier possibilities are endless. One feature that boosts Portenta's Max Carrier possibilities is its **onboard LoRaWAN® module**, the [CMWX1ZZABZ-078](https://www.murata.com/products/connectivitymodule/lpwa/overview/lineup/type-abz-078) from Murata®. LoRaWAN® is a Low Power Wide Area Network (LPWAN) designed to connect low power devices to the Internet. It was developed to meet and fulfill Internet of Things (IoT) devices' requirements, such as low-power consumption and low data throughput.
 
 ![CMWX1ZZABZ-078 LoRaWAN® module in the Portenta Max Carrier.](assets/mc_ard_ttn_module.png)
 
@@ -53,13 +53,13 @@ To connect your Portenta Max Carrier to TTN, we must follow these steps:
 
 1. Hardware setup.
 2. Software setup.
-3. Portenta Max Carrier provisioning. 
+3. Portenta Max Carrier provisioning.
 4. Create an application in TTN.
 5. Send a message to a TTN application.
 
 Let's start!
 
-### 1. Setting up the Hardware 
+### 1. Setting up the Hardware
 
 Begin by attaching the Arduino® Portenta H7 board to the high-density connectors of the Portenta Max Carrier, as shown in the image below:
 
@@ -77,7 +77,7 @@ Now you can connect the Portenta H7 board to your computer using a USB-C® cable
 
 ### 2. Setting up the Software
 
-You can use several Arduino libraries with the CMWX1ZZABZ-078 LoRaWAN® module from Murata®; we recommend the [MKRWAN library](https://github.com/arduino-libraries/MKRWAN), developed by the Arduino Team. The MKRWAN library provides you with the APIs to communicate with LoRa® and LoRaWAN® networks using the CMWX1ZZABZ-078 module. You can use this library in the Arduino IDE, both [online](https://create.arduino.cc/editor) and [offline](https://www.arduino.cc/en/software). 
+You can use several Arduino libraries with the CMWX1ZZABZ-078 LoRaWAN® module from Murata®; we recommend the [MKRWAN library](https://github.com/arduino-libraries/MKRWAN), developed by the Arduino Team. The MKRWAN library provides you with the APIs to communicate with LoRa® and LoRaWAN® networks using the CMWX1ZZABZ-078 module. You can use this library in the Arduino IDE, both [online](https://create.arduino.cc/editor) and [offline](https://www.arduino.cc/en/software).
 
 If you are using the online IDE, you don't need to do anything; the library is already installed and ready to be used. If you are using the offline IDE, you must install the library **manually**. Installing the library can be done quickly by navigating to **Tools > Manage Libraries...** and then in the **Library Manager** search for **MKRWAN** library by Arduino; remember to install the latest version of the libraries. You can also access the Library Manager using the left toolbar of the IDE, as shown in the image below:
 
@@ -103,9 +103,9 @@ Upload the sketch, open the Serial Monitor and wait for the firmware update to f
 
 ### 3. Provisioning the Arduino® Portenta Max Carrier
 
-Device provisioning is a process comparable to bank card numbering. Let's think about bank cards; bank cards numbers start with a six-digit vendor ID number that indicates who allocated and controls the card's security; the remaining digits are unique numbers associated with a specific card. Devices with LoRa® and LoRaWAN® capabilities have a similar system; the **Join Server Unique Identifier** (usually referred to as `JoinEUI`) is a number that manages the security and authorizes the device in a network, while the **Device Unique Identifier** (usually referred to as `DevEUI`) is a unique number that identifies the device. The `JoinEUI` and `DevEUI` are required to send information to TTN; the `JoinEUI` number is provided by the network (in this case TTN) while the `DevEUI` is provided by the manufacturer of the device's LoRa® module. 
+Device provisioning is a process comparable to bank card numbering. Let's think about bank cards; bank cards numbers start with a six-digit vendor ID number that indicates who allocated and controls the card's security; the remaining digits are unique numbers associated with a specific card. Devices with LoRa® and LoRaWAN® capabilities have a similar system; the **Join Server Unique Identifier** (usually referred to as `JoinEUI`) is a number that manages the security and authorizes the device in a network, while the **Device Unique Identifier** (usually referred to as `DevEUI`) is a unique number that identifies the device. The `JoinEUI` and `DevEUI` are required to send information to TTN; the `JoinEUI` number is provided by the network (in this case TTN) while the `DevEUI` is provided by the manufacturer of the device's LoRa® module.
 
-The following sketch let's you find out what is the `DevEUI` of your Portenta Max Carrier: 
+The following sketch let's you find out what is the `DevEUI` of your Portenta Max Carrier:
 
 ```arduino
 #define PORTENTA_CARRIER
@@ -125,7 +125,7 @@ void setup() {
   }
 
   Serial.print("Your Portenta Max Carrier DevEUI is: ");
-  Serial.println(modem.deviceEUI());  
+  Serial.println(modem.deviceEUI());
 }
 
 void loop() {}
@@ -143,7 +143,7 @@ Set the frequency designator according to your country. You can find more inform
 Your Portenta Max Carrier DevEUI is: a861XXXXXXXXXXXX
 ```
 
-Now, let's use the `DevEUI` number from your Portenta Max Carrier to create an application in TTN. 
+Now, let's use the `DevEUI` number from your Portenta Max Carrier to create an application in TTN.
 
 ### 3. Creating an Application in TTN
 
@@ -156,7 +156,7 @@ Now click on **Create an application**. You will need to add the following infor
 * **Owner**: the person or organization that owns the application.
 * **Application ID**: a unique identifier for your application (must be lowercase and without spaces).
 
-Complete both fields and click on **Create application**. Now you will be redirected to the application dashboard that shows information of the newly created application. 
+Complete both fields and click on **Create application**. Now you will be redirected to the application dashboard that shows information of the newly created application.
 
 ![Application dashboard in TTN.](assets/mc_ard_ttn_console_2.png)
 
@@ -170,7 +170,7 @@ On the registration page, click on **Manually**; you will have to add the follow
 * **LoRaWAN® version**: 1.0.2.
 * **Regional Parameters version**: 1.0.2.
 
-Click on Show advanced activation, **LoRaWAN® class and cluster settings** and choose: 
+Click on Show advanced activation, **LoRaWAN® class and cluster settings** and choose:
 
 * **Activation mode**: Over the air activation (OTAA).
 * **Additional LoRaWAN® class capabilities**: None (class A only).
@@ -181,13 +181,13 @@ Leave the **Cluster settings** option unchecked. Then continue with the followin
 * **DevEUI**: fill it with the `DevEUI` number of your Portenta Max Carrier you found [before](#3-provisioning-the-arduino-portenta-max-carrier).
 * **AppEUI**: fill it with zeros or enter your own.
 * **AppKey**: generate one or enter your own.
-* **Device ID**: A custom identifier for your board, must be lowercase and without spaces. 
+* **Device ID**: A custom identifier for your board, must be lowercase and without spaces.
 
-Click on **Register end device**; this will take you to a **Device Overview** page where you will see all the information related to the device. Now, you will use some of this information with your Portenta Max Carrier to send data to TTN. 
+Click on **Register end device**; this will take you to a **Device Overview** page where you will see all the information related to the device. Now, you will use some of this information with your Portenta Max Carrier to send data to TTN.
 
 ![Device overview in TTN.](assets/mc_ard_ttn_console_4.png)
 
-### 4. Sending Data to an Application in TTN 
+### 4. Sending Data to an Application in TTN
 
 Now, let's start sending information to TTN. The following sketch enables you to join and send data to TTN using the Over the Air (OTAA) device activation method. You will need to define your TTN application's AppEUI and AppKey numbers in the `arduino_secrets.h` file before uploading the code:
 
@@ -204,12 +204,12 @@ void setup() {
   Serial.begin(115200);
   while (!Serial);
   Serial.println(F("Portenta Max Carrier LoRaWAN Example (OTAA)"));
-  
+
   if (!modem.begin(region)) {
     Serial.println(F("Failed to start the module..."));
     while (1) {}
   };
-  
+
   Serial.print(F("Your Portenta Max Carrier module version is: "));
   Serial.println(modem.version());
 
@@ -217,7 +217,7 @@ void setup() {
     Serial.println(F("Please make sure that the modem's firmware is updated."));
     Serial.println(F("To update the module's firmware, open and upload the 'MKRWANFWUpdate_standalone.ino' sketch."));
   }
-  
+
   Serial.print(F("Your Portenta Max Carrier DevEUI is: "));
   Serial.println(modem.deviceEUI());
 
@@ -252,7 +252,7 @@ void loop() {
 }
 ```
 
-The `arduino_secrets.h` file which contains AppEUI and AppKey numbers for the TTN applications can be defined as following code. AppEUI and AppKey information is found on the End device page of the TTN Application. 
+The `arduino_secrets.h` file which contains AppEUI and AppKey numbers for the TTN applications can be defined as following code. AppEUI and AppKey information is found on the End device page of the TTN Application.
 
 ```arduino
 String appEui = "xxxxxxxxxxxxxxxx";
@@ -270,7 +270,7 @@ You have now successfully configured and used the onboard LoRaWAN® module of yo
 ### Next Steps
 
 - Scale up the usage of Portenta Max Carrier by using its additional peripherals and turning them into interesting industrial-grade projects, taking advantage of LoRaWAN® connectivity.
-  
+
 ## Troubleshooting
 
 While working on the sketch or when tried to upload the sketch, the Arduino IDE might show some errors preventing to proceed on the development. You can try the following troubleshooting tips to solve the commonly known issues:

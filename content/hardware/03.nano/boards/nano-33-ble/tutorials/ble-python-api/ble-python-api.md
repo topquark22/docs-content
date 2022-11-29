@@ -3,7 +3,7 @@ author: 'Karl Söderby'
 title: 'Nano 33 BLE Python® Guide'
 description: 'Discover how to access the features on the Nano 33 BLE using Python® scripts.'
 compatible-products: [nano-33-ble]
-tags: 
+tags:
   - MicroPython
   - OpenMV
 featuredImage: 'board'
@@ -74,16 +74,16 @@ Before you start using the board's pins, it might be a good idea to check out th
 
 To read the analog pins on the Nano BLE , we can choose from the following pins:
 
-- A0 - `4` 
-- A1 - `5` 
+- A0 - `4`
+- A1 - `5`
 - A2 - `30`
 - A3 - `29`
 - A4 - `31`
-- A5 - `2` 
+- A5 - `2`
 - A6 - `28`
-- A7 - `3` 
+- A7 - `3`
 
-To define them, we need to import the `machine` module, and define the pin as follows: 
+To define them, we need to import the `machine` module, and define the pin as follows:
 
 ```python
 import machine
@@ -142,7 +142,7 @@ Blink all RGB lights every 0.25 seconds.
 
 ```python
 from board import LED
-import time 
+import time
 
 led_red = LED(1)
 led_green = LED(2)
@@ -172,7 +172,7 @@ The classic blink example! Blink the built-in LED every 0.25 seconds.
 
 ```python
 from board import LED
-import time 
+import time
 
 led_builtin = LED(4)
 
@@ -221,7 +221,7 @@ This example allows us to connect to our board via our phone, and control the bu
 - [nRF desktop](https://www.nordicsemi.com/Products/Development-tools/nrf-connect-for-desktop)
 - [nRF mobile](https://www.nordicsemi.com/Products/Development-tools/nrf-connect-for-mobile)
 
-***After loading the script below, your board should be listed as "Nano 33 BLE" in the list of available devices. You need to pair in order to control the built-in LED.*** 
+***After loading the script below, your board should be listed as "Nano 33 BLE" in the list of available devices. You need to pair in order to control the built-in LED.***
 
 ```python
 # Use nRF Connect from App store, connect to the Nano and write 1/0 to control the LED.

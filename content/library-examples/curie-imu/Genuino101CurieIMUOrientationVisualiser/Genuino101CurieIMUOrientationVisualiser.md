@@ -22,7 +22,7 @@ This tutorial demonstrates how to make use the Arduino 101's onboard [6-axis acc
 
 3. Launch the Arduino software (IDE) and select Arduino 101 from the **Tools > Board** menu.
 
-4. Install the *Madgwick* library from library manager. To do this, open the Arduino Software (IDE), go to **Sketch > Include Library > Manage Libraries**. There you can search 'Madgwick' and install the library directly from there. 
+4. Install the *Madgwick* library from library manager. To do this, open the Arduino Software (IDE), go to **Sketch > Include Library > Manage Libraries**. There you can search 'Madgwick' and install the library directly from there.
 
 5. Download and Launch the [Processing software](https://processing.org/download/) and create a file with the Processing code shown below.
 

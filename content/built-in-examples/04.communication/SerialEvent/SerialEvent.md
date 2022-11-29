@@ -3,7 +3,7 @@ title: 'SerialEvent'
 compatible-products: [all-boards]
 difficulty: intermediate
 description: 'Demonstrates the use of serialEvent() function.'
-tags: 
+tags:
   - Communication
   - Serial monitor
   - Code

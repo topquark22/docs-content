@@ -7,14 +7,14 @@ author: Ali Jahangiri
 
 ![Max Carrier board](assets/featured.png)
 
-# Description 
-Enable edge AI for high performance industrial, building automation and robotics applications with the Portenta Max Carrier. The Portenta Max Carrier transforms the Arduino® Portenta family into a standardized industrial platform, ready for use as a single board computer or as a reference design. The Portenta Max Carrier provides easy access to the onboard peripherals of the Arduino® Portenta X8 including Gigabit Ethernet, microSD and PCIe. This board further augments the capabilities of the Portenta X8 with Fieldbus, LoRa®, 4G, Cat-M1 and NB-IoT connectivity providing a platform for Industry 4.0. 
+# Description
+Enable edge AI for high performance industrial, building automation and robotics applications with the Portenta Max Carrier. The Portenta Max Carrier transforms the Arduino® Portenta family into a standardized industrial platform, ready for use as a single board computer or as a reference design. The Portenta Max Carrier provides easy access to the onboard peripherals of the Arduino® Portenta X8 including Gigabit Ethernet, microSD and PCIe. This board further augments the capabilities of the Portenta X8 with Fieldbus, LoRa®, 4G, Cat-M1 and NB-IoT connectivity providing a platform for Industry 4.0.
 
 # Target areas:
-Industry 4.0, prototyping, robotics, data logging 
+Industry 4.0, prototyping, robotics, data logging
 
 # Features
-**Note**: This board needs the Portenta X8 for full functionality. Not all features are available with the Arduino® Portenta H7.  
+**Note**: This board needs the Portenta X8 for full functionality. Not all features are available with the Arduino® Portenta H7.
 
 *   **High Density connectors compatible with Portenta family**
 *   **Memory**
@@ -33,10 +33,10 @@ Industry 4.0, prototyping, robotics, data logging
     *   1x mini PCIe
     *   1x Serial RS232/422/485 on RJ12
 *   **Audio**
-    *   3x audio jacks: stereo line in, mic in, HP line out 
+    *   3x audio jacks: stereo line in, mic in, HP line out
     *   1x speaker connector
 *   **Debugging**
-    *   On board JLink OB / Blackmagic probe 
+    *   On board JLink OB / Blackmagic probe
 
 # Contents
 
@@ -76,7 +76,7 @@ The Portenta Max Carrier provides the user with almost limitless possibilities t
 ### Block Diagram
 ![Block Diagram](assets/maxCarrierBlockDiagram.svg)
 
-### Board Topology 
+### Board Topology
 ![Board topology](assets/maxCarrierDesignators.png)
 
 | **Ref.** | **Description**                                        | **Ref.**       | **Description**                                           |
@@ -105,7 +105,7 @@ The Portenta Max Carrier provides the user with almost limitless possibilities t
 | SW1      | 218-2LPST Boot Select Switch                           | SW2            | 218-2LPST Switch *(2)*                                    |
 | PB1      | PTS820J25KSMTRLFS Power On Button                      | PB2            | PTS820J25KSMTRLFS Reset Button                            |
 
-### Debugger 
+### Debugger
 Debugging capabilities are integrated directly into the Portenta Max Carrier and are accessible via microUSB (J10). The J-link debugger is compatible with the Segger® J-Link OB and Blackmagic probes, driven by the STM32F405RGT6 controller (U15). In addition to providing access to the Portenta board JTAG ports, different sniffer channels for I2C, CAN and UART lines.  The debugger firmware can be updated via SWD on CN3. Additionally, headers for debugging the LoRa® are accessible via CN2 with SWD.
 
 ### Audio
@@ -120,7 +120,7 @@ There are four analog audio interfaces accessible on the Portenta Max Carrier:
 
 **Note:** Audio not supported with the Portenta H7.
 
-### Cell Modem 
+### Cell Modem
 The SARA-R412M-02B (U1) is a multi-region modem capable of connecting to 2G/Cat-M1/NBIoT networks worldwide. A dedicated SMA connector (J3) allows for an external antenna. The chip operates over the 1V8 power line. A microSIM slot is available (SIM1). SN74LVC1T45 bidirectional logic level shifters (U8, U20, U21, U22) act as middleware for connecting to 3V3 serial connections. The chip is powered by 3V8 and an internal regulator provides 1V8 that is used for the SIM card and the I/O. The corresponding SIM card slot for the cell modem is on the top side of the board, directly adjacent to the module.
 
 >  (2) Functionality dependent upon connected Portenta board. Check the respective datasheet.
@@ -128,20 +128,20 @@ The SARA-R412M-02B (U1) is a multi-region modem capable of connecting to 2G/Cat-
 ### LoRa® Module
 The Portenta Max Carrier provides long range wireless connectivity for low bandwidth applications with the on-board Murata CMWX1ZZABZ-078 LoRa® transceiver module (U23). This module operates on 3V3. A dedicated SMA connector (J9) allows for an external antenna. Serial wire debug (SWD) headers are accessible via CN2.
 
-### Mini PCIe 
+### Mini PCIe
 The Portenta Max Carrier includes one female mini PCI Express card slot (J8). The connector is right angled and the board includes 2 removable standoffs for external module support. To use the spacer, add the plastic spacer on the top side of the board then attach the M2.5 screw from the back together with the washer. The Max Carrier supports two different Mini PCIe sizes. Pins 8, 10, 12 and 14 are reserved for UIM (in this case SIM).
 
 **Note:** USB, I2C and SIM functionality over PCIe is available only for the X8. Full PCIe functionality not provided at this time.
 
 ### USB
-The Portenta Max Carrier also includes a USB 2.0 Hi-Speed Hub controller based on the USB2514B/M2 (U3) that manages the 2 USB devices from the USB type A connector (J15) plus the LoRa® (U23) and PCIe (J8) modules. J15 is protected by a NCP383LMUAJAATXG (U7) power switch and current limiter. 
+The Portenta Max Carrier also includes a USB 2.0 Hi-Speed Hub controller based on the USB2514B/M2 (U3) that manages the 2 USB devices from the USB type A connector (J15) plus the LoRa® (U23) and PCIe (J8) modules. J15 is protected by a NCP383LMUAJAATXG (U7) power switch and current limiter.
 
-### Ethernet 
+### Ethernet
 The Gigabit Ethernet physical interface (J17) is directly connected to the high density connector to the Portenta board. The connector includes an activity LED indication (orange) and speed indication (green).
 
 **Note:** Gigabit Ethernet functionality is only supported on the Portenta X8.
 
-### Serial Transceiver 
+### Serial Transceiver
 The Portenta Max Carrier includes a multi-protocol transceiver supporting RS-232, RS-485, and RS-422 serial standards (configurable) based on the SP335 IC. It is connected to a 6P6C Connector (RJ11, RJ12, RJ14, RJ25).
 
 Default configuration:
@@ -180,18 +180,18 @@ The supported features depend upon your choice of Portenta board used together w
 ### Power Tree
 ![Power tree](assets/maxCarrierPowerTree.svg)
 
-The Portenta Max Carrier can either be powered through the power jack (X1) or a 18650 Li-ion/LiPo battery (J16, J18). The battery is charged while the minimum input voltage to X1 is met. The MPM3550EGLE (U6) provides a +5V rail to power the peripherals. This IC also provides power to the BQ24195RGET IC (U11) that manages the Li-ion battery and boosts the voltage to +5V. U11 also determines the battery status. 
+The Portenta Max Carrier can either be powered through the power jack (X1) or a 18650 Li-ion/LiPo battery (J16, J18). The battery is charged while the minimum input voltage to X1 is met. The MPM3550EGLE (U6) provides a +5V rail to power the peripherals. This IC also provides power to the BQ24195RGET IC (U11) that manages the Li-ion battery and boosts the voltage to +5V. U11 also determines the battery status.
 
 The power source can be determined by querying the System Status Register of U11 and check the PG_STAT field. PG_STAT = 1 means the board is powered with a power source on VBUS. Please refer to the IC [datasheet](/resources/datasheets/bq24195-datasheet.pdf) for further details.
 
-Priority is with the jack delivered power. The battery charger IC also outputs a +3V8 power rail that powers the modem (U1). The +5V power rail provides power to the Portenta board that regulates the voltage with its onboard buck converter to +3V3. The +3V3 power rail supplies power to the LoRa module (U23), 4-port USB hub (U3), microSD module (J11) and Fieldbus circuitry (U4). Audio is powered by a dedicated AP7311 LDO regulator that provides a low noise +1V8 power rail. 
+Priority is with the jack delivered power. The battery charger IC also outputs a +3V8 power rail that powers the modem (U1). The +5V power rail provides power to the Portenta board that regulates the voltage with its onboard buck converter to +3V3. The +3V3 power rail supplies power to the LoRa module (U23), 4-port USB hub (U3), microSD module (J11) and Fieldbus circuitry (U4). Audio is powered by a dedicated AP7311 LDO regulator that provides a low noise +1V8 power rail.
 
 The debugger circuitry has a dedicated power supply AP2112K (U14) that runs off the micro USB voltage from J10. This enables the debugger to operate even if the Portenta board is not inserted.
 
 Voltage range and max current are provided as a general guideline only. Consult converter datasheet for specific details.
 
 ## Board Operation
-**Note:** This board is intended to operate together with Portenta X8 (see section 1.4 Solution Overview). For more information see Portenta X8 datasheet 
+**Note:** This board is intended to operate together with Portenta X8 (see section 1.4 Solution Overview). For more information see Portenta X8 datasheet
 
 ## Connector Pinouts
 ### LoRa® Header (CN2)
@@ -236,7 +236,7 @@ Voltage range and max current are provided as a general guideline only. Consult 
 | 9   | JTAG_TRST    | Digital  | JTAG Test Reset Line   |
 | 10  | JTAG_RST     | Digital  | JTAG Reset Line        |
 
-### USB DBG0 (J10) 
+### USB DBG0 (J10)
 | Pin | **Function** | **Type**     | **Description**         |
 | --- | ------------ | ------------ | ----------------------- |
 | 1   | VBUS         | Power        | Connected to +5V_DBG    |
@@ -404,10 +404,10 @@ Note: Functions of pins 2-5 are dependent upon the configured protocol for the S
 
 ## Certifications
 ### Declaration of Conformity CE DoC (EU)
-We declare under our sole responsibility that the products above are in conformity with the essential requirements of the following EU Directives and therefore qualify for free movement within markets comprising the European Union (EU) and European Economic Area (EEA). 
+We declare under our sole responsibility that the products above are in conformity with the essential requirements of the following EU Directives and therefore qualify for free movement within markets comprising the European Union (EU) and European Economic Area (EEA).
 
 ### Declaration of Conformity to EU RoHS & REACH 211 01/19/2021
-Arduino boards are in compliance with RoHS 2 Directive 2011/65/EU of the European Parliament and RoHS 3 Directive 2015/863/EU of the Council of 4 June 2015 on the restriction of the use of certain hazardous substances in electrical and electronic equipment. 
+Arduino boards are in compliance with RoHS 2 Directive 2011/65/EU of the European Parliament and RoHS 3 Directive 2015/863/EU of the Council of 4 June 2015 on the restriction of the use of certain hazardous substances in electrical and electronic equipment.
 
 | Substance                              | **Maximum limit (ppm)** |
 | -------------------------------------- | ----------------------- |
@@ -422,17 +422,17 @@ Arduino boards are in compliance with RoHS 2 Directive 2011/65/EU of the Europea
 | Dibutyl phthalate (DBP)                | 1000                    |
 | Diisobutyl phthalate (DIBP)            | 1000                    |
 
-Exemptions : No exemptions are claimed. 
+Exemptions : No exemptions are claimed.
 
 Arduino Boards are fully compliant with the related requirements of European Union Regulation (EC) 1907 /2006 concerning the Registration, Evaluation, Authorization and Restriction of Chemicals (REACH). We declare none of the SVHCs (https://echa.europa.eu/web/guest/candidate-list-table), the Candidate List of Substances of Very High Concern for authorization currently released by ECHA, is present in all products (and also package) in quantities totaling in a concentration equal or above 0.1%. To the best of our knowledge, we also declare that our products do not contain any of the substances listed on the "Authorization List" (Annex XIV of the REACH regulations) and Substances of Very High Concern (SVHC) in any significant amounts as specified by the Annex XVII of Candidate list published by ECHA (European Chemical Agency) 1907 /2006/EC.
 
-### Conflict Minerals Declaration 
-As a global supplier of electronic and electrical components, Arduino is aware of our obligations with regards to laws and regulations regarding Conflict Minerals, specifically the Dodd-Frank Wall Street Reform and Consumer Protection Act, Section 1502. Arduino does not directly source or process conflict minerals such as Tin, Tantalum, Tungsten, or Gold. Conflict minerals are contained in our products in the form of solder, or as a component in metal alloys. As part of our reasonable due diligence Arduino has contacted component suppliers within our supply chain to verify their continued compliance with the regulations. Based on the information received thus far we declare that our products contain Conflict Minerals sourced from conflict-free areas. 
+### Conflict Minerals Declaration
+As a global supplier of electronic and electrical components, Arduino is aware of our obligations with regards to laws and regulations regarding Conflict Minerals, specifically the Dodd-Frank Wall Street Reform and Consumer Protection Act, Section 1502. Arduino does not directly source or process conflict minerals such as Tin, Tantalum, Tungsten, or Gold. Conflict minerals are contained in our products in the form of solder, or as a component in metal alloys. As part of our reasonable due diligence Arduino has contacted component suppliers within our supply chain to verify their continued compliance with the regulations. Based on the information received thus far we declare that our products contain Conflict Minerals sourced from conflict-free areas.
 
 ## FCC Caution
 Any Changes or modifications not expressly approved by the party responsible for compliance could void the user’s authority to operate the equipment.
 
-This device complies with part 15 of the FCC Rules. Operation is subject to the following two conditions: 
+This device complies with part 15 of the FCC Rules. Operation is subject to the following two conditions:
 
  (1) This device may not cause harmful interference
 
@@ -446,14 +446,14 @@ This device complies with part 15 of the FCC Rules. Operation is subject to the 
 
 3. This equipment should be installed and operated with minimum distance 20cm between the radiator & your body.
 
-English: 
+English:
 User manuals for license-exempt radio apparatus shall contain the following or equivalent notice in a conspicuous location in the user manual or alternatively on the device or both. This device complies with Industry Canada license-exempt RSS standard(s). Operation is subject to the following two conditions:
 
  (1) this device may not cause interference
 
  (2) this device must accept any interference, including interference that may cause undesired operation of the device.
 
-French: 
+French:
 Le présent appareil est conforme aux CNR d’Industrie Canada applicables aux appareils radio exempts de licence. L’exploitation est autorisée aux deux conditions suivantes :
 
  (1) l’ appareil nedoit pas produire de brouillage
@@ -461,15 +461,15 @@ Le présent appareil est conforme aux CNR d’Industrie Canada applicables aux a
  (2) l’utilisateur de l’appareil doit accepter tout brouillage radioélectrique subi, même si le brouillage est susceptible d’en compromettre le fonctionnement.
 
 **IC SAR Warning:**
-English 
-This equipment should be installed and operated with minimum distance 20 cm between the radiator and your body.  
+English
+This equipment should be installed and operated with minimum distance 20 cm between the radiator and your body.
 
-French: 
+French:
 Lors de l’ installation et de l’ exploitation de ce dispositif, la distance entre le radiateur et le corps est d ’au moins 20 cm.
 
 **Important:** The operating temperature of the EUT can’t exceed 85℃ and shouldn’t be lower than -40℃.
 
-Hereby, Arduino S.r.l. declares that this product is in compliance with essential requirements and other relevant provisions of Directive 2014/53/EU. This product is allowed to be used in all EU member states. 
+Hereby, Arduino S.r.l. declares that this product is in compliance with essential requirements and other relevant provisions of Directive 2014/53/EU. This product is allowed to be used in all EU member states.
 
 | Frequency bands      | Typical Output Power |
 | -------------------- | -------------------- |

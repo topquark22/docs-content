@@ -2,7 +2,7 @@
 title: 'Scheduled WiFi SSL Web Client'
 description: 'Print an Arduino ASCII logo by using RTC.'
 difficulty: intermediate
-tags: 
+tags:
   - RTC
   - Serial Monitor
 libraries:
@@ -61,7 +61,7 @@ The frequency is equal to 2^15 cycles per second, which means it is a convenient
 
 ## Programming the Board
 
-**1.** First, let's make sure we have correct the drivers installed. If we are using the Web Editor, we do not need to install anything. If we are using an offline editor, we need to install it manually. This can be done by navigating to **Tools > Board > Board Manager...**. Here we need to look for the **Arduino SAMD boards (32-bits ARM Cortex-M0+)** and install it. 
+**1.** First, let's make sure we have correct the drivers installed. If we are using the Web Editor, we do not need to install anything. If we are using an offline editor, we need to install it manually. This can be done by navigating to **Tools > Board > Board Manager...**. Here we need to look for the **Arduino SAMD boards (32-bits ARM Cortex-M0+)** and install it.
 
 **2.** Now, we need to install the libraries needed. Simply go to **Tools > Manage libraries...** and search for the libraries listed below and install them.
 
@@ -78,7 +78,7 @@ Before we begin, let's take a look at the libraries used and some of the core fu
 
 
 - `<WiFi101.h>` - This is the library shared across the old WiFi enabled boards to manage the connections to the Internet through WiFi.
-  
+
 
 **or**
 
@@ -364,7 +364,7 @@ void print2digits(int number) {
 
 ## Testing It Out
 
-We want to get an alarm every minute with the RTC functions. We use `rtc.setAlarmSeconds( 0);` and then `rtc.enableAlarm(rtc.MATCH_SS);`. The first functions sets at "00" the value of seconds to compare; the second function enables the alarm and sets its trigger on the match of the actual time and the set value for seconds. The condition is met every time the seconds digits go to "00", that is every minute. When the condition is met, the RTC generates an interrupt request. 
+We want to get an alarm every minute with the RTC functions. We use `rtc.setAlarmSeconds( 0);` and then `rtc.enableAlarm(rtc.MATCH_SS);`. The first functions sets at "00" the value of seconds to compare; the second function enables the alarm and sets its trigger on the match of the actual time and the set value for seconds. The condition is met every time the seconds digits go to "00", that is every minute. When the condition is met, the RTC generates an interrupt request.
 
 The request is serviced by the function `alarmMatch` that sets to **true** the flag `sendRequest` used by the main loop. There, If this flag is true, the request to the Arduino.cc site is made, otherwise nothing is done. This solution allows you to do something else between the interrupts because the code execution flows without being blocked by any big `delay()` function. Please remember that RTC resets every time the board is powered up. After having uploaded the code, you should see an ASCII Arduino logo being printed on the Serial Monitor.
 
@@ -376,7 +376,7 @@ If the code is not working, there are some common issues we can troubleshoot:
 - You have not installed the correct drivers for the board.
 - You have not installed the correct libraries.
 - Your `ssid` or `pass` is incorrect.
-- You are using an incorrect configuration for your network type. 
+- You are using an incorrect configuration for your network type.
 
 ## Conclusion
 

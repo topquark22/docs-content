@@ -9,7 +9,7 @@ This tutorial will show you how to update the bootloader with an Arduino IDE ske
 
 ### Hardware & Software
 - Nano 33 BLE or Nano 33 BLE sense
-- Arduino IDE 1.8.10+ or Arduino Pro IDE 0.0.4+ 
+- Arduino IDE 1.8.10+ or Arduino Pro IDE 0.0.4+
 - OpenMV IDE 2.6.4+
 
 ### How the New Bootloader Works
@@ -46,7 +46,7 @@ After updating the bootloader put the Nano 33 BLE sense in bootloader mode if ne
 
 ![The OpenMV IDE after starting it](assets/nano_openmv_open_ide.png)
 
-Click on the "connect" symbol at the bottom of the left toolbar. 
+Click on the "connect" symbol at the bottom of the left toolbar.
 
 ![Click the connect button to attach the Nano 33 BLE Sense to the OpenMV IDE](assets/nano_openmv_click_connect.png)
 
@@ -154,7 +154,7 @@ while (True):
     time.sleep_ms(500)
 ```
 
-If everything went correctly the built-in LEDs should blink in the color sequence indicated in the code. 
+If everything went correctly the built-in LEDs should blink in the color sequence indicated in the code.
 
 #### Troubleshoot
 

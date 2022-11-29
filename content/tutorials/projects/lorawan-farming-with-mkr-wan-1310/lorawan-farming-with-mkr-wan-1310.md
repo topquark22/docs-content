@@ -332,7 +332,7 @@ Remember that the *downlink* message is sent immediately by Node-Red to TTN (in 
 Now open the Monitor (or Serial Monitor if you are working on the IDE) and you'll see in a while something like this:
 
 ```arduino
-Sending: {"light":364,"temp":25.70,"hum":46.90,"mois":3} - 7B 22 6C 69 67 68 74 22 3A 33 36 34 2C 22 74 65 6D 70 22 3A 32 35 2E 37 30 2C 22 68 75 6D 22 3A 34 36 2E 39 30 2C 22 6D 6F 69 73 22 3A 33 7D 
+Sending: {"light":364,"temp":25.70,"hum":46.90,"mois":3} - 7B 22 6C 69 67 68 74 22 3A 33 36 34 2C 22 74 65 6D 70 22 3A 32 35 2E 37 30 2C 22 68 75 6D 22 3A 34 36 2E 39 30 2C 22 6D 6F 69 73 22 3A 33 7D
 Message sent correctly!
 Received: {"status":1}
 ```

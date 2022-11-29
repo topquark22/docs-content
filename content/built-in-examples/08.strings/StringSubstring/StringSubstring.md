@@ -3,10 +3,10 @@ title: 'String substring Function'
 compatible-products: [all-boards]
 difficulty: intermediate
 description: 'Look for "phrases" within a given string.'
-tags: 
+tags:
   - Strings
   - Serial monitor
-  - Code 
+  - Code
 ---
 
 The [**String**](https://www.arduino.cc/en/Reference/StringObject) function `substring()` is closely related to `charAt()`,  `startsWith()` and `endsWith()`. It allows you to look for an instance of a particular substring within a given String.

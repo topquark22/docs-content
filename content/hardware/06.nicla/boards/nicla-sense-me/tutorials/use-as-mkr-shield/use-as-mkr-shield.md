@@ -27,12 +27,12 @@ software:
 
 ![The Arduino Nicla Sense ME mounted on top of the MKR WiFi 1010](assets/hero.png)
 
-The form factor of the Nicla Sense allows the board to be used as a MKR shield. In this tutorial, we will walk you through converting the Nicla Sense Board into a shield to extend some of the functionalities of the MKR boards, using the I<sup>2</sup>C communications, and explain how this communication functions through an example sketch. 
+The form factor of the Nicla Sense allows the board to be used as a MKR shield. In this tutorial, we will walk you through converting the Nicla Sense Board into a shield to extend some of the functionalities of the MKR boards, using the I<sup>2</sup>C communications, and explain how this communication functions through an example sketch.
 
 ## Goals.
 
 -   How to solder the headers on the Nicla Sense ME
--   How to establish an I<sup>2</sup>C communication between the MKR WiFi 1010 and the Nicla Sense  
+-   How to establish an I<sup>2</sup>C communication between the MKR WiFi 1010 and the Nicla Sense
 
 ### Required Hardware and Software
 

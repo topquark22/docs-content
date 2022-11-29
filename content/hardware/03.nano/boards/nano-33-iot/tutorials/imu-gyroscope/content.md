@@ -7,7 +7,7 @@ tags:
   - IMU
   - Gyroscope
 author: 'Nefeli Alushi'
-libraries: 
+libraries:
   - name: Arduino LSM6DS3
     url: https://www.arduino.cc/en/Reference/ArduinoLSM6DS3o_LSM6DS3
 hardware:
@@ -43,7 +43,7 @@ IMU stands for: inertial measurement unit. It is an electronic device that measu
 
 ![The LSM6DS3 sensor.](./assets/nano33IOT_02_IMU.png)
 
-The LSM6DS3 is a system-in-package featuring a 3D digital linear acceleration sensor and a 3D digital angular rate sensor. 
+The LSM6DS3 is a system-in-package featuring a 3D digital linear acceleration sensor and a 3D digital angular rate sensor.
 
 
 ### The Library
@@ -55,16 +55,16 @@ The Arduino LSM6DS3 library allows us to use the Arduino Nano 33 IoT IMU module 
 - **Output** data rate is fixed at 104 Hz.
 
 
-If you want to read more about the LSM6DS3 sensor module see <a href="https://www.st.com/resource/en/datasheet/lsm6ds3.pdf" target="_blank">here</a>. 
+If you want to read more about the LSM6DS3 sensor module see <a href="https://www.st.com/resource/en/datasheet/lsm6ds3.pdf" target="_blank">here</a>.
 
 
 ### Gyroscope
 
-A gyroscope sensor is a device that can measure and maintain the orientation and angular velocity of an object. Gyroscopes are more advanced than accelerometers, as they can measure the tilt and lateral orientation of an object, whereas an accelerometer can only measure its linear motion. 
+A gyroscope sensor is a device that can measure and maintain the orientation and angular velocity of an object. Gyroscopes are more advanced than accelerometers, as they can measure the tilt and lateral orientation of an object, whereas an accelerometer can only measure its linear motion.
 
 ![How gyroscopes work.](./assets/nano33IOT_02_gyroscope.png)
 
-Gyroscope sensors are also called "Angular Rate Sensors" or "Angular Velocity Sensors". Measured in degrees per second, angular velocity is the change in the rotational angle of the object per unit of time. 
+Gyroscope sensors are also called "Angular Rate Sensors" or "Angular Velocity Sensors". Measured in degrees per second, angular velocity is the change in the rotational angle of the object per unit of time.
 
 In this example, we will use the gyroscope as an indicator for the direction of the force that is applied to the board. This will be achieved by swiftly moving the board for an instant in four directions: forward, backward, to the left and to the right. The results will be visible through the Serial Monitor.
 
@@ -103,7 +103,7 @@ Next, in the `loop()` we can **remove** the following, since we initialized in t
 float x, y, z;
 ```
 
-as well as the following lines that won't be required: 
+as well as the following lines that won't be required:
 
 ```arduino
 Serial.print(x);
@@ -140,7 +140,7 @@ delay(500);
 }
 ```
 
-These `if` statements will check the x and y values of `plusThreshold` and `minusThreshold` that we defined in the beginning. According to these values the direction of the force that we move our board towards, will be printed. 
+These `if` statements will check the x and y values of `plusThreshold` and `minusThreshold` that we defined in the beginning. According to these values the direction of the force that we move our board towards, will be printed.
 
 
 **4. Complete code**
@@ -152,8 +152,8 @@ If you choose to skip the code building section, the complete code can be found 
 /*
   Arduino LSM6DS3 - Simple Gyroscope
 
-  This example reads the gyroscope values from the LSM6DS3 sensor 
-  and prints them to the Serial Monitor or Serial Plotter, as a directional detection of 
+  This example reads the gyroscope values from the LSM6DS3 sensor
+  and prints them to the Serial Monitor or Serial Plotter, as a directional detection of
   an axis' angular velocity.
 
   The circuit:
@@ -186,14 +186,14 @@ void setup() {
   }
   Serial.print("Gyroscope sample rate = ");
   Serial.print(IMU.gyroscopeSampleRate());
-  Serial.println(" Hz");  
+  Serial.println(" Hz");
   Serial.println();
   Serial.println("Gyroscope in degrees/second");
 }
 
 
 void loop() {
-  
+
   if (IMU.gyroscopeAvailable()) {
     IMU.readGyroscope(x, y, z);
   }
@@ -217,7 +217,7 @@ void loop() {
     Serial.println("Collision left");
     delay(500);
   }
-  
+
 }
 ```
 
@@ -228,7 +228,7 @@ In order to get a correct reading of the board data, before uploading the sketch
 
 ![Positioning of the board.](./assets/nano33IOT_02_illustration.png)
 
-Next, you can verify and upload the sketch to the board and open the Monitor from the menu on the left.  
+Next, you can verify and upload the sketch to the board and open the Monitor from the menu on the left.
 
 Now with the board parallel to the ground you can swiftly move it towards one direction: forward, backwards, right or left. According to the movement of your choice, the results will print every second to your monitor!
 
@@ -242,7 +242,7 @@ Here is a screenshot of the sketch returning these values:
 
 Sometimes errors occur, if the code is not working there are some common issues we can troubleshoot:
 - Missing a bracket or a semicolon.
-- Arduino board connected to the wrong port. 
+- Arduino board connected to the wrong port.
 - Accidental interruption of cable connection.
 
 

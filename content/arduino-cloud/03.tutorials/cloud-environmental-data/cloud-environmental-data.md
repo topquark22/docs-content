@@ -12,7 +12,7 @@ featuredImage: 'cloud'
 
 ## Introduction
 
-In this tutorial, we will combine the functionality of the [MKR WiFi 1010](https://store.arduino.cc/mkr-wifi-1010) and the [MKR ENV Shield](https://store.arduino.cc/arduino-mkr-env-shield). The shield, mounted on top of the board, will record environmental data, such as temperature, humidity, pressure and illuminance. This data will be synced with the [Arduino IoT Cloud](https://create.arduino.cc/iot/), a service that allows us to remotely control and monitor our devices. 
+In this tutorial, we will combine the functionality of the [MKR WiFi 1010](https://store.arduino.cc/mkr-wifi-1010) and the [MKR ENV Shield](https://store.arduino.cc/arduino-mkr-env-shield). The shield, mounted on top of the board, will record environmental data, such as temperature, humidity, pressure and illuminance. This data will be synced with the [Arduino IoT Cloud](https://create.arduino.cc/iot/), a service that allows us to remotely control and monitor our devices.
 
 This means that whenever we read data on the board, it will also be visible in the cloud dashboard, where we can create different ways of visualizing the data.
 
@@ -52,7 +52,7 @@ You will now have an option of either configuring a new Arduino device, or a thi
 ![Selecting the type of device.](assets/device_setup_1.png)
 
 At this point, you will need to connect your cloud compatible board to your computer. You will also need to have installed the Create plugin. If if it is not installed, the set up wizard will ask you to install it. Your device should now show up, and you will need to click on the **"Configure"**
-button. 
+button.
 
 ![Device found.](assets/device_setup_2.png)
 
@@ -60,7 +60,7 @@ You will now be asked to name your device. In this case, a name was randomly gen
 
 ![Naming the device.](assets/device_setup_3.png)
 
-After clicking on next, the board will start to configure. This process may take a few minutes. 
+After clicking on next, the board will start to configure. This process may take a few minutes.
 
 ![The configuration process.](assets/device_setup_4.png)
 
@@ -84,7 +84,7 @@ Let's start by linking our freshly configured device, by clicking on the **"Sele
 
 ### Creating variables
 
-Now, we can continue to create variables for our Thing. These variables will be synced with the cloud, as long as the board is connected to Internet and the cloud. 
+Now, we can continue to create variables for our Thing. These variables will be synced with the cloud, as long as the board is connected to Internet and the cloud.
 
 To create variables, simply click on the **"Add variable"** button. This will open up a new window.
 
@@ -137,7 +137,7 @@ void setup() {
 
   while(!Serial);
   // This delay gives the chance to wait for a Serial Monitor without blocking if none is found
-  delay(1500); 
+  delay(1500);
 
   // Defined in thingProperties.h
   initProperties();
@@ -164,7 +164,7 @@ void setup() {
 
 void loop() {
   ArduinoCloud.update();
-  // Your code here 
+  // Your code here
   temperature = ENV.readTemperature();
   humidity    = ENV.readHumidity();
   pressure    = ENV.readPressure();
@@ -192,9 +192,9 @@ Once we have confirmed that the board is connected to the cloud, the last step i
 
 ![Building a new dashboard.](assets/new_dashboard.png)
 
-We will now see an empty dashboard, where we are now going to create something called **widgets**. Widgets are the visual representation of our variables. There's two ways of creating widgets: either we add them one by one, and link them manually, or we can add and link **them all at once**. To save some time, let's do that! 
+We will now see an empty dashboard, where we are now going to create something called **widgets**. Widgets are the visual representation of our variables. There's two ways of creating widgets: either we add them one by one, and link them manually, or we can add and link **them all at once**. To save some time, let's do that!
 
-Simply click on the **"Add"** button, and a dropdown menu will appear. Here we will click on **"Things"**, and select the Thing that appears here. 
+Simply click on the **"Add"** button, and a dropdown menu will appear. Here we will click on **"Things"**, and select the Thing that appears here.
 
 ![Find and click on your Thing.](assets/IoT_ENV_IMG08.png)
 
@@ -202,7 +202,7 @@ In this case, we changed the name to **Environmental Data**, but whatever you na
 
 ![Generate widgets from the variables in your Thing.](assets/IoT_ENV_IMG09.png)
 
-All new widgets will now appear here, and when the board is connected to the cload, it will continue to update these values. 
+All new widgets will now appear here, and when the board is connected to the cload, it will continue to update these values.
 
 ![The complete dashboard.](assets/IoT_ENV_IMG10.png)
 
@@ -210,7 +210,7 @@ Congratulations! You can now view your real time data directly in the dashboard.
 
 ## Conclusion
 
-In this tutorial, we demonstrated simply how a MKR WiFi 1010, a MKR ENV Shield and the Arduino IoT Cloud is used to create a simple IoT application. This, without having to connect a single wire, or create a difficult program: the cloud takes care of all of that. 
+In this tutorial, we demonstrated simply how a MKR WiFi 1010, a MKR ENV Shield and the Arduino IoT Cloud is used to create a simple IoT application. This, without having to connect a single wire, or create a difficult program: the cloud takes care of all of that.
 
 You can now start thinking about how this application might work in real life. There are a lot of different things you can add to it, such as wind sensors (anemometers), rain sensors, CO2 sensors and much more. With some easy connections, you can build anything you want to, connect it to the cloud and view all the data live from anywhere in the world!
 

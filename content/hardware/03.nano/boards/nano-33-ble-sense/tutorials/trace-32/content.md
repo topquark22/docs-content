@@ -109,7 +109,7 @@ Select "T32ThreadDebug" from the "Nano 33 BLE Projects" menu and you will be pre
 
 ![Elf File Selection](assets/trace32-dir-select.png)
 
-In this dialog you can select which variant of the Arduino IDE you would like to use to source ELF files or if you want to use the current directory. To follow this tutorial please select "current dir". 
+In this dialog you can select which variant of the Arduino IDE you would like to use to source ELF files or if you want to use the current directory. To follow this tutorial please select "current dir".
 
 The list to the right of the "Options" selection should then become populated with a number of available ELF files for downloading and debugging. Select the one you want with a double click. In this case select "T32ThreadDebug.ino.elf". This will also show file attributes such as date, time and size. To select an ELF file from a custom directory, click the "File" button underneath the "User's choice" field and browse for the desired ELF file. You can opt for changing the behavior of this script the next time it is executed.
 
@@ -180,7 +180,7 @@ Lauterbach also provides hardware-based debug & trace tools. To learn more about
 
 ## Troubleshooting
 
-### Error Message in AREA View: 'No More Arguments Expected' 
+### Error Message in AREA View: 'No More Arguments Expected'
 
 - This may be caused by unsupported characters in your Windows user name. Make sure your user name neither contains any spaces nor special characters.
 

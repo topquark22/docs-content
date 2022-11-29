@@ -7,8 +7,8 @@ variant: Limited Edition
 
 ![](assets/featured.png)
 
-# Description 
-We are celebrating the anniversary of our flagship board, Arduino UNO, by producing a just as effective and versatile miniature: The Arduino UNO Mini. This board is, just as its big brother, equipped with the ATMega328P and the ATMega 16U2 Processor, but is updated with USB-C® connector. 
+# Description
+We are celebrating the anniversary of our flagship board, Arduino UNO, by producing a just as effective and versatile miniature: The Arduino UNO Mini. This board is, just as its big brother, equipped with the ATMega328P and the ATMega 16U2 Processor, but is updated with USB-C® connector.
 
 # Target Areas:
 Hobby-making, future-shaping, engineering, designing, problem-solving
@@ -36,7 +36,7 @@ Hobby-making, future-shaping, engineering, designing, problem-solving
       <tr>
          <td style="vertical-align: top;"><p>Security</p></td>
          <td>
-            <p>Power On Reset (POR)</p> 
+            <p>Power On Reset (POR)</p>
             <p>Brown out Detection (BOD)</p>
          </td>
       </tr>
@@ -75,9 +75,9 @@ Hobby-making, future-shaping, engineering, designing, problem-solving
 # CONTENTS
 ## The Board
 ### Application Examples
-The UNO Mini is a smaller version of the Arduino UNO - to celebrate a successful decade. The UNO Mini Limited Edition is a collector's item for Arduino lovers. 
+The UNO Mini is a smaller version of the Arduino UNO - to celebrate a successful decade. The UNO Mini Limited Edition is a collector's item for Arduino lovers.
 
-**A tribute board:** The UNO Mini Limited Edition is a special variant of the Arduino UNO. Despite the small size, it is equipped with both the ATmega328P and the ATMega16U2, as well as the 14 digital input/output pins, 6 analog inputs, USB connection, ICSP header and reset button. This board includes everything you will need for a great first experience with Arduino. 
+**A tribute board:** The UNO Mini Limited Edition is a special variant of the Arduino UNO. Despite the small size, it is equipped with both the ATmega328P and the ATMega16U2, as well as the 14 digital input/output pins, 6 analog inputs, USB connection, ICSP header and reset button. This board includes everything you will need for a great first experience with Arduino.
 
 **Industry-standard development board:** The Arduino UNO Mini board can be used in a range of different companies and industries, as the brain for various PLC’s.
 
@@ -95,7 +95,7 @@ The UNO Mini is a smaller version of the Arduino UNO - to celebrate a successful
 | ------ | ------------------------------------------------ | -------------- | -------------- |
 |        | Conservative thermal limits for the whole board: | -40 °C (-40°F) | 85 °C ( 185°F) |
 
-**NOTE:** In extreme temperatures, EEPROM, voltage regulator, and the crystal oscillator, might not work as expected due to the extreme temperature conditions 
+**NOTE:** In extreme temperatures, EEPROM, voltage regulator, and the crystal oscillator, might not work as expected due to the extreme temperature conditions
 
 ### Power Consumption
 
@@ -109,7 +109,7 @@ The UNO Mini is a smaller version of the Arduino UNO - to celebrate a successful
 
 ## Functional Overview
 
-### Board Topology 
+### Board Topology
 
 ![Board topology, Top](assets/boardTopology.png)
 
@@ -119,7 +119,7 @@ The UNO Mini is a smaller version of the Arduino UNO - to celebrate a successful
 | J2    | 6x Connector pin (female)      | U1    | ATMEGA16U2 Module                     |
 | J3    | 8x Connector pin (female)      | U2    | ATMEGA328P Module                     |
 | J4    | 8x Connector pin (female)      | U5    | MPM3610AGQV-PIC StpDwn-CONV.21V 1.2A  |
-| J5    | 10x Connector pin (female)     | Y1    | Crystal oscillator                    | 
+| J5    | 10x Connector pin (female)     | Y1    | Crystal oscillator                    |
 | J6    | Input voltage                  | Y2    | Crystal oscillator                    |
 
 ### Processor
@@ -135,18 +135,18 @@ The Main Processor is a ATmega328P running at up tp 20 MHz. Most of its pins are
 
 ## Board Operation
 
-### Getting Started - IDE 
+### Getting Started - IDE
 If you want to program your Arduino UNO Mini while offline you need to install the Arduino Desktop IDE [1] To connect the Arduino UNO Mini to your computer, you’ll need a Micro-C USB cable. This also provides power to the board, as indicated by the LED.
 
-### Getting Started - Arduino Web Editor 
+### Getting Started - Arduino Web Editor
 All Arduino boards, including this one, work out-of-the-box on the Arduino Web Editor [2], by just installing a simple plugin.
 
 The Arduino Web Editor is hosted online, therefore it will always be up-to-date with the latest features and support for all boards. Follow **[3]** to start coding on the browser and upload your sketches onto your board.
 
-### Getting Started - Arduino IoT Cloud 
+### Getting Started - Arduino IoT Cloud
 All Arduino IoT enabled products are supported on Arduino IoT Cloud which allows you to Log, graph and analyze sensor data, trigger events, and automate your home or business.
 
-### Sample Sketches 
+### Sample Sketches
 Sample sketches for the Arduino UNO Mini can be found either in the “Examples” menu in the Arduino IDE or in the “Documentation” section of the Arduino Pro website [4]
 
 
@@ -168,7 +168,7 @@ Now that you have gone through the basics of what you can do with the board you 
 
 ### Declaration of Conformity CE DoC (EU)
 
-We declare under our sole responsibility that the products above are in conformity with the essential requirements of the following EU Directives and therefore qualify for free movement within markets comprising the European Union (EU) and European Economic Area (EEA). 
+We declare under our sole responsibility that the products above are in conformity with the essential requirements of the following EU Directives and therefore qualify for free movement within markets comprising the European Union (EU) and European Economic Area (EEA).
 
 | Directives                                              |                                                   |
 | ------------------------------------------------------- | ------------------------------------------------- |
@@ -182,7 +182,7 @@ We declare under our sole responsibility that the products above are in conformi
 
 ### Declaration of Conformity to EU RoHS & REACH 211 01/19/2021
 
-Arduino boards are in compliance with RoHS 2 Directive 2011/65/EU of the European Parliament and RoHS 3 Directive 2015/863/EU of the Council of 4 June 2015 on the restriction of the use of certain hazardous substances in electrical and electronic equipment. 
+Arduino boards are in compliance with RoHS 2 Directive 2011/65/EU of the European Parliament and RoHS 3 Directive 2015/863/EU of the Council of 4 June 2015 on the restriction of the use of certain hazardous substances in electrical and electronic equipment.
 
 | Substance                              |    Maximum limit (ppm)  |
 | -------------------------------------- | ----------------------- |
@@ -198,13 +198,13 @@ Arduino boards are in compliance with RoHS 2 Directive 2011/65/EU of the Europea
 | Diisobutyl phthalate (DIBP)            | 1000                    |
 
 
-Exemptions : No exemptions are claimed. 
+Exemptions : No exemptions are claimed.
 
 Arduino Boards are fully compliant with the related requirements of European Union Regulation (EC) 1907 /2006 concerning the Registration, Evaluation, Authorization and Restriction of Chemicals (REACH). We declare none of the SVHCs (https://echa.europa.eu/web/guest/candidate-list-table), the Candidate List of Substances of Very High Concern for authorization currently released by ECHA, is present in all products (and also package) in quantities totaling in a concentration equal or above 0.1%. To the best of our knowledge, we also declare that our products do not contain any of the substances listed on the "Authorization List" (Annex XIV of the REACH regulations) and Substances of Very High Concern (SVHC) in any significant amounts as specified by the Annex XVII of Candidate list published by ECHA (European Chemical Agency) 1907 /2006/EC.
 
-### Conflict Minerals Declaration 
+### Conflict Minerals Declaration
 
-As a global supplier of electronic and electrical components, Arduino is aware of our obligations with regards to laws and regulations regarding Conflict Minerals, specifically the Dodd-Frank Wall Street Reform and Consumer Protection Act, Section 1502. Arduino does not directly source or process conflict minerals such as Tin, Tantalum, Tungsten, or Gold. Conflict minerals are contained in our products in the form of solder, or as a component in metal alloys. As part of our reasonable due diligence Arduino has contacted component suppliers within our supply chain to verify their continued compliance with the regulations. Based on the information received thus far we declare that our products contain Conflict Minerals sourced from conflict-free areas. 
+As a global supplier of electronic and electrical components, Arduino is aware of our obligations with regards to laws and regulations regarding Conflict Minerals, specifically the Dodd-Frank Wall Street Reform and Consumer Protection Act, Section 1502. Arduino does not directly source or process conflict minerals such as Tin, Tantalum, Tungsten, or Gold. Conflict minerals are contained in our products in the form of solder, or as a component in metal alloys. As part of our reasonable due diligence Arduino has contacted component suppliers within our supply chain to verify their continued compliance with the regulations. Based on the information received thus far we declare that our products contain Conflict Minerals sourced from conflict-free areas.
 
 <div class="breakPage"> </div>
 
@@ -212,7 +212,7 @@ As a global supplier of electronic and electrical components, Arduino is aware o
 
 Any Changes or modifications not expressly approved by the party responsible for compliance could void the user’s authority to operate the equipment.
 
-This device complies with part 15 of the FCC Rules. Operation is subject to the following two conditions: 
+This device complies with part 15 of the FCC Rules. Operation is subject to the following two conditions:
 
 (1) This device may not cause harmful interference
 
@@ -226,14 +226,14 @@ This device complies with part 15 of the FCC Rules. Operation is subject to the 
 
 3. This equipment should be installed and operated with minimum distance 20cm between the radiator & your body.
 
-English: 
+English:
 User manuals for licence-exempt radio apparatus shall contain the following or equivalent notice in a conspicuous location in the user manual or alternatively on the device or both. This device complies with Industry Canada licence-exempt RSS standard(s). Operation is subject to the following two conditions:
 
 (1) this device may not cause interference
 
  (2) this device must accept any interference, including interference that may cause undesired operation of the device.
 
-French: 
+French:
 Le présent appareil est conforme aux CNR d’Industrie Canada applicables aux appareils radio exempts de licence. L’exploitation est autorisée aux deux conditions suivantes :
 
 (1) l’ appareil nedoit pas produire de brouillage
@@ -242,15 +242,15 @@ Le présent appareil est conforme aux CNR d’Industrie Canada applicables aux a
 
 **IC SAR Warning:**
 
-English 
+English
 This equipment should be installed and operated with minimum distance 20 cm between the radiator and your body.
 
-French: 
+French:
 Lors de l’ installation et de l’ exploitation de ce dispositif, la distance entre le radiateur et le corps est d ’au moins 20 cm.
 
 **Important:** The operating temperature of the EUT can’t exceed 85℃ and shouldn’t be lower than -40℃.
 
-Hereby, Arduino S.r.l. declares that this product is in compliance with essential requirements and other relevant provisions of Directive 2014/53/EU. This product is allowed to be used in all EU member states. 
+Hereby, Arduino S.r.l. declares that this product is in compliance with essential requirements and other relevant provisions of Directive 2014/53/EU. This product is allowed to be used in all EU member states.
 
 <div class="breakPage"> </div>
 

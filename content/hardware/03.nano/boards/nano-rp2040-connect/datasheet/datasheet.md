@@ -10,7 +10,7 @@ type: maker
 
 The feature packed **Arduino® Nano RP2040 Connect** brings the new **Raspberry Pi RP2040** microcontroller to the Nano form factor. Make the most of the dual core **32-bit Arm® Cortex®-M0+** to make Internet of Things projects with Bluetooth®  and Wi-Fi connectivity thanks to the **U-blox® Nina W102** module. Dive into real-world projects with the onboard accelerometer, gyroscope, RGB LED and microphone. Develop robust embedded AI solutions with minimal effort using the **Arduino® Nano RP2040 Connect**!
 
-# Target Areas 
+# Target Areas
 Internet of Things (IoT), machine learning, prototyping,
 
 # Features
@@ -81,11 +81,11 @@ Internet of Things (IoT), machine learning, prototyping,
   - Micro USB
   - UART, SPI, I2C Support
 - **Power**
-  - Buck step-down converter  
+  - Buck step-down converter
 - **Safety Information**
   - Class A
 
-# Contents 
+# Contents
 
 ## The Board
 ### Application Examples
@@ -163,7 +163,7 @@ The RP2040 controls the peripherals and digital pins, as well as analog pins (A0
 
 ### Wi-Fi/Bluetooth® Connectivity
 Wi-Fi and Bluetooth®  connectivity is provided by the Nina W102 (U2) module. The RP2040 only has 4 analog pins, and the Nina is used to extend that to the full eight as is standard in the Arduino Nano form factor with another 4 12-bit analog inputs (A4-A7). Additionally, the common anode RGB LED is also controlled by the Nina W-102 module such that the LED is off when the digital state is HIGH and on when the digital state is LOW. The internal PCB antenna in the module eliminates the need for an external antenna.
-The Nina W102 module also includes a dual core Xtensa LX6 CPU that can also be programmed independently of the RP2040 through the pads under the board using SWD. 
+The Nina W102 module also includes a dual core Xtensa LX6 CPU that can also be programmed independently of the RP2040 through the pads under the board using SWD.
 
 ### 6-Axis IMU
 It is possible to obtain 3D gyroscope and 3D accelerometer data from the LSM6DSOX 6-axis IMU (U9). In addition to providing such data, it is also possible to do machine learning on the IMU for gesture detection.
@@ -172,7 +172,7 @@ It is possible to obtain 3D gyroscope and 3D accelerometer data from the LSM6DSO
 The RP2040 (U1) has access to an additional 16 MB of flash memory via a QSPI interface. The execute-in-place (XIP) feature of the RP2040 allows external flash memory to be addressed and accessed by the system as though it were internal memory,  without first copying the code to internal memory.
 
 ### Cryptography
-The ATECC608A Cryptographic IC (U4) provides secure boot capabilities alongside SHA and AES-128 encryption/decryption support for security in Smart Home and Industrial IoT (IIoT) applications. Additionally, a random number generator is also available for use by the RP2040. 
+The ATECC608A Cryptographic IC (U4) provides secure boot capabilities alongside SHA and AES-128 encryption/decryption support for security in Smart Home and Industrial IoT (IIoT) applications. Additionally, a random number generator is also available for use by the RP2040.
 
 ### Microphone
 The MP34DT06J microphone is connected via a PDM interface to the RP2040. The digital MEMS microphone is omnidirectional and operate via a capacitive sensing element with a high (64 dB) signal to noise ratio. The sensing element, capable of detecting acoustic waves, is manufactured using a specialized silicon micromachining process dedicated to produce audio sensors.
@@ -190,7 +190,7 @@ The Arduino Nano RP2040 Connect can be powered by either the Micro USB port (J1)
 If you want to program your Arduino® Nano RP2040 Connect while offline you need to install the Arduino® Desktop IDE **[1]** To connect the Arduino® Edge control to your computer, you’ll need a micro USB cable. This also provides power to the board, as indicated by the LED.
 
 ### Getting Started - Arduino Web Editor
-All Arduino® boards, including this one, work out-of-the-box on the Arduino® Web Editor **[2]**, by just installing a simple plugin. 
+All Arduino® boards, including this one, work out-of-the-box on the Arduino® Web Editor **[2]**, by just installing a simple plugin.
 
 The Arduino® Web Editor is hosted online, therefore it will always be up-to-date with the latest features and support for all boards. Follow **[3]** to start coding on the browser and upload your sketches onto your board.
 
@@ -216,7 +216,7 @@ All Arduino boards have a built-in bootloader which allows flashing the board vi
 | 4   | ID       | Digital      | Unused                  |
 | 5   | GND      | Power        | Ground                  |
 
-### JP1 
+### JP1
 | Pin | Function | Type    | Description             |
 | --- | -------- | ------- | ----------------------- |
 | 1   | TX1      | Digital | UART TX / Digital Pin 1 |
@@ -235,7 +235,7 @@ All Arduino boards have a built-in bootloader which allows flashing the board vi
 | 14  | D11      | Digital | Digital Pin 11          |
 | 15  | D12      | Digital | Digital Pin 12          |
 
-### JP2 
+### JP2
 | Pin | Function | Type    | Description       |
 | --- | -------- | ------- | ----------------- |
 | 1   | D13      | Digital | Digital Pin 13    |
@@ -278,10 +278,10 @@ All Arduino boards have a built-in bootloader which allows flashing the board vi
 
 ## Certifications
 ### Declaration of Conformity CE DoC (EU)
-We declare under our sole responsibility that the products above are in conformity with the essential requirements of the following EU Directives and therefore qualify for free movement within markets comprising the European Union (EU) and European Economic Area (EEA). 
+We declare under our sole responsibility that the products above are in conformity with the essential requirements of the following EU Directives and therefore qualify for free movement within markets comprising the European Union (EU) and European Economic Area (EEA).
 
 ### Declaration of Conformity to EU RoHS & REACH 211 01/19/2021
-Arduino boards are in compliance with RoHS 2 Directive 2011/65/EU of the European Parliament and RoHS 3 Directive 2015/863/EU of the Council of 4 June 2015 on the restriction of the use of certain hazardous substances in electrical and electronic equipment. 
+Arduino boards are in compliance with RoHS 2 Directive 2011/65/EU of the European Parliament and RoHS 3 Directive 2015/863/EU of the Council of 4 June 2015 on the restriction of the use of certain hazardous substances in electrical and electronic equipment.
 
 | **Substance**                          | **Maximum Limit (ppm)** |
 | -------------------------------------- | ----------------------- |
@@ -296,17 +296,17 @@ Arduino boards are in compliance with RoHS 2 Directive 2011/65/EU of the Europea
 | Dibutyl phthalate (DBP)                | 1000                    |
 | Diisobutyl phthalate (DIBP)            | 1000                    |
 
-Exemptions : No exemptions are claimed. 
+Exemptions : No exemptions are claimed.
 
 Arduino Boards are fully compliant with the related requirements of European Union Regulation (EC) 1907 /2006 concerning the Registration, Evaluation, Authorization and Restriction of Chemicals (REACH). We declare none of the SVHCs (https://echa.europa.eu/web/guest/candidate-list-table), the Candidate List of Substances of Very High Concern for authorization currently released by ECHA, is present in all products (and also package) in quantities totaling in a concentration equal or above 0.1%. To the best of our knowledge, we also declare that our products do not contain any of the substances listed on the "Authorization List" (Annex XIV of the REACH regulations) and Substances of Very High Concern (SVHC) in any significant amounts as specified by the Annex XVII of Candidate list published by ECHA (European Chemical Agency) 1907 /2006/EC.
 
-### Conflict Minerals Declaration 
-As a global supplier of electronic and electrical components, Arduino is aware of our obligations with regards to laws and regulations regarding Conflict Minerals, specifically the Dodd-Frank Wall Street Reform and Consumer Protection Act, Section 1502. Arduino does not directly source or process conflict minerals such as Tin, Tantalum, Tungsten, or Gold. Conflict minerals are contained in our products in the form of solder, or as a component in metal alloys. As part of our reasonable due diligence Arduino has contacted component suppliers within our supply chain to verify their continued compliance with the regulations. Based on the information received thus far we declare that our products contain Conflict Minerals sourced from conflict-free areas. 
+### Conflict Minerals Declaration
+As a global supplier of electronic and electrical components, Arduino is aware of our obligations with regards to laws and regulations regarding Conflict Minerals, specifically the Dodd-Frank Wall Street Reform and Consumer Protection Act, Section 1502. Arduino does not directly source or process conflict minerals such as Tin, Tantalum, Tungsten, or Gold. Conflict minerals are contained in our products in the form of solder, or as a component in metal alloys. As part of our reasonable due diligence Arduino has contacted component suppliers within our supply chain to verify their continued compliance with the regulations. Based on the information received thus far we declare that our products contain Conflict Minerals sourced from conflict-free areas.
 
 ### FCC Caution
 Any Changes or modifications not expressly approved by the party responsible for compliance could void the user’s authority to operate the equipment.
 
-This device complies with part 15 of the FCC Rules. Operation is subject to the following two conditions: 
+This device complies with part 15 of the FCC Rules. Operation is subject to the following two conditions:
 
 (1) This device may not cause harmful interference
 
@@ -320,21 +320,21 @@ This device complies with part 15 of the FCC Rules. Operation is subject to the 
 
 3. This equipment should be installed and operated with minimum distance 20cm between the radiator & your body.
 
-English: 
+English:
 User manuals for license-exempt radio apparatus shall contain the following or equivalent notice in a conspicuous location in the user manual or alternatively on the device or both. This device complies with Industry Canada license-exempt RSS standard(s). Operation is subject to the following two conditions:
 
 (1) this device may not cause interference
 
 (2) this device must accept any interference, including interference that may cause undesired operation of the device.
 
-French: 
+French:
 Le présent appareil est conforme aux CNR d’Industrie Canada applicables aux appareils radio exempts de licence. L’exploitation est autorisée aux deux conditions suivantes :
 
 (1) l’ appareil nedoit pas produire de brouillage
 
 (2) l’utilisateur de l’appareil doit accepter tout brouillage radioélectrique subi, même si le brouillage est susceptible d’en compromettre le fonctionnement.
 
-Hereby, Arduino S.r.l. declares that this product is in compliance with essential requirements and other relevant provisions of Directive 2014/53/EU. This product is allowed to be used in all EU member states. 
+Hereby, Arduino S.r.l. declares that this product is in compliance with essential requirements and other relevant provisions of Directive 2014/53/EU. This product is allowed to be used in all EU member states.
 
 | Frequency bands | Maximum Effective Isotropic Radiated Power (EIRP) |
 | --------------- | -------------------------- |

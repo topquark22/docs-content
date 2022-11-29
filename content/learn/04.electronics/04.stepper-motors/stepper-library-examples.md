@@ -20,7 +20,7 @@ The stepper is controlled by with digital pins 8, 9, 10, and 11 for either unipo
 - power supply appropriate for your particular stepper
 - hook-up wires
 - breadboard
-  
+
 ## Circuit
 
 Below you'll find circuits for both unipolar and bipolar steppers. In either case, it is best to power your stepper motors from an external supply, as they draw too much to be powered directly from your Arduino board.

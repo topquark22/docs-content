@@ -1,7 +1,7 @@
 ---
 title: 'Unipolar Stepper Motor'
 description: 'Learn how to drive a unipolar stepper motor commonly found in old floppy drives!'
-tags: 
+tags:
   - Stepper motor
   - Potentiometer
 software:
@@ -30,7 +30,7 @@ The goals of this tutorial are:
 
 ## Hardware & Software Needed
 
-- Arduino Board 
+- Arduino Board
 - Unipolar stepper motor (Can be found in old floppy drives)
 - ULN2003A driver
 - 10k Ω potentiometer
@@ -39,7 +39,7 @@ The goals of this tutorial are:
 
 
 
-## Stepper Motors 
+## Stepper Motors
 
 Stepper motors are different from DC motors, in that you make them move by sending them phased pulses of current, making the motor move in "steps." In order to do this, you need to send pulse trains of varying polarity to multiple windings, the speed of the motor being determined by the frequency of the pulses, and the direction of motor motion being determined by the phasing between the pulses being applied to the various windings. As a result, you get more-precise control over motor motion, but at the cost of some control circuitry complexity.
 
@@ -57,7 +57,7 @@ If you want to know more about stepper motors, the link below may be useful for 
 
 ## Programming the Board
 
-We will now get to the programming part of this tutorial. 
+We will now get to the programming part of this tutorial.
 
  Open the editor of your choice, and make sure you have your board installed. Select your board and port, and upload any of the two examples below.
 
@@ -75,13 +75,13 @@ The first example is the basic code to make the motor spin in **one direction**.
  * -------------
  *
  * Program to drive a stepper motor coming from a 5'25 disk drive
- * according to the documentation I found, this stepper: "[...] motor 
- * made by Copal Electronics, with 1.8 degrees per step and 96 ohms 
+ * according to the documentation I found, this stepper: "[...] motor
+ * made by Copal Electronics, with 1.8 degrees per step and 96 ohms
  * per winding, with center taps brought out to separate leads [...]"
  * [http://www.cs.uiowa.edu/~jones/step/example.html]
  *
  * It is a unipolar stepper motor with 5 wires:
- * 
+ *
  * - red: power connector, I have it at 5V and works fine
  * - orange and black: coil 1
  * - brown and yellow: coil 2
@@ -141,13 +141,13 @@ The second example is a bit more advanced, it allows the motor to spin at differ
  * -------------------------
  *
  * Program to drive a stepper motor coming from a 5'25 disk drive
- * according to the documentation I found, this stepper: "[...] motor 
- * made by Copal Electronics, with 1.8 degrees per step and 96 ohms 
+ * according to the documentation I found, this stepper: "[...] motor
+ * made by Copal Electronics, with 1.8 degrees per step and 96 ohms
  * per winding, with center taps brought out to separate leads [...]"
  * [http://www.cs.uiowa.edu/~jones/step/example.html]
  *
  * It is a unipolar stepper motor with 5 wires:
- * 
+ *
  * - red: power connector, I have it at 5V and works fine
  * - orange and black: coil 1
  * - brown and yellow: coil 2
@@ -197,11 +197,11 @@ void loop() {
   val = analogRead(0);
   if (val > 540) {
     // move faster the higher the value from the potentiometer
-    delayTime = 2048 - 1024 * val / 512 + 1; 
+    delayTime = 2048 - 1024 * val / 512 + 1;
     moveForward();
   } else if (val < 480) {
     // move faster the lower the value from the potentiometer
-    delayTime = 1024 * val / 512 + 1; 
+    delayTime = 1024 * val / 512 + 1;
     moveBackward();
   } else {
     delayTime = 1024;

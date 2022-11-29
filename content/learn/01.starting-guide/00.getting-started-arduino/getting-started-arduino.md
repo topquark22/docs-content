@@ -5,7 +5,7 @@ author: 'Karl Söderby'
 tags: [Arduino, API, Signals, IDE, Quick Reference]
 ---
 
-The Arduino platform has since its start in 2005, grown to become one of the most recognizable brands in the space of electronics and embedded design. 
+The Arduino platform has since its start in 2005, grown to become one of the most recognizable brands in the space of electronics and embedded design.
 
 But what are the cornerstones of Arduino? What is a "board", how do I write code to it, and what are the tools needed to create my own project? The goal with this guide is to provide you with an overview to the Arduino project.
 
@@ -66,7 +66,7 @@ The quick reference is an extract from the full Arduino API, containing popular 
 
 ## Arduino Hardware
 
-Over the years, Arduino has released hundreds of hardware designs in many shapes and forms. 
+Over the years, Arduino has released hundreds of hardware designs in many shapes and forms.
 
 ### Anatomy of an Arduino Board
 
@@ -96,33 +96,33 @@ The program that is loaded to the microcontroller will start execution as soon a
 - Check whether a condition is met.
 - All of the above.
 
-The speed of a program is incredibly fast, unless we tell it to slow down. It depends on the size of the program and how long it takes for the microcontroller to execute it, but it is generally in **microseconds (one millionth of a second)**.  
+The speed of a program is incredibly fast, unless we tell it to slow down. It depends on the size of the program and how long it takes for the microcontroller to execute it, but it is generally in **microseconds (one millionth of a second)**.
 
 ![The basic operation of an Arduino.](assets/program-basics.png)
 
 ### Circuit Basics
 
-Circuits consist of at least one active electronic component, and a conductive material, such as wires, so that current can pass through. When working with an Arduino, you will in most cases build a circuit for your project. 
+Circuits consist of at least one active electronic component, and a conductive material, such as wires, so that current can pass through. When working with an Arduino, you will in most cases build a circuit for your project.
 
 A simple example of a circuit, is an **LED circuit**. A wire is connected from a pin on the Arduino, to an LED via a resistor (to protect the LED from high current), and finally to the ground pin (GND). When the pin is set to a **HIGH state**, the microcontroller on the Arduino board will allow an electric current to flow through the circuit, which turns on the LED. When the pin is set to a **LOW state**, the LED will turn off, as an electric current is not flowing through the circuit.
 
 ![An LED circuit with an Arduino.](assets/circuit.png)
 
-Circuits are typically represented as **schematics**, which are the blueprints for your circuit. The image below shows the schematic's representation of the same circuit shown in the image above.  
+Circuits are typically represented as **schematics**, which are the blueprints for your circuit. The image below shows the schematic's representation of the same circuit shown in the image above.
 
 ![Schematics of a circuit.](assets/schematic.png)
 
 ### Electronic Signals
 
-All communication between electronic components are facilitated by **electronic signals.** There are two main types of electronic signals: **analog & digital**. 
+All communication between electronic components are facilitated by **electronic signals.** There are two main types of electronic signals: **analog & digital**.
 
 #### Analog Signal
 
 ![Basics of an analog signal.](assets/analog-signal.png)
 
-An analog signal is generally bound to a range. In an Arduino, that range is typically 0-5V, or 0-3.3V. 
+An analog signal is generally bound to a range. In an Arduino, that range is typically 0-5V, or 0-3.3V.
 
-If we for example use a potentiometer (an analog component used to change the resistance of a circuit), we can manually adjust this range (0-5V). In the program, this is represented in a range of 0-1023, which is a 10-bit resolution. 
+If we for example use a potentiometer (an analog component used to change the resistance of a circuit), we can manually adjust this range (0-5V). In the program, this is represented in a range of 0-1023, which is a 10-bit resolution.
 
 If we write an analog signal using Pulse-Width Modulation (PWM), we can use a range between 0-255, as we are using an 8-bit resolution.
 
@@ -132,7 +132,7 @@ If we write an analog signal using Pulse-Width Modulation (PWM), we can use a ra
 
 ![Basics of a digital signal.](assets/digital-signal.png)
 
-A digital signal works a bit different, representing only two binary states (0 or 1) that are read as high or low states in the program. This is the most common signal type in modern technology. 
+A digital signal works a bit different, representing only two binary states (0 or 1) that are read as high or low states in the program. This is the most common signal type in modern technology.
 
 You can easily read and write digital signals on an Arduino, which is useful to for example read button states, or to turn something on or off.
 
@@ -156,13 +156,13 @@ This is a clever way of sending large amounts of data from one point to the othe
 
 ### Sensors & Actuators
 
-When working with Arduino, it is important to understand **sensors** and **actuators**, and the difference between them. 
+When working with Arduino, it is important to understand **sensors** and **actuators**, and the difference between them.
 
 #### What Is a Sensor?
 
-A sensor, in simple terms, is used to *sense* its environment, meaning it records a physical parameter, for example temperature, and converts it into an electronic signal. 
+A sensor, in simple terms, is used to *sense* its environment, meaning it records a physical parameter, for example temperature, and converts it into an electronic signal.
 
-Sensors can also take the form of just a simple button: when a state changes (we pressed a button), the electronic signal is switched from low to high (0 to 1). 
+Sensors can also take the form of just a simple button: when a state changes (we pressed a button), the electronic signal is switched from low to high (0 to 1).
 
 There are many types of sensors, and several ways of recording data from them. Perhaps the easiest to use is an analog sensor, where we communicate a range of values through altering the voltage input fed into an Arduino analog pin (usually between 0-5 volts). This simply gives you a range between 0-1023 (a 10-bit resolution).
 
@@ -182,11 +182,11 @@ An actuator, in simple terms, is used to *actuate* or *change a physical state*.
 - A motor.
 - A switch.
 
-Actuators converts electric signals into e.g. radiant energy (light) or mechanical energy (movement). 
+Actuators converts electric signals into e.g. radiant energy (light) or mechanical energy (movement).
 
 How actuators are controlled really depends on what type of component we have. The most simple way is to simply turn something on/off, while more advanced is controlling the amount of voltage a component receives (i.e. the speed of a motor).
 
-To control actuators, it is common to use `digitalWrite()` and `analogWrite()`. 
+To control actuators, it is common to use `digitalWrite()` and `analogWrite()`.
 
 ```arduino
 digitalWrite(LED, HIGH); //turn on an LED
@@ -198,7 +198,7 @@ analogWrite(motor, 25);  //set a motor to 10% of its capacity
 
 #### Input & Output
 
-Sensors and actuators, are typically referred to as **inputs and outputs**. When we write a program, it is common to construct conditionals that checks the state of a sensor, and decides whether it should actuate something. 
+Sensors and actuators, are typically referred to as **inputs and outputs**. When we write a program, it is common to construct conditionals that checks the state of a sensor, and decides whether it should actuate something.
 
 A basic example of this is a **button** and an **LED**. We can write a conditional that checks if a button is pressed, turn on the LED, and turn it off if the button is not pressed. In an Arduino program, it looks like this:
 
@@ -216,7 +216,7 @@ if(buttonState == HIGH){        //check if state is high (button is pressed)
 
 There are several serial communication protocols that uses the aforementioned digital signals to send data. The most common are **UART, SPI & I²C**. The UART protocol is among other things, used to send data between a computer and Arduino board, such as uploading a new program, or reading data directly from an Arduino.
 
-The SPI and I²C protocols are used for communication between both internal and external components. The communication is handled by something called a **serial bus**, which is attached to a specific pin on the Arduino. 
+The SPI and I²C protocols are used for communication between both internal and external components. The communication is handled by something called a **serial bus**, which is attached to a specific pin on the Arduino.
 
 Using the I²C protocol, we can connect several sensors on the same pin, and retrieve the data accurately. Each device has an address that we need to specify in the program, which we use when making data requests.
 
@@ -224,7 +224,7 @@ Using the I²C protocol, we can connect several sensors on the same pin, and ret
 
 ### Memory
 
-The "standard" Arduino typically has two memories: SRAM and Flash memory. 
+The "standard" Arduino typically has two memories: SRAM and Flash memory.
 
 The SRAM (Static Random-Access Memory) is used to for example store the value of a variable (such as the state of a boolean). When powered off, this memory resets.
 
@@ -246,7 +246,7 @@ Most modern Arduino boards now come equipped with a radio module, designed to co
 
 ![The u-blox NINA-W102 Wi-Fi / Bluetooth® module on the Nano RP2040 Connect board.](assets/wifi-bt-module.png)
 
-The most popular and inexpensive modules are the Wi-Fi & Bluetooth® modules. The Wi-Fi modules allow your board to connect to routers, and to request and send data over the Internet. In a way, it works the same as your computer when requesting various types of data over the Internet, just in a smaller scale. 
+The most popular and inexpensive modules are the Wi-Fi & Bluetooth® modules. The Wi-Fi modules allow your board to connect to routers, and to request and send data over the Internet. In a way, it works the same as your computer when requesting various types of data over the Internet, just in a smaller scale.
 
 Bluetooth® is used to communicate with nearby devices, and is really useful for maintaining a fast and reliable connection. For example, in real-life applications, Bluetooth® technology for example used in wireless headphones & speakers.
 
@@ -256,7 +256,7 @@ Similarly to serial protocols, radio modules use their own set of protocols to c
 
 ***Visit the [Arduino Language Reference](https://www.arduino.cc/reference/en/) to explore the full Arduino API.***
 
-The Arduino API, aka the "Arduino Programming Language", consists of several functions, variables and structures based on the C/C++ language. 
+The Arduino API, aka the "Arduino Programming Language", consists of several functions, variables and structures based on the C/C++ language.
 
 ### Main Parts
 
@@ -264,13 +264,13 @@ The Arduino API can be divided into three main parts: **functions, variables** a
 
 - **Functions:** for controlling the Arduino board and performing computations. For example, to read or write a state to a digital pin, map a value or use serial communication.
 - **Variables:** the Arduino constants, data types and conversions. E.g. `int`, `boolean`, `array`.
-- **Structure:** the elements of the Arduino (C++) code, such as 
+- **Structure:** the elements of the Arduino (C++) code, such as
   - *sketch* (`loop()`, `setup()`)
   - *control structure* (`if`, `else`, `while`, `for`)
   - *arithmetic operators* (multiplication, addition, subtraction)
   - *comparison operators*, such as `==` (equal to), `!=` (not equal to), `>` (greater than).
 
-The Arduino API can be described as a simplification of the C++ programming language, with a lot of additions for controlling the Arduino hardware. 
+The Arduino API can be described as a simplification of the C++ programming language, with a lot of additions for controlling the Arduino hardware.
 
 ### Program Structure
 
@@ -279,27 +279,27 @@ The absolute minimum requirement of an Arduino program is the use of two functio
 - `void setup()` - this function executes only once, when the Arduino is powered on. Here we define things such as the mode of a pin (input or output), the baud rate of serial communication or the initialization of a library.
 - `void loop()` - this is where we write the code that we want to execute over and over again, such as turning on/off a lamp based on an input, or to conduct a sensor reading every X second.
 
-The above functions are **always** required in an Arduino sketch, but you are of course able to add several more functions, which is useful for longer programs. 
+The above functions are **always** required in an Arduino sketch, but you are of course able to add several more functions, which is useful for longer programs.
 
 ### The "Sketch"
 
-In the Arduino project, a program is referred to as a "sketch". A sketch is a file that you write your program inside. It has the `.ino` extension, and is always stored in a folder of the same name. 
+In the Arduino project, a program is referred to as a "sketch". A sketch is a file that you write your program inside. It has the `.ino` extension, and is always stored in a folder of the same name.
 
-The folder can include other files, such as a **header file**, that can be included in your sketch. 
+The folder can include other files, such as a **header file**, that can be included in your sketch.
 
 ### Example Sketch
 
-Below is an example of a standard Arduino sketch, which contains some popular Arduino programming elements. 
+Below is an example of a standard Arduino sketch, which contains some popular Arduino programming elements.
 
 ```arduino
-/* 
-This is a comment at the top of a program, 
-it will not be recognized as code. Very good 
-to add an explanation of what your code does 
+/*
+This is a comment at the top of a program,
+it will not be recognized as code. Very good
+to add an explanation of what your code does
 here.
 
 This sketch shows how to read a value from a
-sensor connected to pin A1, print it out in 
+sensor connected to pin A1, print it out in
 the Serial Monitor, and turn on an LED connected
 to pin number 2 if a conditional is met.
 */
@@ -309,23 +309,23 @@ int ledPin = 2; //define pin 2 (digital pin)
 int sensorValue; //create variable for storing readings
 
 //void setup is for configurations on start up
-void setup() { 
+void setup() {
     Serial.begin(9600); //initialize serial communication
     pinMode(ledPin, OUTPUT); //define ledPin as an output
 }
 
 void loop() {
     sensorValue = analogRead(sensorPin); // do a sensor reading
-    
+
     Serial.print("Sensor value is: "); //print a message to the serial monitor
     Serial.println(sensorValue); //print the value to the serial monitor
-    
+
     //check if sensorValue is below 200
-    if(sensorValue < 200) { 
+    if(sensorValue < 200) {
         digitalWrite(ledPin, HIGH); //if it is, turn on the LED on pin 2.
     }
     //if sensorValue is above 200, turn off the LED
-    else{ 
+    else{
         digitalWrite(ledPin, LOW);
     }
 }
@@ -349,7 +349,7 @@ Most libraries also have a set of examples that are useful to get started with t
 
 ### Core Specific API
 
-Every Arduino board requires a "core", or "package", that needs to be installed in order to program it. All packages contain the standard Arduino API, but also a specific API that can only be used with specific boards. 
+Every Arduino board requires a "core", or "package", that needs to be installed in order to program it. All packages contain the standard Arduino API, but also a specific API that can only be used with specific boards.
 
 For example, the classic [ArduinoCore-avr](https://github.com/arduino/ArduinoCore-avr) package, automatically includes the [EEPROM](/learn/built-in-libraries/eeprom), and [SoftwareSerial](/learn/built-in-libraries/software-serial) libraries, and can be used freely without any additional installation. In this package you will find the classic Arduino UNO, Nano, Mega2560 and more.
 
@@ -389,9 +389,9 @@ To upload code to an Arduino board using the IDE, one typically does the followi
 
 **3. Compile your sketch** - the code we write is not exactly how it looks like when uploaded to our Arduino: compiling code means that we check it for errors, and convert it into a binary file (1s and 0s). If something fails, you will get this in the error console.
 
-**4. Upload your sketch** - once the compilation is successful, the code can be uploaded to your board. In this step, we connect the board to the computer physically, and select the right serial port. 
+**4. Upload your sketch** - once the compilation is successful, the code can be uploaded to your board. In this step, we connect the board to the computer physically, and select the right serial port.
 
-**5. Serial Monitor (optional)** - for most Arduino projects, it is important to know what's going on on your board. The Serial Monitor tool available in all IDEs allow for data to be sent from your board to your computer. 
+**5. Serial Monitor (optional)** - for most Arduino projects, it is important to know what's going on on your board. The Serial Monitor tool available in all IDEs allow for data to be sent from your board to your computer.
 
 ### Arduino IDE 1.8.x
 
@@ -405,7 +405,7 @@ For what is now considered the "legacy" editor, the Arduino IDE 1.8.X, or "Java 
 
 ![The new Arduino IDE.](assets/ide-2.png)
 
-In 2021, the Arduino IDE 2.0 was released. The new IDE has the same functionality, but also supports features such as auto-completion and debugging. 
+In 2021, the Arduino IDE 2.0 was released. The new IDE has the same functionality, but also supports features such as auto-completion and debugging.
 
 ***Learn more by visiting the [Arduino IDE 2 documentation](/software/ide-v2).***
 
@@ -579,7 +579,7 @@ int returnFunction() {
 
 #### Variable Definition
 
-Variables can either be created **locally** or **globally**. Variables that are defined in the `loop()` are considered local, and variables defined at the top of your sketch are considered global. 
+Variables can either be created **locally** or **globally**. Variables that are defined in the `loop()` are considered local, and variables defined at the top of your sketch are considered global.
 
 ```arduino
 int sensorReading = x; //global variable
@@ -600,7 +600,7 @@ void loop(){
 There are several data types available for use, and below are some of the most common:
 
 ```
-bool 
+bool
 byte
 char
 double
@@ -716,7 +716,7 @@ sensorValue = analogRead(A1); //stores reading of A1 in "sensorValue" variable
 
 #### `analogWrite()`
 
-Writes a value between 0-255 (8-bit resolution). Used for dimming lights or setting the speed of a motor. Also referred to as **PWM**, or Pulse Width Modulation. 
+Writes a value between 0-255 (8-bit resolution). Used for dimming lights or setting the speed of a motor. Also referred to as **PWM**, or Pulse Width Modulation.
 
 ```arduino
 analogWrite(pin, value); //write a range between 0-255 to a specific pin
@@ -726,7 +726,7 @@ PWM is only available on specific pins (marked with a "~" symbol).
 
 ### Structure
 
-The structure of the Arduino API is based on C++, and can be considered the building blocks of a program. 
+The structure of the Arduino API is based on C++, and can be considered the building blocks of a program.
 
 #### Conditionals
 
@@ -857,7 +857,7 @@ x *= y; //x is now 10 (multiply and assign)
 
 ## Conclusion
 
-In this guide, we have touched upon some of the fundamentals of Arduino: hardware, software tools, what is the Arduino API, and a quick intro to it. This guide serves mainly as an introduction to Arduino, and understanding the fundamental concepts. 
+In this guide, we have touched upon some of the fundamentals of Arduino: hardware, software tools, what is the Arduino API, and a quick intro to it. This guide serves mainly as an introduction to Arduino, and understanding the fundamental concepts.
 
 To learn more, you can explore the [Arduino Documentation](/) and the [Arduino Language Reference](https://www.arduino.cc/reference/en/), where you will discover thousands of detailed tutorials, examples, API entries and other resources.
 

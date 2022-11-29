@@ -4,7 +4,7 @@ difficulty: intermediate
 compatible-products: [due]
 description: 'Use the Arduino Due as a USB host for a keyboard.'
 author: 'Arduino'
-tags: 
+tags:
   - USB Host
   - Keyboard
 libraries:
@@ -41,7 +41,7 @@ There is no circuit for this tutorial. Simply connect your Arduino Due with the 
 
 ## Programming the Board
 
-**1.** First, let's make sure we have correct the drivers installed. If we are using the Web Editor, we do not need to install anything. If we are using an offline editor, we need to install it manually. This can be done by navigating to **Tools > Board > Board Manager...**. Here we need to look for the **Arduino SAM boards (32-bits ARM Cortex-M3)** and install it. 
+**1.** First, let's make sure we have correct the drivers installed. If we are using the Web Editor, we do not need to install anything. If we are using an offline editor, we need to install it manually. This can be done by navigating to **Tools > Board > Board Manager...**. Here we need to look for the **Arduino SAM boards (32-bits ARM Cortex-M3)** and install it.
 
 **2.** Now, we need to install the libraries needed. Simply go to **Tools > Manage libraries...** and search for **USBHost** and install it.
 

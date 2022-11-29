@@ -6,7 +6,7 @@ compatible-products: [mkr-fox-1200]
 tags:
   - Sigfox
 author: 'Arturo Guadalupi'
-libraries: 
+libraries:
   - name: Sigfox
     url: https://www.arduino.cc/reference/en/libraries/arduino-sigfox-for-mkrfox1200/
 hardware:

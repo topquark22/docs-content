@@ -1,7 +1,7 @@
 ---
 title: 'A Guide to the Arduino UNO Mini Limited Edition'
 description: 'Learn how to set up the UNO Mini Limited Edition (LE), a miniature version of the classic UNO board. This guide includes instructions and technical information to get started with your board.'
-tags: 
+tags:
   - UNO Mini LE
   - Limited Edition
 author: 'Karl Söderby'
@@ -16,7 +16,7 @@ software:
 The [Arduino UNO Mini LE](https://store.arduino.cc/uno-mini-le) is a great little board that is very much like its dad: the good ol' UNO. It uses the same microcontroller, **ATmega328P** and the same USB-Serial Processor **ATmega16U2**, but differs in size and some other areas. Some notable differences are:
 
 - The UNO Mini LE has a USB-C® connector
-- The female header pins are half the pitch of the original UNO (due to its small size). 
+- The female header pins are half the pitch of the original UNO (due to its small size).
 - It does not feature a barrel plug connector for external power supply. Instead, there are two pins available for connecting external power supplies: **VIN** and **GND**. The limit for these pins are 6-21V and should not be exceeded.
 
 In this guide, we will go through some requirements, installation instructions, ideas for projects and some technical specifications. If you want to visit the official documentation for this board, you click on the link below:
@@ -45,7 +45,7 @@ The UNO Mini LE can be programmed through the **Classic Arduino IDE 1.8.X**. To 
 
 - [Installing classic AVR boards.](/software/ide-v1/tutorials/getting-started/cores/arduino-avr)
 
-### Arduino IDE 2.0.X 
+### Arduino IDE 2.0.X
 
 The UNO Mini LE can be programmed through the **Arduino IDE 2.0.X**. To install your board, you can check out the guide below:
 
@@ -78,7 +78,7 @@ void loop() {
 }
 ```
 
-When the upload is finished, the **built-in LED** will turn on and off every one second. 
+When the upload is finished, the **built-in LED** will turn on and off every one second.
 
 <video width="100%" loop autoplay>
 <source src="assets/MINI_UNO_LE_Blink.mp4" type="video/mp4" />

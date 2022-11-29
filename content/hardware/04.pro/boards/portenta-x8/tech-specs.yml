@@ -1,10 +1,10 @@
 Board:
   Name: Arduino® Portenta X8
   SKU: ABX00049
-Microprocessor: 
+Microprocessor:
  4x ARM® Cortex® -A53 core up to 1.8GHz
  1x ARM® Cortex® -M4 core up to 400 MHz
-Microcontroller: 
+Microcontroller:
   1x ARM® Cortex® -M7 core up to 480MHz (for internal use)
   1x ARM® Cortex® -M4 core up to 240MHz
 USB connector: USB-C
@@ -24,12 +24,12 @@ Power:
   Input voltage (VIN): 5V
   DC Current per I/O Pin: 8 mA
 Memory:
-  RAM: 2 GB of Low Power DDR4 DRAM 
-  Flash: 16 GB of eMMC 
+  RAM: 2 GB of Low Power DDR4 DRAM
+  Flash: 16 GB of eMMC
   ST STM32H747XI: 2MB Flash, 1MB RAM
 Dimensions:
   Weight: 10,2 g
   Width: 25.40 mm
   Length: 66.04 mm
-Environmental temperature: 
+Environmental temperature:
  -40°C to + 85°C (-40 to 185°F)

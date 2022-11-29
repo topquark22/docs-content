@@ -53,7 +53,7 @@ Be careful to connect the MKR GSM 1400 to the MKR Relay Protoshield properly, al
 
 ### How It Works
 
-This project uses the Blynk cloud service and application interface to control the two relays of the MKR Relay Protoshield from a smartphone. The Blynk library allows the connection over the internet between our MKR GSM 1400 and an interface on an IOS or Android smartphone. The ease of use of Blynk makes the building of the interface very simple and straightforward. The communication is two way and this allows us to create two virtual switches and a LED on the interface. The LED on the smartphone screen is driven by our MKR GSM 1400, while the two switches are used to drive D1 and D2 that are connected to the MKR Relay Protoshield. 
+This project uses the Blynk cloud service and application interface to control the two relays of the MKR Relay Protoshield from a smartphone. The Blynk library allows the connection over the internet between our MKR GSM 1400 and an interface on an IOS or Android smartphone. The ease of use of Blynk makes the building of the interface very simple and straightforward. The communication is two way and this allows us to create two virtual switches and a LED on the interface. The LED on the smartphone screen is driven by our MKR GSM 1400, while the two switches are used to drive D1 and D2 that are connected to the MKR Relay Protoshield.
 
 ### Blynk Setup
 
@@ -67,7 +67,7 @@ When the interface is loaded, you should see something like this screenshot:
 ![The simple interface developed for this project](assets/blynk_relaycarrier_ui_zsyKr0hPmU.jpg)
 
 
-The next step is necessary to bind your smartphone Blynk app with your MKR GSM 1400. This happens with a token that you should send from your smartphone to your email. 
+The next step is necessary to bind your smartphone Blynk app with your MKR GSM 1400. This happens with a token that you should send from your smartphone to your email.
 
 Tap on the nut icon on the right top corner to open the *Project Settings* page
 
@@ -95,7 +95,7 @@ GPRS gprs;
 GSM gsmAccess;
 ```
 
-After the include section, are assigned all the credential data required by the connection, auth[] is required to pair the sketch with a particular project on Blynk, **pin**, **apn**, **user** and **pass** instead are used to access the SIM and establish the connection with the data network; their values are assigned by the input fields defined in **Secrets tab.** 
+After the include section, are assigned all the credential data required by the connection, auth[] is required to pair the sketch with a particular project on Blynk, **pin**, **apn**, **user** and **pass** instead are used to access the SIM and establish the connection with the data network; their values are assigned by the input fields defined in **Secrets tab.**
 
 ***Please note: if the SIM does not have a PIN or the Network doesn't require a Password, you need to put "" in the corresponding Secrets fields.***
 

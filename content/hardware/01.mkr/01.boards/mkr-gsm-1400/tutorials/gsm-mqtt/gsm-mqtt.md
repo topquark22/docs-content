@@ -7,7 +7,7 @@ tags:
   - GSM
   - MQTT
 author: 'Karl Söderby'
-libraries: 
+libraries:
   - name: MKRGSM
     url: https://www.arduino.cc/reference/en/libraries/mkrgsm/
   - name: MQTT
@@ -22,7 +22,7 @@ software:
   - web-editor
 ---
 
- Introduction 
+ Introduction
 
 In this tutorial, we will create a setup that allows a MKR GSM 1400 board to **publish** and **subscribe** to topics, using MQTT (Message Queuing Telemetry Transport). For simplicity, we will use the same device to both publish and subscribe to the same topic.
 
@@ -39,8 +39,8 @@ The goals of this project are:
 ## Hardware & Software Needed
 
 - Arduino IDE ([online](https://create.arduino.cc/) or [offline](https://www.arduino.cc/en/main/software)).
-- [MKRGSM](https://www.arduino.cc/en/Reference/GSM) library installed. 
-- [MQTT](https://github.com/256dpi/arduino-mqtt) library installed. 
+- [MKRGSM](https://www.arduino.cc/en/Reference/GSM) library installed.
+- [MQTT](https://github.com/256dpi/arduino-mqtt) library installed.
 - [Arduino MKR GSM 1400](https://store.arduino.cc/mkr-gsm-1400).
 - [Antenna](https://store.arduino.cc/antenna).
 - SIM card from an operator in your country.
@@ -48,15 +48,15 @@ The goals of this project are:
 
 ## Message Queuing Telemetry Transport (MQTT)
 
-The MQTT protocol was first introduced in 1999, as a light-weight **publish** and **subscribe** system. It is particularly useful for devices with low-bandwidth, where we can send commands, sensor values or messages over the Internet with little effort. 
+The MQTT protocol was first introduced in 1999, as a light-weight **publish** and **subscribe** system. It is particularly useful for devices with low-bandwidth, where we can send commands, sensor values or messages over the Internet with little effort.
 
-A basic explanation on how it works is that a node, for example and Arduino with a Wi-Fi module, sends a payload to a broker. A broker is a kind of "middle-point" server, that essentially stores payloads sent to it, in something called **topics**. A topic, is a definition of what type of data it contains, it could for example be "basement humidity" or "living room temperature". Another node can then subscribe to this information, from the broker, and voilà, data has been moved from Node A to Node B over the Internet. 
+A basic explanation on how it works is that a node, for example and Arduino with a Wi-Fi module, sends a payload to a broker. A broker is a kind of "middle-point" server, that essentially stores payloads sent to it, in something called **topics**. A topic, is a definition of what type of data it contains, it could for example be "basement humidity" or "living room temperature". Another node can then subscribe to this information, from the broker, and voilà, data has been moved from Node A to Node B over the Internet.
 
 ![Basics of MQTT.](assets/mkr_tutorial_11_img_02.png)
 
-There are several different ways this can be practiced, with many different layers of security depending on what type of broker and setup we use. For example, if we are dealing with non-sensitive data, such as the temperature of a specific location, we are not too concerned on who might get access to it. But there's cases where data needs to be protected, for example in Social Media messaging services. 
+There are several different ways this can be practiced, with many different layers of security depending on what type of broker and setup we use. For example, if we are dealing with non-sensitive data, such as the temperature of a specific location, we are not too concerned on who might get access to it. But there's cases where data needs to be protected, for example in Social Media messaging services.
 
-One way to protect the data, is to for example use a **token**, something that is quite common when working with various IoT services. For instance, if we are publishing something to a broker, anyone who has the URL, e.g. **randombroker.org/randomtopic** can subscribe to it. But if we added a unique token on both sides, they wouldn't. These tokens could for example be **Z6ACuLwr5T**, which is not exactly something easy to guess. 
+One way to protect the data, is to for example use a **token**, something that is quite common when working with various IoT services. For instance, if we are publishing something to a broker, anyone who has the URL, e.g. **randombroker.org/randomtopic** can subscribe to it. But if we added a unique token on both sides, they wouldn't. These tokens could for example be **Z6ACuLwr5T**, which is not exactly something easy to guess.
 
 ![Using encryption with MQTT.](assets/mkr_tutorial_11_img_03.png)
 
@@ -73,14 +73,14 @@ MQTT is quite the interesting topic, and if you wish to read more about it, chec
 
 ## Creating the Program
 
-We will now get to the programming part of this tutorial. 
+We will now get to the programming part of this tutorial.
 
-**1.** First, let's make sure we have the drivers installed. If we are using the Web Editor, we do not need to install anything. If we are using an offline editor, we need to install it manually. This can be done by navigating to **Tools > Board > Board Manager...**. Here we need to look for the **Arduino SAMD boards (32-bits ARM Cortex M0+)** and install it. 
+**1.** First, let's make sure we have the drivers installed. If we are using the Web Editor, we do not need to install anything. If we are using an offline editor, we need to install it manually. This can be done by navigating to **Tools > Board > Board Manager...**. Here we need to look for the **Arduino SAMD boards (32-bits ARM Cortex M0+)** and install it.
 
-**2.** Now, we need to install the libraries needed. If we are using the Web Editor, there is no need to install anything. If we are using an offline editor, simply go to **Tools > Manage libraries..**, and search for **MKRGSM** and install it. 
+**2.** Now, we need to install the libraries needed. If we are using the Web Editor, there is no need to install anything. If we are using an offline editor, simply go to **Tools > Manage libraries..**, and search for **MKRGSM** and install it.
 
-**3.** We will also need to install the **MQTT** library, by Joel Gaehwiler. 
- 
+**3.** We will also need to install the **MQTT** library, by Joel Gaehwiler.
+
 >**Note:** there are several MQTT libraries, make sure you install the right one! The image below highlights the library that needs to be installed.
 
 ![Installing the MQTT library.](assets/MKRGSM_T5_IMG02.png)
@@ -187,7 +187,7 @@ void loop() {
 
 ## Testing It Out
 
-After you have uploaded the code to the board, open the Serial Monitor to initialize the program. If it is successful, after 10 seconds or so, it will print `connected`, followed by the message: `incoming: /hello - world`. 
+After you have uploaded the code to the board, open the Serial Monitor to initialize the program. If it is successful, after 10 seconds or so, it will print `connected`, followed by the message: `incoming: /hello - world`.
 
 ![Subscribing to a topic in serial monitor.](assets/MKRGSM_T5_IMG03.png)
 
@@ -212,9 +212,9 @@ If the code is not working, there are some common issues we can troubleshoot:
 
 ## Conclusion
 
-In this tutorial, we have combined the use of the GSM technology, with the MQTT communication protocol. Both are incredibly useful and popular in IoT projects, as they consume small amounts of data, are easily customizable and have great coverage all over the world. 
+In this tutorial, we have combined the use of the GSM technology, with the MQTT communication protocol. Both are incredibly useful and popular in IoT projects, as they consume small amounts of data, are easily customizable and have great coverage all over the world.
 
 Feel free to explore the [MKRGSM](https://www.arduino.cc/en/Reference/GSM) library further, and try out some of the many cool functions in this library. You can also check out the [MQTT](https://github.com/256dpi/arduino-mqtt) repository on GitHub.
 
-Special thanks to Joel Gaehwiler for developing the [MQTT](https://github.com/256dpi/arduino-mqtt) library and to everyone who contributed to this library. 
+Special thanks to Joel Gaehwiler for developing the [MQTT](https://github.com/256dpi/arduino-mqtt) library and to everyone who contributed to this library.
 

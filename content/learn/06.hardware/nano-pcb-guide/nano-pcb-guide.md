@@ -7,7 +7,7 @@ tags: [Nano Family, PCB Design]
 
 ![The Nano Family](assets/hero.png)
 
-The Arduino Nano Family is a series of boards with a tiny footprint. This guide is dedicated to you who wants to design your own customized hardware for the Nano Family. 
+The Arduino Nano Family is a series of boards with a tiny footprint. This guide is dedicated to you who wants to design your own customized hardware for the Nano Family.
 
 This article aims to provide you with technical information that will aid the design of your own customized Nano hardware.
 
@@ -48,7 +48,7 @@ More detailed blueprints are available for download through the links below (in 
 
 ### Feature Comparisons
 
-Below is a comparison between the different Nano Family boards. 
+Below is a comparison between the different Nano Family boards.
 
 | Board        | Nano           | Nano Every     | Nano 33 BLE  | Nano 33 BLE Sense | Nano 33 IoT       | Nano RP2040 Connect |
 | ------------ | -------------- | -------------- | ------------ | ----------------- | ----------------- | ------------------- |
@@ -92,7 +92,7 @@ The 5V pin is also referred to as **"VUSB"**. The purpose of this pin is to pro
 
 ### VIN Min/Max
 
-The min/max voltage supply varies between boards. This is important to consider when choosing the battery source, that you do not exceed the limits to damage the board. 
+The min/max voltage supply varies between boards. This is important to consider when choosing the battery source, that you do not exceed the limits to damage the board.
 
 | Nano  | Nano Every | Nano 33 BLE | Nano 33 BLE Sense | Nano 33 IoT | Nano RP2040 Connect |
 | ----- | ---------- | ----------- | ----------------- | ----------- | ------------------- |
@@ -100,7 +100,7 @@ The min/max voltage supply varies between boards. This is important to consider 
 
 ### Battery Connection
 
-Nano boards can be powered with batteries, but they do not come with a **battery charging circuit** or **battery protection circuit**. 
+Nano boards can be powered with batteries, but they do not come with a **battery charging circuit** or **battery protection circuit**.
 
 Many LiPo batteries have a built-in protection circuit, but some does not. In short, this means overdischarge can happen when powering the board with a LiPo battery. See the section below for more information.
 
@@ -163,7 +163,7 @@ The design file(s) below can be used for 3D printing, e.g. enclosures, mounts.
 
 ## Soldering Directly To PCB
 
-All Nano boards can be purchased **without headers attached.** This makes it possible to solder it directly to a custom PCB, using the castellated holes on the board. 
+All Nano boards can be purchased **without headers attached.** This makes it possible to solder it directly to a custom PCB, using the castellated holes on the board.
 
 ![Castellated holes on a Nano board to the left, solder pads on a PCB to the right.](assets/castellated-pads.png)
 

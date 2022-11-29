@@ -3,11 +3,11 @@ title: 'While Loop'
 compatible-products: [all-boards]
 difficulty: beginner
 description: 'How to use a while loop to calibrate a sensor while a button is being read.'
-tags: 
+tags:
   - Control structures
   - While statement
   - Pushbutton
-  - Code 
+  - Code
 ---
 
 Sometimes you want everything in the program to stop while a given condition is true.  You can do this using a [**while loop**](https://www.arduino.cc/en/Reference/While). This example shows how to use a while loop to [calibrate](/built-in-examples/analog/Calibration) the value of an analog sensor.

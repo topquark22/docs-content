@@ -16,11 +16,11 @@ software:
   - web-editor
 ---
 
-## Introduction 
+## Introduction
 
-In this tutorial, we will test out the relays onboard the [MKR Relay Shield](https://store.arduino.cc/arduino-mkr-relay-proto-shield). This shield is a great addon for any MKR Family board, as it has two 24V relays and additional space for soldering on components, hence the name "proto", as in prototype. 
+In this tutorial, we will test out the relays onboard the [MKR Relay Shield](https://store.arduino.cc/arduino-mkr-relay-proto-shield). This shield is a great addon for any MKR Family board, as it has two 24V relays and additional space for soldering on components, hence the name "proto", as in prototype.
 
-The sketch for this tutorial is really simple. It will activate one of the relays with a corresponding LED while de-activating the other, and then continue to do so every second, much like the standard blink example but with relays! 
+The sketch for this tutorial is really simple. It will activate one of the relays with a corresponding LED while de-activating the other, and then continue to do so every second, much like the standard blink example but with relays!
 
 >**Note:** The LEDs in this tutorial are optional. They do not serve any other function than signalling the state of each relay on the shield.
 
@@ -81,14 +81,14 @@ Let's begin by mounting our MKR family board on top of the MKR Relay Shield.
 
 ## Programming the Board
 
-We will now get to the programming part of this tutorial. 
+We will now get to the programming part of this tutorial.
 
-**1.** First, let's make sure we have the drivers installed for the board we are using. If we are using the Web Editor, we do not need to install anything. If we are using an offline editor, we need to install it manually. This can be done by navigating to **Tools > Board > Board Manager...**. Here we need to look for the **Arduino SAMD boards (32-bits ARM Cortex M0+)** and install it. 
+**1.** First, let's make sure we have the drivers installed for the board we are using. If we are using the Web Editor, we do not need to install anything. If we are using an offline editor, we need to install it manually. This can be done by navigating to **Tools > Board > Board Manager...**. Here we need to look for the **Arduino SAMD boards (32-bits ARM Cortex M0+)** and install it.
 
 **2.** Now, let's take a look at how we will activate our relays. We are actually not using a library, as the operation is very basic.
 
 - `int relay_1 = 1;` - assigns `relay_1` to pin 1. It is important that we assign it to pin 1, as the relay is internally wired to this pin.
-- `int relay_2 = 2;` - assigns `relay_2` to pin 2. Same here, the relay is wired to pin 2, so we can't use a pin of our choosing. 
+- `int relay_2 = 2;` - assigns `relay_2` to pin 2. Same here, the relay is wired to pin 2, so we can't use a pin of our choosing.
 - `pinMode(relay_1, OUTPUT)` - configures relay 1 to be an `OUTPUT`.
 - `pinMode(relay_2, OUTPUT)` - configures relay 2 to be an `OUTPUT`.
 - `digitalWrite(relay_1, state)` - write either a high or low state to relay 1.
@@ -137,7 +137,7 @@ After we have uploaded the code, the program will start running immediately. If 
 
 Now in this example, we have simply activated the relays, but we still haven't connected anything to them. While we are not going to go in-depth on how to connect high power components, we can take a look at how a circuit looks like for turning ON or OFF a 24V lamp.
 
-Let's begin with the high power pins on the MKR Relay Shield. There are **six in total** for both relays, where there are three different type of connections: NO, COM and NC. 
+Let's begin with the high power pins on the MKR Relay Shield. There are **six in total** for both relays, where there are three different type of connections: NO, COM and NC.
 
 ![High power pins.](assets/MKRRELAY_T1_IMG06.png)
 
@@ -171,6 +171,6 @@ If the code is not working, there are some common issues we can troubleshoot:
 
 In this tutorial, we have gone through the basics of how a relay works, including how the internal mechanism works and  how to create a circuit with high power components. Lastly, we learned how to create a program that activates or de-activates them.
 
-Relays are incredible popular electronic components that are practically used everywhere: cars, planes, heating systems, industrial machines and many many more. 
+Relays are incredible popular electronic components that are practically used everywhere: cars, planes, heating systems, industrial machines and many many more.
 
 

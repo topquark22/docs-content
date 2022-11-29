@@ -3,28 +3,28 @@ title: "Arduino Board Serial"
 source: "https://arduino.cc/en/Main/ArduinoBoardSerial"
 ---
 
-## Arduino Board - Serial Interface 
+## Arduino Board - Serial Interface
 
-**This page has been updated for historical purposes and we cannot guarantee that the files will be available forever.**   
+**This page has been updated for historical purposes and we cannot guarantee that the files will be available forever.**
 
-![Photo by Nicholas Zambetti](assets/arduino.jpg) 
+![Photo by Nicholas Zambetti](assets/arduino.jpg)
 
 It's a basic board that uses RS232 as an interface to a computer for programming or communication. This board is easy to assemble even as a learning exercise. It has been designed to use the simplest component as possible so that it's easy to build even if you look for parts at the shop around the corner.
 
-These reference designs for arduino are distributed under a Creative Commons license [Attribution-ShareAlike 2.5](http://creativecommons.org/licenses/by-sa/2.5/) 
+These reference designs for arduino are distributed under a Creative Commons license [Attribution-ShareAlike 2.5](http://creativecommons.org/licenses/by-sa/2.5/)
 
 Version 1 (Obsolete - **NOT available any longer**)
 
-*Note: as for 2005/03/30 these were the original designs manufactured for the first time* 
+*Note: as for 2005/03/30 these were the original designs manufactured for the first time*
 
-  
+
 Version 2
 
 [Download Eagle Cad files](https://content.arduino.cc/assets/release%5Farduino%5Frs232%5Fv2.zip) / [schematic](https://content.arduino.cc/assets/arduino%5Frs232%5Fv2.png) / [part list](https://content.arduino.cc/assets/partlist.txt)
 
-**Note: design from 2005/10/02**   
-  
-*Last update 2019/12/03 by SM* 
+**Note: design from 2005/10/02**
+
+*Last update 2019/12/03 by SM*
 
 ---
 
@@ -63,9 +63,9 @@ Arduino RS232 BOM
 
 ## Part List for the Arduino Serial Board (RS232) V2
 
-*APPROVED 20051017 by David Cuartielles* 
+*APPROVED 20051017 by David Cuartielles*
 
-*Digikey parts from Tom Igoe* 
+*Digikey parts from Tom Igoe*
 
 Arduino RS232 BOM
 

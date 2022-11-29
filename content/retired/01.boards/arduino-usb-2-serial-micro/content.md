@@ -38,14 +38,14 @@ You can find in the [Getting Started section](https://www.arduino.cc/en/Guide/Ho
 
 Arduino USB 2 Serial Micro is open-source hardware! You can build your own board using the following files:
 
-[EAGLE FILES IN .ZIP](https://www.arduino.cc/en/uploads/Main/Arduino-USB2SERIAL-V5.zip) 
+[EAGLE FILES IN .ZIP](https://www.arduino.cc/en/uploads/Main/Arduino-USB2SERIAL-V5.zip)
 
-[SCHEMATICS IN .PDF](https://www.arduino.cc/en/uploads/Main/Arduino-USB2SERIAL-V5-SCH.pdf) 
+[SCHEMATICS IN .PDF](https://www.arduino.cc/en/uploads/Main/Arduino-USB2SERIAL-V5-SCH.pdf)
 
 [WINDOWS DRIVERS](https://www.arduino.cc/en/uploads/Main/Arduino_USBSerial.zip)
 
 
-Windows users need a .inf file for this specific product: [Arduino\_USBSerial.zip](https://www.arduino.cc/en/uploads/Main/Arduino_USBSerial.zip)  
+Windows users need a .inf file for this specific product: [Arduino\_USBSerial.zip](https://www.arduino.cc/en/uploads/Main/Arduino_USBSerial.zip)
 For installation follow the same procedure on [how install an UNO board on your computer](http://arduino.cc/en/Guide/Windows#toc4).
 
 ### Automatic (Software) Reset

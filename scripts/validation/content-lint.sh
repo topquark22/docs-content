@@ -10,7 +10,7 @@ npm list --depth=0 > /dev/null 2>&1
 
 if [ $? -ne 0 ]; then
     echo "Installing node modules..."
-    npm install    
+    npm install
 fi
 
 node validate.js "$@"

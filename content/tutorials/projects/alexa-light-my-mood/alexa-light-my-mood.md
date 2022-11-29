@@ -50,7 +50,7 @@ In the Web Editor we need to add some code to the **Sketch** automatically gener
 The first thing to include are the libraries which will help us to control the MKR RGB Shield:
 
 ```arduino
-#include <ArduinoGraphics.h> 
+#include <ArduinoGraphics.h>
 #include <Arduino_MKRRGB.h>
 ```
 
@@ -95,7 +95,7 @@ With the code above we first read the **rgb value** from the cloud and save the 
 
 The `beginDraw` and `endDraw` functions are used to alter the state of the matrix, `fill` is used to select the colour to use, rect is a function used to specify the region to fill.
 
-Of course we can define custom colours by name in the Alexa app so we won't have to manually tell which amounts of Red, Green or Blue we want to set. 
+Of course we can define custom colours by name in the Alexa app so we won't have to manually tell which amounts of Red, Green or Blue we want to set.
 
 ### Part 3: Amazon Alexa Skill Setup
 

@@ -7,7 +7,7 @@ author: Benjamin Dannegård
 ---
 
 ## Overview
-This tutorial will show you how to debug an Arduino sketch using the Portenta H7, Portenta Breakout board and the Segger J-link device. Using the Arduino IDE we will build a version of the sketch so that it can be used in Segger's Ozone debugger. 
+This tutorial will show you how to debug an Arduino sketch using the Portenta H7, Portenta Breakout board and the Segger J-link device. Using the Arduino IDE we will build a version of the sketch so that it can be used in Segger's Ozone debugger.
 
 ## Goals
 
@@ -49,9 +49,9 @@ First, connect the Portenta H7 to the Breakout. To begin using the J-link device
 
 ### 3. Using the Setup with Segger Ozone
 
-Download and install [Segger's Ozone debugger](https://www.segger.com/downloads/J-link/#Ozone). If you are on Windows, make sure to also download the [J-Link Software and Documentation Pack for Windows.](https://www.segger.com/products/debug-probes/j-link/tools/j-link-gdb-server/about-j-link-gdb-server/) 
+Download and install [Segger's Ozone debugger](https://www.segger.com/downloads/J-link/#Ozone). If you are on Windows, make sure to also download the [J-Link Software and Documentation Pack for Windows.](https://www.segger.com/products/debug-probes/j-link/tools/j-link-gdb-server/about-j-link-gdb-server/)
 
- When starting Ozone, make sure to enter the correct CPU into the settings box. The Portenta H7 uses the **STM32H747XI**; you can then choose between the M4 and M7 core on the Portenta. 
+ When starting Ozone, make sure to enter the correct CPU into the settings box. The Portenta H7 uses the **STM32H747XI**; you can then choose between the M4 and M7 core on the Portenta.
 
 ![Segger Ozone J-Link cpu settings](assets/breakout_jlink_ozone_cpu.png)
 
@@ -124,6 +124,6 @@ void loop()
     timer2 = millis();
     counter2++;
     digitalWrite(LEDR, !digitalRead(LEDR));
-  } 
+  }
 }
 ```

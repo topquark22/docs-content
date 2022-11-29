@@ -1,5 +1,5 @@
 <FeatureDescription>
-The MKR ETH Shield features the <b>W5500 Ethernet controller,</b> that provides Internet to embedded systems, and a <b>Micro SD Card holder</b> for storing larger files. 
+The MKR ETH Shield features the <b>W5500 Ethernet controller,</b> that provides Internet to embedded systems, and a <b>Micro SD Card holder</b> for storing larger files.
 
 </FeatureDescription>
 

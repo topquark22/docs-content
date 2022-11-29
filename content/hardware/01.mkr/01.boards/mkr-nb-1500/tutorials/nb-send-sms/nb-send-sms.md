@@ -8,7 +8,7 @@ tags:
   - CAT-M1
   - SMS
 author: 'Benjamin Dannegård'
-libraries: 
+libraries:
   - name: MKRNB
     url: https://www.arduino.cc/reference/en/libraries/mkrnb/
 hardware:
@@ -21,15 +21,15 @@ software:
   - web-editor
 ---
 
-## Introduction 
+## Introduction
 
 In this tutorial, we will create a simple sketch that allows us to send a text message, using the [MKRNB](https://www.arduino.cc/en/Reference/MKRNB) library.
 
 The message is sent over Narrow Band IoT (NB IoT) or LTE CAT M1 network.
 
-The sketch will be setup to record input from the Serial Monitor, where we can enter a number and a message, and send it. 
+The sketch will be setup to record input from the Serial Monitor, where we can enter a number and a message, and send it.
 
->**Note:** The Arduino SIM card does not work with this tutorial. A SIM card with a plan from an operator in your country is required. 
+>**Note:** The Arduino SIM card does not work with this tutorial. A SIM card with a plan from an operator in your country is required.
 
 ## Goals
 
@@ -41,7 +41,7 @@ The goals of this tutorial are:
 ## Hardware & Software Needed
 
 - Arduino IDE ([online](https://create.arduino.cc/) or [offline](https://www.arduino.cc/en/main/software)).
-- [MKRNB](https://www.arduino.cc/en/Reference/MKRNB) library installed. 
+- [MKRNB](https://www.arduino.cc/en/Reference/MKRNB) library installed.
 - Arduino MKR NB 1500 ([link to store](https://store.arduino.cc/arduino-mkr-nb-1500-1413)).
 - Antenna ([link to store](https://store.arduino.cc/antenna))
 - SIM card from an operator in your country.
@@ -61,9 +61,9 @@ The circuit for this tutorial is easy: simply attach the dipole antenna to the b
 ![Simple circuit of the board with antenna.](assets/MKRNB_T3_IMG01.png)
 
 
-## Programming the Board 
+## Programming the Board
 
-In this tutorial, we will use one of the examples from the **MKRNB** library. The end goal is simple: we want to send a text message from the MKR NB 1500 to a phone number. 
+In this tutorial, we will use one of the examples from the **MKRNB** library. The end goal is simple: we want to send a text message from the MKR NB 1500 to a phone number.
 
 **1.** Let's begin by taking a looking at some of the functions of the sketch we are going to use:
 
@@ -74,23 +74,23 @@ In this tutorial, we will use one of the examples from the **MKRNB** library. Th
 - `sms.print(message);` - prints the content of the SMS.
 - `sms.endSMS()` - sends the SMS.
 
-**2.** We need to make sure we have the drivers installed. If we are using the Web Editor, we do not need to install anything. If we are using an offline editor, we need to install it manually. This can be done by navigating to **Tools > Board > Board Manager...**. Here we need to look for the **Arduino SAMD boards (32-bits ARM Cortex M0+)** and install it. 
+**2.** We need to make sure we have the drivers installed. If we are using the Web Editor, we do not need to install anything. If we are using an offline editor, we need to install it manually. This can be done by navigating to **Tools > Board > Board Manager...**. Here we need to look for the **Arduino SAMD boards (32-bits ARM Cortex M0+)** and install it.
 
 **3.** Now, we need to install the libraries needed. If we are using the Web Editor, there is no need to install anything. If we are using an offline editor, simply go to **Tools > Manage libraries..**, and search for **MKRNB** and install it.
 
-**4.** After the library is installed, we can now navigate to **File > Examples > MKRNB > SendSMS**. This will open a new sketch window (or direct you to the sketch if you are using the Web Editor). There will also be a separate tab called `arduino_secrets.h`. Here we will simply fill in the pin number of our SIM card. 
+**4.** After the library is installed, we can now navigate to **File > Examples > MKRNB > SendSMS**. This will open a new sketch window (or direct you to the sketch if you are using the Web Editor). There will also be a separate tab called `arduino_secrets.h`. Here we will simply fill in the pin number of our SIM card.
 
 ![Secrets tab in the editor.](./assets/MKRNB_T3_IMG02.png)
 
 >**Note:** A standard pre-paid SIM card typically have 0000 or 1234 as a pin code. This varies from operator to operator,and it is important to find out this before uploading the code. Otherwise, too many unsuccessful attempts may block the SIM card.
 
-We can now upload the sketch to the board. The code can also be found in the snippet below. 
+We can now upload the sketch to the board. The code can also be found in the snippet below.
 
 ```cpp
 
 // Include the MKRNB library
 #include <MKRNB.h>
-// #include "arduino_secrets.h" 
+// #include "arduino_secrets.h"
 // Please enter your sensitive data in the Secret tab or arduino_secrets.h
 // PIN Number
 const char PINNUMBER[] = SECRET_PINNUMBER;
@@ -175,7 +175,7 @@ If unsuccessful, it will print `"Not connected"` in the Serial Monitor. Otherwis
 
 ![Enter a phone number.](assets/MKRNB_T3_IMG03.png)
 
-If we get the latter, we can proceed by entering a phone number we want to send a SMS to and hit enter. We will now be asked to write our message. We can write something simple, such as: 
+If we get the latter, we can proceed by entering a phone number we want to send a SMS to and hit enter. We will now be asked to write our message. We can write something simple, such as:
 
 ```
 Hello, this is NB 1500 speaking. Can you read?
@@ -191,7 +191,7 @@ Now, let's take a look at our phone and see if it worked. We should have receive
 
 ![Message received on the phone.](assets/MKRNB_T3_IMG05.png)
 
-Congratulations, you have now managed to connect your MKR NB 1500 board to a network, and successfully sent an SMS to your phone. 
+Congratulations, you have now managed to connect your MKR NB 1500 board to a network, and successfully sent an SMS to your phone.
 
 ### Troubleshoot
 

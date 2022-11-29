@@ -11,7 +11,7 @@ tags:
 
 ## Overview
 
-A newly introduced, yet less famous feature of Arduino IDE 2.0 is the **Debugger**. 
+A newly introduced, yet less famous feature of Arduino IDE 2.0 is the **Debugger**.
 
 A debugger is a software tool which is used to test and debug programs, hence the name.
 
@@ -21,7 +21,7 @@ It basically goes through a program in a controlled manner, with the help of a h
 
 ### Compatible Boards
 
-The debugger is compatible with all SAMD boards. Boards using the SAMD architecture are the following: 
+The debugger is compatible with all SAMD boards. Boards using the SAMD architecture are the following:
 
 - [MKR Zero](https://store.arduino.cc/arduino-mkr-zero-i2s-bus-sd-for-sound-music-digital-audio-data)
 - [MKR WiFi 1010](https://store.arduino.cc/arduino-mkr-wifi-1010)
@@ -68,7 +68,7 @@ Below you will find three different tutorials that will help you set up and test
 
 ### Atmel-ICE
 
-**Atmel-ICE** is another great option to use for debugging, and can also be connected to the MKR WiFi 1010 board through soldering. Learn more about debugging with the Atmel-ICE through the link below: 
+**Atmel-ICE** is another great option to use for debugging, and can also be connected to the MKR WiFi 1010 board through soldering. Learn more about debugging with the Atmel-ICE through the link below:
 
 - [Debugging with Atmel-ICE.](/tutorials/mkr-wifi-1010/atmel-ice)
 
@@ -76,7 +76,7 @@ Below you will find three different tutorials that will help you set up and test
 
 Once you have your hardware set up, we can continue to explore the Debugger tool in the Arduino IDE 2.0.
 
-The Debugger is a brand new tool integrated in the Arduino IDE 2.0. You can easily access it from the sidebar on the left, grouped with the **Board Manager**, **Library Manager**, **Search** and **Sketchbook Explorer**. 
+The Debugger is a brand new tool integrated in the Arduino IDE 2.0. You can easily access it from the sidebar on the left, grouped with the **Board Manager**, **Library Manager**, **Search** and **Sketchbook Explorer**.
 
 ![The Debugger button.](assets/debugger-img01.png)
 
@@ -100,9 +100,9 @@ Once your program has been uploaded, we can start using the debugger.
 
 ### Breakpoints
 
-Let's begin by creating something called a **breakpoint**. Breakpoints are used to stop the program execution at a specific line (or when a specific condition is verified). We can use multiple of these in a program (the number is variable depending on the processor). 
+Let's begin by creating something called a **breakpoint**. Breakpoints are used to stop the program execution at a specific line (or when a specific condition is verified). We can use multiple of these in a program (the number is variable depending on the processor).
 
-In this example, we are going to set a breakpoint for **line 33** and **line 36**. These are set by clicking to the left of the line numbering in the editor. 
+In this example, we are going to set a breakpoint for **line 33** and **line 36**. These are set by clicking to the left of the line numbering in the editor.
 
 ![Navigating the Debugger.](assets/debugger-img03.png)
 
@@ -113,7 +113,7 @@ Let's continue, by clicking on the **Play/pause** button (**Continue**). The pro
 
 ![Going between breakpoints.](assets/playpause.gif)
 
-### Step over 
+### Step over
 
 The **step over** feature basically goes through the operations of a program, step by step. Let's say we have 20 operations in our program, each doing something unique. The step over can in a way step through these, one by one, and analyse what's going on at each step.
 
@@ -133,9 +133,9 @@ The step in/out actions can be very useful, you can use them to learn how comman
 
 In this guide, we have covered some basics on using the Arduino IDE 2.0 Debugger. We explored some different hardware setups that we can use, how to navigate the Debugger tool, and linked some more elaborate hardware guides to make your debugging experience more smooth!
 
-We hope you enjoy the Debugger, and if you are having issues, please report them in [Arduino IDE GitHub repository](https://github.com/arduino/arduino-ide/issues). 
+We hope you enjoy the Debugger, and if you are having issues, please report them in [Arduino IDE GitHub repository](https://github.com/arduino/arduino-ide/issues).
 
 ### More Tutorials
 
-You can find more tutorials in the [Arduino IDE 2 documentation page](https://docs.arduino.cc/software/ide-v2).  
+You can find more tutorials in the [Arduino IDE 2 documentation page](https://docs.arduino.cc/software/ide-v2).
 

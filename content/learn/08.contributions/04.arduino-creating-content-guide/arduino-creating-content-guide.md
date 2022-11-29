@@ -1,7 +1,7 @@
 ---
 title: 'Writing Content for Arduino'
 description: 'How to write content for the Arduino Documentation Website'
-tags: 
+tags:
   - Styleguide
   - Guidelines
 ---

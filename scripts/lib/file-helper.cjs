@@ -17,7 +17,7 @@ function isDirectory(path, followSymlinks = true){
     if(followSymlinks && stat.isSymbolicLink()){
         try {
             const resolvedPath = fs.realpathSync(path);
-            return fs.lstatSync(resolvedPath).isDirectory();            
+            return fs.lstatSync(resolvedPath).isDirectory();
         } catch (error) {
             console.error(error);
             return false;
@@ -29,13 +29,13 @@ function isDirectory(path, followSymlinks = true){
 /**
  * Returns all subdirectories (non-recursive) of a given path
  * which don't match an exclude pattern
- * @param {String} startPath 
+ * @param {String} startPath
  * @param {String[]} excludePatterns
  * @param {boolean} followSymlinks Defines if symlinks should be considered
  * @returns a string array containing the full paths of the subdirectories
  */
 function getSubdirectories(startPath, excludePatterns = [], followSymlinks = true){
-    if (!fs.existsSync(startPath)) {        
+    if (!fs.existsSync(startPath)) {
         console.log("💣 Directory doesn't exist:", startPath);
         return;
     }
@@ -45,7 +45,7 @@ function getSubdirectories(startPath, excludePatterns = [], followSymlinks = tru
     files.forEach(file => {
         var fullPath = path.join(startPath, file);
 
-        if (matcher.matchAny(fullPath, excludePatterns)) {            
+        if (matcher.matchAny(fullPath, excludePatterns)) {
             return;
         }
 
@@ -53,14 +53,14 @@ function getSubdirectories(startPath, excludePatterns = [], followSymlinks = tru
             directories.push(fullPath);
         }
     })
-    return directories;    
+    return directories;
 }
 
 /**
  * Returns all file names in a path (non-recursive) with a given file extension.
  * This function only returns the file names without path info.
- * @param {*} path 
- * @param {*} extension 
+ * @param {*} path
+ * @param {*} extension
  * @returns a string array containing the file names
  */
 function getFilesWithExtension(path, extension){
@@ -70,19 +70,19 @@ function getFilesWithExtension(path, extension){
 
 /**
  * Returns a list of file paths based on the start path
- * @param {*} startPath 
- * @param {*} searchPattern 
+ * @param {*} startPath
+ * @param {*} searchPattern
  * @param {*} excludePatterns
  * @param {boolean} followSymlinks Defines if symlinks should be considered
- * @param {*} matchingFiles 
- * @returns 
+ * @param {*} matchingFiles
+ * @returns
  */
 function findAllFilesAndFolders(startPath, searchPattern = null, excludePatterns = [], followSymlinks = true, matchingFiles = []) {
     if(matcher.matchAny(startPath, excludePatterns)){
         // console.log("Excluding directory " + startPath);
         return matchingFiles;
     }
-    
+
     // console.log('Starting from dir ' + startPath + '/');
 
     if (!fs.existsSync(startPath)) {
@@ -93,20 +93,20 @@ function findAllFilesAndFolders(startPath, searchPattern = null, excludePatterns
     var files = fs.readdirSync(startPath);
     for (let file of files) {
         var filePath = path.join(startPath, file);
-        
+
         if (!matcher.matchAny(filePath, excludePatterns)) {
             if(!searchPattern) {
                 matchingFiles.push(filePath);
                 continue;
             }
-            let patterns = Array.isArray(searchPattern) ? searchPattern : [searchPattern];            
+            let patterns = Array.isArray(searchPattern) ? searchPattern : [searchPattern];
             patterns.forEach(pattern => {
                 if(filePath.indexOf(pattern) >= 0){
                     // console.log('-- found: ', filename);
                     matchingFiles.push(filePath);
                 }
             });
-       
+
             if (isDirectory(filePath, followSymlinks)) {
                 findAllFiles(filePath, searchPattern, excludePatterns, followSymlinks, matchingFiles);
             }
@@ -126,14 +126,14 @@ function findAllFolders(startPath, searchPattern, excludePatterns = [], followSy
 }
 
 /**
- * 
+ *
  * @param {String} startPath The directory from which to start a recursive search
  * @param {String} searchPattern The file name that should be looked for
  * @param {String[]} excludePatterns An array of paths that should be excluded from the search
  * @param {boolean} followSymlinks Defines if symlinks should be considered
  * @param {String[]} matchingFiles The matching files as recursion parameter
  */
-function findAllFiles(startPath, searchPattern, excludePatterns = [], followSymlinks = true, matchingFiles = []) {    
+function findAllFiles(startPath, searchPattern, excludePatterns = [], followSymlinks = true, matchingFiles = []) {
     return findAllFilesAndFolders(startPath, searchPattern, excludePatterns, followSymlinks, matchingFiles)?.filter(file => {
         return isFile(file, followSymlinks);
     });

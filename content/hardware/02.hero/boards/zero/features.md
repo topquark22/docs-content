@@ -1,7 +1,7 @@
 
 <FeatureDescription>
 
-The board is powered by Atmel’s SAMD21 MCU, which features a 32-bit ARM Cortex® M0+ core. One of its most important features is Atmel’s Embedded Debugger (EDBG), which provides a full debug interface without the need for additional hardware, significantly increasing the ease-of-use for software debugging. EDBG also supports a virtual COM port that can be used for device and 
+The board is powered by Atmel’s SAMD21 MCU, which features a 32-bit ARM Cortex® M0+ core. One of its most important features is Atmel’s Embedded Debugger (EDBG), which provides a full debug interface without the need for additional hardware, significantly increasing the ease-of-use for software debugging. EDBG also supports a virtual COM port that can be used for device and
 bootloader programming.
 
 </FeatureDescription>

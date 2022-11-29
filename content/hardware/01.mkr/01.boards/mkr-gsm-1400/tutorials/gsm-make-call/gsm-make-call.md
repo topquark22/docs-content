@@ -7,7 +7,7 @@ tags:
   - GSM
   - Voice call
 author: 'Karl Söderby'
-libraries: 
+libraries:
   - name: MKRGSM
     url: https://www.arduino.cc/reference/en/libraries/mkrgsm/
 hardware:
@@ -20,7 +20,7 @@ software:
   - web-editor
 ---
 
-## Introduction 
+## Introduction
 
 In this tutorial, we will use an example from the **MKRGSM** library called **MakeVoiceCall**. With it, we will set up the MKR GSM 1400 to create outgoing calls to a number of our liking. The example includes a serial interface that allows us to enter a number, place a call, and hang up on the call.
 
@@ -42,7 +42,7 @@ The goals of this project are:
 
 ## Enter Component/feature Name Here
 
-As the MKR GSM 1400 board is capable of connecting to the GSM network, we also have the possibility to place and receive calls. This feature can be incredibly useful for controlling devices remotely, particularly those in rural / inaccessible areas. 
+As the MKR GSM 1400 board is capable of connecting to the GSM network, we also have the possibility to place and receive calls. This feature can be incredibly useful for controlling devices remotely, particularly those in rural / inaccessible areas.
 
 As most of us know, the past decades has seen a massive increase in the use of smartphones, and with it, the infrastructure for cellular communication has developed significantly. This means more coverage and more reliable services, and an ideal platform to use for IoT projects.
 
@@ -52,9 +52,9 @@ In this tutorial we will focus on just making an outgoing call. There are some s
 
 - **Notification** - A great way of creating reminders for yourself is to have someone actually call you. We can for example setup the board to call you at exactly 6.30 every morning, or at 17.00 to remind you to walk the dog!
 
-- **System alert** - We can also be use it in a more professional capacity. If we are creating an application in a remote location that we cannot access directly, we can set up the board to call you in case something goes wrong. This could for example be overheating, water detected or a gas leak. 
+- **System alert** - We can also be use it in a more professional capacity. If we are creating an application in a remote location that we cannot access directly, we can set up the board to call you in case something goes wrong. This could for example be overheating, water detected or a gas leak.
 
-- **Security alert** - Similar to a system alert, we can set up the board to call you in case a sensor has detected any activity. 
+- **Security alert** - Similar to a system alert, we can set up the board to call you in case a sensor has detected any activity.
 
 >**Note:** The above are suggestions on what to use the MKR GSM 1400's voice call functionality. Please consult an expert if you attempt to build a security system for your home or business.
 
@@ -68,13 +68,13 @@ The circuit of this board is easy. Simply connect the antenna to the MKR GSM 140
 
 ## Programming the Board
 
-We will now get to the programming part of this tutorial. 
+We will now get to the programming part of this tutorial.
 
-**1.** First, let's make sure we have the drivers installed. If we are using the Web Editor, we do not need to install anything. If we are using an offline editor, we need to install it manually. This can be done by navigating to **Tools > Board > Board Manager...**. Here we need to look for the **Arduino SAMD boards (32-bits ARM Cortex M0+)** and install it. 
+**1.** First, let's make sure we have the drivers installed. If we are using the Web Editor, we do not need to install anything. If we are using an offline editor, we need to install it manually. This can be done by navigating to **Tools > Board > Board Manager...**. Here we need to look for the **Arduino SAMD boards (32-bits ARM Cortex M0+)** and install it.
 
 **2.** Now, we need to install the libraries needed. If we are using the Web Editor, there is no need to install anything. If we are using an offline editor, simply go to **Tools > Manage libraries..**, and search for **MKRGSM** and install it.
 
-**3.** We can now go to **File > Examples > MKRGSM > MakeVoiceCall** in the editor. This will open a new window, which has a sketch tab, but also a header file, called `arduino_secrets.h`. Inside this file, we need to enter our pin number between the "". 
+**3.** We can now go to **File > Examples > MKRGSM > MakeVoiceCall** in the editor. This will open a new window, which has a sketch tab, but also a header file, called `arduino_secrets.h`. Inside this file, we need to enter our pin number between the "".
 
 ```cpp
 #define SECRET_PINNUMBER     "" //enter pin code between ""
@@ -94,7 +94,7 @@ The sketch can be found in the snippet below. Upload the sketch to the board.
 ```cpp
 #include <MKRGSM.h>
 
-#include "arduino_secrets.h" 
+#include "arduino_secrets.h"
 // Please enter your sensitive data in the Secret tab or arduino_secrets.h
 // PIN Number
 const char PINNUMBER[] = SECRET_PINNUMBER;
@@ -181,15 +181,15 @@ void loop() {
 
 ## Testing It Out
 
-After successfully uploading the code, open the Serial Monitor to initialize the program. After a while, we should see the text `"GSM initialized"` followed by `"Enter phone number to call"`. This means the board has successfully connected to the GSM network. 
+After successfully uploading the code, open the Serial Monitor to initialize the program. After a while, we should see the text `"GSM initialized"` followed by `"Enter phone number to call"`. This means the board has successfully connected to the GSM network.
 
 ![Enter a phone number to call.](assets/MKRGSM_T11_IMG02.png)
 
-Now, we can enter a phone number that we want to call, and hit enter. We should now receive the call (if we entered the number correctly) on our phone. In the Serial Monitor, we can see the message `"Call established. Enter line to end"`. 
+Now, we can enter a phone number that we want to call, and hit enter. We should now receive the call (if we entered the number correctly) on our phone. In the Serial Monitor, we can see the message `"Call established. Enter line to end"`.
 
 ![Placing a call to a phone number.](assets/MKRGSM_T11_IMG03.png)
 
-We can of course answer the call on our phone, but it will consist only of noise, as we are not using any microphone in this setup. 
+We can of course answer the call on our phone, but it will consist only of noise, as we are not using any microphone in this setup.
 
 
 ### Troubleshoot
@@ -204,7 +204,7 @@ If the code is not working, there are some common issues we can troubleshoot:
 
 ## Conclusion
 
-This simple example demonstrates how to create outgoing voice calls from the MKR GSM 1400 board. Using this feature can be beneficial for various alert systems or for notifications. As it operates over the GSM network, there is typically very good coverage wherever you are, which makes this feature a great option for remote control and feedback. 
+This simple example demonstrates how to create outgoing voice calls from the MKR GSM 1400 board. Using this feature can be beneficial for various alert systems or for notifications. As it operates over the GSM network, there is typically very good coverage wherever you are, which makes this feature a great option for remote control and feedback.
 
 Feel free to explore the [MKRGSM](https://www.arduino.cc/en/Reference/GSM) library further, and try out some of the many cool functions in this library.
 

@@ -48,7 +48,7 @@ There are two groups of examples for the GSM shield. There are examples to illus
 - [Test Modem](https://www.arduino.cc/en/Tutorial/GSMToolsTestModem): Read the IMEI of your modem.
 - [Test Web Server](https://www.arduino.cc/en/Tutorial/GSMToolsTestWebServer): Create a webserver with your GSM shield.
 
-## GSM class 
+## GSM class
 ---
 
 ### `GSM constructor`
@@ -102,7 +102,7 @@ void loop()
 {
   // Nothing here
 }
- 
+
 ```
 
 ---
@@ -312,7 +312,7 @@ void loop()
       Serial.println(numtel);
 
       // Answer the call, establish the call
-      vcs.answerCall();        
+      vcs.answerCall();
       break;
 
     case TALKING:  // In this case the call would be established
@@ -321,12 +321,12 @@ void loop()
       while(Serial.read()!='\n')
         delay(100);
       vcs.hangCall();
-      Serial.println("HANG. Waiting Call.");      
+      Serial.println("HANG. Waiting Call.");
       break;
   }
   delay(1000);
 }
- 
+
 ```
 
 ---
@@ -431,7 +431,7 @@ void loop()
         {
           Serial.println("Call Established. Enter line to end");
           // Wait for some input from the line
-          while(Serial.read() !='\n' && (vcs.getvoiceCallStatus()==TALKING));          
+          while(Serial.read() !='\n' && (vcs.getvoiceCallStatus()==TALKING));
           // And hang up
           vcs.hangCall();
         }
@@ -453,7 +453,7 @@ void loop()
     }
   }
 }
- 
+
 ```
 
 ---
@@ -539,7 +539,7 @@ void loop()
       Serial.println(numtel);
 
       // Answer the call, establish the call
-      vcs.answerCall();        
+      vcs.answerCall();
       break;
 
     case TALKING:  // In this case the call would be established
@@ -548,13 +548,13 @@ void loop()
       while(Serial.read()!='\n')
         delay(100);
       vcs.hangCall();
-      Serial.println("HANG. Waiting Call.");      
+      Serial.println("HANG. Waiting Call.");
       break;
   }
   delay(1000);
 }
 
- 
+
 ```
 
 ---
@@ -643,7 +643,7 @@ void loop()
       Serial.println(numtel);
 
       // Answer the call, establish the call
-      vcs.answerCall();        
+      vcs.answerCall();
       break;
 
     case TALKING:  // In this case the call would be established
@@ -652,13 +652,13 @@ void loop()
       while(Serial.read()!='\n')
         delay(100);
       vcs.hangCall();
-      Serial.println("HANG. Waiting Call.");      
+      Serial.println("HANG. Waiting Call.");
       break;
   }
   delay(1000);
 }
 
- 
+
 ```
 
 ---
@@ -744,7 +744,7 @@ void loop()
       Serial.println(numtel);
 
       // Answer the call, establish the call
-      vcs.answerCall();        
+      vcs.answerCall();
       break;
 
     case TALKING:  // In this case the call would be established
@@ -753,13 +753,13 @@ void loop()
       while(Serial.read()!='\n')
         delay(100);
       vcs.hangCall();
-      Serial.println("HANG. Waiting Call.");      
+      Serial.println("HANG. Waiting Call.");
       break;
   }
   delay(1000);
 }
 
- 
+
 ```
 
 ## GSM_SMS class
@@ -1048,7 +1048,7 @@ void loop()
 {
   char c;
 
-  // If there are any SMSs available()  
+  // If there are any SMSs available()
   if (sms.available())
   {
     Serial.println("Message received from:");
@@ -1057,7 +1057,7 @@ void loop()
     sms.remoteNumber(remoteNumber, 20);
     Serial.println(remoteNumber);
 
-    // This is just an example of message disposal    
+    // This is just an example of message disposal
     // Messages starting with # should be discarded
     if(sms.peek()=='#')
     {
@@ -1080,7 +1080,7 @@ void loop()
 
 }
 
- 
+
 ```
 
 ---
@@ -1143,7 +1143,7 @@ void loop()
 {
   char c;
 
-  // If there are any SMSs available()  
+  // If there are any SMSs available()
   if (sms.available())
   {
     Serial.println("Message received from:");
@@ -1152,7 +1152,7 @@ void loop()
     sms.remoteNumber(remoteNumber, 20);
     Serial.println(remoteNumber);
 
-    // This is just an example of message disposal    
+    // This is just an example of message disposal
     // Messages starting with # should be discarded
     if(sms.peek()=='#')
     {
@@ -1235,7 +1235,7 @@ void loop()
 {
   char c;
 
-  // If there are any SMSs available()  
+  // If there are any SMSs available()
   if (sms.available())
   {
     Serial.println("Message received from:");
@@ -1244,7 +1244,7 @@ void loop()
     sms.remoteNumber(remoteNumber, 20);
     Serial.println(remoteNumber);
 
-    // This is just an example of message disposal    
+    // This is just an example of message disposal
     // Messages starting with # should be discarded
     if(sms.peek()=='#')
     {
@@ -1266,7 +1266,7 @@ void loop()
   delay(1000);
 
 }
- 
+
 ```
 
 ---
@@ -1548,7 +1548,7 @@ void loop()
 {
   char c;
 
-  // If there are any SMSs available()  
+  // If there are any SMSs available()
   if (sms.available())
   {
     Serial.println("Message received from:");
@@ -1557,7 +1557,7 @@ void loop()
     sms.remoteNumber(remoteNumber, 20);
     Serial.println(remoteNumber);
 
-    // This is just an example of message disposal    
+    // This is just an example of message disposal
     // Messages starting with # should be discarded
     if(sms.peek()=='#')
     {
@@ -1580,7 +1580,7 @@ void loop()
 
 }
 
- 
+
 ```
 
 ---
@@ -1658,7 +1658,7 @@ void loop()
 {
   char c;
 
-  // If there are any SMSs available()  
+  // If there are any SMSs available()
   if (sms.available())
   {
     Serial.println("Message received from:");
@@ -1667,7 +1667,7 @@ void loop()
     sms.remoteNumber(remoteNumber, 20);
     Serial.println(remoteNumber);
 
-    // This is just an example of message disposal    
+    // This is just an example of message disposal
     // Messages starting with # should be discarded
     if(sms.peek()=='#')
     {
@@ -1690,7 +1690,7 @@ void loop()
 
 }
 
- 
+
 ```
 
 ## GPRS class
@@ -1783,7 +1783,7 @@ void loop() {
 
 
   if (client)
-  {  
+  {
     while (client.connected())
     {
       if (client.available())
@@ -1809,7 +1809,7 @@ void loop() {
             client.print(analogChannel);
             client.print(" is ");
             client.print(analogRead(analogChannel));
-            client.println("<br />");      
+            client.println("<br />");
           }
           client.println("</html>");
           //necessary delay
@@ -1821,7 +1821,7 @@ void loop() {
   }
 }
 
- 
+
 ```
 
 ## GSMClient class
@@ -2921,7 +2921,7 @@ Changes the PIN number of a SIM, after verifying the existing one.
 pin.changePIN(oldPIN, newPIN)
 ```
 #### Parameters
-- oldPIN : String with the existing PIN number 
+- oldPIN : String with the existing PIN number
 - newPIN : String with the desired PIN number
 
 #### Returns
@@ -2954,7 +2954,7 @@ Check if modem was registered in GSM/GPRS network
 pin.checkReg()
 ```
 #### Parameters
-none 
+none
 #### Returns
 int : 0 if modem was registered, 1 if modem was registered in roaming, -1 if error exists
 
@@ -2969,7 +2969,7 @@ Check if PIN lock is used.
 pin.getPinUsed()
 ```
 #### Parameters
-none 
+none
 #### Returns
 boolean : TRUE id locked, FALSE if not
 

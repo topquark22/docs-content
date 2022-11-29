@@ -3,7 +3,7 @@ title: 'Blink Without Delay'
 compatible-products: [all-boards]
 difficulty: beginner
 description: 'Blink an LED without using the delay() function.'
-tags: 
+tags:
   - Digital
   - Input
   - Code

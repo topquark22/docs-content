@@ -1,6 +1,6 @@
 Board:
   Name: Arduino® WisGate Edge Pro
-  SKU: 
+  SKU:
     EU: TPX00095
     ENZ: TPX00096
     US: TPX00097
@@ -27,8 +27,8 @@ Power:
   DC Input: 12V or Solar panel
   PoE (IEEE 802.3 af): 36-57 VDC
 Console: Through USB-C
-Frequencies: 
-  EU868: TXP00095 
+Frequencies:
+  EU868: TXP00095
   US915: TXP00096
   AS923 & AU915: TXP00097
 Enclosure protection:

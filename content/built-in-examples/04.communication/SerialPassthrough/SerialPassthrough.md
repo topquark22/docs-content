@@ -3,9 +3,9 @@ title: 'SerialPassthrough'
 compatible-products: [all-boards]
 difficulty: intermediate
 description: 'Demonstrates how to virtually connect Serial and Serial1.'
-tags: 
+tags:
   - Communication
-  - Code 
+  - Code
   - Serial monitor
 ---
 

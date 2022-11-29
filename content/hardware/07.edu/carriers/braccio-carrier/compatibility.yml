@@ -3,5 +3,5 @@ software:
   - arduino-cli
   - web-editor
 hardware:
-  boards: 
+  boards:
     - nano-rp2040-connect

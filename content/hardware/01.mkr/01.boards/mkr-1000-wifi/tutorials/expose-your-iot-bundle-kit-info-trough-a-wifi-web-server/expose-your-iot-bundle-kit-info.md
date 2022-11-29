@@ -18,15 +18,15 @@ You can imagine this project as a standalone monitoring device that could expose
 
 As of this project, the Wi-Fi web server is always on, while you can easily trigger the server by putting a pushbutton that brings it up if pressed, making the application less power-hungry. **Temperature, humidity, pressure and light** data are going to be displayed on a simple webpage, while two buttons will allow to control the behavior of the two relays on the Proto Carrier.
 
-Most important, all the data is stored on the SD, in a .CSV file (comma separated values). This is very handy if you want a solid backup device that can be collected / or replaced as needed. 
+Most important, all the data is stored on the SD, in a .CSV file (comma separated values). This is very handy if you want a solid backup device that can be collected / or replaced as needed.
 
 ### Software
 
-This project heavily relies on the **AP_SimpleWebServer** example of the WiFiNINA Library written by Tom Igoe: 
+This project heavily relies on the **AP_SimpleWebServer** example of the WiFiNINA Library written by Tom Igoe:
 
 **File>Examples>WifiNINA>AP_SimpleWebServer.ino**
 
-I strongly advice you to run that example in order to test a simpler sketch. Before we start we need to know that the SSID and Password names are to be longer than eight letters, don't use short names if you don't want to run into strange behaviors. Another very important rule of thumb is to be sure the WiFiNINA Library is up-to-date (1.4.0 as we speak). While the code checks for the firmware version on line 46. 
+I strongly advice you to run that example in order to test a simpler sketch. Before we start we need to know that the SSID and Password names are to be longer than eight letters, don't use short names if you don't want to run into strange behaviors. Another very important rule of thumb is to be sure the WiFiNINA Library is up-to-date (1.4.0 as we speak). While the code checks for the firmware version on line 46.
 
 ```arduino
 String fv = WiFi.firmwareVersion();
@@ -35,7 +35,7 @@ Serial.println("Please upgrade the firmware");
 }
 ```
 
-You should follow the instructions of firmware updater (Tools>Wifi101 WifiNINA Firmware Updater) in order to be 100% sure everything is up to date and working fine on the module.If you are ok in testing the `AP_SimpleWebServer.ino` code, you should be able to light on and off the on-board LED. 
+You should follow the instructions of firmware updater (Tools>Wifi101 WifiNINA Firmware Updater) in order to be 100% sure everything is up to date and working fine on the module.If you are ok in testing the `AP_SimpleWebServer.ino` code, you should be able to light on and off the on-board LED.
 
 Remember the network the MKR WiFi 1010 is offering has no connection to the interweb, so you'll may enable non-connected navigation on some mobile devices. We are ready to `#copypasta` the code. Before, let's review it in order to check if everything is in order.
 
@@ -49,18 +49,18 @@ Libraries to import:
 #define POLL_RATE 2*1000
 ```
 
-The variable `POLL_RATE` is defining the update time of the SD data. Every Log is printed in the Serial Port for you to check. 
+The variable `POLL_RATE` is defining the update time of the SD data. Every Log is printed in the Serial Port for you to check.
 
 In the `setup() `function, the communication with the Wi-Fi module, the Environmental Shield and the SD card is checked, and the server is run on port 80, and we are notified on the Serial Port throughout `printWiFiStatus();` function.
 
 ```arduino
 // start the web server on port 80
-server.begin();// 
+server.begin();//
 you're connected now, so print out the status
 printWiFiStatus();
 ```
 
-Like in the previous example, every time a client connects, its browser in injected with html data from the `client.println()` function. Also, this can be seen in the Serial Log. 
+Like in the previous example, every time a client connects, its browser in injected with html data from the `client.println()` function. Also, this can be seen in the Serial Log.
 
 ![Serial Monitor data.](assets/uploads2.png)
 

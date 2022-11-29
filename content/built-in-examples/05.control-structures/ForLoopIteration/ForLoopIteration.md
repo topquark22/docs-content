@@ -3,7 +3,7 @@ title: 'For Loop Iteration (aka The Knight Rider)'
 compatible-products: [all-boards]
 difficulty: beginner
 description: 'Control multiple LEDs with a for loop and.'
-tags: 
+tags:
   - Control structures
   - For loop
   - LED

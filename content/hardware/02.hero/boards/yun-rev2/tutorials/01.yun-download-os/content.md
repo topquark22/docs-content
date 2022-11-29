@@ -1,7 +1,7 @@
 ---
 title: 'Download GNU/Linux OS to Your Arduino Yún'
 description: 'Instructions for downloading the GNU/Linux OS to your board.'
-tags: 
+tags:
   - tutorial
 author: 'Arduino'
 hardware:

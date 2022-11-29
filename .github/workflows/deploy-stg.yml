@@ -20,12 +20,12 @@ jobs:
           node-version: 14
           cache: "npm"
           cache-dependency-path: "**/package-lock.json"
-      
+
       - name: Render Datasheets
         run: cd ${GITHUB_WORKSPACE}/scripts/datasheet-rendering;./render-datasheets.sh
 
       - name: Copy Static Files
-        run: | 
+        run: |
           mkdir -p static/resources/datasheets static/resources/schematics static/resources/pinouts
           find ./content/hardware -type f -name "*-schematics.pdf" -exec cp {} ./static/resources/schematics/ \;
           find ./content/hardware -type f -name "*-datasheet.pdf" -exec cp {} ./static/resources/datasheets/ \;

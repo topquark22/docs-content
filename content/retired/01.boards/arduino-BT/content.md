@@ -33,12 +33,12 @@ The Arduino BT is a microcontroller board originally was based on the ATmega168,
 
 ### Schematic & Reference Design
 
-Reference Design: [Eagle\_File\_Arduino\_BT.zip](//www.arduino.cc/en/uploads/Main/Arduino%5FBT.zip)   
-Schematic: [Arduino\_BT.pdf](//www.arduino.cc/en/uploads/Main/Arduino%5FBT.pdf) 
+Reference Design: [Eagle\_File\_Arduino\_BT.zip](//www.arduino.cc/en/uploads/Main/Arduino%5FBT.zip)
+Schematic: [Arduino\_BT.pdf](//www.arduino.cc/en/uploads/Main/Arduino%5FBT.pdf)
 
 ### Power
 
-The Arduino BT can be powered via the V+ and GND screw terminals. The board contains a DC-DC convector that allows it to be powered with as little as 2.5V, a maximum of 12V. **Higher voltages or reversed polarity in the power supply can damage or destroy the board. The protection for reverse polarity connection is ONLY on the screw terminal.** 
+The Arduino BT can be powered via the V+ and GND screw terminals. The board contains a DC-DC convector that allows it to be powered with as little as 2.5V, a maximum of 12V. **Higher voltages or reversed polarity in the power supply can damage or destroy the board. The protection for reverse polarity connection is ONLY on the screw terminal.**
 
 The power pins are as follows:
 

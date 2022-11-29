@@ -4,7 +4,7 @@
 
 <FeatureList>
   <Feature title="NXP® i.MX 8M Mini" image="core">
-    Includes the powerful NXP® i.MX 8M Mini processor with 4x ARM® Cortex®-A53 core platforms up to 1.8GHz per core and 1x Cortex-M4 core up to 400MHz. 
+    Includes the powerful NXP® i.MX 8M Mini processor with 4x ARM® Cortex®-A53 core platforms up to 1.8GHz per core and 1x Cortex-M4 core up to 400MHz.
     <FeatureLink title="Datasheet" url="https://docs.arduino.cc/resources/datasheets/cortexa53.pdf" download blank/>
   </Feature>
 
@@ -19,10 +19,10 @@
   </Feature>
 
   <Feature title="Two industrial-grade products in one" image="communication">
-    The X8 offers the best of two approaches: the flexibility of usage of Linux combined with real-time applications. This approach allows developers to leverage the Arduino environment to perform e.g. automation control while accomplishing high-performance processes on Linux cores at the same time. 
+    The X8 offers the best of two approaches: the flexibility of usage of Linux combined with real-time applications. This approach allows developers to leverage the Arduino environment to perform e.g. automation control while accomplishing high-performance processes on Linux cores at the same time.
   </Feature>
 
   <Feature title="Containerizing system" image="configurability">
-    With the so called encapsulated application, developers can isolate a single package of software, which means that the applications can run within a controlled environment. This allows developers to design device-independent software while achieving modularization, thanks to the container composition.  
+    With the so called encapsulated application, developers can isolate a single package of software, which means that the applications can run within a controlled environment. This allows developers to design device-independent software while achieving modularization, thanks to the container composition.
   </Feature>
 </FeatureList>

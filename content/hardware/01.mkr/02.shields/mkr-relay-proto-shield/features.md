@@ -2,7 +2,7 @@
 
 <Feature title="G5V-1 Low Signal Relay" image="power">
 
-These tiny relays are capable of handling up to 24V components, ideal for controlling e.g. low-voltage lamps. 
+These tiny relays are capable of handling up to 24V components, ideal for controlling e.g. low-voltage lamps.
 
 <FeatureLink title="Datasheet" url="https://omronfs.omron.com/en_US/ecb/products/pdf/en-g5v_1.pdf"download blank/>
 

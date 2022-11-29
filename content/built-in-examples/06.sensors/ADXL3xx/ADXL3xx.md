@@ -3,7 +3,7 @@ title: 'ADXL3xx Accelerometer'
 compatible-products: [all-boards]
 difficulty: beginner
 description: 'Read an ADXL3xx accelerometer.'
-tags: 
+tags:
   - Sensors
   - Input
   - Accelerometer

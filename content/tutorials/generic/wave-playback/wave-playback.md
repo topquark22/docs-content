@@ -2,9 +2,9 @@
 title: 'Wave Playback'
 description: 'Playback wave files from an SD card '
 difficulty: intermediate
-tags: 
+tags:
   - Wave
-  - Audio 
+  - Audio
 libraries:
   - name: ArduinoSound
     url: https://www.arduino.cc/en/Reference/ArduinoSound
@@ -20,7 +20,7 @@ author: "Arduino"
 ---
 
 ## Introduction
-This example reads a wave file from an SD card and plays it using the I2S interface to a MAX98357 I2S Amp Breakout board. The wav file must be stereo signed 16 bit 44100Hz. You can export such files using free software like [audacity](http://www.audacityteam.org/). 
+This example reads a wave file from an SD card and plays it using the I2S interface to a MAX98357 I2S Amp Breakout board. The wav file must be stereo signed 16 bit 44100Hz. You can export such files using free software like [audacity](http://www.audacityteam.org/).
 
 ## Goals
 
@@ -28,7 +28,7 @@ This example reads a wave file from an SD card and plays it using the I2S interf
 - To playback wave files from an SD card
 
 
-## Hardware & Software Needed 
+## Hardware & Software Needed
 
 - [Arduino Zero](https://store.arduino.cc/arduino-zero), [MKRZero](https://store.arduino.cc/arduino-mkr-zero-i2s-bus-sd-for-sound-music-digital-audio-data?queryID=undefined)  or [MKR1000 WiFi](https://store.arduino.cc/arduino-mkr1000-wifi-with-headers-mounted) Board
 
@@ -60,7 +60,7 @@ Export the wav file:
 
 ## Programming the Board
 
-**1.** First, let's make sure we have correct the drivers installed. If we are using the Web Editor, we do not need to install anything. If we are using an offline editor, we need to install it manually. This can be done by navigating to **Tools > Board > Board Manager...**. Here we need to look for the **Arduino SAMD boards (32-bits ARM Cortex M0+)** and install it. 
+**1.** First, let's make sure we have correct the drivers installed. If we are using the Web Editor, we do not need to install anything. If we are using an offline editor, we need to install it manually. This can be done by navigating to **Tools > Board > Board Manager...**. Here we need to look for the **Arduino SAMD boards (32-bits ARM Cortex M0+)** and install it.
 
 **2.** Now, we need to install the libraries needed. If we are using the Web Editor, there is no need to install anything. If we are using an offline editor, simply go to **Tools > Manage libraries...** and search for **ArduinoSound**, **SD Library** and install it.
 

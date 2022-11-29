@@ -1,7 +1,7 @@
 ---
 title: Standalone Assembly
 description: Instructions for replicating the circuit of an Arduino board on a breadboard.
-tags: 
+tags:
   - Breadboard
   - Circuit
 ---
@@ -52,7 +52,7 @@ I made a programming header connector to connect to an AVRISP programmer by sold
 ![](assets/programmer-header.jpg)
 
 ![](assets/programmer-cable.jpg)
- 
+
 To program the bootloader, you'll need the bootloader files. In Arduino-0001, bootloading is not built into the interface, so you'll need to do a little extra work.
 
 ## Bootloader

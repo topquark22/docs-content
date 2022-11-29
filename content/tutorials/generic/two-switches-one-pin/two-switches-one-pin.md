@@ -24,36 +24,36 @@ One downside of the scheme (there always has to be a downside doesn't there?) is
 /*
  * Read_Two_Switches_On_One_Pin
  * Read two pushbutton switches or one center-off toggle switch with one Arduino pin
- * Paul Badger 2008 
+ * Paul Badger 2008
  * From an idea in Electronic Design News
  *
  * Exploits the pullup resistors available on each I/O and analog pin
- * The idea is that the 200K resistor to ground will cause the input pin to report LOW when the 
- * (20K) pullup resistor is turned off, but when the pullup resistor is turned on, 
+ * The idea is that the 200K resistor to ground will cause the input pin to report LOW when the
+ * (20K) pullup resistor is turned off, but when the pullup resistor is turned on,
  * it will overwhelm the 200K resistor and the pin will report HIGH.
  *
- * Schematic Diagram    ( can't believe I drew this funky ascii schematic )     
+ * Schematic Diagram    ( can't believe I drew this funky ascii schematic )
  *
  *
  *                             +5 V
  *                                |
  *                                \
- *                                /   
+ *                                /
  *                                \    10K
  *                                /
  *                                \
  *                                |
  *                               /    switch 1  or 1/2 of center-off toggle or slide switch
- *                              /       
+ *                              /
  *                                |
- *            digital pin ________+_____________/\/\/\____________   ground              
- *                                |               
+ *            digital pin ________+_____________/\/\/\____________   ground
+ *                                |
  *                                |               200K to 1M  (not critical)
- *                               /   
+ *                               /
  *                              /        switch 2 or 1/2 of center-off toggle or slide switch
  *                                |
  *                                |
- *                              _____   
+ *                              _____
  *                               ___     ground
  *                                _
  *
@@ -62,14 +62,14 @@ One downside of the scheme (there always has to be a downside doesn't there?) is
 
 #define swPin 2                 // pin for input  - note: no semicolon after #define
 int stateA, stateB;             // variables to store pin states
-int sw1, sw2;                   // variables to represent switch states 
+int sw1, sw2;                   // variables to represent switch states
 
-void setup()                   
+void setup()
 {
    Serial.begin(9600);
 }
 
-void loop()            
+void loop()
 {
    digitalWrite(swPin, LOW);                   // make sure the pullup resistors are off
    stateA = digitalRead(swPin);
@@ -84,15 +84,15 @@ void loop()
       sw1 = 0;
       sw2 = 1;
    }
-   else{                                       // stateA HIGH and stateB LOW 
+   else{                                       // stateA HIGH and stateB LOW
       sw1 = 0;                                 // no switches pushed - or center-off toggle in middle position
       sw2 = 0;
-   }  
+   }
 
    Serial.print(sw1);
    Serial.print("    ");     // pad some spaces to format print output
    Serial.println(sw2);
 
-   delay(100);  
+   delay(100);
 }
 ```

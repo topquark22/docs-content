@@ -3,7 +3,7 @@ title: 'String Case Change Functions'
 compatible-products: [all-boards]
 difficulty: intermediate
 description: 'Change the case of a string.'
-tags: 
+tags:
   - Strings
   - Serial monitor
   - Case changing

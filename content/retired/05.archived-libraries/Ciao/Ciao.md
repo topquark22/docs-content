@@ -43,7 +43,7 @@ A Connector is a standalone module that on one hand communicates with Ciao Core 
 ---
 
 ### `Rest connector`
-#### Description 
+#### Description
 This connector allows to make “http” requests. Below the steps that you should follow to use the Rest connector:
 
 - setup Rest connector;
@@ -128,7 +128,7 @@ void loop() {
 ---
 
 ### `Rest Server connector`
-#### Description 
+#### Description
 This connector allows to make “http” requests. Below the steps that you should follow to use the Rest connector:
 
 - setup Rest Server connector;
@@ -294,7 +294,7 @@ void setMode(String cmd[], String id) {
 ---
 
 ### `File System connector`
-#### Description 
+#### Description
 This Connector allows to read and write a file on Linux side from an Arduino sketch. Below the steps that you should follow to use the File connector:
 
 - setup File connector;
@@ -370,7 +370,7 @@ void loop() {
 ---
 
 ### `Shell connector`
-#### Description 
+#### Description
 This Connector allows to execute Shell commands for Linux side from an Arduino sketch. Below the steps that you should follow to use the File connector:
 
 - setup Shell connector;
@@ -439,7 +439,7 @@ void loop() {
 ---
 
 ### `MQTT connector`
-#### Description 
+#### Description
 This Connector allows to communicate using MQTT in an Arduino sketch. Below the steps that you should follow to use the MQTT connector:
 
 - setup Shell connector;
@@ -540,12 +540,12 @@ void loop() {
 }
 ```
 
-## External Connectors 
+## External Connectors
 
 ---
 
 ### `XMPP connector`
-#### Description 
+#### Description
 This Connector allows to communicate using XMPP in an Arduino sketch. Below the steps that you should follow to use the XMPP connector:
 
 - setup Shell connector;
@@ -655,7 +655,7 @@ void loop() {
 ---
 
 ### `Ciao.begin()`
-#### Description 
+#### Description
 Initializes the Ciao communication.
 
 #### Syntax
@@ -703,7 +703,7 @@ void loop() // run over and over again
 ---
 
 ### `Ciao.read()`
-#### Description 
+#### Description
 The read function is usually used to receive data from the specified connector. It returns a CiaoData object. It accepts three optional parameters that could be used by the connector to customize and process the read request.
 
 #### Syntax
@@ -722,7 +722,7 @@ CiaoData data =Ciao.read("restserver");
 ---
 
 ### `Ciao.write()`
-#### Description 
+#### Description
 The write function is usually used to send data outside the mcu through the specified connector. It returns a CiaoData object. It accepts three optional parameters that could be used by the connector to customize and process the write request.
 
 #### Syntax
@@ -741,7 +741,7 @@ Ciao.write("file","button.txt","Hello!","w");
 ---
 
 ### `Ciao.writeResponse()`
-#### Description 
+#### Description
 The writeResponse function is used to send a response to a specific connector request. The request is identified by the id. The id is part of CiaoData object coming from a call to read or write.
 
 #### Syntax
@@ -766,7 +766,7 @@ if(!data.isEmpty()){
 ---
 
 ### `Ciao.get()`
-#### Description 
+#### Description
 The get function returns a string used to extract data from the CiaoData object. CiaoData could contains more than one information and all of these information are accessible through the index parameter. Data and information extracted and the index number depends on how the specified connector is implemented. See Connectors to know the meaning of each index.
 
 #### Syntax
@@ -789,7 +789,7 @@ if(data.isError()){
 ---
 
 ### `Ciao.isError()`
-#### Description 
+#### Description
 The isError function enables the user to check if the CiaoData object contain an error code. Returns true if the operation failed or false if not. If the operation failed, the error message is available at index #2 through the get function.
 
 #### Syntax
@@ -812,7 +812,7 @@ if(data.isError()){
 ---
 
 ### `Ciao.isEmpty()`
-#### Description 
+#### Description
 The isEmpty function enables the user to check if the CiaoData object is empty. Returns true if the operation isn’t yet completed by the connector, or false if the operation is completed and data is available.
 
 #### Syntax
@@ -835,7 +835,7 @@ if(data.isError()){
 ---
 
 ### `Ciao.splitString()`
-#### Description 
+#### Description
 The splitString function enables the user to manage the MCU command sent by the connector. The function accepts up four parameters, the first is the serial command for the MCU, the second parameter is the character that should be used to split the serial command, while the third and fourth parameter are respectively, the array of strings used to split the serial command received and the size of the array itself .
 
 #### Syntax

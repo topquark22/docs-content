@@ -33,7 +33,7 @@ Only your Arduino Esplora is needed for this example.
 
 ![Esplora board using slider and pushbuttons](./assets/Esplora_Pong.png)
 
- 
+
 
 ## Code
 

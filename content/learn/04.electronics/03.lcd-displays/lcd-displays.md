@@ -139,7 +139,7 @@ void loop() {
 
 ### Autoscroll Example
 
-This example sketch shows how to use the `autoscroll()` and `noAutoscroll()` methods to move all the text on the display left or right. 
+This example sketch shows how to use the `autoscroll()` and `noAutoscroll()` methods to move all the text on the display left or right.
 
 - `autoscroll()` moves all the text one space to the left each time a letter is added
 - `noAutoscroll()` turns scrolling off
@@ -1014,7 +1014,7 @@ void loop() {
 
 ### Custom Character
 
-This example demonstrates how to add custom characters on an LCD  display. 
+This example demonstrates how to add custom characters on an LCD  display.
 
 Note that this example requires an additional potentiometer:
 - Outer pins connected to 5V and GND.

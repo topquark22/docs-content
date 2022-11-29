@@ -3,13 +3,13 @@ title: 'Using the IMU Machine Learning Core Features'
 difficulty: advanced
 compatible-products: [nano-rp2040-connect]
 description: 'Learn how to access the smart motion detection features that come with the LSM6DSOX IMU module.'
-tags: 
+tags:
   - Motion Detection
   - Machine Learning
   - Gyroscope
   - Accelerometer
 author: 'Sebastian Romero'
-libraries: 
+libraries:
   - name: STM32duino X-NUCLEO-IKS01A3
     url: https://github.com/stm32duino/X-NUCLEO-IKS01A3
 hardware:
@@ -20,9 +20,9 @@ software:
   - web-editor
 ---
 
-## Introduction 
+## Introduction
 
-In this tutorial, you will learn how to access the machine learning core features provided by the LSM6DSOX Inertial Measurement Unit (IMU) module on the Nano RP2040 Connect. For this, we will use the [STM32duino X-NUCLEO-IKS01A3](https://github.com/stm32duino/X-NUCLEO-IKS01A3) library. 
+In this tutorial, you will learn how to access the machine learning core features provided by the LSM6DSOX Inertial Measurement Unit (IMU) module on the Nano RP2040 Connect. For this, we will use the [STM32duino X-NUCLEO-IKS01A3](https://github.com/stm32duino/X-NUCLEO-IKS01A3) library.
 
 >**Note:** if you need help setting up your environment to use your Arduino Nano RP2040 board, please refer to [this installation guide](/software/ide-v1/installing-mbed-os-nano-boards).
 
@@ -43,7 +43,7 @@ The goals of this project are:
 
 ![The LSM6DSOXTR sensor.](assets/rp2040-imu-basics-img-02.png)
 
-An IMU is a component that measures movement such as specific force, angular rate or orientation. It does that by combining a **gyroscope** and an **accelerometer** sensor. 
+An IMU is a component that measures movement such as specific force, angular rate or orientation. It does that by combining a **gyroscope** and an **accelerometer** sensor.
 If you would like to learn how to access the raw accelerometer or gyroscope data, please refer to [this](/tutorials/nano-rp2040-connect/rp2040-imu-basics) tutorial.
 
 In addition to measuring the raw movement data, the IMU mounted on the Nano RP2040 Connect has a machine learning core. This allows to do advanced movement detection on the IMU itself. This frees the microcontroller from this task so it can do other things like sending data to a network, interacting with other sensors or operating actuators. By using the machine learning core specific activity patterns such as walking, jogging or biking can be recognized.
@@ -57,9 +57,9 @@ Let's take a look at how the IMU's smart features work!
 
 ## Programming the Board
 
-We will now get to the programming part of this tutorial. 
+We will now get to the programming part of this tutorial.
 
-1. First, let's make sure the drivers are installed. If you are using the Web Editor, you don't need to install anything. If you are using an offline editor, you need to install it manually. This can be done by navigating to **Tools > Board > Board Manager...**. Here you need to search for **Arduino Mbed OS Nano Boards** and install the package. 
+1. First, let's make sure the drivers are installed. If you are using the Web Editor, you don't need to install anything. If you are using an offline editor, you need to install it manually. This can be done by navigating to **Tools > Board > Board Manager...**. Here you need to search for **Arduino Mbed OS Nano Boards** and install the package.
 
 2. Now, you need to install the STM32duino X-NUCLEO-IKS01A3 library. If you are using an offline editor, simply go to **Tools > Manage libraries..**, and search for **STM32duino X-NUCLEO-IKS01A3** and install it. If a dialog appears asking whether the dependent libraries should be installed confirm this.
 

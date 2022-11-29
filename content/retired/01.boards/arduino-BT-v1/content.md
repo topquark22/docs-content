@@ -30,12 +30,12 @@ The Arduino BT (Bluetooth®) is a microcontroller board based on the ATmega168 (
 
 ### Schematic & Reference Design
 
-Reference Design: [arduino-bt-reference-design.zip](//www.arduino.cc/en/uploads/Main/arduino-bt-reference-design.zip)   
-Schematic: [arduino\_bt06.pdf](//www.arduino.cc/en/uploads/Main/arduino%5Fbt06.pdf) 
+Reference Design: [arduino-bt-reference-design.zip](//www.arduino.cc/en/uploads/Main/arduino-bt-reference-design.zip)
+Schematic: [arduino\_bt06.pdf](//www.arduino.cc/en/uploads/Main/arduino%5Fbt06.pdf)
 
 ### Power
 
-The Arduino BT can be powered via the V+ and GND screw terminals. The board contains a DC-DC convector that allows it to be powered with as little as 1.2V, but a maximum of 5.5V. **Higher voltages or reversed polarity in the power supply can damage or destroy the board.** 
+The Arduino BT can be powered via the V+ and GND screw terminals. The board contains a DC-DC convector that allows it to be powered with as little as 1.2V, but a maximum of 5.5V. **Higher voltages or reversed polarity in the power supply can damage or destroy the board.**
 
 The power pins are as follows:
 

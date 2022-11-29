@@ -2,7 +2,7 @@
 title: 'Arduino as ISP and Arduino Bootloaders'
 difficulty: advanced
 description: 'Arduino ISP turns your Arduino into an in-circuit programmer to re-program AtMega chips.'
-tags: 
+tags:
   - Arduino ISP
   - In circuit programmer
   - Bootloader

@@ -4,7 +4,7 @@ difficulty: beginner
 compatible-products: [due]
 description: 'In this tutorial you will update the ATmega16U2 firmware using an Arduino UNO or Mega as an AVR-ISP (in-system programmer).'
 author: 'Arduino'
-tags: 
+tags:
   - Firmware
 hardware:
   - hardware/02.hero/boards/due

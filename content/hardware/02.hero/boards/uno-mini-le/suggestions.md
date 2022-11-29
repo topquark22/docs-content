@@ -1,6 +1,6 @@
 <EssentialsColumn title="Tutorials for Arduino UNO Mini LE">
 <EssentialElement title="Analog Read Serial" type="tutorial" link="/built-in-examples/basics/AnalogReadSerial">
-    Learn how to display analog values in the Serial monitor. 
+    Learn how to display analog values in the Serial monitor.
   </EssentialElement>
 
 <EssentialElement title="Button" type="tutorial" link="/built-in-examples/digital/Button">
@@ -10,7 +10,7 @@
 
 <EssentialsColumn title="Arduino Basics">
   <EssentialElement title="Built-in Examples" type="tutorial" link="/built-in-examples/">
-    Built-in Examples are sketches included in the Arduino IDE and demonstrate all basic Arduino commands. 
+    Built-in Examples are sketches included in the Arduino IDE and demonstrate all basic Arduino commands.
   </EssentialElement>
   <EssentialElement title="Foundations" type="resource" link="/foundations">
     In Foundations you can find some specific knowledge about the principles and techniques that are behind the Arduino.

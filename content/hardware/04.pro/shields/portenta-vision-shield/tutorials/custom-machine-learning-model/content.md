@@ -12,7 +12,7 @@ software:
   - EdgeImpulse
 ---
 
-## Overview 
+## Overview
 
 This tutorial teaches you how to train a custom machine learning model with Edge Impulse and how to run it using the Portenta Vision Shield. The Machine Learning (ML) model will use the TensorFlow Lite format and the classification example will run on OpenMV.
 
@@ -88,7 +88,7 @@ It is recommended to adjust the image size to 48x48 for improved performance. Yo
 ### 5. Generate Features
 
 In this step, you will adjust the image settings and generate the features from the input data. Features are unique properties that will be used by the classification algorithm to detect the objects. A feature can be the round shape of an apple or the fact that an image of a banana has many bright pixels as bananas are mostly yellow.
-In the menu, navigate to "Image" under "Impulse Design". Set the color depth to "Grayscale" and save the parameters as the Portenta Vision Shield features a grayscale camera. 
+In the menu, navigate to "Image" under "Impulse Design". Set the color depth to "Grayscale" and save the parameters as the Portenta Vision Shield features a grayscale camera.
 
 ![In the image inspection tool you can set the color depth according to the input data](assets/vs_openmv_ml_edge_impulse_parameters.png)
 
@@ -98,7 +98,7 @@ Then click on "Generate Features". The analysis process will take a while to com
 
 ### 6. Train the Model
 
-Now that the features of your image data are ready to be used for the actual training, you can navigate to "Transfer Learning" in the menu. In this example, you can leave the settings at their default value except of "Number of training cycles" which has to be increased to 60. This defines how many times the model is being trained. The model gets better with each cycle the same way you get better when learning how to ride a bike and you practice it the first couple of times. 
+Now that the features of your image data are ready to be used for the actual training, you can navigate to "Transfer Learning" in the menu. In this example, you can leave the settings at their default value except of "Number of training cycles" which has to be increased to 60. This defines how many times the model is being trained. The model gets better with each cycle the same way you get better when learning how to ride a bike and you practice it the first couple of times.
 
 Click on "Start Training" to train the machine learning model. A small amount of images, the **validation set**, are put aside before the training starts to validate the trained model. Do not be confused with the **test set** which can be used to evaluate the final model. Once the training finishes, you will see some statistics on how well the model performed during validation. Ideally you get an accuracy of 100% for each object. If you get poor results, you may have some images which are not representative of the objects you are trying to classify and should be removed from the data set.
 

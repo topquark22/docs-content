@@ -1,5 +1,5 @@
 ---
-title: Braccio Carrier 
+title: Braccio Carrier
 url_shop: https://store.arduino.cc/products/braccioplusplus
 ---
 

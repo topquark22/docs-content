@@ -27,7 +27,7 @@ The **SWD interface** is a **two-pin** (SWDIO/SWCLK) electrical alternative to t
 
 ## Instructions
 
-Before you can connect your J-Link probe to your Arduino® MKR board, you must prepare the SWD interface pins of the board. The Arduino® MKR boards have the SWD interface pins, SWDIO and SWCLK, connected to the **J2 header**. The J2 header of the Arduino® MKR boards is located on the underside of the board in the exposed pads. 
+Before you can connect your J-Link probe to your Arduino® MKR board, you must prepare the SWD interface pins of the board. The Arduino® MKR boards have the SWD interface pins, SWDIO and SWCLK, connected to the **J2 header**. The J2 header of the Arduino® MKR boards is located on the underside of the board in the exposed pads.
 
 > Note: The goal is to reach the exposed pads that are located on the underside of the board, feel free to choose one of the two methods that are explained in this tutorial or to implement another solution not mentioned here.
 
@@ -43,7 +43,7 @@ Besides not requiring any soldering, with this method the MKR Proto Shield remai
 
 ### Connecting the Board and Device with Soldering
 
-It is also possible to solder connectors onto the exposed pads on the back of the MKR board, that will then allow us to connect the J-Link adapter to the board. Refer to the illustration below to see where the connectors need to be soldered. 
+It is also possible to solder connectors onto the exposed pads on the back of the MKR board, that will then allow us to connect the J-Link adapter to the board. Refer to the illustration below to see where the connectors need to be soldered.
 
 ![Illustration of soldering required](assets/mkr_jlink_soldered_illustration.png)
 
@@ -67,7 +67,7 @@ Now we are ready to start debugging our sketch. Connect the power to the MKR boa
 
 Then create or open the sketch that you want to debug. If you don't already have a sketch in mind, feel free to use the example sketch found at the end of this tutorial.
 
-Now go to the folder where the sketch is located. Add a `.json` file in the same folder as your sketch and name it `debug_custom.json`. The easiest way would be to create a text file and rename it `debug_custom.json`. In the `.json` file, add the following lines: 
+Now go to the folder where the sketch is located. Add a `.json` file in the same folder as your sketch and name it `debug_custom.json`. The easiest way would be to create a text file and rename it `debug_custom.json`. In the `.json` file, add the following lines:
 
 ```arduino
 {

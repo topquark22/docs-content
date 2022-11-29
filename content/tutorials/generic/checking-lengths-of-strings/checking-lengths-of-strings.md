@@ -1,7 +1,7 @@
 ---
 title: 'Checking lengths of strings'
 description: 'Create a program that determines the length of a text message.'
-tags: 
+tags:
   - Strings
   - Functions
 software:
@@ -17,7 +17,7 @@ You can get the length of [Strings](https://www.arduino.cc/reference/en/language
 
 - Learn how to determine the length of strings.
 - Write a program that restricts the length of strings from an input.
-  
+
 ## Hardware & Software Needed
 
 -  Arduino Microcontroller ([Link to store](https://store.arduino.cc/))
@@ -31,7 +31,7 @@ There is no circuit for this example, though your board must be connected to you
 
 ## Programming the Board
 
-We will now get to the programming part of this tutorial. 
+We will now get to the programming part of this tutorial.
 
  Open the editor of your choice, and make sure you have your board installed. Select your board and port, and upload the sketch below.
 
@@ -133,7 +133,7 @@ After you have uploaded the code from the example, open the serial monitor. You 
 
 If the code is not working, there are some common issues we can troubleshoot:
 
-- You have not selected the right port and board. 
+- You have not selected the right port and board.
 - Make sure that no `{}` brackets are missing.
 
 ## Conclusion

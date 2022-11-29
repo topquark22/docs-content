@@ -1,9 +1,9 @@
 ---
 title: 'Amplitude Serial Plotter'
 description: 'Learn how to visualize amplitude using the Serial Plotter.'
-tags: 
+tags:
   - Amplitude
-  - Audio 
+  - Audio
   - Serial Plotter
 author: 'Arduino'
 libraries:
@@ -12,7 +12,7 @@ libraries:
 hardware:
   - hardware/01.mkr/01.boards/mkr-zero
   - hardware/01.mkr/01.boards/mkr-1000-wifi
-  - hardware/02.hero/boards/zero  
+  - hardware/02.hero/boards/zero
 software:
   - ide-v1
   - ide-v2
@@ -57,7 +57,7 @@ Make sure that your Arduino is connected to your computer via USB, then open the
 
 
 
-**1.** First, let's make sure we have correct the drivers installed. If we are using the Web Editor, we do not need to install anything. If we are using an offline editor, we need to install it manually. This can be done by navigating to **Tools > Board > Board Manager...**. Here we need to look for the **Arduino SAMD boards (32-bits ARM Cortex M0+)** and install it. 
+**1.** First, let's make sure we have correct the drivers installed. If we are using the Web Editor, we do not need to install anything. If we are using an offline editor, we need to install it manually. This can be done by navigating to **Tools > Board > Board Manager...**. Here we need to look for the **Arduino SAMD boards (32-bits ARM Cortex M0+)** and install it.
 
 **2.** Now, we need to install the libraries needed. Simply go to **Tools > Manage libraries...** and search for **ArduinoSound** and install it.
 

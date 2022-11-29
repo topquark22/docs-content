@@ -7,7 +7,7 @@ description: 'Learn about the different components on the shield, and how to rec
 tags:
   - Temperature
   - Thermocouple
-libraries: 
+libraries:
   - name: Arduino_MKRTHERM
     url: https://www.arduino.cc/en/Reference/ArduinoMKRTHERM
 hardware:
@@ -19,14 +19,14 @@ software:
   - web-editor
 ---
 
-## Introduction 
+## Introduction
 
-The MKR Therm shield is a great addon for any MKR family board. Particularly designed to measure extreme temperatures accurately, it features the **MAX31855** chip, and has support for K-type connectors and screw terminals for other connections. 
+The MKR Therm shield is a great addon for any MKR family board. Particularly designed to measure extreme temperatures accurately, it features the **MAX31855** chip, and has support for K-type connectors and screw terminals for other connections.
 
 In this tutorial, we will simply do a test with a **one-wire thermocouple**, in order to measure the temperature through the MKR THERM shield.
 
 
->**Note:** While the shield itself is not designed to withstand any extreme temperatures, external sensors can be connected that we can accurately read between -200°C to +700°C. 
+>**Note:** While the shield itself is not designed to withstand any extreme temperatures, external sensors can be connected that we can accurately read between -200°C to +700°C.
 
 ## Goals
 
@@ -59,7 +59,7 @@ As an addition, we have the standard connection available for the DS18xx digital
 
 ### Circuit
 
-Begin by mounting the MKR THERM Shield on top of a MKR family board. 
+Begin by mounting the MKR THERM Shield on top of a MKR family board.
 
 ![Mounting the shield.](assets/MKR_THERM_T1_IMG01.png)
 
@@ -69,9 +69,9 @@ Then, we need to connect the thermocoupler to the shield.
 
 ## Programming the Board
 
-We will now get to the programming part of this tutorial. 
+We will now get to the programming part of this tutorial.
 
-**1.** First, let's make sure we have the drivers installed for the board we are using. If we are using the Web Editor, we do not need to install anything. If we are using an offline editor, we need to install it manually. This can be done by navigating to **Tools > Board > Board Manager...**. Here we need to look for the **Arduino SAMD boards (32-bits ARM Cortex M0+)** and install it. 
+**1.** First, let's make sure we have the drivers installed for the board we are using. If we are using the Web Editor, we do not need to install anything. If we are using an offline editor, we need to install it manually. This can be done by navigating to **Tools > Board > Board Manager...**. Here we need to look for the **Arduino SAMD boards (32-bits ARM Cortex M0+)** and install it.
 
 **2.** Now, we need to install the libraries needed. If we are using the Web Editor, there is no need to install anything. If we are using an offline editor, simply go to **Tools > Manage libraries..**, and search for **Arduino_MKRTHERM** and install it.
 
@@ -120,7 +120,7 @@ After we have successfully uploaded the code to the board, let's open the Serial
 
 ![Reference temperature and temperature recorded through the thermocouple.](assets/MKR_THERM_T1_IMG03.png)
 
-And that's basically it. While the shield is very easy to use, it can be very accurate in its readings, and can record quite extreme temperatures. 
+And that's basically it. While the shield is very easy to use, it can be very accurate in its readings, and can record quite extreme temperatures.
 
 ### Troubleshoot
 
@@ -132,7 +132,7 @@ If the code is not working, there are some common issues we can troubleshoot:
 
 ## Conclusion
 
-In this tutorial, we explored the core feature of the MKR THERM shield, which is **reading temperature.** While there are a lot of cheaper options to use for reading temperature, e.g. in a living room, basement or office, the MKR THERM shield is capable of measuring extreme temperatures. This makes it an excellent choice for industrial uses. 
+In this tutorial, we explored the core feature of the MKR THERM shield, which is **reading temperature.** While there are a lot of cheaper options to use for reading temperature, e.g. in a living room, basement or office, the MKR THERM shield is capable of measuring extreme temperatures. This makes it an excellent choice for industrial uses.
 
 Feel free to explore the [Arduino_MKRTHERM](https://www.arduino.cc/en/Reference/ArduinoMKRTHERM) library further, and try out some of the many cool functions.
 

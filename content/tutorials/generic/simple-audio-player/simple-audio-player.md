@@ -2,9 +2,9 @@
 title: 'Simple audio player'
 description: 'Play audio using an SD card'
 difficulty: intermediate
-tags: 
+tags:
   - SD
-  - Audio 
+  - Audio
   - Potentiometer
 libraries:
   - name: AudioZero
@@ -30,7 +30,7 @@ This tutorial demonstrates how to use an Arduino board (Arduino Zero, MKRZero or
 ## Hardware & Software Needed
 
 - [Arduino Zero](https://store.arduino.cc/arduino-zero), [MKRZero](https://store.arduino.cc/arduino-mkr-zero-i2s-bus-sd-for-sound-music-digital-audio-data)  or [MKR1000 WiFi](https://store.arduino.cc/arduino-mkr1000-wifi-with-headers-mounted) board
-- [AudioZero](https://www.arduino.cc/en/Reference/AudioZero) library 
+- [AudioZero](https://www.arduino.cc/en/Reference/AudioZero) library
 - Arduino IDE ([online](https://create.arduino.cc/) or [offline](https://www.arduino.cc/en/main/software)).
 
 - 8 Ω speaker or headphones

@@ -2,7 +2,7 @@
 title: 'From Arduino to a Microcontroller on a Breadboard'
 difficulty: advanced
 description: 'Migrating an Arduino board to a standalone microcontroller on a breadboard.'
-tags: 
+tags:
   - Arduino ISP
   - ATmega
   - Bootloader

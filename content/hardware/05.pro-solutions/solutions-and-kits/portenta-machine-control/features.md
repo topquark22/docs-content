@@ -23,19 +23,19 @@ Thanks to its computing power, the **Portenta Machine Control** enables a wide r
 <Feature title="Carrier connections" image="connection">
 
   The Arduino Machine Control enables industry standard soft-PLC control and is able to connect to a range of external sensors and actuators with isolated digital I/O, 4-20mA compatible analog I/O, 3 configurable temperature channels, and a dedicated I2C connector.
-  
+
 </Feature>
 
 <Feature title="Connectivity" image="wifi-bluetooth">
 
   Multiple choices are available for network connectivity, including USB, Ethernet, and WiFi/BLE in addition to industry specific protocols such as RS485.
-  
+
 </Feature>
 
 <Feature title="Board and carrier temperature" image="temperature-sensor">
 
   The Portenta Machine Control core runs an Arduino Portenta H7 microcontroller board, a highly reliable design operating at industrial temperature ranges (-40 °C to +85 °C) with a dual-core architecture that doesn’t require any external cooling.
-  
+
 </Feature>
 
 </FeatureList>

@@ -29,7 +29,7 @@ You can find in the [Getting Started section](https://www.arduino.cc/en/Guide/Ho
 
 The Arduino M0 is open-source hardware! You can build your own board using the following files:
 
-[EAGLE FILES IN .ZIP](https://www.arduino.cc/en/uploads/Main/arduino-M0-reference-design.zip) 
+[EAGLE FILES IN .ZIP](https://www.arduino.cc/en/uploads/Main/arduino-M0-reference-design.zip)
 
 [SCHEMATICS IN .PDF](https://www.arduino.cc/en/uploads/Main/arduino-M0-schematic.pdf)
 

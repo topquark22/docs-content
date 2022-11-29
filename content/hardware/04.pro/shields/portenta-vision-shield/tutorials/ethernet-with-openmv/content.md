@@ -2,7 +2,7 @@
 title: 'Using the Portenta Vision Shield Ethernet with OpenMV'
 description: 'Learn how to connect to the Internet using the Vision Shield Ethernet, Portenta H7 and OpenMV'
 difficulty: intermediate
-tags: 
+tags:
   - Ethernet
   - Portenta Vision shield
   - Portenta H7
@@ -18,7 +18,7 @@ software:
   - openmv
 ---
 
-## Introduction 
+## Introduction
 
 With the Ethernet version of the Arduino Portenta Vision Shield it is possible to connect the board to the Internet using an Ethernet cable. In this tutorial we will go through useful scenarios for using Ethernet and how to connect the board to the Internet with OpenMV.
 
@@ -54,7 +54,7 @@ Next you can have a look at some of the code in the example script.
 
 Now let's take a look at some important parts of the code.
 
-First you are making use of some micropython libraries, [network](http://docs.micropython.org/en/latest/library/network.html) and [usocket](http://docs.micropython.org/en/v1.14/library/usocket.html). 
+First you are making use of some micropython libraries, [network](http://docs.micropython.org/en/latest/library/network.html) and [usocket](http://docs.micropython.org/en/v1.14/library/usocket.html).
 
 ```arduino
 import network, usocket
@@ -67,7 +67,7 @@ PORT = 80
 HOST = "www.google.com"
 ```
 
-The `usocket.getaddrinfo(HOST, PORT)[0][4]` function will translate the host/port argument into a sequence of 5-tuples that contains all the necessary arguments for creating a socket connected to that service. Then, you can create a socket object with `usocket.socket(usocket.AF_INET, usocket.SOCK_STREAM)`. You can combine these variables you have created to connect the socket to your desired address. 
+The `usocket.getaddrinfo(HOST, PORT)[0][4]` function will translate the host/port argument into a sequence of 5-tuples that contains all the necessary arguments for creating a socket connected to that service. Then, you can create a socket object with `usocket.socket(usocket.AF_INET, usocket.SOCK_STREAM)`. You can combine these variables you have created to connect the socket to your desired address.
 
 ```arduino
 addr = usocket.getaddrinfo(HOST, PORT)[0][4]
@@ -91,7 +91,7 @@ After uploading the sketch, open the serial terminal. The board will connect to 
 
 ![Serial monitor showing the result of the sketch](assets/vs-eth-openmv-serial.png)
 
-After the connection has been made, the html code of the website entered into the sketch will be printed in the Serial Monitor. 
+After the connection has been made, the html code of the website entered into the sketch will be printed in the Serial Monitor.
 
 ## Conclusion
 

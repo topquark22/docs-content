@@ -1,7 +1,7 @@
 ---
 title: 'Parallel Port Programmer'
-description: 'Instructions for making a cheap piece of hardware that lets you burn the bootloader to an Arduino board or upload sketches to a board with no bootloader.' 
-tags: 
+description: 'Instructions for making a cheap piece of hardware that lets you burn the bootloader to an Arduino board or upload sketches to a board with no bootloader.'
+tags:
   - Parallel programming
 ---
 Instructions for building a parallel port programmer for the Arduino board (or any other Atmega8 chip). Allows you to program the board on Windows without any additional equipment. Cheap and fun. (Please note, however, that this doesn't allow for communication between the computer and programs running on the board. You'll need a serial cable for that.)
@@ -30,7 +30,7 @@ Solder 470 ohm resistors to pins 1 and 2 of the parallel connector.
 
 ![Soldered resistor](./assets/programmer_one_resistor.jpg)
 
-*Parallel connector with a 470 ohm resistor soldered to pin 1.* 
+*Parallel connector with a 470 ohm resistor soldered to pin 1.*
 
 Solder a 220 ohm resistor to pin 11 of the connector.
 

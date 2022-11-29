@@ -12,7 +12,7 @@ author: 'Karl Söderby, Paolo Calao'
 
 ## Introduction
 
-The [Arduino Cloud CLI](https://github.com/arduino/arduino-cloud-cli) is a tool developed to access features of the [Arduino IoT Cloud service](https://create.arduino.cc/iot/) from the terminal. 
+The [Arduino Cloud CLI](https://github.com/arduino/arduino-cloud-cli) is a tool developed to access features of the [Arduino IoT Cloud service](https://create.arduino.cc/iot/) from the terminal.
 
 It can be used as an automation tool to:
 - Clone existing Things & Dashboards (by extracting its template).
@@ -21,19 +21,19 @@ It can be used as an automation tool to:
 
 ### What is the Arduino Cloud CLI?
 
-This tool was primarily designed to reduce time spent duplicating projects in the Arduino IoT Cloud. Working with the CLI allows you to quickly make 10+ copies of a Thing, or update sketches on 50+ boards simultaneously. 
+This tool was primarily designed to reduce time spent duplicating projects in the Arduino IoT Cloud. Working with the CLI allows you to quickly make 10+ copies of a Thing, or update sketches on 50+ boards simultaneously.
 
 An example of a workflow using this tool can be:
 
 1. Create your application using the Arduino IoT Cloud web interface. Here you can configure your device, create variables, enter network credentials, edit your sketch and deploy your first project.
 2. With the **Arduino Cloud CLI**, extract templates of Things and dashboards you want to replicate.
 3. Provision a device with the `device create` command and setup a Thing and dashboard using the templates previously extracted.
-4. Download the sketch related to the Thing you extracted, and upload it to the device you created. This can also be done via the Arduino IoT Cloud. 
+4. Download the sketch related to the Thing you extracted, and upload it to the device you created. This can also be done via the Arduino IoT Cloud.
 5. Whenever an update is required for a fleet of devices, you can use the OTA mass-upload tool to update all of your devices at once, without being connected to your computer.
 
 ![Performing mass upload.](assets/mass-upload.png)
 
-Let's for example say that you have created a "smart plug" setup, that includes 100 devices in a large building. The firmware running on the devices is not optimal, and needs an update. 
+Let's for example say that you have created a "smart plug" setup, that includes 100 devices in a large building. The firmware running on the devices is not optimal, and needs an update.
 
 With the Arduino Cloud CLI tool, you can not only automate the initial setup of these devices, but also be able to automate the maintenance sequence as well.
 
@@ -51,7 +51,7 @@ With the Arduino Cloud CLI tool, you can not only automate the initial setup of 
 
 Download and extract the [latest release](https://github.com/arduino/arduino-cloud-cli/releases). Make sure it is in your machine's PATH, so that it can be used globally.
 
-After installation, check that it is working by opening a terminal, and type: 
+After installation, check that it is working by opening a terminal, and type:
 
 ```
 arduino-cloud-cli
@@ -69,7 +69,7 @@ The Arduino Cloud CLI has 5 main commands.
 
 Each command has a set of **subcommands** which we will be exploring in this guide.
 
-## Credentials 
+## Credentials
 
 - `arduino-cloud-cli credentials`
 
@@ -85,7 +85,7 @@ arduino-cloud-cli credentials init
 
 And enter your credentials.
 
-This will create a `arduino-cloud-credentials.yaml` file in your [Arduino Data directory](https://support.arduino.cc/hc/en-us/articles/360018448279-Open-the-Arduino15-folder). 
+This will create a `arduino-cloud-credentials.yaml` file in your [Arduino Data directory](https://support.arduino.cc/hc/en-us/articles/360018448279-Open-the-Arduino15-folder).
 
 To overwrite, we can use:
 
@@ -124,17 +124,17 @@ Currently, the following devices are supported:
 * `arduino:mbed_nicla:nicla_vision` [Arduino Nicla Vision](https://docs.arduino.cc/hardware/nicla-vision)
 * `arduino:samd:mkr1000` [Arduino MKR1000](https://docs.arduino.cc/hardware/mkr-1000-wifi)
 * `arduino:samd:mkrgsm1400` [Arduino MKR GSM 1400](https://docs.arduino.cc/hardware/mkr-gsm-1400)
-* `arduino:samd:mkrnb1500` [Arduino MKR NB 1500](https://docs.arduino.cc/hardware/mkr-nb-1500) 
+* `arduino:samd:mkrnb1500` [Arduino MKR NB 1500](https://docs.arduino.cc/hardware/mkr-nb-1500)
 
 ### LoRaWAN® Devices
 
-To configure LoRaWAN® devices, use the additional `create-lora` and the `--frequency-plan` flag. This 
+To configure LoRaWAN® devices, use the additional `create-lora` and the `--frequency-plan` flag. This
 
 ```
 arduino-cloud-cli device create-lora --name <deviceName> --frequency-plan <freqID> --port <port> --fqbn <deviceFqbn>
 ```
 
-LoRaWAN® devices that are supported: 
+LoRaWAN® devices that are supported:
 
 * `arduino:samd:mkrwan1310`
 * `arduino:samd:mkrwan1300`
@@ -147,7 +147,7 @@ arduino-cloud-cli device list-frequency-plans
 
 ### Generic Devices (ESP32 / ESP8266)
 
-General devices is a virtual device that does not need to be attached to a physical board. 
+General devices is a virtual device that does not need to be attached to a physical board.
 
 To see the full list of supported FQBNs, you can run the following command:
 
@@ -155,7 +155,7 @@ To see the full list of supported FQBNs, you can run the following command:
 arduino-cloud-cli device list-fqbn
 ```
 
-To create a generic device, you can use the following command. Note that the `--fqbn` flag is optional: leaving this blank will set the fqbn to `generic:generic:generic`. 
+To create a generic device, you can use the following command. Note that the `--fqbn` flag is optional: leaving this blank will set the fqbn to `generic:generic:generic`.
 
 ```
 arduino-cloud-cli device create-generic --name <deviceName> --fqbn <fqbn>
@@ -211,11 +211,11 @@ arduino-cloud-cli device delete-tags --id <deviceID> --keys <key0>,<key1>
 
 - `arduino-cloud-cli things`
 
-**Things** in the Arduino IoT Cloud is the virtual twin of your hardware device. In a Thing, you create variables, attach device and add network credentials. 
+**Things** in the Arduino IoT Cloud is the virtual twin of your hardware device. In a Thing, you create variables, attach device and add network credentials.
 
 With `arduino-cloud-cli` you can:
 
-- `extract` a template from existing Things, and output in a template file (`.yaml`). 
+- `extract` a template from existing Things, and output in a template file (`.yaml`).
 - `create` a Thing, based on a template.
 - `clone` a Thing. This command simply duplicates a Thing.
 - `bind` a device to a Thing (attach it).
@@ -242,7 +242,7 @@ arduino-cloud-cli thing create --name <thingName> --template <template.(json|yam
 
 ### Clone Things
 
-To clone a Thing (duplicating it), we can use the `clone` command. Note that `--name` is a mandatory flag. 
+To clone a Thing (duplicating it), we can use the `clone` command. Note that `--name` is a mandatory flag.
 
 ```
 arduino-cloud-cli thing clone --name <thingName> --clone-id <thingToCloneID>
@@ -250,9 +250,9 @@ arduino-cloud-cli thing clone --name <thingName> --clone-id <thingToCloneID>
 
 ### List Things
 
-The `thing list` prints out information regarding your Things. It can be used to e.g. list out a Thing's ID, or list attached variables. 
+The `thing list` prints out information regarding your Things. It can be used to e.g. list out a Thing's ID, or list attached variables.
 
-To display all Things with all variables, use: 
+To display all Things with all variables, use:
 
 ```
 arduino-cloud-cli thing list --show-variables
@@ -323,8 +323,8 @@ arduino-cloud-cli thing delete-tags --id <thingID> --keys <key0>,<key1>
 - `arduino-cloud-cli dashboard`
 
 Dashboards are used to visualize and interact with data from your board. With the `arduino-cloud-cli` you can:
-- `extract` template from a dashboard and output in a template file (`.yaml`). 
-- `create` a dashboard from a template file. 
+- `extract` template from a dashboard and output in a template file (`.yaml`).
+- `create` a dashboard from a template file.
 
 ### Extract Dashboard Template
 
@@ -366,7 +366,7 @@ OTA (Over-The-Air) is the process of upgrading the firmware remotely.
 
 With the `arduino-cloud-cli`, you can:
 
-- `upload` sketches to a board remotely. 
+- `upload` sketches to a board remotely.
 - `mass-upload` sketches to several boards simultaneously, also remotely.
 - Schedule a preferred time (up to one week in advance) for an upload to happen, by using the `--deferred` flag.
 
@@ -393,7 +393,7 @@ arduino-cloud-cli ota upload --device-id <deviceID> --file <sketch-file.ino.bin>
 It is also possible to perform a mass ota upload through a specific command.
 The fqbn is mandatory.
 
-To upload using a device 
+To upload using a device
 
 ```
 arduino-cloud-cli ota mass-upload --fqbn <deviceFQBN> --device-ids <deviceIDs> --file <sketch-file.ino.bin>
@@ -410,11 +410,11 @@ arduino-cloud-cli ota mass-upload --fqbn <deviceFQBN> --device-tags <key0>=<valu
 When uploading a sketch using OTA, you will need to compile the binary file (`.bin`) first. This is **not** a feature in the `arduino-cloud-cli`, so you will need to use the following options:
 
 - [Arduino CLI](https://arduino.github.io/arduino-cli/)
-- [Arduino IDE 1.8.x or 2.0](https://www.arduino.cc/en/software) 
+- [Arduino IDE 1.8.x or 2.0](https://www.arduino.cc/en/software)
 
 #### Compile with Arduino CLI
 
-Using `arduino-cli`, you can compile a sketch through the following command: 
+Using `arduino-cli`, you can compile a sketch through the following command:
 
 ```
 arduino-cli compile -b arduino:samd:mkrwifi1010 /home/user/Arduino/MySketch
@@ -424,7 +424,7 @@ arduino-cli compile -b arduino:samd:mkrwifi1010 /home/user/Arduino/MySketch
 
 #### Compile with Arduino IDE
 
-You can also compile a file through any version of the Arduino IDE (not online). 
+You can also compile a file through any version of the Arduino IDE (not online).
 
 - In the IDE, with your sketch open, navigate to **Sketch > Export Compiled Binary**. In your sketch folder, a new folder called `build` will appear. The binary needed is located inside of this folder.
 - To navigate to your sketch folder, navigate to **Sketch > Show Sketch Folder**. You will see the `<sketchname>.bin` file, which is the file we can use to perform OTA.
@@ -433,9 +433,9 @@ You can also compile a file through any version of the Arduino IDE (not online).
 
 ## Summary
 
-The Arduino Cloud CLI is a tool that can primarily be used to extract a template from a single Thing or dashboard, and deploy it to several devices. It is also a tool for managing your fleet of devices, such as providing mass OTA uploads (such as firmware updates). 
+The Arduino Cloud CLI is a tool that can primarily be used to extract a template from a single Thing or dashboard, and deploy it to several devices. It is also a tool for managing your fleet of devices, such as providing mass OTA uploads (such as firmware updates).
 
-It is intended to be used as a supplementary tool for the [Arduino IoT Cloud](https://cloud.arduino.cc/home/) web interface, but can well be used as a standalone tool to manage your devices, Things properties and dashboards. 
+It is intended to be used as a supplementary tool for the [Arduino IoT Cloud](https://cloud.arduino.cc/home/) web interface, but can well be used as a standalone tool to manage your devices, Things properties and dashboards.
 
 The Arduino Cloud CLI can also be well combined with the [Arduino CLI](https://arduino.github.io/arduino-cli), a separate tool that brings the functionality of the Arduino IDE to your choice of terminal.
 

@@ -7,7 +7,7 @@ tags:
  - GSM
  - SMS
 author: 'Karl Söderby'
-libraries: 
+libraries:
   - name: MKRGSM
     url: https://www.arduino.cc/reference/en/libraries/mkrgsm/
 hardware:
@@ -20,13 +20,13 @@ software:
   - web-editor
 ---
 
-## Introduction 
+## Introduction
 
-In this tutorial, we will create a simple sketch that allows us to send a text message, using the [MKRGSM](https://www.arduino.cc/en/Reference/GSM) library. The message is sent over the Global System for Mobile Communications (GSM). 
+In this tutorial, we will create a simple sketch that allows us to send a text message, using the [MKRGSM](https://www.arduino.cc/en/Reference/GSM) library. The message is sent over the Global System for Mobile Communications (GSM).
 
-The sketch will be programmed to record input from the Serial Monitor, where we can enter a number and a message, and send it. 
+The sketch will be programmed to record input from the Serial Monitor, where we can enter a number and a message, and send it.
 
->**Note:** The Arduino SIM card does not work with this tutorial. A SIM card with a plan from an operator in your country is required. 
+>**Note:** The Arduino SIM card does not work with this tutorial. A SIM card with a plan from an operator in your country is required.
 
 ## Goals
 
@@ -38,30 +38,30 @@ The goals of this tutorial are:
 ## Hardware & Software Needed
 
 - Arduino IDE ([online](https://create.arduino.cc/) or [offline](https://www.arduino.cc/en/main/software)).
-- [MKRGSM](https://www.arduino.cc/en/Reference/GSM) library installed. 
+- [MKRGSM](https://www.arduino.cc/en/Reference/GSM) library installed.
 - [Arduino MKR GSM 1400](https://store.arduino.cc/mkr-gsm-1400).
 - [Antenna](https://store.arduino.cc/antenna).
 - SIM card from an operator in your country.
 
 ## Global System for Mobile Communications (GSM)
 
-GSM is a digital cellular technology used to transmit data wirelessly. It is used by billions of people worldwide, and typically operates around the 900 mHz and 1800 mHz bands. 
+GSM is a digital cellular technology used to transmit data wirelessly. It is used by billions of people worldwide, and typically operates around the 900 mHz and 1800 mHz bands.
 
 It is quite common knowledge that there are several radio towers around the world, which are used for placing phone calls, sending text messages and connecting to the Internet. But how does data transfer from one point to the other, and how can it be done with such precision and speed? Let's take a look.
 
-To understand how GSM works, let's first begin by taking a look at the GSM architecture. There are three major components: 
+To understand how GSM works, let's first begin by taking a look at the GSM architecture. There are three major components:
 
 - **Mobile station** - A transceiver, for example a phone.
 - **Base station** - A radio tower that transmits and receives signals.
-- **Network subsystem** - This can be mobile switch center, practically designed to delegate where signals are going. 
+- **Network subsystem** - This can be mobile switch center, practically designed to delegate where signals are going.
 
-Let's imagine we are sending a text message from a phone that is connected to GSM. The text message is sent in the southern part of a country, but its destination is a phone that is located in the northern part of a country. 
+Let's imagine we are sending a text message from a phone that is connected to GSM. The text message is sent in the southern part of a country, but its destination is a phone that is located in the northern part of a country.
 
-The message is first sent through electromagnetic waves to the closest radio tower. From here, it goes to something called a Mobile Switch Center (MSC). The MSC is then used to locate where in the world the destination phone is. When it has located the destination, the message is routed to the closest radio tower to the destination phone. This is done through underground cables. The signal is then sent through electromagnetic waves, and the text message arrives. 
+The message is first sent through electromagnetic waves to the closest radio tower. From here, it goes to something called a Mobile Switch Center (MSC). The MSC is then used to locate where in the world the destination phone is. When it has located the destination, the message is routed to the closest radio tower to the destination phone. This is done through underground cables. The signal is then sent through electromagnetic waves, and the text message arrives.
 
 ![A basic explanation of how mobile communication works.](assets/MKRGSM_T1_IMG01.png)
 
-Of course, if the phone is not within range, the text won't be delivered until it is close to a radio tower. 
+Of course, if the phone is not within range, the text won't be delivered until it is close to a radio tower.
 
 So, when we are calling people we are not really sending signals all over the world, instead signals are sent to the closest radio tower!
 
@@ -69,9 +69,9 @@ So, when we are calling people we are not really sending signals all over the wo
 
 ![Simple circuit of the board and antenna.](assets/MKRGSM_T1_IMG02.png)
 
-## Programming the Board 
+## Programming the Board
 
-In this tutorial, we will use one of the examples from the **MKRGSM** library. The end goal is simple: we want to send a text message from the MKR GSM 1400 to a phone number. 
+In this tutorial, we will use one of the examples from the **MKRGSM** library. The end goal is simple: we want to send a text message from the MKR GSM 1400 to a phone number.
 
 **1.** Let's begin by taking a look at some of the functions of the sketch we are going to use:
 
@@ -82,23 +82,23 @@ In this tutorial, we will use one of the examples from the **MKRGSM** library. T
 - `sms.print(message);` - prints the content of the SMS.
 - `sms.endSMS()` - sends the SMS.
 
-**2.** We need to make sure we have the drivers installed. If we are using the online Web Editor, we do not need to install anything. If we are using an offline editor, we need to install it manually. This can be done by navigating to **Tools > Board > Board Manager...**. Here we need to look for the **Arduino SAMD boards (32-bits ARM Cortex M0+)** and install it. 
+**2.** We need to make sure we have the drivers installed. If we are using the online Web Editor, we do not need to install anything. If we are using an offline editor, we need to install it manually. This can be done by navigating to **Tools > Board > Board Manager...**. Here we need to look for the **Arduino SAMD boards (32-bits ARM Cortex M0+)** and install it.
 
 **3.** Now, we need to install the libraries needed. If we are using the Web Editor, there is no need to install anything. If we are using an offline editor, simply go to **Tools > Manage libraries..**, search for **MKRGSM** and install it.
 
-**4.** After the library is installed, we can now navigate to **File > Examples > MKRGSM > SendSMS**. This will open a new sketch window (or direct you to the sketch if you are using the Web Editor). There will also be a separate tab called `arduino_secrets.h`. Here we will simply fill in the pin number of our SIM card. 
+**4.** After the library is installed, we can now navigate to **File > Examples > MKRGSM > SendSMS**. This will open a new sketch window (or direct you to the sketch if you are using the Web Editor). There will also be a separate tab called `arduino_secrets.h`. Here we will simply fill in the pin number of our SIM card.
 
 ![The arduino_secrets.h file.](assets/MKRGSM_T1_IMG03.png)
 
 >**Note:** A standard pre-paid SIM card typically has 0000 or 1234 as a pin code. This varies from operator to operator, and it is important to find this out before uploading the code. Otherwise, too many unsuccessful attempts may block the SIM card.
 
-**5.** We can now upload the sketch to the board. The code can also be found in the snippet below. 
+**5.** We can now upload the sketch to the board. The code can also be found in the snippet below.
 
 ```cpp
 
 // Include the GSM library
 #include <MKRGSM.h>
-#include "arduino_secrets.h" 
+#include "arduino_secrets.h"
 // Please enter your sensitive data in the Secret tab or arduino_secrets.h
 // PIN Number
 const char PINNUMBER[] = SECRET_PINNUMBER;
@@ -182,11 +182,11 @@ int readSerial(char result[]) {
 
 After the sketch has been successfully uploaded to the MKR GSM 1400 board, we need to open the Serial Monitor. After we open the Serial Monitor, the program starts, and it will begin an attempt to connect to the GSM network.
 
-If unsuccessful, it will print `"Not connected"` in the Serial Monitor. Otherwise, it will print, `"GSM initialized"`. 
+If unsuccessful, it will print `"Not connected"` in the Serial Monitor. Otherwise, it will print, `"GSM initialized"`.
 
 ![Offline IDE, connected serial monitor.](assets/MKRGSM_T1_IMG04.png)
 
-If we get the latter, we can proceed by entering the phone number we want to send a SMS to and hit enter. We will now be asked to write our message. We can write something simple, such as: 
+If we get the latter, we can proceed by entering the phone number we want to send a SMS to and hit enter. We will now be asked to write our message. We can write something simple, such as:
 
 ```
 Hello, this is GSM 1400 speaking. Can you read?
@@ -202,7 +202,7 @@ Now, let's take a look at our phone and see if it worked. We should have receive
 
 ![Serial + phone communication.](assets/MKRGSM_T1_IMG06.png)
 
-Congratulations, you have now managed to connect your MKR GSM 1400 board to the GSM network, and successfully sent an SMS to your phone. 
+Congratulations, you have now managed to connect your MKR GSM 1400 board to the GSM network, and successfully sent an SMS to your phone.
 
 ### Troubleshoot
 

@@ -3,7 +3,7 @@ title: 'Getting Started with the Arduino Pro'
 description: 'The first steps to setting up the Arduino Pro'
 ---
 
-**This is a retired product** 
+**This is a retired product**
 
 The [Arduino Pro](https://store.arduino.cc/arduino-pro) is intended for advanced users who require flexibility and low-cost. It comes with the minimum of components (no on-board USB or pin headers) to keep the cost down. It's a good choice for a board you want to leave embedded in a project. Please note that there are multiple variants of the board which operate at different voltages and clock speeds. You need to know if you have the 3.3V / 8 MHz version or the 5V / 16 MHz version.
 

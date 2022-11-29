@@ -1,7 +1,7 @@
 ---
 title: 'Data Exchange Between Python® on Linux and an Arduino Sketch'
 description: 'This tutorial will show you how to run a Python® application that exchanges data with an Arduino Sketch.'
-tags: 
+tags:
   - RPC
   - Python®
 author: 'Sebastian Romero'
@@ -69,7 +69,7 @@ Make sure you've installed the "Arduino Mbed OS Portenta Boards" core and upload
 
 To check if the Arduino sketch is working correctly you may want to read the messages from the `Serial.println` statements. You can't currently read them directly in the serial monitor of the Arduino IDE. Instead, you can use a simple service called `py-serialrpc` which listens for those messages and prints them to the console. This service needs to run on the Linux side of the X8. You can get the files [here](assets/py-serialrpc.zip). Upload them to the X8 with `adb push py-serialrpc /home/fio`.
 
-Log into the X8 shell with `adb shell` and navigate into the `serialrpc` folder. Build the container using `sudo docker build . -t py-serialrpc`. The `-t` flag assigns a tag to the container. Then run the container by executing `cd..` and then `sudo docker-compose up -d`. The `-d` flag detaches the container so it runs in the background. Note that this will run the docker container persistently across reboots by registering it as a systemd service. To stop the container, run `sudo docker-compose stop`. 
+Log into the X8 shell with `adb shell` and navigate into the `serialrpc` folder. Build the container using `sudo docker build . -t py-serialrpc`. The `-t` flag assigns a tag to the container. Then run the container by executing `cd..` and then `sudo docker-compose up -d`. The `-d` flag detaches the container so it runs in the background. Note that this will run the docker container persistently across reboots by registering it as a systemd service. To stop the container, run `sudo docker-compose stop`.
 
 Check if the container is running by executing `sudo docker ps`. You can then access the log of this service at any time by executing `sudo docker-compose logs -f --tail 20` from the **same directory**. If you don't run the container in the background (skip the `-d` flag), you will get the console output directly in the executing shell. Once the container is running you will see the messages that are being sent from the M4.
 

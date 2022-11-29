@@ -3,9 +3,9 @@ title: 'String indexOf() and lastIndexOf() Method'
 compatible-products: [all-boards]
 difficulty: intermediate
 description: 'Look for the first/last instance of a character in a string.'
-tags: 
+tags:
   - Strings
-  - Code 
+  - Code
 ---
 
 The [String object](https://www.arduino.cc/en/Reference/StringObject) indexOf() method gives you the ability to search for the first instance of a particular character value in a String.  You can also look for the first instance of the character after a given offset. The lastIndexOf() method lets you do the same things from the end of a String.

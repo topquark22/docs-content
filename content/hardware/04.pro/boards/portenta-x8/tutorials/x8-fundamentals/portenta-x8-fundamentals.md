@@ -62,7 +62,7 @@ While the "targets" page contains the images built by the Continuous integration
 
 Containers allow for easy deployment of Linux based processes, uploaded through git, which can then be tracked on your Factory page. A Linux container are processes that are isolated from the rest of the system. A container is an image file that contains all the files that are necessary to run it. This makes the Linux containers portable and consistent throughout development, testing and production. Making them much quicker to use than development pipelines that rely on replicating traditional testing environments.
 
-Foundries.io provides a service that builds images using the Yocto Project and specifically built around the Linux microPlatform (LmP) distribution they maintain. LmP contains an extensive set of software components needed for IoT applications. 
+Foundries.io provides a service that builds images using the Yocto Project and specifically built around the Linux microPlatform (LmP) distribution they maintain. LmP contains an extensive set of software components needed for IoT applications.
 
 Using [fioctl](https://docs.foundries.io/latest/getting-started/install-fioctl/index.html) allows you to manage your boards through CLI. This will make it possible for you to easily upload containers to a board that is linked to your Factory. When the board is online and connected to the Factory you can easily push new apps to the board. Using fioctl command lines you only need to state the Factory, board and app.
 

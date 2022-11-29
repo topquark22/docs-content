@@ -26,7 +26,7 @@ In this tutorial you will use the Portenta Vision Shield to detect the presence 
 - [Portenta H7 board](https://store.arduino.cc/portenta-h7)
 - [Arduino Portenta Vision Shield - Ethernet](https://store.arduino.cc/products/arduino-portenta-vision-shield-ethernet)
 - USB C cable (either USB A to USB C or USB C to USB C)
-- Arduino IDE 1.8.10+  or Arduino Pro IDE 0.0.4+ 
+- Arduino IDE 1.8.10+  or Arduino Pro IDE 0.0.4+
 - Portenta Bootloader Version 20+
 - OpenMV IDE 2.6.4+
 
@@ -60,7 +60,7 @@ Follow the instructions of the installer.
 
 ### 2. Flashing the OpenMV Firmware
 
-Connect the Portenta to your computer via the USB-C® cable if you haven't done so yet. Make sure you first update the bootloader to the latest version using the **STM32H747_updateBootloader** sketch in the examples menu in the Arduino IDE. 
+Connect the Portenta to your computer via the USB-C® cable if you haven't done so yet. Make sure you first update the bootloader to the latest version using the **STM32H747_updateBootloader** sketch in the examples menu in the Arduino IDE.
 
 Instructions on how to update the bootloader can be found in the [Updating the Portenta Bootloader](https://docs.arduino.cc/tutorials/portenta-h7/updating-the-bootloader) tutorial.
 
@@ -70,7 +70,7 @@ After updating the bootloader, put the Portenta in bootloader mode by double pre
 
 ![The OpenMV IDE after starting it](assets/por_openmv_open_ide.png)
 
-Click on the "connect" symbol at the bottom of the left toolbar. 
+Click on the "connect" symbol at the bottom of the left toolbar.
 
 ![Click the connect button to attach the Portenta to the OpenMV IDE](assets/por_openmv_click_connect.png)
 
@@ -229,7 +229,7 @@ Click on the "Play" button at the bottom of the left toolbar. Place some objects
 
 ## Conclusion
 
-In this tutorial you learned how to use the OpenMV IDE to develop MicroPython scripts that can run on the Portenta board. You also learned how to configure the camera of the Portenta Vision Shield for machine vision applications in OpenMV. Last but not least, you learned how to interact with the built-in LEDs in MicroPython on the OpenMV firmware.  
+In this tutorial you learned how to use the OpenMV IDE to develop MicroPython scripts that can run on the Portenta board. You also learned how to configure the camera of the Portenta Vision Shield for machine vision applications in OpenMV. Last but not least, you learned how to interact with the built-in LEDs in MicroPython on the OpenMV firmware.
 
 ### Next Steps
 

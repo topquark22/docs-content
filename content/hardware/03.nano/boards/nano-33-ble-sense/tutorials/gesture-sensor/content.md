@@ -8,8 +8,8 @@ tags:
   - RGB
   - Sensor
 author: 'Nefeli Alushi'
-libraries: 
-  - name: Arduino APDS9960 
+libraries:
+  - name: Arduino APDS9960
     url: https://www.arduino.cc/en/Reference/ArduinoAPDS9960
 hardware:
   - hardware/03.nano/boards/nano-33-ble-sense
@@ -17,7 +17,7 @@ software:
   - web-editor
 ---
 
-In this tutorial we will use an Arduino Nano 33 BLE Sense for gesture recognition, made possible by the embedded **APDS9960** sensor. 
+In this tutorial we will use an Arduino Nano 33 BLE Sense for gesture recognition, made possible by the embedded **APDS9960** sensor.
 
 We will use the sensor to print out simple hand gesture directions and control the board's RGB LED accordingly. In addition, we will program our board to blink the built-in LED and change colors to the RGB LED. according to the direction of the set gestures. The code will read simple **Up-Down-Right-Left** hand motions.
 
@@ -31,16 +31,16 @@ The goals of this project are:
 
 
 ## Hardware & Software Needed
-* This project uses no external sensors or components. 
-* In this tutorial we will use the [Arduino Create Web Editor](https://create.arduino.cc/editor) to program the board. 
+* This project uses no external sensors or components.
+* In this tutorial we will use the [Arduino Create Web Editor](https://create.arduino.cc/editor) to program the board.
 
 
 ## APDS9960 Sensor
-The APDS9960 sensor is a multipurpose device that features advanced gesture detection, proximity detection, Digital Ambient Light Sense (ALS) and Color Sense (RGBC). 
+The APDS9960 sensor is a multipurpose device that features advanced gesture detection, proximity detection, Digital Ambient Light Sense (ALS) and Color Sense (RGBC).
 
 ![The APDSS9960 sensor.](assets/nano33BS_07_sensor.png)
 
-The sensor's gesture detection utilizes four directional photodiodes to sense reflected IR energy (sourced by the integrated LED) to convert physical motion information (i.e. velocity, direction and distance) into digital information. 
+The sensor's gesture detection utilizes four directional photodiodes to sense reflected IR energy (sourced by the integrated LED) to convert physical motion information (i.e. velocity, direction and distance) into digital information.
 
 It features:
 - Four separate diodes sensitive to different directions.
@@ -51,7 +51,7 @@ It features:
 - Interrupt driven I2C-bus communication.
 
 
-If you want to read more about the APDS9960 sensor module see <a href="https://content.arduino.cc/assets/Nano_BLE_Sense_av02-4191en_ds_apds-9960.pdf" target="_blank">here</a>. 
+If you want to read more about the APDS9960 sensor module see <a href="https://content.arduino.cc/assets/Nano_BLE_Sense_av02-4191en_ds_apds-9960.pdf" target="_blank">here</a>.
 
 
 ### The Library
@@ -73,12 +73,12 @@ setLEDBoost()
 
 If you want a deeper knowledge on any of the functions of the library, you can check the Arduino [reference](https://www.arduino.cc/en/Reference/ArduinoAPDS9960) for this library.
 
-For the purposes of this tutorial we will only focus on the gesture readings, which are based on the detection of the movement of the hand over four photodiodes inside the sensor. 
+For the purposes of this tutorial we will only focus on the gesture readings, which are based on the detection of the movement of the hand over four photodiodes inside the sensor.
 
 
 ## Creating the Program
 
-**1. Setting up** 
+**1. Setting up**
 
 Let's start by opening the Arduino Web Editor, click on the **Libraries** tab and search for the **APDS9960** library. Then in **> Examples**, open the **GestureSensor** sketch and once it opens, you could rename is as Gesture&LEDs.
 
@@ -99,9 +99,9 @@ After including the `Arduino_APDS9960.h` library, we will need to configure the 
 ```arduino
 //in-built LED
 pinMode(LED_BUILTIN, OUTPUT);
-//Red 
+//Red
 pinMode(LEDR, OUTPUT);
-//Green 
+//Green
 pinMode(LEDG, OUTPUT);
 //Blue
 pinMode(LEDB, OUTPUT);
@@ -116,13 +116,13 @@ and then at the end, we need to turn all the LEDs OFF by adding the following st
   digitalWrite(LEDB, HIGH);
 ```
 
-In the `loop()` section the `if()` statement is checking that the gesture sensor is available and if it is, it reads for any incoming gesture detection. 
+In the `loop()` section the `if()` statement is checking that the gesture sensor is available and if it is, it reads for any incoming gesture detection.
 
 Next, in the `switch()` statement we will add different actions to be performed according to conditions, in this case the direction of the hand gesture will define those conditions.
 
 If the sensor detects motions (up, down, left or right) we can add the following code snippets between the **Serial.println()** and the **break;** in each switch case, to activate the red, blue and green colors of the RGB LED and the orange on the built-in LED.
 
-In the `GESTURE_UP` case, the RGB LED will glow **red** for a second: 
+In the `GESTURE_UP` case, the RGB LED will glow **red** for a second:
 ```arduino
 digitalWrite(LEDR, LOW);
 delay(1000);
@@ -133,10 +133,10 @@ In the `GESTURE_DOWN` case, the RGB LED will glow **green** for one second:
 ```arduino
 digitalWrite(LEDG, LOW);
 delay(1000);
-digitalWrite(LEDG, HIGH); 
+digitalWrite(LEDG, HIGH);
 ```
 
-In the `GESTURE_LEFT` case, the RGB LED will glow **blue** for one second: 
+In the `GESTURE_LEFT` case, the RGB LED will glow **blue** for one second:
 ```arduino
 digitalWrite(LEDB, LOW);
 delay(1000);
@@ -241,9 +241,9 @@ void loop() {
 ![Triggering the gesture sensor.](assets/nano33BS_07_illustration.png)
 
 
-After you have successfully verified and uploaded the sketch to the board, open the Serial Monitor from the menu on the left. 
+After you have successfully verified and uploaded the sketch to the board, open the Serial Monitor from the menu on the left.
 
-In order to test out the code, you could begin by stabilizing your board on a standing position in front of you (USB port facing down) and carry on by making directional UP-DOWN-RIGHT-LEFT hand gestures. Try to make your movement as clear as possible, yet subtle enough for the sensor to pick it up. 
+In order to test out the code, you could begin by stabilizing your board on a standing position in front of you (USB port facing down) and carry on by making directional UP-DOWN-RIGHT-LEFT hand gestures. Try to make your movement as clear as possible, yet subtle enough for the sensor to pick it up.
 
 ![Direction of hand gestures.](assets/nano33BS_07_testing.png)
 
@@ -256,7 +256,7 @@ Here is a screenshot example of the sketch returning values.
 ### Troubleshoot
 Sometimes errors occur, if the code is not working there are some common issues we can troubleshoot:
 - Missing a bracket or a semicolon
-- Arduino board connected to the wrong port 
+- Arduino board connected to the wrong port
 - Accidental interruption of cable connection
 
 

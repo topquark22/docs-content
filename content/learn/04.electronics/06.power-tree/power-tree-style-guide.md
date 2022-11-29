@@ -3,7 +3,7 @@ title: 'How To Read Arduino Power Trees'
 difficulty: intermediate
 compatible-products: [everything]
 description: 'Learn how to read the Arduino power trees and to create our own ones.'
-tags: 
+tags:
   - Style Guide
   - Power Tree
 author: 'Ali Jahangiri'
@@ -23,13 +23,13 @@ To the left, you will see three grey boxes. Each one of these represents a volta
 
 ***You can see more information about the precise schematic location and pins in the schematic diagram and pinout graphics respectively. The Power Tree is there to provide a visual aid to better understanding the product and some intermediate components may not be displayed. If in doubt, refer to the schematics or contact us.***
 
-We can also see that the USB-C® and the VIN are connected together. Under each grey box, we can see that the voltage is listed as 5V. This is the nominal value (see the datasheet for the allowed voltage ranges). In general, you can expect there to be no difference in the operation between each approach. 
+We can also see that the USB-C® and the VIN are connected together. Under each grey box, we can see that the voltage is listed as 5V. This is the nominal value (see the datasheet for the allowed voltage ranges). In general, you can expect there to be no difference in the operation between each approach.
 
 A bit further down, we can see another grey component titled `VBATT`. In this case, we see two distinct features: first of all, the arrows are bi-directional. Secondly, the voltage (in the turquoise box underneath it) is lower. While this can be difficult to understand from a text based table, having this information can be beneficial to the user when trying to understand the product from a Model-Based Design approach.
 
 ***For more information about Model-Based Design, check out the [Engineering Kit Rev 2](https://store.arduino.cc/products/arduino-engineering-kit-rev2) for hands on projects.***
 
-The current specification noted in the diagram tells you about the maximum amount of current that can be drawn from that specific voltage source. Consequently you can attach any sensor or actuator, so long as the maximum current draw is not exceeded. A device always only draws as much current as it needs to operate. 
+The current specification noted in the diagram tells you about the maximum amount of current that can be drawn from that specific voltage source. Consequently you can attach any sensor or actuator, so long as the maximum current draw is not exceeded. A device always only draws as much current as it needs to operate.
 However, the case for voltage is different. As a general rule, the voltage values must match with a low tolerance and it is not possible to power a 5V sensor via a 3.3V pin or vice versa. Voltages have to match, while the currents don't have to match (just be lower).
 That said, connecting a data line from e.g. a 3.3V sensor to a 5V micro controller input pin may work depending on the defined [TTL levels](https://en.wikipedia.org/wiki/Logic_level) as long as the communication is unidirectional. If 5V are applied from the 5V micro controller to the 3.3V peripheral, it may destroy it.
 
@@ -43,7 +43,7 @@ The input of the power component, as stated previously, can come from either the
 
 ***Since all other system voltages go through the noted LDO, the maximum current that can pass through the PMIC is at most 2A. Losses in subsequent voltage conversion will reduce the real current available to the user. For further details, please refer to the MC34PF1550A0EP datasheet. ***
 
-The generated 4.5V is then available for use by DC-DC converters. Here, DC-DC conversion refers to switching regulators. Depending on their architecture, switching regulators can increase (boost) or reduce (buck) the voltage levels. A major benefit compared to linear regulators is their lower PCB footprint and power consumption. However, they can also be susceptible to noise. 
+The generated 4.5V is then available for use by DC-DC converters. Here, DC-DC conversion refers to switching regulators. Depending on their architecture, switching regulators can increase (boost) or reduce (buck) the voltage levels. A major benefit compared to linear regulators is their lower PCB footprint and power consumption. However, they can also be susceptible to noise.
 
 ***All official Arduino boards have been designed to reduce the noise level to the minimum, with the use of premium PCB manufacturing and stringent quality control. Purchasing counterfeit boards may lead to reduced power quality and loss of functionality.***
 

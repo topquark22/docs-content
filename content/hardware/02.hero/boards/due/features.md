@@ -20,7 +20,7 @@ The Due has 54 digital pins, 12 of which support PWM (Pulse Width Modulation).
 
 <Feature title="Analog pins" image="hw-pin">
 
-The Due has 12 analog input pins, and 2 DAC pins. 
+The Due has 12 analog input pins, and 2 DAC pins.
 
 </Feature>
 

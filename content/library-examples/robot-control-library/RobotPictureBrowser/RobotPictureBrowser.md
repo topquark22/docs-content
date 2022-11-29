@@ -39,13 +39,13 @@ You can make your own gallery/picture show with help of the Robot. Put some pict
 
 ![Browse pictures with the left and right buttons](assets/LottieLemon_Picture_Browser_780.png)
 
- 
+
 
 You can change the picture navigation mode by pressing the down button and tilt the robot to check the next picture.
 
 ![Browse pictures tilting the robot](assets/LottieLemon_Picture_Browser_2_780.png)
 
- 
+
 
 ## Code
 

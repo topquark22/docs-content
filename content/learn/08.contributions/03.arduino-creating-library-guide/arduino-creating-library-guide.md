@@ -1,7 +1,7 @@
 ---
 title: 'Writing a Library for Arduino'
 description: 'Creating libraries to extend the functionality of Arduino. Goes step-by-step through the process of making a library from a sketch.'
-tags: 
+tags:
   - Styleguide
   - Guidelines
   - Libraries
@@ -145,7 +145,7 @@ void Morse::dot()
   digitalWrite(_pin, HIGH);
   delay(250);
   digitalWrite(_pin, LOW);
-  delay(250);  
+  delay(250);
 }
 
 void Morse::dash()
@@ -180,7 +180,7 @@ void Morse::dot()
   digitalWrite(_pin, HIGH);
   delay(250);
   digitalWrite(_pin, LOW);
-  delay(250);  
+  delay(250);
 }
 
 void Morse::dash()

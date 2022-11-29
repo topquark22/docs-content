@@ -139,7 +139,7 @@ void loop()
 {
   Wire.beginTransmission(4); // transmit to device #4
   Wire.write("x is ");        // sends five bytes
-  Wire.write(x);              // sends one byte  
+  Wire.write(x);              // sends one byte
   Wire.endTransmission();    // stop transmitting
 
   x++;
@@ -402,8 +402,8 @@ void loop()
 {
   Wire.beginTransmission(44); // transmit to device #44 (0x2c)
                               // device address is specified in datasheet
-  Wire.write(byte(0x00));            // sends instruction byte  
-  Wire.write(val);             // sends potentiometer value byte  
+  Wire.write(byte(0x00));            // sends instruction byte
+  Wire.write(val);             // sends potentiometer value byte
   Wire.endTransmission();     // stop transmitting
 
   val++;        // increment value

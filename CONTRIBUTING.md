@@ -28,6 +28,6 @@ Contributions that are more likely to be rejected:
 
 We require content to be written in plain and concise language, so that both basic and advanced users can understand it. See our [Style Guide](https://docs.arduino.cc/learn/contributions/arduino-writing-style-guide) for more information about this.
 
-## Licensing 
+## Licensing
 
 The documentation is under a [Creative Commons Attribution-Sharealike](https://creativecommons.org/licenses/by-sa/4.0/) (CC BY-SA 4.0) license, while examples of code are licensed under a [public domain](https://creativecommons.org/share-your-work/public-domain/cc0/) license. By contributing content to this repository you are agreeing to place your contributions under these licenses.

@@ -1,13 +1,13 @@
 ---
 title: 'ATmega32U4-Arduino Pin Mapping'
 description:  'A diagram showing the correspondence between the pins on an Arduino board and those of the ATmega32U4 microcontroller.'
-tags: 
+tags:
   - ATmega32U4
 ---
 
 ![ATmega32U4 pin mapping.](./assets/32U4PinMapping.png)
 
-**Arduino Leonardo pin mapping table** 
+**Arduino Leonardo pin mapping table**
 
 | Pin Number | Pin Name                      | Mapped Pin Name          |
 | ---------- | ----------------------------- | ------------------------ |

@@ -7,8 +7,8 @@ tags:
   - IMU
   - Magnetometer
 author: 'Nefeli Alushi'
-libraries: 
-  - name: Arduino LSM9DS1 
+libraries:
+  - name: Arduino LSM9DS1
     url: https://www.arduino.cc/en/Reference/ArduinoLSM9DS1
 hardware:
   - hardware/03.nano/boards/nano-33-ble
@@ -19,7 +19,7 @@ software:
 
 ## IMU Module
 
-This tutorial will focus on the 3-axis magnetometer sensor of the **LSM9DS1** module, on the Arduino Nano 33 BLE. The tutorial will utilize the IMU sensor in order to create an application that will detect changes and disturbances in the magnetic field around an appliance or electric device. This will be achieved by reading the values of the magnetometer's axes and blink the board's in-built LED according to the magnetic disturbances. 
+This tutorial will focus on the 3-axis magnetometer sensor of the **LSM9DS1** module, on the Arduino Nano 33 BLE. The tutorial will utilize the IMU sensor in order to create an application that will detect changes and disturbances in the magnetic field around an appliance or electric device. This will be achieved by reading the values of the magnetometer's axes and blink the board's in-built LED according to the magnetic disturbances.
 
 
 ## Goals
@@ -39,7 +39,7 @@ The goals of this project are:
 
 
 ## The LSM9DS1 Inertial Module
-IMU stands for: inertial measurement unit. It is an electronic device that measures and reports a body's specific force, angular rate and the orientation of the body, using a combination of accelerometers, gyroscopes, and oftentimes magnetometers. In this tutorial we will learn a bit more of the LSM9DS1 IMU module, which is included in the Arduino Nano 33 BLE Board. 
+IMU stands for: inertial measurement unit. It is an electronic device that measures and reports a body's specific force, angular rate and the orientation of the body, using a combination of accelerometers, gyroscopes, and oftentimes magnetometers. In this tutorial we will learn a bit more of the LSM9DS1 IMU module, which is included in the Arduino Nano 33 BLE Board.
 
 ![The LSM9DS1 sensor.](./assets/nano33BLE_03_IMU.png)
 
@@ -57,7 +57,7 @@ The Arduino LSM9DS1 library allows us to use the Arduino Nano 33 BLE IMU module 
 - **Gyroscope** output data rate is fixed at 104 Hz.
 - **Magnetometer** output data rate is fixed at 20 Hz.
 
-If you want to read more about the LSM9DS1 sensor module see <a href="https://www.st.com/resource/en/datasheet/lsm9ds1.pdf" target="_blank">here</a>. 
+If you want to read more about the LSM9DS1 sensor module see <a href="https://www.st.com/resource/en/datasheet/lsm9ds1.pdf" target="_blank">here</a>.
 
 
 ### Magnetometer
@@ -71,9 +71,9 @@ In this tutorial we will read the values X, Y and Z and provide visual feedback 
 
 ## Creating the Program
 
-**1. Setting up** 
+**1. Setting up**
 
-Let's start by opening the [Arduino Web Editor](https://create.arduino.cc/editor) and creating a new sketch, this can be named "magnetometer". Then, navigate to the **Libraries** tab, search for the **LSM9DS1** library and click on the **Include** button. 
+Let's start by opening the [Arduino Web Editor](https://create.arduino.cc/editor) and creating a new sketch, this can be named "magnetometer". Then, navigate to the **Libraries** tab, search for the **LSM9DS1** library and click on the **Include** button.
 
 ![Finding the library in the Web Editor.](./assets/nano33BLE_03_include_library.png)
 
@@ -87,16 +87,16 @@ Next, connect the Arduino Nano 33 BLE to the computer and make sure that the Web
 
 **3. Identifying changes in the magnetic field**
 
-After including the library, we can begin by building the rest of the code. 
+After including the library, we can begin by building the rest of the code.
 
 Let's start by defining the float variables `float x,y,z, ledvalue;` which will be needed for our code to work.
 
 In the `setup()` we only need to initialize the IMU sensor with the function `IMU.begin();`.
 
-In the `loop()` we add the function `IMU.readMagneticField(x, y, z);` in order to read the values of the three axes on the IMU. 
+In the `loop()` we add the function `IMU.readMagneticField(x, y, z);` in order to read the values of the three axes on the IMU.
 Next we will add an `if` statement that checks if the magnetic field detected by the board is positive or negative (it will depend on the orientation of the board). If the magnetic field is negative, we convert the ledvalue in a positive range with ledvalue = -(x); , meaning that it is a valid value for the built in LED.
 
-Lastly, we use the command `analogWrite(LED_BUILTIN, ledvalue);` to set the intensity of the LED according to the disturbance in the magnetic field, and add a small delay. 
+Lastly, we use the command `analogWrite(LED_BUILTIN, ledvalue);` to set the intensity of the LED according to the disturbance in the magnetic field, and add a small delay.
 
 
 **4. Complete code**
@@ -107,7 +107,7 @@ If you choose to skip the code building section, the complete code can be found 
 /*
   Arduino LSM9DS1 - Magnetometer
 
-  This example reads the magnetometer's values from the LSM9DS1 sensor 
+  This example reads the magnetometer's values from the LSM9DS1 sensor
   and `analogWrite` the built-in LED according to the intensity of
   the magnetic field surrounding electrical devices.
 
@@ -147,7 +147,7 @@ void loop() {
 
 ## Testing It Out
 
-After you have successfully verified and uploaded the sketch to the board, it's time to put it to the test. You can choose an electric appliance at home or any object that runs with electrical current. For example, in this tutorial we will use a laptop charger to test it out. 
+After you have successfully verified and uploaded the sketch to the board, it's time to put it to the test. You can choose an electric appliance at home or any object that runs with electrical current. For example, in this tutorial we will use a laptop charger to test it out.
 
 Place your board on top of the laptop's charging cord for 5-10 seconds and then move it away from it for some seconds again. While the board is close to the cord you should notice the (orange) built-in LED blinking. The intensity of the LED will vary according to the magnetic field detected.
 
@@ -161,7 +161,7 @@ However, there are other ways you can play around with this application. If you 
 
 Sometimes errors occur, if the code is not working there are some common issues we can troubleshoot:
 - Missing a bracket or a semicolon.
-- Arduino board connected to the wrong port. 
+- Arduino board connected to the wrong port.
 - Accidental interruption of cable connection.
 
 

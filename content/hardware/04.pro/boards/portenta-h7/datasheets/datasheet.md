@@ -6,10 +6,10 @@ variant: 'Collective Datasheet'
 ---
 ![](assets/featured.png)
 
-# Description 
-Portenta H7 family runs high level codes along with real time tasks thanks to the two processors that makes it possible to run tasks in parallel. For example, it is possible to execute Arduino compiled code along with MicroPython one simultaneously, and have both cores to communicate with one another. 
+# Description
+Portenta H7 family runs high level codes along with real time tasks thanks to the two processors that makes it possible to run tasks in parallel. For example, it is possible to execute Arduino compiled code along with MicroPython one simultaneously, and have both cores to communicate with one another.
 
-Within the H7 family,  there are two variants; H7 Lite and H7 Lite Connected. All the three boards and their differences are presented in this datasheet.  
+Within the H7 family,  there are two variants; H7 Lite and H7 Lite Connected. All the three boards and their differences are presented in this datasheet.
 
 
 # Target Areas:
@@ -495,7 +495,7 @@ Laboratory equipment, Computer vision
 | VUSBMax | Maximum input voltage from USB connector | -0.3 | -    | xx   | V    |
 | PMax    | Maximum Power Consumption                | -xx  | -    | xx   | mW   |
 
-### Block Diagram 
+### Block Diagram
 ![Block diagram](assets/portentaH7_blockDiagram.svg)
 
 ## Connector Pinouts
@@ -533,16 +533,16 @@ Laboratory equipment, Computer vision
 
 ## Application Examples
 
-Due to the dual core processing, the Portenta supports a wide array of applications.  
+Due to the dual core processing, the Portenta supports a wide array of applications.
 
 ### Accessories
 * Portenta Vision shield
 * USB 2.0 Cable Type A/B
-* Portenta Breakout Board 
+* Portenta Breakout Board
 
 ## Functional Overview
 
-### Board Topology 
+### Board Topology
 
 Depending on the variant, some of the components does not apply. The image below originates from the H7 form factor, see what components are applied on your board:
 
@@ -707,11 +707,11 @@ Depending on the variant, some of the components does not apply. The image below
 
 ### Declaration of Conformity CE DoC (EU)
 
-We declare under our sole responsibility that the products above are in conformity with the essential requirements of the following EU Directives and therefore qualify for free movement within markets comprising the European Union (EU) and European Economic Area (EEA). 
+We declare under our sole responsibility that the products above are in conformity with the essential requirements of the following EU Directives and therefore qualify for free movement within markets comprising the European Union (EU) and European Economic Area (EEA).
 
 ### Declaration of Conformity to EU RoHS & REACH 211 01/19/2021
 
-Arduino boards are in compliance with RoHS 2 Directive 2011/65/EU of the European Parliament and RoHS 3 Directive 2015/863/EU of the Council of 4 June 2015 on the restriction of the use of certain hazardous substances in electrical and electronic equipment. 
+Arduino boards are in compliance with RoHS 2 Directive 2011/65/EU of the European Parliament and RoHS 3 Directive 2015/863/EU of the Council of 4 June 2015 on the restriction of the use of certain hazardous substances in electrical and electronic equipment.
 
 | Substance                              | **Maximum limit (ppm)** |
 | -------------------------------------- | ----------------------- |
@@ -726,20 +726,20 @@ Arduino boards are in compliance with RoHS 2 Directive 2011/65/EU of the Europea
 | Dibutyl phthalate (DBP)                | 1000                    |
 | Diisobutyl phthalate (DIBP)            | 1000                    |
 
-Exemptions : No exemptions are claimed. 
+Exemptions : No exemptions are claimed.
 
 Arduino Boards are fully compliant with the related requirements of European Union Regulation (EC) 1907 /2006 concerning the Registration, Evaluation, Authorization and Restriction of Chemicals (REACH). We declare none of the SVHCs (https://echa.europa.eu/web/guest/candidate-list-table), the Candidate List of Substances of Very High Concern for authorization currently released by ECHA, is present in all products (and also package) in quantities totaling in a concentration equal or above 0.1%. To the best of our knowledge, we also declare that our products do not contain any of the substances listed on the "Authorization List" (Annex XIV of the REACH regulations) and Substances of Very High Concern (SVHC) in any significant amounts as specified by the Annex XVII of Candidate list published by ECHA (European Chemical Agency) 1907 /2006/EC.
 
 
-### Conflict Minerals Declaration 
+### Conflict Minerals Declaration
 
-As a global supplier of electronic and electrical components, Arduino is aware of our obligations with regards to laws and regulations regarding Conflict Minerals, specifically the Dodd-Frank Wall Street Reform and Consumer Protection Act, Section 1502. Arduino does not directly source or process conflict minerals such as Tin, Tantalum, Tungsten, or Gold. Conflict minerals are contained in our products in the form of solder, or as a component in metal alloys. As part of our reasonable due diligence Arduino has contacted component suppliers within our supply chain to verify their continued compliance with the regulations. Based on the information received thus far we declare that our products contain Conflict Minerals sourced from conflict-free areas. 
+As a global supplier of electronic and electrical components, Arduino is aware of our obligations with regards to laws and regulations regarding Conflict Minerals, specifically the Dodd-Frank Wall Street Reform and Consumer Protection Act, Section 1502. Arduino does not directly source or process conflict minerals such as Tin, Tantalum, Tungsten, or Gold. Conflict minerals are contained in our products in the form of solder, or as a component in metal alloys. As part of our reasonable due diligence Arduino has contacted component suppliers within our supply chain to verify their continued compliance with the regulations. Based on the information received thus far we declare that our products contain Conflict Minerals sourced from conflict-free areas.
 
 
 ## FCC Caution
 Any Changes or modifications not expressly approved by the party responsible for compliance could void the user’s authority to operate the equipment.
 
-This device complies with part 15 of the FCC Rules. Operation is subject to the following two conditions: 
+This device complies with part 15 of the FCC Rules. Operation is subject to the following two conditions:
 
 (1) This device may not cause harmful interference
 
@@ -753,14 +753,14 @@ This device complies with part 15 of the FCC Rules. Operation is subject to the 
 
 3. This equipment should be installed and operated with minimum distance 20cm between the radiator & your body.
 
-English: 
+English:
 User manuals for licence-exempt radio apparatus shall contain the following or equivalent notice in a conspicuous location in the user manual or alternatively on the device or both. This device complies with Industry Canada licence-exempt RSS standard(s). Operation is subject to the following two conditions:
 
 (1) this device may not cause interference
 
  (2) this device must accept any interference, including interference that may cause undesired operation of the device.
 
-French: 
+French:
 Le présent appareil est conforme aux CNR d’Industrie Canada applicables aux appareils radio exempts de licence. L’exploitation est autorisée aux deux conditions suivantes :
 
 (1) l’ appareil nedoit pas produire de brouillage
@@ -769,15 +769,15 @@ Le présent appareil est conforme aux CNR d’Industrie Canada applicables aux a
 
 **IC SAR Warning:**
 
-English 
-This equipment should be installed and operated with minimum distance 20 cm between the radiator and your body.  
+English
+This equipment should be installed and operated with minimum distance 20 cm between the radiator and your body.
 
-French: 
+French:
 Lors de l’ installation et de l’ exploitation de ce dispositif, la distance entre le radiateur et le corps est d ’au moins 20 cm.
 
 **Important:** The operating temperature of the EUT can’t exceed 85℃ and shouldn’t be lower than -40℃.
 
-Hereby, Arduino S.r.l. declares that this product is in compliance with essential requirements and other relevant provisions of Directive 2014/53/EU. This product is allowed to be used in all EU member states. 
+Hereby, Arduino S.r.l. declares that this product is in compliance with essential requirements and other relevant provisions of Directive 2014/53/EU. This product is allowed to be used in all EU member states.
 
 | Frequency bands | Maximum output power (ERP) |
 | --------------- | -------------------------- |

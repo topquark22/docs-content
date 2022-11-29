@@ -16,7 +16,7 @@
   </EssentialElement>
 
   <EssentialElement title="ArduinoBLE" type="library" link="https://www.arduino.cc/en/Reference/ArduinoBLE">
-The ArduinoBLE library is designed for Arduino boards that have hardware enabled for Bluetooth® Low Energy and Bluetooth® 4.0 and above. 
+The ArduinoBLE library is designed for Arduino boards that have hardware enabled for Bluetooth® Low Energy and Bluetooth® 4.0 and above.
   </EssentialElement>
 
 <EssentialElement title="Arduino_LSM6DS3" type="library" link="https://www.arduino.cc/en/Reference/ArduinoLSM6DS3">
@@ -31,7 +31,7 @@ The Arduino_LSM6DS3 library allows you to use the LSM6DS3 IMU module, which incl
 
 <EssentialsColumn title="Arduino Basics">
   <EssentialElement title="Built-in Examples" type="tutorial" link="/built-in-examples/">
-    Built-in Examples are sketches included in the Arduino IDE and demonstrate all basic Arduino commands. 
+    Built-in Examples are sketches included in the Arduino IDE and demonstrate all basic Arduino commands.
   </EssentialElement>
   <EssentialElement title="Learn" type="resource" link="/learn/">
     Discover interesting articles, principles and techniques related to the Arduino ecosystem.

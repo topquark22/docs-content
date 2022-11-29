@@ -4,7 +4,7 @@ description: 'A library designed to access the Bluetooth® Low Energy features o
 author: 'Arduino'
 ---
 
-***This library is included in the [Arc32 core](https://github.com/arduino/ArduinoCore-arc32/tree/master/libraries). This core can be installed through the Arduino IDEs , where the package is named "Intel Curie Boards".*** 
+***This library is included in the [Arc32 core](https://github.com/arduino/ArduinoCore-arc32/tree/master/libraries). This core can be installed through the Arduino IDEs , where the package is named "Intel Curie Boards".***
 
 With the [Arduino/Genuino 101](https://www.arduino.cc/en/Main/ArduinoBoard101), using this library, it is possible to use Bluetooth® Low Energy features to communicate and interact with other devices like smartphones and tablet.
 
@@ -43,10 +43,10 @@ Services are identified by unique numbers known as UUIDs. You know about UUIDs f
 ### Service design patterns
 A characteristic value can be up to 20 bytes long. This is a key constraint in designing services. Given this limit, you should consider how best to store data about your sensors and actuators most effectively for your application. The simplest design pattern is to store one sensor or actuator value per characteristic, in ASCII encoded values.
 
-| Characteristic  | Value    | 
-| -------------   |:--------:| 
-| Accelerometer X | 200      | 
-| Accelerometer Y | 134      | 
+| Characteristic  | Value    |
+| -------------   |:--------:|
+| Accelerometer X | 200      |
+| Accelerometer Y | 134      |
 | Accelerometer Z | 150      |
 
 This is also the most expensive in memory terms, and would take the longest to read. But it's the simplest for development and debugging.
@@ -54,10 +54,10 @@ This is also the most expensive in memory terms, and would take the longest to r
 You could also combine readings into a single characteristic, when a given sensor or actuator has multiple values associated with it.
 
 
-| Characteristic         | Value         | 
-| -----------------------|:-------------:| 
-| Motor speed, direction | 150,1         | 
-| Accelerometer X, Y, Z  | 200, 133, 150 | 
+| Characteristic         | Value         |
+| -----------------------|:-------------:|
+| Motor speed, direction | 150,1         |
+| Accelerometer X, Y, Z  | 200, 133, 150 |
 
 This is more efficient, but you need to be careful not to exceed the 20-byte limit. The accelerometer characteristic above, for example, takes 11 bytes as a ASCII-encoded string.
 
@@ -111,7 +111,7 @@ BLEPeripheral yourBlePeripheralName
 #### Parameters
 none
 
-#### Example 
+#### Example
 ```
 /*
  * Copyright (c) 2016 Intel Corporation.  All rights reserved.
@@ -214,7 +214,7 @@ yourBlePeripheralName.begin()
 #### Returns
 true in case of correct initialization; false otherwise.
 
-#### Example 
+#### Example
 ```
 /*
  * Copyright (c) 2016 Intel Corporation.  All rights reserved.
@@ -317,7 +317,7 @@ yourBlePeripheralName.poll()
 #### Returns
 Nothing
 
-#### Example 
+#### Example
 ```
 /*
  * Copyright (c) 2016 Intel Corporation.  All rights reserved.
@@ -420,7 +420,7 @@ yourBlePeripheralName.end()
 #### Returns
 true in case of correct initialization; false otherwise.
 
-#### Example 
+#### Example
 ```
 /*
  * Copyright (c) 2016 Intel Corporation.  All rights reserved.
@@ -523,7 +523,7 @@ yourBlePeripheralName.setAdvertisedServiceUuid(const char* advertisedServiceUuid
 #### Parameters
 advertisedServiceUuid: TBD
 
-#### Example 
+#### Example
 ```
 /*
  * Copyright (c) 2016 Intel Corporation.  All rights reserved.
@@ -626,7 +626,7 @@ yourBlePeripheralName.setLocalName(const char* localName)
 #### Parameters
 localName: the name to be set
 
-#### Example 
+#### Example
 ```
 /*
  * Copyright (c) 2016 Intel Corporation.  All rights reserved.
@@ -729,7 +729,7 @@ yourBlePeripheralName.setLocalName(const char* deviceName)
 #### Parameters
 deviceName: the name to be set
 
-#### Example 
+#### Example
 ```
 /*
  * Copyright (c) 2016 Intel Corporation.  All rights reserved.
@@ -832,7 +832,7 @@ yourBlePeripheralName.setAppearance(unsigned int appearance)
 #### Parameters
 appearance: TBD
 
-#### Example 
+#### Example
 ```
 /*
  * Copyright (c) 2016 Intel Corporation.  All rights reserved.
@@ -940,7 +940,7 @@ event: the chosen matching event. It can assume one of the following values:
 - BLEPeripheralEventLast
 - callback: the name of the function to call in case of match
 
-#### Example 
+#### Example
 ```
 /*
  * Copyright (c) 2016 Intel Corporation.  All rights reserved.
@@ -1047,7 +1047,7 @@ yourBlePeripheralName.addAttribute(BLEAttribute attributeName)
 #### Parameters
 attributeName: the name of the characteristic or the service to be added as an attribute
 
-#### Example 
+#### Example
 ```
 /*
  * Copyright (c) 2016 Intel Corporation.  All rights reserved.
@@ -1150,7 +1150,7 @@ yourBlePeripheralName.disconnect()
 #### Returns
 true if success; false otherwise
 
-#### Example 
+#### Example
 ```
 /*
  * Copyright (c) 2016 Intel Corporation.  All rights reserved.
@@ -1253,7 +1253,7 @@ yourBlePeripheralName.central()
 #### Returns
 true in case of connection; false otherwise
 
-#### Example 
+#### Example
 ```
 /*
  * Copyright (c) 2016 Intel Corporation.  All rights reserved.
@@ -1356,7 +1356,7 @@ yourBlePeripheralName.connected()
 #### Returns
 true in case of connection; false otherwise
 
-#### Example 
+#### Example
 ```
 /*
  * Copyright (c) 2016 Intel Corporation.  All rights reserved.
@@ -1470,7 +1470,7 @@ BLEDescriptor(const char* uuid, const char* value);
 or
 
 value: string value
-#### Example 
+#### Example
 ```
 /*
  * Copyright (c) 2016 Intel Corporation.  All rights reserved.
@@ -1575,7 +1575,7 @@ BLECentral yourBleCentralName
 #### Parameters
 none
 
-#### Example 
+#### Example
 ```
 /*
  * Copyright (c) 2016 Intel Corporation.  All rights reserved.
@@ -1739,7 +1739,7 @@ yourBleCentralName.connected()
 #### Returns
 true in case of connection; false otherwise
 
-#### Example 
+#### Example
 ```
 /*
  * Copyright (c) 2016 Intel Corporation.  All rights reserved.
@@ -1842,7 +1842,7 @@ yourBleCentralName.address()
 #### Returns
 The central's address
 
-#### Example 
+#### Example
 ```
 /*
  * Copyright (c) 2016 Intel Corporation.  All rights reserved.
@@ -1945,7 +1945,7 @@ yourBleCentralName.disconnect()
 #### Returns
 true if success; false otherwise
 
-#### Example 
+#### Example
 ```
 /*
  * Copyright (c) 2016 Intel Corporation.  All rights reserved.
@@ -2048,7 +2048,7 @@ yourBleCentralName.poll()
 #### Parameters
 None
 
-#### Example 
+#### Example
 ```
 /*
  * Copyright (c) 2016 Intel Corporation.  All rights reserved.
@@ -2170,7 +2170,7 @@ Note: BLE characteristics are typed.
 #### Parameters
 - UUID: standard 16-bit characteristic UUID
 - properties: what remote clients will be able to get notifications if this characteristic changes. It can assume the following values: BLERead, BLEWrite, BLENotify
-#### Example 
+#### Example
 ```
 /*
  * Copyright (c) 2016 Intel Corporation.  All rights reserved.
@@ -2274,7 +2274,7 @@ BLEService (const char* uuid)
 #### Parameters
 uuid: the 16 bit or 128 bit UUID defined by Bluetooth® Low Energy standard
 
-#### Example 
+#### Example
 ```
 /*
  * Copyright (c) 2016 Intel Corporation.  All rights reserved.

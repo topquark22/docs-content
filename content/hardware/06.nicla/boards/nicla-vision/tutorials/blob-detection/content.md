@@ -34,7 +34,7 @@ Before you can start programming OpenMV scripts for the Portenta, you need to do
 
 ### Flashing the OpenMV Firmware
 
-Connect the Nicla Vision to your computer via the USB cable if you have not done so yet. Now open the OpenMV IDE. 
+Connect the Nicla Vision to your computer via the USB cable if you have not done so yet. Now open the OpenMV IDE.
 
 ![The OpenMV IDE after starting it](assets/por_openmv_open_ide.png)
 
@@ -57,7 +57,7 @@ The Nicla Vision will start flashing its blue LED when it is ready to be connect
 
 ## Blob Detection
 
-In this section you will learn how to use the built-in blob detection algorithm to detect the location of objects in an image. That algorithm allows to detect areas in a digital image that differ in properties, such as brightness or color compared to surrounding areas. These areas are called blobs. Think of a blob as a lump of similar pixels. 
+In this section you will learn how to use the built-in blob detection algorithm to detect the location of objects in an image. That algorithm allows to detect areas in a digital image that differ in properties, such as brightness or color compared to surrounding areas. These areas are called blobs. Think of a blob as a lump of similar pixels.
 
 Application Examples:
 
@@ -228,7 +228,7 @@ Click on the "Play" button at the bottom of the left toolbar. Place some objects
 
 ## Conclusion
 
-In this tutorial you learned how to use the OpenMV IDE to develop MicroPython scripts that then run on the Nicla Vision. You also learned how to configure the camera of the Nicla Vision to be used for machine vision applications in OpenMV. Last but not least you learned how to interact with the built-in LEDs in MicroPython on the OpenMV firmware.  
+In this tutorial you learned how to use the OpenMV IDE to develop MicroPython scripts that then run on the Nicla Vision. You also learned how to configure the camera of the Nicla Vision to be used for machine vision applications in OpenMV. Last but not least you learned how to interact with the built-in LEDs in MicroPython on the OpenMV firmware.
 
 ### Next Steps
 

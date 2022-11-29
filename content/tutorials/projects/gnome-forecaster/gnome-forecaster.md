@@ -129,7 +129,7 @@ The long list of **if… then… else** finally pics the Zambretti output and re
 
 We implement the scrolling of the led bar with a simple routine that copies the content of each led to the next one starting from the top, so that it shifts everything up, then the new value is defined by the Zambretti algorithm and it is written in the first LED position.
 
-## Code 
+## Code
 
 Open this sketch in your Arduino IDE and make sure you have downloaded all the libraries needed.
 
@@ -156,7 +156,7 @@ int oldpos = 0;     //Variables to scroll the LED bar
 int newpos = 0;
 
 
-int pressureArray[10] = {0};  // here we store the pressure readings 
+int pressureArray[10] = {0};  // here we store the pressure readings
 byte counter = 0;
 byte delta_time = 0;
 int Z = 0;
@@ -198,7 +198,7 @@ void setup() {
   }
   delayTime = 20000;
 
-  strip.begin();           // INITIALISE the LED strip object 
+  strip.begin();           // INITIALISE the LED strip object
   strip.show();            // Turn OFF all pixels after init
   strip.setBrightness(100); // Set BRIGHTNESS to about 2/5 (max = 255)
 }
@@ -225,7 +225,7 @@ void loop() {
   if (t_hour2 != t_hour or t_minute2 != t_minute) {
     delta_time++;
     if (delta_time > 10) {    // every minute we increment delta_time, then every 10 minutes
-      delta_time = 0;         // we store the value in the array 
+      delta_time = 0;         // we store the value in the array
 
       if (counter == 10)  // if we read 10 values and filled up the array, we shift the array content
       {
@@ -478,7 +478,7 @@ int station2sealevel(int p, int height, int t) {  // from pressure at our height
   return (double) p * pow(1 - 0.0065 * (double)height / (t + 0.0065 * (double)height + 273.15), -5.275);
 }
 
-void StripScroll() {    // scroll up all the LED strip by 1 
+void StripScroll() {    // scroll up all the LED strip by 1
   for (int led = 0; led <= (NumLEDs); led++)
   {
     oldpos =  NumLEDs - led - 2;

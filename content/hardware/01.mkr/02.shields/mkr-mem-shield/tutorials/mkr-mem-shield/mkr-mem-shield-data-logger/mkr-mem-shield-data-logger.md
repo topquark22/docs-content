@@ -7,7 +7,7 @@ tags:
   - Micro SD
   - Storage
 author: 'Karl Söderby'
-libraries: 
+libraries:
   - name: SD
     url: https://www.arduino.cc/en/Reference/SD
 hardware:
@@ -19,7 +19,7 @@ software:
   - web-editor
 ---
 
-## Introduction 
+## Introduction
 
 In this tutorial, we will find out how we can log data on an SD card. The [MKR MEM Shield](https://store.arduino.cc/arduino-mkr-mem-shield) is a MKR form factor shield, that has a slot for a micro SD card. A great addon for any MKR board (except for [Arduino MKR Zero](https://store.arduino.cc/arduino-mkr-zero-i2s-bus-sd-for-sound-music-digital-audio-data) which already has a micro SD card slot), that can be used to log data offline, or to store larger amounts of data.
 
@@ -43,9 +43,9 @@ The goals of this project are:
 
 ## Secure Digital (SD) Card
 
-You have most likely used, nevertheless heard, of the SD card. It is short for Secure Digital, and is a great option for storing large quantities of data. The SD card is tiny and weighs practically nothing, yet, some of them are capable of storing up to a **terabyte of data.** In comparison, it is quite standard for a laptop to have between 128 - 256 gigabytes of storage space. 
+You have most likely used, nevertheless heard, of the SD card. It is short for Secure Digital, and is a great option for storing large quantities of data. The SD card is tiny and weighs practically nothing, yet, some of them are capable of storing up to a **terabyte of data.** In comparison, it is quite standard for a laptop to have between 128 - 256 gigabytes of storage space.
 
-However, to log data from e.g. sensors, it would take quite some time to reach that limit. 
+However, to log data from e.g. sensors, it would take quite some time to reach that limit.
 
 ### Useful Scenarios
 
@@ -61,7 +61,7 @@ The solution: an SD card. A really simple way of logging data over a longer peri
 ![Storing different data types.](assets/MKRMEM_T1_IMG01.png)
 
 When we have finished recording, we simply remove the SD card and plug it into a computer. The data has now nicely been logged, and these values can easily be converted into a graph. We can then for example see the pattern of temperature going up and down and the wind increasing.
- 
+
 ![Graphing the data.](assets/MKRMEM_T1_IMG02.png)
 
 ### Circuit
@@ -70,23 +70,23 @@ The circuit for this tutorial is very easy. First, let's mount the MKR MEM Shiel
 
 ![Mounting the shield.](assets/MKRMEM_T1_IMG03.png)
 
-Now, we need to insert a micro SD card into the slot on the shield. 
+Now, we need to insert a micro SD card into the slot on the shield.
 
 ![Inserting the Micro SD card.](assets/MKRMEM_T1_IMG04.png)
 
 
 ## Programming the Board
 
-We will now get to the programming part of this tutorial. We will here create a program that will make readings on A0, A1 and A2, create a file on the SD card, and log the readings in that file. 
+We will now get to the programming part of this tutorial. We will here create a program that will make readings on A0, A1 and A2, create a file on the SD card, and log the readings in that file.
 
-**1.** First, let's make sure we have the drivers installed. If we are using the Web Editor, we do not need to install anything. If we are using an offline editor, we need to install it manually. This can be done by navigating to **Tools > Board > Board Manager...**. Here we need to look for the **Arduino SAMD boards (32-bits ARM Cortex M0+)** and install it. 
+**1.** First, let's make sure we have the drivers installed. If we are using the Web Editor, we do not need to install anything. If we are using an offline editor, we need to install it manually. This can be done by navigating to **Tools > Board > Board Manager...**. Here we need to look for the **Arduino SAMD boards (32-bits ARM Cortex M0+)** and install it.
 
 **2.** We can now take a look at some of the core functions of this sketch:
 
-- `while (!Serial)` 
+- `while (!Serial)`
 - `SD.begin(chipSelect)` - initializes the SD card with selected pin.
-- `File dataFile = SD.open("datalog.txt", FILE_WRITE)` - creates the `dataFile` object to access the library functionalities, and opens/create a file named `datalog.txt` on the SD card, and set it to write mode. 
-- `dataFile.print()` - prints something to the `datalog.txt` file. 
+- `File dataFile = SD.open("datalog.txt", FILE_WRITE)` - creates the `dataFile` object to access the library functionalities, and opens/create a file named `datalog.txt` on the SD card, and set it to write mode.
+- `dataFile.print()` - prints something to the `datalog.txt` file.
 - `dataFile.close()` - closes the file.
 
 The sketch can be found in the snippet below. The sketch can also be accessed from the IDE, by navigating to **File > Examples > SD > Datalogger**. Upload the code to the board.
@@ -150,7 +150,7 @@ void loop() {
 
 ## Testing It Out
 
-After uploading the code to the board, we need to open the Serial Monitor to initialize the program. This is due to the `while(!Serial)` command introduced in the setup, which prevents the program from running. 
+After uploading the code to the board, we need to open the Serial Monitor to initialize the program. This is due to the `while(!Serial)` command introduced in the setup, which prevents the program from running.
 
 When we open the Serial Monitor, we will see data from the three analog pins being printed, each separated by a comma. This is also how it should look inside the `.txt` file that we are printing the values to as well.
 
@@ -167,9 +167,9 @@ This file should now show the same values that we saw in the Serial Monitor.
 
 ![Inside the datalog.txt file.](assets/MKRMEM_T1_IMG06.png)
 
-And that's how we can log data, using a MKR family board, a MKR MEM Shield, the SD library and a micro SD card. 
+And that's how we can log data, using a MKR family board, a MKR MEM Shield, the SD library and a micro SD card.
 
->**Bonus:** If you want to log data in a file that can be opened with **excel**, change the `.txt` to `.csv`. These files can then be opened with excel, where you can do more interesting thing with the data, such as creating graphs. 
+>**Bonus:** If you want to log data in a file that can be opened with **excel**, change the `.txt` to `.csv`. These files can then be opened with excel, where you can do more interesting thing with the data, such as creating graphs.
 
 
 ### Troubleshoot
@@ -184,9 +184,9 @@ If the code is not working, there are some common issues we can troubleshoot:
 
 In this tutorial, we have tested out one of the main functionalities of the MKR MEM Shield: storing data on an SD Card.
 
-As a very basic example, we read the values of three analog pins, stored them in a `.txt` file and later viewed the data on our computer. 
+As a very basic example, we read the values of three analog pins, stored them in a `.txt` file and later viewed the data on our computer.
 
 The analog pins are of course not generating any useful data, as we have not connected anything to them, but you can now go looking for some interesting sensors that could provide some more useful data.
 
-Feel free to explore the [SD](https://www.arduino.cc/en/reference/SD) library further, and try out some of the many cool functions in this library. 
+Feel free to explore the [SD](https://www.arduino.cc/en/reference/SD) library further, and try out some of the many cool functions in this library.
 

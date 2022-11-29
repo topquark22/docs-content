@@ -11,14 +11,14 @@ This is the third revision of the board: the Arduino Single-Sided Serial version
 
 ![](assets/ArduinoSeverino400.jpg)
 
-[A4 Image for Toner Transfer (.png)](//www.arduino.cc/en/uploads/Main/Arduino%5FS3v3%5FR2%5FA4%5F4x2.png) 
+[A4 Image for Toner Transfer (.png)](//www.arduino.cc/en/uploads/Main/Arduino%5FS3v3%5FR2%5FA4%5F4x2.png)
 
-[Schematic (.png)](//www.arduino.cc/en/uploads/Main/ArduinoSeverinoSchematic.png) 
+[Schematic (.png)](//www.arduino.cc/en/uploads/Main/ArduinoSeverinoSchematic.png)
 
-[EAGLE files (.zip)](//www.arduino.cc/en/uploads/Main/Arduino%5FS3v3%5FR2%5FEAGLE%5Fagain.zip) 
+[EAGLE files (.zip)](//www.arduino.cc/en/uploads/Main/Arduino%5FS3v3%5FR2%5FEAGLE%5Fagain.zip)
 
-[Manual (.pdf)](//www.arduino.cc/en/uploads/Main/ArduinoSeverinoManual2.pdf) 
+[Manual (.pdf)](//www.arduino.cc/en/uploads/Main/ArduinoSeverinoManual2.pdf)
 
-[Mounting diagram (.png)](//www.arduino.cc/en/uploads/Main/ArduinoSeverinoMountingDiagram.png) 
+[Mounting diagram (.png)](//www.arduino.cc/en/uploads/Main/ArduinoSeverinoMountingDiagram.png)
 
 These files are licensed under the [Creative Commons Attribution Share-Alike 2.5 license](http://creativecommons.org/licenses/by-sa/2.5/).

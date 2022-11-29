@@ -7,7 +7,7 @@ tags:
   - Bluetooth®
   - Bluetooth® Low Energy
 author: 'Fabricio Troya'
-libraries: 
+libraries:
   - name: ArduinoBLE
     url: https://github.com/arduino-libraries/ArduinoBLE
 hardware:

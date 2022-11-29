@@ -16,11 +16,11 @@ Dashboards in the [Arduino Cloud](https://cloud.arduino.cc/home/) are used to ea
 
 ![Widgets in a dashboard.](assets/cloud-widgets.png)
 
-A dashboard consist of one or several **widgets** that are linked with your cloud variables. You can for example, set up a switch to turn on/off a light, a gauge that displays temperature, or a chart that shows data over time. 
+A dashboard consist of one or several **widgets** that are linked with your cloud variables. You can for example, set up a switch to turn on/off a light, a gauge that displays temperature, or a chart that shows data over time.
 
-Dashboards are not tied to one Thing, or one device, and it can be used to control and monitor several devices simultaneously. For example, you can have 10 devices monitoring temperature in different parts of the world, and the data displayed in one single dashboard. 
+Dashboards are not tied to one Thing, or one device, and it can be used to control and monitor several devices simultaneously. For example, you can have 10 devices monitoring temperature in different parts of the world, and the data displayed in one single dashboard.
 
-***Deleting dashboards / widgets does not impact the functionality of your Thing & device. This means that you can safely edit your dashboards & widgets while your device is streaming data.*** 
+***Deleting dashboards / widgets does not impact the functionality of your Thing & device. This means that you can safely edit your dashboards & widgets while your device is streaming data.***
 
 ### What is a Widget?
 
@@ -36,7 +36,7 @@ Full list of widgets and how to use them are available in the [List of Widgets](
 
 ### Downloading Historical Data
 
-Data that is streamed to a widget is also available for download. The data retention rate depends on your Arduino Cloud plan. For example, an **entry plan** has a data retention of 15 days. You can download it as an `.csv` file that can easily be used with Excel, Google Sheets etc. 
+Data that is streamed to a widget is also available for download. The data retention rate depends on your Arduino Cloud plan. For example, an **entry plan** has a data retention of 15 days. You can download it as an `.csv` file that can easily be used with Excel, Google Sheets etc.
 
 ***Learn more about downloading data in the [Historical Data on the Arduino IoT Cloud](/arduino-cloud/features/iot-cloud-historical-data) tutorial.***
 
@@ -162,7 +162,7 @@ It is possible to clear the messenger widget window directly from the sketch, by
 stringVariable = PropertyActions::CLEAR;
 ```
 
-***For ArduinoIoTCloud library versions below `1.7`, you can use `stringVariable = "\x1b";` to clear the widget window.*** 
+***For ArduinoIoTCloud library versions below `1.7`, you can use `stringVariable = "\x1b";` to clear the widget window.***
 
 ### Color
 
@@ -193,7 +193,7 @@ An example of how it is used in a sketch:
   //retrieve and map brightness value from cloud
   uint8_t brightness = map(dimmedVariable.getBrightness(), 0, 100, 0, 255);
 
-  //then check if switch is on/off 
+  //then check if switch is on/off
   if (dimmedVariable.getSwitch()) {
     analogWrite(6, brightness); //write brightness value to pin 6
   }

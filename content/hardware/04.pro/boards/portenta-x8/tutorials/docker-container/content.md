@@ -72,8 +72,8 @@ docker run hello-world
 ***To be able to see your container with `docker ps -a` you will need to run it at least once with `docker run`***
 
 ### Listing The Installed Packages
-List the installed containers with the following command: 
-``` 
+List the installed containers with the following command:
+```
 docker ps -a
 ```
 
@@ -92,7 +92,7 @@ docker images
 
 First get the Container ID from the container list.
 
-Then use the remove (`rm`) command 
+Then use the remove (`rm`) command
 ```
 docker container rm <CONTAINER ID>
 ```

@@ -3,7 +3,7 @@ title: 'Keyboard Message'
 compatible-products: [due, micro, leonardo]
 difficulty: beginner
 description: 'Sends a text string when a button is pressed.'
-tags: 
+tags:
   - USB
   - Keyboard
   - Pushbutton
@@ -34,7 +34,7 @@ Once you've programmed your board, unplug the USB cable, open a text editor and 
 
 ![](assets/circuit.png)
 
-### Schematic 
+### Schematic
 
 ![](assets/schematic.png)
 

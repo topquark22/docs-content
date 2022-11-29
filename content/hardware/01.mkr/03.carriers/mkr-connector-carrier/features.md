@@ -8,7 +8,7 @@ The MKR Connector Carrier comes with 14 grove compatible connectors for analog &
 
 <Feature title="Grove connectors" image="connection">
 
-There is a total of 14 connectors for analog & digital I/O, I2C and UART. 
+There is a total of 14 connectors for analog & digital I/O, I2C and UART.
 
 <FeatureLink title="Datasheet" url="https://www.seeedstudio.com/category/Sensor-for-Grove-c-24.html" download blank/>
 </Feature>

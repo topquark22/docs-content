@@ -2,7 +2,7 @@
 title: 'Upgrading Nano RP2040 Connect NINA Firmware'
 description: 'Learn how to upgrade the firmware on your NINA W-102 module onboard the Nano RP2040 Connect.'
 difficulty: advanced
-tags: 
+tags:
   - NINA
   - Firmware Upgrade
   - arduino-fwuploader
@@ -17,9 +17,9 @@ software:
   - ide-v2
 ---
 
-## Introduction 
+## Introduction
 
-In some cases you might need to upgrade your NINA-W102 module's firmware. There is for example a need to upgrade your firmware if you wish to [use the NINA-W102 module via Python®](https://docs.arduino.cc/tutorials/nano-rp2040-connect/rp2040-python-api#wireless). 
+In some cases you might need to upgrade your NINA-W102 module's firmware. There is for example a need to upgrade your firmware if you wish to [use the NINA-W102 module via Python®](https://docs.arduino.cc/tutorials/nano-rp2040-connect/rp2040-python-api#wireless).
 
 ***If you are using the [Arduino Cloud IoT](https://create.arduino.cc/iot/things), manual firmware upgrades are not necessary, as it is done automatically while configuring your board.***
 
@@ -55,7 +55,7 @@ So let's take a look at the few steps needed to upgrade the NINA firmware on the
 
 ### Sign in / Register
 
-Let's begin by navigating to [create.arduino.cc/iot/devices](https://create.arduino.cc/iot/devices). Here you will be prompted to sign in. 
+Let's begin by navigating to [create.arduino.cc/iot/devices](https://create.arduino.cc/iot/devices). Here you will be prompted to sign in.
 
 ***You can sign up for an Arduino account for free. You will not need any extra subscription plan for this tutorial.***
 
@@ -65,7 +65,7 @@ Once logged in, you should be in the **"Devices"** tab (located at the top of th
 
 ![Add a device in the Arduino Cloud IoT.](assets/rp2040-nina-fw-update-img02.png)
 
-Then, click on the **"Set up an Arduino device"** option. 
+Then, click on the **"Set up an Arduino device"** option.
 
 ![Choosing the Arduino device option.](assets/rp2040-nina-fw-update-img03.png)
 
@@ -81,7 +81,7 @@ You will now also need to name your board (or choose the generated one). Once yo
 
 ![Name the board.](assets/rp2040-nina-fw-update-img05.png)
 
-When the configuration is complete (this may take a minute), you will receive a confirmation like the image below. This means that the firmware has also successfully been upgraded. 
+When the configuration is complete (this may take a minute), you will receive a confirmation like the image below. This means that the firmware has also successfully been upgraded.
 
 ![Configuration successful!](assets/rp2040-nina-fw-update-img06.png)
 
@@ -91,13 +91,13 @@ Upgrading your firmware via the Arduino IDE 2 is a quick and easy solution, and 
 
 - [Updating Firmware Version through IDE 2](https://docs.arduino.cc/software/ide-v2/tutorials/ide-v2-fw-cert-uploader#firmware-updater).
 
-## Option 3: Arduino FW Uploader 
+## Option 3: Arduino FW Uploader
 
 The next option is a bit more advanced, and involves using a Command Line Interface (CLI).
 
 ### Reset the Bootloader (Situational)
 
-In some cases, it is need to reset the bootloader before upgrading the firmware. For example, if you have been running **MicroPython** on the Nano RP2040 Connect, it is required to reset it. 
+In some cases, it is need to reset the bootloader before upgrading the firmware. For example, if you have been running **MicroPython** on the Nano RP2040 Connect, it is required to reset it.
 
 To do so, follow the instructions below:
 
@@ -164,20 +164,20 @@ Flashing progress: 100%
 
 You have now upgraded the NINA firmware for your Nano RP2040 Connect. Congratulations!
 
-#### Understanding the Commands 
+#### Understanding the Commands
 
 To understand the commands used for upgrading the firmware, let's break it down:
 
 - `firmware` - states that we are uploading firmware.
 - `-b arduino:mbed_nano:nanorp2040connect` - the board we are using.
 - `-a COM7` - the port (which we obtained through the IDE)
-- `-m NINA@1.4.8` - the version of the NINA firmware (you can see all available versions [here](https://github.com/arduino/arduino-fwuploader/tree/main/firmwares/NINA)) 
+- `-m NINA@1.4.8` - the version of the NINA firmware (you can see all available versions [here](https://github.com/arduino/arduino-fwuploader/tree/main/firmwares/NINA))
 
 ### Troubleshooting
 
 You may run into some issues while updating the firmware of your board. Below are some common issues:
 
-- We have not installed a version of the Arduino IDE. 
+- We have not installed a version of the Arduino IDE.
 - We have not unzipped the arduino-fwuploader.
 - We are in the wrong directory.
 - The board cannot be located (try reset the bootloader)
@@ -201,4 +201,4 @@ This typically happens when the tool fails to find the board. To navigate around
 
 ## Conclusion
 
-In this tutorial, we have learned how to upgrade the Nano RP2040 Connect's firmware through either the **Arduino Cloud IoT**, or using the **arduino-fwuploader** tool. 
+In this tutorial, we have learned how to upgrade the Nano RP2040 Connect's firmware through either the **Arduino Cloud IoT**, or using the **arduino-fwuploader** tool.

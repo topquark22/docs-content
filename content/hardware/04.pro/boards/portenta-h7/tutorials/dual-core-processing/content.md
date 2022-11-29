@@ -35,7 +35,7 @@ The Portenta H7 is equipped with a processor that has two processing units calle
 - USB C cable (either USB A to USB C or USB C to USB C)
 - Arduino IDE 1.8.10+ 
 
-## Cortex® M7 & M4 
+## Cortex® M7 & M4
 Processor cores are individual processing units within the board's main processing unit (do not confuse a processor core with an [Arduino core](https://docs.arduino.cc/learn/starting-guide/cores)). These cores are responsible for executing instructions at a particular clock speed. The on-board  Arm Cortex processor comes with two cores (Cortex® M7 and M4), with slightly different architectures and clock speeds. The M7 runs at 480 MHz and the architecture is designed to separate Instruction and Data buses to optimize CPU latency. The M4 runs at 240 MHz and the architecture supports the ART™ accelerator (a block that speeds up instruction fetching accesses of the Cortex-M4 core to the D1-domain internal memories). The higher clock rate of the M7 makes it suitable to handle complex processing tasks such as data storage, debugging or handling input/output peripherals at a higher efficiency compared to the M4. The dual core processor of the Portenta H7 sets it apart from other single core Arduino boards, by allowing true multitasking, faster data processing capabilities, enhanced processing power and application partitioning.  
 
 ![The Architectures of Cortex® M7 and M4 cores.](assets/por_ard_dcp_m4_m7_architectures.svg)
@@ -54,7 +54,7 @@ Begin by plugging-in your Portenta board to your computer using an appropriate U
 
 **Note:** You can access the examples from the tutorials library once it is installed: **Examples > Arduino_Pro_Tutorials > Dual Core Processing**
 
-### 2. Setting the LED Color 
+### 2. Setting the LED Color
 In the previous tutorial you learned how to access the built-in RGB LED through the macro definition LED_BUILTIN. You can also control the distinct Red, Green and Blue LED separately through the LEDR, LEDG and LEDB macro definition respectively. 
 
 Please note that, opposed to other Arduino boards, on the Portenta H7 the built-in RGB led pins need to be pulled to ground to make the LED light up. This means that a voltage level of LOW will turn the LED on, a voltage level of HIGH will turn it off.
@@ -77,7 +77,7 @@ void loop() {
 }
 ```
 
-### 3. Upload the Sketch to the M7 Core 
+### 3. Upload the Sketch to the M7 Core
 Select the **Arduino Portenta H7 (M7 core)** from the **Board** menu and the port the Portenta is connected to (e.g. /dev/cu.usbmodem141101). Upload the **BlinkRedLed_M7.ino** sketch. Doing so will automatically compile the sketch beforehand. When the sketch is uploaded, the RGB LED on the board will start blinking red.
 
 ![Uploading the BlinkRedLed_M7 sketch to the M7 core](assets/por_ard_dcp_upload_code_m7.png)
@@ -135,14 +135,14 @@ The final step is to upload the sketch that you prepared for the M4. Now open **
 ![Uploading the BlinkGreenLed_M4 to the M4 core](assets/por_ard_dcp_upload_code_m4.png)
 
 ### Programming Both Cores With Just One Sketch
-So far, you used separate sketch files to program the different cores. You can also combine these two sketch files into one by taking advantage the preprocessor directives '#ifdef'. This way you can program different behaviors for both cores by using the same program. 
+So far, you used separate sketch files to program the different cores. You can also combine these two sketch files into one by taking advantage the preprocessor directives '#ifdef'. This way you can program different behaviors for both cores by using the same program.
 
-***Programming bigger applications by using this method may increase the difficulty of the program you will need to create.*** 
+***Programming bigger applications by using this method may increase the difficulty of the program you will need to create.***
 
 Let's now create a new sketch to  blink both of LEDs with random sequences, this will allow you to clearly see different behaviors for both of the LEDs using a very simple program.
 
 ### 1. Programming the M7 Core Set-Up
-Let's start by opening a new sketch and naming it **BlinkBothCores.ino**. Then let's add the following lines of code. 
+Let's start by opening a new sketch and naming it **BlinkBothCores.ino**. Then let's add the following lines of code.
 
 ```cpp
 int myLED;
@@ -150,9 +150,9 @@ int myLED;
 void setup() {
 
   randomSeed(analogRead(0));
-   
-  #ifdef CORE_CM7  
-    bootM4();  
+
+  #ifdef CORE_CM7
+    bootM4();
     myLED = LEDB; // built-in blue LED
   #endif
 ```
@@ -163,26 +163,26 @@ The code between `#ifdef CORE_CM7` and `#endif` will only apply for the M7 Core 
 Then, as well inside the `setup()` function, you will need to include the following lines to configure properly the green LED in the M4 core.
 
 ```cpp
-#ifdef CORE_CM4  
+#ifdef CORE_CM4
   myLED = LEDG; // built-in greeen LED
-#endif   
+#endif
 ```
 
 ### 3. Finishing the Setup() Function and Programming the Loop()
-To finish with the `setup()`, you will need to initialize the LEDs as outputs. 
+To finish with the `setup()`, you will need to initialize the LEDs as outputs.
 
-Then in the `loop()` function you will need to include the sequence that blink the LEDs. to do so, add  the following portion of code right after the `#endif`. 
+Then in the `loop()` function you will need to include the sequence that blink the LEDs. to do so, add  the following portion of code right after the `#endif`.
 
 ```cpp
   pinMode(myLED, OUTPUT);
 }
 
 void loop() {
-   digitalWrite(myLED, LOW); // turn the LED on 
-   delay(200); 
-   digitalWrite(myLED, HIGH); // turn the LED off 
+   digitalWrite(myLED, LOW); // turn the LED on
+   delay(200);
+   digitalWrite(myLED, HIGH); // turn the LED off
    delay(rand() % 2000 + 1000); // wait for a random amount of time between 1 and 3 seconds.
-} 
+}
 ```
 
 Now can upload the sketch to both the cores of the Portenta H7 individually. With this sketch, you will be able to control the LED through both the cores (M4 and M7) and you should be able to see the Blue and Green LEDs of the Portenta board blinking with different sequences.

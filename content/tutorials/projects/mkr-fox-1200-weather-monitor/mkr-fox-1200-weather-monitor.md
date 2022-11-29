@@ -23,9 +23,9 @@ source: "https://create.arduino.cc/projecthub/Arduino_Genuino/mkr-fox-1200-weath
 
 ## About This Project
 
-This project shows how to turn a **MKR FOX 1200** and a bunch of I2C sensors into a simple, battery-powered weather station. 
+This project shows how to turn a **MKR FOX 1200** and a bunch of I2C sensors into a simple, battery-powered weather station.
 
-We will use: 
+We will use:
 
 * the onboard temperature sensor (low precision, ± 1 °C)
 * HTU21D I2C sensor to get humidity level
@@ -34,13 +34,13 @@ We will use:
 
 ### Hardware Setup
 
-The hardware connections for this project are quite simple: all the sensors use I2C interfaces and run at 3.3V. 
+The hardware connections for this project are quite simple: all the sensors use I2C interfaces and run at 3.3V.
 
-They need four wires from the MKR FOX 1200: GND, 3.3V, SDA on Pin 11 and SCL on Pin 12. The same four connections can be shared in parallel with the three sensors because each of them has a specific I2C address and therefore the relevant libraries and functions will take care of discriminating each of them. 
+They need four wires from the MKR FOX 1200: GND, 3.3V, SDA on Pin 11 and SCL on Pin 12. The same four connections can be shared in parallel with the three sensors because each of them has a specific I2C address and therefore the relevant libraries and functions will take care of discriminating each of them.
 
-The whole project can be powered by two AA or AAA alkaline batteries connected in series to generate 3V and wired to the screw connection terminal block on the board. 
+The whole project can be powered by two AA or AAA alkaline batteries connected in series to generate 3V and wired to the screw connection terminal block on the board.
 
-### Sigfox Messages 
+### Sigfox Messages
 
 Since the Sigfox network can send a maximum of 140 messages per day, we'll optimize the readings and send data in compact binary format.
 
@@ -63,7 +63,7 @@ The first channel we configure will be the one which receives the raw data (`rea
 
 ![Channel settings.](assets/2017-03-27-181233_547x732_scrot_B6IpPZo7FW.png)
 
-It's about time to upload the sketch using Arduino Create Editor. The default sketch lets you test extensively all the infrastructure before deploying on the field. 
+It's about time to upload the sketch using Arduino Create Editor. The default sketch lets you test extensively all the infrastructure before deploying on the field.
 
 Remember to declare:
 
@@ -97,7 +97,7 @@ The relevant configurations are reported below. Make sure the callback is setup 
 As Custom Payload, set:
 
 ```arduino
-status::uint:8 temp1::int:16:little-endian temp2::int:16:little-endian press::uint:16:little-endian hum::uint:16:little-endian light::uint:16:little-endian lastMsg::uint:8 
+status::uint:8 temp1::int:16:little-endian temp2::int:16:little-endian press::uint:16:little-endian hum::uint:16:little-endian light::uint:16:little-endian lastMsg::uint:8
 ```
 
 This represents the structure we packed in the sketch. We are assigning a variable to each field, so we can reference them in the HTTP callback.
@@ -105,47 +105,47 @@ This represents the structure we packed in the sketch. We are assigning a variab
 As URL Pattern, set:
 
 ```arduino
-https://api.thingspeak.com/update?api_key=XXXXXXXXXXXX&field1={customData#temp1}&field2={customData#press}&field3={customData#temp2}&field4={customData#hum}&field5={customData#light}&field6={customData#status}&field7={customData#lastMsg} 
+https://api.thingspeak.com/update?api_key=XXXXXXXXXXXX&field1={customData#temp1}&field2={customData#press}&field3={customData#temp2}&field4={customData#hum}&field5={customData#light}&field6={customData#status}&field7={customData#lastMsg}
 ```
 
-Once configured, your windows should be like this: 
+Once configured, your windows should be like this:
 
 ![Callback on SigFox backend (use your API key!)](assets/2017-03-27-181130_1319x555_scrot_xIFbqIRrwJ.png)
 
 
 
-Remember to change the API key `api_key`with the one provided by Thingspeak as `Write API Key`for `Channel1`. 
+Remember to change the API key `api_key`with the one provided by Thingspeak as `Write API Key`for `Channel1`.
 
 ![Generate API key.](assets/2017-03-27-181800_589x361_scrot_KZ9gpPSaaH.png)
 
 Save and exit. We can now open the serial port and observe the first message being sent. Hooray!
 
-### From Raw to Graphics 
+### From Raw to Graphics
 
 The setup we configured will route our data to the Thingspeak backend, but they are still in raw format; to reconvert them, let's use [Thingspeak analysis tool ](https://thingspeak.com/apps/matlab_analyses)with this snippet
 
 ```arduino
-% TODO - Replace the [] with channel ID to read data from: 
-readChannelID = []; 
-% TODO - Enter the Read API Key between the '' below: 
-readAPIKey = 'T6UK7XO6A4H2AGT7';  
-% TODO - Replace the [] with channel ID to write data to: 
-writeChannelID = []; 
-% TODO - Enter the Write API Key between the '' below: 
-writeAPIKey = 'XU4TGY261P6B5USN';  
-%% Read Data %% 
-data = thingSpeakRead(readChannelID, 'ReadKey', readAPIKey,'OutputFormat','table');  
-analyzedData = data;  
-%% Analyze Data %% 
-INT16_t_MAX = 32767; 
-UINT16_t_MAX = 65536; 
-analyzedData.('Temperature1') = data.('Temperature1') / INT16_t_MAX * 120 ; 
-analyzedData.('Temperature2') = data.('Temperature2') / INT16_t_MAX * 120 ; 
-analyzedData.('Pressure') = data.('Pressure') / UINT16_t_MAX * 200000 ; 
-analyzedData.('Light') = data.('Light') / UINT16_t_MAX * 100000 ; 
-analyzedData.('Humidity') = data.('Humidity') / UINT16_t_MAX * 110 ; 
-%% Write Data %% 
-thingSpeakWrite(writeChannelID, analyzedData, 'WriteKey', writeAPIKey); 
+% TODO - Replace the [] with channel ID to read data from:
+readChannelID = [];
+% TODO - Enter the Read API Key between the '' below:
+readAPIKey = 'T6UK7XO6A4H2AGT7';
+% TODO - Replace the [] with channel ID to write data to:
+writeChannelID = [];
+% TODO - Enter the Write API Key between the '' below:
+writeAPIKey = 'XU4TGY261P6B5USN';
+%% Read Data %%
+data = thingSpeakRead(readChannelID, 'ReadKey', readAPIKey,'OutputFormat','table');
+analyzedData = data;
+%% Analyze Data %%
+INT16_t_MAX = 32767;
+UINT16_t_MAX = 65536;
+analyzedData.('Temperature1') = data.('Temperature1') / INT16_t_MAX * 120 ;
+analyzedData.('Temperature2') = data.('Temperature2') / INT16_t_MAX * 120 ;
+analyzedData.('Pressure') = data.('Pressure') / UINT16_t_MAX * 200000 ;
+analyzedData.('Light') = data.('Light') / UINT16_t_MAX * 100000 ;
+analyzedData.('Humidity') = data.('Humidity') / UINT16_t_MAX * 110 ;
+%% Write Data %%
+thingSpeakWrite(writeChannelID, analyzedData, 'WriteKey', writeAPIKey);
 %% Schedule action: React -> every 10 minutes
 ```
 

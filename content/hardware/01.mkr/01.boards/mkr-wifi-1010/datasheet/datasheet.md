@@ -7,7 +7,7 @@ type: maker
 ![Arduino® MKR WiFi 1010](assets/featured.png)
 
 # Description
-The MKR WiFi 1010 is a miniature sized module containing a SAMD21G18A Processor, the Nina W102 Module and a crypto chip (the ATECC508). 
+The MKR WiFi 1010 is a miniature sized module containing a SAMD21G18A Processor, the Nina W102 Module and a crypto chip (the ATECC508).
 
 
 # Target Areas
@@ -84,9 +84,9 @@ Also the 5V pin does NOT supply voltage but is rather connected, through a jumpe
 
 ### Application Examples
 
-**Bluetooth:** The communications chipset on the MKR WiFi 1010 is something pretty unique in the world of microcontroller platforms, since this can be both a BLE and Bluetooth® client and host device. 
+**Bluetooth:** The communications chipset on the MKR WiFi 1010 is something pretty unique in the world of microcontroller platforms, since this can be both a BLE and Bluetooth® client and host device.
 
-**WiFi:**  The WiFi connectivity is performed with a module from u-blox, the NINA-W10, a low power chipset operating in the 2.4GHz range. 
+**WiFi:**  The WiFi connectivity is performed with a module from u-blox, the NINA-W10, a low power chipset operating in the 2.4GHz range.
 
 **IoT:** Whether you are looking at building a sensor network connected to your office or home router, or if you want to create a BLE device sending data to a cell phone, the MKR WiFi 1010 is your one-stop-solution for many of the basic IoT application scenarios.
 
@@ -310,7 +310,7 @@ Lors de l’ installation et de l’ exploitation de ce dispositif, la distance 
 
 **Important:** The operating temperature of the EUT can’t exceed 80℃ and shouldn’t be lower than -20℃.
 
-Hereby, Arduino S.r.l. declares that this product is in compliance with essential requirements and other relevant provisions of Directive 2014/53/EU. This product is allowed to be used in all EU member states. 
+Hereby, Arduino S.r.l. declares that this product is in compliance with essential requirements and other relevant provisions of Directive 2014/53/EU. This product is allowed to be used in all EU member states.
 
 | Frequency bands       | Maximum output power (EIRP) |
 | --------------------- | --------------------------- |

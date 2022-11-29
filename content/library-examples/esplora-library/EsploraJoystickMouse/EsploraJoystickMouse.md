@@ -35,7 +35,7 @@ Only your Arduino Esplora is needed for this example.  Connect the Esplora to yo
 
 ![Joystick on the Esplora](./assets/Esplora_JoystickMouse.png)
 
- 
+
 
 ## Code
 

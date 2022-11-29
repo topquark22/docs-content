@@ -6,7 +6,7 @@ tags: [EEPROM, Memory]
 
 The microcontroller on the Arduino boards have 512 bytes of [EEPROM:](http://en.wikipedia.org/wiki/EEPROM) memory whose values are kept when the board is turned off (like a tiny hard drive).
 
-Functions in the **EEPROM** class is automatically included with the platform for your board, meaning you do not need to install any external libraries. 
+Functions in the **EEPROM** class is automatically included with the platform for your board, meaning you do not need to install any external libraries.
 
 ## Hardware Required
 
@@ -40,7 +40,7 @@ This example illustrates how to set of all of those bytes to 0, initializing the
 void setup() {
   // initialize the LED pin as an output.
   pinMode(13, OUTPUT);
-  
+
   /***
     Iterate through each byte of the EEPROM storage.
     Larger AVR processors have larger EEPROM sizes, E.g:

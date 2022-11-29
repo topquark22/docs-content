@@ -7,7 +7,7 @@ tags: [Memory, SD]
 
 >This article was revised on 2021/11/18 by Karl Söderby.
 
-This guide collects compatible hardware and great code examples that you can use if you want to get started with Secure Digital (SD) cards. 
+This guide collects compatible hardware and great code examples that you can use if you want to get started with Secure Digital (SD) cards.
 
 ***The examples in this guide comes from the [SD Library](https://www.arduino.cc/en/Reference/SD), which originally is based on [SdFat](https://github.com/greiman/SdFat) by William Greiman.***
 
@@ -30,7 +30,7 @@ This guide collects compatible hardware and great code examples that you can use
 
 ## Circuit
 
-Here is an example of how to insert an SD card into the MKR Zero board. None of the examples below requires any additional circuit. 
+Here is an example of how to insert an SD card into the MKR Zero board. None of the examples below requires any additional circuit.
 
 ![Insert the SD card.](assets/circuit-sd-card.png)
 

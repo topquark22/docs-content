@@ -2,12 +2,12 @@
 title: 'Tilt Sensor'
 description: 'The tilt sensor is a component that can detect the tilting of an object.'
 difficulty: beginner
-tags: 
+tags:
   - tilt
   - sensor
 libraries:
-  - name: 
-    url: 
+  - name:
+    url:
 software:
   - ide-v1
   - ide-v2
@@ -38,18 +38,18 @@ The prototyping board has been populated with a 1K resistor to make the pull-up 
  */
 
 int ledPin = 13;
-int inPin = 7; 
+int inPin = 7;
 int value = 0;
 
-void setup() 
+void setup()
 {
   pinMode(ledPin, OUTPUT);              // initializes digital pin 13 as output
   pinMode(inPin, INPUT);                // initializes digital pin 7 as input
 }
 
-void loop() 
+void loop()
 {
-  value = digitalRead(inPin);   // reads the value at a digital input 
-  digitalWrite(ledPin, value);           
+  value = digitalRead(inPin);   // reads the value at a digital input
+  digitalWrite(ledPin, value);
 }
 ```

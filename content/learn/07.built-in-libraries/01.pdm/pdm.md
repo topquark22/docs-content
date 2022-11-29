@@ -79,7 +79,7 @@ Nothing
   }
 
 
-  // 
+  //
 
   PDM.end();
 
@@ -114,7 +114,7 @@ short sampleBuffer[256];
 // number of samples read
 volatile int samplesRead;
 
-// 
+//
 
   // query the number of bytes available
   int bytesAvailable = PDM.available();
@@ -154,7 +154,7 @@ short sampleBuffer[256];
 // number of samples read
 volatile int samplesRead;
 
-// 
+//
 
   // query the number of bytes available
   int bytesAvailable = PDM.available();
@@ -197,7 +197,7 @@ short sampleBuffer[256];
 // number of samples read
 volatile int samplesRead;
 
-// 
+//
 
   // configure the data receive callback
   PDM.onReceive(onPDMdata);
@@ -211,7 +211,7 @@ volatile int samplesRead;
   }
 
 
-  // 
+  //
 
 void onPDMdata() {
   // query the number of bytes available

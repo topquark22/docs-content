@@ -21,7 +21,7 @@ software:
 
 ## Introduction
 
-In this tutorial, we will go through the steps needed to connect the [Nano RP2040 Connect](https://store.arduino.cc/nano-rp2040-connect) to the [Arduino IoT Cloud](https://create.arduino.cc/iot/). 
+In this tutorial, we will go through the steps needed to connect the [Nano RP2040 Connect](https://store.arduino.cc/nano-rp2040-connect) to the [Arduino IoT Cloud](https://create.arduino.cc/iot/).
 
 We will test the connection out, by viewing real time data of the IMU (Inertial Measurement Unit), and remotely controlling the RGB on the board.
 
@@ -46,7 +46,7 @@ Follow the circuit below to connect the buttons and LEDs to your Arduino board.
 
 ## The Arduino IoT Cloud
 
-To start, we will need to head over to the [Arduino IoT Cloud](https://create.arduino.cc/iot/). 
+To start, we will need to head over to the [Arduino IoT Cloud](https://create.arduino.cc/iot/).
 
 ### Step 1: Configure Your Device
 
@@ -64,7 +64,7 @@ The next step is to create a new Thing. Navigate to the **"Things"** tab, and cl
 ![Create a Thing.](assets/thing.png)
 
 When you create a Thing, you will see a number of options:
-- **Select Device** - the device you configured can be selected here. 
+- **Select Device** - the device you configured can be selected here.
 - **Select Network** - enter your network credentials (Wi-Fi name and password).
 - **Add Variables** - here we add variables that we will synchronize with our sketch.
 
@@ -162,7 +162,7 @@ void onRgbLightChange()  {
 
 Once the code has been uploaded to your board, it will attempt to connect to your network, and then with the Arduino Cloud. You can open the Serial Monitor to see if there are any errors.
 
-If all went well, you will see a message like this: 
+If all went well, you will see a message like this:
 
 ```
 ***** Arduino IoT Cloud - configuration info *****
@@ -191,10 +191,10 @@ Once our sketch is successfully uploaded we can finalize this project by creatin
 
 This will open an empty dashboard. At the top left corner, first click on the **Pen Symbol**. You are now in Edit Mode.
 
-Now, click on the **"ADD"** button, then **"Things"**, search and click on your Thing. You will now see a list of variables with a checkmark. Leave all marked, and click on the **"Create Widgets** button. 
+Now, click on the **"ADD"** button, then **"Things"**, search and click on your Thing. You will now see a list of variables with a checkmark. Leave all marked, and click on the **"Create Widgets** button.
 
 ![Click on the "Edit button", the pen symbol.](assets/create-widgets.png)
-We should now have a pretty nice looking dashboard that displays the value of our accelerometer, and a **colored light widget** to control the built-in RGB on the Nano RP2040 Connect. 
+We should now have a pretty nice looking dashboard that displays the value of our accelerometer, and a **colored light widget** to control the built-in RGB on the Nano RP2040 Connect.
 
 These widgets can be re-sized and adjusted to your liking. You can also select and link other types of widgets, but this is by far the quickest option.
 

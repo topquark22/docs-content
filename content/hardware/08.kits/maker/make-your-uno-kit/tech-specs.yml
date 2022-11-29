@@ -11,21 +11,21 @@ Integrated Circuits:
 LEDs:
   Green: 1x
   Yellow: 4x
-Resistors: 
+Resistors:
   10Ω: 1x
   1kΩ: 7x
   10kΩ: 2x
   100kΩ: 1x
   1MΩ: 2x
 Capacitors:
-  Yellow 22pF: 3x 
+  Yellow 22pF: 3x
   Yellow 47pF: 1x
   Electrolytic Black 47μF: 3x
   Electrolytic Black 220μF: 1x
   Blue 100nF: 8x
 Other Electronics:
   Speaker 8Ω 1W: 1x
-  Crystal 16mHz, 20pF: 1x 
+  Crystal 16mHz, 20pF: 1x
   Diode: 1x
   Potentiometer 10kΩ: 6x
   Potentiometer Knob: 6x
@@ -33,7 +33,7 @@ Other Electronics:
   LDO (3.3V): 1x
   LDO (5V): 1x
   Power Jack: 1x
-Connectors: 
+Connectors:
   UNO I/O Connector: 2x
   ICPS Connector: 1x
   ATmega328P Socket: 1x

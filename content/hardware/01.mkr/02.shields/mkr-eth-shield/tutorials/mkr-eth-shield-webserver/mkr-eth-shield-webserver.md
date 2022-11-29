@@ -7,7 +7,7 @@ tags:
   - IoT
   - Ethernet
 author: 'Karl Söderby'
-libraries: 
+libraries:
   - name: Ethernet
     url: https://www.arduino.cc/en/Reference/ArduinoMKRENV
 hardware:
@@ -22,9 +22,9 @@ featuredImage: 'web'
 
 ## Introduction
 
-In this tutorial, we will test the functionality of the [MKR ETH Shield](https://store.arduino.cc/arduino-mkr-eth-shield), by creating a web server. The MKR ETH Shield is designed to be mounted on top of any MKR family board, where it can provide a solid connection to the Internet, through its ethernet connector. 
+In this tutorial, we will test the functionality of the [MKR ETH Shield](https://store.arduino.cc/arduino-mkr-eth-shield), by creating a web server. The MKR ETH Shield is designed to be mounted on top of any MKR family board, where it can provide a solid connection to the Internet, through its ethernet connector.
 
-We will test it out, by first reading the value of 5 analog sensors on the board, and print them to a web server. Any client connecting on the same network will then be able to view the values in a browser. 
+We will test it out, by first reading the value of 5 analog sensors on the board, and print them to a web server. Any client connecting on the same network will then be able to view the values in a browser.
 
 ## Goals
 
@@ -45,19 +45,19 @@ The goals of this project are:
 
 ## Ethernet
 
-Ethernet is best described as a collection of computer networking technologies used in different type of networks, such as LAN (Local Area Network) and WAN (Wide Area Network). As one of the main carriers of the Internet Protocol, it is considered to be one of the main technologies that makes up the Internet. 
+Ethernet is best described as a collection of computer networking technologies used in different type of networks, such as LAN (Local Area Network) and WAN (Wide Area Network). As one of the main carriers of the Internet Protocol, it is considered to be one of the main technologies that makes up the Internet.
 
-So Ethernet is an incredibly useful technology to understand and work with, seeing as without it, the Internet would not be the same. Often when we refer to the Internet, or IoT, we typically think wireless, such as Wi-Fi and mobile networks. The truth is, we are still, and very likely will, depend entirely on cables that stretch around the world. 
+So Ethernet is an incredibly useful technology to understand and work with, seeing as without it, the Internet would not be the same. Often when we refer to the Internet, or IoT, we typically think wireless, such as Wi-Fi and mobile networks. The truth is, we are still, and very likely will, depend entirely on cables that stretch around the world.
 
 ![A world connected by cables.](assets/MKRETH_T1_IMG01.png)
 
 While our smartphones, laptops and smart objects do not physically connect to the Internet, it is very common that our router does. Wi-Fi operates on a very local scale, such as your home and office, and mobile networks covers as much as the radio tower can reach. But behind it all, cables are connected everywhere, and Ethernet is often the key technology here.
 
-### Ethernet vs Wi-Fi 
+### Ethernet vs Wi-Fi
 
 So you might wonder, in what scenario would I prefer to choose Ethernet as a means of getting online? Why not use Wi-Fi? Let's take a look!
 
-If we are building a project that requires Internet, but is built for an inside environment, Wi-Fi is a great option. We do not have to worry about cables, we can power it with batteries and the connection will be stable as long as it is in range of a gateway. 
+If we are building a project that requires Internet, but is built for an inside environment, Wi-Fi is a great option. We do not have to worry about cables, we can power it with batteries and the connection will be stable as long as it is in range of a gateway.
 
 But let's say we are building something that requires a very stable Internet connection, in a rough environment (e.g. outside, garage, industrial environment), the Wi-Fi option may become limited. If this is the case, an Ethernet connection might be much more suited.
 
@@ -100,9 +100,9 @@ Then, connect an Ethernet cable to the connector on the shield.
 
 ## Programming the Board
 
-We will now get to the programming part of this tutorial. 
+We will now get to the programming part of this tutorial.
 
-**1.** First, let's make sure we have the drivers installed for the board we are using. If we are using the Web Editor, we do not need to install anything. If we are using an offline editor, we need to install it manually. This can be done by navigating to **Tools > Board > Board Manager...**. Here we need to look for the **Arduino SAMD boards (32-bits ARM Cortex M0+)** and install it. 
+**1.** First, let's make sure we have the drivers installed for the board we are using. If we are using the Web Editor, we do not need to install anything. If we are using an offline editor, we need to install it manually. This can be done by navigating to **Tools > Board > Board Manager...**. Here we need to look for the **Arduino SAMD boards (32-bits ARM Cortex M0+)** and install it.
 
 **2.** There is no need to install any additional library, the **Ethernet** library is already installed on both the Offline and Online IDEs. Instead, let's take a look at some of the core functions we will use in the sketch:
 
@@ -235,7 +235,7 @@ Let's copy the IP address and go to the browser of your choice (needs to be conn
 
 The content is simply the recent reading of pin A0-A5 on the board, which is then printed to the client. Congratulations, you have now managed to access data from your MKR board from a different device. The page is set to refresh every 5 seconds, so the values update along with it.
 
-If we go back to the Serial Monitor, we can see information on what is going on when a client is connecting to the server. 
+If we go back to the Serial Monitor, we can see information on what is going on when a client is connecting to the server.
 
 ![Client is connected.](assets/MKRETH_T1_IMG06.png)
 
@@ -243,15 +243,15 @@ If we go back to the Serial Monitor, we can see information on what is going on 
 
 If the code is not working, there are some common issues we can troubleshoot:
 
-- Check that the Ethernet cable is not broken. 
-- Make sure that your MKR ETH Shield is mounted on a compatible MKR board. 
+- Check that the Ethernet cable is not broken.
+- Make sure that your MKR ETH Shield is mounted on a compatible MKR board.
 - If you have any compilation issues, try updating the IDE and the Ethernet library.
 - If you fail to access it from the browser, make sure the device you connect from is on the same network.
 
 ## Conclusion
 
-In this tutorial, we have used the MKR ETH Shield to create a local web server that can be accessed from a device on the same network. This is a very basic example, but you can build on it to create really cool projects. 
+In this tutorial, we have used the MKR ETH Shield to create a local web server that can be accessed from a device on the same network. This is a very basic example, but you can build on it to create really cool projects.
 
-In this tutorial, we used the MKR Zero board, which has no module to connect to the Internet, where the MKR ETH Shield provides the connection. 
+In this tutorial, we used the MKR Zero board, which has no module to connect to the Internet, where the MKR ETH Shield provides the connection.
 
 Feel free to explore the [Ethernet](https://www.arduino.cc/en/Reference/Ethernet) library further, and try out some of the many cool functions.

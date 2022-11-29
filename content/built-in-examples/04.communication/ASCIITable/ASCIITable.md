@@ -3,7 +3,7 @@ title: 'ASCII Table'
 compatible-products: [all-boards]
 difficulty: intermediate
 description: 'Demonstrates advanced Arduino serial output functions.'
-tags: 
+tags:
   - Communication
   - ASCII
 ---

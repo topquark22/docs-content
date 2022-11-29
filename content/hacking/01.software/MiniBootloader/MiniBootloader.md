@@ -1,7 +1,7 @@
 ---
 title: 'Bootload the Arduino Mini'
 description: 'The bootloader is a small piece of software that allows uploading of sketches onto the Arduino board. This document explains how to bootload an Arduino Mini'
-tags: 
+tags:
   - Arduino Mini
 ---
 by Gian Pablo Vilamil

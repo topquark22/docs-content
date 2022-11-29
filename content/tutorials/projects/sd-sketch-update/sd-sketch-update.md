@@ -49,37 +49,37 @@ or
 * First of all, open the blink example under File->Examples->01.Basics->Blink and modify it to include the OTA library like shown below.
 
 ```arduino
-#include <SDU.h> 
-// the setup function runs once when you press reset or power the board 
-void setup() { 
- // initialize digital pin LED_BUILTIN as an output. 
- pinMode(LED_BUILTIN, OUTPUT); 
-} 
-// the loop function runs over and over again forever 
-void loop() { 
+#include <SDU.h>
+// the setup function runs once when you press reset or power the board
+void setup() {
+ // initialize digital pin LED_BUILTIN as an output.
+ pinMode(LED_BUILTIN, OUTPUT);
+}
+// the loop function runs over and over again forever
+void loop() {
  digitalWrite(LED_BUILTIN, HIGH);   // turn the LED ON
- delay(1000);                       // wait for a second 
+ delay(1000);                       // wait for a second
  digitalWrite(LED_BUILTIN, LOW);    // turn the LED OFF
- delay(1000);                       // wait for a second 
+ delay(1000);                       // wait for a second
 ```
 
 * Upload it on the board
 * Now modify the Blink code to have a faster LED in this way
 
 ```arduino
-#include <SDU.h> 
-// the setup function runs once when you press reset or power the board 
-void setup() { 
- // initialize digital pin LED_BUILTIN as an output. 
- pinMode(LED_BUILTIN, OUTPUT); 
-} 
-// the loop function runs over and over again forever 
-void loop() { 
+#include <SDU.h>
+// the setup function runs once when you press reset or power the board
+void setup() {
+ // initialize digital pin LED_BUILTIN as an output.
+ pinMode(LED_BUILTIN, OUTPUT);
+}
+// the loop function runs over and over again forever
+void loop() {
  digitalWrite(LED_BUILTIN, HIGH);   // turn the LED ON
- delay(250);                        // wait for a second 
+ delay(250);                        // wait for a second
  digitalWrite(LED_BUILTIN, LOW);    // turn the LED OFF
- delay(250);                        // wait for a second 
-} 
+ delay(250);                        // wait for a second
+}
 ```
 
 * Export the binary by clicking on Sketch->Export compiled Binary

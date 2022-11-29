@@ -13,10 +13,10 @@ Nano 33 BLE is a miniature sized module containing a NINA B306 module, based on 
 Maker, enhancements, basic IoT application scenarios
 
 # Features
-- **NINA B306 Module** 
+- **NINA B306 Module**
     - **Processor**
         - 64 MHz Arm® Cortex-M4F (with FPU)
-        - 1 MB Flash + 256 KB RAM 
+        - 1 MB Flash + 256 KB RAM
 
     - **Bluetooth®  5 multiprotocol radio**
         - 2 Mbps
@@ -30,7 +30,7 @@ Maker, enhancements, basic IoT application scenarios
         - Integrated balun with 50 Ω single-ended output
         - IEEE 802.15.4 radio support
         - Thread
-        - Zigbee 
+        - Zigbee
 
 - **Peripherals**
     - Full-speed 12 Mbps USB
@@ -66,7 +66,7 @@ As all Nano form factor boards, Nano 33 BLE does not have a battery charger but 
 
 **Social distancing sensor:** Keeping the social distance has become more important than ever to ensure your own, as well as others health. By connecting an Arduino Nano 33 BLE with a sensor and a LED display, you can create a wearable band that alerts you when you get too close to other people.
 
-**Healthy plant scanner:** Watering your plants isn’t always enough to keep them happy. Diseases, lack of sunlight etc. could also be vital factors for unhealthy plants. Keep your plants happy by creating a detector and train it to detect any diseases, all with an Arduino Nano 33 BLE 
+**Healthy plant scanner:** Watering your plants isn’t always enough to keep them happy. Diseases, lack of sunlight etc. could also be vital factors for unhealthy plants. Keep your plants happy by creating a detector and train it to detect any diseases, all with an Arduino Nano 33 BLE
 
 ### Ratings
 #### Recommended Operating Conditions
@@ -82,7 +82,7 @@ As all Nano form factor boards, Nano 33 BLE does not have a battery charger but 
 | PMAX   | Maximum Power Consumption           |      | TBC  |      | mW   |
 
 ## Functional Overview
-### Board Topology 
+### Board Topology
 #### Top
 ![Board topology Top](assets/topologyTop.png)
 
@@ -100,19 +100,19 @@ As all Nano form factor boards, Nano 33 BLE does not have a battery charger but 
 | SJ1      | VUSB Jumper     | SJ2      | D7 Jumper       |
 | SJ3      | D8 Jumper       | SJ4      | 3v3 Jumper     |
 
-### Processor 
+### Processor
 The Main Processor is a Cortex M4F running at up to 64MHz. Most of its pins are connected to the external headers, however some are reserved for internal communication with the wireless module and the on-board internal I<sup>2</sup>C peripherals (IMU and Crypto).
 
 **NOTE**: As opposed to other Arduino Nano boards, pins A4 and A5 have an internal pull up and default to be used as an I<sup>2</sup>C Bus so usage as analog inputs is not recommended.
 
 ### Power Tree
-The board can be powered via USB connector, V<sub>IN</sub> or V<sub>USB</sub> pins on headers. 
+The board can be powered via USB connector, V<sub>IN</sub> or V<sub>USB</sub> pins on headers.
 
 ![Power tree](assets/powerTree.svg)
 
 **NOTE:** Since V<sub>USB</sub> feeds V<sub>IN</sub> via a Schottky diode and a DC-DC regulator specified minimum input voltage is 4.5V the minimum supply voltage from USB has to be increased to a voltage in the range between 4.8V to 4.96V depending on the current being drawn.
 
-## Board Operation 
+## Board Operation
 ### Getting Started - IDE
 If you want to program your Arduino Nano 33 BLE while offline you need to install the Arduino Desktop IDE [1] To connect the Arduino Nano 33 BLE to your computer, you’ll need a Micro-B USB cable. This also provides power to the board, as indicated by the LED.
 
@@ -130,7 +130,7 @@ Sample sketches for the Arduino Nano 33 BLE can be found either in the “Exampl
 ### Online Resources
 Now that you have gone through the basics of what you can do with the board you can explore the endless possibilities it provides by checking exciting projects on ProjectHub **[5]**, the Arduino Library Reference **[6]** and the online store **[7]** where you will be able to complement your board with sensors, actuators and more
 
-### Board Recover 
+### Board Recover
 All Arduino boards have a built-in bootloader which allows flashing the board via USB. In case a sketch locks up the processor and the board is not reachable anymore via USB it is possible to enter bootloader mode by double-tapping the reset button right after power up.
 
 ## Connector Pinouts
@@ -146,7 +146,7 @@ All Arduino boards have a built-in bootloader which allows flashing the board vi
 | 5    | GND          | Power        | Power Ground                                                 |
 
 ### Headers
-The board exposes two 15 pin connectors which can either be assembled with pin headers or soldered through castellated vias. 
+The board exposes two 15 pin connectors which can either be assembled with pin headers or soldered through castellated vias.
 
 | Pin  | **Function** | **Type**     | **Description**                                              |
 | ---- | ------------ | ------------ | ------------------------------------------------------------ |
@@ -201,10 +201,10 @@ The board measures are mixed between metric and imperial. Imperial measures are 
 
 ## Certifications
 ### Declaration of Conformity CE DoC (EU)
-We declare under our sole responsibility that the products above are in conformity with the essential requirements of the following EU Directives and therefore qualify for free movement within markets comprising the European Union (EU) and European Economic Area (EEA). 
+We declare under our sole responsibility that the products above are in conformity with the essential requirements of the following EU Directives and therefore qualify for free movement within markets comprising the European Union (EU) and European Economic Area (EEA).
 
 ### Declaration of Conformity to EU RoHS & REACH 211 01/19/2021
-Arduino boards are in compliance with RoHS 2 Directive 2011/65/EU of the European Parliament and RoHS 3 Directive 2015/863/EU of the Council of 4 June 2015 on the restriction of the use of certain hazardous substances in electrical and electronic equipment. 
+Arduino boards are in compliance with RoHS 2 Directive 2011/65/EU of the European Parliament and RoHS 3 Directive 2015/863/EU of the Council of 4 June 2015 on the restriction of the use of certain hazardous substances in electrical and electronic equipment.
 
 | Substance                              | **Maximum limit (ppm)** |
 | -------------------------------------- | ----------------------- |
@@ -219,17 +219,17 @@ Arduino boards are in compliance with RoHS 2 Directive 2011/65/EU of the Europea
 | Dibutyl phthalate (DBP)                | 1000                    |
 | Diisobutyl phthalate (DIBP)            | 1000                    |
 
-Exemptions : No exemptions are claimed. 
+Exemptions : No exemptions are claimed.
 
 Arduino Boards are fully compliant with the related requirements of European Union Regulation (EC) 1907 /2006 concerning the Registration, Evaluation, Authorization and Restriction of Chemicals (REACH). We declare none of the SVHCs (https://echa.europa.eu/web/guest/candidate-list-table), the Candidate List of Substances of Very High Concern for authorization currently released by ECHA, is present in all products (and also package) in quantities totaling in a concentration equal or above 0.1%. To the best of our knowledge, we also declare that our products do not contain any of the substances listed on the "Authorization List" (Annex XIV of the REACH regulations) and Substances of Very High Concern (SVHC) in any significant amounts as specified by the Annex XVII of Candidate list published by ECHA (European Chemical Agency) 1907 /2006/EC.
 
-### Conflict Minerals Declaration 
-As a global supplier of electronic and electrical components, Arduino is aware of our obligations with regards to laws and regulations regarding Conflict Minerals, specifically the Dodd-Frank Wall Street Reform and Consumer Protection Act, Section 1502. Arduino does not directly source or process conflict minerals such as Tin, Tantalum, Tungsten, or Gold. Conflict minerals are contained in our products in the form of solder, or as a component in metal alloys. As part of our reasonable due diligence Arduino has contacted component suppliers within our supply chain to verify their continued compliance with the regulations. Based on the information received thus far we declare that our products contain Conflict Minerals sourced from conflict-free areas. 
+### Conflict Minerals Declaration
+As a global supplier of electronic and electrical components, Arduino is aware of our obligations with regards to laws and regulations regarding Conflict Minerals, specifically the Dodd-Frank Wall Street Reform and Consumer Protection Act, Section 1502. Arduino does not directly source or process conflict minerals such as Tin, Tantalum, Tungsten, or Gold. Conflict minerals are contained in our products in the form of solder, or as a component in metal alloys. As part of our reasonable due diligence Arduino has contacted component suppliers within our supply chain to verify their continued compliance with the regulations. Based on the information received thus far we declare that our products contain Conflict Minerals sourced from conflict-free areas.
 
 ## FCC Caution
 Any Changes or modifications not expressly approved by the party responsible for compliance could void the user’s authority to operate the equipment.
 
-This device complies with part 15 of the FCC Rules. Operation is subject to the following two conditions: 
+This device complies with part 15 of the FCC Rules. Operation is subject to the following two conditions:
 
 (1) This device may not cause harmful interference
 
@@ -243,14 +243,14 @@ This device complies with part 15 of the FCC Rules. Operation is subject to the 
 
 3. This equipment should be installed and operated with minimum distance 20cm between the radiator & your body.
 
-English: 
+English:
 User manuals for license-exempt radio apparatus shall contain the following or equivalent notice in a conspicuous location in the user manual or alternatively on the device or both. This device complies with Industry Canada license-exempt RSS standard(s). Operation is subject to the following two conditions:
 
 (1) this device may not cause interference
 
  (2) this device must accept any interference, including interference that may cause undesired operation of the device.
 
-French: 
+French:
 Le présent appareil est conforme aux CNR d’Industrie Canada applicables aux appareils radio exempts de licence. L’exploitation est autorisée aux deux conditions suivantes :
 
 (1) l’ appareil nedoit pas produire de brouillage
@@ -259,15 +259,15 @@ Le présent appareil est conforme aux CNR d’Industrie Canada applicables aux a
 
 **IC SAR Warning:**
 
-English 
+English
 This equipment should be installed and operated with minimum distance 20 cm between the radiator and your body.
 
-French: 
+French:
 Lors de l’ installation et de l’ exploitation de ce dispositif, la distance entre le radiateur et le corps est d ’au moins 20 cm.
 
 **Important:** The operating temperature of the EUT can’t exceed 85℃ and shouldn’t be lower than -40℃.
 
-Hereby, Arduino S.r.l. declares that this product is in compliance with essential requirements and other relevant provisions of Directive 2014/53/EU. This product is allowed to be used in all EU member states. 
+Hereby, Arduino S.r.l. declares that this product is in compliance with essential requirements and other relevant provisions of Directive 2014/53/EU. This product is allowed to be used in all EU member states.
 
 | Frequency bands | Maximum output power (ERP) |
 | --------------- | -------------------------- |

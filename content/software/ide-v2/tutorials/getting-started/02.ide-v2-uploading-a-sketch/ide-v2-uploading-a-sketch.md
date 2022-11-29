@@ -12,27 +12,27 @@ author: 'Karl Söderby'
 
 In the Arduino environment, we write **sketches** that can be uploaded to Arduino boards. In this tutorial, we will go through how to select a board connected to your computer, and how to upload a sketch to that board, using the Arduino IDE 2.0.
 
-You can easily download the editor from the [Arduino Software page](https://www.arduino.cc/en/software). 
+You can easily download the editor from the [Arduino Software page](https://www.arduino.cc/en/software).
 
 You can also follow the [downloading and installing the Arduino IDE 2.0](./ide-v2-downloading-and-installing) tutorial for more detailed guide on how to install the editor.
 
 ### Requirements
 
-- Arduino IDE 2.0 installed. 
+- Arduino IDE 2.0 installed.
 
 ### Verify VS Upload
 
 There are two main tools when uploading a sketch to a board: **verify** and **upload.** The verify tool simply goes through your sketch, checks for errors and compiles it. The upload tool does the same, but when it finishes compiling the code, it also uploads it to the board.
 
-A good practice is to use the verifying tool before attempting to upload anything. This is a quick way of spotting any errors in your code, so you can fix them before actually uploading the code. 
+A good practice is to use the verifying tool before attempting to upload anything. This is a quick way of spotting any errors in your code, so you can fix them before actually uploading the code.
 
 ### Uploading a Sketch
 
-Uploading a sketch is quick and easy, but let's take a look at what we need to do. 
+Uploading a sketch is quick and easy, but let's take a look at what we need to do.
 
-**1.** Open the Arduino IDE 2.0. 
+**1.** Open the Arduino IDE 2.0.
 
-**2.** With the editor open, let's take a look at the toolbar at the top. At the very left, there is a **checkmark** and an **arrow pointing right**. The checkmark is used to **verify**, and the arrow is used to **upload.** 
+**2.** With the editor open, let's take a look at the toolbar at the top. At the very left, there is a **checkmark** and an **arrow pointing right**. The checkmark is used to **verify**, and the arrow is used to **upload.**
 
 ![Verifying and uploading buttons.](assets/uploading-a-sketch-img01.png)
 
@@ -40,11 +40,11 @@ Uploading a sketch is quick and easy, but let's take a look at what we need to d
 
 ![Selecting the board.](assets/uploading-a-sketch-img03.png)
 
-**4.** Click on the verify tool (checkmark). Since we are verifying an empty sketch, we can be sure it is going to compile. After a few seconds, we can see the result of the action in the console (black box in the bottom). 
+**4.** Click on the verify tool (checkmark). Since we are verifying an empty sketch, we can be sure it is going to compile. After a few seconds, we can see the result of the action in the console (black box in the bottom).
 
 ![Successful compilation printed in the console.](assets/uploading-a-sketch-img02.png)
 
-**5.** With the board selected, we are good to go! Click on the **upload** button, and it will start uploading the sketch to the board. 
+**5.** With the board selected, we are good to go! Click on the **upload** button, and it will start uploading the sketch to the board.
 
 **6.** When it is finished, a notification pops up in the bottom right of your IDE window. Of course, sometimes there are some complications when uploading, and these errors will be listed here as well.
 

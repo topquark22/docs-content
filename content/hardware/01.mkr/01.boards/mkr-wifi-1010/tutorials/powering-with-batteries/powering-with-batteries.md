@@ -32,7 +32,7 @@ ___
 
 ## Hardware & Software Needed
 
-- Arduino MKR WiFI 1010 
+- Arduino MKR WiFI 1010
 - Li-Po battery 1024 mAh minimum, JST PH connector
 - Pushbutton NO
 - Power source with micro-USB cable
@@ -105,7 +105,7 @@ We begin with the typical sleep mode of the microcontroller and a manual pushbut
 
 This sketch demonstrates the usage of External Interrupts (on pins) to wakeup the SAMD21 of the MKR WiFi 1010 in sleep mode.
 
-Sleep modes allow a significant drop in the power usage of a board while it does nothing waiting for an event to happen. Battery powered application can take advantage of these modes to enhance battery life significantly. 
+Sleep modes allow a significant drop in the power usage of a board while it does nothing waiting for an event to happen. Battery powered application can take advantage of these modes to enhance battery life significantly.
 
 >**NOTE:** if the processor is sleeping, a new sketch can't be uploaded. To overcome this, manually reset the board (usually with a single or double tap to the RESET button).
 
@@ -180,34 +180,34 @@ In the following example we keep asking the content of the home page of example.
 
 ```arduino
 #include <WiFiNINA.h>
- 
+
 #include "arduino_secrets.h"
 ///////please enter your sensitive data in the Secret tab/arduino_secrets.h
 char ssid[] = SECRET_SSID;   // your network SSID (name)
 char pass[] = SECRET_PASS;   // your network password (use for WPA, or use as key for WEP)
 int keyIndex = 0;            // your network key Index number (needed only for WEP)
- 
+
 int status = WL_IDLE_STATUS;
- 
+
 WiFiClient client;  // Initialize the Wifi client library
- 
+
 char server[] = "example.org";  // server address:
- 
+
 unsigned long lastConnectionTime = 0;            // last time you connected to the server, in milliseconds
 const unsigned long postingInterval = 20000; // delay between updates, in milliseconds
- 
+
 void setup() {
   Serial.begin(9600);
   while (!Serial) {
     ; // wait for serial port to connect. Needed for native USB port only
   }
- 
+
   if (WiFi.status() == WL_NO_MODULE) {     // check for the WiFi module:
     Serial.println("Communication with WiFi module failed!");
     // don't continue
     while (true);
   }
- 
+
   while (status != WL_CONNECTED) {
     Serial.print("Attempting to connect to SSID: ");
     Serial.println(ssid);
@@ -217,24 +217,24 @@ void setup() {
     delay(5000);
   }
 }
- 
+
 void loop() {
   while (client.available()) {
     char c = client.read();
     Serial.write(c);
   }
- 
+
   if (millis() - lastConnectionTime > postingInterval) {
     httpRequest();
   }
- 
+
 }
- 
+
 void httpRequest() {
   // close any connection before send a new request.
   // This will free the socket on the Nina module
   client.stop();
- 
+
   // if there's a successful connection:
   if (client.connect(server, 80)) {
     Serial.println("connecting...");
@@ -243,7 +243,7 @@ void httpRequest() {
     client.println("User-Agent: ArduinoWiFi/1.1");
     client.println("Connection: close");
     client.println();
- 
+
     lastConnectionTime = millis();
   } else {
     Serial.println("connection failed");

@@ -14,7 +14,7 @@ The new IoT Cloud brings a lot of new things, and one of them is the OTA (over-t
 ![Over-the-Air uploads.](assets/other_power_supplier.png)
 
 
-Over-the-air update is now available through [Arduino IoT Cloud](https://create.arduino.cc/iot/) and the [Arduino Web Editor](https://create.arduino.cc/editor), which is an always up-to-date online IDE that stores sketches in the Cloud. It also allows you to wirelessly upload sketches from a browser, to any board that is connected to that computer. 
+Over-the-air update is now available through [Arduino IoT Cloud](https://create.arduino.cc/iot/) and the [Arduino Web Editor](https://create.arduino.cc/editor), which is an always up-to-date online IDE that stores sketches in the Cloud. It also allows you to wirelessly upload sketches from a browser, to any board that is connected to that computer.
 
 This tutorial will guide you through the necessary steps to configure your board to work with the OTA feature.
 

@@ -3,7 +3,7 @@ title: 'Ping Ultrasonic Range Finder'
 compatible-products: [all-boards]
 difficulty: beginner
 description: 'Detect objects with an ultrasonic range finder.'
-tags: 
+tags:
   - Sensors
   - Input
   - Ultrasonic range finder

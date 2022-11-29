@@ -18,13 +18,13 @@ software:
   - ide-v2
   - web-editor
 ---
-## Overview 
+## Overview
 This tutorial demonstrates how to use the on-board Flash memory of the Portenta H7 to read and write data using the BlockDevice API provided by Mbed OS. As the internal memory is limited in size, we will also take a look at saving data to the QSPI Flash memory.
 
 ## Goals
 
-- Accessing the Portenta's internal Flash memory using Mbed's Flash In-Application Programming Interface 
-- Accessing the Portenta's QSPI Flash memory using Mbed's Flash In-Application Programming Interface 
+- Accessing the Portenta's internal Flash memory using Mbed's Flash In-Application Programming Interface
+- Accessing the Portenta's QSPI Flash memory using Mbed's Flash In-Application Programming Interface
 - Reading the memory's characteristics
 
 ### Required Hardware and Software
@@ -34,7 +34,7 @@ This tutorial demonstrates how to use the on-board Flash memory of the Portenta 
 - Arduino IDE 1.8.10+ or Arduino Pro IDE 0.0.4+ or Arduino CLI 0.13.0+
 
 ## Mbed OS APIs for Flash Storage
-Portenta's core is based on the Mbed operating system, allowing for Arduino APIs to be integrated using APIs exposed directly by Mbed OS. 
+Portenta's core is based on the Mbed operating system, allowing for Arduino APIs to be integrated using APIs exposed directly by Mbed OS.
 
 Mbed OS has a rich API for managing storage on different mediums, ranging from the small internal Flash memory of a microcontroller to external SecureDigital cards with large data storage space.
 
@@ -56,11 +56,11 @@ Before we start it's important to keep the above mentioned **Flash r/w limits** 
 Having this in mind, it is time to create a sketch to program the Portenta. After creating new sketch and giving it a fitting name (in this case `FlashStorage.ino`), you need to create one more file to be used by the sketch, called `FlashIAPLimits.h`, that you will use to define some helper functions. This allows you to reuse the helper file later for other sketches.
 
 ### 2. The Helper Functions
-Within the `FlashIAPLimits.h` file, you can start by including necessary libraries and defining the namespace. 
+Within the `FlashIAPLimits.h` file, you can start by including necessary libraries and defining the namespace.
 
 ```cpp
 // Ensures that this file is only included once
-#pragma once 
+#pragma once
 
 #include <Arduino.h>
 #include <FlashIAP.h>
@@ -141,7 +141,7 @@ void setup() {
   while (!Serial);
 
   Serial.println("FlashIAPBlockDevice Test");
-  Serial.println("------------------------");  
+  Serial.println("------------------------");
 
   // Feed the random number generator for later content generation
   randomSeed(analogRead(0));
@@ -181,7 +181,7 @@ Serial.println("Block device size: " + String((unsigned int) blockDevice.size() 
 Serial.println("Readable block size: " + String((unsigned int) blockDevice.get_read_size())  + " bytes");
 Serial.println("Programmable block size: " + String((unsigned int) programBlockSize) + " bytes");
 Serial.println("Erasable block size: " + String((unsigned int) eraseBlockSize / 1024) + " KB");
-    
+
 String newMessage = "Random number: " + String(random(1024));
 
 // Calculate the amount of bytes needed to store the message
@@ -189,7 +189,7 @@ String newMessage = "Random number: " + String(random(1024));
 const auto messageSize = newMessage.length() + 1; // C String takes 1 byte for NULL termination
 const unsigned int requiredEraseBlocks = ceil(messageSize / (float)  eraseBlockSize);
 const unsigned int requiredProgramBlocks = ceil(messageSize / (float)  programBlockSize);
-const auto dataSize = requiredProgramBlocks * programBlockSize;  
+const auto dataSize = requiredProgramBlocks * programBlockSize;
 char buffer[dataSize] {};
 ```
 
@@ -207,7 +207,7 @@ blockDevice.erase(0, requiredEraseBlocks * eraseBlockSize);
 
 // Write an updated message to the first block
 Serial.println("Writing new message...");
-Serial.println(newMessage);  
+Serial.println(newMessage);
 blockDevice.program(newMessage.c_str(), 0, dataSize);
 
 // Deinitialize the device
@@ -217,7 +217,7 @@ Serial.println("Done.");
 
 Finally the `loop()` function of this sketch will be left empty, considering that the Flash reading and writing process should be carried out as little as possible.
 
-### 4. Upload the Sketch 
+### 4. Upload the Sketch
 Below is the complete sketch of this tutorial consisting of the main sketch and the `FlashIAPLimits.h` helper file, upload both of them to your Portenta H7 to try it out.
 
 **FlashIAPLimits.h**
@@ -227,7 +227,7 @@ Helper functions for calculating FlashIAP block device limits
 **/
 
 // Ensures that this file is only included once
-#pragma once 
+#pragma once
 
 #include <Arduino.h>
 #include <FlashIAP.h>
@@ -292,7 +292,7 @@ void setup() {
   while (!Serial);
 
   Serial.println("FlashIAPBlockDevice Test");
-  Serial.println("------------------------");  
+  Serial.println("------------------------");
 
   // Feed the random number generator for later content generation
   randomSeed(analogRead(0));
@@ -314,23 +314,23 @@ void setup() {
 
   // Initialize the Flash IAP block device and print the memory layout
   blockDevice.init();
-  
+
   const auto eraseBlockSize = blockDevice.get_erase_size();
   const auto programBlockSize = blockDevice.get_program_size();
-  
+
   Serial.println("Block device size: " + String((unsigned int) blockDevice.size() / 1024.0 / 1024.0) + " MB");
   Serial.println("Readable block size: " + String((unsigned int) blockDevice.get_read_size())  + " bytes");
   Serial.println("Programmable block size: " + String((unsigned int) programBlockSize) + " bytes");
   Serial.println("Erasable block size: " + String((unsigned int) eraseBlockSize / 1024) + " KB");
-     
+
   String newMessage = "Random number: " + String(random(1024));
-  
+
   // Calculate the amount of bytes needed to store the message
   // This has to be a multiple of the program block size
   const auto messageSize = newMessage.length() + 1; // C String takes 1 byte for NULL termination
   const unsigned int requiredEraseBlocks = ceil(messageSize / (float)  eraseBlockSize);
   const unsigned int requiredProgramBlocks = ceil(messageSize / (float)  programBlockSize);
-  const auto dataSize = requiredProgramBlocks * programBlockSize;  
+  const auto dataSize = requiredProgramBlocks * programBlockSize;
   char buffer[dataSize] {};
 
   // Read back what was stored at previous execution
@@ -344,7 +344,7 @@ void setup() {
 
   // Write an updated message to the first block
   Serial.println("Writing new message...");
-  Serial.println(newMessage);  
+  Serial.println(newMessage);
   blockDevice.program(newMessage.c_str(), 0, dataSize);
 
   // Deinitialize the device
@@ -371,10 +371,10 @@ For that, the block device needs to be initialized differently, but the rest of 
 
 // Create a block device on the available space of the flash
 QSPIFBlockDevice root(PD_11, PD_12, PF_7, PD_13,  PF_10, PG_6, QSPIF_POLARITY_MODE_1, 40000000);
-MBRBlockDevice blockDevice(&root, 1);  
+MBRBlockDevice blockDevice(&root, 1);
 
 // Initialize the Flash IAP block device and print the memory layout
-if(blockDevice.init() != 0 || blockDevice.size() != BLOCK_DEVICE_SIZE) {    
+if(blockDevice.init() != 0 || blockDevice.size() != BLOCK_DEVICE_SIZE) {
   Serial.println("Partitioning block device...");
   blockDevice.deinit();
   // Allocate a FAT 32 partition
@@ -401,43 +401,43 @@ void setup() {
   while (!Serial);
 
   Serial.println("QSPI Block Device Test");
-  Serial.println("------------------------");  
+  Serial.println("------------------------");
 
   // Feed the random number generator for later content generation
   randomSeed(analogRead(0));
 
   // Create a block device on the available space of the flash
   QSPIFBlockDevice root(PD_11, PD_12, PF_7, PD_13,  PF_10, PG_6, QSPIF_POLARITY_MODE_1, 40000000);
-  MBRBlockDevice blockDevice(&root, 1);  
+  MBRBlockDevice blockDevice(&root, 1);
 
   // Initialize the Flash IAP block device and print the memory layout
-  if(blockDevice.init() != 0 || blockDevice.size() != BLOCK_DEVICE_SIZE) {    
+  if(blockDevice.init() != 0 || blockDevice.size() != BLOCK_DEVICE_SIZE) {
     Serial.println("Partitioning block device...");
     blockDevice.deinit();
     // Allocate a FAT 32 partition
     MBRBlockDevice::partition(&root, 1, PARTITION_TYPE, 0, BLOCK_DEVICE_SIZE);
     blockDevice.init();
   }
-  
+
   const auto eraseBlockSize = blockDevice.get_erase_size();
   const auto programBlockSize = blockDevice.get_program_size();
 
-  Serial.println("Block device size: " + String((unsigned int) blockDevice.size() / 1024) + " KB");  
+  Serial.println("Block device size: " + String((unsigned int) blockDevice.size() / 1024) + " KB");
   Serial.println("Readable block size: " + String((unsigned int) blockDevice.get_read_size())  + " bytes");
   Serial.println("Programmable block size: " + String((unsigned int) programBlockSize) + " bytes");
   Serial.println("Erasable block size: " + String((unsigned int) eraseBlockSize / 1024) + " KB");
-     
+
   String newMessage = "Random number: " + String(random(1024));
-  
+
   // Calculate the amount of bytes needed to store the message
   // This has to be a multiple of the program block size
   const auto messageSize = newMessage.length() + 1; // C String takes 1 byte for NULL termination
   const unsigned int requiredEraseBlocks = ceil(messageSize / (float)  eraseBlockSize);
   const unsigned int requiredBlocks = ceil(messageSize / (float)  programBlockSize);
-  const auto dataSize = requiredBlocks * programBlockSize;  
-  char buffer[dataSize] {};  
+  const auto dataSize = requiredBlocks * programBlockSize;
+  char buffer[dataSize] {};
 
-  // Read back what was stored at previous execution  
+  // Read back what was stored at previous execution
   Serial.println("Reading previous message...");
   blockDevice.read(buffer, 0, dataSize);
   Serial.println(buffer);
@@ -448,7 +448,7 @@ void setup() {
 
   // Write an updated message to the first block
   Serial.println("Writing new message...");
-  Serial.println(newMessage);  
+  Serial.println(newMessage);
   blockDevice.program(newMessage.c_str(), 0, dataSize);
 
   // Deinitialize the device

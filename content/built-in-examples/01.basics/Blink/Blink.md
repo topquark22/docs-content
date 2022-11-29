@@ -3,7 +3,7 @@ title: 'Blink'
 compatible-products: [all-boards]
 difficulty: beginner
 description: 'Turn an LED on and off every second.'
-tags: 
+tags:
   - Basics
   - LED
   - Output

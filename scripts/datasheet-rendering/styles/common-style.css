@@ -27,7 +27,7 @@ table {
     margin-bottom: 10px;
 }
 
-hr {    
+hr {
     border-style: none;
     border: 0;
     background-color: #666;
@@ -35,7 +35,7 @@ hr {
 }
 
 td, th {
-    border: 1px solid #666;    
+    border: 1px solid #666;
     text-align: left;
     padding-left: 5px;
     padding-right: 5px;
@@ -125,7 +125,7 @@ img[src*="_80."]{
     border-bottom: 1px solid #666;
 }
 
-.header-title {    
+.header-title {
     font-family: 'Roboto Mono', monospace;
     text-align:right;
     color: #95a5a6;
@@ -278,14 +278,14 @@ ul#feature-list li {
 }
 
 
-h1, h2, h3, h4 {    
+h1, h2, h3, h4 {
     page-break-after: avoid;
     page-break-inside: avoid;
     margin-bottom: 0.5em;
 }
 
 /* Don't break before elements just after a heading */
-h1 + *, h2 + *, h3 + *, h4 + * { 
+h1 + *, h2 + *, h3 + *, h4 + * {
     page-break-before: avoid;
 }
 

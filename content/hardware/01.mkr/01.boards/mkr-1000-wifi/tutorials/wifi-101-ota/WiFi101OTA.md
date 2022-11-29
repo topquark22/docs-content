@@ -9,7 +9,7 @@ This example shows how to use the WiFi101OTA library to update your sketch over 
 
 ## Hardware Required
 
-- [MKR 1000 WiFi](https://store.arduino.cc/products/arduino-mkr1000-wifi) board 
+- [MKR 1000 WiFi](https://store.arduino.cc/products/arduino-mkr1000-wifi) board
 
 ***This example also works with a [WiFi Shield 101 (retired)](https://docs.arduino.cc/retired/shields/arduino-wifi-shield-101) + [Arduino Zero](https://store.arduino.cc/products/arduino-zero).***
 

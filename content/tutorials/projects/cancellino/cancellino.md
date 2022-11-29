@@ -42,7 +42,7 @@ The project is based on an Arduino MKR GSM 1400, an antenna, a LiPo battery pack
 
 Insert microSD in the MKR MEM shield card holder and put it on the MKR Connector Carrier.
 
-The antenna, the SIM and the battery pack should be connected to their own connector on the head and the tail of the MKR GSM 1400. 
+The antenna, the SIM and the battery pack should be connected to their own connector on the head and the tail of the MKR GSM 1400.
 
 Then connect the Grove Relay to the MKR Connector Carrier at D2 header.
 
@@ -55,7 +55,7 @@ The LiPo battery is optional, but it allows to cope with the peaks of current th
 
 This project uses the MKRGSM library to manage the incoming calls and SMS messages.
 
-When a call is received, the Arduino code catches the number and hangs the call. So the calling number is checked to find out if it's an authorized number. If it's authorized, the digital port 2 (D2) is turned ON for one second in order to activate the relay. The authorized numbers list is loaded from the [numbers.txt](http://numbers.txt/) file (located in the microSD card) on Arduino startup or when a new number is added to the list. 
+When a call is received, the Arduino code catches the number and hangs the call. So the calling number is checked to find out if it's an authorized number. If it's authorized, the digital port 2 (D2) is turned ON for one second in order to activate the relay. The authorized numbers list is loaded from the [numbers.txt](http://numbers.txt/) file (located in the microSD card) on Arduino startup or when a new number is added to the list.
 
 When an SMS is received, if the sender is the admin and the message respects this format `SET<+XXXXXXXXXXX>`, the sent number is added to the [numbers.txt](http://numbers.txt/) file (stored in the microSD).
 

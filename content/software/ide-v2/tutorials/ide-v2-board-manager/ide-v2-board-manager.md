@@ -8,31 +8,31 @@ tags:
 author: 'Karl Söderby'
 ---
 
-The board manager is a great tool for installing the necessary cores to use your Arduino boards. In this quick tutorial, we will take a look at how to install one, and choosing the right core for your board! 
+The board manager is a great tool for installing the necessary cores to use your Arduino boards. In this quick tutorial, we will take a look at how to install one, and choosing the right core for your board!
 
-You can easily download the editor from the [Arduino Software page](https://www.arduino.cc/en/software). 
+You can easily download the editor from the [Arduino Software page](https://www.arduino.cc/en/software).
 
 You can also follow the [downloading and installing the Arduino IDE 2.0](/software/ide-v2/tutorials/getting-started/ide-v2-downloading-and-installing) tutorial for more detailed guide on how to install the editor.
 
 ## Requirements
 
-- Arduino IDE 2.0 installed. 
+- Arduino IDE 2.0 installed.
 
 ## Why Use the Board Manager?
 
 The board manager is a tool that is used to install different cores on your local computer. So what is a **core**, and why is it necessary that I install one?
 
-Simply explained, a core is written and designed for specific microcontrollers. Arduino offers several different types of boards, and these boards may also have different types of microcontrollers. 
+Simply explained, a core is written and designed for specific microcontrollers. Arduino offers several different types of boards, and these boards may also have different types of microcontrollers.
 
-For example, an Arduino UNO has an **ATmega328P**, which uses the **AVR core**, while an Arduino Nano 33 IoT has a **SAMD21** microcontroller, where we need to use the **SAMD core**.  
+For example, an Arduino UNO has an **ATmega328P**, which uses the **AVR core**, while an Arduino Nano 33 IoT has a **SAMD21** microcontroller, where we need to use the **SAMD core**.
 
-In conclusion, to use a specific board, we need to install a specific core. 
+In conclusion, to use a specific board, we need to install a specific core.
 
 ## Installing a Core
 
-Installing a core is quick and easy, but let's take a look at what we need to do. 
+Installing a core is quick and easy, but let's take a look at what we need to do.
 
-**1.** Open the Arduino IDE 2.0. 
+**1.** Open the Arduino IDE 2.0.
 
 **2.** With the editor open, let's take a look at the left column. Here, we can see a couple of icons. Let's click the on the **Arduino board** icon.
 
@@ -42,7 +42,7 @@ Installing a core is quick and easy, but let's take a look at what we need to do
 
 ![Navigating the board manager.](assets/installing-a-core-img02.png)
 
-**4.** This will begin an installation process, which in some cases may take several minutes. 
+**4.** This will begin an installation process, which in some cases may take several minutes.
 
 ![Installation may take a few minutes.](assets/installing-a-core-img03.png)
 
@@ -50,7 +50,7 @@ Installing a core is quick and easy, but let's take a look at what we need to do
 
 ![Board is installed.](assets/installing-a-core-img04.png)
 
-Congratulations! You have now successfully downloaded and installed a core on your machine, and you can start using your Arduino board! 
+Congratulations! You have now successfully downloaded and installed a core on your machine, and you can start using your Arduino board!
 
 ### More Tutorials
 

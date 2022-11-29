@@ -3,7 +3,7 @@ title: 'Control Built-in RGB LED over Wi-Fi with Nano RP2040 Connect'
 difficulty: advanced
 compatible-products: [nano-rp2040-connect]
 description: 'Learn how to set up your board as a web server, allowing other clients to connect via browser, to control and monitor data.'
-tags: 
+tags:
   - Access point
   - Wi-Fi
   - IoT
@@ -21,9 +21,9 @@ software:
   - web-editor
 ---
 
-## Introduction 
+## Introduction
 
-The Nano RP2040 Connect features a Wi-Fi module and an RGB LED among many other things. In this tutorial we will take a look at how we turn our board into a web server, and control the built-in RGB through a browser. 
+The Nano RP2040 Connect features a Wi-Fi module and an RGB LED among many other things. In this tutorial we will take a look at how we turn our board into a web server, and control the built-in RGB through a browser.
 
 >**Note:** if you need help setting up your environment to use your Arduino Nano RP2040 board, please refer to [this installation guide](/software/ide-v1/installing-mbed-os-nano-boards).
 
@@ -49,9 +49,9 @@ The goals of this project are:
 
 ## Controlling over Wi-Fi
 
-There are multiple ways we can access our board over Wi-Fi. In this tutorial, we will turn our board into a web server, that will listen for incoming GET requests. 
+There are multiple ways we can access our board over Wi-Fi. In this tutorial, we will turn our board into a web server, that will listen for incoming GET requests.
 
-Simply explained, we will set up our board to connect to a Wi-Fi network, and start hosting a web server on a specific IP address. If we enter this address in the browser of a computer/browser on the same network, we make a request to this server. The server responds with a set of HTML instructions, which can then be viewed in the browser. It works pretty much as the Internet does, but in our example, it will only happen over the local Wi-Fi network. 
+Simply explained, we will set up our board to connect to a Wi-Fi network, and start hosting a web server on a specific IP address. If we enter this address in the browser of a computer/browser on the same network, we make a request to this server. The server responds with a set of HTML instructions, which can then be viewed in the browser. It works pretty much as the Internet does, but in our example, it will only happen over the local Wi-Fi network.
 
 ### Controlling an Arduino Through the Browser
 
@@ -73,9 +73,9 @@ By using this method, we can set up many more buttons that can control different
 
 ## Programming the Board
 
-We will now get to the programming part of this tutorial. 
+We will now get to the programming part of this tutorial.
 
-1. First, let's make sure we have the drivers installed. If we are using the Web Editor, we do not need to install anything. If we are using an offline editor, we need to install it manually. This can be done by navigating to **Tools > Board > Board Manager...**. Here we need to look for the **Arduino Mbed OS Nano Boards** and install it.  
+1. First, let's make sure we have the drivers installed. If we are using the Web Editor, we do not need to install anything. If we are using an offline editor, we need to install it manually. This can be done by navigating to **Tools > Board > Board Manager...**. Here we need to look for the **Arduino Mbed OS Nano Boards** and install it.
 
 2. Now, we need to install the libraries needed. If we are using the Web Editor, there is no need to install anything. If we are using an offline editor, simply go to **Tools > Manage libraries..**, and search for **WiFiNINA** and install it.
 
@@ -93,7 +93,7 @@ We will now get to the programming part of this tutorial.
 - `client.print()` - print something to the client (e.g. html code).
 - `client.stop()` - closes the connection.
 
-The sketch can be found in the snippet below. Upload the sketch to the board. 
+The sketch can be found in the snippet below. Upload the sketch to the board.
 
 ```arduino
 #include <SPI.h>
@@ -197,19 +197,19 @@ void loop() {
           digitalWrite(LEDR, HIGH);
         }
         if (currentLine.endsWith("GET /RL")) {
-          digitalWrite(LEDR, LOW);              
+          digitalWrite(LEDR, LOW);
         }
         if (currentLine.endsWith("GET /GH")) {
-          digitalWrite(LEDG, HIGH);              
+          digitalWrite(LEDG, HIGH);
         }
         if (currentLine.endsWith("GET /GL")) {
-          digitalWrite(LEDG, LOW);           
+          digitalWrite(LEDG, LOW);
         }
         if (currentLine.endsWith("GET /BH")) {
-          digitalWrite(LEDB, HIGH);              
+          digitalWrite(LEDB, HIGH);
         }
         if (currentLine.endsWith("GET /BL")) {
-          digitalWrite(LEDB, LOW);             
+          digitalWrite(LEDB, LOW);
         }
       }
     }
@@ -250,7 +250,7 @@ We now need to copy this IP address and paste it in the browser on a computer/ph
 
 ![Accessing the board from the browser.](assets/rp2040-web-server-img-03.png)
 
-We can now interact with the different buttons. The buttons available are used to control the built-in RGB LED on the Nano RP2040 Connect. There's six buttons in total, three to turn ON the different colors, and three to turn them off.  
+We can now interact with the different buttons. The buttons available are used to control the built-in RGB LED on the Nano RP2040 Connect. There's six buttons in total, three to turn ON the different colors, and three to turn them off.
 
 ### Troubleshoot
 
@@ -263,4 +263,4 @@ If the code is not working, there are some common issues we can troubleshoot:
 
 In this tutorial, we have turned our Nano RP2040 Connect into a web server, which different clients can connect to. We have then used the /GET method in order to change the RGB LED on the board, through a set of buttons accessible from the browser.
 
-This method can be quite useful for turning something ON or OFF remotely, and can be an ideal solution for building smart home applications. You can easily replace the control of the RGB LED with something else, such as controlling a motor, relays or other actuators. 
+This method can be quite useful for turning something ON or OFF remotely, and can be an ideal solution for building smart home applications. You can easily replace the control of the RGB LED with something else, such as controlling a motor, relays or other actuators.

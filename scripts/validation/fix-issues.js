@@ -27,7 +27,7 @@ for(let article of allArticles){
     if(fixUnusedAssets(article)){
         console.log(`✅ Fixed unused assets in '${article.contentFilePath}'.`);
     }
-    
+
     if(replaceItalicEmphasisWithBoldEmphasis(article)){
         console.log(`✅ Fixed italic styling in '${article.contentFilePath}'.`);
     }

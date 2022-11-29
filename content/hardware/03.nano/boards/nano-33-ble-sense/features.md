@@ -9,7 +9,7 @@ The Arduino Nano 33 BLE Sense is a great choice for any beginner, maker or profe
 
 <Feature title="u-blox NINA-B306" image="bluetooth">
 
-  A powerful 2.4 GHz Bluetooth® 5 low energy module from u-blox, with an internal antenna. 
+  A powerful 2.4 GHz Bluetooth® 5 low energy module from u-blox, with an internal antenna.
 
   <FeatureLink title="Datasheet" url="/resources/datasheets/NINA-B3-series.pdf" download blank/>
 </Feature>
@@ -37,7 +37,7 @@ The Arduino Nano 33 BLE Sense is a great choice for any beginner, maker or profe
 
 <Feature title="Proximity and Gesture Detection" image="proximity-sensor">
 
-  The APDS-9960 chip allows for measuring digital proximity and ambient light as well as for detecting RGB colors and gestures. 
+  The APDS-9960 chip allows for measuring digital proximity and ambient light as well as for detecting RGB colors and gestures.
 
   <FeatureLink title="Datasheet" url="https://content.arduino.cc/assets/Nano_BLE_Sense_av02-4191en_ds_apds-9960.pdf" download blank/>
 </Feature>

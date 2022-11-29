@@ -11,7 +11,7 @@
                 "cwd": "${workspaceFolder}${pathSeparator}scripts${pathSeparator}validation"
             },
             "windows": {
-                "command": ".\\content-lint.cmd -p '..\\..\\content\\hardware\\'"                
+                "command": ".\\content-lint.cmd -p '..\\..\\content\\hardware\\'"
             },
             "group": "none",
             "presentation": {
@@ -19,7 +19,7 @@
                 "panel": "dedicated",
                 "clear": true
             },
-            
+
             "problemMatcher": [{
                 "fileLocation": ["relative", "${workspaceFolder}${pathSeparator}scripts${pathSeparator}validation"],
                 "owner": "linter",
@@ -41,7 +41,7 @@
                 "cwd": "${workspaceFolder}${pathSeparator}scripts${pathSeparator}validation"
             },
             "windows": {
-                "command": ".\\content-lint.cmd -p '..\\..\\${relativeFile}' -c -v"                                
+                "command": ".\\content-lint.cmd -p '..\\..\\${relativeFile}' -c -v"
             },
             "group": "none",
             "presentation": {
@@ -70,7 +70,7 @@
                 "cwd": "${workspaceFolder}${pathSeparator}scripts${pathSeparator}validation"
             },
             "windows": {
-                "command": "node '.\\fix-issues.js' -p '..\\..\\${relativeFileDirname}'"                
+                "command": "node '.\\fix-issues.js' -p '..\\..\\${relativeFileDirname}'"
             },
             "group": "none",
             "presentation": {
@@ -104,7 +104,7 @@
                 "cwd": "${workspaceFolder}${pathSeparator}scripts${pathSeparator}datasheet-rendering"
             },
             "windows": {
-                "command": ".\\render-datasheets.cmd"                
+                "command": ".\\render-datasheets.cmd"
             },
             "group": "none",
             "presentation": {
@@ -121,7 +121,7 @@
                 "cwd": "${workspaceFolder}${pathSeparator}scripts${pathSeparator}datasheet-rendering"
             },
             "windows": {
-                "command": ".\\render-datasheets.cmd '..\\..\\${relativeFileDirname}'"                
+                "command": ".\\render-datasheets.cmd '..\\..\\${relativeFileDirname}'"
             },
             "group": "none",
             "presentation": {

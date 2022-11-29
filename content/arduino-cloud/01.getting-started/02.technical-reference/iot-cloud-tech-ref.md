@@ -7,7 +7,7 @@ author: 'Liam Aljundi'
 
 [Arduino IoT Cloud](https://create.arduino.cc/iot/) is a service that allows you to configure, program and deploy your Arduino devices. It is an all-in-one solution for IoT development, where you can build visual dashboards to monitor and control your devices, integrate with other services and much more.
 
-This article summarizes the use of the Arduino Cloud IoT, and includes information regarding requirements, installation, API and general usage of the platform. 
+This article summarizes the use of the Arduino Cloud IoT, and includes information regarding requirements, installation, API and general usage of the platform.
 
 ## Compatible Hardware
 
@@ -44,7 +44,7 @@ Connection via LoRaWAN® is recommended for low-power projects in both remote an
 
 ### GSM / NB-IoT Boards
 
-The MKR GSM 1400 and MKR NB 1500 require a **SIM card** to connect to the cloud, as they communicate over the mobile networks. 
+The MKR GSM 1400 and MKR NB 1500 require a **SIM card** to connect to the cloud, as they communicate over the mobile networks.
 
 - [MKR GSM 1400](https://store.arduino.cc/arduino-mkr-gsm-1400)
 - [MKR NB 1500](https://store.arduino.cc/arduino-mkr-nb-1500-1413)
@@ -353,7 +353,7 @@ A common trick is to add a **`delay(1500);` command after `Serial.begin(9600);`*
 
 We provide two Arduino Iot Cloud APIs:
 
-**1.** The first is the **REST API** which allows you to adding and configuring new Arduino IoT Cloud Devices, Things, Properties, as well as reading historical data. An example of this API's use is making custom dashboards in a local server. A full [documentation of the Arduino IoT Cloud REST API](https://www.arduino.cc/reference/en/iot/api/) is available for advanced users. 
+**1.** The first is the **REST API** which allows you to adding and configuring new Arduino IoT Cloud Devices, Things, Properties, as well as reading historical data. An example of this API's use is making custom dashboards in a local server. A full [documentation of the Arduino IoT Cloud REST API](https://www.arduino.cc/reference/en/iot/api/) is available for advanced users.
 
  The Arduino IoT Cloud REST API can be called just with any **HTTP Client**, or using one of these clients:
   - [Javascript NPM package](https://www.npmjs.com/package/@arduino/arduino-iot-client).

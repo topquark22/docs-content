@@ -102,7 +102,7 @@ void onMeetingRoomChange() {
  uint8_t brightness = map(meetingRoom.getBrightness(), 0, 100, 0, 255);
  if (meetingRoom.getSwitch()) {
    Serial.println(brightness);
-   analogWrite(PIN_MEETING_ROOM, brightness);    
+   analogWrite(PIN_MEETING_ROOM, brightness);
  }
  else{
    analogWrite(PIN_MEETING_ROOM, LOW);
@@ -178,7 +178,7 @@ Let's go through the steps necessary to install the Arduino Alexa Skill. We'll f
 
 ### Part 4: Amazon Alexa Devices Setup
 
-After waiting a little bit, you should see that some devices have been found. 
+After waiting a little bit, you should see that some devices have been found.
 
 ![Tap choose device.](assets/image_13_L31c4LtBzP.jpg)
 
@@ -200,7 +200,7 @@ We can finally start asking things like "Alexa, what's the temperature in the of
 
 ![Current temperature.](assets/alexa_temperature_PyVO85iCZb.jpg)
 
-Have fun playing with Alexa and IoT Cloud. 
+Have fun playing with Alexa and IoT Cloud.
 
 **The** **Arduino** **Team**
 

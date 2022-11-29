@@ -56,14 +56,14 @@ Finally we make the LED blink with the values read from the sensors as a direct 
 
  void loop() {
   // reads the value of the variable resistor
-  value1 = analogRead(joyPin1);  
+  value1 = analogRead(joyPin1);
   // this small pause is needed between reading
   // analog pins, otherwise we get the same value twice
-  delay(100);            
+  delay(100);
   // reads the value of the variable resistor
-  value2 = analogRead(joyPin2);  
+  value2 = analogRead(joyPin2);
 
-  digitalWrite(ledPin, HIGH);          
+  digitalWrite(ledPin, HIGH);
   delay(value1);
   digitalWrite(ledPin, LOW);
   delay(value2);

@@ -8,8 +8,8 @@ tags:
   - Wi-Fi
   - Access Point
 author: 'Karl Söderby'
-libraries: 
-  - name: WiFi101 
+libraries:
+  - name: WiFi101
     url: https://www.arduino.cc/reference/en/libraries/wifi101/
 hardware:
   - hardware/01.mkr/01.boards/mkr-1000-wifi
@@ -59,7 +59,7 @@ We will go through the following steps in order to create a web server on our MK
 - First, we need to initialize the **WiFi101** library.
 - Then, we need to create the credentials of our access point by entering a name for our network.
 - Once the program is running, it will create an access point, start hosting a server, and wait for a client to connect.
-- On our phone or laptop, we can now find the access point in the list of available Wi-Fi networks. 
+- On our phone or laptop, we can now find the access point in the list of available Wi-Fi networks.
 - Once connected to the Wi-Fi, we can connect to the board's specific IP address using our regular browser (e.g. Chrome, Firefox).
 - As long as we are connected, the program detects it, and enters a ```while()``` loop.
 - In the ```while()``` loop, two links are simply printed in HTML format, which is visible in the browser.
@@ -72,7 +72,7 @@ And that is the configuration we will be using in this tutorial. There are a few
 
 ## Programming the Board
 
-1. First, let's make sure we have the drivers installed. If we are using the Web Editor, we do not need to install anything. If we are using an offline editor, we need to install it manually. This can be done by navigating to **Tools > Board > Board Manager...**. Here we need to look for the **Arduino SAMD boards (32-bits ARM Cortex M0+)** and install it. 
+1. First, let's make sure we have the drivers installed. If we are using the Web Editor, we do not need to install anything. If we are using an offline editor, we need to install it manually. This can be done by navigating to **Tools > Board > Board Manager...**. Here we need to look for the **Arduino SAMD boards (32-bits ARM Cortex M0+)** and install it.
 
 2. Now, we need to install the library needed. If we are using the Web Editor, there is no need to install anything. If we are using an offline editor, simply go to **Tools > Manage libraries..**, and search for **WiFi101** and install it.
 

@@ -5,7 +5,7 @@ title: 'Keyboard Serial'
 compatible-products: [due, micro, leonardo]
 difficulty: intermediate
 description: 'Reads a byte from the serial port, and sends back a keystroke.'
-tags: 
+tags:
   - USB
   - Keyboard
   - Serial monitor

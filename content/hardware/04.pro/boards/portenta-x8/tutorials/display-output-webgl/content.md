@@ -31,7 +31,7 @@ The Arduino Portenta X8's processor **NXP® i.MX 8M Mini Processor** can be used
 - [Arduino Portenta X8](https://store.arduino.cc/products/portenta-x8)
 - USB-C® cable (either USB-C® to USB-A or USB-C® to USB-C®)
 - USB-C® hub with HDMI
-- External monitor 
+- External monitor
 - HDMI cable
 
 ## Instructions
@@ -40,7 +40,7 @@ The Arduino Portenta X8's processor **NXP® i.MX 8M Mini Processor** can be used
 
 There are two ways to get the container, either through `foundriesFactories` or downloading the container from [portenta-containers repository](https://github.com/arduino/portenta-containers)
 
-**With Foundries.io:** 
+**With Foundries.io:**
 
 If you use [Foundries.io](https://www.foundries.io) you can switch the current `target` of your device to `x-kiosk-imx8-webgl` by switching the app from a terminal on your computer:
 

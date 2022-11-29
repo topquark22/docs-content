@@ -9,7 +9,7 @@ hardware:
   - hardware/05.pro-solutions/solutions-and-kits/wisgate-edge-pro
 ---
 
-## Introduction 
+## Introduction
 
 This tutorial will show you how to get started with your **WisGate Edge** gateway and how it can be utilized by itself. It will showcase the connection to **The Things Network<sup>TM</sup>**. We will go through the local and online setup.
 
@@ -114,7 +114,7 @@ The authentication Mode "TLS Server & Client token Authentication"
 
 Choose the file with the certificates that you can download from [here](https://letsencrypt.org/certs/isrgrootx1.pem)
 
-And the client token that you can get inside the TTN Gateway's dashboard panel. 
+And the client token that you can get inside the TTN Gateway's dashboard panel.
 
 ![Wisgate gateway configuration with TTN info](assets/ttn-gateway-dashboard-server.png)
 

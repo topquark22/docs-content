@@ -8,7 +8,7 @@ tags:
   - Sound
   - Sensor
 author: Pablo Marquínez
-libraries: 
+libraries:
   - name: Arduino PDM
     url: https://www.arduino.cc/en/Reference/PDM
 hardware:
@@ -67,7 +67,7 @@ You will edit the example from the mbed Core, go to **Examples > PDM > PDMSerial
 
 You can run the sketch to see the result, it will show the data that the microphone is getting on the **Serial Plotter**.
 
-#### Controlling the Blinking LED 
+#### Controlling the Blinking LED
 
 Now that you can get the microphone data, let's control the built-in RGB LED and change the speed of its blinking depending on the values, by changing the blinking time to the last reading of the microphone; the blink will be slow if the sound is loud, and fast if it is quiet.
 
@@ -89,7 +89,7 @@ Or find the full edited sketch in our **Arduino_Pro_Tutorials** library.
     This example code is in the public domain.
   */
 
-  
+
   #include <PDM.h>
 
   // default number of output channels
@@ -104,7 +104,7 @@ Or find the full edited sketch in our **Arduino_Pro_Tutorials** library.
   // Number of audio samples read
   volatile int samplesRead;
 
-  // Blinking 
+  // Blinking
   bool state = false;
   int timeStart = 0;
 
@@ -186,7 +186,7 @@ If you want to test it, the only thing you need to do is to speak or play some s
 
 - In case the Serial Monitor freezes, unplug and then plug the board into your computer again. Now try to upload the sketch.
 - If the sketch is not working, try to double tap the reset button and upload the sketch once again.
-  
+
 ## Conclusion
 
 You have learned how to use the Arduino IDE and OpenMV to get data from the microphone and then use it to change the RGB LED on the board. This can for example be used as an alarm system to wake the board up and take a screenshot with the Camera.

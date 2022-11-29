@@ -3,12 +3,12 @@ title: 'MKR IMU Shield Basics'
 difficulty: intermediate
 compatible-products: [mkr-imu-shield]
 description: 'Learn the basics to get started with the MKR IMU Shield.'
-tags: 
+tags:
   - IMU
   - Accelerometer
   - Gyroscope
 author: 'Karl Söderby'
-libraries: 
+libraries:
   - name: MKRIMU
     url: https://www.arduino.cc/reference/en/libraries/mkrimu/
 hardware:
@@ -20,11 +20,11 @@ software:
   - web-editor
 ---
 
-## Introduction 
+## Introduction
 
 The IMU shield is a great addition to any of your MKR family boards. It comes equipped with the [BNO055](https://www.bosch-sensortec.com/products/smart-sensors/bno055.html) absolute orientation sensor, developed by Bosch.
 
-We will create a simple sketch using the accelerometer, where we will first do a reading on the sensor, and then find a specific threshold that will activate something when reached. 
+We will create a simple sketch using the accelerometer, where we will first do a reading on the sensor, and then find a specific threshold that will activate something when reached.
 
 ## Goals
 
@@ -54,15 +54,15 @@ The accelerometer uses the **x**, **y** and **z** coordinates. For example, they
 
 ### Circuit
 
-The circuit in this tutorial is very easy. Simply mount the MKR IMU Shield on top of an Arduino MKR board. 
+The circuit in this tutorial is very easy. Simply mount the MKR IMU Shield on top of an Arduino MKR board.
 
 ![Simple circuit with board and shield.](assets/MKR_IMU_T1_IMG02.png)
 
 ## Programming the Board
 
-We will now get to the programming part of this tutorial. 
+We will now get to the programming part of this tutorial.
 
-**1.** First, let's make sure we have the drivers installed for the board we are using. If we are using the Web Editor, we do not need to install anything. If we are using an offline editor, we need to install it manually. This can be done by navigating to **Tools > Board > Board Manager...**. Here we need to look for the **Arduino SAMD boards (32-bits ARM Cortex M0+)** and install it. 
+**1.** First, let's make sure we have the drivers installed for the board we are using. If we are using the Web Editor, we do not need to install anything. If we are using an offline editor, we need to install it manually. This can be done by navigating to **Tools > Board > Board Manager...**. Here we need to look for the **Arduino SAMD boards (32-bits ARM Cortex M0+)** and install it.
 
 **2.** Now, we need to install the libraries needed. If we are using the Web Editor, there is no need to install anything. If we are using an offline editor, simply go to **Tools > Manage libraries..**, and search for **MKRIMU** and install it.
 
@@ -131,7 +131,7 @@ After we have uploaded the code to the board, open the Serial Monitor to initial
 
 ![When X, Y or Z thresholds are met, print it.](assets/MKR_IMU_T1_IMG03.png)
 
-The way this program works is that when a threshold is met (either x, y or z), we print something specific in the Serial Monitor. In this example, we simply print a string in the Serial Monitor. 
+The way this program works is that when a threshold is met (either x, y or z), we print something specific in the Serial Monitor. In this example, we simply print a string in the Serial Monitor.
 
 For example, when the value of `z` is larger than 0.9 **or** smaller than -0.9, the condition is met, and `"Z threshold met"` is printed.
 
@@ -140,9 +140,9 @@ For example, when the value of `z` is larger than 0.9 **or** smaller than -0.9, 
 Z threshold met
 ```
 
-This certain threshold is met when the board lies flat on a table, where as if it facing up, the `z` value will be around `1.00`, and if upside down, it will be close to `-1.00` (negative). 
+This certain threshold is met when the board lies flat on a table, where as if it facing up, the `z` value will be around `1.00`, and if upside down, it will be close to `-1.00` (negative).
 
-You can now test out the board by moving it around, and notice how both the `x` and `y` values change and trigger their own conditionals. 
+You can now test out the board by moving it around, and notice how both the `x` and `y` values change and trigger their own conditionals.
 
 ### Troubleshoot
 
@@ -154,6 +154,6 @@ If the code is not working, there are some common issues we can troubleshoot:
 
 ## Conclusion
 
-In this tutorial we have tested out the **accelerometer** on the MKR IMU Shield together with a MKR family board. The shield is a great start for any project involving the use of IMUs, and hopefully this tutorial helped you get started with your own IMU project. 
+In this tutorial we have tested out the **accelerometer** on the MKR IMU Shield together with a MKR family board. The shield is a great start for any project involving the use of IMUs, and hopefully this tutorial helped you get started with your own IMU project.
 
 Feel free to explore the [MKRIMU](https://www.arduino.cc/reference/en/libraries/mkrimu/) library further, and try out some of the many cool functions.

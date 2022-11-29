@@ -8,7 +8,7 @@ tags:
   - Temperature
   - Sensor
 author: 'Jose Garcia'
-libraries: 
+libraries:
   - name: Arduino HTS221
     url: https://www.arduino.cc/en/Reference/ArduinoHTS221
 hardware:
@@ -19,26 +19,26 @@ software:
   - web-editor
 ---
 
-In this tutorial we will use an **Arduino Nano 33 BLE Sense** board to measure and print out the humidity and temperature values of your surroundings, made possible by the embedded **HTS221** sensor. 
+In this tutorial we will use an **Arduino Nano 33 BLE Sense** board to measure and print out the humidity and temperature values of your surroundings, made possible by the embedded **HTS221** sensor.
 
 
 ## Goals
 The goals of this project are:
 - Learn how to output raw sensor data from the Arduino Nano 33 BLE Sense.
 - Use the HTS221 library.
-- Print temperature and humidity values in the Serial Monitor when they are within a certain range. 
+- Print temperature and humidity values in the Serial Monitor when they are within a certain range.
 - Create your own temperature and humidity monitor.
 
 
 
 ## Hardware & Software Needed
 * Arduino Nano 33 BLE Sense.
-* This project uses no external sensors or components. 
-* In this tutorial we will use the [Arduino Create Web Editor](https://create.arduino.cc/editor) to program the board. 
+* This project uses no external sensors or components.
+* In this tutorial we will use the [Arduino Create Web Editor](https://create.arduino.cc/editor) to program the board.
 
 
 
-## The HTS221 Sensor 
+## The HTS221 Sensor
 
 ![The HTS221 sensor.](assets/nano33BS_01_temp_sensor.png)
 
@@ -51,7 +51,7 @@ The HTS221 is an ultra-compact sensor for relative humidity and temperature. We 
 - Temperature accuracy: ± 0.5 °C,15 to +40 °C
 - Temperature range: -40 to 120°C
 
-These types of sensors are used more than you would think and are found in various everyday objects! 
+These types of sensors are used more than you would think and are found in various everyday objects!
 
 Some of the useful ways they are used are seen in the following applications:
 - Air conditioning, heating and ventilation.
@@ -64,15 +64,15 @@ Some of the useful ways they are used are seen in the following applications:
 - Asset and goods tracking.
 
 
-If you want to read more about the HTS221 sensor you can take a look at the <a href="https://content.arduino.cc/assets/Nano_BLE_Sense_HTS221.pdf" target="_blank">datasheet</a>. 
+If you want to read more about the HTS221 sensor you can take a look at the <a href="https://content.arduino.cc/assets/Nano_BLE_Sense_HTS221.pdf" target="_blank">datasheet</a>.
 
 
 
-## Creating the Program 
+## Creating the Program
 
 **1. Setting up**
 
-Let's start by opening the [Arduino Web Editor](https://create.arduino.cc/editor), click on the **Libraries** tab, search for the **HTS221** library, then in **Examples**, open the **ReadSensors** example. Once the sketch is open, rename it as **Temp_Humidity**. 
+Let's start by opening the [Arduino Web Editor](https://create.arduino.cc/editor), click on the **Libraries** tab, search for the **HTS221** library, then in **Examples**, open the **ReadSensors** example. Once the sketch is open, rename it as **Temp_Humidity**.
 
 ![Finding the library in the Web Editor.](assets/nano33BS_01_include_library.png)
 
@@ -89,10 +89,10 @@ Now we will need to modify the code of the example in order to print the tempera
 
 ```arduino
 float old_temp = 0;
-float old_hum = 0; 
+float old_hum = 0;
 ```
 
-In the `setup()`, the  `HTW.begin()` function inside an `if` statement will print a message, as a string, in case the sensor has not been properly initialized. 
+In the `setup()`, the  `HTW.begin()` function inside an `if` statement will print a message, as a string, in case the sensor has not been properly initialized.
 
 Then, in the `loop()`, let's modify the example code by adding the following portion of code after the `HTS.readTemperature()` and `HTS.readHumidity()` functions respectively.
 
@@ -102,7 +102,7 @@ Then, in the `loop()`, let's modify the example code by adding the following por
   if (abs(old_temp - temperature) >= 0.5 || abs(old_hum - humidity) >= 1 )
   {
     old_temp = temperature;
-    old_hum = humidity; 
+    old_hum = humidity;
     // print each of the sensor values
     Serial.print("Temperature = ");
     Serial.print(temperature);
@@ -196,7 +196,7 @@ After you have successfully verified and uploaded the sketch to the board, open 
 ![Temperature & humidity printed in the Serial Monitor.](assets/nano33BS_01_printing_values.png)
 
 
-### Troubleshoot 
+### Troubleshoot
 
 Sometimes errors occur, if the project is not working as intended there are some common issues we can troubleshoot:
 - Missing a bracket or a semicolon.

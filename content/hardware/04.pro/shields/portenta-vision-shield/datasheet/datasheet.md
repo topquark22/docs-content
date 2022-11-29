@@ -9,11 +9,11 @@ type: pro
 # Description
 The Arduino Portenta Vision Shield is an addon board providing machine vision capabilities and additional connectivity to the Portenta family of Arduino boards, designed to meet the needs of industrial automation. The Portenta Vision Shield connects via a high density connector to the Portenta H7 with minimal hardware and software setup.
 
-# Target Areas 
+# Target Areas
 Industry, surveillance
 
 # Features
-Note: This board needs the Arduino Portenta H7 to function.  
+Note: This board needs the Arduino Portenta H7 to function.
 
 -   **Himax HM-01B0 camera module**
     -   Ultra Low Power Image Sensor designed for Always-on vision devices and applications
@@ -21,11 +21,11 @@ Note: This board needs the Arduino Portenta H7 to function.
     -   window, vertical flip and horizontal mirror readout
     -   Programmable black level calibration target, frame size, frame rate, exposure, analog gain (up to 8x) and digital gain (up to 4x)
     -   Automatic exposure and gain control loop with support for 50Hz / 60Hz flicker avoidance
-    -   Motion Detection circuit with programmable ROI and detection threshold with digital output to serve as an interrupt  
+    -   Motion Detection circuit with programmable ROI and detection threshold with digital output to serve as an interrupt
 
     -   **Supported resolutions**
         -   QQVGA (160x120) at 15, 30, 60 and 120 FPS
-        -   QVGA (320x240) at 15, 30 and 60 FPS  
+        -   QVGA (320x240) at 15, 30 and 60 FPS
 
     -   **Power**
         -   \<1.1mW QQVGA resolution at 30FPS,
@@ -59,14 +59,14 @@ Thanks to the low power consumption of the Vision Shield, it is well suited for 
 
 - **Predictive maintenance:** The combination of machine vision and machine learning capabilities of the Vision Shield and the Portenta H7 opens up possibilities for predictive maintenance based on subtle differences in the visual representation of machinery. These capabilities are further enhanced with the two MP34DT05 MEMS microphones included in the Vision Shield.
 
-- **Surveillance:** The Vision Shield is able to provide surveillance capabilities in areas with low Wi-Fi penetration (e.g. warehouse) and large areas (e.g. shopping centres). The OpenMV libraries enable the Vision Shield to identify objects and alert the operator via LoRa® while saving a snapshot on the microSD storage slot. 
+- **Surveillance:** The Vision Shield is able to provide surveillance capabilities in areas with low Wi-Fi penetration (e.g. warehouse) and large areas (e.g. shopping centres). The OpenMV libraries enable the Vision Shield to identify objects and alert the operator via LoRa® while saving a snapshot on the microSD storage slot.
 
 ### Related Products
 The Vision Shield is developed as an add-on shield that requires the Portenta H7.
 
 ## Ratings
 
-### Absolute Maximum 
+### Absolute Maximum
 
 | **Symbol** | **Description**                  | **Min** | **Typ** | **Max** | **Unit** |
 | ---------- | -------------------------------- | ------- | ------- | ------- | -------- |
@@ -96,7 +96,7 @@ The Vision Shield is developed as an add-on shield that requires the Portenta H7
 
 ### Camera Module
 
-The Himax HM-01B0 Module is a very low power camera with 324x324 resolution and a maximum of 60FPS depending on the operating mode. Video data is transferred over a configurable 8-bit interconnect with support for frame and line synchronization. The module delivered with the Vision Shield is the monochrome version. Configuration is achieved via a I2C connection with the Portenta H7. 
+The Himax HM-01B0 Module is a very low power camera with 324x324 resolution and a maximum of 60FPS depending on the operating mode. Video data is transferred over a configurable 8-bit interconnect with support for frame and line synchronization. The module delivered with the Vision Shield is the monochrome version. Configuration is achieved via a I2C connection with the Portenta H7.
 
 HM-01B0 offers very low power image acquisition and provides the possibility to perform motion detection without main processor interaction. “Always-on” operation provides the ability to turn on the main processor when movement is detected with minimal power consumption.
 
@@ -143,7 +143,7 @@ All Arduino IoT enabled products are supported on Arduino IoT Cloud which allows
 
 
 ### Getting Started – OpenMV
-**NOTE!  
+**NOTE!
 ** It is highly recommended that you ensure you have the latest bootloader on your Portenta H7 before loading OpenMV firmware.
 
 Arduino Vision Shield and Portenta H7 are supported under OpenMV. In order to easily use OpenMV download the latest OpenMV IDE **[5] **set up Portenta H7 in boot mode by double tapping reset and connect via the connection button.
@@ -201,10 +201,10 @@ All Arduino boards have a built-in bootloader which allows flashing the board vi
 
 ## Certifications
 ### Declaration of Conformity CE/RED DoC (EU)
-We declare under our sole responsibility that the products above are in conformity with the essential requirements of the following EU Directives and therefore qualify for free movement within markets comprising the European Union (EU) and European Economic Area (EEA). 
+We declare under our sole responsibility that the products above are in conformity with the essential requirements of the following EU Directives and therefore qualify for free movement within markets comprising the European Union (EU) and European Economic Area (EEA).
 
-### Declaration of Conformity to EU RoHS & REACH 191 11/26/2018 
-Arduino boards are in compliance with Directive 2011/65/EU of the European Parliament and Directive 2015/863/EU of the Council of 4 June 2015 on the restriction of the use of certain hazardous substances in electrical and electronic equipment. 
+### Declaration of Conformity to EU RoHS & REACH 191 11/26/2018
+Arduino boards are in compliance with Directive 2011/65/EU of the European Parliament and Directive 2015/863/EU of the Council of 4 June 2015 on the restriction of the use of certain hazardous substances in electrical and electronic equipment.
 
 | **Substance**                          | **Maximum Limit (ppm)** |
 | -------------------------------------- | ----------------------- |
@@ -219,15 +219,15 @@ Arduino boards are in compliance with Directive 2011/65/EU of the European Parli
 | Dibutyl phthalate (DBP)                | 1000                    |
 | Diisobutyl phthalate (DIBP)            | 1000                    |
 
-Exemptions : No exemptions are claimed. 
+Exemptions : No exemptions are claimed.
 
 Arduino Boards are fully compliant with the related requirements of European Union Regulation (EC) 1907 /2006 concerning the Registration, Evaluation, Authorization and Restriction of Chemicals (REACH). We declare none of the SVHCs (https://echa.europa.eu/web/guest/candidate-list-table), the Candidate List of Substances of Very High Concern for authorization currently released by ECHA, is present in all products (and also package) in quantities totaling in a concentration equal or above 0.1%. To the best of our knowledge, we also declare that our products do not contain any of the substances listed on the "Authorization List" (Annex XIV of the REACH regulations) and Substances of Very High Concern (SVHC) in any significant amounts as specified by the Annex XVII of Candidate list published by ECHA (European Chemical Agency) 1907 /2006/EC.
 
-### Conflict Minerals Declaration 
-As a global supplier of electronic and electrical components, Arduino is aware of our obligations with regards to laws and regulations regarding Conflict Minerals, specifically the Dodd-Frank Wall Street Reform and Consumer Protection Act, Section 1502. Arduino does not directly source or process conflict minerals such as Tin, Tantalum, Tungsten, or Gold. Conflict minerals are contained in our products in the form of solder, or as a component in metal alloys. As part of our reasonable due diligence Arduino has contacted component suppliers within our supply chain to verify their continued compliance with the regulations. Based on the information received thus far we declare that our products contain Conflict Minerals sourced from conflict-free areas. 
+### Conflict Minerals Declaration
+As a global supplier of electronic and electrical components, Arduino is aware of our obligations with regards to laws and regulations regarding Conflict Minerals, specifically the Dodd-Frank Wall Street Reform and Consumer Protection Act, Section 1502. Arduino does not directly source or process conflict minerals such as Tin, Tantalum, Tungsten, or Gold. Conflict minerals are contained in our products in the form of solder, or as a component in metal alloys. As part of our reasonable due diligence Arduino has contacted component suppliers within our supply chain to verify their continued compliance with the regulations. Based on the information received thus far we declare that our products contain Conflict Minerals sourced from conflict-free areas.
 ## FCC Caution
 
-Any Changes or modifications not expressly approved by the party responsible for compliance could void the user's authority to operate the equipment. 
+Any Changes or modifications not expressly approved by the party responsible for compliance could void the user's authority to operate the equipment.
 This device complies with part 15 of the FCC Rules. Operation is subject to the following two conditions: (1) This device may not cause harmful interference, and (2) this device must accept any interference received, including interference that may cause undesired operation.
 FCC RF Radiation Exposure Statement:
 
@@ -266,7 +266,7 @@ FCC RF Radiation Exposure Statement:
 
 **Important:** The operating temperature of the EUT can’t exceed 85℃ and shouldn’t be lower than -40℃.
 
-Hereby, Arduino S.r.l. declares that this product is in compliance with essential requirements and other relevant provisions of Directive 201453/EU. This product is allowed to be used in all EU member states. 
+Hereby, Arduino S.r.l. declares that this product is in compliance with essential requirements and other relevant provisions of Directive 201453/EU. This product is allowed to be used in all EU member states.
 
 | Frequency bands | Maximum Output Power (ERP) |
 | --------------- | -------------------------- |

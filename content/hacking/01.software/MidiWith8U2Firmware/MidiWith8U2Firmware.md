@@ -1,7 +1,7 @@
 ---
 title: 'MIDI Note Player using the MIDI firmware for the 8U2 (Uno and Mega2560 only)'
 description: 'This tutorial shows how to play MIDI notes from an Arduino programmed to appear as a general MIDI device.'
-tags: 
+tags:
   - MIDI
 ---
 This tutorial shows how to play MIDI notes from an Arduino programmed to appear as a general MIDI device. This tutorial is only applicable to Arduinos with the 8U2 chip, the UNO and Mega2560 boards. This will not work with earlier models that use the FTDI chip (Duemilanove and previous).
@@ -20,12 +20,12 @@ Before programming the 8U2 firmware, you will need to program the Atmega 328 on 
 ```
 /*
  MIDI note player
- 
+
  This sketch shows how to use the serial transmit pin (pin 1) to send MIDI note data.
  If this circuit is connected to a MIDI synth, it will play
  the notes F#-0 (0x1E) to F#-5 (0x5A) in sequence.
 
- 
+
  The circuit:
  * digital in 1 connected to MIDI jack pin 5
  * MIDI jack pin 2 connected to ground
@@ -37,9 +37,9 @@ Before programming the 8U2 firmware, you will need to program the Atmega 328 on 
  by Tom Igoe
 
  This example code is in the public domain.
- 
+
  http://www.arduino.cc/en/Tutorial/Midi
- 
+
  */
 
 void setup() {

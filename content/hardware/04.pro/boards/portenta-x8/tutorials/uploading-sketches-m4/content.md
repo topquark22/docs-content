@@ -73,7 +73,7 @@ This work thanks to the following services:
 * **monitor-m4-elf-file.service**: this service monitors the directory `/tmp/arduino/m4-user-sketch.elf` and each time it detects a new file it will proceed to flash the M4 using  `openOCD` with the sketch that has been pushed.
 
 ## Conclusion
-In this tutorial you have learned how to upload a sketch to the M4 core. Now for example you are able to connect an I<sup>2</sup>C sensor and interact with it. 
+In this tutorial you have learned how to upload a sketch to the M4 core. Now for example you are able to connect an I<sup>2</sup>C sensor and interact with it.
 
 ## Troubleshooting
 

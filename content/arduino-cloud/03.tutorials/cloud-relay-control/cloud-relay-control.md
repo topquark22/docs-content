@@ -26,7 +26,7 @@ The goals of this project are:
 - [Arduino IoT Cloud](https://create.arduino.cc/iot/)
 - [Arduino MKR WiFi 1010](https://store.arduino.cc/mkr-wifi-1010)
 - [Arduino MKR Relay Shield](https://store.arduino.cc/arduino-mkr-relay-proto-shield)
-- Arduino IoT Cloud Remote app (optional). 
+- Arduino IoT Cloud Remote app (optional).
   - [Play Store](https://play.google.com/store/apps/details?id=cc.arduino.cloudiot&hl=en&gl=US)
   - [Apple Store](https://apps.apple.com/us/app/arduino-iot-cloud-remote/id1514358431)
 
@@ -36,7 +36,7 @@ The goals of this project are:
 
 ## Step 1: Setting up the Arduino IoT Cloud
 
-To do so, we will first need to configure our MKR 1010 device in the Arduino IoT Cloud. Let's start by navigating to the <a href="https://create.arduino.cc/iot/" target="_blank">Arduino IoT Cloud</a>. 
+To do so, we will first need to configure our MKR 1010 device in the Arduino IoT Cloud. Let's start by navigating to the <a href="https://create.arduino.cc/iot/" target="_blank">Arduino IoT Cloud</a>.
 
 >**Note:** You will need a Arduino account to use the Arduino IoT Cloud. If you do not have one, you will be directed to the account registration.
 
@@ -51,7 +51,7 @@ You will now have an option of either configuring a new Arduino device, or a thi
 ![Selecting the type of device.](assets/device_setup_1.png)
 
 At this point, you will need to connect your cloud compatible board to your computer. You will also need to have installed the Arduino Create Agent. If if it is not installed, the set up wizard will ask you to install it. Your device should now show up, and you will need to click on the **"Configure"**
-button. 
+button.
 
 ![Device found.](assets/device_setup_2.png)
 
@@ -59,7 +59,7 @@ You will now be asked to name your device. In this case, a name was randomly gen
 
 ![Naming the device.](assets/device_setup_3.png)
 
-After clicking on next, the board will start to configure. This process may take a few minutes. 
+After clicking on next, the board will start to configure. This process may take a few minutes.
 
 ![The configuration process.](assets/device_setup_4.png)
 
@@ -99,7 +99,7 @@ Let's add another variable, but let's name this one **relay_2**, which is also a
 
 ![Adding the second variable.](assets/cloud-relay-control-img03.png)
 
-Great, now we have two **boolean variables** named **relay_1** and **relay_2**. 
+Great, now we have two **boolean variables** named **relay_1** and **relay_2**.
 
 ### Adding your network details
 
@@ -115,9 +115,9 @@ Once we are finished with all the configurations, we can move on to creating the
 
 ![Open the "Sketch" tab to edit the sketch.](assets/cloud-relay-control-img05.png)
 
-The sketch we are going to create is very simple. As most of the code is already generated through the configurations we made, we only need to make a few additions: configuring the relay pins as output, and creating two conditionals. 
+The sketch we are going to create is very simple. As most of the code is already generated through the configurations we made, we only need to make a few additions: configuring the relay pins as output, and creating two conditionals.
 
-You can find the full sketch below, which we need to upload to our board. 
+You can find the full sketch below, which we need to upload to our board.
 
 ```arduino
 #include "thingProperties.h"
@@ -126,7 +126,7 @@ void setup() {
   // Initialize serial and wait for port to open:
   Serial.begin(9600);
   // This delay gives the chance to wait for a Serial Monitor without blocking if none is found
-  delay(1500); 
+  delay(1500);
 
   pinMode(1, OUTPUT);
   pinMode(2, OUTPUT);
@@ -150,7 +150,7 @@ void setup() {
 
 void loop() {
   ArduinoCloud.update();
-  // Your code here 
+  // Your code here
 
 }
 
@@ -199,15 +199,15 @@ Now, repeat the same process, but instead link it to the **relay_2** variable. A
 
 ![The complete dashboard.](assets/cloud-relay-control-img10.png)
 
-Now you can simply test it out by turning ON or OFF the switches. You should hear the relays on your **MKR Relay Shield** making clicking noises. That means it is working! 
+Now you can simply test it out by turning ON or OFF the switches. You should hear the relays on your **MKR Relay Shield** making clicking noises. That means it is working!
 
 ## Step 3: Connecting a component with higher voltage
 
->**Note:** Working with higher voltage components should be done with extreme caution. Do not alter the circuit while it is connected to a higher power source, and do not connect any high voltage components directly to the Arduino. 
+>**Note:** Working with higher voltage components should be done with extreme caution. Do not alter the circuit while it is connected to a higher power source, and do not connect any high voltage components directly to the Arduino.
 
 Up until now, we have simply activated the relays, but we still haven't connected anything to them. While we are not going to go in-depth on how to connect high power components, we can take a look at how we could connect something that operates on maximum 24V.
 
-Let's begin with the high power pins on the MKR Relay Shield. There are **six in total** for both relays, where there are three different type of connections: NO, COM and NC. 
+Let's begin with the high power pins on the MKR Relay Shield. There are **six in total** for both relays, where there are three different type of connections: NO, COM and NC.
 
 ![MKR Relay Shield's high power pins.](assets/MKRRELAY_T1_IMG06.png)
 
@@ -233,7 +233,7 @@ digitalWrite(relay_1, HIGH)
 
 ## Conclusion
 
-In this tutorial, we have gone through the necessary steps to connect a MKR WiFi 1010 + a MKR Relay Shield to the Arduino IoT Cloud. The relays can now be used to trigger higher voltage components, such as smaller heaters, fans or light bulbs. 
+In this tutorial, we have gone through the necessary steps to connect a MKR WiFi 1010 + a MKR Relay Shield to the Arduino IoT Cloud. The relays can now be used to trigger higher voltage components, such as smaller heaters, fans or light bulbs.
 
 ### More tutorials
 

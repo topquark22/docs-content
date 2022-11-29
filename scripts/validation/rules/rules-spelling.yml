@@ -60,7 +60,7 @@
   type: warning
   format: markdown
   errorMessage: "'Megabyte' should be abbreviated as MB, 'Megabit' as Mb."
-    
+
 # GB / Gb spelling
 - regex: "(?<!\\S)\\b\\d+\\s?g[bB]\\b"
   shouldMatch: false

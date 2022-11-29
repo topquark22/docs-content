@@ -1,7 +1,7 @@
 ---
 title: 'Arduino Preferences'
 description: 'The Arduino preferences file contains many options for customizing the way Arduino compiles and upload sketches.'
-tags: 
+tags:
   - Preferences
 ---
 

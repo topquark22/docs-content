@@ -3,7 +3,7 @@ title: 'Calibrate Sensor Input'
 compatible-products: [all-boards]
 difficulty: intermediate
 description: 'Define a maximum and minimum for expected analog sensor values.'
-tags: 
+tags:
   - Analog
   - Input
   - Map

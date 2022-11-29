@@ -3,7 +3,7 @@ title: 'Keyboard Logout'
 compatible-products: [due, micro, leonardo]
 difficulty: intermediate
 description: 'Logs out the current user with key commands.'
-tags: 
+tags:
   - USB
   - Keyboard
   - Pushbutton

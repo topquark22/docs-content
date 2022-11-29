@@ -2,7 +2,7 @@
 title: 'Introduction to the Serial Peripheral Interface'
 author: Heather Dewey-Hagborg
 description: 'Learn about the SPI protocol'
-tags: 
+tags:
   - SPI
   - Data storage
 software:

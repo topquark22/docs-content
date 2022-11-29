@@ -17,9 +17,9 @@ LIke all Arduino boards, the Arduino Fio can be programmed with the Arduino soft
 
 The Fio does not have a built-in USB-to-serial adaptor, so if you're going to program it over USB, you'll need an adapter. Either of these will work well:
 
-[![](assets/FTDI_cable.jpg)Adafruit.com](http://www.adafruit.com/index.php?main%5Fpage=product%5Finfo&cPath=33&products%5Fid=70&zenid=820efea6fe32ea04a0a7879262db3e54) 
+[![](assets/FTDI_cable.jpg)Adafruit.com](http://www.adafruit.com/index.php?main%5Fpage=product%5Finfo&cPath=33&products%5Fid=70&zenid=820efea6fe32ea04a0a7879262db3e54)
 
-[![Sparkfun's FTDI Basic Breakout adaptor. This has the same pin configuration as the FTDI cable](assets/FTDI_adaptor.jpg)](http://www.sparkfun.com/commerce/product%5Finfo.php?products%5Fid=8772)  
+[![Sparkfun's FTDI Basic Breakout adaptor. This has the same pin configuration as the FTDI cable](assets/FTDI_adaptor.jpg)](http://www.sparkfun.com/commerce/product%5Finfo.php?products%5Fid=8772)
 
 To program the Fio using either FTDI cable or an adaptor with the same pin configuration, attach a row of male pin headers to the cable or adaptor like so:
 
@@ -29,7 +29,7 @@ To program the Fio using either FTDI cable or an adaptor with the same pin confi
 
 Then connect the headers to the FTDI pins on the Fio:
 
-![Using the adaptor to program a Fio](assets/fio_wired_programming.jpg) 
+![Using the adaptor to program a Fio](assets/fio_wired_programming.jpg)
 
 ![Using the FTDI cable to program a Fio](assets/FTDI_wired_programming.jpg)
 
@@ -49,7 +49,7 @@ When your cable is connected to the Fio, open the Arduino programming environmen
 
 ### Wireless Programming
 
-*This tutorial borrows from [Xbee Adapter - wireless Arduino programming](http://www.ladyada.net/make/xbee/arduino.html) by Limor Fried* 
+*This tutorial borrows from [Xbee Adapter - wireless Arduino programming](http://www.ladyada.net/make/xbee/arduino.html) by Limor Fried*
 
 In order to upload sketches wirelessly using XBee radios, you'll need the following:
 
@@ -78,12 +78,12 @@ The settings for the two radios are as follows:
 |`ID`|user's preference (0000 to FFFF)|user's preference (0000 to FFFF)|
 |`MY`|User's preference, e.g. 0000|user's preference, e.g. 0001|
 |`DL`|FFFF or Fio's MY value |programmer's MY value|
-|`D3`|3|5| 
+|`D3`|3|5|
 |`IC`|8|not set|
 |`RR`|3|not set|
 |`IU`|not set|0|
 |`IA`|not set|FFFF|
-|`RO`|10|10 
+|`RO`|10|10
 
 **Note:** If you set the programmer's destination address (DL) to FFFF, it will re-program all Fios in its PAN ID. To program one Fio at a time wirelessly while others are on, set the programmer's DL to that Fio's MY address.
 
@@ -110,19 +110,19 @@ You can configure your radios using a terminal application, or using X-CTU on Wi
 
 #### Configuring the radios using a serial terminal application
 
-If you prefer to set your settings manually, you can set them using any Serial terminal application, such as [CoolTerm](http://freeware.the-meiers.org/). Connect the adapter to your computer, and open its serial port at 9600 bps using your favorite serial terminal application. 
+If you prefer to set your settings manually, you can set them using any Serial terminal application, such as [CoolTerm](http://freeware.the-meiers.org/). Connect the adapter to your computer, and open its serial port at 9600 bps using your favorite serial terminal application.
 
 Set your terminal application's termination string to be a carriage return (ASCI 0x0D) only. Then open the port, and type:
 
-`+++` 
+`+++`
 
 The XBee will respond:
 
-`OK` 
+`OK`
 
 For the programmer radio, type:
 
-`ATRE,BD6,ID1234,MY0,DLFFFF,D33,IC8, RR3,RO10,WR` 
+`ATRE,BD6,ID1234,MY0,DLFFFF,D33,IC8, RR3,RO10,WR`
 
 The XBee will respond:
 
@@ -140,7 +140,7 @@ OK
 
 For the Fio radio, type:
 
-`ATRE,BD6,ID1234,MY1,DL0,D35,IU0,IAFFFF,RO10,WR` 
+`ATRE,BD6,ID1234,MY1,DL0,D35,IU0,IAFFFF,RO10,WR`
 
 The XBee will respond:
 
@@ -158,7 +158,7 @@ OK
 ```
 
 That's it! Now connect the Fio radio to your Fio, leave the programming radio in the XBee adapter, and you're ready to upload sketches to your Fio.
-  
+
 ## Uploading sketches from an Arduino IDE to a Fio board
 
 Uploading sketches to the Fio is similar to other Arduino boards.
@@ -167,7 +167,7 @@ Uploading sketches to the Fio is similar to other Arduino boards.
 **2.** Choose a proper serial port in **Tools/Serial Port**
 **3.** Write a sketch and press the Upload button
 
-As you upload, you should see the green RSSI light on the Fio light up. If you're using an XBee Explorer, you'll also see the TX and RX lights on it flicker as the sketch uploads. 
+As you upload, you should see the green RSSI light on the Fio light up. If you're using an XBee Explorer, you'll also see the TX and RX lights on it flicker as the sketch uploads.
 
 If the Fio does not respond, here are the most common causes of error:
 
@@ -177,6 +177,6 @@ If the Fio does not respond, here are the most common causes of error:
 
 When in doubt, check the Fio by programming it over a wired connection as described above.
 
-When your'e ready to start writing sketches for the Arduino Fio, here are some [programming tips](./../ArduinoBoardFioTips/content.md) that will make your life easier.  
-  
-*Last revision 2018/02/10 by SM*   
+When your'e ready to start writing sketches for the Arduino Fio, here are some [programming tips](./../ArduinoBoardFioTips/content.md) that will make your life easier.
+
+*Last revision 2018/02/10 by SM*

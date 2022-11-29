@@ -1,7 +1,7 @@
 ---
 title: 'Displaying on-Board Sensor Values on a WebBLE Dashboard.'
 coverImage: hero-banner.svg
-tags: 
+tags:
   - Bluetooth®
   - WEB-BLE
   - Bluetooth® Low Energy
@@ -27,9 +27,9 @@ The Arduino Nicla Sense ME can give you information about the environment such a
 
 Thanks to the ANNA B112 Bluetooth® chip and the libraries developed for the Nicla Sense ME, you can easily stream data over Bluetooth® to a device of your choice. By using WebBLE, no additional software other than a compatible browser (Google Chrome is recommended) is required.
 
-To demonstrate this, we prepared a simple sketch and hosted a dashboard so you can try it yourself. 
+To demonstrate this, we prepared a simple sketch and hosted a dashboard so you can try it yourself.
 
-A [previous version](https://arduino.github.io/ArduinoAI/BLESense-test-dashboard/) of this dashboard was developed to be used with the Arduino® Nano 33 BLE. You can see a video that shows how it looks [here](https://www.facebook.com/official.arduino/videos/ble-sense-test-dashboard/336762167617547/). 
+A [previous version](https://arduino.github.io/ArduinoAI/BLESense-test-dashboard/) of this dashboard was developed to be used with the Arduino® Nano 33 BLE. You can see a video that shows how it looks [here](https://www.facebook.com/official.arduino/videos/ble-sense-test-dashboard/336762167617547/).
 
 In this tutorial we will focus on the Arduino® Nicla Sense ME.
 
@@ -88,7 +88,7 @@ If you use a local IDE, you can copy & paste the following sketch:
 
   BLEFloatCharacteristic bsecCharacteristic(BLE_SENSE_UUID("9001"), BLERead);
   BLEIntCharacteristic  co2Characteristic(BLE_SENSE_UUID("9002"), BLERead);
-  BLEUnsignedIntCharacteristic gasCharacteristic(BLE_SENSE_UUID("9003"), BLERead); 
+  BLEUnsignedIntCharacteristic gasCharacteristic(BLE_SENSE_UUID("9003"), BLERead);
 
   // String to calculate the local and device name
   String name;
@@ -164,7 +164,7 @@ If you use a local IDE, you can copy & paste the following sketch:
 
     // Disconnect event handler
     BLE.setEventHandler(BLEDisconnected, blePeripheralDisconnectHandler);
-    
+
     // Sensors event handlers
     temperatureCharacteristic.setEventHandler(BLERead, onTemperatureCharacteristicRead);
     humidityCharacteristic.setEventHandler(BLERead, onHumidityCharacteristicRead);

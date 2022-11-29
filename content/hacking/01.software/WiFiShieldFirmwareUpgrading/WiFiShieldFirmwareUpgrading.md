@@ -34,7 +34,7 @@ sudo port selfupdate
 
 To update dfu-programmer and other ports to the most recent version:
 
-``` 
+```
 sudo port upgrade outdated
 ```
 

@@ -36,15 +36,15 @@ The Arduino Diecimila is a microcontroller board based on the ATmega168 ([datash
 
 ### Schematic & Reference Design
 
-EAGLE files: [arduino-diecimila-reference-design.zip](//www.arduino.cc/en/uploads/Main/arduino-diecimila-reference-design.zip) 
+EAGLE files: [arduino-diecimila-reference-design.zip](//www.arduino.cc/en/uploads/Main/arduino-diecimila-reference-design.zip)
 
-Schematic: [Arduino-Diecimila-schematic.pdf](//www.arduino.cc/en/uploads/Main/Arduino-Diecimila-schematic.pdf) 
+Schematic: [Arduino-Diecimila-schematic.pdf](//www.arduino.cc/en/uploads/Main/Arduino-Diecimila-schematic.pdf)
 
-*Note that R2 is not mounted and that R3 has been replaced by a 100 nano-farad capacitor.* 
+*Note that R2 is not mounted and that R3 has been replaced by a 100 nano-farad capacitor.*
 
 ### Power
 
-The Arduino Diecimila can be powered via the USB connection or with an external power supply. The power source is selected by the PWR\_SEL jumper: to power the board from the USB connection, place it on the two pins closest to the USB connector, for an external power supply, the two pins closest to the external power jack. 
+The Arduino Diecimila can be powered via the USB connection or with an external power supply. The power source is selected by the PWR\_SEL jumper: to power the board from the USB connection, place it on the two pins closest to the USB connector, for an external power supply, the two pins closest to the external power jack.
 
 External (non-USB) power can come either from an AC-to-DC adapter (wall-wart) or battery. The adapter can be connected by plugging a 2.1mm center-positive plug into the board's power jack. Leads from a battery can be inserted in the Gnd and Vin pin headers of the POWER connector. A low dropout regulator provides improved energy efficiency.
 
@@ -100,13 +100,13 @@ You can also bypass the bootloader and program the ATmega168 through the ICSP (I
 
 ### Automatic (Software) Reset
 
-Rather then requiring a physical press of the reset button before an upload, the Arduino Diecimila is designed in a way that allows it to be reset by software running on a connected computer. One of the hardware flow control lines (DTR) of the FT232RL is connected to the reset line of the ATmega168 via a 100 nanofarad capacitor. When this line is asserted (taken low), the reset line drops long enough to reset the chip. Version 0009 of the Arduino software uses this capability to allow you to upload code by simply pressing the upload button in the Arduino environment. This means that the bootloader can have a shorter timeout, as the lowering of DTR can be well-coordinated with the start of the upload. 
+Rather then requiring a physical press of the reset button before an upload, the Arduino Diecimila is designed in a way that allows it to be reset by software running on a connected computer. One of the hardware flow control lines (DTR) of the FT232RL is connected to the reset line of the ATmega168 via a 100 nanofarad capacitor. When this line is asserted (taken low), the reset line drops long enough to reset the chip. Version 0009 of the Arduino software uses this capability to allow you to upload code by simply pressing the upload button in the Arduino environment. This means that the bootloader can have a shorter timeout, as the lowering of DTR can be well-coordinated with the start of the upload.
 
 This setup has other implications. When the Diecimila is connected to either a computer running Mac OS X or Linux, it resets each time a connection is made to it from software (via USB). For the following half-second or so, the bootloader is running on the Diecimila. While it is programmed to ignore malformed data (i.e. anything besides an upload of new code), it will intercept the first few bytes of data sent to the board after a connection is opened. If a sketch running on the board receives one-time configuration or other data when it first starts, make sure that the software with which it communicates waits a second after opening the connection and before sending this data.
 
 ### USB Overcurrent Protection
 
-The Arduino Diecimila has a resettable polyfuse that protects your computer's USB ports from shorts and overcurrent. Although most computers provide their own internal protection, the fuse provides an extra layer of protection. If more than 500 mA is applied to the USB port, the fuse will automatically break the connection until the short or overload is removed. 
+The Arduino Diecimila has a resettable polyfuse that protects your computer's USB ports from shorts and overcurrent. Although most computers provide their own internal protection, the fuse provides an extra layer of protection. If more than 500 mA is applied to the USB port, the fuse will automatically break the connection until the short or overload is removed.
 
 ### Physical Characteristics
 

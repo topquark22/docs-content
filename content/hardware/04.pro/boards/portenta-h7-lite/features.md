@@ -1,6 +1,6 @@
 <FeatureDescription>
 
-The **Portenta H7 Lite** is very similar to the Portenta H7, that simultaneously can run high level code along with real time tasks thanks to its two processors. It is, for example, possible to execute Arduino compiled code along with MicroPython one and have both cores to communicate with one another. However, the H7 Lite is a low-cost board with H7 functionalities that can be configured to specific use cases. 
+The **Portenta H7 Lite** is very similar to the Portenta H7, that simultaneously can run high level code along with real time tasks thanks to its two processors. It is, for example, possible to execute Arduino compiled code along with MicroPython one and have both cores to communicate with one another. However, the H7 Lite is a low-cost board with H7 functionalities that can be configured to specific use cases.
 </FeatureDescription>
 
 

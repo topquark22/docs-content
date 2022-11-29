@@ -3,9 +3,9 @@ title: 'Memsic 2125 Accelerometer'
 compatible-products: [all-boards]
 difficulty: beginner
 description: 'Learn how to read data from the Memsic 2125 Two-axis accelerometer.'
-tags: 
+tags:
   - Sensors
-  - Input 
+  - Input
   - Accelerometer
 ---
 

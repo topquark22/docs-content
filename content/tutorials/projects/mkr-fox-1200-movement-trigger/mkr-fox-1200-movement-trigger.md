@@ -20,7 +20,7 @@ source: "https://create.arduino.cc/projecthub/45374/mkr-fox-1200-movement-trigge
 
 ### Background
 
-This project relies on the geolocation feature of the Sigfox network. 
+This project relies on the geolocation feature of the Sigfox network.
 
 The location computation is based on the data from the Sigfox infrastructure, coming from several replicas of the same messages sent by a device and received by different base stations. The method used is not based on flight time or signal Doppler shift, but on the signal strength (RSSI - Received Signal Stren- gth Indicator) using a probability model (the location with the highest probability is selected). The Sigfox geolocation service will evolve in 2017 to increase its accuracy by using machine learning technology.
 
@@ -34,17 +34,17 @@ Another key technology is the micromachined accelerometer inside the MMA8451 dev
 
 ### Build It
 
-Connect the 3 axis to the MKR FOX 1200 as shown: 
+Connect the 3 axis to the MKR FOX 1200 as shown:
 
 ![Connect the accelerometer.](assets/img_0187_ahiTIvQTm8.JPG)
 
 ![Done!](assets/img_0188_Bk1ic7SkYi.JPG)
 
-Connect a jumper between pin 14 and pin 0: 
+Connect a jumper between pin 14 and pin 0:
 
 ![](assets/img_0190_OKMcSlGMMp.JPG)
 
-Put in a nice box: 
+Put in a nice box:
 
 ![Put the components in a box.](assets/img_0191_LoOvn21wF7.JPG)
 

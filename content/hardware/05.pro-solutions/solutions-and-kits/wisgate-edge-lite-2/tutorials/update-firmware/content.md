@@ -9,7 +9,7 @@ hardware:
   - hardware/05.pro-solutions/solutions-and-kits/wisgate-edge-pro
 ---
 
-## Introduction 
+## Introduction
 
 This tutorial will show you how to update the firmware of your **WisGate Edge** gateway.
 
@@ -28,7 +28,7 @@ The goals of this article are:
 
 ## Requirements
 
-We assume that you already connected the gateway to your local network, and you can connect to it using your favourite method.   
+We assume that you already connected the gateway to your local network, and you can connect to it using your favourite method.
 
 You can check out the needed steps on the [Getting Started tutorial](./getting-started).
 

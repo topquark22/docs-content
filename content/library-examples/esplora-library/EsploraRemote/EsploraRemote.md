@@ -35,7 +35,7 @@ Only your Arduino Espora is needed for this example.
 
 ![Esplora board](./assets/Esplora_Slave.png)
 
- 
+
 
 ## Code
 

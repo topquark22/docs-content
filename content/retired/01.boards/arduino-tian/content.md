@@ -31,9 +31,9 @@ You can find in the [Getting Started section](https://www.arduino.cc/en/Guide/Ho
 
 The Arduino Tian is open-source hardware! You can build your own board using the following files:
 
-[DSN FILES IN .ZIP](https://www.arduino.cc/en/uploads/Main/TIAN-V03-20160219.DSN.zip) 
+[DSN FILES IN .ZIP](https://www.arduino.cc/en/uploads/Main/TIAN-V03-20160219.DSN.zip)
 
-[SCHEMATICS IN .PDF](https://www.arduino.cc/en/uploads/Main/TIAN-V03-20160219.pdf) 
+[SCHEMATICS IN .PDF](https://www.arduino.cc/en/uploads/Main/TIAN-V03-20160219.pdf)
 
 ### Power
 

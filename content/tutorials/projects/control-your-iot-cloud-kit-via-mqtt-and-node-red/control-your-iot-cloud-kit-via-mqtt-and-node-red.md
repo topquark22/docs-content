@@ -21,13 +21,13 @@ source: "https://create.arduino.cc/projecthub/officine-innesto/control-your-iot-
 
 ## About This Project
 
-We are going to make our MKR IoT Bundle connect to a local server (this very same technology could be hosted on AWS or wherever). 
+We are going to make our MKR IoT Bundle connect to a local server (this very same technology could be hosted on AWS or wherever).
 
-The connection is going to be held through [MQTT](https://en.wikipedia.org/wiki/MQTT), a [lightweight message protocol developed for machine to machine communication](http://mqtt.org/). 
+The connection is going to be held through [MQTT](https://en.wikipedia.org/wiki/MQTT), a [lightweight message protocol developed for machine to machine communication](http://mqtt.org/).
 
 In order to do this we need to do some work on the server side. I'm using a Raspberry PI with Node-RED on it, but you can host an instance of Node-RED on Windows/MAC/Linux or on the Cloud (Bluemix, AWS, etc..).
 
-This tutorial heavily relies on [Interfacing Arduino MKR or ESP via MQTT - Node-RED 101 ](https://www.hackster.io/officine/interfacing-arduino-mkr-or-esp-via-mqtt-node-red-101-4833bc)we did back in January. We are touching all the points and adding the data visualisation, but don't hesitate to go through that tutorial in order to see all the steps in the setup of the cloud instance. 
+This tutorial heavily relies on [Interfacing Arduino MKR or ESP via MQTT - Node-RED 101 ](https://www.hackster.io/officine/interfacing-arduino-mkr-or-esp-via-mqtt-node-red-101-4833bc)we did back in January. We are touching all the points and adding the data visualisation, but don't hesitate to go through that tutorial in order to see all the steps in the setup of the cloud instance.
 
 ### The Server
 
@@ -41,16 +41,16 @@ Once you are done, copy the flow you find in the sowftare section in your palett
 ![I tried my best to make the dashboard fit in the screen, but you can do much more better. ](assets/uploads2ftmp2f5757e7cb-5e16-4aef-961a-99faba4dbe5e2fimmagine_0Mkp3ZjZWb.png)
 
 
-### The Client 
+### The Client
 
 We are using the **Iot Prime MKR Bundle** to visualise **Light**, **Humidity**, **Pressure** and **Temperature** using **MQTT**. We are going to create a channel for each one of this data, as well as the two relays.
 
-We'll be using the [MQTT Library](https://github.com/256dpi/arduino-mqtt) by [Joël Gähwiler 256dpi](https://github.com/256dpi) (you should be able to run everything from your Arduino Online Editor sketch, by adding Wifi information to have the board conneting to the internet. 
+We'll be using the [MQTT Library](https://github.com/256dpi/arduino-mqtt) by [Joël Gähwiler 256dpi](https://github.com/256dpi) (you should be able to run everything from your Arduino Online Editor sketch, by adding Wifi information to have the board conneting to the internet.
 
 Don't forget the [MKR\_ENV Library](https://github.com/arduino-libraries/Arduino_MKRENV) you need to use the data from the board (if going with the online IDE, it's going to be impoted automatically 👌
 
-The sending of the data is done in loop: 
- 
+The sending of the data is done in loop:
+
 ```arduino
  // read enrivornmental data
  float t = ENV.readTemperature();
@@ -64,15 +64,15 @@ and later published, casted ina a `string()`
 ```arduino
  if (millis() - lastMillis > 1000) {
    lastMillis = millis();
-   client.publish("/hello", "world"); 
-   client.publish("/temp", String(t)); 
-   client.publish("/humidity", String(h)); 
-   client.publish("/pressure", String(p)); 
-   client.publish("/light", String(l)); 
+   client.publish("/hello", "world");
+   client.publish("/temp", String(t));
+   client.publish("/humidity", String(h));
+   client.publish("/pressure", String(p));
+   client.publish("/light", String(l));
  }
 ```
 
-In order to read the value of the pushbutton of the Node-RED Dashboard, I've nested two condition inside of the `messageReceived` function. 
+In order to read the value of the pushbutton of the Node-RED Dashboard, I've nested two condition inside of the `messageReceived` function.
 
 If the topic is `/relay1` or `relay2`, trigger it (and trigger the onboard LED, as a notification)
 
@@ -102,7 +102,7 @@ void messageReceived(String &topic, String &payload) {
 
 You can `#copypasta` the code and test & tweak it yourself!
 
-## JSON 
+## JSON
 
 ### Node-Red Dashboard Flow
 

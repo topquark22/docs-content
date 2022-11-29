@@ -131,7 +131,7 @@ buf: an array to send as a series of samples
 len: the length of the buffer
 
 #### Returns
-byte 
+byte
 - write() will return the number of bytes written, though reading that number is optional.
 
 ### `availableForWrite()`

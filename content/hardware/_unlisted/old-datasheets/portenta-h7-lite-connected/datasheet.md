@@ -11,9 +11,9 @@ type: pro
 
 
 # Description
-The Portenta H7 Lite Connected is dedicated to industrial use cases but with the traditional Arduino openness and ready for the most demanding Pro applications. The Portenta H7 Lite Connected is ready for machine learning and real-time applications thanks to the dual core STM32H747 processor including a Cortex® M7 running at 480 MHz and a Cortex® M4 running at 240 MHz. The two cores communicate via a Remote Procedure Call mechanism that allows calling functions on the other processor seamlessly for real multitasking. By harnessing the computational power of both Portenta H7's cores, machine learning algorithms can run simultaneously alongside low latency sensor/actuator interaction. 
+The Portenta H7 Lite Connected is dedicated to industrial use cases but with the traditional Arduino openness and ready for the most demanding Pro applications. The Portenta H7 Lite Connected is ready for machine learning and real-time applications thanks to the dual core STM32H747 processor including a Cortex® M7 running at 480 MHz and a Cortex® M4 running at 240 MHz. The two cores communicate via a Remote Procedure Call mechanism that allows calling functions on the other processor seamlessly for real multitasking. By harnessing the computational power of both Portenta H7's cores, machine learning algorithms can run simultaneously alongside low latency sensor/actuator interaction.
 
-Arduino's expertise in producing high quality PCB in house has been leveraged to ensure that the Portenta H7 Lite Connected can meet the vibrations and temperatures met in daily industrial, automotive and agriculture applications. The various interfaces give the developers freedom in how they interact with the Portenta H7 and include MKR-compatible pins, USB-C® enabled HDMI output and Arduino's open connector (ESLOV). As a pioneer in Open Source electronics, developers will receive the support they need from Arduino to build their solution free from technological lock-in.  
+Arduino's expertise in producing high quality PCB in house has been leveraged to ensure that the Portenta H7 Lite Connected can meet the vibrations and temperatures met in daily industrial, automotive and agriculture applications. The various interfaces give the developers freedom in how they interact with the Portenta H7 and include MKR-compatible pins, USB-C® enabled HDMI output and Arduino's open connector (ESLOV). As a pioneer in Open Source electronics, developers will receive the support they need from Arduino to build their solution free from technological lock-in.
 
 Portenta H7 Lite Connected offers several customization possibilities that allow tailoring board functionality to specific applications for high volume use cases.
 
@@ -32,7 +32,7 @@ Available assembly options that can be configured for high volume applications a
 
 Standard configurations are:
 *   Arduino Portenta H7-0000000 (barebones version)
-*   Arduino Portenta H7-15EUCWAD 
+*   Arduino Portenta H7-15EUCWAD
     *   8MB SDRAM
     *   16MB NOR Flash
     *   10/100 Ethernet Phy
@@ -103,7 +103,7 @@ AI applications, low-latency control solutions
     *   up to 64 MByte SDRAM (optional)
     *   up to 128 MByte QSPI Flash (optional)
 *   **USB-C®**
-    *   High Speed (optional)/Full Speed USB 
+    *   High Speed (optional)/Full Speed USB
     *   Host and Device operation
     *   Power Delivery support (optional)
 *   **High Density connectors**
@@ -174,21 +174,21 @@ The [Portenta H7 Vision Shield](https://www.arduino.cc/pro/hardware/product/port
 * Portenta H7 Lite
 
 ## Ratings
-### Absolute Maximum  
+### Absolute Maximum
 | **Symbol** | **Description**                          | **Min** | **Typ** | **Max** | **Unit** |
 | ---------- | ---------------------------------------- | ------- | ------- | ------- | -------- |
 | VINMax     | Maximum input voltage from VIN pad       | -0.3    | -       | 21      | V        |
 | VUSBMax    | Maximum input voltage from USB connector | -0.3    | -       | 21      | V        |
 | PMax       | Maximum Power Consumption                | -       | -       | 5000    | mW       |
 
-### Thermal 
+### Thermal
 | **Symbol** | **Description**                                   | **Min** | **Typ** | **Max** | **Unit** |
 | ---------- | ------------------------------------------------- | ------- | ------- | ------- | -------- |
 | TST        | Storage Temperature                               | -40     |         | 85      | °C       |
 | TOP        | Operating Temperature (excluding Wireless module) | -40     |         | 85      | °C       |
 | TOPw       | Operating Temperature (including Wireless module) | -10     |         | 55      | °C       |
 
-### Recommended Operating Conditions 
+### Recommended Operating Conditions
 | **Symbol** | **Description**                                    | **Min** | **Typ** | **Max** | **Unit** |
 | ---------- | -------------------------------------------------- | ------- | ------- | ------- | -------- |
 | VIN        | Input voltage from VIN pad                         | 4.5     | 5       | 5.5     | V        |
@@ -218,7 +218,7 @@ The [Portenta H7 Vision Shield](https://www.arduino.cc/pro/hardware/product/port
 | **Ref.** | **Description**                     | **Ref.**        | **Description**           |
 | -------- | ----------------------------------- | --------------- | ------------------------- |
 | U1       | STM32H747, Main processor           | U16             | Crypto Chip (Microchip)   |
-| U2       | QSPI Flash Memory                   | JANALOG/JDIGITAL| MKR compatible headers    |  
+| U2       | QSPI Flash Memory                   | JANALOG/JDIGITAL| MKR compatible headers    |
 | U3       | USB HS PHY                          | U16             | Crypto Chip (Microchip)   |
 | U4       | SDRAM                               | J1, J2          | High Density Connectors   |
 | U5       | Ethernet PHY                        | J4              | Battery connector          |
@@ -245,32 +245,32 @@ Internal memory is composed of 2MB of flash with read while write support and 1M
     *   64 Kbytes  instruction
     *   128 Kbytes of data
 *   864 Kbytes of user SRAM
-*   4 Kbytes of SRAM in Backup domain 
+*   4 Kbytes of SRAM in Backup domain
 
-### Wireless Module 
-The on board wireless module allows simultaneous management of WiFi and Bluetooth®  connectivity. The WiFi interface can be operated as an Access Point, as a Station or as a dual mode simultaneous AP/STA and can handle up to 65 Mbps transfer rate. Bluetooth®  interface supports Bluetooth®  Classic and Bluetooth® Low Energy.  
+### Wireless Module
+The on board wireless module allows simultaneous management of WiFi and Bluetooth®  connectivity. The WiFi interface can be operated as an Access Point, as a Station or as a dual mode simultaneous AP/STA and can handle up to 65 Mbps transfer rate. Bluetooth®  interface supports Bluetooth®  Classic and Bluetooth® Low Energy.
 
 ### External Memories
 Optionally Portenta H7 Lite Connected is available with additional external SDRAM and QSPI Flash memories.
 
 External SDRAM can provide up to 64 MByte directly mapped in CPU addressing space and allows code execution.
 
-External QSPI flash can provide up to 128MByte of storage and can be either memory mapped for code execution (read only) or used as a QSPI peripheral for data storage.   
+External QSPI flash can provide up to 128MByte of storage and can be either memory mapped for code execution (read only) or used as a QSPI peripheral for data storage.
 
 ### Crypto Chips
 Portenta H7 Lite Connected runs the classic ATECC608A.
 
 ### Ethernet Phy
-The optional 10/100 Ethernet physical interface is directly connected to the internal Ethernet MAC and provides full duplex communication with automatic MDIX support. The Wake On Lan functionality allows reducing power consumption when in sleep mode.  
+The optional 10/100 Ethernet physical interface is directly connected to the internal Ethernet MAC and provides full duplex communication with automatic MDIX support. The Wake On Lan functionality allows reducing power consumption when in sleep mode.
 
 ### High Speed USB Phy
 The optional High Speed USB Phy is one of the two USB interfaces available on the high speed connectors and is also available on the USB-C® connector. High Speed USB PHY allows transfer rates of up to 480 Mbps and can be used both as a host and as a device.
 
 When using the USB-C® connector only one USB port is usable on high speed connectors.
 
-When the High Speed USB Phy option is not assembled the USB-C® port only one Full Speed port is available and is shared between USB-C® and High Density connectors  
+When the High Speed USB Phy option is not assembled the USB-C® port only one Full Speed port is available and is shared between USB-C® and High Density connectors
 
-### USB-C® Connector 
+### USB-C® Connector
 USB-C® connector supports multiple use case scenarios and provides the following functions:
 
 *   Provide board power supply in both DFP and DRP mode
@@ -285,24 +285,24 @@ All power conversion on the Portenta H7 Lite Connected is handled by the PF1550 
 ## Board Operation
 ### Getting Started – IDE
 
-If you want to program your Arduino Portenta H7 while offline you need to install the Arduino Desktop IDE **[1].** To connect the Arduino Portenta H7 to your computer, you’ll need a USB-C® cable. This also provides power to the board, as indicated by the LED.  
+If you want to program your Arduino Portenta H7 while offline you need to install the Arduino Desktop IDE **[1].** To connect the Arduino Portenta H7 to your computer, you’ll need a USB-C® cable. This also provides power to the board, as indicated by the LED.
 
-### Getting Started – Arduino Web Editor (Create) 
+### Getting Started – Arduino Web Editor (Create)
 All Arduino and Genuino boards, including this one, work out-of-the-box on the Arduino Web Editor **[2]**, by just installing a simple plugin.
 
 The Arduino Web Editor is hosted online, therefore it will always be up-to-date with the latest features and support for all boards. Follow **[3]** to start coding in the browser and upload your sketches onto your board.
 
 ### Getting Started – Arduino IoT Cloud
-All Arduino IoT enabled products are supported on Arduino IoT Cloud which allows you to log, graph and analyze sensor data, trigger events, and automate your business or your personal environment. 
+All Arduino IoT enabled products are supported on Arduino IoT Cloud which allows you to log, graph and analyze sensor data, trigger events, and automate your business or your personal environment.
 
-### Sample Sketches 
+### Sample Sketches
 Sample sketches for the Arduino Portenta H7 can be found either in the “Examples” menu in the Arduino IDE or in the “Documentation” section of the Arduino Pro website **[5]**.
 
 ### Online Resources
-Now that you have gone through the basics of what you can do with the board you can explore the endless possibilities it provides by checking exciting projects on ProjectHub **[6]**, the Arduino Library Reference **[7]** and the web store **[8]** where you will be able to complement your board with sensors, actuators and more.  
+Now that you have gone through the basics of what you can do with the board you can explore the endless possibilities it provides by checking exciting projects on ProjectHub **[6]**, the Arduino Library Reference **[7]** and the web store **[8]** where you will be able to complement your board with sensors, actuators and more.
 
 ### Board Recovery
-All Arduino boards have a built-in bootloader which allows flashing the board via USB. In case a sketch locks up the processor and the board is not reachable anymore via USB it is possible to enter bootloader mode by double-tapping the reset button right after power up.  
+All Arduino boards have a built-in bootloader which allows flashing the board via USB. In case a sketch locks up the processor and the board is not reachable anymore via USB it is possible to enter bootloader mode by double-tapping the reset button right after power up.
 
 ## Connector Pinouts
 ### USB-C®
@@ -315,7 +315,7 @@ All Arduino boards have a built-in bootloader which allows flashing the board vi
 ### MKR Headers
 ![alt_text](assets/portentaH7_mkr_pinouts.png)
 
-Detailed information on the Portenta H7’s pinouts are available in a separate document: [https://content.arduino.cc/assets/Pinout-PortentaH7_latest.pdf](https://content.arduino.cc/assets/Pinout-PortentaH7_latest.pdf) 
+Detailed information on the Portenta H7’s pinouts are available in a separate document: [https://content.arduino.cc/assets/Pinout-PortentaH7_latest.pdf](https://content.arduino.cc/assets/Pinout-PortentaH7_latest.pdf)
 
 ### Battery Connector
 The Portenta H7 is compatible with a single cell Li-Po or Li-Ion battery (3.7V, 700mAh minimum) connected via a 3-pin BM03B-ACHSS-GAN-TF connector. Battery management is performed by the PF1550 IC.
@@ -348,15 +348,15 @@ The Portenta H7 is compatible with a single cell Li-Po or Li-Ion battery (3.7V, 
 
 ## Certifications
 ### Declaration of Conformity CE/RED DoC (EU)
-We declare under our sole responsibility that the products above are in conformity with the essential requirements of the following EU Directives and therefore qualify for free movement within markets comprising the European Union (EU) and European Economic Area (EEA). 
+We declare under our sole responsibility that the products above are in conformity with the essential requirements of the following EU Directives and therefore qualify for free movement within markets comprising the European Union (EU) and European Economic Area (EEA).
 
-**Radio Equipment Directive (RED) 2014/53/EU** 
+**Radio Equipment Directive (RED) 2014/53/EU**
 
-Conforms to:	EN 300 328 v2.1.1 
+Conforms to:	EN 300 328 v2.1.1
 
-​							EN 300 328 v2.1.1 
+​							EN 300 328 v2.1.1
 
-​							EN 300 328 v2.1.1 
+​							EN 300 328 v2.1.1
 
 
 **ROHS Directive 2011/65/EU**
@@ -374,10 +374,10 @@ Conforms to:	EN 60950-1:2006/A11:2009/A1:2010/A12:2011/AC:2011
 Conforms to:	EN 62311:2008
 
 
-The Technical Construction Files are maintained at the address shown above. 
+The Technical Construction Files are maintained at the address shown above.
 
-### Declaration of Conformity to EU RoHS & REACH 191 11/26/2018 
-Arduino boards are in compliance with Directive 2011/65/EU of the European Parliament and Directive 2015/863/EU of the Council of 4 June 2015 on the restriction of the use of certain hazardous substances in electrical and electronic equipment. 
+### Declaration of Conformity to EU RoHS & REACH 191 11/26/2018
+Arduino boards are in compliance with Directive 2011/65/EU of the European Parliament and Directive 2015/863/EU of the Council of 4 June 2015 on the restriction of the use of certain hazardous substances in electrical and electronic equipment.
 
 | **Substance**                          | **Maximum Limit (ppm)** |
 | -------------------------------------- | ----------------------- |
@@ -392,17 +392,17 @@ Arduino boards are in compliance with Directive 2011/65/EU of the European Parli
 | Dibutyl phthalate (DBP)                | 1000                    |
 | Diisobutyl phthalate (DIBP)            | 1000                    |
 
-Exemptions : No exemptions are claimed. 
+Exemptions : No exemptions are claimed.
 
 Arduino Boards are fully compliant with the related requirements of European Union Regulation (EC) 1907 /2006 concerning the Registration, Evaluation, Authorization and Restriction of Chemicals (REACH). We declare none of the SVHCs (https://echa.europa.eu/web/guest/candidate-list-table), the Candidate List of Substances of Very High Concern for authorization currently released by ECHA, is present in all products (and also package) in quantities totaling in a concentration equal or above 0.1%. To the best of our knowledge, we also declare that our products do not contain any of the substances listed on the "Authorization List" (Annex XIV of the REACH regulations) and Substances of Very High Concern (SVHC) in any significant amounts as specified by the Annex XVII of Candidate list published by ECHA (European Chemical Agency) 1907 /2006/EC.
 
-### Conflict Minerals Declaration 
-As a global supplier of electronic and electrical components, Arduino is aware of our obligations with regards to laws and regulations regarding Conflict Minerals, specifically the Dodd-Frank Wall Street Reform and Consumer Protection Act, Section 1502. Arduino does not directly source or process conflict minerals such as Tin, Tantalum, Tungsten, or Gold. Conflict minerals are contained in our products in the form of solder, or as a component in metal alloys. As part of our reasonable due diligence Arduino has contacted component suppliers within our supply chain to verify their continued compliance with the regulations. Based on the information received thus far we declare that our products contain Conflict Minerals sourced from conflict-free areas. 
+### Conflict Minerals Declaration
+As a global supplier of electronic and electrical components, Arduino is aware of our obligations with regards to laws and regulations regarding Conflict Minerals, specifically the Dodd-Frank Wall Street Reform and Consumer Protection Act, Section 1502. Arduino does not directly source or process conflict minerals such as Tin, Tantalum, Tungsten, or Gold. Conflict minerals are contained in our products in the form of solder, or as a component in metal alloys. As part of our reasonable due diligence Arduino has contacted component suppliers within our supply chain to verify their continued compliance with the regulations. Based on the information received thus far we declare that our products contain Conflict Minerals sourced from conflict-free areas.
 
 ## FCC Caution
 Any Changes or modifications not expressly approved by the party responsible for compliance could void the user’s authority to operate the equipment.
 
-This device complies with part 15 of the FCC Rules. Operation is subject to the following two conditions: 
+This device complies with part 15 of the FCC Rules. Operation is subject to the following two conditions:
 
 ​	(1) This device may not cause harmful interference
 
@@ -416,14 +416,14 @@ This device complies with part 15 of the FCC Rules. Operation is subject to the 
 
 3. This equipment should be installed and operated with minimum distance 20cm between the radiator & your body.
 
-English: 
+English:
 User manuals for license-exempt radio apparatus shall contain the following or equivalent notice in a conspicuous location in the user manual or alternatively on the device or both. This device complies with Industry Canada license-exempt RSS standard(s). Operation is subject to the following two conditions:
 
 ​	(1) this device may not cause interference
 
 ​	(2) this device must accept any interference, including interference that may cause undesired operation of the device.
 
-French: 
+French:
 Le présent appareil est conforme aux CNR d’Industrie Canada applicables aux appareils radio exempts de licence. L’exploitation est autorisée aux deux conditions suivantes :
 
 ​	(1) l’ appareil nedoit pas produire de brouillage
@@ -432,21 +432,21 @@ Le présent appareil est conforme aux CNR d’Industrie Canada applicables aux a
 
 **IC SAR Warning:**
 
-English 
-This equipment should be installed and operated with minimum distance 20 cm between the radiator and your body.   
+English
+This equipment should be installed and operated with minimum distance 20 cm between the radiator and your body.
 
-French: 
+French:
 Lors de l’ installation et de l’ exploitation de ce dispositif, la distance entre le radiateur et le corps est d ’au moins 20 cm.
 
 **Important:** The operating temperature of the EUT can’t exceed 85℃ and shouldn’t be lower than -40℃.
 
-Hereby, Arduino S.r.l. declares that this product is in compliance with essential requirements and other relevant provisions of Directive 2014/53/EU. This product is allowed to be used in all EU member states. 
+Hereby, Arduino S.r.l. declares that this product is in compliance with essential requirements and other relevant provisions of Directive 2014/53/EU. This product is allowed to be used in all EU member states.
 
 | Frequency bands | Maximum output power (ERP) |
 | --------------- | -------------------------- |
 | TBD Mhz             | TBD dBm                        |
 
-## Reference Documentation 
+## Reference Documentation
 | **Reference**             | **Link**                                                     |
 | ------------------------- | ------------------------------------------------------------ |
 | Arduino IDE (Desktop)     | https://www.arduino.cc/en/Main/Software                      |

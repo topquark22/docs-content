@@ -7,7 +7,7 @@ tags:
   - OLED
   - Serial
 author: 'Karl Söderby'
-libraries: 
+libraries:
   - name: Adafruit GFX
     url: https://github.com/adafruit/Adafruit-GFX-Library
   - name: SSD1306
@@ -68,7 +68,7 @@ The SSD1306 display is of the PMOLED type, and its behavior can be controlled by
 **3.** With the dependencies now installed, we can now take a look at some of the main functions we will use in the program.
 
 - `display.begin()` - initializes the SSD1306 library.
-- `display.setTextColor(screen, address)` - sets display to white color. 
+- `display.setTextColor(screen, address)` - sets display to white color.
 - `display.setTextSize(SSD1306_WHITE)` - sets display to white color.
 - `display.display()`- updates the display.
 - `display.clearDisplay()` - clears the display.
@@ -76,7 +76,7 @@ The SSD1306 display is of the PMOLED type, and its behavior can be controlled by
 - `Serial.read()` - reads the incoming serial data.
 - `length()` - checks the length of a string.
 
-The sketch below is based on an example provided in the **Adafruit_SSD1306**. Copy and paste the code in an editor of your choice, and upload the sketch to the board. 
+The sketch below is based on an example provided in the **Adafruit_SSD1306**. Copy and paste the code in an editor of your choice, and upload the sketch to the board.
 
 ```cpp
 #include <SPI.h>
@@ -145,11 +145,11 @@ void loop() {
 
 ## Testing It Out
 
-Once we have uploaded the code to the board, wait a few seconds, then open the Serial Monitor. In the monitor, we can now start writing a message in the input field, and hit enter to send the message. 
+Once we have uploaded the code to the board, wait a few seconds, then open the Serial Monitor. In the monitor, we can now start writing a message in the input field, and hit enter to send the message.
 
 ![serial img of message entered](assets/mkr_tutorial_08_img_04.png)
 
-When we send the message, the display updates almost immediately. But before it updates, depending on the `length` of the `message` string, the program chooses an appropriate text size. The message is then printed with the size of the text being 1, 2 or 3. 
+When we send the message, the display updates almost immediately. But before it updates, depending on the `length` of the `message` string, the program chooses an appropriate text size. The message is then printed with the size of the text being 1, 2 or 3.
 
 ![img of screen](assets/mkr_tutorial_08_img_05.png)
 
@@ -164,6 +164,6 @@ If the code is not working, there are some common issues we can troubleshoot:
 
 ## Conclusion
 
-In this tutorial, we have mainly covered some basics on using an OLED screen together with the MKR WiFi 1010 board. We have set up a simple Serial Interface that allows us to write and transfer messages from the Serial Monitor to the screen. 
+In this tutorial, we have mainly covered some basics on using an OLED screen together with the MKR WiFi 1010 board. We have set up a simple Serial Interface that allows us to write and transfer messages from the Serial Monitor to the screen.
 
-The OLED screen can of course be used for many purposes! To get some more inspiration and try out more things, we can try any of the built in examples from the [Adafruit_SSD1306](https://github.com/adafruit/Adafruit-GFX-Library) library. 
+The OLED screen can of course be used for many purposes! To get some more inspiration and try out more things, we can try any of the built in examples from the [Adafruit_SSD1306](https://github.com/adafruit/Adafruit-GFX-Library) library.

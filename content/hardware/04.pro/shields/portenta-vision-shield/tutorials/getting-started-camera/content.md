@@ -17,7 +17,7 @@ This tutorial shows you how to capture frames from the Arduino Portenta Vision S
 
 - Capturing the frames from the camera
 - Sending the frames as a byte stream through a Serial connection
-- Visualising the frames in Processing 
+- Visualising the frames in Processing
 
 ### Required Hardware and Software
 
@@ -28,10 +28,10 @@ This tutorial shows you how to capture frames from the Arduino Portenta Vision S
 - Processing 3.5.4+
 
 ## Instructions
-Accessing the Vision Shield's camera data is done with the help of both Arduino and the Processing IDE. The Arduino sketch handles the capture of image data by the on-board camera, while the java applet created with Processing helps to visualize this data with the help of a serial connection. The following steps will run you through how to capture, package the data through the serial port and visualize the output in Processing. 
+Accessing the Vision Shield's camera data is done with the help of both Arduino and the Processing IDE. The Arduino sketch handles the capture of image data by the on-board camera, while the java applet created with Processing helps to visualize this data with the help of a serial connection. The following steps will run you through how to capture, package the data through the serial port and visualize the output in Processing.
 
 ### 1. The Basic Setup
-Connect the Portenta Vision Shield to your Portenta H7 as shown in the figure. The top and bottom high density connecters are connected to the corresponding ones on the underside of the H7 board. Plug in the H7 to your computer using the USB C cable. 
+Connect the Portenta Vision Shield to your Portenta H7 as shown in the figure. The top and bottom high density connecters are connected to the corresponding ones on the underside of the H7 board. Plug in the H7 to your computer using the USB C cable.
 
 ![Connecting the Vision Shield to Portenta](assets/vs_ard_gs_attach_boards.svg)
 
@@ -61,7 +61,7 @@ FrameBuffer fb(320,240,2);
 unsigned long lastUpdate = 0;
 ```
 
-In the `setup()` function, let's start the Serial communication at `921600` baud rate and initialize the camera using `cam.begin()`. 
+In the `setup()` function, let's start the Serial communication at `921600` baud rate and initialize the camera using `cam.begin()`.
 
 ```cpp
 void setup() {
@@ -71,16 +71,16 @@ void setup() {
 }
 ```
 
-In the loop you need to capture each Frame and send it over a serial connection to the Processing sketch that will display the frames. You will use the `grab(uint8_t *buffer, uint32_t timeout=5000);` function to fetch the frame from the frame buffer and save it into your custom data buffer. 
+In the loop you need to capture each Frame and send it over a serial connection to the Processing sketch that will display the frames. You will use the `grab(uint8_t *buffer, uint32_t timeout=5000);` function to fetch the frame from the frame buffer and save it into your custom data buffer.
 
 ```cpp
 void loop() {
   // put your main code here, to run repeatedly:
-  if(!Serial) {    
+  if(!Serial) {
     Serial.begin(921600);
     while(!Serial);
   }
-  
+
   // Time out after 2 seconds and send new data
   bool timeoutDetected = millis() - lastUpdate > 2000;
 
@@ -89,7 +89,7 @@ void loop() {
   if(!timeoutDetected && Serial.read() != 1) return;
 
   lastUpdate = millis();
-  
+
   // Grab frame and write to serial
   if (cam.grabFrame(fb, 3000) == 0) {
     Serial.write(fb.getBuffer(), cam.frameSize());
@@ -97,14 +97,14 @@ void loop() {
 }
 ```
 
-### 3. Create the Processing Sketch 
-Open a new processing sketch file and name it `CameraCapture.pde`. 
+### 3. Create the Processing Sketch
+Open a new processing sketch file and name it `CameraCapture.pde`.
 
 ![Create a processing sketch](assets/vs_ard_open_pde_sketch.png)
 
 Let's start by importing the libraries and initializing the variables you will need to process. To process the data sent by the Vision Shield, you will need to import the following libraries:
 
-- `processing.serial.*`: a [Serial Library](https://processing.org/reference/libraries/serial/index.html)  that is used to read and write data to external devices over the serial line. 
+- `processing.serial.*`: a [Serial Library](https://processing.org/reference/libraries/serial/index.html)  that is used to read and write data to external devices over the serial line.
 - `java.nio.ByteBuffer`: a java class that provides access to operations on byte buffers
 
 ```java
@@ -112,7 +112,7 @@ import processing.serial.*;
 import java.nio.ByteBuffer;
 ```
 
-Next, you can initialize the following variables to process the received pixels from the serial port. You can set the dimensions, pixel count and bytes required per frame. 
+Next, you can initialize the following variables to process the received pixels from the serial port. You can set the dimensions, pixel count and bytes required per frame.
 
 ```java
 // must match resolution used in the sketch
@@ -123,7 +123,7 @@ final int cameraPixelCount = cameraWidth * cameraHeight;
 final int bytesPerFrame = cameraWidth * cameraHeight * cameraBytesPerPixel;
 ```
 
-To receive the frames, you will need a Serial port, a PImage object and an array to store the pixel values of the frame. Add the following variables to the code. 
+To receive the frames, you will need a Serial port, a PImage object and an array to store the pixel values of the frame. Add the following variables to the code.
 
 ```java
 Serial myPort;
@@ -139,15 +139,15 @@ Here, you will establish a connection to the serial port and prepare the buffer 
 ```java
 void setup() {
   size(640, 480);
-  
+
   // if you know the serial port name
   //myPort = new Serial(this, "COM5", 921600);                  // Windows
   //myPort = new Serial(this, "/dev/ttyACM0", 921600);          // Linux
   myPort = new Serial(this, "/dev/cu.usbmodem14101", 921600);   // Mac
- 
-  // Set the number of bytes to buffer 
+
+  // Set the number of bytes to buffer
   myPort.buffer(bytesPerFrame)
-  
+
   // Create an image based on the camera's dimensions and format
   myImage = createImage(cameraWidth, cameraHeight, ALPHA);
 
@@ -166,8 +166,8 @@ void draw() {
     myPort.clear();
     myPort.write(1);
   }
-  
-  if(shouldRedraw){    
+
+  if(shouldRedraw){
     PImage img = myImage.copy();
     img.resize(640, 480);
     image(img, 0, 0);
@@ -182,11 +182,11 @@ For this step, you will use the `serialEvent()` callback function to update the 
 ```java
 void serialEvent(Serial myPort) {
   lastUpdate = millis();
-  
+
   // read the received bytes
   myPort.readBytes(frameBuffer);
 
-  // Access raw bytes via byte buffer  
+  // Access raw bytes via byte buffer
   ByteBuffer bb = ByteBuffer.wrap(frameBuffer);
 
   int i = 0;
@@ -196,14 +196,14 @@ void serialEvent(Serial myPort) {
     byte pixelValue = bb.get();
 
     // set pixel color
-    myImage.pixels[i++] = color(Byte.toUnsignedInt(pixelValue));    
+    myImage.pixels[i++] = color(Byte.toUnsignedInt(pixelValue));
   }
-  
+
   myImage.updatePixels();
-  
+
   // Ensures that the new image data is drawn in the next draw loop
   shouldRedraw = true;
-  
+
   // Let the Arduino sketch know we received all pixels
   // and are ready for the next frame
   myPort.write(1);
@@ -214,7 +214,7 @@ The first thing you can do inside this method is to update the timestamp when th
 
 ```java
 lastUpdate = millis();
-  
+
 // read the received bytes
 myPort.readBytes(frameBuffer);
 ```
@@ -222,7 +222,7 @@ myPort.readBytes(frameBuffer);
 Then the frame buffer is translated into a ByteBuffer that allows for easy and safe access to the underlying bytes without having to worry about the array indices.
 
 ```cpp
-// Access raw bytes via byte buffer  
+// Access raw bytes via byte buffer
 ByteBuffer bb = ByteBuffer.wrap(frameBuffer);
 ```
 
@@ -236,8 +236,8 @@ while (bb.hasRemaining()) {
   byte pixelValue = bb.get();
 
   // set pixel color
-  myImage.pixels[i++] = color(Byte.toUnsignedInt(pixelValue));    
-} 
+  myImage.pixels[i++] = color(Byte.toUnsignedInt(pixelValue));
+}
 ```
 
 Once all the pixels have been updated, you need to tell the sketch to redraw the image. Additionally, you can send an acknowledgement back to the arduino sketch to ask it to send the pixels for the next frame. You can update the image with `updatePixels()` and write `1` to the serial port for the acknowledgement.
@@ -261,10 +261,10 @@ Select the right serial port on your IDE and upload the Arduino sketch to your P
 
 ## Conclusion
 
-In this tutorial you learnt how to capture the frames from your Portenta Vision Shield's Camera and to visualize the  frames through Processing. This knowledge can be useful for you to build and experiment simple computer vision applications for both outdoor and indoor environments. 
+In this tutorial you learnt how to capture the frames from your Portenta Vision Shield's Camera and to visualize the  frames through Processing. This knowledge can be useful for you to build and experiment simple computer vision applications for both outdoor and indoor environments.
 
 ### Complete Sketch
-The `CaptureRawBytes.ino` Sketch. 
+The `CaptureRawBytes.ino` Sketch.
 
 ```cpp
 #include "camera.h"
@@ -285,11 +285,11 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
-  if(!Serial) {    
+  if(!Serial) {
     Serial.begin(921600);
     while(!Serial);
   }
-  
+
   // Time out after 2 seconds and send new data
   bool timeoutDetected = millis() - lastUpdate > 2000;
 
@@ -298,7 +298,7 @@ void loop() {
   if(!timeoutDetected && Serial.read() != 1) return;
 
   lastUpdate = millis();
-  
+
   // Grab frame and write to serial
   if (cam.grabFrame(fb, 3000) == 0) {
     Serial.write(fb.getBuffer(), cam.frameSize());
@@ -306,7 +306,7 @@ void loop() {
 }
 ```
 
-The `CameraViewer.pde` Sketch. 
+The `CameraViewer.pde` Sketch.
 
 ```java
 /*
@@ -347,10 +347,10 @@ void setup() {
   myPort = new Serial(this, "/dev/cu.usbmodem14401", 921600);     // Mac
 
   // wait for full frame of bytes
-  myPort.buffer(bytesPerFrame);  
+  myPort.buffer(bytesPerFrame);
 
   myImage = createImage(cameraWidth, cameraHeight, ALPHA);
-  
+
   // Let the Arduino sketch know we're ready to receive data
   myPort.write(1);
 }
@@ -362,8 +362,8 @@ void draw() {
     myPort.clear();
     myPort.write(1);
   }
-  
-  if(shouldRedraw){    
+
+  if(shouldRedraw){
     PImage img = myImage.copy();
     img.resize(640, 480);
     image(img, 0, 0);
@@ -373,18 +373,18 @@ void draw() {
 
 void serialEvent(Serial myPort) {
   lastUpdate = millis();
-  
+
   // read the received bytes
   myPort.readBytes(frameBuffer);
 
-  // Access raw bytes via byte buffer  
+  // Access raw bytes via byte buffer
   ByteBuffer bb = ByteBuffer.wrap(frameBuffer);
-  
-  /* 
+
+  /*
     Ensure proper endianness of the data for > 8 bit values.
     When using > 8bit values uncomment the following line and
-    adjust the translation to the pixel color. 
-  */     
+    adjust the translation to the pixel color.
+  */
   //bb.order(ByteOrder.BIG_ENDIAN);
 
   int i = 0;
@@ -394,14 +394,14 @@ void serialEvent(Serial myPort) {
     byte pixelValue = bb.get();
 
     // set pixel color
-    myImage.pixels[i++] = color(Byte.toUnsignedInt(pixelValue));    
+    myImage.pixels[i++] = color(Byte.toUnsignedInt(pixelValue));
   }
-  
+
   myImage.updatePixels();
-  
+
   // Ensures that the new image data is drawn in the next draw loop
   shouldRedraw = true;
-  
+
   // Let the Arduino sketch know we received all pixels
   // and are ready for the next frame
   myPort.write(1);

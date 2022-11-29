@@ -40,7 +40,7 @@ The Portenta Cat. M1/NB IoT GNSS Shield can be programmed through the **Classic 
 
 - [Installing the Arduino Mbed OS Portenta Boards core](/software/ide-v1/tutorials/getting-started/cores/arduino-mbed_portenta)
 
-### Arduino IDE 2.0.X 
+### Arduino IDE 2.0.X
 
 The Portenta Cat. M1/NB IoT GNSS Shield can be programmed through the **Arduino IDE 2**. To install your board, you can check out the guide below:
 
@@ -151,7 +151,7 @@ void setup() {
   while(!Serial) {}
 
   GSM.begin(pin, apn, username, pass, CATNB);
-  
+
   Serial.println("\nStarting connection to server...");
   // if you get a connection, report back via serial:
   if (client.connect(server, port)) {
@@ -165,7 +165,7 @@ void setup() {
   } else {
     Serial.println("unable to connect to server");
   }
-  
+
 }
 
 void loop() {
@@ -247,7 +247,7 @@ Open the example by going to **Examples > GSM > GNSSClient**.
     Serial.println("\nStarting connection to GSM...");
     GSM.begin(pin, apn, username, pass, CATNB);
 
-    Serial.println("\nEnable GNSS Engine..."); 
+    Serial.println("\nEnable GNSS Engine...");
     GPS.begin();  //start and enable the GNSS engine
     Serial.println("\nGNSS Engine enabled...");
   }
@@ -276,7 +276,7 @@ To do so, you can use an **NMEA parser**. This will convert messages received fr
 
 In this way, it is possible to interact with the data that you need for your application, for instance getting only latitude and longitude. You will be able to save those values into variables, instead of having the whole NMEA messages.
 
-Open the example from the library at **Examples > 107-Arduino-NMEA-Parser > NMEA-Basic** and add the following: 
+Open the example from the library at **Examples > 107-Arduino-NMEA-Parser > NMEA-Basic** and add the following:
 
 Include the needed libraries.
 
@@ -326,7 +326,7 @@ One way to save power on your project is to enable the GPS module only when it n
 
 ```cpp
   //Start the GPS module
-  GPS.begin();    
+  GPS.begin();
 
   // Print data
   while(GPS.available()){

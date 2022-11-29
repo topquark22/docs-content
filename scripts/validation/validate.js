@@ -75,7 +75,7 @@ validator.addValidation(tutorials, validateImageDescriptions, configManager.getC
 
 // Verify that only allowed syntax specifiers are used
 if (configManager.getConfig("tutorials").validateSyntaxSpecifiers){
-    validator.addValidation(tutorials, validateSyntaxSpecifiers, configManager.getConfig("generic").allowedSyntaxSpecifiers);        
+    validator.addValidation(tutorials, validateSyntaxSpecifiers, configManager.getConfig("generic").allowedSyntaxSpecifiers);
 }
 
 // Verifies that the content rules are met

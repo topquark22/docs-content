@@ -1,7 +1,7 @@
 ---
 title: 'Updating the Atmega8U2 and 16U2 on an Uno or Mega2560 Using DFU'
 description: 'Upgrading the firmware of the Atmega8U2 chip on an Uno or Mega2560. This chip acts as the usb-to-serial converter and can be updated via USB.'
-tags: 
+tags:
   - ATmega8U2
   - UNO
   - Mega2560
@@ -21,7 +21,7 @@ This is the software that will update the code :
 
 **Windows:** Download Atmel's flip programmer from [here](http://www.microchip.com/developmenttools/productdetails.aspx?partno=flip)
 
-**Mac:** Install MacPorts following [these instructions](http://www.macports.org/install.php#pkg): Once MacPorts is installed, in a Terminal window, type 
+**Mac:** Install MacPorts following [these instructions](http://www.macports.org/install.php#pkg): Once MacPorts is installed, in a Terminal window, type
 ```
 sudo port install dfu-programmer
 ```

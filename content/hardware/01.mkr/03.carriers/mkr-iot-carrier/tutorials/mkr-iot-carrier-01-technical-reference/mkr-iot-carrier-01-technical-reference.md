@@ -2,7 +2,7 @@
 title: 'MKR IoT Carrier Cheat Sheet'
 description: 'Learn how to set up the MKR IoT Carrier, get a quick overview of the compatible boards, components, and the library.'
 author: 'Liam Aljundi'
-tags: 
+tags:
   - API
   - Installation
   - Sensors
@@ -548,7 +548,7 @@ In order to learn more, check any of the many tutorials about using the `SD` lib
 
 ![JST battery connector on the MKR IoT Carrier.](assets/mkriotcarrier-battery.png)
 
-The MKR IoT Carrier can be either powered through a USB cable connected to the mounted MKR board, or through a battery. The battery used should be a LI-ION 18650 3.7v battery, which can be mounted to the carrier via the battery holder on the bottom side. 
+The MKR IoT Carrier can be either powered through a USB cable connected to the mounted MKR board, or through a battery. The battery used should be a LI-ION 18650 3.7v battery, which can be mounted to the carrier via the battery holder on the bottom side.
 
 In order to use the USB power to charge the battery, a little cable with JST connectors on both ends is needed between the MKR IoT Carrier and the MKR board. The bBattery can then be recharged via a USB connection through the MKR Board (runs up to 48h with a 3.7v 2500mAh).
 

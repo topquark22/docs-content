@@ -43,7 +43,7 @@ In the [Getting Started section](https://www.arduino.cc/en/Guide/ArduinoEsplora)
 
 Arduino Esplora is open-source hardware! You can build your own board using the following files:
 
-[EAGLE FILES IN .ZIP](https://www.arduino.cc/en/uploads/Main/arduino-esplora-reference-design.zip) 
+[EAGLE FILES IN .ZIP](https://www.arduino.cc/en/uploads/Main/arduino-esplora-reference-design.zip)
 
 [SCHEMATICS IN DSN](https://www.arduino.cc/en/uploads/Main/arduino-esplora-schematic.pdf)
 

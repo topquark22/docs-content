@@ -11,7 +11,7 @@ For those that are in a hurry to produce a board or that don't have an easy acce
 
 We have made it fully pin-compatible with the existing boards, this will allow to use the very same shields as the rest of the Arduino family.
 
-Note: The reference designs for arduino are distributed under a Creative Commons license [Attribution-ShareAlike 2.5](http://creativecommons.org/licenses/by-sa/2.5/) 
+Note: The reference designs for arduino are distributed under a Creative Commons license [Attribution-ShareAlike 2.5](http://creativecommons.org/licenses/by-sa/2.5/)
 
 On the other hand, you should notice that it is very hard to make the circuit strictly single sided if the pinout is to be respected.
 

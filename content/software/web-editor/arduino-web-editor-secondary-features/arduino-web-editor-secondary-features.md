@@ -14,7 +14,7 @@ source: "https://create.arduino.cc/projecthub/Arduino_Genuino/arduino-web-editor
 
 ## About This Project
 
-In this tutorial, we'll demonstrate some secondary features of the Arduino Web Editor. If you're new to the Arduino Create platform, read this tutorial: [Getting Started with Arduino Web Editor on Various Platforms](https://create.arduino.cc/projecthub/Arduino_Genuino/getting-started-with-arduino-web-editor-on-various-platforms-4b3e4a). 
+In this tutorial, we'll demonstrate some secondary features of the Arduino Web Editor. If you're new to the Arduino Create platform, read this tutorial: [Getting Started with Arduino Web Editor on Various Platforms](https://create.arduino.cc/projecthub/Arduino_Genuino/getting-started-with-arduino-web-editor-on-various-platforms-4b3e4a).
 
 Let's start by focusing on the **Sketchbook** tab and then we'll review the **Preferences Tab** of the Web Editor.
 
@@ -44,7 +44,7 @@ Once you see the sketch you want, right-click on it – or click on the small ic
 
 ### The Preferences Tab
 
-The Preferences Tab contains some options to customize the look and behavior of the Editor (see the screenshot below). 
+The Preferences Tab contains some options to customize the look and behavior of the Editor (see the screenshot below).
 
 At the top, you can see how much space is currently used by your sketches and how many sketches are in your sketchbook. Click on the **MoreInfo** button for more accurate information regarding these two values and on imported custom libraries.
 
@@ -76,7 +76,7 @@ There are two other settings that might be useful to you. In the code window, in
 
 
 
-The top icon allows you to enter **Full-Screen** mode: the code window will be maximized while the side bar will be minimized. The bottom icon is for **Auto-Indent**. When pressed, it will automatically indent your code to make it more readable. 
+The top icon allows you to enter **Full-Screen** mode: the code window will be maximized while the side bar will be minimized. The bottom icon is for **Auto-Indent**. When pressed, it will automatically indent your code to make it more readable.
 
 ## Enjoy!
 

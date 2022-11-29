@@ -1,5 +1,5 @@
 <FeatureDescription>
-The MKR ENV Shield comes equipped with three sensors: <b>LPS22HB, HTS221</b> and <b>TEMT6000</b>. It is perfect for data capturing projects, and is a low-threshold product for beginners to start working with real-time data. The shield's components are designed to operate in temperatures between -40 °C and +120 °C. 
+The MKR ENV Shield comes equipped with three sensors: <b>LPS22HB, HTS221</b> and <b>TEMT6000</b>. It is perfect for data capturing projects, and is a low-threshold product for beginners to start working with real-time data. The shield's components are designed to operate in temperatures between -40 °C and +120 °C.
 </FeatureDescription>
 
 <FeatureList>

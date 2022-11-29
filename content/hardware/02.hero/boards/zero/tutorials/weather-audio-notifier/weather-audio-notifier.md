@@ -1,10 +1,10 @@
 ---
 title: 'Weather Audio Notifier'
 description: 'Create an auditory weather notification project.'
-tags: 
+tags:
   - Weather
   - Piezo
-  - Notification 
+  - Notification
 libraries:
   - name: ArduinoJson Library
     url: https://github.com/bblanchon/ArduinoJson

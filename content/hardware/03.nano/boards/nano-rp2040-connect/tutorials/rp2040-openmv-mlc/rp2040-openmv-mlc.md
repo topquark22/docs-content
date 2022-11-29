@@ -3,7 +3,7 @@ title: 'MicroPython and the IMU Machine Learning Core Features'
 difficulty: beginner
 compatible-products: [nano-rp2040-connect]
 description: 'Learn how to use the Machine Learning Core (MLC) feature of the inertial module of the Nano RP2040 Connect.'
-tags: 
+tags:
   - LSM6DSOX
   - IMU
   - Machine learning
@@ -32,7 +32,7 @@ The goals of this tutorial are:
 
 ## Hardware and Software Needed
 
-- [Arduino Nano RP2040 Connect board](https://store.arduino.cc/nano-rp2040-connect).    
+- [Arduino Nano RP2040 Connect board](https://store.arduino.cc/nano-rp2040-connect).
 - [OpenMV IDE](https://openmv.io/pages/download).
 - Micro-USB cable (x1).
 
@@ -42,7 +42,7 @@ An Inertial Measurement Unit (IMU) is a device that can measure an object's spec
 
 * Gyroscope: a device that measures the system's **angular rate**.
 * Accelerometer: a device that measures the system's specific **force/acceleration**.
-* Magnetometer: an optional device that measures the surrounding **magnetic field** of the system. 
+* Magnetometer: an optional device that measures the surrounding **magnetic field** of the system.
 
 IMU's are typically used to capture **movement** data of a device or a system. The onboard IMU of the Nano RP2040 Connect, the LSM6DSOX from STMicroelectronics®, has an embedded hardware processing engine dedicated to real-time machine learning computing; this means that some machine learning algorithms were moved from the application processor to the LSM6DSOX directly. STMicroelectronics named this embedded processing engine of the LSM6DSOX **Machine Learning Core** (MLC).
 
@@ -64,7 +64,7 @@ We will use the LSM6DSOX accelerometer from our Nano RP2040 Connect board, its M
 
 ### Acceleromenter Configuration
 
-For the vibration monitoring application, the LSM6DSOX accelerometer is configured with **±4g full scale** and a **26 Hz output data rate**; any sensor orientation is allowed. 
+For the vibration monitoring application, the LSM6DSOX accelerometer is configured with **±4g full scale** and a **26 Hz output data rate**; any sensor orientation is allowed.
 
 ### Machine Learning Core Configuration
 
@@ -76,7 +76,7 @@ We will now get to the programming part of this tutorial.
 
 **1. Setting Up**
 
-Plug in your Nano RP2040 Connect board to your computer and open the OpenMV IDE; press the "Connect" button that is located in the lower left corner of the IDE. 
+Plug in your Nano RP2040 Connect board to your computer and open the OpenMV IDE; press the "Connect" button that is located in the lower left corner of the IDE.
 
 !["Connect" button in the OpenMV IDE.](assets/rp2040-openmv-mlc_img03.png)
 
@@ -84,7 +84,7 @@ The "Connect" button should change now. When the board is connected, information
 
 ![Board information in the OpenMV IDE.](assets/rp2040-openmv-mlc_img04.png)
 
-Now, **download the pre-trained model** for the vibration monitoring application and copy it to your Nano RP2040 Connect board storage. The pre-trained model for the vibration monitoring can be found [here](https://github.com/STMicroelectronics/STMems_Machine_Learning_Core/tree/master/application_examples/lsm6dsox/Vibration%20monitoring) as well other pre-trained models for different examples and applications. 
+Now, **download the pre-trained model** for the vibration monitoring application and copy it to your Nano RP2040 Connect board storage. The pre-trained model for the vibration monitoring can be found [here](https://github.com/STMicroelectronics/STMems_Machine_Learning_Core/tree/master/application_examples/lsm6dsox/Vibration%20monitoring) as well other pre-trained models for different examples and applications.
 
 **2. Creating the Script**
 
@@ -113,7 +113,7 @@ def imu_int_handler(pin):
     INT_FLAG = True
 ```
 
-Now, let's **configure the IMU interrupt** in our board. For configuring the interrupt, we need to specify the interrupt pin (**GPIO 24** for this example), the interrupt handler function and the type of trigger of the interrupt (**rising edge**, this means a change from low to high): 
+Now, let's **configure the IMU interrupt** in our board. For configuring the interrupt, we need to specify the interrupt pin (**GPIO 24** for this example), the interrupt handler function and the type of trigger of the interrupt (**rising edge**, this means a change from low to high):
 
 ```python
 # External interrupt configuration (IMU)
@@ -137,7 +137,7 @@ UCF_LABELS = {0: "no vibration", 1: "low vibration", 2: "high vibration"}
 lsm = LSM6DSOX(i2c, gyro_odr = 26, accel_odr = 26, gyro_scale = 2000, accel_scale = 4, ucf = UCF_FILE)
 ```
 
-Now that we have the IMU ready, its time to start getting interrupts from it when a certain type of vibration is recognized. For this, we are going to keep looking for the interrupt flag `INT_FLAG` to change from `FALSE` to `TRUE`. If the value of `INT_FLAG` is `TRUE`, the MLC output is read and translated into a human readable description of the detected vibration:  
+Now that we have the IMU ready, its time to start getting interrupts from it when a certain type of vibration is recognized. For this, we are going to keep looking for the interrupt flag `INT_FLAG` to change from `FALSE` to `TRUE`. If the value of `INT_FLAG` is `TRUE`, the MLC output is read and translated into a human readable description of the detected vibration:
 
 ```python
 print("\n--------------------------------")
@@ -182,7 +182,7 @@ if (INT_MODE == True):
     int_pin = Pin(24)
     int_pin.irq(handler = imu_int_handler, trigger = Pin.IRQ_RISING)
 
-# Initialize an I2C object. 
+# Initialize an I2C object.
 i2c = I2C(0, scl=Pin(13), sda=Pin(12))
 
 # Pre-trained model configuration
@@ -212,7 +212,7 @@ Now you are ready to upload and run the script to your board. Press the green "S
 
 ## Testing Vibration Detection
 
-After successfully uploading the code to the board, open OpenMV IDE's Serial Terminal. If the board is not moving at all, e.g. standing still at a table, the Serial Terminal will print `No vibration` after a few seconds. If you now move your Nano RP2040 Connect board continuously, the Serial Terminal will print `Low vibration` or `High vibration`, depending on how your board is moving. 
+After successfully uploading the code to the board, open OpenMV IDE's Serial Terminal. If the board is not moving at all, e.g. standing still at a table, the Serial Terminal will print `No vibration` after a few seconds. If you now move your Nano RP2040 Connect board continuously, the Serial Terminal will print `Low vibration` or `High vibration`, depending on how your board is moving.
 
 ![The Serial Terminal of the OpenMV IDE.](assets/rp2040-openmv-mlc_img05.png)
 
@@ -220,8 +220,8 @@ After successfully uploading the code to the board, open OpenMV IDE's Serial Ter
 
 If the code is not working, there are some common issues you can troubleshoot:
 
-- Your board doesn't have uploaded the latest release of the OpenMV firmware. 
-- Your board doesn't have uploaded the pre-trained model into its storage. 
+- Your board doesn't have uploaded the latest release of the OpenMV firmware.
+- Your board doesn't have uploaded the pre-trained model into its storage.
 - An incorrect pin number was assigned to the IMU interrupt. Make sure that pin 24 is assigned to it.
 - You have a faulty Micro-USB cable; try with a different cable.
 

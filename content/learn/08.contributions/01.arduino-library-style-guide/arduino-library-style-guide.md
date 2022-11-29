@@ -1,7 +1,7 @@
 ---
 title: 'Arduino Style Guide for Creating Libraries'
 description: 'Learn how to write library APIs in an Arduino style.'
-tags: 
+tags:
   - Styleguide
   - Guidelines
 ---
@@ -64,11 +64,11 @@ When using serial communication, allow the user to specify any `Stream` object, 
 
 When writing a library that provides byte-stream communication, inherit Arduino's `Stream` class, so your library can be used with all other libraries that accept `Stream` objects. If possible, buffer incoming data, so that `read()` immediately accesses the buffer but does not wait for more data to arrive. If possible, your `write()` method should store data to a transmit buffer, but `write()` must wait if the buffer does not have enough space to immediately store all outgoing data. The `yield()` function should be called while waiting.
 
-Here are a few libraries that are exemplary from Adafruit. She breaks the functions of the devices down into their high-level activities really well. 
+Here are a few libraries that are exemplary from Adafruit. She breaks the functions of the devices down into their high-level activities really well.
 
-* https://github.com/adafruit/Adafruit-BMP085-Library 
-* https://github.com/adafruit/DHT-sensor-library 
+* https://github.com/adafruit/Adafruit-BMP085-Library
+* https://github.com/adafruit/DHT-sensor-library
 
-This does a nice job of abstracting from the Wire (I2C) library: https://github.com/adafruit/RTClib 
+This does a nice job of abstracting from the Wire (I2C) library: https://github.com/adafruit/RTClib
 
 The text of the Arduino reference is licensed under a [Creative Commons Attribution-ShareAlike 3.0 License](http://creativecommons.org/licenses/by-sa/3.0/). Code samples in the reference are released into the public domain.

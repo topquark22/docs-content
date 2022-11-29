@@ -7,7 +7,7 @@ tags:
   - RGB
   - Drawing
 author: 'Karl Söderby'
-libraries: 
+libraries:
   - name: Arduino_MKRRGB
     url: https://www.arduino.cc/en/Reference/ArduinoMKRRGB
   - name: ArduinoGraphics
@@ -21,13 +21,13 @@ software:
   - web-editor
 ---
 
-## Introduction 
+## Introduction
 
-In this tutorial, we will test out some pretty basic features, using the MKR RGB Shield, the [Arduino_MKRRGB](https://www.arduino.cc/en/Reference/ArduinoMKRRGB) and [ArduinoGraphics](https://www.arduino.cc/en/Reference/ArduinoGraphics) library. 
+In this tutorial, we will test out some pretty basic features, using the MKR RGB Shield, the [Arduino_MKRRGB](https://www.arduino.cc/en/Reference/ArduinoMKRRGB) and [ArduinoGraphics](https://www.arduino.cc/en/Reference/ArduinoGraphics) library.
 
-The features we will focus on are `fill()`, `stroke()` and `rect()`, which are used to create and fill the matrix, or create an outline on the matrix. This tutorial is a great starting point if you have not used the MKR RGB Shield before. 
+The features we will focus on are `fill()`, `stroke()` and `rect()`, which are used to create and fill the matrix, or create an outline on the matrix. This tutorial is a great starting point if you have not used the MKR RGB Shield before.
 
->**Note:** The MKR RGB shield is designed to be used with the MKR family board. This includes the MKR Zero, MKR WiFi 1010, MKR FOX 1200, MKR WAN 1300/1310, MKR GSM 1400, MKR NB 1500 and MKR Vidor 4000. 
+>**Note:** The MKR RGB shield is designed to be used with the MKR family board. This includes the MKR Zero, MKR WiFi 1010, MKR FOX 1200, MKR WAN 1300/1310, MKR GSM 1400, MKR NB 1500 and MKR Vidor 4000.
 
 ## Goals
 
@@ -106,7 +106,7 @@ The `stroke()` function is used to set the color for the stroke of a rectangle. 
   MATRIX.rect(1, 1, 5, 2); //5x2 rectangle starting at 0,0
 ```
 
-We can also use the stroke, without the fill, so we only get the outline of a rectangle. 
+We can also use the stroke, without the fill, so we only get the outline of a rectangle.
 
 ### Circuit
 
@@ -114,9 +114,9 @@ We can also use the stroke, without the fill, so we only get the outline of a re
 
 ## Programming the Board
 
-We will now get to the programming part of this tutorial. 
+We will now get to the programming part of this tutorial.
 
-**1.** First, let's make sure we have the drivers installed for the board we are using. If we are using the Web Editor, we do not need to install anything. If we are using an offline editor, we need to install it manually. This can be done by navigating to **Tools > Board > Board Manager...**. Here we need to look for the **Arduino SAMD boards (32-bits ARM Cortex M0+)** and install it. 
+**1.** First, let's make sure we have the drivers installed for the board we are using. If we are using the Web Editor, we do not need to install anything. If we are using an offline editor, we need to install it manually. This can be done by navigating to **Tools > Board > Board Manager...**. Here we need to look for the **Arduino SAMD boards (32-bits ARM Cortex M0+)** and install it.
 
 **2.** Now, we need to install the libraries needed. If we are using the Web Editor, there is no need to install anything. If we are using an offline editor, simply go to **Tools > Manage libraries..**, and search for **Arduino_MKRRGB** and **ArduinoGraphics** and install them.
 
@@ -131,7 +131,7 @@ We will now get to the programming part of this tutorial.
 - `MATRIX.stroke(r,g,b)` - sets the color of the stroke.
 - `MATRIX.fill(r,g,b)` - sets the color of the fill.
 - `MATRIX.rect(startX, startY, width, height)` creates a rectangle.
-- `MATRIX.height()` - sets the maximum height of the matrix. 
+- `MATRIX.height()` - sets the maximum height of the matrix.
 - `MATRIX.width()` - sets the maximum width of the matrix.
 - `MATRIX.clear()` - clears the entire matrix.
 
@@ -174,7 +174,7 @@ void loop() {
 
 ## Testing It Out
 
-After we have uploaded the code to the board, it will immediately start blinking between a **filled red rectangle** and a **blue stroke only rectangle**. 
+After we have uploaded the code to the board, it will immediately start blinking between a **filled red rectangle** and a **blue stroke only rectangle**.
 
 ![Stroke vs Fill functions.](assets/MKRRGB_T1_IMG02.png)
 
@@ -185,11 +185,11 @@ In the code, we used the functions `MATRIX.width()` and `MATRIX.height()`, which
 If the code is not working, there are some common issues we can troubleshoot:
 
 - You have not mounted the MKR RGB Shield on top of an Arduino MKR board.
-- You have not installed the **Arduino_MKRRGB** and **ArduinoGraphics** library. 
+- You have not installed the **Arduino_MKRRGB** and **ArduinoGraphics** library.
 
 ## Conclusion
 
-In this tutorial, we have gone through some basic functions that are needed to get started with the MKR RGB Shield. We learned how to create rectangles and change their fill and stroke, as well as how to change their color. 
+In this tutorial, we have gone through some basic functions that are needed to get started with the MKR RGB Shield. We learned how to create rectangles and change their fill and stroke, as well as how to change their color.
 
 Feel free to explore the [Arduino_MKRRGB](https://www.arduino.cc/en/Reference/ArduinoMKRRGB) and [ArduinoGraphics](https://www.arduino.cc/en/Reference/ArduinoGraphics) libraries further, and try out some of the many cool functions.
 

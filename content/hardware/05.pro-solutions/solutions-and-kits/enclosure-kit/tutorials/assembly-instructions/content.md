@@ -11,7 +11,7 @@ hardware:
   - hardware/05.pro-solutions/solutions-and-kits/enclosure-kit
 ---
 
-## Introduction 
+## Introduction
 
 ![The enclosure kit and Edge Control](assets/enclosure-kit.png)
 

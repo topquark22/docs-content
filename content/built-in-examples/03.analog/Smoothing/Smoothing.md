@@ -3,7 +3,7 @@ title: 'Smoothing Readings From an Analog Input'
 compatible-products: [all-boards]
 difficulty: intermediate
 description: 'Smooth multiple readings of an analog input.'
-tags: 
+tags:
   - Analog
   - Input
   - Potentiometer

@@ -49,7 +49,7 @@ In a nutshell, the steps required to make this integration are the following:
 - Create an Arduino Sketch in the Arduino Cloud.
 - Authenticate your local editor with your Arduino account.
 - Pull a Sketch you want to edit.
-- When you have finished editing, push it back to the cloud. 
+- When you have finished editing, push it back to the cloud.
 
 ***The Remote Sketchbook integration with IDE 2.0 does not yet support pushing your local Sketches to the cloud. The Sketch needs to have been originally created in the Arduino Cloud platform.***
 
@@ -62,7 +62,7 @@ In a nutshell, the steps required to make this integration are the following:
 
 The Arduino development experience is centered around the use of **Sketches.** The concept of a Sketchbook is known to anyone who has used Arduino, and it is basically a storage space for all of your projects.
 
-Up until now, there have been two ways of storing Sketches: 
+Up until now, there have been two ways of storing Sketches:
 
 A) You have an offline editor, and then you have a local Sketchbook, which can for example be located in your **C:\User\Documents** folder.
 
@@ -107,9 +107,9 @@ void setup() {
 
 void loop() {
     digitalWrite(LED, HIGH);
-    delay(1000); 
+    delay(1000);
     digitalWrite(LED, LOW);
-    delay(1000); 
+    delay(1000);
 }
 ```
 
@@ -147,7 +147,7 @@ Now, let's test out the feature, by locating the Sketch we created in the Arduin
 
 ![Pulling a Sketch.](assets/cloud-sketch-sync-img11.png)
 
-When we have pulled a Sketch, we can **edit it by double clicking on the Sketch**. It is easy to see when it has finished pulling it, because it will **not be greyed out anymore**. This will open a new window, and we can start editing it. 
+When we have pulled a Sketch, we can **edit it by double clicking on the Sketch**. It is easy to see when it has finished pulling it, because it will **not be greyed out anymore**. This will open a new window, and we can start editing it.
 
 ![Double click to open Sketch.](assets/cloud-sketch-sync-img12.png)
 

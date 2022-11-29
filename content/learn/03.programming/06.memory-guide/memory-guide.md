@@ -1,7 +1,7 @@
 ---
 title: 'Arduino Memory Guide'
 description: 'Learn about the built-in memory blocks of Arduino® boards in this article.'
-tags: 
+tags:
   - ROM
   - RAM
   - Flash
@@ -10,7 +10,7 @@ tags:
 author: 'Arduino, José Bagur, Taddy Chung'
 ---
 
-A microcontroller unit (also known as an MCU) is an integrated circuit (IC), typically used to perform specific applications or tasks. Usually, this type of IC gathers information or data from its surroundings, processes it, and generates specific outputs according to the gathered data. Microcontrollers today are everywhere; they are an essential part of modern embedded systems that can be found practically everywhere in our world, from smart watches to electric vehicles; they are even on the Martian surface right now. 
+A microcontroller unit (also known as an MCU) is an integrated circuit (IC), typically used to perform specific applications or tasks. Usually, this type of IC gathers information or data from its surroundings, processes it, and generates specific outputs according to the gathered data. Microcontrollers today are everywhere; they are an essential part of modern embedded systems that can be found practically everywhere in our world, from smart watches to electric vehicles; they are even on the Martian surface right now.
 
 One essential part of a microcontroller is its **memory**; memory stores information temporarily or permanently in microcontrollers, and can be used for several purposes. In this article, we will explore memory organization in microcontrollers, focusing on those present in Arduino® boards. We will also explore several ways to manage, measure, and optimize memory usage in Arduino-based systems.
 
@@ -18,19 +18,19 @@ One essential part of a microcontroller is its **memory**; memory stores informa
 
 Memory blocks are essential parts of modern embedded systems, especially microcontroller-based ones. **Memory blocks are semiconductor devices that store and retrieve information or data**; a microcontroller central processing unit (CPU) uses and processes data stored in memory blocks to perform specific tasks.
 
-As shown in the image below, memory blocks in microcontrollers are usually described as **arrays**. Memory arrays are divided into **cells** that can store data and be accessed using a unique identifier representing its **address** or position relative to the memory array. Information in memory cells is stored using binary digits (bits), usually organized in bytes (8-bits); it can also be retrieved later by the MCU or other components of a microcontroller-based system. 
+As shown in the image below, memory blocks in microcontrollers are usually described as **arrays**. Memory arrays are divided into **cells** that can store data and be accessed using a unique identifier representing its **address** or position relative to the memory array. Information in memory cells is stored using binary digits (bits), usually organized in bytes (8-bits); it can also be retrieved later by the MCU or other components of a microcontroller-based system.
 
-Memory in computing systems can be **volatile** or **non-volatile**. Volatile memory is a **temporary memory**, this means that data is stored while the system is running, but it is lost forever when the system is turned off. Non-volatile memory is **permanent memory**; data is not lost even if the system is turned off. 
+Memory in computing systems can be **volatile** or **non-volatile**. Volatile memory is a **temporary memory**, this means that data is stored while the system is running, but it is lost forever when the system is turned off. Non-volatile memory is **permanent memory**; data is not lost even if the system is turned off.
 
 ## Memory Architectures 101
 
 Computer architecture is a vast topic; we will focus on a general picture that will let us understand how memory is organized in the microcontrollers used in Arduino® boards.
 
-In the early days of computing, two computer architectures, i.e., the organization of the components inside a computing system, emerged: **von Neumann** and **Harvard**. 
+In the early days of computing, two computer architectures, i.e., the organization of the components inside a computing system, emerged: **von Neumann** and **Harvard**.
 
 ### Von Neumann Architecture
 
-The von Neumann architecture, named after the mathematician, physicist, and computer scientist John von Neumann, was first introduced in the mid '40s. It is also known as the Princeton architecture. This architecture stores program data and instructions in the same memory unit. 
+The von Neumann architecture, named after the mathematician, physicist, and computer scientist John von Neumann, was first introduced in the mid '40s. It is also known as the Princeton architecture. This architecture stores program data and instructions in the same memory unit.
 
 ![Von Neumann architecture.](assets/memory-guide-004.png)
 
@@ -38,15 +38,15 @@ Both are accessed by the CPU using the same communications bus, as shown below. 
 
 ### Harvard Architecture
 
-The Harvard architecture, named after the Harvard *Mark I* relay-based computer, was first introduced in the mid '40s. This architecture's main characteristic is that it uses **two separate memory units**, one for storing program instructions and one for storing program data. Both memory units in the Harvard architecture are accessed by the CPU using different communication buses. 
+The Harvard architecture, named after the Harvard *Mark I* relay-based computer, was first introduced in the mid '40s. This architecture's main characteristic is that it uses **two separate memory units**, one for storing program instructions and one for storing program data. Both memory units in the Harvard architecture are accessed by the CPU using different communication buses.
 
 ![Harvard architecture.](assets/memory-guide-003.png)
 
 ### Modern Architectures: Hybrids
 
-Modern computing systems use **hybrid architectures** models that maximize performance using the best of both worlds, the von Neumann and the Harvard models. 
+Modern computing systems use **hybrid architectures** models that maximize performance using the best of both worlds, the von Neumann and the Harvard models.
 
-Microcontrollers are usually used in embedded applications. They must perform defined tasks reliably and efficiently, with low or constrained resources; this is why the **Harvard architecture model is mainly used in microcontrollers**: microcontrollers have a small program and data memory that needs to be accessed simultaneously. However, Harvard architecture is not always used in microcontrollers; some microcontroller families use hybrid or Von Neumann architecture models. 
+Microcontrollers are usually used in embedded applications. They must perform defined tasks reliably and efficiently, with low or constrained resources; this is why the **Harvard architecture model is mainly used in microcontrollers**: microcontrollers have a small program and data memory that needs to be accessed simultaneously. However, Harvard architecture is not always used in microcontrollers; some microcontroller families use hybrid or Von Neumann architecture models.
 
 ### Arduino® Boards Architectures
 
@@ -114,7 +114,7 @@ Important to mention about AVR-based Arduino boards is how their SRAM is organiz
 - `BSS`
 - `Stack`
 - `Heap`
-  
+
 The `text` section contains instructions loaded into the flash memory; `data` section contains variables initialized in the sketch, `BSS` section contains uninitialized data, `stack` section stores data of functions and interrupts, and `heap` section stores variables created during run time.
 
 In hybrid ARM architectures, a so called **memory map** is implemented, with a different address map configuration of 32-bit, 36-bit, and 40-bit that depends on the requirement of System On a Chip (SoC) address space with extra DRAM. The Memory Map grants interface with SoC design, while having most system control on a high level coding. Memory access instructions can be used on high level code to manage interrupt modules and built-in peripherals. All of this controlled by **Memory Management Unit (MMU)**.
@@ -176,9 +176,9 @@ Memory usage statistics help comprehend the insight of resource management affec
 
 Let us talk more about **memory usage measurement** in Arduino® boards.
 
-### Flash Memory Measurement 
+### Flash Memory Measurement
 
-Flash memory on Arduino® boards can be measured with the help of the Arduino IDE. As stated before, Flash memory is where the application code is stored; **the Arduino IDE reports Flash memory usage through its compiler output console** to let developers know how much Flash memory resources are being used. 
+Flash memory on Arduino® boards can be measured with the help of the Arduino IDE. As stated before, Flash memory is where the application code is stored; **the Arduino IDE reports Flash memory usage through its compiler output console** to let developers know how much Flash memory resources are being used.
 
 For example, the IDE's compiler output console an AVR-based Arduino® board, the Nano, is shown in the image below:
 
@@ -192,7 +192,7 @@ The IDE's compiler output console log for another ARM-based Arduino®, the Porte
 
 ![Flash memory memory measurement in an ARM-based Arduino® board](assets/arm_portentah7.png)
 
-Notice that the compiler's output changes depending on if the board is AVR-based or ARM-based. 
+Notice that the compiler's output changes depending on if the board is AVR-based or ARM-based.
 
 ### SRAM Memory Measurement
 
@@ -207,14 +207,14 @@ void display_freeram() {
 int freeRam() {
   extern int __heap_start,*__brkval;
   int v;
-  return (int)&v - (__brkval == 0  
-    ? (int)&__heap_start : (int) __brkval);  
+  return (int)&v - (__brkval == 0
+    ? (int)&__heap_start : (int) __brkval);
 }
 ```
 
 Remember that the `heap` section is where variables created during the run time are stored. In the code, `__heap_start` and `__brkval` are as following:
 
-- **`__heap_start`**: the beginning of the `heap` section. 
+- **`__heap_start`**: the beginning of the `heap` section.
 - **`__brkval`**: the last memory address pointer used by the `heap`.
 
 The following example code can be used to **measure SRAM usage in ARM-based Arduino® boards**:
@@ -233,7 +233,7 @@ int freeRam() {
 }
 ```
 
-The code above is taken from Michael P. Flaga's library [Arduino-MemoryFree](https://github.com/mpflaga/Arduino-MemoryFree). 
+The code above is taken from Michael P. Flaga's library [Arduino-MemoryFree](https://github.com/mpflaga/Arduino-MemoryFree).
 
 ### EEPROM Memory Measurement
 
@@ -246,10 +246,10 @@ void setup() {
 }
 
 void loop {
-  // Write data into an specific address of the EEPROM memory 
+  // Write data into an specific address of the EEPROM memory
   EEPROM.write(address, value);
 
-  // Read data of an specific address of the EEPROM memory 
+  // Read data of an specific address of the EEPROM memory
   EEPROM.read(address);
 }
 ```
@@ -264,7 +264,7 @@ void setup() {
 
 void loop {
   for (int i = 0 ; i < EEPROM.length() ; i++) {
-    // Clear EEPROM memory 
+    // Clear EEPROM memory
     EEPROM.write(i, 0);
 
 }
@@ -281,7 +281,7 @@ The memory usage optimization process also implies reduced computational complex
 
 Let us talk about some memory usage optimization techniques.
 
-### Flash Memory Optimization 
+### Flash Memory Optimization
 
 Flash memory optimization is the most likely straightforward optimization possible source. Flash memory is where the capacity used by compiled code can be significantly reduced by considering some details.
 
@@ -303,7 +303,7 @@ The ideal way to use the Print Line command is to use the `F()` String Wrapper a
 
 #### String Wrapper
 
-`Serial.print()` or `Serial.println()` instructions uses SRAM space, which can be convenient but not desirable. The ideal way to use a `Serial.print()` or `Serial.println()` instruction is with the use of the **`F()` String wrapper** around the literals. For example: 
+`Serial.print()` or `Serial.println()` instructions uses SRAM space, which can be convenient but not desirable. The ideal way to use a `Serial.print()` or `Serial.println()` instruction is with the use of the **`F()` String wrapper** around the literals. For example:
 
 ```arduino
 Serial.println(F("Something"));
@@ -313,7 +313,7 @@ Wrapping the String `Something` with the `F()` wrapper will **move the Strings t
 
 #### PROGMEM
 
-Not only Strings occupy SRAM space, but **global variables** also take up quite a good amount of SRAM space. As global and static variables are streamed into SRAM space and push the `heap` memory section towards the `stack`. The space occupied by these variables streamed into SRAM space will be saved at its location and will not be changing, meaning more of these variables are created, they will use more space, and consequently, the system presenting problems and issues due to poor memory management. 
+Not only Strings occupy SRAM space, but **global variables** also take up quite a good amount of SRAM space. As global and static variables are streamed into SRAM space and push the `heap` memory section towards the `stack`. The space occupied by these variables streamed into SRAM space will be saved at its location and will not be changing, meaning more of these variables are created, they will use more space, and consequently, the system presenting problems and issues due to poor memory management.
 
 `PROGMEM`, which stands for **Program Memory**, can be used to store variable data into Flash memory space, just as the `F()` wrapper described before, but the use of `PROGMEM` presents one disadvantage: data read speed. Using RAM will provide a much faster data read speed, but `PROGMEM`, as it uses Flash memory, will be slower than RAM, given the same data size. Thus, it is essential to design code knowing which variables are crucial and which do not or have a lower priority.
 
@@ -322,7 +322,7 @@ The use of `PROGMEM` in an **AVR-based Arduino® board** is shown in the example
 ```arduino
 #include <avr/pgmspace.h>
 
-// Basic PROGMEM structure 
+// Basic PROGMEM structure
 const PROGMEM DataType Variable_Name[] = {var0, var1, var2 ...};
 
 // Storing an unsigned, 16-bit, integer
@@ -334,7 +334,7 @@ const char greetMessage[] PROGMEM = {"Something"};
 
 ***You can read more about PROGMEM in the [Arduino Language Reference](https://www.arduino.cc/reference/en/language/variables/utilities/progmem/).***
 
-For **ARM-based Arduino® board**, to implement similar solution, we will need to use `static const` over the variables. 
+For **ARM-based Arduino® board**, to implement similar solution, we will need to use `static const` over the variables.
 
 ```arduino
 static const int Variable = Data;
@@ -345,27 +345,27 @@ The usage differs in different levels summarized as following:
   - At Namespace level, we are pointing at the variables and it is differed whether `static` is declared or not. If declared, it infers that the variable is explicit static; on the other hand, it is implicit static declaration.
 
 - *Function Level*
-  - If it is declared within `static`, any type of applicable data that is to be managed will be between function calls. 
+  - If it is declared within `static`, any type of applicable data that is to be managed will be between function calls.
 
 - *Class Level*
-  - On a Class level, `static` declaration will mean any type of applicable data that is handled will be shared in between the instances. 
+  - On a Class level, `static` declaration will mean any type of applicable data that is handled will be shared in between the instances.
 
-#### Non-Dynamic Memory Allocation 
+#### Non-Dynamic Memory Allocation
 
 Dynamic memory allocation is usually a suitable method if the RAM size of the system is big enough to get around with; however, for microcontroller-based systems, such as embedded systems, counting every Byte of RAM is not recommended.
 
-Dynamic memory allocations cause **heap fragmentation**. With heap fragmentation, many areas of RAM affected by it cannot be reused again, leaving dead Bytes that can be taken as an advantage for other tasks. On top of it, when dynamic memory allocation proceeds to de-allocate to free up the space, it does not necessarily reduce the heap size. So to avoid heap or RAM fragmentation as much as possible, the following rules can be followed: 
+Dynamic memory allocations cause **heap fragmentation**. With heap fragmentation, many areas of RAM affected by it cannot be reused again, leaving dead Bytes that can be taken as an advantage for other tasks. On top of it, when dynamic memory allocation proceeds to de-allocate to free up the space, it does not necessarily reduce the heap size. So to avoid heap or RAM fragmentation as much as possible, the following rules can be followed:
 
 - **Prioritize using the stack rather than the heap**:
-  
+
   - **Stack** memory is fragmentation-free and can be freed up thoroughly when the function returns. Heap, in contrast, may not free up the space even though it was instructed to do so. Using local variables will help to do this and try not to use dynamic memory allocation, composed of different calls: `malloc, calloc, realloc`.
 
 - **Reduced global and static data (if possible)**:
-  
+
   - Meantime the code is running, memory area occupied by these data will not be freed up. The data will not be modified as constant data takes up precious space.
 
 - **Use short Strings/literals**:
-  
+
   - It is good to keep Strings/literals as short as possible. A single char takes **one** Byte of RAM, so the shorter, the better memory space usage. This does not mean keeping it short and using it in several different code areas is possible. Use it when required and keep it as short as possible to spare RAM space for other tasks.
 
   - **Arrays** are also recommended to be at a minimum size. If it requires resizing the array, you can always re-set the array size in code. It may be a tedious, also non-efficient method to hard-code the array sizes. However, if the code utilizes small array sizes and less than three arrays, it may suffice via manual resizing, knowing the requirements. An intelligent way to do this is a resizable array with limited size. The tasks will use the array without going over the size boundary. Thus it is suitable for extensive code. Although, the limit of the array size must be analyzed and kept as small as possible.
@@ -406,7 +406,7 @@ Implementation of adequate **data type** leads to a good overall code architectu
 
 Data types exist to ease data stream format and to be handled without making illegal access. The illegal access in terms of data types are meant when the data is handled in the code with incompatible format. So it is a good practice to not to abuse the the data type and use only convenient types for every data bits. Rather, design and allocate memory carefully according to the requirements, which will help to reserve some memory space if further designed tasks needs extra space.
 
-The following table shows basic value data types in Arduino:  
+The following table shows basic value data types in Arduino:
 
 |     **Type**    | **Byte Length** |       **Range of Values**       |
 |:---------------:|:---------------:|:-------------------------------:|
@@ -424,7 +424,7 @@ The following table shows basic value data types in Arduino:
 
 ### EEPROM Memory Optimization
 
-EEPROM memory optimization is usually not required; data that are to be used by EEPROM space do not need Flash memory as a storage source. On top of it, **it is not a good practice to offload SRAM data on EEPROM**. SRAM data are placed within volatility in mind, so offloading to EEPROM space, which is non-volatile memory, will mean the offloaded data will be engraved into EEPROM space. 
+EEPROM memory optimization is usually not required; data that are to be used by EEPROM space do not need Flash memory as a storage source. On top of it, **it is not a good practice to offload SRAM data on EEPROM**. SRAM data are placed within volatility in mind, so offloading to EEPROM space, which is non-volatile memory, will mean the offloaded data will be engraved into EEPROM space.
 
 With EEPROM, it is crucial to know that `write` operation is limited. The `read` operation is unlimited for EEPROM; however, the `write` operation is finite and usually capped at 100,000 cycles. Thus, it is essential to save only essential parameters for sensors or modules to work with primarily unchanging data. Additionally, avoid implementing `write` operations into loops to avoid constant `write` operations, these operations should be minimized while the system is working.
 
@@ -441,7 +441,7 @@ Sometimes the developer would have to use the EEPROM as alternative storage for 
 Memory architectures in microcontroller-based systems is a pretty vast topic; if you want to learn more about this topic, check out the following links:
 
 - 8-bit AVR® Core documentation in the [Microchip® Developer help site](https://microchipdeveloper.com/8avr:avrcore). Here you can find detailed information of the 8-bit AVR® Central Processing Unit (CPU).
-- ARM architecture [documentation site](https://developer.arm.com/documentation/). Here you can find detailed information of the different ARM processors. Check out the Cortex-M0+ and Cortex-M4 Technical Reference Manuals. 
+- ARM architecture [documentation site](https://developer.arm.com/documentation/). Here you can find detailed information of the different ARM processors. Check out the Cortex-M0+ and Cortex-M4 Technical Reference Manuals.
 
 ### References
 

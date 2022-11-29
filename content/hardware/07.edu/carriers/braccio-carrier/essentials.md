@@ -7,7 +7,7 @@
 
 <EssentialsColumn title="Arduino Basics">
     <EssentialElement link="/built-in-examples/" title="Built-in Examples" type="resource">
-        Built-in Examples are sketches included in the Arduino IDE and demonstrate all basic Arduino commands. 
+        Built-in Examples are sketches included in the Arduino IDE and demonstrate all basic Arduino commands.
     </EssentialElement>
     <EssentialElement link="/learn" title="Learn" type="resource">
         Discover interesting articles, principles and techniques related to the Arduino ecosystem.

@@ -35,7 +35,7 @@ The following boards are based on the [ATWINC1500](https://www.microchip.com/en-
 
 ## When to Update Firmware
 
-In most cases, manually updating your board's firmware is not necessary, as it is shipped to work 'out of the box'. But there are some cases where updating it might be useful, for example to correct hardware bugs or to be compatible with a specific setup. 
+In most cases, manually updating your board's firmware is not necessary, as it is shipped to work 'out of the box'. But there are some cases where updating it might be useful, for example to correct hardware bugs or to be compatible with a specific setup.
 
 You can read the full changelog of the NINA firmware through the link below:
 
@@ -61,7 +61,7 @@ To update the Firmware, follow the below steps:
 
 ![Selecting the Firmware Updater Tool.](assets/fw-cert-img01.png)
 
-**3.** A new window will open. Select your board from the drop down menu, and press the button to check for updates. 
+**3.** A new window will open. Select your board from the drop down menu, and press the button to check for updates.
 
 ![Selecting your board.](assets/fw-cert-img02.png)
 
@@ -89,11 +89,11 @@ To upload SSL Root certificates to your board, follow the below steps:
 
 ![Uploading the certificates.](assets/fw-cert-img05.png)
 
-**5.** The process of uploading the certificates takes some time, and when it is finished, you will see the text: 
+**5.** The process of uploading the certificates takes some time, and when it is finished, you will see the text:
 
 ```
 Certificates uploaded.
-``` 
+```
 
 ## Conclusion
 

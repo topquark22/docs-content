@@ -51,7 +51,7 @@ Now, let's make sure that our board is found by our computer, by selecting the p
 
 ![Selecting the right board and port.](assets/install_avr_03.png)
 
-This will look different depending on what kind of operative system you are using. 
+This will look different depending on what kind of operative system you are using.
 
 For **Windows** users, it could look like this:
 
@@ -63,7 +63,7 @@ For **MAC** users, it could look like this:
 
 ### Uploading a simple example
 
-You are now ready to start using your board! The easiest way to check that everything is working, is to upload just a simple blink example to your board. This is done by navigating to **File > Examples > 01.Basics > Blink**. 
+You are now ready to start using your board! The easiest way to check that everything is working, is to upload just a simple blink example to your board. This is done by navigating to **File > Examples > 01.Basics > Blink**.
 
 ![Selecting the blink example.](assets/install_avr_04.png)
 

@@ -12,7 +12,7 @@ For this this tutorial we will be using the Arduino Zero's built-in debugger int
 
 ## Requirements
 
-- Arduino IDE 2.0 installed. 
+- Arduino IDE 2.0 installed.
 - [Arduino Zero](https://store.arduino.cc/arduino-zero)
 - Micro USB cable.
 
@@ -36,5 +36,5 @@ To learn more about using the Debugger, you can continue on to the [main article
 
 ## Conclusion
 
-In this short tutorial, we set up the Arduino Zero for Debugging. Since the board already has a built-in debugger, we do not need to do any hardware configuration at all, which is one the greatest features of the Arduino Zero board. 
+In this short tutorial, we set up the Arduino Zero for Debugging. Since the board already has a built-in debugger, we do not need to do any hardware configuration at all, which is one the greatest features of the Arduino Zero board.
 

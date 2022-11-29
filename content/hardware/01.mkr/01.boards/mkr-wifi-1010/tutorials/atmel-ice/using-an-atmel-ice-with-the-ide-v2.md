@@ -1,7 +1,7 @@
 ---
 title: 'Debugging SAM-Based Arduino® Boards with Atmel-ICE'
 description: 'Learn how to debug SAM-based Arduino boards using the Atmel-ICE debugger and the Arduino IDE 2.0'
-tags: 
+tags:
   - IDE 2.0
   - Debugging
   - Debugger
@@ -15,7 +15,7 @@ In this tutorial, we will learn how to use the [Atmel-ICE](https://www.microchip
 
 ## Goals
 
-The goals with this tutorial are: 
+The goals with this tutorial are:
 
 - Learn how to use an [Atmel-ICE](https://www.microchip.com/DevelopmentTools/ProductDetails/ATATMEL-ICE) development tool with the new [Arduino IDE 2.0](https://www.arduino.cc/en/software) and a SAM-based Arduino® board.
 - Learn about the debugging functionalities of the new [Arduino IDE 2.0](https://www.arduino.cc/en/software).
@@ -36,19 +36,19 @@ The hardware and software used in this tutorial:
 
 ## The Atmel-ICE Development Tool
 
-Atmel-ICE is a powerful development tool that can be used for **debugging** and **programming ARM&reg; Cortex&reg;-M-based SAM and AVR microcontrollers** with on-chip debug capability. One of the main features of Atmel-ICE is its support of several debugging/programming interfaces like JTAG, SWD, PDI, TPI, aWire, SPI, debugWIRE, and UPDI. For debugging SAM-based Arduino&reg; boards with the Atmel-ICE, we are going to use its **SWD interface**. 
+Atmel-ICE is a powerful development tool that can be used for **debugging** and **programming ARM&reg; Cortex&reg;-M-based SAM and AVR microcontrollers** with on-chip debug capability. One of the main features of Atmel-ICE is its support of several debugging/programming interfaces like JTAG, SWD, PDI, TPI, aWire, SPI, debugWIRE, and UPDI. For debugging SAM-based Arduino&reg; boards with the Atmel-ICE, we are going to use its **SWD interface**.
 
 ![Atmel-ICE development tool. Image credits: Atmel.](assets/ide_v2_t1_img01.png)
 
 ## The SWD Interface
 
-JTAG is the de facto interface for debugging and accessing a processor registers. This interface has been used for many years, and it is still largely used today. But JTAG has a drawback: **it uses many signals (or pins), at least four**. To address this drawback, ARM® created an alternative debug interface called the Serial Wire Debug (SWD) interface. 
+JTAG is the de facto interface for debugging and accessing a processor registers. This interface has been used for many years, and it is still largely used today. But JTAG has a drawback: **it uses many signals (or pins), at least four**. To address this drawback, ARM® created an alternative debug interface called the Serial Wire Debug (SWD) interface.
 
-The **SWD interface** is a **two-pin** (SWDIO/SWCLK) electrical alternative to the JTAG interface that has the same JTAG protocol on top. The SWD interface can be used to program the firmware of a processor and access its registers for debugging purposes. This interface and its associated protocol are now available in nearly all ARM® Cortex®-A, Cortex®-R, and Cortex®-M processors. 
+The **SWD interface** is a **two-pin** (SWDIO/SWCLK) electrical alternative to the JTAG interface that has the same JTAG protocol on top. The SWD interface can be used to program the firmware of a processor and access its registers for debugging purposes. This interface and its associated protocol are now available in nearly all ARM® Cortex®-A, Cortex®-R, and Cortex®-M processors.
 
 ### Preparing the SWD Interface
 
-Before we connect the Atmel-ICE development tool to our Arduino® MKR WiFi 1010 board, we have to prepare the SWD interface pins of our board. The MKR WiFi 1010 board has the SWD interface pins, SWDIO and SWCLK, connected to the J2 header as shown in its [schematic](https://content.arduino.cc/assets/MKRWiFi1010V2.0_sch.pdf). 
+Before we connect the Atmel-ICE development tool to our Arduino® MKR WiFi 1010 board, we have to prepare the SWD interface pins of our board. The MKR WiFi 1010 board has the SWD interface pins, SWDIO and SWCLK, connected to the J2 header as shown in its [schematic](https://content.arduino.cc/assets/MKRWiFi1010V2.0_sch.pdf).
 
 ![J2 header of the MKR WiFi 1010 Board.](assets/ide_v2_t1_img02.png)
 
@@ -56,7 +56,7 @@ The J2 header pins of the MKR WiFi 1010 board are located on the **underside** o
 
 ![J2 header pinout of the MKR WiFi 1010 Board.](assets/ide_v2_t1_img03.png)
 
-There are several methods to connect the J2 header pins of the MKR WiFi 1010 board to the SWD interface of the Atmel-ICE development tool. For example, one method can be **soldering wires directly on the exposed pads**; in this tutorial, we are going to explain how to set up two different methods: **one that requires soldering and one that doesn't**. 
+There are several methods to connect the J2 header pins of the MKR WiFi 1010 board to the SWD interface of the Atmel-ICE development tool. For example, one method can be **soldering wires directly on the exposed pads**; in this tutorial, we are going to explain how to set up two different methods: **one that requires soldering and one that doesn't**.
 
 > Note: The goal is to **reach** the exposed pads that are located on the underside of the board, feel free to choose one of the two methods that are explained in this tutorial or to implement another solution not mentioned here.
 
@@ -66,7 +66,7 @@ In the first method, the one that requires soldering, **6 2.54mm right-angle mal
 
 ![2.54mm right-angle male headers soldered to the J2 exposed pads of the MKR WiFi 1010 Board.](assets/ide_v2_t1_img04.png)
 
-Now you can connect the mini-squid cable to the soldered right-angle headers. Notice that, while the headers are soldered to the exposed pads of the MKR WiFi 1010 board, you are not going to be able to use the board in a breadboard because it won't fit. 
+Now you can connect the mini-squid cable to the soldered right-angle headers. Notice that, while the headers are soldered to the exposed pads of the MKR WiFi 1010 board, you are not going to be able to use the board in a breadboard because it won't fit.
 ### Method 2: Using a MKR Proto Shield and Headers
 
 In the second method, the one that doesn't requires any soldering, a **MKR Proto Shield and 6 2.54mm straight male headers** can be used to access the exposed pads of the MKR WiFi 1010 board as shown in the images below:
@@ -80,7 +80,7 @@ Besides not requiring any soldering, with this method the MKR Proto Shield remai
 
 ## Connecting the Atmel-ICE to the MKR WiFi 1010
 
-Now that we have the MKR WiFi 1010 board SWD interface, we can connect it to the Atmel-ICE SWD interface. The Atmel-ICE development tool has two ports: an AVR and a SAM port. We can use both ports to access the SWD interface pins; the required connections are described in the table below: 
+Now that we have the MKR WiFi 1010 board SWD interface, we can connect it to the Atmel-ICE SWD interface. The Atmel-ICE development tool has two ports: an AVR and a SAM port. We can use both ports to access the SWD interface pins; the required connections are described in the table below:
 
 | Name |AVR Port Pin|SAM Port Pin|Description                        |
 |------|------------|------------|-----------------------------------|
@@ -91,17 +91,17 @@ Now that we have the MKR WiFi 1010 board SWD interface, we can connect it to the
 |VTG   |4           |1           |Target voltage reference.          |
 |GND   |2, 10       |3, 5, 9     |Ground.                            |
 
-We used the SAM port in this tutorial; this means we used the pins **4**, **2**, **6**, **10**, **1** and **3** (just one GND connection is enough) of the SAM port. 
+We used the SAM port in this tutorial; this means we used the pins **4**, **2**, **6**, **10**, **1** and **3** (just one GND connection is enough) of the SAM port.
 
-> Note: be careful and **double-check the connections between the Atmel-ICE and the MKR WiFi 1010 board SWD interfaces to avoid damaging one or both devices**. 
+> Note: be careful and **double-check the connections between the Atmel-ICE and the MKR WiFi 1010 board SWD interfaces to avoid damaging one or both devices**.
 
 If the SWD interfaces of the debugger and the board are connected properly, a **green LED should turn on in the debugger**. Now that we have both devices, the Atmel-ICE and the MKR WiFi 1010 board, SWD interfaces connected, its time to use the **debugger tool** of the Arduino IDE 2.0.
 
 ## Using the Debugger Tool
 
-Now that we have our hardware set up, we can learn how to use the IDE 2.0 Debugger Tool main functionalities through the [**Debugging with the Arduino IDE 2.0 tutorial**](https://docs.arduino.cc/software/ide-v2/tutorials/ide-v2-debugger). This tutorial goes through some key features of the Debugger Tool, and includes pointers to get started. 
+Now that we have our hardware set up, we can learn how to use the IDE 2.0 Debugger Tool main functionalities through the [**Debugging with the Arduino IDE 2.0 tutorial**](https://docs.arduino.cc/software/ide-v2/tutorials/ide-v2-debugger). This tutorial goes through some key features of the Debugger Tool, and includes pointers to get started.
 
-As explained in the [**Debugging with the Arduino IDE 2.0 tutorial**](https://docs.arduino.cc/software/ide-v2/tutorials/ide-v2-debugger), before we can use the Debugger Tool of the Arduino IDE 2.0, we need to upload a sketch to our MKR WiFi 1010 board, making sure it is optimized for debugging. Let's try a simple program that blinks the onboard LED of our MKR WiFi 1010 board and changes the value of several variables while running. 
+As explained in the [**Debugging with the Arduino IDE 2.0 tutorial**](https://docs.arduino.cc/software/ide-v2/tutorials/ide-v2-debugger), before we can use the Debugger Tool of the Arduino IDE 2.0, we need to upload a sketch to our MKR WiFi 1010 board, making sure it is optimized for debugging. Let's try a simple program that blinks the onboard LED of our MKR WiFi 1010 board and changes the value of several variables while running.
 
 ### 1. Setting Up
 
@@ -117,9 +117,9 @@ Let's try the example code show below, it is a simple program that blinks the on
 /*
   Simple Debugger Test
 
-  This example blinks the onboard LED of an Arduino board and changes 
-  the value of the variables x and y wwhile running. The purpose of 
-  this example is to test the debugging functionalities of the Arduino 
+  This example blinks the onboard LED of an Arduino board and changes
+  the value of the variables x and y wwhile running. The purpose of
+  this example is to test the debugging functionalities of the Arduino
   IDE 2.0.
 
   The circuit:
@@ -146,7 +146,7 @@ void loop() {
   y--;                               // Decrement in one unit y
   delay(1000);                       // Wait for a second
 
-  digitalWrite(LED_BUILTIN, LOW);    // Turn the LED off 
+  digitalWrite(LED_BUILTIN, LOW);    // Turn the LED off
   delay(1000);                       // Wait for a second
 }
 ```
@@ -183,7 +183,7 @@ Now let's see what happens with the breakpoints and the x and y variables in the
 
 ![Going through our code with the debugger tool.](assets/ide_v2_t1_img12.gif)
 
-As expected, we can see that the value of x increases in one unit while the value of y decreases in one unit. Also we can see the onboard LED going on and off. 
+As expected, we can see that the value of x increases in one unit while the value of y decreases in one unit. Also we can see the onboard LED going on and off.
 
 ## Conclusion
 
@@ -196,7 +196,7 @@ Sometimes errors occur, there are some common issues we can troubleshoot:
 - Missing a bracket or a semicolon in the code.
 - Arduino board connected to the wrong port.
 - Accidental interruption of cable connection of the board or the debugger.
-- SWD interfaces of the debugger hardware tool and the board are not connected properly. 
-- The debugging session in the IDE 2.0 didn't initialize correctly. 
+- SWD interfaces of the debugger hardware tool and the board are not connected properly.
+- The debugging session in the IDE 2.0 didn't initialize correctly.
 
 We hope you enjoy the Debugger, and if you are having issues, please report them in [Arduino IDE GitHub repository](https://github.com/arduino/arduino-ide/issues).

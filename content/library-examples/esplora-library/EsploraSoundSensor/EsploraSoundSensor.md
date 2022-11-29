@@ -21,7 +21,7 @@ Only your Arduino Esplora is needed for this example. Connect the Esplora to you
 
 ![Microphone to send data to your computer from the Esplora](./assets/Esplora_SoundSensor.png)
 
- 
+
 
 ## Code
 

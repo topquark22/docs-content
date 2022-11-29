@@ -8,7 +8,7 @@ tags:
   - MQTT
   - Environmental data
 author: 'Karl Söderby'
-libraries: 
+libraries:
   - name: MKRGSM
     url: https://www.arduino.cc/reference/en/libraries/mkrgsm/
   - name: MQTT
@@ -26,7 +26,7 @@ software:
   - web-editor
 ---
 
-## Introduction 
+## Introduction
 
 In this tutorial, we will create a setup that allows a MKR GSM 1400 board to **publish** and **subscribe** to topics, using MQTT (Message Queuing Telemetry Transport). The data we will publish and subscribe to, are environmental data from the [MKR ENV shield](https://store.arduino.cc/arduino-mkr-env-shield), using the [Arduino_MKRENV](https://www.arduino.cc/en/Reference/ArduinoMKRENV) library.
 
@@ -44,8 +44,8 @@ The goals of this project are:
 ## Hardware & Software Needed
 
 - Arduino IDE ([online](https://create.arduino.cc/) or [offline](https://www.arduino.cc/en/main/software)).
-- [MKRGSM](https://www.arduino.cc/en/Reference/GSM) library installed. 
-- [MQTT](https://github.com/256dpi/arduino-mqtt) library installed. 
+- [MKRGSM](https://www.arduino.cc/en/Reference/GSM) library installed.
+- [MQTT](https://github.com/256dpi/arduino-mqtt) library installed.
 - [Arduino_MKRENV](https://www.arduino.cc/en/Reference/ArduinoMKRENV) library installed.
 - [Arduino MKR GSM 1400](https://store.arduino.cc/mkr-gsm-1400).
 - [MKR ENV shield](https://store.arduino.cc/arduino-mkr-env-shield).
@@ -55,15 +55,15 @@ The goals of this project are:
 
 ## Message Queuing Telemetry Transport (MQTT)
 
-The MQTT protocol was first introduced in 1999, as a light-weight **publish** and **subscribe** system. It is particularly useful for devices with low-bandwidth, where we can send commands, sensor values or messages over the Internet with little effort. 
+The MQTT protocol was first introduced in 1999, as a light-weight **publish** and **subscribe** system. It is particularly useful for devices with low-bandwidth, where we can send commands, sensor values or messages over the Internet with little effort.
 
-A basic explanation of how it works is that a node, for example an Arduino MKR GSM 1400, sends a payload to a broker. A broker is a kind of "middle-point" server, that essentially stores payloads sent to it, in something called **topics**. A topic, is a definition of what type of data it contains, it could for example be "basement humidity" or "living room temperature". Another node can then subscribe to this information, from the broker, and voilà, data has been moved from Node A to Node B over the Internet. 
+A basic explanation of how it works is that a node, for example an Arduino MKR GSM 1400, sends a payload to a broker. A broker is a kind of "middle-point" server, that essentially stores payloads sent to it, in something called **topics**. A topic, is a definition of what type of data it contains, it could for example be "basement humidity" or "living room temperature". Another node can then subscribe to this information, from the broker, and voilà, data has been moved from Node A to Node B over the Internet.
 
 ![Basics of MQTT.](assets/mkr_tutorial_11_img_02.png)
 
-There are several different ways this can be practiced, with many different layers of security depending on what type of broker and setup we use. For example, if we are dealing with non-sensitive data, such as temperature of a specific location, we are not too concerned on who might get access to it. But there's cases where data needs to be protected, for example in Social Media messaging services. 
+There are several different ways this can be practiced, with many different layers of security depending on what type of broker and setup we use. For example, if we are dealing with non-sensitive data, such as temperature of a specific location, we are not too concerned on who might get access to it. But there's cases where data needs to be protected, for example in Social Media messaging services.
 
-One way to protect the data, is to for example use a **token**, something that is quite common when working with various IoT services. For example, if we are publishing something to a broker, anyone has the URL, e.g. **randombroker.org/randomtopic** can subscribe to it. But if we added a unique token on both sides, they wouldn't. These tokens could for example be **Z6ACuLwr5T**, which is not exactly something easy to guess. 
+One way to protect the data, is to for example use a **token**, something that is quite common when working with various IoT services. For example, if we are publishing something to a broker, anyone has the URL, e.g. **randombroker.org/randomtopic** can subscribe to it. But if we added a unique token on both sides, they wouldn't. These tokens could for example be **Z6ACuLwr5T**, which is not exactly something easy to guess.
 
 ![Using encryption with MQTT.](assets/mkr_tutorial_11_img_03.png)
 
@@ -80,14 +80,14 @@ MQTT is quite the interesting topic, and if you wish to read more about it, chec
 
 ## Creating the Program
 
-We will now get to the programming part of this tutorial. 
+We will now get to the programming part of this tutorial.
 
-**1.** First, let's make sure we have the drivers installed. If we are using the Web Editor, we do not need to install anything. If we are using an offline editor, we need to install it manually. This can be done by navigating to **Tools > Board > Board Manager...**. Here we need to look for the **Arduino SAMD boards (32-bits ARM Cortex M0+)** and install it. 
+**1.** First, let's make sure we have the drivers installed. If we are using the Web Editor, we do not need to install anything. If we are using an offline editor, we need to install it manually. This can be done by navigating to **Tools > Board > Board Manager...**. Here we need to look for the **Arduino SAMD boards (32-bits ARM Cortex M0+)** and install it.
 
 **2.** Now, we need to install the libraries needed. If we are using the Web Editor, there is no need to install anything. If we are using an offline editor, simply go to **Tools > Manage libraries..**, and search for **MKRGSM** and **Arduino_MKRENV** and install them.
 
-**3.** We will also need to install the **MQTT** library, by Joel Gaehwiler. 
- 
+**3.** We will also need to install the **MQTT** library, by Joel Gaehwiler.
+
 >**Note:** there are several MQTT libraries, make sure you install the right one! The image below highlights the library that needs to be installed.
 
 ![Installing the MQTT library.](assets/MQTT_LIB.png)
@@ -222,11 +222,11 @@ After you have uploaded the code to the board, open the Serial Monitor to initia
 
 ![Subscribing to environmental data in the serial monitor.](assets/MKRGSM_T7_IMG02.png)
 
-This means that we have successfully published, and subscribed to a topic containing our MKR ENV shield values, using the **shiftr.io** broker. 
+This means that we have successfully published, and subscribed to a topic containing our MKR ENV shield values, using the **shiftr.io** broker.
 
 Now, we can actually go and see a live visualization of the data that goes through the broker. To see this visualization, go to [shiftr.io/try](https://shiftr.io/try), and start looking for your message!
 
-To make things easy in this tutorial, we only recorded the temperature and humidity from the MKR ENV shield, but we can also record UVA, UVB, UVindex, LUX & atmospheric pressure. All we have to do is to read the values, create a topic to publish, and subscribe to the same topic. 
+To make things easy in this tutorial, we only recorded the temperature and humidity from the MKR ENV shield, but we can also record UVA, UVB, UVindex, LUX & atmospheric pressure. All we have to do is to read the values, create a topic to publish, and subscribe to the same topic.
 
 >**Note:** In this tutorial, we are only using one single board and sketch. If we have two boards with Internet access, we can simply subscribe to the same topic. You can for example setup one publish device and one subscribe device, and transfer data between them using MQTT.
 
@@ -246,8 +246,8 @@ If the code is not working, there are some common issues we can troubleshoot:
 
 In this tutorial, we have combined the use of the GSM technology, the MQTT communication protocol and environmental sensors. Practically speaking, we have created a tiny weather station that can provide accurate weather conditions which can be deployed anywhere with GSM coverage.
 
->**Tip:** As the hardware (MKR GSM 1400 + MKR ENV shield) are both designed to consume little power, we can get creative with the [ArduinoLowPower](https://www.arduino.cc/en/Reference/ArduinoLowPower) library to deploy a complete standalone weather station. The MKR GSM 1400 can be directly powered with a 3.7V LiPo battery with a JST PH connector. 
+>**Tip:** As the hardware (MKR GSM 1400 + MKR ENV shield) are both designed to consume little power, we can get creative with the [ArduinoLowPower](https://www.arduino.cc/en/Reference/ArduinoLowPower) library to deploy a complete standalone weather station. The MKR GSM 1400 can be directly powered with a 3.7V LiPo battery with a JST PH connector.
 
-Feel free to explore the [MKRGSM](https://www.arduino.cc/en/Reference/GSM) library further, and try out some of the many cool functions in this library. You can also check out the [MQTT](https://github.com/256dpi/arduino-mqtt) repository on GitHub. 
+Feel free to explore the [MKRGSM](https://www.arduino.cc/en/Reference/GSM) library further, and try out some of the many cool functions in this library. You can also check out the [MQTT](https://github.com/256dpi/arduino-mqtt) repository on GitHub.
 
-Special thanks to Joel Gaehwiler for developing the [MQTT](https://github.com/256dpi/arduino-mqtt) library and to everyone who contributed to this library. 
+Special thanks to Joel Gaehwiler for developing the [MQTT](https://github.com/256dpi/arduino-mqtt) library and to everyone who contributed to this library.

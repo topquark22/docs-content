@@ -14,7 +14,7 @@ Connectivity:
 Sensors:
   IMU: LSM9DS1
 Communication:
-  UART: RX/TX 
+  UART: RX/TX
   I2C: A4 (SDA), A5 (SCL)
   SPI: D11 (COPI), D12 (CIPO), D13 (SCK). Use any GPIO for Chip Select (CS).
 Power:

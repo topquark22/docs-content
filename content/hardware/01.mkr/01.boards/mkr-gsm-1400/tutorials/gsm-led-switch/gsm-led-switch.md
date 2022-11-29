@@ -7,7 +7,7 @@ tags:
   - GSM
   - SMS
 author: 'Karl Söderby'
-libraries: 
+libraries:
   - name: MKRGSM
     url: https://www.arduino.cc/reference/en/libraries/mkrgsm/
 hardware:
@@ -20,11 +20,11 @@ software:
   - web-editor
 ---
 
-## Introduction 
+## Introduction
 
 In this tutorial we will learn how to use the Global Mobile Communication System (GSM) to turn ON or OFF an LED, using text messages (SMS). The sketch that we will create for the MKR GSM 1400 board will allow a phone to send a text message to it. If the message matches a string defined in the code, it will either turn the in-built LED on the board,  ON or OFF.
 
-Additionally, to receive feedback on whether the operation has worked or not, the board sends a message back to the sender number, to let the phone user know that it worked. 
+Additionally, to receive feedback on whether the operation has worked or not, the board sends a message back to the sender number, to let the phone user know that it worked.
 
 ## Goals
 
@@ -38,7 +38,7 @@ The goals of this project are:
 ## Hardware & Software Needed
 
 - Arduino IDE ([online](https://create.arduino.cc/) or [offline](https://www.arduino.cc/en/main/software)).
-- [MKRGSM](https://www.arduino.cc/en/Reference/GSM) library installed. 
+- [MKRGSM](https://www.arduino.cc/en/Reference/GSM) library installed.
 - [Arduino MKR GSM 1400](https://store.arduino.cc/mkr-gsm-1400).
 - [Antenna](https://store.arduino.cc/antenna).
 - SIM card from an operator in your country.
@@ -60,9 +60,9 @@ In this tutorial, we will create a sketch that allows us to send text messages t
 
 ## Creating the Program
 
-We will now get to the programming part of this tutorial. 
+We will now get to the programming part of this tutorial.
 
-**1.** First, let's make sure we have the drivers installed. If we are using the Web Editor, we do not need to install anything. If we are using an offline editor, we need to install it manually. This can be done by navigating to **Tools > Board > Board Manager...**. Here we need to look for the **Arduino SAMD boards (32-bits ARM Cortex M0+)** and install it. 
+**1.** First, let's make sure we have the drivers installed. If we are using the Web Editor, we do not need to install anything. If we are using an offline editor, we need to install it manually. This can be done by navigating to **Tools > Board > Board Manager...**. Here we need to look for the **Arduino SAMD boards (32-bits ARM Cortex M0+)** and install it.
 
 **2.** Now, we need to install the libraries needed. If we are using the Web Editor, there is no need to install anything. If we are using an offline editor, simply go to **Tools > Manage libraries..**, and search for **MKRGSM** and install it.
 
@@ -74,7 +74,7 @@ Then, name the file "arduino_secrets.h".
 
 ![Renaming new tab in offline IDE.](assets/mkr_tutorial_11_img_05.png)
 
-Inside this file, we need to enter our pin number between the " ". 
+Inside this file, we need to enter our pin number between the " ".
 
 ```cpp
 #define SECRET_PINNUMBER     "" //enter pin code between ""
@@ -90,7 +90,7 @@ Note that if you are using the Web Editor, the `arduino_secrets.h` tab will look
 - `GSM_SMS sms` - base class for all GSM functions for SMS.
 - `gsmAccess.begin(pin)` - connects to the GSM network with the pin number as a parameter, e.g. 0123.
 - `sms.available()` - checks to see if there is a SMS messages on the SIM card to be read.
-- `sms.remoteNumber(number, 20)` - retrieves a sender's number. 
+- `sms.remoteNumber(number, 20)` - retrieves a sender's number.
 - `equals()` - function that checks if a `string` is exactly the same as `string2`.
 - `sms.beginSMS(number);` - creates an SMS for a specific number.
 - `sms.print(message);` - prints the content of the SMS.
@@ -217,9 +217,9 @@ After we open the Serial Monitor, the board will attempt to connect to the GSM n
 
 ![The offline IDE waiting for messages.](assets/MKRGSM_T3_IMG02.png)
 
-This means that we are ready to receive text messages. Now, we can open our phone, and send a text message to the number attached to your SIM card. 
+This means that we are ready to receive text messages. Now, we can open our phone, and send a text message to the number attached to your SIM card.
 
-In the program, whenever there's an incoming text message, the board reads it and stores it in the `message` string. This string is then compared with two other strings: `"ON"` and `"OFF"`. 
+In the program, whenever there's an incoming text message, the board reads it and stores it in the `message` string. This string is then compared with two other strings: `"ON"` and `"OFF"`.
 
 - If we send a text message that contains only `ON`, it will trigger a conditional, which turns **ON** the **built-in LED**.
 
@@ -242,7 +242,7 @@ Note that the board does not always find a way to connect to the GSM network. Th
 
 - Antenna is not working.
 - SIM card is not working.
-- We're not in range of the GSM network. 
+- We're not in range of the GSM network.
 
 We can check out the [Scanning available networks](/tutorials/mkr-gsm-1400/gsm-scan-networks) tutorial to see if our board is within range of the GSM network.
 

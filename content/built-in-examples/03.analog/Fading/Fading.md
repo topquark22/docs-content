@@ -3,11 +3,11 @@ title: 'Fading'
 compatible-products: [all-boards]
 difficulty: intermediate
 description: 'Use an analog output (PWM pin) to fade an LED.'
-tags: 
+tags:
   - Analog
   - Output
   - LED
-  - PWM 
+  - PWM
 featuredImage: 'led'
 ---
 

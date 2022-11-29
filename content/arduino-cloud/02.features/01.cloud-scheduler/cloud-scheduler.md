@@ -29,7 +29,7 @@ A variable of `CloudSchedule` type can be configured to trigger at a specific ti
 
 For example, we can set such variable to be:
 - ON for 10 seconds, every minute.
-- ON for 8 hours, every day. 
+- ON for 8 hours, every day.
 - ON for a week, and then finish.
 
 ![Example of a schedule configured to run for 10 seconds every minute.](assets/cloud-scheduler-img-01.png)
@@ -42,7 +42,7 @@ There are countless examples where schedulers can be used, but predominantly it 
 
 ### Basic Example
 
-To test out functionality of your scheduler job, we can turn on an LED while the job is active. 
+To test out functionality of your scheduler job, we can turn on an LED while the job is active.
 
 ```arduino
 if (schedule_variable.isActive()) {
@@ -89,7 +89,7 @@ Turning on and off light sources can be a great power saver for the office, home
 
 ```arduino
 if (schedule_variable.isActive()) {
-   // can be configured to be ON between 8am - 5pm 
+   // can be configured to be ON between 8am - 5pm
    digitalWrite(relay, HIGH);
 } else {
    //can be set to OFF between 5pm - 8am the next morning
@@ -209,7 +209,7 @@ int LED = 6;
 
 void setup() {
   Serial.begin(9600);
-  delay(1500); 
+  delay(1500);
 
   initProperties();
 
@@ -222,7 +222,7 @@ void setup() {
 
 void loop() {
   ArduinoCloud.update();
-  // Your code here 
+  // Your code here
     if (schedule_test.isActive()) {
     light = true;
     digitalWrite(LED, HIGH);
@@ -250,7 +250,7 @@ void onScheduleTestChange() {
 
 ### Creating a Dashboard
 
-Finally, let's build a dashboard that will help us interface with our Arduino board. 
+Finally, let's build a dashboard that will help us interface with our Arduino board.
 
 **1.** Head over to the **"Dashboards"** section, and click on the **"Build Dashboard"** button.
 

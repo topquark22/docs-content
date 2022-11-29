@@ -11,7 +11,7 @@
       },
       "author": {
         "type": "string"
-      },     
+      },
       "hardwareRevision": {
         "type": "string"
       },
@@ -30,7 +30,7 @@
       },
     "revision": {
       "type": "string"
-    }      
+    }
   },
     "required": [
       "title",

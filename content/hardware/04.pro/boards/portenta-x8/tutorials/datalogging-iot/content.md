@@ -22,7 +22,7 @@ hardware:
 
 This tutorial will set up a typical Internet of Things (IoT) application: an MQTT data logger. For this application, we are going to use what we call in the Arduino team the "IoT-Quartet," four common building blocks that are popular and regularly used in these types of applications:
 
-- [Mosquitto](https://mosquitto.org/) (MQTT broker) 
+- [Mosquitto](https://mosquitto.org/) (MQTT broker)
 - [Node-RED](https://nodered.org/)
 - [InfluxDB](https://www.influxdata.com/)
 - [Grafana](https://grafana.com/)
@@ -51,13 +51,13 @@ These four blocks will be running locally on the [Arduino® Portenta X8](https:/
 
 ## IoT Architecture 101
 
-IoT applications and devices are everywhere nowadays, even where we don't think a device or application is connected to the Internet. Rather than a single technology, **IoT is a concept** that refers to the connection of everyday devices, just like your watch, to the Internet and how that Internet connection creates more and different ways to interact with your device and your environment. Interactions between humans and devices or applications create **data** (lots) that must be communicated and processed. 
+IoT applications and devices are everywhere nowadays, even where we don't think a device or application is connected to the Internet. Rather than a single technology, **IoT is a concept** that refers to the connection of everyday devices, just like your watch, to the Internet and how that Internet connection creates more and different ways to interact with your device and your environment. Interactions between humans and devices or applications create **data** (lots) that must be communicated and processed.
 
 How can we plan, build and deploy IoT solutions? To answer that question, we must think about **IoT architecture**. Due to the different IoT devices and applications that exist and can exist, there is not just one unique architecture for IoT devices and applications. But, we can talk about a base architecture that can be considered as a starting point for every IoT project. This base architecture consists of **three essential layers**: **perception** (or devices), **network**, and **application**. Let's talk more about these layers:
 
 - **Perception layer**: this is the sensor's layer, where data comes from. In this layer, data is gathered with one or more sensor nodes; actuators, that answer to data collected from sensor nodes, are also in this layer.
-- **Network layer**: this is where sensor node data is recollected and transmitted to back-end services, such as databases. 
-- **Application layer**: this layer is what the device or application user sees and interacts with, for example, a dashboard. 
+- **Network layer**: this is where sensor node data is recollected and transmitted to back-end services, such as databases.
+- **Application layer**: this layer is what the device or application user sees and interacts with, for example, a dashboard.
 
 The three-layer IoT architecture can be a starting point for designing and implementing an IoT device or application. In this tutorial, we are going to take this base architecture and set up a data logging application, as shown in the image below:
 
@@ -65,8 +65,8 @@ The three-layer IoT architecture can be a starting point for designing and imple
 
 In the high-level architecture described in the image above:
 
-- The perception layer consists of an MKR WiFi 1010 board; this board will gather information from a sensor. 
-- The network layer consists of the MQTT broker (Mosquitto), the data forwarder (Node-RED), and the database (InfluxDB). 
+- The perception layer consists of an MKR WiFi 1010 board; this board will gather information from a sensor.
+- The network layer consists of the MQTT broker (Mosquitto), the data forwarder (Node-RED), and the database (InfluxDB).
 - The application layer consists of a dashboard (Grafana) where information from the sensor node is shown.
 
 ***For documentation purposes, we will to explain, step by step, the installation process of each part of the application (Mosquitto, Node-RED, InfluxDB, and Grafana); this process can be done quickly using a unique Compose `YAML` file.***
@@ -75,7 +75,7 @@ Let's start by configuring the MQTT broker!
 
 ## Installing Mosquitto
 
-Let's start by creating a new directory in our Portenta X8 called `mqtt`; inside this directory, we are going to make a file named `docker-compose.yml`: 
+Let's start by creating a new directory in our Portenta X8 called `mqtt`; inside this directory, we are going to make a file named `docker-compose.yml`:
 
 ```
 $ mkdir mqtt
@@ -85,7 +85,7 @@ $ stty rows 36 cols 150
 $ sudo vi docker-compose.yml
 ```
 
-***The `export TERM=xterm` and `stty rows 36 cols 150` commands enable VI editor full screen.*** 
+***The `export TERM=xterm` and `stty rows 36 cols 150` commands enable VI editor full screen.***
 
 Inside VI editor, copy and paste the following:
 
@@ -116,7 +116,7 @@ Save the file and exit the VI editor. Return to the `mqtt` directory and run the
 mqtt$ docker-compose up -d
 ```
 
-The Mosquitto broker should be available on your Portenta X8 `IP address`. You can retrieve the `IP Address` of your board with the `ping <hostname>` command: 
+The Mosquitto broker should be available on your Portenta X8 `IP address`. You can retrieve the `IP Address` of your board with the `ping <hostname>` command:
 
 ```
 $ ping portenta-x8-a28ba09dab6fad9
@@ -148,7 +148,7 @@ Now, let's manage password files by adding a user to a new password file. For th
 
 ```
 /mqtt/config$ docker exec -it CONTAINER ID sh
-/ # 
+/ #
 ```
 
 Let's dissect that command:
@@ -161,7 +161,7 @@ Now, in the terminal session with the Mosquitto container, run the following com
 / # mosquitto_passwd -c /mosquitto/config/mosquitto.passwd guest
 ```
 
-This command creates a new password file (`mosquitto.passwd`); if the file already exists, it will be overwritten; `guest` is the username. After entering the `username` we want, we must define a password for the username and then exit the terminal session with the `exit` command: 
+This command creates a new password file (`mosquitto.passwd`); if the file already exists, it will be overwritten; `guest` is the username. After entering the `username` we want, we must define a password for the username and then exit the terminal session with the `exit` command:
 
 ```
 / # mosquitto_passwd -c /mosquitto/config/mosquitto.passwd guest
@@ -200,7 +200,7 @@ Let's test it! Save the file and exit the VI editor; also, we need to restart th
 
 ### Testing Mosquitto
 
-To test the Mosquitto broker, we need an MQTT client. We can use several ways to implement an MQTT client, one of the easiest ways is to install an MQTT client in our web browser and use it to test the connection between the local MQTT broker on the Portenta X8 board and the web-based MQTT client. This tutorial will use [MQTTBox](https://chrome.google.com/webstore/detail/mqttbox/kaajoficamnjijhkeomgfljpicifbkaf?hl=en), a Google Chrome extension that works as an MQTT client.      
+To test the Mosquitto broker, we need an MQTT client. We can use several ways to implement an MQTT client, one of the easiest ways is to install an MQTT client in our web browser and use it to test the connection between the local MQTT broker on the Portenta X8 board and the web-based MQTT client. This tutorial will use [MQTTBox](https://chrome.google.com/webstore/detail/mqttbox/kaajoficamnjijhkeomgfljpicifbkaf?hl=en), a Google Chrome extension that works as an MQTT client.
 
 In MQTTBox, let's start by configuring the settings of the MQTT client. The information we are going to need is the following:
 
@@ -214,20 +214,20 @@ Leave everything else as default and save the settings of the client. If everyth
 
 ![MQTTBox graphical user interface (GUI).](assets/x8-data-logging-img_03.png)
 
-When MQTTBox client connects to the local Mosquitto broker deployed in our Portenta X8 board, a blue "Not Connected" button should change to a green "Connected" button; also, notice that with the MQTTBox client, we are going to publish data to the `test` topic. Now, let's install Node-RED. 
+When MQTTBox client connects to the local Mosquitto broker deployed in our Portenta X8 board, a blue "Not Connected" button should change to a green "Connected" button; also, notice that with the MQTTBox client, we are going to publish data to the `test` topic. Now, let's install Node-RED.
 
 ## Installing Node-RED
 
 Node-RED is an open-source programming tool that connects hardware with API's and online services. It is a visual tool designed for Internet of Things devices and applications, but it can also be used for other of applications. The simplest form to run Node-RED with Docker is by using the following command:
 
 ```
-docker run -it -p 1880:1880 -v node_red_data:/data --name mynodered nodered/node-red    
+docker run -it -p 1880:1880 -v node_red_data:/data --name mynodered nodered/node-red
 ```
 
 This command will run a Node-RED container **locally** in our Portenta X8 board. Let's dissect the command:
 
 - `-it`: a terminal session is attached to the container so we can see what is happening with the container
-- `-p 1880:1880`: Node-RED local port `1880` connects to the exposed internal port `1880` 
+- `-p 1880:1880`: Node-RED local port `1880` connects to the exposed internal port `1880`
 - `v node_red_data:/data`: a docker named volume called `node_red_data` is mounted to the container `/data` directory. This permits any changes to the flow to persist
 - `--name mynodered`: a friendly local name
 - `nodered/node-red`: the image to base it on
@@ -247,7 +247,7 @@ Node-RED desktop is a GUI that lets us work with Node-RED flows graphically. We 
 - **Topic**: `test`
 - **QoS**: `0`
 - **Output**: `auto-detect (string or buffer)`
-- **Name**: `MQTT Broker X8` 
+- **Name**: `MQTT Broker X8`
 
 Now, search for the `change` node and drop it in the workspace; we will use this node to change the data format from the MQTT broker (string to number). To change the node's properties, double-click on it and define the following properties:
 
@@ -275,18 +275,18 @@ Success! We can now configure now InfluxDB.
 
 ## Installing InfluxDB
 
-InfluxDB is an open-source, high-performance, time series database; with InfluxDB data can be written and read in real-time, and data can be processed in the background for extract, transform and load (ETL) purposes or for monitoring and alerting purposes. User dashboards for visualizing and exploring data can also be set up. 
+InfluxDB is an open-source, high-performance, time series database; with InfluxDB data can be written and read in real-time, and data can be processed in the background for extract, transform and load (ETL) purposes or for monitoring and alerting purposes. User dashboards for visualizing and exploring data can also be set up.
 
 The simplest form to run InfluxDB with Docker is by using the following command:
 
 ```
-docker run --detach --name influxdb -p 8086:8086 influxdb:2.2.0 
+docker run --detach --name influxdb -p 8086:8086 influxdb:2.2.0
 ```
 
 This command will run an InfluxDB container **locally** in our Portenta X8 board. Let's dissect the command:
 
 - `--detach`: no terminal session is attached to the container
-- `--name`: the container name 
+- `--name`: the container name
 - `-p 1880:1880`: InfluxDB local port `8086` connects to the exposed internal port `8086`
 
 The container should now be running in the background; let's test the local instance of InfluxDB!
@@ -297,7 +297,7 @@ For testing the local instance of InfluxDB we are going to use its desktop and a
 
 ![Sign in page of the InfluxDB desktop.](assets/x8-data-logging-img_09.png)
 
-InfluxDB desktop is a GUI that lets us work with InfluxDB graphically. 
+InfluxDB desktop is a GUI that lets us work with InfluxDB graphically.
 
 ***The first time you enter the InfluxDB desktop, a username and a password must be set up.***
 
@@ -305,7 +305,7 @@ After setting up a username and a password, we are going to be redirected to the
 
 ![Getting started page of the InfluxDB desktop.](assets/x8-data-logging-img_10.png)
 
-In this example, we will send data from the MQTT broker to InfluxDB using Node-RED; Node-RED will act as a bridge between the MQTT broker and InfluxDB. Let's go to "Data" we are going to be redirected to the "Load Data" page, as shown in the image below: 
+In this example, we will send data from the MQTT broker to InfluxDB using Node-RED; Node-RED will act as a bridge between the MQTT broker and InfluxDB. Let's go to "Data" we are going to be redirected to the "Load Data" page, as shown in the image below:
 
 ![Load data page of the InfluxDB desktop.](assets/x8-data-logging-img_11.png)
 
@@ -355,7 +355,7 @@ docker run -d --name=grafana -p 3000:3000 grafana/grafana
 This command will run a Grafana container **locally** in our Portenta X8 board. Let's dissect the command:
 
 - `-d`: no terminal session is attached to the container
-- `--name`: the container name 
+- `--name`: the container name
 - `-p 3000:3000`: Grafana local port `3000` connects to the exposed internal port `3000`
 
 The container should now be running in the background; let's test the local instance of Grafana!
@@ -396,7 +396,7 @@ Now, in the Grafana GUI, create a new dashboard and add a new panel; in the conf
 
 ![Setting up a dashboard in Grafana via its GUI.](assets/x8-data-logging-img_21.png)
 
-In the "Query inspector," paste the script we generated before with InfluxDB. You should now see data from the tests made earlier with the MQTT client: 
+In the "Query inspector," paste the script we generated before with InfluxDB. You should now see data from the tests made earlier with the MQTT client:
 
 ![Setting up data visualization in a Grafana dashboard via its GUI.](assets/x8-data-logging-img_22.png)
 
@@ -404,7 +404,7 @@ Let's change how data is visualized. Select "Visualizations" and then search for
 
 ![Visualizing data with a gauge in a Grafana dashboard.](assets/x8-data-logging-img_23.png)
 
-We can change the panel options, such as their title and description. Click on apply; we can now use the MQTT client described before to test the MQTT broker integration with Node-RED, InfluxDB, and Grafana. Remember first to deploy the flow in Node-RED, subscribe to the test topic, and publish any value in the MQTT client. Also, remember to change the dashboard time range and its refresh rate. 
+We can change the panel options, such as their title and description. Click on apply; we can now use the MQTT client described before to test the MQTT broker integration with Node-RED, InfluxDB, and Grafana. Remember first to deploy the flow in Node-RED, subscribe to the test topic, and publish any value in the MQTT client. Also, remember to change the dashboard time range and its refresh rate.
 
 ![Configured dashboard in Grafana.](assets/x8-data-logging-img_24.png)
 
@@ -465,7 +465,7 @@ void setup() {
 
   Serial.println("- You're connected to the network!");
   Serial.println();
-  
+
   // Attempt to connect to the defined Wi-Fi network
   Serial.print("- Attempting to connect to the MQTT broker: ");
   Serial.println(broker);
@@ -501,13 +501,13 @@ void loop() {
     mqttClient.endMessage();
     Serial.println();
 
-    // Update data value    
+    // Update data value
     count++;
   }
 }
 ```
 
-The sketch shown above connects the MKR WiFi 1010 to the local MQTT broker of the X8 and periodically sends the value of a counter to the topic `test`. 
+The sketch shown above connects the MKR WiFi 1010 to the local MQTT broker of the X8 and periodically sends the value of a counter to the topic `test`.
 
 ***Please read [this tutorial](https://docs.arduino.cc/tutorials/mkr-wifi-1010/mqtt-device-to-device#programming-the-publisher) for more in-depth information about MQTT and the MKR WiFi 1010 board.***
 
@@ -515,7 +515,7 @@ If everything is ok, we should see the following in the Serial monitor of the Ar
 
 ![Debug messages in the Arduino IDE 2.0 Serial Monitor.](assets/x8-data-logging-img_25.png)
 
-Check out now the Grafana dashboard we configured earlier; we should see data coming from the MKR WiFi 1010 board. 
+Check out now the Grafana dashboard we configured earlier; we should see data coming from the MKR WiFi 1010 board.
 
 ## Conclusion
 

@@ -8,7 +8,7 @@ tags:
  - LoRa®
  - GPS
 author: 'Karl Söderby'
-libraries: 
+libraries:
   - name: LoRa
     url: https://github.com/sandeepmistry/arduino-LoRa
   - name: Arduino_MKRGPS
@@ -25,7 +25,7 @@ software:
 
 ## Introduction
 
-In this tutorial, we will use the [MKR GPS Shield](https://store.arduino.cc/arduino-mkr-gps-shield) to record the longitude and latitude, and transmit it to another board using LoRa® technology. This setup can be very useful for scenarios involving remote areas, where tracking location might be essential. 
+In this tutorial, we will use the [MKR GPS Shield](https://store.arduino.cc/arduino-mkr-gps-shield) to record the longitude and latitude, and transmit it to another board using LoRa® technology. This setup can be very useful for scenarios involving remote areas, where tracking location might be essential.
 
 Special thanks to [Sandeep Mistry](https://github.com/sandeepmistry) for creating the [LoRa library](https://github.com/sandeepmistry/arduino-LoRa).
 
@@ -62,11 +62,11 @@ There is, of course, much more behind the GPS technology. If we want to read mor
 
 ## Programming the Boards
 
-We will now go through a series of step by steps, to set up our GPS + LoRa® device. 
+We will now go through a series of step by steps, to set up our GPS + LoRa® device.
 
-Before starting, we will need to make sure that we have all the dependencies. For this setup, we are using **two** MKR WAN 1310 boards, two antennas and one MKR GPS Shield. We will also need to install the **Arduino_MKRGPS** library, the **LoRa** library. The latter can be downloaded from the [LoRa® repository](https://github.com/sandeepmistry/arduino-LoRa), where you can install it by navigating to **Sketch > Include Library > Add .ZIP Library...** in the offline IDE. 
+Before starting, we will need to make sure that we have all the dependencies. For this setup, we are using **two** MKR WAN 1310 boards, two antennas and one MKR GPS Shield. We will also need to install the **Arduino_MKRGPS** library, the **LoRa** library. The latter can be downloaded from the [LoRa® repository](https://github.com/sandeepmistry/arduino-LoRa), where you can install it by navigating to **Sketch > Include Library > Add .ZIP Library...** in the offline IDE.
 
-Since we are using two boards, we will also need to program them separately. 
+Since we are using two boards, we will also need to program them separately.
 
 ### Programming the First Board (Sender)
 
@@ -75,7 +75,7 @@ We will first need to program the board that will have the GPS shield attached t
 Some of the main functions of this sketch are listed below:
 
 - `byte localAddress = 0xBB;` - create a local address for our board.
-- `byte destination = 0xFF;` - create a destination address we will send our data to. 
+- `byte destination = 0xFF;` - create a destination address we will send our data to.
 - `LoRa.begin(868E6)` - initializes the LoRa® module to operate on 868 MHz frequency (European, for American, change to 915E6).
 - `GPS.begin` - initializes the GPS library.
 - `GPS.latitude()` - records latitude.
@@ -171,9 +171,9 @@ void printValues() {
 
 ### Programming the Second Board (Receiver)
 
-Now that we have successfully uploaded the code to the first board (the sender), we can move on to configure the second board. 
+Now that we have successfully uploaded the code to the first board (the sender), we can move on to configure the second board.
 
-- First, it is a good idea to use two computers if possible, otherwise, we will have to manually change between ports. It is important now to keep track on which board you are uploading to, as if accidentally upload the same sketch to both boards, it won't work. 
+- First, it is a good idea to use two computers if possible, otherwise, we will have to manually change between ports. It is important now to keep track on which board you are uploading to, as if accidentally upload the same sketch to both boards, it won't work.
 
 - The second sketch we need to upload is a bit more basic. It basically only listens for incoming messages, and if we receive a message from the other board, we print it in the Serial Monitor. Some of the core functions of this sketch are:
 
@@ -183,7 +183,7 @@ Now that we have successfully uploaded the code to the first board (the sender),
 - `LoRa.read()` - reads the incoming data.
 - `LoRa.packetRssi()` - signal strength from packet sender.
 
-We can now copy and paste the code from below and upload it to the second MKR WAN 1310 board. Make sure we have selected the right MKR WAN 1310 board to upload to. 
+We can now copy and paste the code from below and upload it to the second MKR WAN 1310 board. Make sure we have selected the right MKR WAN 1310 board to upload to.
 
 ```cpp
 #include <SPI.h>
@@ -239,11 +239,11 @@ Now the two MKR WAN 1310s have two unique sketches uploaded to each board. We wi
 
 ![Sending GPS data.](assets/WAN1310_T5_IMG03.png)
 
-- We will continue by now opening the Serial Monitor for the other board (the receiver). This is a simple receiving device, and its functionality is to receive packets. If we are within range of the other board, and everything is working properly, we should now see coordinates printed on the Serial Monitor. 
+- We will continue by now opening the Serial Monitor for the other board (the receiver). This is a simple receiving device, and its functionality is to receive packets. If we are within range of the other board, and everything is working properly, we should now see coordinates printed on the Serial Monitor.
 
 ![Serial Monitor view of both devices.](assets/WAN1310_T5_IMG02.png)
 
-Congratulations, you have now managed to combine the tracking of GPS signals, and transfer the coordinates over LoRa, to another board. This setup can be extremely useful for remote areas, where we for example need to send an emergency signal to notify our location. 
+Congratulations, you have now managed to combine the tracking of GPS signals, and transfer the coordinates over LoRa, to another board. This setup can be extremely useful for remote areas, where we for example need to send an emergency signal to notify our location.
 
 This tutorial combines both the use of LoRa® and GPS technologies, but you can of course explore them separately as well. The GPS shield can for example be used for more than just positioning, it can also be used to measure speed, for example how fast we are traveling by bike.
 

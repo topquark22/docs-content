@@ -1,7 +1,7 @@
 ---
 title: 'Firmata Library'
 description: 'The Firmata library implements the Firmata protocol for communicating with software on the host computer.'
-tags: 
+tags:
   - Libraries
 ---
 

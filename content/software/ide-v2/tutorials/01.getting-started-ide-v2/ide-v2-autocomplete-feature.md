@@ -14,13 +14,13 @@ The Arduino IDE 2.0 is an improvement of the classic IDE, with increased perform
 
 In this guide, we will cover the basics of the Arduino IDE 2.0, where you will find links to more detailed resources on how to use specific features!
 
-***You can download the IDE 2.0 from the [Arduino Software page](https://www.arduino.cc/en/software).*** 
+***You can download the IDE 2.0 from the [Arduino Software page](https://www.arduino.cc/en/software).***
 
 ***You can also follow the [downloading and installing the Arduino IDE 2.0](/software/ide-v2/tutorials/getting-started/ide-v2-downloading-and-installing) tutorial for more detailed guide on how to install the editor.***
 
 ## Requirements
 
-- [Arduino IDE 2.0](https://www.arduino.cc/en/software) installed. 
+- [Arduino IDE 2.0](https://www.arduino.cc/en/software) installed.
 
 ## Overview
 
@@ -47,9 +47,9 @@ The Arduino IDE 2.0 is a versatile editor with many features. You can install li
 
 Your sketchbook is where your code files are stored. Arduino sketches are saved as `.ino` files, and must be stored in a folder of the exact name. For example, a sketch named `my_sketch.ino` must be stored in a folder named `my_sketch`.
 
-Typically, your sketches are saved in a folder named `Arduino` in your `Documents` folder. 
+Typically, your sketches are saved in a folder named `Arduino` in your `Documents` folder.
 
-To access your sketchbook, click on the **folder icon** located in the sidebar. 
+To access your sketchbook, click on the **folder icon** located in the sidebar.
 
 ### Boards Manager
 
@@ -74,7 +74,7 @@ With the library manager you can browse and install thousands of libraries. Libr
 
 ![Serial Monitor.](assets/serial-monitor.png)
 
-The Serial Monitor is a tool that allows you to view data streaming from your board, via for example the `Serial.print()` command. 
+The Serial Monitor is a tool that allows you to view data streaming from your board, via for example the `Serial.print()` command.
 
 Historically, this tool has been located in a separate window, but is now integrated with the editor. This makes it easy to have multiple instances running at the same time on your computer.
 
@@ -84,9 +84,9 @@ Historically, this tool has been located in a separate window, but is now integr
 
 ![Serial Plotter.](assets/potentiometer-plotter.gif)
 
-The Serial Plotter tool is great for visualizing data using graphs, and to monitor for example peaks in voltage. 
+The Serial Plotter tool is great for visualizing data using graphs, and to monitor for example peaks in voltage.
 
-You can monitor several variables simultaneously, with options to enable only certain types. 
+You can monitor several variables simultaneously, with options to enable only certain types.
 
 ***To learn more about the Serial Plotter, visit the [Serial Plotter tutorial](/software/ide-v2/tutorials/ide-v2-serial-plotter).***
 
@@ -94,7 +94,7 @@ You can monitor several variables simultaneously, with options to enable only ce
 
 ![Debugger tool.](assets/playpause.gif)
 
-The debugger tool is used to test and **debug** programs, hence the name. It can be used to navigate through a program's execution in a controlled manner. 
+The debugger tool is used to test and **debug** programs, hence the name. It can be used to navigate through a program's execution in a controlled manner.
 
 ***To learn more about the debugger tool, visit the [Debugging tutorial](/software/ide-v2/tutorials/ide-v2-debugger).***
 
@@ -104,7 +104,7 @@ The debugger tool is used to test and **debug** programs, hence the name. It can
 
 Autocompletion is a must-have for code editors, and the 2.0 version comes well equipped. When writing code, this is useful to understand more about the elements of the Arduino API.
 
-Note that you always need to select your board for autocompletion to work. 
+Note that you always need to select your board for autocompletion to work.
 
 ***To learn more about the Autocompletion tool, visit the [Autocompletion tutorial](/software/ide-v2/tutorials/ide-v2-autocomplete-feature).***
 

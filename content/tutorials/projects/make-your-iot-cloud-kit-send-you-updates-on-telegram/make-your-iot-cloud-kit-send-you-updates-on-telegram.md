@@ -20,13 +20,13 @@ source: "https://create.arduino.cc/projecthub/officine-innesto/make-your-iot-clo
 
 In this tutorial, we'll toy around the new IoT Cloud Kit from Arduino, featuring (among LEDs, breadboards, LEDs & wires) a [MKR WiFi 1010](https://store.arduino.cc/mkr-wifi-1010), the [Environmental Shield ](https://store.arduino.cc/mkr-env-shield)and the [MKR Relay Proto Shield](https://store.arduino.cc/mkr-relay-proto-shield).
 
-We are going to make the data collected by the board accessible through a **conversational UI**. We'll be using **Telegram**, so you'll need to set up an account on that chat service (you are going to need a mobile phone number as well). 
+We are going to make the data collected by the board accessible through a **conversational UI**. We'll be using **Telegram**, so you'll need to set up an account on that chat service (you are going to need a mobile phone number as well).
 
 * We are going to use **Universal Telegram Bot** library by Brian Lough together with **ArduinoJson** library written by Benoît Blanchon.
 * We are going to be notified if a specific sensor (in this example is `t` for temperature) goes over `temp_limit`, 35.5.
 * We are going to have full control on the built-in LED on the Arduino and on the two **RELAYs** on the board.
 
-Wow! Let's start toying the boards. 
+Wow! Let's start toying the boards.
 
 ### Create a New TelegramBot Using BotFather
 
@@ -38,24 +38,24 @@ Talk to him and use the **/newbot** command to create a new bot. The BotFather w
 
 Open `Universal TelegramBot > 101 > Echobot.ino`.
 
-Since this code relies on another Wifi Library, we'll have to change the 
+Since this code relies on another Wifi Library, we'll have to change the
 
 ```arduino
 #include <WiFi101.h>
 ```
 
-to 
+to
 
 ```arduino
 #include <WiFiNINA.h>
 ```
 
-Or even add this magic piece of code that would make the Arduino IDE call which of the two libraries based on the target board specified. 
+Or even add this magic piece of code that would make the Arduino IDE call which of the two libraries based on the target board specified.
 
 ```arduino
 // This header is used to tell the Arduino IDE
-// to compile with the proper WIFI Library 
-// between MKR1000 and MKR1010  
+// to compile with the proper WIFI Library
+// between MKR1000 and MKR1010
 #ifdef ARDUINO_SAMD_MKRWIFI1010
 #include <WiFiNINA.h>
 #elif ARDUINO_SAMD_MKR1000
@@ -64,9 +64,9 @@ Or even add this magic piece of code that would make the Arduino IDE call which 
 #error unsupported board#endif
 ```
 
-Now, if you updated the WiFi SSID and password, together with a valid bot token you should be replied with your latest message. Let's add the data. 
+Now, if you updated the WiFi SSID and password, together with a valid bot token you should be replied with your latest message. Let's add the data.
 
-Important! In order to make the BOT talking to you (and just to you!) you need to sort out you `chat_id `(the number that Telegram assigns to the conversation between you and your BOT) 
+Important! In order to make the BOT talking to you (and just to you!) you need to sort out you `chat_id `(the number that Telegram assigns to the conversation between you and your BOT)
 
 You can discover this by adding this string to the `HandleNewMessages` function.
 
@@ -90,10 +90,10 @@ We are going to create a string that will be sent as an answer. We are going to 
  - Arduino MKR ENV Shield attached
  This example code is in the public domain.
 */
-  
+
 #include <Arduino_MKRENV.h>
 #include <WiFiSSLClient.h>
-  
+
 #include <UniversalTelegramBot.h>
 #ifdef ARDUINO_SAMD_MKRWIFI1010
 #include <WiFiNINA.h>
@@ -102,19 +102,19 @@ We are going to create a string that will be sent as an answer. We are going to 
 #else
 #error unsupported board
 #endif
-  
+
 // Initialize Wifi connection to the router
 char ssid[] = "SSIDName"; // your network SSID (name)
 char password[] = "SSIDKey";  // your network key
 #define BOTtoken "BotToken" // your Bot Token (Get from Botfather)
-  
-  
+
+
 WiFiSSLClient client;
-  
+
 UniversalTelegramBot bot(BOTtoken, client);
 int Bot_mtbs = 1000; //mean time between scan messages
 long Bot_lasttime;   //last time messages' scan has been done
-  
+
 void setup() {
  Serial.begin(115200);
  while (!Serial);

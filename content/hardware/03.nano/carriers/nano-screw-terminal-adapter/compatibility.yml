@@ -5,7 +5,7 @@ software:
 hardware:
   shields: ~
   carriers: ~
-  boards: 
+  boards:
     - nano-33-iot
     - nano
     - nano-33-ble-sense

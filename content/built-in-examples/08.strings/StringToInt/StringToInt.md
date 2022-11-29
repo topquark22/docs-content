@@ -3,7 +3,7 @@ title: 'String to Int Function'
 compatible-products: [all-boards]
 difficulty: intermediate
 description: 'Allows you to convert a String to an integer number.'
-tags: 
+tags:
   - Strings
   - Number
   - Serial monitor

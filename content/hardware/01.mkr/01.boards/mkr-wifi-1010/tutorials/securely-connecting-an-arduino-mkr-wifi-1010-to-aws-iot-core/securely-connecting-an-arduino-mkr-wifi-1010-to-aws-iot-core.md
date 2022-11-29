@@ -22,7 +22,7 @@ source: "https://create.arduino.cc/projecthub/Arduino_Genuino/securely-connectin
 
 ### Introduction
 
-[AWS IoT Core](https://aws.amazon.com/iot-core/) is a managed cloud service that lets connected devices easily and securely interact with cloud applications and other devices. AWS IoT Core can support billions of devices and trillions of messages, and can process and route those messages to AWS endpoints and to other devices reliably and securely. 
+[AWS IoT Core](https://aws.amazon.com/iot-core/) is a managed cloud service that lets connected devices easily and securely interact with cloud applications and other devices. AWS IoT Core can support billions of devices and trillions of messages, and can process and route those messages to AWS endpoints and to other devices reliably and securely.
 
 Devices can connect to AWS IoT Core using the following protocols: HTTP, WebSockets and MQTT. This tutorial will walk you through how to connect an [Arduino MKR WiFi 1010](https://store.arduino.cc/usa/arduino-mkr-wifi-1010) (or MKR1000) board securely to AWS IoT Core using the MQTT protocol. [MQTT](http://mqtt.org/) (**Message Queuing Telemetry Transport**) is an extremely lightweight M2M (machine-to-machine) connectivity protocol which provides a messaging subscription and publish transport.
 
@@ -58,11 +58,11 @@ The CSR can be generated using an example sketch from the ArduinoECCX08 library.
 
 This sketch will prompt you to permanently configure your ATECC508A to ECC608A crypto element if it is not configured and locked.
 
- ***NOTE: This locking process is permanent and irreversible, but is needed to use the the crypto element - the configuration the sketch sets allows to use 5 private key slots with any cloud provider (or server) and a CSR can be regenerated any time for each of the other four slots.*** 
- 
+ ***NOTE: This locking process is permanent and irreversible, but is needed to use the the crypto element - the configuration the sketch sets allows to use 5 private key slots with any cloud provider (or server) and a CSR can be regenerated any time for each of the other four slots.***
+
 When the board is shipped from the factory, the crypto element is in an un-configured and unlocked state.
 
-After this, you will be prompted for information to include in the CSR, most entries can be left blank and except the "Common Name", in the screenshot below "MyMKRWiFi1010" was entered. For this tutorial we'll be using slot 0 to generate and store the private key used to sign the CSR (slots 1 to 4 can be used to generate and store additional private keys if needed). 
+After this, you will be prompted for information to include in the CSR, most entries can be left blank and except the "Common Name", in the screenshot below "MyMKRWiFi1010" was entered. For this tutorial we'll be using slot 0 to generate and store the private key used to sign the CSR (slots 1 to 4 can be used to generate and store additional private keys if needed).
 
 **Note:** Since the private key is generated inside the crypto element it never leaves the device and is stored securely and cannot be read.
 
@@ -94,7 +94,7 @@ Now that we have a CSR to identify the board, we need to login into the AWS cons
 
 ![Register a Thing.](assets/screen_shot_2019-01-14_at_3_10_37_pm_sEq0UJFTMc.png)
 
-8) On the next page, click "Create a single thing." 
+8) On the next page, click "Create a single thing."
 
 ![Create a single Thing.](assets/screen_shot_2019-01-14_at_3_12_56_pm_xDDejI3x4d.png)
 

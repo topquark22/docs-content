@@ -3,7 +3,7 @@ title: 'Digital Read Serial'
 compatible-products: [all-boards]
 difficulty: beginner
 description: 'Read a switch, print the state out to the Arduino Serial Monitor.'
-tags: 
+tags:
   - Basics
   - Input
   - Pushbutton

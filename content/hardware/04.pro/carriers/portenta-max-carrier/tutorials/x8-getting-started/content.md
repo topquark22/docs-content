@@ -15,7 +15,7 @@ software:
   - web-editor
 ---
 
-## Introduction 
+## Introduction
 
 Using the Portenta X8 with the Portenta Max Carrier enables a large suite of peripherals and features. With the Portenta X8 it is possible to use Linux containers and Python® scripts, it is also possible to use the M4 core on the board to interface with the Portenta Max Carrier. In this tutorial we will focus on the peripherals and features that are available to us.
 

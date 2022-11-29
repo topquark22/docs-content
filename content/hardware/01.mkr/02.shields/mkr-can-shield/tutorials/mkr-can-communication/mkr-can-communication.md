@@ -3,10 +3,10 @@ title: 'Sending Data Between Two MKR CAN Shields'
 difficulty: advanced
 compatible-products: [mkr-can-shield]
 description: 'Learn how to setup two MKR CAN shields to communicate with each other.'
-tags: 
+tags:
   - CAN bus
 author: 'Karl Söderby'
-libraries: 
+libraries:
   - name: CAN
     url: https://github.com/sandeepmistry/arduino-CAN
 hardware:
@@ -24,7 +24,7 @@ featuredImage: 'chip'
 
 In this tutorial, we are going to create a communication line between two Arduino boards, using two MKR CAN Shields.
 
-CAN, which is short for **Controller Area Network**, is a bus designed for devices to communicate with each other without involving a host computer, such as a server. 
+CAN, which is short for **Controller Area Network**, is a bus designed for devices to communicate with each other without involving a host computer, such as a server.
 
 The MKR CAN Shield is a robust communication shield that can be used together with any [MKR family board](https://store.arduino.cc/arduino-genuino/arduino-genuino-mkr-family).
 
@@ -58,18 +58,18 @@ Let's imagine a simple example: a standard gasoline car. Let's say the car has t
 
 These changes happen without the driver even noticing, and this is thanks to the CAN bus protocol: devices are able to solve tasks themselves.
 
-Now, let's imagine the cooling system does not work for some reason. The temperature in the engine continues to increase, and the driver may not detect it. But if it reaches a certain danger threshold, it will trigger the **"Engine Temperature"** warning symbol on the dashboard. The driver is now notified that temperature is dangerously high, and should probably seek out a mechanic, or at least let the car cool down before continuing. 
+Now, let's imagine the cooling system does not work for some reason. The temperature in the engine continues to increase, and the driver may not detect it. But if it reaches a certain danger threshold, it will trigger the **"Engine Temperature"** warning symbol on the dashboard. The driver is now notified that temperature is dangerously high, and should probably seek out a mechanic, or at least let the car cool down before continuing.
 
 This is just one of many operations happening simultaneously inside a car. Other important operations could for example be brake control system or fuel pumps.
 
 ### How Does the Communication Work?
 
-The CAN bus uses just two wires: CAN high and CAN low. An ECU (electrical control unit), broadcasts data across the entire system, where other ECU on the system receives it. The ECU can decide whether the data is relevant or not, and either accept or ignore the data. Messages sent between ECU's have IDs depending on their priority, which means that more urgents messages gets bus access before others. 
+The CAN bus uses just two wires: CAN high and CAN low. An ECU (electrical control unit), broadcasts data across the entire system, where other ECU on the system receives it. The ECU can decide whether the data is relevant or not, and either accept or ignore the data. Messages sent between ECU's have IDs depending on their priority, which means that more urgents messages gets bus access before others.
 
 There is of course a lot more to read about the CAN bus protocol, and you can follow the links below to understand it a bit better:
 
-- <a href="https://www.csselectronics.com/screen/page/simple-intro-to-can-bus/language/en" target="_blank">Simple intro to CAN bus</a>. 
-- <a href="https://www.engineersgarage.com/featured-contributions/can-protocol-understanding-the-controller-area-network-protocol/" target="_blank">Understanding the controller area network protocol</a>. 
+- <a href="https://www.csselectronics.com/screen/page/simple-intro-to-can-bus/language/en" target="_blank">Simple intro to CAN bus</a>.
+- <a href="https://www.engineersgarage.com/featured-contributions/can-protocol-understanding-the-controller-area-network-protocol/" target="_blank">Understanding the controller area network protocol</a>.
 
 ### Circuit
 
@@ -83,18 +83,18 @@ We then need to follow the wire diagrams below. The wire from ISO GND is connect
 
 ## Programming the Board
 
-We will now get to the programming part of this tutorial. 
+We will now get to the programming part of this tutorial.
 
-**1.** First, let's make sure we have the drivers installed for the board we are using. If we are using the Web Editor, we do not need to install anything. If we are using an offline editor, we need to install it manually. This can be done by navigating to **Tools > Board > Board Manager...**. Here we need to look for the **Arduino SAMD boards (32-bits ARM Cortex M0+)** and install it. 
+**1.** First, let's make sure we have the drivers installed for the board we are using. If we are using the Web Editor, we do not need to install anything. If we are using an offline editor, we need to install it manually. This can be done by navigating to **Tools > Board > Board Manager...**. Here we need to look for the **Arduino SAMD boards (32-bits ARM Cortex M0+)** and install it.
 
-**2.** Now, we need to install the library needed. Head over to the [Arduino-CAN repository](https://github.com/sandeepmistry/arduino-CAN) and download the library by clicking on **Code > Download ZIP**. Head back to the editor, and navigate to **Sketch > Include Library > Add .ZIP Library**. Select the .ZIP file you downloaded (named arduino-CAN-master) and add it. 
+**2.** Now, we need to install the library needed. Head over to the [Arduino-CAN repository](https://github.com/sandeepmistry/arduino-CAN) and download the library by clicking on **Code > Download ZIP**. Head back to the editor, and navigate to **Sketch > Include Library > Add .ZIP Library**. Select the .ZIP file you downloaded (named arduino-CAN-master) and add it.
 
-**3.** We can now take a look at some core functions we are going to use: 
+**3.** We can now take a look at some core functions we are going to use:
 
 - `CAN.begin(500E3)` - initializes the library with a speed of 500 Kbps.
 - `CAN.beginPacket(0x12)` - begins a packet with specific ID (ID is 11 bits).
 - `CAN.beginExtendedPacket(0xabcdef)` - begins an extended packet with specific ID (ID is 29 bits).
-- `CAN.write('o')` - writes a byte to the packet. 
+- `CAN.write('o')` - writes a byte to the packet.
 - `CAN.endPacket()` - end packet and send it.
 - `CAN.parsePacket()` - parses the packet.
 - `CAN.packetId()` - ID from incoming packet.
@@ -222,9 +222,9 @@ void loop() {
 
 ## Testing It Out
 
-Great job! We have now programmed a **sender** and a **receiver** device, that will now be able to communicate with each other thanks to the MKR CAN Shields. 
+Great job! We have now programmed a **sender** and a **receiver** device, that will now be able to communicate with each other thanks to the MKR CAN Shields.
 
-The next step is to open the Serial Monitor for each device, to initiate the program. 
+The next step is to open the Serial Monitor for each device, to initiate the program.
 
 ### Testing Sender
 
@@ -245,7 +245,7 @@ This means it the message has successfully been transferred from the sender, to 
 
 ### Testing Receiver
 
-Now let's switch to the **receiver device**. This is done by changing the port to the other available. In this case, it is **COM6**. 
+Now let's switch to the **receiver device**. This is done by changing the port to the other available. In this case, it is **COM6**.
 
 ![Choosing receiver device.](assets/MKRCAN_T1_IMG04.png)
 
@@ -256,12 +256,12 @@ Received packet with id 0x12 and length 5
 hello
 
 Received extended packet with id 0xABCDEF and length 5
-world 
+world
 ```
 
 ![Receiving data.](assets/MKRCAN_T1_IMG06.png)
 
-This means the transmission has been successful. The regular packet contains `hello`, where the extended packet contains `world`. Additional information is also printed before the message, such as the ID and the length of the message. 
+This means the transmission has been successful. The regular packet contains `hello`, where the extended packet contains `world`. Additional information is also printed before the message, such as the ID and the length of the message.
 
 If you were to have both Serial Monitors open at the same time, the data transmission would look like this:
 

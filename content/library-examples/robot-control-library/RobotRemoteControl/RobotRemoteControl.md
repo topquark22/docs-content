@@ -52,7 +52,7 @@ If you connect a IR remote receiver to the robot, you can control it like contro
 
 ![Use the remote control with the robot](assets/LottieLemon_Remote_780.png)
 
- 
+
 
 ## Code
 

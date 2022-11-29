@@ -26,7 +26,7 @@ source: "https://create.arduino.cc/projecthub/Arduino_Genuino/securely-connectin
 
 [Azure IoT Hub](https://azure.microsoft.com/en-ca/services/iot-hub/) allows you to "securely connect, monitor, and manage billions of device to develop Internet of Things (IoT) applications."
 
-Devices can connect to Azure IoT Hub using the following protocols: HTTPS, AMPQ and [MQTT](http://mqtt.org/) - Azure also provides SDKs for many programming languages to abstract these protocols. In addition, you can connect to IoT Hub via an MQTT client. [This page](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-mqtt-support) has more information on IoT Hub’s MQTT support. 
+Devices can connect to Azure IoT Hub using the following protocols: HTTPS, AMPQ and [MQTT](http://mqtt.org/) - Azure also provides SDKs for many programming languages to abstract these protocols. In addition, you can connect to IoT Hub via an MQTT client. [This page](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-mqtt-support) has more information on IoT Hub’s MQTT support.
 
 This tutorial will walk you through how to connect an [Arduino MKR NB 1500](https://store.arduino.cc/arduino-mkr-nb-1500) board securely to Azure IoT Hub using an MQTT client. MQTT (Message Queuing Telemetry Transport) is a M2M (machine-to-machine) connectivity protocol which provides a messaging subscription and publish transport.
 
@@ -62,7 +62,7 @@ The self signed certificate can be generated using an example sketch from the Ar
 
 This sketch will prompt you to permanently configure your ATECC508A to ECC608A crypto element if it is not configured and locked.
 
- ***Note: This locking process is permanent and irreversible, but is needed to use the the crypto element - the configuration the sketch sets allows to use 5 private key slots with any cloud provider(or server) and a private key can be regenerated any time for any of  the 5 private key slots (0 - 4).When the board is shipped from the factory, the crypto element is in an un-configured and unlocked state.*** 
+ ***Note: This locking process is permanent and irreversible, but is needed to use the the crypto element - the configuration the sketch sets allows to use 5 private key slots with any cloud provider(or server) and a private key can be regenerated any time for any of  the 5 private key slots (0 - 4).When the board is shipped from the factory, the crypto element is in an un-configured and unlocked state.***
 
 After this, you will be prompted for information to include in the self signed certificate, including the issue year, month, day and hour of the certificate and the expiry period in years. For this tutorial we'll be using slot 0 to generate and store the private key used to sign the self signed certificate (slots 1 to 4 can be used to generate and store additional private keys if needed) - then slot 8 will be used to store the issue and expiry date of the certificate along with it's signature.
 
@@ -176,7 +176,7 @@ az extension add --name azure-cli-iot-ext
 3) Run the following command, replace `<hub name>` with the name of your hub (enter y if prompted for dependency update):
 
 ```arduino
-az iot hub monitor-events --hub-name <hub name> 
+az iot hub monitor-events --hub-name <hub name>
 ```
 
 4) You will see messages printed to the shell:

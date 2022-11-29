@@ -4,7 +4,7 @@ difficulty: beginner
 tags: [Proximity, Time Of Flight, Blink]
 description: Learn how to use the proximity sensor to vary the speed of the LED's blink.
 author: Pablo Marquínez
-libraries: 
+libraries:
   - name: VL53L1X
     url: https://github.com/pololu/vl53l1x-arduino
 hardware:
@@ -20,7 +20,7 @@ software:
 
 In this tutorial you will use the Nicla Vision to detect proximity, thanks to the Time of Flight (ToF) sensor **VL53L1X**.
 
-This tutorial teaches you how to create a sketch that will blink the built-in RGB LED and control the speed of its blink with the proximity values. It can be useful for future projects where there is the need to control the camera only when something is detected in front of the sensor. 
+This tutorial teaches you how to create a sketch that will blink the built-in RGB LED and control the speed of its blink with the proximity values. It can be useful for future projects where there is the need to control the camera only when something is detected in front of the sensor.
 
 ***The Arduino sketch shown is available inside the `Arduino_Pro_Tutorials` library by going to Examples > Nicla Vision > Proximity_Blink***
 
@@ -43,8 +43,8 @@ This tutorial teaches you how to create a sketch that will blink the built-in RG
 
 To make sure that the sketch works properly, the latest versions of the **Arduino mbed Core** and the **VL53L1X library** needs to be installed. Both can be found inside the Arduino IDE.
 
-- The **Arduino mbed Core** can be found in the **boards manager...**.  
-- The **VL53L1X library** can be found in the **Library manager**, 
+- The **Arduino mbed Core** can be found in the **boards manager...**.
+- The **VL53L1X library** can be found in the **Library manager**,
 
 If you are using version 1.6.2 or later of the Arduino software (IDE), you can use the Library Manager to install the VL53L1X library:
 
@@ -80,10 +80,10 @@ Inside the setup you need to initialize and configure the proximity sensor. Also
     Wire1.begin();
     Wire1.setClock(400000); // use 400 kHz I2C
     proximity.setBus(&Wire1);
-    
+
     pinMode(LEDB,OUTPUT);
     digitalWrite(LEDB, blinkState);
-    
+
     if (!proximity.init()){
       Serial.println("Failed to detect and initialize sensor!");
       while (1);

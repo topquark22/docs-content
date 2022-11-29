@@ -8,7 +8,7 @@ tags:
   - Sound
   - Sensor
 author: 'Fabricio Troya'
-libraries: 
+libraries:
   - name: Arduino PDM
     url: https://www.arduino.cc/en/Reference/PDM
 hardware:

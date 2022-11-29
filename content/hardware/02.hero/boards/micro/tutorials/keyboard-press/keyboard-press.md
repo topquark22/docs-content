@@ -6,7 +6,7 @@ description: 'Learn how to turn your Micro board into a keyboard.'
 tags:
   - Keyboard
 author: 'Karl Söderby'
-libraries: 
+libraries:
   - name: Keyboard
     url: https://www.arduino.cc/reference/en/language/functions/usb/keyboard/
 hardware:
@@ -17,7 +17,7 @@ software:
   - web-editor
 ---
 
-## Introduction 
+## Introduction
 
 In this tutorial, we will use the [Arduino Micro](https://store.arduino.cc/arduino-micro) to produce a keypress. This will be done by simply using a regular pushbutton, and the [Keyboard](https://www.arduino.cc/reference/en/language/functions/usb/keyboard/) library. We will create a program that, whenever we press the button on the board, it will act as if we were typing the character on our keyboard.
 
@@ -44,15 +44,15 @@ Instead of pressing the "A" button, we could use a 10x10 meter button on the wal
 
 ### Getting Creative with Key-Presses
 
-Now, creating a fully sophisticated keyboard from scratch might be daunting (yet possible) task. But there's a ton of other fun, but also useful things we can create. One of them is a **video game controllers**. 
+Now, creating a fully sophisticated keyboard from scratch might be daunting (yet possible) task. But there's a ton of other fun, but also useful things we can create. One of them is a **video game controllers**.
 
 ![The Micro as a game controller.](assets/micro_1.png)
 
-Let's imagine ourselves playing a game which involves several hotkeys (a keyboard shortcut). You are frustrating because most of your hotkeys are already bound to your most preferred location on the keyboard. 
+Let's imagine ourselves playing a game which involves several hotkeys (a keyboard shortcut). You are frustrating because most of your hotkeys are already bound to your most preferred location on the keyboard.
 
-Now we can start getting creative: how could we add more hotkeys without using our hands? We could, for example add a large button that can be activated by our foot (gas pedals for racing games perhaps?). Or we could do something completely crazy: use a sounds sensor that triggers a keypress when we scream. 
+Now we can start getting creative: how could we add more hotkeys without using our hands? We could, for example add a large button that can be activated by our foot (gas pedals for racing games perhaps?). Or we could do something completely crazy: use a sounds sensor that triggers a keypress when we scream.
 
-The main message is: you can in theory use thousands of unique ways of producing a keypress, as long as you have a microcontroller that can trigger it. But of course, the easiest way, is probably to use a button. 
+The main message is: you can in theory use thousands of unique ways of producing a keypress, as long as you have a microcontroller that can trigger it. But of course, the easiest way, is probably to use a button.
 
 You can read more about the ASCII values in the links below:
 
@@ -74,7 +74,7 @@ Before we begin, let's take a look at the functions used in this program:
 
 The sketch can be found in the snippet below. Upload the sketch to the board.
 
->**Note:** Remember to choose the right port and board. The board is located under **Tools > Board > Arduino AVR boards > Arduino Micro**. 
+>**Note:** Remember to choose the right port and board. The board is located under **Tools > Board > Arduino AVR boards > Arduino Micro**.
 
 ```cpp
 #include "Keyboard.h"
@@ -82,7 +82,7 @@ The sketch can be found in the snippet below. Upload the sketch to the board.
 //declaring button pins
 const int buttonPin = 2;
 
-int previousButtonState = HIGH; 
+int previousButtonState = HIGH;
 
 void setup() {
   //declare the buttons as input_pullup
@@ -106,7 +106,7 @@ void loop() {
     Keyboard.release(97);
     delay(50);
   }
- 
+
   previousButtonState = buttonState;
 
 }

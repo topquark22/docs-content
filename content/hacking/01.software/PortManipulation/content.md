@@ -1,7 +1,7 @@
 ---
 title: "Arduino - PortManipulation"
 source: "https://arduino.cc/en/Reference/PortManipulation"
-description: Learn how to control pins on an Arduino through three different registers (DDR, PORT, PIN). 
+description: Learn how to control pins on an Arduino through three different registers (DDR, PORT, PIN).
 ---
 
 ## Port Registers
@@ -38,13 +38,13 @@ DDRC - The Port C Data Direction Register - read/write
 
 PORTC - The Port C Data Register - read/write
 
-PINC - The Port C Input Pins Register - read only 
+PINC - The Port C Input Pins Register - read only
 
 Each bit of these registers corresponds to a single pin; e.g. the low bit of DDRB, PORTB, and PINB refers to pin PB0 (digital pin 8). For a complete mapping of Arduino pin numbers to ports and bits, see the diagram for your chip: [ATmega8](//www.arduino.cc/en/Hacking/PinMapping), [ATmega168](//www.arduino.cc/en/Hacking/PinMapping168). (Note that some bits of a port may be used for things other than i/o; be careful not to change the values of the register bits corresponding to them.)
 
 ## Examples
 
-Referring to the pin map above, the PortD registers control Arduino digital pins 0 to 7\. 
+Referring to the pin map above, the PortD registers control Arduino digital pins 0 to 7\.
 
 You should note, however, that pins 0 & 1 are used for serial communications for programming and debugging the Arduino, so changing these pins should usually be avoided unless needed for serial input or output functions. Be aware that this can interfere with program download or debugging.
 
@@ -53,14 +53,14 @@ DDRD is the direction register for Port D (Arduino digital pins 0-7). The bits i
 ```arduino
 DDRD = B11111110;  // sets Arduino pins 1 to 7 as outputs, pin 0 as input
 DDRD = DDRD | B11111100;  // this is safer as it sets pins 2 to 7 as outputs
-	                  	  // without changing the value of pins 0 & 1, which are RX & TX 
+	                  	  // without changing the value of pins 0 & 1, which are RX & TX
 ```
 
 See the bitwise operators reference pages and [The Bitmath Tutorial](http://www.arduino.cc/playground/Code/BitMath) in the Playground
 
 PORTD is the register for the state of the outputs. For example;
 
-`PORTD = B10101000; // sets digital pins 7,5,3 HIGH` 
+`PORTD = B10101000; // sets digital pins 7,5,3 HIGH`
 
 You will only see 5 volts on these pins however if the pins have been set as outputs using the DDRD register or with pinMode().
 
@@ -68,7 +68,7 @@ PIND is the input register variable It will read all of the digital input pins a
 
 ## Why Use Port Manipulation?
 
-From [The Bitmath Tutorial](http://www.arduino.cc/playground/Code/BitMath) 
+From [The Bitmath Tutorial](http://www.arduino.cc/playground/Code/BitMath)
 
 Generally speaking, doing this sort of thing is **not** a good idea. Why not? Here are a few reasons:
 

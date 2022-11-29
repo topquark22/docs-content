@@ -9,7 +9,7 @@ tags:
   - IoT
   - Arduino IoT Cloud
 author: 'Fabricio Troya'
-libraries: 
+libraries:
   - name: Arduino RTCZero
     url: https://www.arduino.cc/en/Reference/RTC
 hardware:
@@ -113,7 +113,7 @@ Remember, we will also need to make sure that we enter our network credentials. 
 
 **4. Creating the dashboard**
 
-Let's head over to the **Dashboard** tab in the Arduino IoT Cloud, and create a new dashboard by clicking on the **Build Dashboard** button. It is time to rename out "Untitled" dashboard as **Nano Alarm** and start adding the different widgets that we will need. We can do this by clicking on the **Add** button. Once we select each one of the widgets, we will need to link them to the variables we created in the previous step, check the table below to know the matchings between widgets and variables. 
+Let's head over to the **Dashboard** tab in the Arduino IoT Cloud, and create a new dashboard by clicking on the **Build Dashboard** button. It is time to rename out "Untitled" dashboard as **Nano Alarm** and start adding the different widgets that we will need. We can do this by clicking on the **Add** button. Once we select each one of the widgets, we will need to link them to the variables we created in the previous step, check the table below to know the matchings between widgets and variables.
 
 The dashboard needs five widgets in total, each of them is described in the table below.
 

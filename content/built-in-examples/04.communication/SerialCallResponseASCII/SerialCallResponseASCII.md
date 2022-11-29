@@ -3,7 +3,7 @@ title: 'Serial Call and Response (handshaking) with ASCII-encoded output'
 compatible-products: [all-boards]
 difficulty: intermediate
 description: 'Send multiple variables using a call-and-response (handshaking) method, and ASCII-encode the values before sending.'
-tags: 
+tags:
   - Communication
   - Input
   - Call and response

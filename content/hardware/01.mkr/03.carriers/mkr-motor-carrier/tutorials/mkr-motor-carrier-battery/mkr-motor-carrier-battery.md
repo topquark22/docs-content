@@ -6,7 +6,7 @@ description: 'Learn how to monitor battery status on the MKR Motor Carrier.'
 tags:
   - Battery
 author: 'Ernesto E. Lopez C.'
-libraries: 
+libraries:
   - name: ArduinoMotorCarrier
     url: https://github.com/arduino-libraries/ArduinoMotorCarrier
 hardware:
@@ -19,9 +19,9 @@ software:
   - web-editor
 ---
 
-## Introduction 
+## Introduction
 
-In this tutorial we will take a look at how to read the battery levels of a LiPo battery that is connected to the **MKR Motor Carrier**. We are also going to check how we can use this information to trigger something in the code. 
+In this tutorial we will take a look at how to read the battery levels of a LiPo battery that is connected to the **MKR Motor Carrier**. We are also going to check how we can use this information to trigger something in the code.
 
 We will do this by first reading the battery levels, and if the battery levels are OK, we will conduct a motor test, where we activate a DC motor. If the battery levels are NOT OK, we simply set the duty to 0, and print information to the Serial Monitor.
 
@@ -45,15 +45,15 @@ The goals of this project are:
 
 >**Note:** The DC motor is marked as optional as we are mainly testing the battery reading function in this tutorial.
 
->**Note:** For this tutorial, we used a 11.1V, 3 cell (3s) LiPo battery. 
+>**Note:** For this tutorial, we used a 11.1V, 3 cell (3s) LiPo battery.
 
 ## Useful Scenarios
 
-Knowing the charge status of your batteries can be useful, since you can program your controller to take decisions based on this information. For example, you can blink an LED to give a signal that the battery needs to be recharged or exchanged. 
+Knowing the charge status of your batteries can be useful, since you can program your controller to take decisions based on this information. For example, you can blink an LED to give a signal that the battery needs to be recharged or exchanged.
 
 ![Low battery indicator.](assets/MKRMOTORCARRIER_T1_IMG01.png)
 
-Another useful example is for protecting your batteries. For example, LiPo batteries are very delicate and can be damaged if you continue using them when they are discharged. One safety measure you can add to your project is to turn off all the motors when the battery is discharged. 
+Another useful example is for protecting your batteries. For example, LiPo batteries are very delicate and can be damaged if you continue using them when they are discharged. One safety measure you can add to your project is to turn off all the motors when the battery is discharged.
 
 ### Circuit
 
@@ -61,7 +61,7 @@ First, we need to mount the MKR family board on top of the MKR Motor Carrier.
 
 ![Mount the board.](assets/MKRMOTORCARRIER_T1_IMG02.png)
 
-Then, we need to add the battery (or power supply) to the male pins. We can also add this to the blue terminal block (VIN and GND) right next to the male pins. 
+Then, we need to add the battery (or power supply) to the male pins. We can also add this to the blue terminal block (VIN and GND) right next to the male pins.
 
 >**Optional:** We can also connect a DC motor to the pins **M1+** and **M1-**, as shown in the image below.
 
@@ -75,9 +75,9 @@ Finally, we can connect a micro USB cable to the MKR board that we are using.
 
 ## Programming the Board
 
-We will now get to the programming part of this tutorial. 
+We will now get to the programming part of this tutorial.
 
-**1.** First, let's make sure we have the drivers installed for the board we are using. If we are using the Web Editor, we do not need to install anything. If we are using an offline editor, we need to install it manually. This can be done by navigating to **Tools > Board > Board Manager...**. Here we need to look for the **Arduino SAMD boards (32-bits ARM Cortex M0+)** and install it. 
+**1.** First, let's make sure we have the drivers installed for the board we are using. If we are using the Web Editor, we do not need to install anything. If we are using an offline editor, we need to install it manually. This can be done by navigating to **Tools > Board > Board Manager...**. Here we need to look for the **Arduino SAMD boards (32-bits ARM Cortex M0+)** and install it.
 
 **2.** Now, we need to install the libraries needed. If we are using the Web Editor, there is no need to install anything. If we are using an offline editor, simply go to **Tools > Manage libraries..**, and search for **ArduinoMotorCarrier** and install it.
 
@@ -97,7 +97,7 @@ The full code for the sketch can be found in the snippet below. Upload the sketc
 //Variable to store the battery voltage
 static float batteryVoltage;
 //low battery limit (discharged)
-static float batteryLimit; 
+static float batteryLimit;
 //Variable to change the motor speed and direction
 int duty = 50;
 
@@ -154,7 +154,7 @@ void loop() {
     M2.setDuty(0);
     M3.setDuty(0);
     M4.setDuty(0);
-    while (batteryVoltage < batteryLimit) 
+    while (batteryVoltage < batteryLimit)
     {
       batteryVoltage = (float)battery.getRaw() / 77;
       controller.ping();
@@ -201,7 +201,7 @@ If the code is not working, there are some common issues we can troubleshoot:
 
 ## Additional Information
 
-- If you have a power supply you can modify the voltage levels to see how the system behaves. 
+- If you have a power supply you can modify the voltage levels to see how the system behaves.
 
 - You can test this sketch without the DC Motor. Just check the M1 LED indicator, next to the blue terminal block.
 

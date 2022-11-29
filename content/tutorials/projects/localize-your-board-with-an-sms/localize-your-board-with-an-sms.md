@@ -28,7 +28,7 @@ The project is based on an Arduino MKR GSM 1400, an antenna, a LiPo battery pack
 
 ### Hardware Setup
 
-This project does not require anything special. Connect to the board the antenna, insert the SIM card and connect the LiPo battery to the JST connector. 
+This project does not require anything special. Connect to the board the antenna, insert the SIM card and connect the LiPo battery to the JST connector.
 
 The LiPo battery is optional, but it allows to cope with the peaks of current that the GSM module might require in particular conditions of poor coverage.
 
@@ -36,13 +36,13 @@ The LiPo battery is optional, but it allows to cope with the peaks of current th
 
 ### How It Works
 
-This project uses the MKRGSM library to manage the SMS messages and the cell based georeferentiation. 
+This project uses the MKRGSM library to manage the SMS messages and the cell based georeferentiation.
 
 When an SMS is received, the content is checked to find out if it contains the letter "L". Only if this is the case, the sketch proceeds with the localization and SMS transmission. With this solution, any number may request the location of the system, but only who knows the password (the "secret letter") will get a reply. This is the line that does the check `if (c != 76)` and 76 is the ASCII code of "L". You can change the value to change the letter recognized.
 
-The GSM module does not have a GPS receiver, but the manufacturer has a database of the location of each cell of the GSM network and therefore it provides coordinates for each cell ID supplied. This system is quite accurate in urban areas, where each cell covers a small areas. In rural areas the coverage of each cell is much bigger and the location provided is with coarser approximation. 
+The GSM module does not have a GPS receiver, but the manufacturer has a database of the location of each cell of the GSM network and therefore it provides coordinates for each cell ID supplied. This system is quite accurate in urban areas, where each cell covers a small areas. In rural areas the coverage of each cell is much bigger and the location provided is with coarser approximation.
 
-To create the link for Google Maps we use a standard URL where we just concatenate the proper Long and Lat values at the end. This URL looks like "https://www.google.com/maps/place/latvalue,longvalue". The position shown on the map will be the one where the cell is physically based; our board is within the radius covered by the cell. 
+To create the link for Google Maps we use a standard URL where we just concatenate the proper Long and Lat values at the end. This URL looks like "https://www.google.com/maps/place/latvalue,longvalue". The position shown on the map will be the one where the cell is physically based; our board is within the radius covered by the cell.
 
 ### The Sketch
 

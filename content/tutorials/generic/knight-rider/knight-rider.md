@@ -1,7 +1,7 @@
 ---
 title: 'The Knight Rider'
 description: 'Learn how to build the Knight Rider light display.'
-tags: 
+tags:
   - LEDs
   - Knight Rider
 software:
@@ -10,7 +10,7 @@ software:
   - web-editor
 ---
 
-## Introduction 
+## Introduction
 
 We have named this example in memory to a TV-series from the 80's where the famous David Hasselhoff had an AI machine driving his Pontiac. The car had been augmented with plenty of LEDs in all possible sizes performing flashy effects.
 
@@ -39,7 +39,7 @@ The goal of this project is:
 
 ## Programming the Board
 
-We will now get to the programming part of this tutorial. 
+We will now get to the programming part of this tutorial.
 
 **1.** Open the editor of your choice, and make sure you have your board installed. Select your board and port, and upload any of the three examples below.
 

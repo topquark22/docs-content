@@ -3,7 +3,7 @@ title: 'Switch (case) Statement, used with serial input'
 compatible-products: [all-boards]
 difficulty: intermediate
 description: 'A second switch-case example, showing how to take different actions based on the characters received in the serial port.'
-tags: 
+tags:
   - Control structures
   - Switch statement
   - LED

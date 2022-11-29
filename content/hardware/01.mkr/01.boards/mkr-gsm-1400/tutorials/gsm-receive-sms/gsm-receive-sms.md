@@ -2,12 +2,12 @@
 title: 'Receive an SMS with MKR GSM 1400'
 difficulty: intermediate
 compatible-products: [mkr-gsm-1400]
-description: 'Learn how to setup your board to print incoming text messages in the Serial Monitor.' 
+description: 'Learn how to setup your board to print incoming text messages in the Serial Monitor.'
 tags:
   - GSM
   - SMS
 author: 'Karl Söderby'
-libraries: 
+libraries:
   - name: MKRGSM
     url: https://www.arduino.cc/reference/en/libraries/mkrgsm/
 hardware:
@@ -20,7 +20,7 @@ software:
   - web-editor
 ---
 
-## Introduction 
+## Introduction
 
 This tutorial is a continuation of the [Send an SMS with MKR GSM 1400](/tutorials/mkr-gsm-1400/gsm-send-sms) tutorial, where you can read more about how the Global System for Mobile Communication (GSM) works. In the previous tutorial we set up the MKR GSM 1400 to send a text message to a phone, and in this tutorial, we will also see how we can receive text messages!
 
@@ -34,7 +34,7 @@ The goals of this project are:
 ## Hardware & Software Needed
 
 - Arduino IDE ([online](https://create.arduino.cc/) or [offline](https://www.arduino.cc/en/main/software)).
-- [MKRGSM](https://www.arduino.cc/en/Reference/GSM) library installed. 
+- [MKRGSM](https://www.arduino.cc/en/Reference/GSM) library installed.
 - [Arduino MKR GSM 1400](https://store.arduino.cc/mkr-gsm-1400).
 - [Antenna](https://store.arduino.cc/antenna).
 - SIM card from an operator in your country.
@@ -53,9 +53,9 @@ Now, in this tutorial, we will simply see how we can use a smartphone (or regula
 
 ## Programming the Board
 
-We will now get to the programming part of this tutorial. 
+We will now get to the programming part of this tutorial.
 
-**1.** First, let's make sure we have the drivers installed. If we are using the Web Editor, we do not need to install anything. If we are using an offline editor, we need to install it manually. This can be done by navigating to **Tools > Board > Board Manager...**. Here we need to look for the **Arduino SAMD boards (32-bits ARM Cortex M0+)** and install it. 
+**1.** First, let's make sure we have the drivers installed. If we are using the Web Editor, we do not need to install anything. If we are using an offline editor, we need to install it manually. This can be done by navigating to **Tools > Board > Board Manager...**. Here we need to look for the **Arduino SAMD boards (32-bits ARM Cortex M0+)** and install it.
 
 **2.** Now, we need to install the libraries needed. If we are using the Web Editor, there is no need to install anything. If we are using an offline editor, simply go to **Tools > Manage libraries..**, and search for **MKRGSM** and install it.
 
@@ -84,7 +84,7 @@ The sketch can also be found in the snippet below. Select the right board and po
 // include the GSM library
 #include <MKRGSM.h>
 
-#include "arduino_secrets.h" 
+#include "arduino_secrets.h"
 // Please enter your sensitive data in the Secret tab or arduino_secrets.h
 // PIN Number
 const char PINNUMBER[] = SECRET_PINNUMBER;
@@ -165,9 +165,9 @@ After we open the Serial Monitor, the board will attempt to connect to the GSM n
 
 ![Offline IDE waiting for messages.](assets/MKRGSM_T4_IMG02.png)
 
-This means that we are ready to receive text messages. Now, we can open our phone, and send a text message to the number attached to your SIM card. 
+This means that we are ready to receive text messages. Now, we can open our phone, and send a text message to the number attached to your SIM card.
 
-We can send something simple, such as: 
+We can send something simple, such as:
 
 ```
 Hi there GSM 1400, can you read?
@@ -184,7 +184,7 @@ If the code is not working, there are some common issues we can troubleshoot:
 - Wrong pin number.
 - SIM card lacking a data plan.
 - Out of GSM network range (very unlikely in urban areas).
-- Antenna not attached properly. 
+- Antenna not attached properly.
 - We have sent the message to the wrong number.
 
 ## Conclusion

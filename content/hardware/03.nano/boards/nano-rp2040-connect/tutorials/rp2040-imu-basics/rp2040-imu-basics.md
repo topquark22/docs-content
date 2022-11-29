@@ -3,7 +3,7 @@ title: 'Accessing IMU Data on Nano RP2040 Connect'
 difficulty: beginner
 compatible-products: [nano-rp2040-connect]
 description: 'Learn how to access the data from the accelerometer and gyroscope that comes with the LSM6DSOX IMU module.'
-tags: 
+tags:
   - Gyroscope
   - Accelerometer
 author: 'Karl Söderby'
@@ -21,9 +21,9 @@ software:
 featuredImage: 'chip'
 ---
 
-## Introduction 
+## Introduction
 
-In this tutorial, we will learn how to access the gyroscope and accelerometer onboard the Nano RP2040 Connect. For this, we will be using the [Arduino_LSMDS63](https://www.arduino.cc/en/Reference/ArduinoLSM6DS3) library. 
+In this tutorial, we will learn how to access the gyroscope and accelerometer onboard the Nano RP2040 Connect. For this, we will be using the [Arduino_LSMDS63](https://www.arduino.cc/en/Reference/ArduinoLSM6DS3) library.
 
 >**Note:** if you need help setting up your environment to use your Arduino Nano RP2040 board, please refer to [this installation guide](/software/ide-v1/installing-mbed-os-nano-boards).
 
@@ -71,9 +71,9 @@ In this example, we will use the gyroscope as an indicator for the direction of 
 
 ## Programming the Board
 
-We will now get to the programming part of this tutorial. 
+We will now get to the programming part of this tutorial.
 
-1. First, let's make sure we have the drivers installed. If we are using the Web Editor, we do not need to install anything. If we are using an offline editor, we need to install it manually. This can be done by navigating to **Tools > Board > Board Manager...**. Here we need to look for the **Arduino Mbed OS Nano Boards** and install it. 
+1. First, let's make sure we have the drivers installed. If we are using the Web Editor, we do not need to install anything. If we are using an offline editor, we need to install it manually. This can be done by navigating to **Tools > Board > Board Manager...**. Here we need to look for the **Arduino Mbed OS Nano Boards** and install it.
 
 2. Now, we need to install the libraries needed. If we are using the Web Editor, there is no need to install anything. If we are using an offline editor, simply go to **Tools > Manage libraries..**, and search for **Arduino_LSM6DS3** and install it.
 
@@ -110,7 +110,7 @@ void setup() {
   Serial.println("Hz");
   Serial.println();
 
-  Serial.print("Gyroscope sample rate = ");  
+  Serial.print("Gyroscope sample rate = ");
   Serial.print(IMU.gyroscopeSampleRate());
   Serial.println("Hz");
   Serial.println();
@@ -133,7 +133,7 @@ void loop() {
 
   if (IMU.gyroscopeAvailable()) {
     IMU.readGyroscope(Gx, Gy, Gz);
-    
+
     Serial.println("Gyroscope data: ");
     Serial.print(Gx);
     Serial.print('\t');
@@ -150,7 +150,7 @@ delay(500);
 
 ## Testing It Out
 
-After successfully uploading the code to the board, we will need to open the Serial Monitor to initialize the program. Once we open it, data will start printing. 
+After successfully uploading the code to the board, we will need to open the Serial Monitor to initialize the program. Once we open it, data will start printing.
 
 ![Accelerometer and gyroscope data printed in the Serial Monitor.](assets/rp2040-imu-basics-img-05.png)
 
@@ -161,7 +161,7 @@ The data is being printed with an interval of 500 milliseconds. This can be adju
 If the code is not working, there are some common issues we can troubleshoot:
 
 - We have not installed the **Arduino_LSM6DSOX** library.
-- We have a faulty USB cable. 
+- We have a faulty USB cable.
 
 ## Conclusion
 

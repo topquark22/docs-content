@@ -35,7 +35,7 @@ software:
 
 ![The Arduino Nano RP2040 Connect](assets/hero.png)
 
-The Arduino® Nano RP2040 Connect is a development board in Nano format, based on the [RP2040](https://datasheets.raspberrypi.org/rp2040/rp2040-datasheet.pdf) microcontroller. It features a Wi-Fi / Bluetooth® module, a 6-axis IMU (Inertial Measurement Unit) with machine learning capabilities, a microphone and a built-in RGB. 
+The Arduino® Nano RP2040 Connect is a development board in Nano format, based on the [RP2040](https://datasheets.raspberrypi.org/rp2040/rp2040-datasheet.pdf) microcontroller. It features a Wi-Fi / Bluetooth® module, a 6-axis IMU (Inertial Measurement Unit) with machine learning capabilities, a microphone and a built-in RGB.
 
 This article is a collection of guides, API calls, libraries and tutorials that can help you get started with the Nano RP2040 Connect board.
 
@@ -59,7 +59,7 @@ The Nano RP2040 Connect can be programmed through the **Classic Arduino IDE 1.8.
 
 - [Installing the Arduino Mbed OS Nano Boards core](/software/ide-v1/tutorials/getting-started/cores/arduino-mbed_nano)
 
-### Arduino IDE 2.0.X 
+### Arduino IDE 2.0.X
 
 The Nano RP2040 Connect can be programmed through the **Arduino IDE 2.0.X**. To install your board, you can check out the guide below:
 
@@ -98,7 +98,7 @@ There is a risk that the uploading process gets stuck during an upload. If this 
 
 ### Board Not Detected
 
-Sometimes the board is not detected even when the board is connected to your computer. This can be solved through the following steps: 
+Sometimes the board is not detected even when the board is connected to your computer. This can be solved through the following steps:
 
 **1.** Connect the board to your computer via USB.
 
@@ -118,7 +118,7 @@ Alternatively, you can choose to factory-reset the board by dragging the `blink.
 
 ![Drag and drop the blink.ino.elf.uf2 file into RP2040's mass storage.](assets/DRAG-DROP-NANORP2040CONNECT.png)
 
-After dragging the `U2F` file, the board will be flashed with a program that blinks the built-in LED, and shifts between the `red`, `green` and `blue` pixels. 
+After dragging the `U2F` file, the board will be flashed with a program that blinks the built-in LED, and shifts between the `red`, `green` and `blue` pixels.
 
 ## Pins
 
@@ -132,9 +132,9 @@ The Nano RP2040 Connect has 8 analog pins, that can be used through the `analogR
 value = analogRead(pin, value);
 ```
 
->**Please note:** pin `A4` and `A5` should be used for I2C only. 
+>**Please note:** pin `A4` and `A5` should be used for I2C only.
 
->**Please note:** pin `A6` and `A7` does not support PWM. 
+>**Please note:** pin `A6` and `A7` does not support PWM.
 
 ### PWM Pins
 
@@ -199,7 +199,7 @@ This module also features an embedded **temperature sensor**.
 
 ### LSM6DSOX Library
 
-To access the data from the LSM6DSOX module, we need to install the [LSM6DSOX](https://github.com/arduino-libraries/Arduino_LSM6DSOX) library, which comes with examples that can be used directly with the Nano RP2040 Connect. 
+To access the data from the LSM6DSOX module, we need to install the [LSM6DSOX](https://github.com/arduino-libraries/Arduino_LSM6DSOX) library, which comes with examples that can be used directly with the Nano RP2040 Connect.
 
 It can be installed directly from the library manager through the IDE of your choice. To use it, we need to include at the top of the sketch:
 
@@ -267,13 +267,13 @@ If you want to learn more on how to use the IMU, please check out the tutorial b
 
 ![The MP34DT05 microphone sensor.](assets/MP34DT05-NANORP2040CONNECT.png)
 
-### MP34DT05 
+### MP34DT05
 
 The **MP34DT05** is a compact, low-power omnidirectional digital MEMS microphone with an IC interface. It has a 64 dB signal-to-noise ratio, is capable of sensing acoustic waves and can operate in temperatures of -40 °C to +85 °C.
 
 ### PDM Library
 
-To access the data from the MP34DT05, we need to use the [PDM](https://www.arduino.cc/en/Reference/PDM) library that is included in the **Arduino Mbed OS Nano Boards** core. If the core is installed, you will find an example that works by browsing **File > Examples > PDM > PDMSerialPlotter**. 
+To access the data from the MP34DT05, we need to use the [PDM](https://www.arduino.cc/en/Reference/PDM) library that is included in the **Arduino Mbed OS Nano Boards** core. If the core is installed, you will find an example that works by browsing **File > Examples > PDM > PDMSerialPlotter**.
 
 - **Please note:** The sampling frequency in the PDMSerialPlotter example is set to 16000 Hz. If the microphone appears to not be working (monitor is printing a value of -128), try to change this rate to 20000 Hz. You can change this at the top of the PDMSerialPlotter example sketch, as shown in the example below:
 
@@ -328,9 +328,9 @@ digitalWrite(LEDB, LOW); //BLUE
 We can also choose a value between 255 - 0 to write to the LED:
 
 ```arduino
-analogWrite(LEDR, 72);  //GREEN 
-analogWrite(LEDG, 122); //BLUE 
-analogWrite(LEDB, 234); //RED 
+analogWrite(LEDR, 72);  //GREEN
+analogWrite(LEDG, 122); //BLUE
+analogWrite(LEDB, 234); //RED
 ```
 
 ## Communication
@@ -364,7 +364,7 @@ And to write to the device:
 
 ```arduino
   digitalWrite(chipSelectPin, LOW); //pull down the CS pin
-  
+
   SPI.transfer(address); // address for device, for example 0x00
   SPI.transfer(value); // value to write
 
@@ -388,14 +388,14 @@ To use I2C, we can use the [Wire](https://www.arduino.cc/en/Reference/wire) libr
 Inside `void setup()` we need to initialize the library.
 
 ```arduino
-Wire.begin(); 
+Wire.begin();
 ```
 
 And to write something to a device connected via I2C, we can use the following commands:
 
 ```arduino
   Wire.beginTransmission(1); //begin transmit to device 1
-  Wire.write(byte(0x00)); //send instruction byte 
+  Wire.write(byte(0x00)); //send instruction byte
   Wire.write(val); //send a value
   Wire.endTransmission(); //stop transmit
 ```
@@ -431,7 +431,7 @@ Serial1.write("Hello world!");
 
 ## Connectivity
 
-The Nano RP2040 Connect supports both Wi-Fi and Bluetooth® through the [uBlox W-102](https://content.arduino.cc/assets/Arduino_NINA-W10_DataSheet_%28UBX-17065507%29.pdf) module. To use this module, we can use the [WiFiNINA](https://www.arduino.cc/en/Reference/WiFiNINA) library or the [ArduinoBLE](https://www.arduino.cc/en/Reference/ArduinoBLE) library. 
+The Nano RP2040 Connect supports both Wi-Fi and Bluetooth® through the [uBlox W-102](https://content.arduino.cc/assets/Arduino_NINA-W10_DataSheet_%28UBX-17065507%29.pdf) module. To use this module, we can use the [WiFiNINA](https://www.arduino.cc/en/Reference/WiFiNINA) library or the [ArduinoBLE](https://www.arduino.cc/en/Reference/ArduinoBLE) library.
 
 ![Wi-Fi & Bluetooth® module.](assets/NINA-W102-NANORP2040CONNECT.png)
 
@@ -466,7 +466,7 @@ The **WiFiNINA** library can be used to make GET & POST requests, while connecte
 
 
 - [Web Server AP mode with Arduino Nano RP2040 Connect](/tutorials/nano-rp2040-connect/rp2040-ap-web-server-rgb)
-- [RGB Control over Wi-Fi with Arduino Nano RP2040 Connect](/tutorials/nano-rp2040-connect/rp2040-web-server-rgb) 
+- [RGB Control over Wi-Fi with Arduino Nano RP2040 Connect](/tutorials/nano-rp2040-connect/rp2040-web-server-rgb)
 
 ## Bluetooth®
 
@@ -500,7 +500,7 @@ BLE.advertise();
 
 Listen for BLE peripherals to connect:
 
-```arduino  
+```arduino
 BLEDevice central = BLE.central();
 ```
 

@@ -3,7 +3,7 @@ title: 'String startsWith and endsWith Functions'
 compatible-products: [all-boards]
 difficulty: intermediate
 description: 'Check which characters/substrings a given string starts or ends with.'
-tags: 
+tags:
   - Strings
   - Serial monitor
   - Code

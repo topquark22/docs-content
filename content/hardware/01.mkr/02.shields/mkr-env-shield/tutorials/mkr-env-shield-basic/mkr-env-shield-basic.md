@@ -7,7 +7,7 @@ tags:
   - Sensors
   - Environmental data
 author: 'Karl Söderby'
-libraries: 
+libraries:
   - name: Arduino_MKRENV
     url: https://www.arduino.cc/en/Reference/ArduinoMKRENV
 hardware:
@@ -46,16 +46,16 @@ The goals of this project are:
 
 ## The Different Sensors on the Shield
 
-Before we test out the MKR ENV Shield, let's take a look at the different sensors that come with it. In total, there are three sensors: the LPS22HB (atmospheric pressure), HTS221 (temperature & humidity) and TEMT6000 (light intensity). 
+Before we test out the MKR ENV Shield, let's take a look at the different sensors that come with it. In total, there are three sensors: the LPS22HB (atmospheric pressure), HTS221 (temperature & humidity) and TEMT6000 (light intensity).
 
 ### HTS221 Temperature & Humidity Sensor
 
 ![The HTS221 sensor.](assets/MKRENV_T1_IMG03.png)
 
-This sensor’s range and accuracy make it suitable for many interesting experimental settings. There are two different functions that we can call upon: `readTemperature()` and `readHumidity()`. The return values are in **Celsius** and relative humidity, but we can also use the command `readTemperature(FAHRENHEIT)` if we want to get our values in **Fahrenheit**. 
+This sensor’s range and accuracy make it suitable for many interesting experimental settings. There are two different functions that we can call upon: `readTemperature()` and `readHumidity()`. The return values are in **Celsius** and relative humidity, but we can also use the command `readTemperature(FAHRENHEIT)` if we want to get our values in **Fahrenheit**.
 
-- The temperature range goes between -40 and +120 (°C) and the accuracy is ± 0.5 °C in the range of 15 to +40 °C. 
-- The humidity range goes between ± 3.5% rH (relative humidity), at 20 (°C) to +80% rH. The rH sensitivity is 0.004% rH. 
+- The temperature range goes between -40 and +120 (°C) and the accuracy is ± 0.5 °C in the range of 15 to +40 °C.
+- The humidity range goes between ± 3.5% rH (relative humidity), at 20 (°C) to +80% rH. The rH sensitivity is 0.004% rH.
 
 You can find more information about this sensor by reading it's <a href="https://www.st.com/resource/en/datasheet/hts221.pdf" target="_blank">datasheet</a>.
 
@@ -66,7 +66,7 @@ You can find more information about this sensor by reading it's <a href="https:/
 The atmospheric pressure can be read using the command `readPressure()`, which can take either no parameters or one of the following three, which will determine the units in which pressure will be expressed:
 
 * **PSI** – the sensor returns data in pounds per square inch.
-* **MILLIBAR** – the sensor returns data in millibars. Millibars are exactly the same as **hectopascal**, a unit that is more commonly used by meteorologists for weather reports. 
+* **MILLIBAR** – the sensor returns data in millibars. Millibars are exactly the same as **hectopascal**, a unit that is more commonly used by meteorologists for weather reports.
 * **KILOPASCAL** – the sensor returns data in kilopascals – this is the default option.
 
 Take a look at the table below. Here, we can see that hectopascal and millibars are exactly the same, and that PSI is entirely different, as it follows the imperial unit system.
@@ -87,7 +87,7 @@ You can find more information about this sensor by reading it's <a href="https:/
 
 ![The TEMT6000 sensor.](assets/MKRENV_T1_IMG04.png)
 
-The TEMT6000 sensor is a phototransistor, a component that will allow electrons to flow differently based on the amount of light shining on it. It has been calculated to be adapted to the human eye sensitivity. In other words, this sensor is telling you how intense light is for your eyes. 
+The TEMT6000 sensor is a phototransistor, a component that will allow electrons to flow differently based on the amount of light shining on it. It has been calculated to be adapted to the human eye sensitivity. In other words, this sensor is telling you how intense light is for your eyes.
 
 The sensor’s range and accuracy makes is suitable for a lot of scientific experiments. The sensor’s opening angle is ±60 °, and while it peaks up at 570 nm, it is detecting light in the range from 440 nm to 800 nm, in the temperature range from -40 °C to +100 °C.
 
@@ -116,22 +116,22 @@ The circuit in this tutorial is very simple. Just attach the MKR ENV Shield on t
 
 We will now get to the programming part of this tutorial.
 
-**1.** First, let's make sure we have the drivers installed for the board we are using. If we are using the Web Editor, we do not need to install anything. If we are using an offline editor, we need to install it manually. This can be done by navigating to **Tools > Board > Board Manager...**. Here we need to look for the **Arduino SAMD boards (32-bits ARM Cortex M0+)** and install it. 
+**1.** First, let's make sure we have the drivers installed for the board we are using. If we are using the Web Editor, we do not need to install anything. If we are using an offline editor, we need to install it manually. This can be done by navigating to **Tools > Board > Board Manager...**. Here we need to look for the **Arduino SAMD boards (32-bits ARM Cortex M0+)** and install it.
 
 **2.** Now, we need to install the libraries needed. If we are using the Web Editor, there is no need to install anything. If we are using an offline editor, simply go to **Tools > Manage libraries..**, and search for **Arduino_MKRENV** and install it.
 
 **3.** We can now take a look at some of the core functions of this sketch:
 
 - `ENV.begin()` - initializes the library.
-- `ENV.readTemperature()` - returns temperature. 
-- `ENV.readHumidity()` - returns relative humidity. 
+- `ENV.readTemperature()` - returns temperature.
+- `ENV.readHumidity()` - returns relative humidity.
 - `ENV.readPressure()` - returns atmospheric pressure.
 - `ENV.readIlluminance()` - returns LUX.
 - `ENV.readUVA()` - returns UVA (only for older versions).
 - `ENV.readUVB()` - returns UVB (only for older versions).
 - `ENV.readUVIndex()` - calculates UV index (only for older versions).
 
-The sketch can be found in the snippet below, or in the **Arduino_MKRENV** library, in **File > Examples > Arduino_MKRENV > ReadSensors**. Then, upload the code to the board. 
+The sketch can be found in the snippet below, or in the **Arduino_MKRENV** library, in **File > Examples > Arduino_MKRENV > ReadSensors**. Then, upload the code to the board.
 
 >**Note:** If you are using imperial units, e.g. Fahrenheit, there is a sketch called **ReadSensorsImperial** that is better suited.
 
@@ -192,7 +192,7 @@ void loop() {
 }
 ```
 
->**Note:** If you are using a newer version of the MKR ENV shield, you will not be able to use the `readUVA()`, `readUVB()` and `readUVindex()` commands. 
+>**Note:** If you are using a newer version of the MKR ENV shield, you will not be able to use the `readUVA()`, `readUVB()` and `readUVindex()` commands.
 
 ## Testing It Out
 
@@ -211,7 +211,7 @@ If the code is not working, there are some common issues we can troubleshoot:
 
 ## Conclusion
 
-In this tutorial, we have learned how to access the different sensors on the MKR ENV Shield, and print them in the Serial Monitor. Now with some basic knowledge on how the shield works, you can start creating your own projects, such as mini weather station, or an indoor temperature control device. 
+In this tutorial, we have learned how to access the different sensors on the MKR ENV Shield, and print them in the Serial Monitor. Now with some basic knowledge on how the shield works, you can start creating your own projects, such as mini weather station, or an indoor temperature control device.
 
 Feel free to explore the [Arduino_MKRENV](https://www.arduino.cc/en/Reference/ArduinoMKRENV) library further, and try out some of the many cool functions.
 

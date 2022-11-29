@@ -1,6 +1,6 @@
 Board:
   Name: Arduino® WisGate Edge Lite 2
-  SKU: 
+  SKU:
     EU: TXP00098
     ENZ: TXP00100
     US: TXP00099
@@ -27,8 +27,8 @@ Power:
   PoE (IEEE 802.3 af): 36-57 VDC
   Consumption: 12 W (typical)
 Console: Through USB-C
-Frequencies: 
-  EU868: TXP00098 
+Frequencies:
+  EU868: TXP00098
   US915: TXP00099
   AS923 & AU915: TXP00100
 Enclosure:

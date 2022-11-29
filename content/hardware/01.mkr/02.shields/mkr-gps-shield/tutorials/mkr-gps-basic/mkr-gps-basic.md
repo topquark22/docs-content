@@ -6,7 +6,7 @@ description: 'Learn how to access GPS data from the module on board the MKR GPS 
 tags:
   - GPS
 author: 'Karl Söderby'
-libraries: 
+libraries:
   - name: Arduino_MKRGPS
     url: https://www.arduino.cc/en/Reference/ArduinoMKRGPS
 hardware:
@@ -18,7 +18,7 @@ software:
   - web-editor
 ---
 
-## Introduction 
+## Introduction
 
 The ability to pinpoint your exact location can be very useful for different types of projects. With the MKR GPS Shield, we can reach high accuracy with minimal power consumption.
 
@@ -45,7 +45,7 @@ The GPS is an incredible technology that is used to pinpoint an exact geographic
 
 It is quite spectacular, that something 20.000 kilometers above the Earth can pinpoint your exact location. What is even more interesting, is that we can create our own projects using this technology. The MKR GPS shield can get extremely accurate readings on where we are in the world. This can be used to first locate where we are in the world, but we can also use it to record for example speed.
 
-There is, of course, much more behind the GPS technology. If we want to read more, why not start at [NASA's own article](https://www.nasa.gov/directorates/heo/scan/communications/policy/what_is_gps) on how GPS technology works. 
+There is, of course, much more behind the GPS technology. If we want to read more, why not start at [NASA's own article](https://www.nasa.gov/directorates/heo/scan/communications/policy/what_is_gps) on how GPS technology works.
 
 ### Circuit
 
@@ -57,9 +57,9 @@ The circuit in this tutorial is pretty simple, and the simplest assembly is to c
 
 ## Programming the Board
 
-We will now get to the programming part of this tutorial. 
+We will now get to the programming part of this tutorial.
 
-**1.** First, let's make sure we have the drivers installed for the board we are using. If we are using the Web Editor, we do not need to install anything. If we are using an offline editor, we need to install it manually. This can be done by navigating to **Tools > Board > Board Manager...**. Here we need to look for the **Arduino SAMD boards (32-bits ARM Cortex M0+)** and install it. 
+**1.** First, let's make sure we have the drivers installed for the board we are using. If we are using the Web Editor, we do not need to install anything. If we are using an offline editor, we need to install it manually. This can be done by navigating to **Tools > Board > Board Manager...**. Here we need to look for the **Arduino SAMD boards (32-bits ARM Cortex M0+)** and install it.
 
 **2.** Now, we need to install the library needed. If we are using the Web Editor, there is no need to install anything. If we are using an offline editor, simply go to **Tools > Manage libraries..**, and search for **Arduino_MKRGPS** and install it.
 
@@ -70,7 +70,7 @@ We will now get to the programming part of this tutorial.
 - `GPS.latitude()` - records latitude.
 - `GPS.longitude()` - records longitude.
 - `GPS.altitude()` - records altitude.
-- `GPS.speed()` - records speed in km/h. 
+- `GPS.speed()` - records speed in km/h.
 
 The sketch can be found in the snippet below. Upload the sketch to the board.
 
@@ -130,7 +130,7 @@ After we have uploaded the code to the board, we need to open the Serial Monitor
 
 ![GPS data printed in the Serial Monitor.](assets/MKRGPS_T1_IMG02.png)
 
->**Note:** This process may take some time. If no data is available after 5 minutes or so, try moving your device closer to a window. 
+>**Note:** This process may take some time. If no data is available after 5 minutes or so, try moving your device closer to a window.
 
 Once we start getting the values, we can double check that they are alright. For example, `longitude` and `latitude` should be very accurate, and be able to pinpoint almost your exact location. You can enter the coordinates in [Google Maps](https://www.google.com/maps) for example, to see if the values match.
 

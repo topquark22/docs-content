@@ -6,18 +6,18 @@ type: maker
 
 ![](assets/featured.jpg)
 
-# Description 
+# Description
 Nano 33 BLE Sense is a miniature sized module containing a NINA B306 module, based on Nordic nRF52480 and containing a Cortex M4F, a crypto chip which can securely store certificates and pre shared keys and a 9 axis IMU. The module can either be mounted as a DIP component (when mounting pin headers), or as a SMT component, directly soldering it via the castellated pads
 
 # Target areas:
-Maker, enhancements, IoT application 
+Maker, enhancements, IoT application
 
 
 # Features
-- **NINA B306 Module** 
+- **NINA B306 Module**
     - **Processor**
         - 64 MHz Arm® Cortex-M4F (with FPU)
-        - 1 MB Flash + 256 KB RAM 
+        - 1 MB Flash + 256 KB RAM
     - **Bluetooth®  5 multiprotocol radio**
         - 2 Mbps
         - CSA #2
@@ -30,7 +30,7 @@ Maker, enhancements, IoT application
         - Integrated balun with 50 Ω single-ended output
         - IEEE 802.15.4 radio support
         - Thread
-        - Zigbee 
+        - Zigbee
     - **Peripherals**
         - Full-speed 12 Mbps USB
         - NFC-A tag
@@ -52,14 +52,14 @@ Maker, enhancements, IoT application
     - High overpressure capability: 20x full-scale
     - Embedded temperature compensation
     - 16-bit temperature data output
-    - 1 Hz to 75 Hz output data rateInterrupt functions: Data Ready, FIFO flags, pressure thresholds 
+    - 1 Hz to 75 Hz output data rateInterrupt functions: Data Ready, FIFO flags, pressure thresholds
 - **HTS221** (relative humidity sensor)
     - 0-100% relative humidity range
     - High rH sensitivity: 0.004% rH/LSB
     - Humidity accuracy: ± 3.5% rH, 20 to +80% rH
     - Temperature accuracy: ± 0.5 °C,15 to +40 °C
     - 16-bit humidity and temperature output data
-- **APDS-9960** (Digital proximity, Ambient light, RGB and Gesture Sensor) 
+- **APDS-9960** (Digital proximity, Ambient light, RGB and Gesture Sensor)
     - Ambient Light and RGB Color Sensing with UV and IR blocking filters
     - Very high sensitivity – Ideally suited for operation behind dark glass
     - Proximity Sensing with Ambient light rejection
@@ -105,7 +105,7 @@ As all Nano form factor boards, Nano 33 BLE Sense does not have a battery charge
 
 ## Functional Overview
 
-### Board Topology 
+### Board Topology
 Top:
 ![Board topology top](assets/topologyTop.png)
 
@@ -125,7 +125,7 @@ Bottom:
 | SJ1      | VUSB Jumper     | SJ2      | D7 Jumper       |
 | SJ3      | 3v3 Jumper      | SJ4      | D8 Jumper       |
 
-### Processor 
+### Processor
 The Main Processor is a Cortex M4F running at up to 64MHz. Most of its pins are connected to the external headers, however some are reserved for internal communication with the wireless module and the on-board internal I<sup>2</sup>C peripherals (IMU and Crypto).
 
 **NOTE**: As opposed to other Arduino Nano boards, pins A4 and A5 have an internal pull up and default to be used as an I<sup>2</sup>C Bus so usage as analog inputs is not recommended.
@@ -154,7 +154,7 @@ Source code for the Arduino Library that supports the Humidity sensor is availab
 Source code for the Arduino Library that supports the Proximity/gesture/ALS sensor is available **[12]**
 
 #### Gesture Detection
-Gesture detection utilizes four directional photodiodes to sense reflected IR energy (sourced by the integrated LED) to convert physical motion information (i.e. velocity, direction and distance) to a digital information. The architecture of the gesture engine features automatic activation (based on Proximity engine results), ambient light subtraction, cross-talk cancellation, dual 8-bit data converters, power saving inter-conversion delay, 32-dataset FIFO, and interrupt driven I2C communication. The gesture engine accommodates a wide range of mobile device gesturing requirements: simple UP-DOWN-RIGHT-LEFT gestures or more complex gestures can be accurately sensed. Power consumption and noise are minimized with adjustable IR LED timing. 
+Gesture detection utilizes four directional photodiodes to sense reflected IR energy (sourced by the integrated LED) to convert physical motion information (i.e. velocity, direction and distance) to a digital information. The architecture of the gesture engine features automatic activation (based on Proximity engine results), ambient light subtraction, cross-talk cancellation, dual 8-bit data converters, power saving inter-conversion delay, 32-dataset FIFO, and interrupt driven I2C communication. The gesture engine accommodates a wide range of mobile device gesturing requirements: simple UP-DOWN-RIGHT-LEFT gestures or more complex gestures can be accurately sensed. Power consumption and noise are minimized with adjustable IR LED timing.
 
 #### Proximity Detection
 The Proximity detection feature provides distance measurement (E.g. mobile device screen to user’s ear) by photodiode detection of reflected IR energy (sourced by the integrated LED). Detect/release events are interrupt driven, and occur whenever proximity result crosses upper and/ or lower threshold settings. The proximity engine features offset adjustment registers to compensate for system offset caused by unwanted IR energy reflections appearing at the sensor. The IR LED intensity is factory trimmed to eliminate the need for end-equipment calibration due to component variations. Proximity results are further improved by automatic ambient light subtraction.
@@ -175,7 +175,7 @@ The board can be powered via USB connector, V<sub>IN</sub> or V<sub>USB</sub> pi
 
 **NOTE:** Since V<sub>USB</sub> feeds V<sub>IN</sub> via a Schottky diode and a DC-DC regulator specified minimum input voltage is 4.5V the minimum supply voltage from USB has to be increased to a voltage in the range between 4.8V to 4.96V depending on the current being drawn.
 
-## Board Operation 
+## Board Operation
 ### Getting Started - IDE
 If you want to program your Arduino Nano 33 BLE while offline you need to install the Arduino Desktop IDE [1] To connect the Arduino Nano 33 BLE to your computer, you’ll need a Micro-B USB cable. This also provides power to the board, as indicated by the LED.
 
@@ -283,17 +283,17 @@ Arduino boards are in compliance with RoHS 2 Directive 2011/65/EU of the Europea
 | Dibutyl phthalate (DBP)                | 1000                    |
 | Diisobutyl phthalate (DIBP)            | 1000                    |
 
-Exemptions : No exemptions are claimed. 
+Exemptions : No exemptions are claimed.
 
 Arduino Boards are fully compliant with the related requirements of European Union Regulation (EC) 1907 /2006 concerning the Registration, Evaluation, Authorization and Restriction of Chemicals (REACH). We declare none of the SVHCs (https://echa.europa.eu/web/guest/candidate-list-table), the Candidate List of Substances of Very High Concern for authorization currently released by ECHA, is present in all products (and also package) in quantities totaling in a concentration equal or above 0.1%. To the best of our knowledge, we also declare that our products do not contain any of the substances listed on the "Authorization List" (Annex XIV of the REACH regulations) and Substances of Very High Concern (SVHC) in any significant amounts as specified by the Annex XVII of Candidate list published by ECHA (European Chemical Agency) 1907 /2006/EC.
 
-### Conflict Minerals Declaration 
-As a global supplier of electronic and electrical components, Arduino is aware of our obligations with regards to laws and regulations regarding Conflict Minerals, specifically the Dodd-Frank Wall Street Reform and Consumer Protection Act, Section 1502. Arduino does not directly source or process conflict minerals such as Tin, Tantalum, Tungsten, or Gold. Conflict minerals are contained in our products in the form of solder, or as a component in metal alloys. As part of our reasonable due diligence Arduino has contacted component suppliers within our supply chain to verify their continued compliance with the regulations. Based on the information received thus far we declare that our products contain Conflict Minerals sourced from conflict-free areas. 
+### Conflict Minerals Declaration
+As a global supplier of electronic and electrical components, Arduino is aware of our obligations with regards to laws and regulations regarding Conflict Minerals, specifically the Dodd-Frank Wall Street Reform and Consumer Protection Act, Section 1502. Arduino does not directly source or process conflict minerals such as Tin, Tantalum, Tungsten, or Gold. Conflict minerals are contained in our products in the form of solder, or as a component in metal alloys. As part of our reasonable due diligence Arduino has contacted component suppliers within our supply chain to verify their continued compliance with the regulations. Based on the information received thus far we declare that our products contain Conflict Minerals sourced from conflict-free areas.
 
 ## FCC Caution
 Any Changes or modifications not expressly approved by the party responsible for compliance could void the user’s authority to operate the equipment.
 
-This device complies with part 15 of the FCC Rules. Operation is subject to the following two conditions: 
+This device complies with part 15 of the FCC Rules. Operation is subject to the following two conditions:
 
 (1) This device may not cause harmful interference
 
@@ -314,7 +314,7 @@ User manuals for license-exempt radio apparatus shall contain the following or e
 
 (2) this device must accept any interference, including interference that may cause undesired operation of the device.
 
-French: 
+French:
 Le présent appareil est conforme aux CNR d’Industrie Canada applicables aux appareils radio exempts de licence. L’exploitation est autorisée aux deux conditions suivantes :
 
 (1) l’ appareil nedoit pas produire de brouillage
@@ -323,7 +323,7 @@ Le présent appareil est conforme aux CNR d’Industrie Canada applicables aux a
 
 **IC SAR Warning:**
 
-English 
+English
 This equipment should be installed and operated with minimum distance 20 cm between the radiator and your body.
 
 French:

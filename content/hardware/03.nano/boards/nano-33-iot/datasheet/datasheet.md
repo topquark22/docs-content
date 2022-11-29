@@ -5,18 +5,18 @@ type: maker
 ---
 ![](assets/featured.jpg)
 
-# Description 
+# Description
 Nano 33 IoT and Nano 33 IoT with headers is a miniature sized module containing a Cortex M0+ SAMD21 processor, a WiFi+BT module based on ESP32, a crypto chip which can securely store certificates and pre-shared keys and a 6 axis IMU. The module can either be mounted as a DIP component (when mounting pin headers), or as a SMT component, directly soldering it via the castellated pads.
 
 # Target areas:
 Maker, enhancements, basic IoT application scenarios
 
 # Features
-- **SAMD21G18A** 
+- **SAMD21G18A**
     - **Processor**
         - 256KB Flash
         - 32KB Flash
-        - Power On Reset (POR) and Brown Out Detection (BOD) 
+        - Power On Reset (POR) and Brown Out Detection (BOD)
     - **Peripherals**
         - 12 channel DMA
         - 12 channel event system
@@ -31,30 +31,30 @@ Maker, enhancements, basic IoT application scenarios
         - 12 bit 350ksps ADC (up to 16 bit with oversampling)
         - 10 bit 350ksps DAC
         - External Interrupt Controller (up to 16 lines)
-- **Nina W102** 
+- **Nina W102**
     - **Module**
         - Dual Core Tensilica LX6 CPU at up to 240MHz
-        - 448 KB ROM, 520KB SRAM, 2MB Flash 
+        - 448 KB ROM, 520KB SRAM, 2MB Flash
     - **WiFi**
         - IEEE 802.11b up to 11Mbit
         - IEEE 802.11g up to 54MBit
         - IEEE 802.11n up to 72MBit
         - 2.4 GHz, 13 channels
-        - -96 dBm sensitivity 
+        - -96 dBm sensitivity
     - **Bluetooth®  BR/EDR**
         - Max 7 peripherals
         - 2.4 GHz, 79 channels
         - Up to 3 Mbit/s
         - 8 dBm output power at 2/3 Mbit/s
         - 11 dBm EIRP at 2/3 Mbit/s
-        - -88 dBm sensitivity 
+        - -88 dBm sensitivity
     - **Bluetooth® Low Energy**
         - Bluetooth®  4.2 dual mode
         - 2.4GHz 40 channels
         - 6 dBm output power
         - 9 dBm EIRP
         - -88 dBm sensitivity
-        - Up to 1 Mbit/ 
+        - Up to 1 Mbit/
     - **MPM3610** (DC-DC)
         - Regulates input voltage from up to 21V with a minimum of 65% efficiency @minimum load
         - More than 85% efficiency @12V
@@ -99,7 +99,7 @@ As all Nano form factor boards, Nano 33 IoT and Nano 33 IoT with headers does no
 | PMax    | Maximum Power Consumption                | -    | -    | TBC  | mW   |
 
 ## Functional Overview
-### Board Topology 
+### Board Topology
 
 ![Board topology top](assets/boardTopologyTop.png)
 
@@ -116,8 +116,8 @@ As all Nano form factor boards, Nano 33 IoT and Nano 33 IoT with headers does no
 | SJ1      | Open solder bridge (VUSB) | SJ4      | Closed solder bridge (+3V3) |
 | TP       | Test points               | xx       | Lorem Ipsum                 |
 
-### Processor 
-The Main Processor is a Cortex M0+ running at up to 48MHz. Most of its pins are connected to the external headers, however some are reserved for internal communication with the wireless module and the on-board internal I<sup>2</sup>C peripherals (IMU and Crypto). 
+### Processor
+The Main Processor is a Cortex M0+ running at up to 48MHz. Most of its pins are connected to the external headers, however some are reserved for internal communication with the wireless module and the on-board internal I<sup>2</sup>C peripherals (IMU and Crypto).
 
 **NOTE**: As opposed to other Arduino Nano boards, pins A4 and A5 have an internal pull up and default to be used as an I<sup>2</sup>C Bus so usage as analog inputs is not recommended.
 
@@ -167,16 +167,16 @@ Source code for the Arduino Library that supports the IMU is available **[11]**
 ![Power tree](assets/powerTree.svg)
 
 
-## Board Operation 
-### Getting Started - IDE 
+## Board Operation
+### Getting Started - IDE
 If you want to program your board while offline you need to install the Arduino Desktop IDE [1] To connect the Arduino 33 IoT to your computer, you’ll need a Micro-B USB cable. This also provides power to the board, as indicated by the LED.
 
-### Getting Started - Arduino Web Editor 
+### Getting Started - Arduino Web Editor
 All Arduino boards, including this one, work out-of-the-box on the Arduino Web Editor [2], by just installing a simple plugin.
 
 The Arduino Web Editor is hosted online, therefore it will always be up-to-date with the latest features and support for all boards. Follow **[3]** to start coding on the browser and upload your sketches onto your board.
 
-### Getting Started - Arduino IoT Cloud 
+### Getting Started - Arduino IoT Cloud
 All Arduino IoT enabled products are supported on Arduino IoT Cloud which allows you to Log, graph and analyze sensor data, trigger events, and automate your home or business.
 
 ### Sample Sketches
@@ -270,17 +270,17 @@ Top view:
 
 ![Top side connectors](assets/connectorsTop.png)
 
-Bottom view: 
+Bottom view:
 
 ![Bottom side connectors](assets/connectorsBot.png)
 
 
 ## Certifications
 ### Declaration of Conformity CE DoC (EU)
-We declare under our sole responsibility that the products above are in conformity with the essential requirements of the following EU Directives and therefore qualify for free movement within markets comprising the European Union (EU) and European Economic Area (EEA). 
+We declare under our sole responsibility that the products above are in conformity with the essential requirements of the following EU Directives and therefore qualify for free movement within markets comprising the European Union (EU) and European Economic Area (EEA).
 
 ### Declaration of Conformity to EU RoHS & REACH 211 01/19/2021
-Arduino boards are in compliance with RoHS 2 Directive 2011/65/EU of the European Parliament and RoHS 3 Directive 2015/863/EU of the Council of 4 June 2015 on the restriction of the use of certain hazardous substances in electrical and electronic equipment. 
+Arduino boards are in compliance with RoHS 2 Directive 2011/65/EU of the European Parliament and RoHS 3 Directive 2015/863/EU of the Council of 4 June 2015 on the restriction of the use of certain hazardous substances in electrical and electronic equipment.
 
 | Substance                              | **Maximum limit (ppm)** |
 | -------------------------------------- | ----------------------- |
@@ -295,17 +295,17 @@ Arduino boards are in compliance with RoHS 2 Directive 2011/65/EU of the Europea
 | Dibutyl phthalate (DBP)                | 1000                    |
 | Diisobutyl phthalate (DIBP)            | 1000                    |
 
-Exemptions : No exemptions are claimed. 
+Exemptions : No exemptions are claimed.
 
 Arduino Boards are fully compliant with the related requirements of European Union Regulation (EC) 1907 /2006 concerning the Registration, Evaluation, Authorization and Restriction of Chemicals (REACH). We declare none of the SVHCs (https://echa.europa.eu/web/guest/candidate-list-table), the Candidate List of Substances of Very High Concern for authorization currently released by ECHA, is present in all products (and also package) in quantities totaling in a concentration equal or above 0.1%. To the best of our knowledge, we also declare that our products do not contain any of the substances listed on the "Authorization List" (Annex XIV of the REACH regulations) and Substances of Very High Concern (SVHC) in any significant amounts as specified by the Annex XVII of Candidate list published by ECHA (European Chemical Agency) 1907 /2006/EC.
 
-### Conflict Minerals Declaration 
-As a global supplier of electronic and electrical components, Arduino is aware of our obligations with regards to laws and regulations regarding Conflict Minerals, specifically the Dodd-Frank Wall Street Reform and Consumer Protection Act, Section 1502. Arduino does not directly source or process conflict minerals such as Tin, Tantalum, Tungsten, or Gold. Conflict minerals are contained in our products in the form of solder, or as a component in metal alloys. As part of our reasonable due diligence Arduino has contacted component suppliers within our supply chain to verify their continued compliance with the regulations. Based on the information received thus far we declare that our products contain Conflict Minerals sourced from conflict-free areas. 
+### Conflict Minerals Declaration
+As a global supplier of electronic and electrical components, Arduino is aware of our obligations with regards to laws and regulations regarding Conflict Minerals, specifically the Dodd-Frank Wall Street Reform and Consumer Protection Act, Section 1502. Arduino does not directly source or process conflict minerals such as Tin, Tantalum, Tungsten, or Gold. Conflict minerals are contained in our products in the form of solder, or as a component in metal alloys. As part of our reasonable due diligence Arduino has contacted component suppliers within our supply chain to verify their continued compliance with the regulations. Based on the information received thus far we declare that our products contain Conflict Minerals sourced from conflict-free areas.
 
 ## FCC Caution
 Any Changes or modifications not expressly approved by the party responsible for compliance could void the user’s authority to operate the equipment.
 
-This device complies with part 15 of the FCC Rules. Operation is subject to the following two conditions: 
+This device complies with part 15 of the FCC Rules. Operation is subject to the following two conditions:
 
 (1) This device may not cause harmful interference
 
@@ -319,14 +319,14 @@ This device complies with part 15 of the FCC Rules. Operation is subject to the 
 
 3. This equipment should be installed and operated with minimum distance 20cm between the radiator & your body.
 
-English: 
+English:
 User manuals for license-exempt radio apparatus shall contain the following or equivalent notice in a conspicuous location in the user manual or alternatively on the device or both. This device complies with Industry Canada license-exempt RSS standard(s). Operation is subject to the following two conditions:
 
 (1) this device may not cause interference
 
  (2) this device must accept any interference, including interference that may cause undesired operation of the device.
 
-French: 
+French:
 Le présent appareil est conforme aux CNR d’Industrie Canada applicables aux appareils radio exempts de licence. L’exploitation est autorisée aux deux conditions suivantes :
 
 (1) l’ appareil nedoit pas produire de brouillage
@@ -335,10 +335,10 @@ Le présent appareil est conforme aux CNR d’Industrie Canada applicables aux a
 
 **IC SAR Warning:**
 
-English 
+English
 This equipment should be installed and operated with minimum distance 20 cm between the radiator and your body.
 
-French: 
+French:
 Lors de l’ installation et de l’ exploitation de ce dispositif, la distance entre le radiateur et le corps est d ’au moins 20 cm.
 
 **Important:** The operating temperature of the EUT can’t exceed 85℃ and shouldn’t be lower than -40℃.
@@ -350,7 +350,7 @@ Hereby, Arduino S.r.l. declares that this product is in compliance with essentia
 | 2402-2480MHz(EDR)         | 6.24 dBm                    |
 | 2402-2480MHz(BLE)         | 6.30 dBm                    |
 | 2412-2472MHz(2.4G WiFi)   | 13.61 dBm                   |
- 
+
 
 ## Company Information
 

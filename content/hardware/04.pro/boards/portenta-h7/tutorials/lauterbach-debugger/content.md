@@ -72,7 +72,7 @@ Either copy & paste the displayed serial number manually to the Lauterbach regis
 
 Note: Newer TRACE32 software version should automatically detect and show the board serial number, at first attach to the target.
 
-When you receive the email containing your license key, follow the instructions provided at the end of the message: 
+When you receive the email containing your license key, follow the instructions provided at the end of the message:
 - Copy the complete line of code provided in the email and paste it into the **license.t32** text file in your TRACE32 installation directory. Create the file license.t32 if it does not exist yet. On Windows the TRACE32 system directory is by default "C:\T32".
 - Restart TRACE32 after adding the license key.
 
@@ -117,7 +117,7 @@ Select "T32ThreadDebug" from the "Portenta H7 Demos" menu and you will be presen
 
 ![Elf File Selection](assets/por_ard_trace32_elf_file_selection.png)
 
-In this dialog, you can select which variant of the Arduino IDE you would like to use to source ELF files or if you want to use the current directory. To follow this tutorial please select "current dir". 
+In this dialog, you can select which variant of the Arduino IDE you would like to use to source ELF files or if you want to use the current directory. To follow this tutorial please select "current dir".
 
 The list to the right of the "Options" selection should then become populated with a number of available ELF files for downloading and debugging. Select the one you want with a double click. In this case select "T32ThreadDebug.ino.elf". This will also show file attributes such as date, time and size. To select an ELF file from a custom directory, click the "File" button underneath the "User's choice" field and browse for the desired ELF file. You can opt for changing the behavior of this script the next time it is executed.
 
@@ -194,7 +194,7 @@ Lauterbach also provides hardware-based debug & trace tools. To learn more about
 - Update **Arduino mbed-enabled Boards** core from Arduino IDE menu: **Tools > Board > Boards Manager**
 - [Update the Portenta's bootloader using the instructions](https://docs.arduino.cc/tutorials/portenta-h7/updating-the-bootloader).
 
-### Error Message in AREA View: 'No More Arguments Expected' 
+### Error Message in AREA View: 'No More Arguments Expected'
 
 - This may be caused by unsupported characters in your Windows user name. Make sure your user name neither contains any spaces nor special characters.
 

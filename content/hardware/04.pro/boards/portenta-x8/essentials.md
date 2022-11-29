@@ -9,7 +9,7 @@
         Tutorial to learn how to manage docker containers with the Portenta X8.
     </EssentialElement>
 </EssentialsColumn>
-    
+
 <EssentialsColumn title="Suggested Repositories">
     <EssentialElement link="https://github.com/arduino/portenta-containers" title="Portenta X8 containers" type="article">
         Some containers examples for Portenta X8, this containers are accessible through your Foundries.io factory.

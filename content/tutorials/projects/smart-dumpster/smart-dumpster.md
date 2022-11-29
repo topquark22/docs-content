@@ -16,7 +16,7 @@ source: "https://create.arduino.cc/projecthub/Arduino_Genuino/smart-dumpster-42e
 
 ## About This Project
 
-Dumpsters are a good case for remote monitoring. The MKR NB 1500 with its NarrowBand connection to the internet and low power mode is ideal for such an application. We have added an ultrasound distance sensor, a temperature sensor, and an IMU (Inertial Measurement Unit). 
+Dumpsters are a good case for remote monitoring. The MKR NB 1500 with its NarrowBand connection to the internet and low power mode is ideal for such an application. We have added an ultrasound distance sensor, a temperature sensor, and an IMU (Inertial Measurement Unit).
 
 ### What You Need
 
@@ -35,7 +35,7 @@ The hardware configuration is relativey simple, involving the MKR NB 1500, IMU s
 ![All the components connected together](assets/cassone_2_mcPj3UaBg1.jpg)
 
 
-The antenna, the SIM, and the battery pack should be connected in their own connector at the top and bottom of the MKR NB 1500. 
+The antenna, the SIM, and the battery pack should be connected in their own connector at the top and bottom of the MKR NB 1500.
 
 ![The ultrasound and the temperature sensors are connected with soldered wires on the top side of the MKR IMU shield.](assets/cassone_1_Scn8PUbvqv.jpg)
 
@@ -88,10 +88,10 @@ The first code section is used to include the libraries required by the applicat
 #include <MKRNB.h>
 #include <BlynkSimpleMKRNB.h>
 #include <MKRIMU.h>
-  
+
 const int trigPin = 4;
 const int echoPin = 5;
-  
+
 // define variables
 long duration;
 int distance;
@@ -124,7 +124,7 @@ NB nbAccess;
 WidgetLED led1(V7);
 ```
 
-The setup section allows you to initialize all the objects used by the sketch. The Blynk instance plays a central role because it establishes the connection and initializes all structure to control the app widget on the smartphone. After the connection is established, it initializes IMU structure, through the API **begin().** After they are initialized, the pin required by the readDistance API to acquire the measure from the ultrasound sensor: 
+The setup section allows you to initialize all the objects used by the sketch. The Blynk instance plays a central role because it establishes the connection and initializes all structure to control the app widget on the smartphone. After the connection is established, it initializes IMU structure, through the API **begin().** After they are initialized, the pin required by the readDistance API to acquire the measure from the ultrasound sensor:
 
 ```arduino
 void setup() {

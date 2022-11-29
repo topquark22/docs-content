@@ -3,7 +3,7 @@ title: 'Create a Graph with Processing'
 compatible-products: [all-boards]
 difficulty: intermediate
 description: 'Send data to the computer and graph it in Processing.'
-tags: 
+tags:
   - Communication
   - Analog
   - Output

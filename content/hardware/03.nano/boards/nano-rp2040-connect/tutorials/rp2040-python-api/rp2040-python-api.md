@@ -4,14 +4,14 @@ title: 'Nano RP2040 Connect Python® API Guide'
 description: 'Discover how to access the features Nano RP2040 Connect using Python® scripts.'
 compatible-products: [nano-rp2040-connect]
 difficulty: intermediate
-tags: 
+tags:
   - MicroPython
   - OpenMV
 ---
 
 ![The Nano RP2040 Connect](assets/hero.png)
 
-The [Nano RP2040 Connect](https://store.arduino.cc/nano-rp2040-connect) board can be programmed using the popular **Python®** programming language. The board is supported by upstream [MicroPython](https://github.com/micropython/micropython) and [OpenMV's fork of MicroPython](https://github.com/openmv/micropython), where **MicroPython** is an implementation of the Python® language, designed to run on microcontrollers. 
+The [Nano RP2040 Connect](https://store.arduino.cc/nano-rp2040-connect) board can be programmed using the popular **Python®** programming language. The board is supported by upstream [MicroPython](https://github.com/micropython/micropython) and [OpenMV's fork of MicroPython](https://github.com/openmv/micropython), where **MicroPython** is an implementation of the Python® language, designed to run on microcontrollers.
 
 In this article, you will find a lot of sample scripts that will work directly with your Nano RP2040 Connect, such as general GPIO control, reading onboard sensors and Wi-Fi/BLE communication!
 
@@ -28,7 +28,7 @@ In this article, you will find a lot of sample scripts that will work directly w
 
 ## OpenMV Installation
 
-To install the OpenMV IDE and load scripts to your board, you can refer to [Getting started with OpenMV and Nano RP2040 Connect](/tutorials/nano-rp2040-connect/rp2040-openmv-setup). 
+To install the OpenMV IDE and load scripts to your board, you can refer to [Getting started with OpenMV and Nano RP2040 Connect](/tutorials/nano-rp2040-connect/rp2040-openmv-setup).
 
 ## MicroPython Installation
 
@@ -46,7 +46,7 @@ To install upstream MicroPython and load scripts to your board, you will need to
 
 **5.** Drag and drop the `.uf2` file into mass storage. This will install MicroPython on your board.
 
-**6.** In the **Thonny Editor**, navigate to **Run > Select Interpreter**. 
+**6.** In the **Thonny Editor**, navigate to **Run > Select Interpreter**.
 
 ![Navigate to interpreter.](assets/thonny-interpreter.png)
 
@@ -118,7 +118,7 @@ To read the analog pins on the Nano RP2040 Connect, we can choose from the follo
 - A6 - `36` (Connected to the NINA module)
 - A7 - `35` (Connected to the NINA module)
 
-To define them, we need to import the `machine` module, and define the pin as follows: 
+To define them, we need to import the `machine` module, and define the pin as follows:
 
 ```python
 import machine
@@ -143,7 +143,7 @@ adc_pin = machine.Pin(29) # A3
 adc = machine.ADC(adc_pin)
 
 while True:
-    reading = adc.read_u16()     
+    reading = adc.read_u16()
     print("ADC: ",reading)
     time.sleep_ms(500)
 ```
@@ -274,7 +274,7 @@ while True:
 
 ## Wireless
 
-Below are examples on wireless connectivity, using the NINA-W102 module onboard the Nano RP2040 Connect. 
+Below are examples on wireless connectivity, using the NINA-W102 module onboard the Nano RP2040 Connect.
 
 ***In order to use these examples, you may have to upgrade your firmware. You can find instructions on how to in [Upgrading Nano RP2040 Connect NINA firmware](/tutorials/nano-rp2040-connect/rp2040-upgrading-nina-firmware).***
 
@@ -473,7 +473,7 @@ This example allows us to connect to our board via our phone, and control the bu
 - [nRF desktop](https://www.nordicsemi.com/Products/Development-tools/nrf-connect-for-desktop)
 - [nRF mobile](https://www.nordicsemi.com/Products/Development-tools/nrf-connect-for-mobile)
 
-***After loading the script below, your board should be listed as "Nano RP2040 Connect" in the list of available devices. You need to pair in order to control the built-in LED.*** 
+***After loading the script below, your board should be listed as "Nano RP2040 Connect" in the list of available devices. You need to pair in order to control the built-in LED.***
 
 ```python
 import bluetooth
@@ -521,14 +521,14 @@ class BLETemperature:
             self._advertise()
         elif event == _IRQ_GATTS_WRITE:
             Pin(LED_PIN, Pin.OUT).value(int(self._ble.gatts_read(data[-1])[0]))
-            
+
     def _advertise(self, interval_us=500000):
         self._ble.gap_advertise(interval_us, adv_data=self._payload)
 
 if __name__ == "__main__":
     ble = bluetooth.BLE()
     temp = BLETemperature(ble)
-    
+
     while True:
         time.sleep_ms(1000)
 ```

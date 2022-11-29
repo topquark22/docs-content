@@ -23,7 +23,7 @@ The Servo library allows an Arduino board to control RC (hobby) servo motors.
 
 <EssentialsColumn title="Arduino Basics">
   <EssentialElement title="Built-in Examples" type="tutorial" link="/built-in-examples/">
-    Built-in Examples are sketches included in the Arduino IDE and demonstrate all basic Arduino commands. 
+    Built-in Examples are sketches included in the Arduino IDE and demonstrate all basic Arduino commands.
   </EssentialElement>
   <EssentialElement title="Learn" type="resource" link="/learn/">
     Discover interesting articles, principles and techniques related to the Arduino ecosystem.

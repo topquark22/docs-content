@@ -28,7 +28,7 @@ In this tutorial we will walk you through the steps needed to successfully provi
 
 ### Terminology Run-Trough
 
-- **LoRa®** - short for **Lo**ng **Ra**nge, and is a modulation technique used to send and receive data over low-power, wide-area networks (LPWAN). 
+- **LoRa®** - short for **Lo**ng **Ra**nge, and is a modulation technique used to send and receive data over low-power, wide-area networks (LPWAN).
 - **LoRaWAN®** - can be defined as the networking protocol. The architecture of the network consists of different gateways that relay messages from low-power devices over long ranges, to central network servers.
 - **MKR WAN 1300/1310** - development boards that has a LoRa® module capable of sending and receiving packets of data.
 - **End device/node** - end device/node is a term used for deployed devices such as the MKR WAN 1310, that for example are reading and processing sensor data.
@@ -74,7 +74,7 @@ Follow the wiring diagram below to connect the antenna to the MKR WAN 1300/1310 
 
 **1.** Navigate to the [Arduino Cloud IoT platform](https://create.arduino.cc/iot/things ).
 
-**2.** Sign in or follow the registration process. 
+**2.** Sign in or follow the registration process.
 
 **3.** Once signed in, navigate to the **"Things"** tab, and click on **"Create New Thing"**.
 
@@ -87,7 +87,7 @@ Follow the wiring diagram below to connect the antenna to the MKR WAN 1300/1310 
 **6.** If your board is connected, and the Create Agent is installed, your board should now appear, and you can click on **"Configure"**, and **"Continue"** in the next window.
 ![MKR WAN 1310 board detected.](assets/cloud-lora-img-04.png )
 
-**7.** Now you will need to select the **frequency band** that you will use. These are available through a dropdown menu, where you will e.g. Europe (868 MHz), America (915 MHz). 
+**7.** Now you will need to select the **frequency band** that you will use. These are available through a dropdown menu, where you will e.g. Europe (868 MHz), America (915 MHz).
 
 ![Select Frequency Band.](assets/cloud-lora-img-05.png )
 
@@ -119,7 +119,7 @@ In this step, we will complete the registration so we can access the **The Thing
 
 ***Note that you will not need to make any changes in The Things Console, but access is useful to check if your board sends and receives data correctly. All information (DevEUI, AppEUI & AppKey) is available through the Arduino Cloud as well. Your TTC app will automatically be created, and the integration to the Arduino Cloud done automatically.***
 
-**1.** After your device was successfully configured, an **email was sent to your account's email address**, and an account was automatically created on **The Things Stack Network**. The email sent out includes a link to **creating a password** for that account, which you will need to follow to complete the registration. 
+**1.** After your device was successfully configured, an **email was sent to your account's email address**, and an account was automatically created on **The Things Stack Network**. The email sent out includes a link to **creating a password** for that account, which you will need to follow to complete the registration.
 
 ![Email from TTC.](assets/cloud-lora-img-08.png )
 
@@ -225,11 +225,11 @@ This code will simply increase the `test` variable every 3 minutes, which will s
 
 ![Data from the MKR WAN 1300/1310 device.](assets/cloud-lora-img-18.png )
 
-**5a.** After we have uploaded the sketch to the board, we can head over to the TTS console, then to **Applications > NameOfApp > End Devices**. Here we can see if data is received. Basically, if it is not receiving any data, it means that data is not correctly passing through the gateway and the Internet to TTS. 
+**5a.** After we have uploaded the sketch to the board, we can head over to the TTS console, then to **Applications > NameOfApp > End Devices**. Here we can see if data is received. Basically, if it is not receiving any data, it means that data is not correctly passing through the gateway and the Internet to TTS.
 
 **5b.** If **successful**, in the **"live data"** section, the "first sign of life" should be a message that says **"Accept join-request"**. Then under "End Devices" there's a column named **Last Seen**, which should have a **blue circle** and how long since it was last seen, e.g. 5 minutes or 2 hours.
 
-**5c.** If **unsuccessful**, under "End Devices", you can see a **yellow circle** next to the text **"Unknown"**. This means your board has not been sending any data recently. 
+**5c.** If **unsuccessful**, under "End Devices", you can see a **yellow circle** next to the text **"Unknown"**. This means your board has not been sending any data recently.
 
 ![Successful/unsuccessful attempts.](assets/cloud-lora-img-19.png )
 

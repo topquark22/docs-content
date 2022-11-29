@@ -1,17 +1,17 @@
 ---
 title: 'Multimeter Basics'
 description: 'Learn about different multimeter features, how they function, and how to use this essential tool.'
-tags: 
+tags:
   - Multimeter
   - Circuitry
 author: 'José Garcia'
 ---
 
-A multimeter is a test tool, mostly used in electronics, that should always be present in the FabLab of a Maker. 
+A multimeter is a test tool, mostly used in electronics, that should always be present in the FabLab of a Maker.
 
-It is a diagnostic tool that allows us, for instance to: 
+It is a diagnostic tool that allows us, for instance to:
 
-- debug circuits, 
+- debug circuits,
 - display the value of resistors,
 - measure voltage and current in our circuits,
 - identify conductive/non conductive materials, and much more!
@@ -42,7 +42,7 @@ Then, depending on the user background, there will be some features that could m
 
 ## How to use a Multimeter
 
-Multimeters have different working modes, depending on what are you interested on measuring. Let's start by how to use a multimeter to measure voltage, resistance, conductivity and current. 
+Multimeters have different working modes, depending on what are you interested on measuring. Let's start by how to use a multimeter to measure voltage, resistance, conductivity and current.
 
 ### Reading voltage
 
@@ -52,7 +52,7 @@ This will require to place the measurement selector in the Volts section the **b
 
 With this configuration, the selected scale should be adjusted based on the  measured voltage.
 
-If you want to measure the voltage close to a 9V battery, the scale should be 20. 
+If you want to measure the voltage close to a 9V battery, the scale should be 20.
 - The scale limits the higher value that can be measured, meaning that if the selector is within the 2000m, the highest value that can be measured with that scale is 2000mV = 2V.
 
 
@@ -61,10 +61,10 @@ In order to know what scale to select, you should check what is the approximate 
 - From 0 to 200mV --> 200m
 - From 200mV to 2000mV (2V) --> 2000m
 - From 2V to 20V --> 20V
-    
+
 If you try to measure a higher value than the one specified on the scale, the display will show "over-value", which is usually shown with the number "1" on the display.
 
-### Terminals 
+### Terminals
 
 Once you have selected the scale to use, it is time to use the terminals:
 
@@ -79,9 +79,9 @@ You can see how the black terminal checks the negative terminal of the LED, whic
 
 ![Reading voltage on a circuit](assets/reading_voltage_schematic.png)
 
-### Reading resistance 
+### Reading resistance
 
-In order to measure resistance, the measurement selector should be in the Ohm section. 
+In order to measure resistance, the measurement selector should be in the Ohm section.
 
 ![Configuration to measure resistance](assets/resistance.png)
 
@@ -101,7 +101,7 @@ This feature allows you to know if a material is or is not conductive.
 To make this test, you will need to "touch" a material with both terminals of the multimeter, once you do so, depending on the multimeter you will see:
 
 - OL / 0 in the display if the material is not conductive
-- 1 on the display & Beep if the material is conductive 
+- 1 on the display & Beep if the material is conductive
 
 
 ### Reading Current

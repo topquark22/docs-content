@@ -23,7 +23,7 @@ Only your Arduino Esplora is needed for this example.
 
 ![microphone, slider, light sensor and RGB led on the Esplora](./assets/Esplora_ledShow2.png)
 
- 
+
 
 ## Code
 

@@ -1,12 +1,12 @@
 ---
 title: 'Multiple Blinks'
 description: 'Run multiple functions simultaneously with the Scheduler Library.'
-tags: 
+tags:
   - Scheduler
   - LED
 difficulty: beginner
 libraries:
-  - name: Scheduler 
+  - name: Scheduler
     url: https://www.arduino.cc/en/reference/scheduler
 hardware:
   - hardware/02.hero/boards/due
@@ -28,7 +28,7 @@ Arduino boards based on SAM and SAMD architectures (i.e Arduino Zero, MKR ZERO, 
 ## Goals
 
 - How to use the Scheduler library.
-- To run multiple functions simultaneously. 
+- To run multiple functions simultaneously.
 
 ## Hardware & Software Needed
 
@@ -46,7 +46,7 @@ The anode of the LEDs are connected in series with a 220-ohm resistor to pins 11
 
 ### Programming the Board
 
-**1.** First, let's make sure we have correct the drivers installed. If we are using the Web Editor, we do not need to install anything. If we are using an offline editor, we need to install it manually. This can be done by navigating to **Tools > Board > Board Manager...**. Here we need to look for the **Arduino SAM boards (32-bits ARM Cortex-M3)** and install it. 
+**1.** First, let's make sure we have correct the drivers installed. If we are using the Web Editor, we do not need to install anything. If we are using an offline editor, we need to install it manually. This can be done by navigating to **Tools > Board > Board Manager...**. Here we need to look for the **Arduino SAM boards (32-bits ARM Cortex-M3)** and install it.
 
 **2.** Now, we need to install the libraries needed. Simply go to **Tools > Manage libraries...** and search for **Scheduler** and install it.
 

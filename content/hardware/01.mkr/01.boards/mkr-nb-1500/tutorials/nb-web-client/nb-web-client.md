@@ -3,12 +3,12 @@ title: 'Web Client with MKR NB 1500'
 difficulty: advanced
 compatible-products: [mkr-nb-1500]
 description: 'Learn how to make a request to a web server over the NB-IoT / CAT-M1 network.'
-tags: 
+tags:
   - NB-IoT
   - CAT-M1
   - Web client
 author: 'Karl Söderby'
-libraries: 
+libraries:
   - name: MKRNB
     url: https://www.arduino.cc/reference/en/libraries/mkrnb/
 hardware:
@@ -21,9 +21,9 @@ software:
   - web-editor
 ---
 
-## Introduction 
+## Introduction
 
-In this tutorial, we will use the [MKR NB 1500](https://store.arduino.cc/arduino-mkr-nb-1500-1413) and the [MKRNB](https://www.arduino.cc/en/Reference/MKRNB) library to make a request to a web server, and print the content in the Serial Monitor. 
+In this tutorial, we will use the [MKR NB 1500](https://store.arduino.cc/arduino-mkr-nb-1500-1413) and the [MKRNB](https://www.arduino.cc/en/Reference/MKRNB) library to make a request to a web server, and print the content in the Serial Monitor.
 
 ## Goals
 
@@ -35,7 +35,7 @@ The goals of this project are:
 ## Hardware & Software Needed
 
 - Arduino IDE ([online](https://create.arduino.cc/) or [offline](https://www.arduino.cc/en/main/software)).
-- [MKRNB](https://www.arduino.cc/en/Reference/MKRNB) library installed. 
+- [MKRNB](https://www.arduino.cc/en/Reference/MKRNB) library installed.
 - Arduino MKR NB 1500 ([link to store](https://store.arduino.cc/arduino-mkr-nb-1500-1413)).
 - Antenna ([link to store](https://store.arduino.cc/antenna))
 - SIM card from an operator in your country.
@@ -51,9 +51,9 @@ The circuit for this tutorial is easy: simply attach the dipole antenna to the b
 
 ## Creating the Program
 
-We will now get to the programming part of this tutorial. 
+We will now get to the programming part of this tutorial.
 
-**1.** First, let's make sure we have the drivers installed. If we are using the Web Editor, we do not need to install anything. If we are using an offline editor, we need to install it manually. This can be done by navigating to **Tools > Board > Board Manager...**. Here we need to look for the **Arduino SAMD boards (32-bits ARM Cortex M0+)** and install it. 
+**1.** First, let's make sure we have the drivers installed. If we are using the Web Editor, we do not need to install anything. If we are using an offline editor, we need to install it manually. This can be done by navigating to **Tools > Board > Board Manager...**. Here we need to look for the **Arduino SAMD boards (32-bits ARM Cortex M0+)** and install it.
 
 **2.** Now, we need to install the libraries needed. If we are using the Web Editor, there is no need to install anything. If we are using an offline editor, simply go to **Tools > Manage libraries..**, and search for **MKRNB** and install it.
 
@@ -65,13 +65,13 @@ We will now get to the programming part of this tutorial.
 - `char server[] = "example.org"` - server we are connecting to.
 - `char path[] = "/"` - additional path (in this case none).
 - `int port = 80` - port 80 is default for HTTP.
-- `nbAccess.begin(pin)` - starts the modem. 
+- `nbAccess.begin(pin)` - starts the modem.
 - `gprs.attachGPRS()` - attach to the GPRS network.
 - `client.print()` - prints to the client. This is used to e.g. make the GET request.
 - `client.available()` - check if data is available.
 - `client.read()` - reads incoming data.
 
-The code is available in the snippet below. Make sure you change the `PINNUMBER` variable to match the pin on your SIM card. This code can also be found in **File > Examples > MKRNB > NBWebClient** in the editor. Note that if you use that example, you need to enter your pin in the `arduino_secrets.h` file. 
+The code is available in the snippet below. Make sure you change the `PINNUMBER` variable to match the pin on your SIM card. This code can also be found in **File > Examples > MKRNB > NBWebClient** in the editor. Note that if you use that example, you need to enter your pin in the `arduino_secrets.h` file.
 
 ```arduino
 // libraries
@@ -170,7 +170,7 @@ Note that the board does not always find a way to connect to the network. There 
 
 - Antenna is not working.
 - SIM card is not working.
-- We're not in range of a network. 
+- We're not in range of a network.
 
 ## Conclusion
 

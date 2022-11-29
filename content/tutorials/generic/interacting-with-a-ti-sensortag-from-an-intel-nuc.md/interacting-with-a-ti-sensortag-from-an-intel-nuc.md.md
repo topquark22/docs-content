@@ -71,7 +71,7 @@ Next, click the `Monitor`menu item on the left hide side. This will allow you to
 
 Once the monitor section is open, click the Upload (`->`) button to build and upload the sketch to your Intel NUC. After, sketch has been uploaded to the Intel NUC, press the button on the left on the TI SensorTag to make it advertise. When advertising, a green LED will start to blink.
 
-The `SensortagButton`sketch, scans for SensorTag's continuously in 15 second intervals. Once a SensorTag is discovered it will try to connect to it, discover it's services and subscribe to the button characteristic (`0000ffe1-0000-1000-8000-00805f9b34fb`) for notifications. 
+The `SensortagButton`sketch, scans for SensorTag's continuously in 15 second intervals. Once a SensorTag is discovered it will try to connect to it, discover it's services and subscribe to the button characteristic (`0000ffe1-0000-1000-8000-00805f9b34fb`) for notifications.
 
 ![Data in the Serial Monitor.](assets/screen_shot_2017-08-08_at_1_13_11_pm_26fDfwMz2k.png)
 

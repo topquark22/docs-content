@@ -1,7 +1,7 @@
 ---
 title: What is Arduino?
 description: An introduction to what Arduino is, and what it can be used for.
-tags: 
+tags:
   - Introduction
 ---
 

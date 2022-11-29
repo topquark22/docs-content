@@ -23,7 +23,7 @@ Only your Arduino Esplora is needed for this example. Connect the Esplora to you
 
 ![slider to choose the note and push-button switch to play it](./assets/Esplora_Music.png)
 
- 
+
 
 ## Code
 

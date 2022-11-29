@@ -38,8 +38,8 @@ Below is a list of Arduino IoT Cloud features.
 - [**Scheduler**](https://docs.arduino.cc/cloud/iot-cloud/tutorials/cloud-scheduler) - schedule jobs to go on/off for a specific amount of time (seconds, minutes, hours).
 - [**Over-The-Air (OTA) Uploads**](/cloud/iot-cloud/tutorials/ota-getting-started) - upload code to devices not connected to your computer.
 - [**Webhooks**](https://docs.arduino.cc/cloud/iot-cloud/tutorials/webhooks) - integrate your project with another service, such as IFTTT.
-- [**Amazon Alexa Support**](/cloud/iot-cloud/tutorials/alexa-mkr-rgb-shield) - make your project voice controlled with the Amazon Alexa integration. 
-- [**Dashboard Sharing**](https://docs.arduino.cc/cloud/iot-cloud/tutorials/sharing-dashboards) - share your data with other people around the world. 
+- [**Amazon Alexa Support**](/cloud/iot-cloud/tutorials/alexa-mkr-rgb-shield) - make your project voice controlled with the Amazon Alexa integration.
+- [**Dashboard Sharing**](https://docs.arduino.cc/cloud/iot-cloud/tutorials/sharing-dashboards) - share your data with other people around the world.
 
 ## Compatible Hardware
 
@@ -80,7 +80,7 @@ Connection via LoRaWAN® is recommended for low-power projects in both remote an
 
 ### GSM / NB-IoT Boards
 
-The MKR GSM 1400 and MKR NB 1500 require a **SIM card** to connect to the cloud, as they communicate over the mobile networks. 
+The MKR GSM 1400 and MKR NB 1500 require a **SIM card** to connect to the cloud, as they communicate over the mobile networks.
 
 - [MKR GSM 1400](https://store.arduino.cc/arduino-mkr-gsm-1400)
 - [MKR NB 1500](https://store.arduino.cc/arduino-mkr-nb-1500-1413)

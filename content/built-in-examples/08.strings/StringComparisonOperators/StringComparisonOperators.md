@@ -3,7 +3,7 @@ title: 'String Comparison Operators'
 compatible-products: [all-boards]
 difficulty: intermediate
 description: 'Learn how to make alphabetic comparisons between Strings. They are useful for sorting and alphabetizing, among other things.'
-tags: 
+tags:
   - Strings
   - Operators
   - Comparison

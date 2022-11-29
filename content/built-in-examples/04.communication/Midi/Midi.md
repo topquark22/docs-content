@@ -3,7 +3,7 @@ title: 'MIDI Note Player'
 compatible-products: [all-boards]
 difficulty: intermediate
 description: 'Send MIDI note messages serially.'
-tags: 
+tags:
   - Communication
   - Output
   - MIDI

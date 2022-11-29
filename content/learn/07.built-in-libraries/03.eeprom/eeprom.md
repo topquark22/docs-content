@@ -107,7 +107,7 @@ void setup()
 void loop()
 {
 }
- 
+
 ```
 
 ### `update()`
@@ -154,7 +154,7 @@ void setup()
 void loop()
 {
 }
- 
+
 ```
 
 ### `get()`
@@ -216,7 +216,7 @@ void setup(){
 }
 
 void loop(){ /* Empty loop */ }
- 
+
 ```
 
 ### `put()`
@@ -285,7 +285,7 @@ void setup() {
 }
 
 void loop() {   /* Empty loop */ }
- 
+
 ```
 
 ### `EEPROM[]`
@@ -329,7 +329,7 @@ void setup(){
 }
 
 void loop(){ /* Empty loop */ }
- 
+
 ```
 
 ### `length()`

@@ -3,7 +3,7 @@ title: 'Reading Microphone Data on Nano RP2040 Connect'
 difficulty: intermediate
 compatible-products: [nano-rp2040-connect]
 description: 'Learn how to read data from the MP34DT05 microphone, and how to use the data to turn ON or OFF the built-in RGB.'
-tags: 
+tags:
   - Microphone
   - RGB
 author: 'Karl Söderby'
@@ -20,7 +20,7 @@ software:
   - web-editor
 ---
 
-## Introduction 
+## Introduction
 
 The Nano RP2040 connect comes with the **MP34DT05** microphone, which can be used to record audio. In this tutorial, we will setup a basic application that simply turns ON or OFF the built in RGB LED whenever a loud noise is recorded (for example snapping our fingers).
 
@@ -64,14 +64,14 @@ This tutorial requires no additional circuit. You will only need to connect the 
 
 ## Programming the Board
 
-We will now get to the programming part of this tutorial. 
+We will now get to the programming part of this tutorial.
 
-1. First, let's make sure we have the drivers installed. If we are using the Web Editor, we do not need to install anything. If we are using an offline editor, we need to install it manually. This can be done by navigating to **Tools > Board > Board Manager...**. Here we need to look for the **Arduino Mbed OS Nano Boards** and install it. 
+1. First, let's make sure we have the drivers installed. If we are using the Web Editor, we do not need to install anything. If we are using an offline editor, we need to install it manually. This can be done by navigating to **Tools > Board > Board Manager...**. Here we need to look for the **Arduino Mbed OS Nano Boards** and install it.
 
 2. We can now take a look at some of the core functions of this sketch:
 
-- `static const char channels = 1;` - sets the number of output channels. 
-- `static const int frequency = 16000;` - sets the sampling frequency to 20 KHz. 
+- `static const char channels = 1;` - sets the number of output channels.
+- `static const int frequency = 16000;` - sets the sampling frequency to 20 KHz.
 - `short sampleBuffer[512]` - buffer to read samples into, each sample is 16-bits.
 - `while (!Serial)` - prevents program from running until Serial Monitor is opened.
 - `PDM.begin(channels, frequency)` - initializes the PDM library.
@@ -175,11 +175,11 @@ void onPDMdata() {
 
 ## Testing It Out
 
-After successfully uploading the code to the board, we will need to open the Serial Monitor to initialize the program. Once we open it, we can see that data is being printed rapidly. These are the audio samples that are record from the microphone. We can also open the Serial Plotter to instead view the data as a graph. 
+After successfully uploading the code to the board, we will need to open the Serial Monitor to initialize the program. Once we open it, we can see that data is being printed rapidly. These are the audio samples that are record from the microphone. We can also open the Serial Plotter to instead view the data as a graph.
 
 ![Serial Monitor with microphone data.](assets/rp2040-microphone-img-02.png)
 
-We can also open the Serial Plotter to instead view the data as a graph. 
+We can also open the Serial Plotter to instead view the data as a graph.
 
 ![Serial Plotter with microphone data.](assets/rp2040-microphone-img-03.png)
 

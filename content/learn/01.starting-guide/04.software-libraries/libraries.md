@@ -19,7 +19,7 @@ A number of libraries come installed with the IDE, but you can also download or 
 
 ![A list of libraries on the library manager](./assets/LibraryManager_2.png)
 
-**3.** Finally, **click on install** and wait for the IDE to install the new library. 
+**3.** Finally, **click on install** and wait for the IDE to install the new library.
 
 Once it has finished, an **Installed** tag should appear next to the Bridge library, so you can go ahead and close the library manager.
 

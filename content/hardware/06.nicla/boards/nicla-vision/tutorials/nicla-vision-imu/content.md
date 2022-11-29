@@ -3,7 +3,7 @@ title: 'Accessing IMU Data on Nicla Vision'
 difficulty: beginner
 compatible-products: [nicla-vision]
 description: 'Learn how to access the data from the accelerometer and gyroscope that comes with the LSM6DSOXTR IMU module.'
-tags: 
+tags:
   - Gyroscope
   - Accelerometer
 author: 'Benjamin Dannegård'
@@ -33,7 +33,7 @@ The goals of this project are:
 ### Hardware & Software Needed
 
 - Arduino IDE ([online](https://create.arduino.cc/) or [offline](https://www.arduino.cc/en/main/software)).
-- [LSM6DSOX library](https://github.com/arduino-libraries/Arduino_LSM6DSOX) 
+- [LSM6DSOX library](https://github.com/arduino-libraries/Arduino_LSM6DSOX)
 - [Nicla Vision](https://store.arduino.cc/products/nicla-vision)
 
 ## IMU (Inertial Measurement Unit)
@@ -64,7 +64,7 @@ Make sure the latest Nicla Core is installed in the Arduino IDE. **Tools > Board
 
 The full sketch can be found at the end of the **Instructions** section. Upload the sketch to the board.
 
-To use the IMU you first need to include the library. To simplify the values coming from the IMU, you can create a variable for each axis. 
+To use the IMU you first need to include the library. To simplify the values coming from the IMU, you can create a variable for each axis.
 
 ```arduino
 #include <Arduino_LSM6DSOX.h>
@@ -74,7 +74,7 @@ float Gx, Gy, Gz;
 
 ```
 
-To initializes the library you need to call `IMU.begin()`. When the IMU is initialized, you can quickly check the sample rates of the sensors. Calling `IMU.accelerationSampleRate()` and `IMU.gyroscopeSampleRate()` will read the sampling rate of the respective sensor in Hz. 
+To initializes the library you need to call `IMU.begin()`. When the IMU is initialized, you can quickly check the sample rates of the sensors. Calling `IMU.accelerationSampleRate()` and `IMU.gyroscopeSampleRate()` will read the sampling rate of the respective sensor in Hz.
 
 ```arduino
 void setup() {
@@ -86,13 +86,13 @@ void setup() {
     Serial.println("Failed to initialize IMU!");
     while (1);
   }
-  
+
   Serial.print("Accelerometer sample rate = ");
   Serial.print(IMU.accelerationSampleRate());
   Serial.println("Hz");
   Serial.println();
 
-  Serial.print("Gyroscope sample rate = ");  
+  Serial.print("Gyroscope sample rate = ");
   Serial.print(IMU.gyroscopeSampleRate());
   Serial.println("Hz");
   Serial.println();
@@ -119,7 +119,7 @@ void loop() {
 
   if (IMU.gyroscopeAvailable()) {
     IMU.readGyroscope(Gx, Gy, Gz);
-    
+
     Serial.println("Gyroscope data: ");
     Serial.print(Gx);
     Serial.print('\t');
@@ -136,7 +136,7 @@ delay(500);
 
 ### Testing It Out
 
-After successfully uploading the code to the board, you will need to open the Serial Monitor to initialize the program. Once you open it, data will start printing. 
+After successfully uploading the code to the board, you will need to open the Serial Monitor to initialize the program. Once you open it, data will start printing.
 
 ### Complete Sketch
 
@@ -155,13 +155,13 @@ void setup() {
     Serial.println("Failed to initialize IMU!");
     while (1);
   }
-  
+
   Serial.print("Accelerometer sample rate = ");
   Serial.print(IMU.accelerationSampleRate());
   Serial.println("Hz");
   Serial.println();
 
-  Serial.print("Gyroscope sample rate = ");  
+  Serial.print("Gyroscope sample rate = ");
   Serial.print(IMU.gyroscopeSampleRate());
   Serial.println("Hz");
   Serial.println();
@@ -184,7 +184,7 @@ void loop() {
 
   if (IMU.gyroscopeAvailable()) {
     IMU.readGyroscope(Gx, Gy, Gz);
-    
+
     Serial.println("Gyroscope data: ");
     Serial.print(Gx);
     Serial.print('\t');
@@ -197,8 +197,8 @@ void loop() {
 delay(500);
 
 }
-``` 
+```
 
 ## Conclusion
 
-In this tutorial you have learned how to use the **Arduino_LSM6DSOX** library to access the IMU on the Nicla Vision. With this you learned how to print the gyroscope and accelerometer data in the Arduino IDE Serial Monitor. 
+In this tutorial you have learned how to use the **Arduino_LSM6DSOX** library to access the IMU on the Nicla Vision. With this you learned how to print the gyroscope and accelerometer data in the Arduino IDE Serial Monitor.

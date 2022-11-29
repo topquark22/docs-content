@@ -1,7 +1,7 @@
 ---
 title: 'Arduino Style Guide for Writing Content'
 description: 'Learn how to write clear Arduino examples that can be read by beginners and advanced users alike.'
-tags: 
+tags:
   - Styleguide
   - Guidelines
 ---

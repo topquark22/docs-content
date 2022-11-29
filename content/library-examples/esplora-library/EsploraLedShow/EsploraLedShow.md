@@ -23,7 +23,7 @@ Only your Arduino Esplora is needed for this example.
 
 ![Joystick and slider to control the color of the RGB led on the Esplora](./assets/Esplora_ledShow.png)
 
- 
+
 
 ## Code
 

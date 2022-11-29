@@ -3,7 +3,7 @@ title: 'Detect a Knock'
 compatible-products: [all-boards]
 difficulty: beginner
 description: 'This tutorial shows you how to use a Piezo element to detect vibration.'
-tags: 
+tags:
   - Sensors
   - Input
   - Piezo

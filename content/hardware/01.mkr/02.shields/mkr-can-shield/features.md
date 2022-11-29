@@ -14,7 +14,7 @@ The MCP2515 from Microchip is a stand-alone Controller Area Network (CAN) contro
 </Feature>
 
 <Feature title="TJA1049" image="connection">
-This high-speed CAN transceiver provides an interface between a CAN controller (MCP2515) and the physical CAN bus. 
+This high-speed CAN transceiver provides an interface between a CAN controller (MCP2515) and the physical CAN bus.
 
 <FeatureLink title="Datasheet" url="https://www.nxp.com/docs/en/data-sheet/TJA1049.pdf" download blank/>
 </Feature>

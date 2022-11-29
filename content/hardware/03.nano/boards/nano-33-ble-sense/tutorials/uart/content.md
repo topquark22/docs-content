@@ -64,7 +64,7 @@ In order to communicate both Arduino boards, we will need to connect them as sho
 
 At the moment of making the connections, we need to remember that this protocol has two dedicated lines TX and RX so we need to make sure to connect the TX pin, of one of the boards, with the RX of the other one. The same goes for the second, where his TX pin need to be connected to the RX pin of the first board.
 
-To finish, it is very important that we connect the GND pins of both boards to each other. If we don't do this, the voltage reference will be different for each one of the boards so the communication won't work as intended. 
+To finish, it is very important that we connect the GND pins of both boards to each other. If we don't do this, the voltage reference will be different for each one of the boards so the communication won't work as intended.
 
 > **Note:** In order to enable serial communication, both Arduino boards must be connected to your computer via USB.
 

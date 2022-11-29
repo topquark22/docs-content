@@ -3,7 +3,7 @@ title: 'Keyboard and Mouse Control'
 compatible-products: [due, micro, leonardo]
 difficulty: intermediate
 description: 'Demonstrates the Mouse and Keyboard commands in one program.'
-tags: 
+tags:
   - USB
   - Mouse
   - Keyboard

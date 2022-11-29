@@ -2,7 +2,7 @@
 title: 'Powering Alternatives for Arduino Boards'
 
 description: 'Learn more about the power pins and connectors of Arduino® boards in this article, their main characteristics, and how to use them correctly.'
-tags: 
+tags:
   - Power
   - 5V
   - 3V3
@@ -22,7 +22,7 @@ Arduino boards have **five** options in which they can be powered:
 1. Powering via USB connector
 
 2. Powering via the onboard barrel jack connector (if available on the board)
-   
+
 3. Powering via the onboard battery connector (if available on the board)
 
 4. Powering via the VIN (Voltage In) pin
@@ -44,7 +44,7 @@ The most common and easiest way we can power an Arduino board is by using its **
 ![Micro USB connector of the Arduino Nano RP2040 board.](assets/power-pins_img01.png)
 
 
-Something important about the USB connection is the current rating of the USB host device. For example, a USB host device can be a computer; this means that the computer's USB port is the 5V power source of the Arduino board connected to it. Besides USB ports of computers, we can also use power banks, for example, as power sources for Arduino boards. Power banks usually have one or more USB outputs that provide regulated 5V lines at different current ratings. Arduino boards that run at 5V use the USB-regulated 5V line directly, boards that run at 3V3 regulate the 5V line from the USB connector to 3V3 using their onboard voltage regulator. Output current rating from the 5V pin will vary, depending on the 5V power source.   
+Something important about the USB connection is the current rating of the USB host device. For example, a USB host device can be a computer; this means that the computer's USB port is the 5V power source of the Arduino board connected to it. Besides USB ports of computers, we can also use power banks, for example, as power sources for Arduino boards. Power banks usually have one or more USB outputs that provide regulated 5V lines at different current ratings. Arduino boards that run at 5V use the USB-regulated 5V line directly, boards that run at 3V3 regulate the 5V line from the USB connector to 3V3 using their onboard voltage regulator. Output current rating from the 5V pin will vary, depending on the 5V power source.
 
 
 ***Current from USB ports of computers is usually limited to 500mA.***
@@ -58,7 +58,7 @@ Some Arduino boards have an **onboard barrel jack connector** that is used to co
 
 - [Arduino UNO Rev3](https://store.arduino.cc/collections/boards/products/arduino-uno-rev3)
 - [Arduino UNO WiFi Rev2](https://store.arduino.cc/collections/boards/products/arduino-uno-wifi-rev2)
-- [Arduino Leonardo](https://store.arduino.cc/collections/boards/products/arduino-leonardo-with-headers) 
+- [Arduino Leonardo](https://store.arduino.cc/collections/boards/products/arduino-leonardo-with-headers)
 - [Arduino Mega 2560 Rev3](https://store.arduino.cc/collections/boards/products/arduino-mega-2560-rev3)
 - [Arduino Due](https://store.arduino.cc/collections/boards/products/arduino-due)
 - [Arduino Zero](https://store.arduino.cc/collections/boards/products/arduino-zero)
@@ -108,15 +108,15 @@ The voltage line from the barrel jack connector is regulated in Arduino boards u
 ![Battery connector of the Arduino MKR WAN 1310 board.](assets/power-pins_img03.png)
 
 
-The boards mentioned before have an **onboard integrated battery charge management circuit**. This circuit integrates the most common battery and power management functions, like a battery charger, a voltage regulator, and a load switch, all in one. 
+The boards mentioned before have an **onboard integrated battery charge management circuit**. This circuit integrates the most common battery and power management functions, like a battery charger, a voltage regulator, and a load switch, all in one.
 
-***Arduino boards with an onboard battery connector can work with single cell 3V7 Li-Ion and Li-polymer batteries***. 
+***Arduino boards with an onboard battery connector can work with single cell 3V7 Li-Ion and Li-polymer batteries***.
 
 
  ## VIN Pin
 
 
-The VIN pin in Arduino boards is a power pin with a dual function. This pin can work as a **voltage input for regulated external power supplies** that do not use a barrel jack connector. This pin can also work as a **voltage output when an external power supply is connected to the barrel jack connector** present in some Arduino boards. An important consideration is that the VIN pin is connected directly to the input pin of the onboard voltage regulator on Arduino boards. Since the VIN pin is directly connected to the voltage regulator, the **VIN pin does not have reverse polarity protection**. 
+The VIN pin in Arduino boards is a power pin with a dual function. This pin can work as a **voltage input for regulated external power supplies** that do not use a barrel jack connector. This pin can also work as a **voltage output when an external power supply is connected to the barrel jack connector** present in some Arduino boards. An important consideration is that the VIN pin is connected directly to the input pin of the onboard voltage regulator on Arduino boards. Since the VIN pin is directly connected to the voltage regulator, the **VIN pin does not have reverse polarity protection**.
 
 
 ***Use the VIN pin carefully to avoid damaging your Arduino board since it does not have reverse polarity protection.***
@@ -154,7 +154,7 @@ The **minimum and maximum voltages** that can be applied to the VIN pin are dete
 |  Nano 33 BLE Sense  |         5-18        |
 
 
-## 3V3/5V Pin 
+## 3V3/5V Pin
 
 
 3V3 and 5V pins are also power pins with a dual function. They can work as **power outputs** since these pins are directly connected to the onboard 3V3 and 5V voltage regulators outputs (depending on the board). Moreover, 3V3 and 5V pins can also be used as **power inputs if no regulated power supply is connected through the other power inputs (USB port, barrel jack connector or VIN pin)**.
@@ -166,7 +166,7 @@ The **minimum and maximum voltages** that can be applied to the VIN pin are dete
 Although 3V3 and 5V pins can be used as power inputs, **it is not recommended** if no power supply is connected through the USB port, the barrel jack connector, or the VIN pin. 3V3 and 5V pins are connected directly to the onboard voltage regulator's output pin. Suppose the voltage in the voltage regulator output pin becomes higher than the input voltage of the voltage regulator. In that case, a large current may flow into the voltage regulator from its output pin to its input pin. That large current can permanently damage your board's voltage regulator.
 
 
-***It is safe, but not recommended, to apply a voltage to the 3V3 or 5V pins that are not higher than the input voltage of the voltage regulators.*** 
+***It is safe, but not recommended, to apply a voltage to the 3V3 or 5V pins that are not higher than the input voltage of the voltage regulators.***
 
 
 
@@ -217,21 +217,21 @@ This option is often recommended when experimenting with small loads that requir
 ### Barrel Jack Connector
 
 
-This option is recommended when a regulated power supply with a barrel jack connector is available. Current is constrained by the regulated power supply and the onboard voltage regulator. 
+This option is recommended when a regulated power supply with a barrel jack connector is available. Current is constrained by the regulated power supply and the onboard voltage regulator.
 
 
 ### Battery Connector
 
 
-This option is recommended for portable projects or projects that need a secondary o backup power supply. Currently, 3V7 Li-Ion and Li-polymer batteries are supported only; the battery's capacity constrains current. 
+This option is recommended for portable projects or projects that need a secondary o backup power supply. Currently, 3V7 Li-Ion and Li-polymer batteries are supported only; the battery's capacity constrains current.
 
 
 ### VIN Pin
 
-This option is recommended when a regulated power supply without a barrel jack connector is available. Take into account that using VIN pin should be made carefully since this pin does not have reverse polarity protection. Current is constrained by the regulated power supply and the onboard voltage regulator. 
+This option is recommended when a regulated power supply without a barrel jack connector is available. Take into account that using VIN pin should be made carefully since this pin does not have reverse polarity protection. Current is constrained by the regulated power supply and the onboard voltage regulator.
 
 
-### 3V3/5V Pin 
+### 3V3/5V Pin
 
 
 **Avoid this option** since the risk of damaging the onboard voltage regulator is high. It can be done safely if the applied voltage to the 3V3 or 5V pins is not higher than the input voltage of the voltage regulators.
@@ -239,7 +239,7 @@ This option is recommended when a regulated power supply without a barrel jack c
 ## Further Reading and Resources
 
 
-If you want to learn more about power supplies, check out the following links: 
+If you want to learn more about power supplies, check out the following links:
 
 
 - Power supplies are one of the most popular and most needed electronic testing equipment. Check out more about them in [this](https://www.bkprecision.com/support/downloads/power-supply-guide.html) guide from BK Precision®.

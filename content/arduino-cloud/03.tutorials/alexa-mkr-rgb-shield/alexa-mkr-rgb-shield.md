@@ -14,9 +14,9 @@ featuredImage: 'cloud'
 
 <iframe width="100%" height="400" src="https://www.youtube.com/embed/OMvZjwFYimo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-In this tutorial you will learn how to integrate the [Arduino IoT Cloud](https://create.arduino.cc/iot/) with the [Amazon Alexa skill](https://www.amazon.com/Arduino-LLC/dp/B07ZT2PK2H). At the end of this tutorial, we will be able to change the color of an  RGB matrix, using only voice commands in the Alexa app. 
+In this tutorial you will learn how to integrate the [Arduino IoT Cloud](https://create.arduino.cc/iot/) with the [Amazon Alexa skill](https://www.amazon.com/Arduino-LLC/dp/B07ZT2PK2H). At the end of this tutorial, we will be able to change the color of an  RGB matrix, using only voice commands in the Alexa app.
 
-This tutorial focuses on using the [MKR RGB Shield](https://store.arduino.cc/products/arduino-mkr-rgb-shield) but can easily be modified to use other matrices. 
+This tutorial focuses on using the [MKR RGB Shield](https://store.arduino.cc/products/arduino-mkr-rgb-shield) but can easily be modified to use other matrices.
 
 ***While this tutorial focuses on creating a smart lamp, it also shows the steps needed to integrate the two services, so you can essentially follow this tutorial to create other cool projects!***
 
@@ -61,7 +61,7 @@ You will now have an option of either configuring a new Arduino device, or a thi
 ![Selecting the type of device.](assets/device_setup_1.png)
 
 At this point, you will need to connect your cloud compatible board to your computer. You will also need to have installed the Arduino Create Agent. If if it is not installed, the set up wizard will ask you to install it. Your device should now show up, and you will need to click on the **"Configure"**
-button. 
+button.
 
 
 ![Device found.](assets/device_setup_2.png)

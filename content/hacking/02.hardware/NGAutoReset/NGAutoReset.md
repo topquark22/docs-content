@@ -1,7 +1,7 @@
 ---
 title: 'Upgrading an Arduino NG to Auto-Reset'
 description: 'This page will show you how to upgrade your Arduino NG to auto-reset when powered or uploaded to.'
-tags: 
+tags:
   - Arduino NG
 ---
 If you have an Arduino NG and you're envious of all the seconds saved by those Diecimila owners who don't have to press the reset button anymore, this page is for you. You can upgrade an Arduino NG to take advantage of the auto-reset functionality in Arduino 0009 and beyond with just a 0.1uF (100 nano-farad) capacitor and a soldering iron.

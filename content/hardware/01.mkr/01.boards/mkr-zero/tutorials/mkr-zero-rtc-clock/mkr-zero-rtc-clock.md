@@ -3,11 +3,11 @@ title: 'RTC (Real Time Clock) with MKR Zero and OLED Display'
 difficulty: intermediate
 compatible-products: [mkr-zero]
 description: 'Learn how to create a simple clock, using RTC and an OLED screen to display the time.'
-tags: 
+tags:
   - RTC
   - OLED
 author: 'Karl Söderby'
-libraries: 
+libraries:
   - name: Adafruit GFX
     url: https://github.com/adafruit/Adafruit-GFX-Library
   - name: SSD1306
@@ -46,11 +46,11 @@ The goals of this project are:
 
 ## Real Time Clock (RTC)
 
-Isn't Real Time Clock just another word for actual time? The answer is yes, it is actually just the tracking of actual time. But what is interesting is the component that does this. Most electronic devices that need to track current time use an RTC component, often in the form of an Integrated Circuit (IC). They typically consist of a crystal oscillator, which is used to create electronic signals with a constant frequency. The frequency is typically set to 32.768 kHz, which is the same frequency used for most watches. 
+Isn't Real Time Clock just another word for actual time? The answer is yes, it is actually just the tracking of actual time. But what is interesting is the component that does this. Most electronic devices that need to track current time use an RTC component, often in the form of an Integrated Circuit (IC). They typically consist of a crystal oscillator, which is used to create electronic signals with a constant frequency. The frequency is typically set to 32.768 kHz, which is the same frequency used for most watches.
 
-The frequency is equal to 2^15 cycles per second, which means it is a convenient rate to use for binary counter circuits. This operation also does not require a lot of power, and can still run while the board is in a sleep mode. This can be a quite powerful feature, to for example tell the board to wake up at a certain time, or go to sleep at a certain time, automatically. 
+The frequency is equal to 2^15 cycles per second, which means it is a convenient rate to use for binary counter circuits. This operation also does not require a lot of power, and can still run while the board is in a sleep mode. This can be a quite powerful feature, to for example tell the board to wake up at a certain time, or go to sleep at a certain time, automatically.
 
-You can also read more about [Real Time Clocks](https://www.electronics-tutorials.ws/connectivity/real-time-clocks.html), if you find this topic interesting. 
+You can also read more about [Real Time Clocks](https://www.electronics-tutorials.ws/connectivity/real-time-clocks.html), if you find this topic interesting.
 
 ### Circuit
 
@@ -71,7 +71,7 @@ We will now get to the programming part of this tutorial. It focuses on two main
 - Initialize the RTC properties (this happens on start).
 - Print the time and date on the OLED display.
 
-**1.** First, let's make sure we have the drivers installed. If we are using the Web Editor, we do not need to install anything. If we are using an offline editor, we need to install it manually. This can be done by navigating to **Tools > Board > Board Manager...**. Here we need to look for the **Arduino SAMD boards (32-bits ARM Cortex M0+)** and install it. 
+**1.** First, let's make sure we have the drivers installed. If we are using the Web Editor, we do not need to install anything. If we are using an offline editor, we need to install it manually. This can be done by navigating to **Tools > Board > Board Manager...**. Here we need to look for the **Arduino SAMD boards (32-bits ARM Cortex M0+)** and install it.
 
 **2.** Now, we need to install the libraries needed. If we are using the Web Editor, there is no need to install anything. If we are using an offline editor, simply go to **Tools > Manage libraries..**, and search for **Adafruit_GFX**, **Adafruit_SSD1306** and **RTCZero**.
 
@@ -163,7 +163,7 @@ void loop()
   display.setTextSize(2); //sets text size to 2
   display.setCursor(0, 0); //x, y starting coordinates
 
-  print2digits(rtc.getDay()); //retrieve day 
+  print2digits(rtc.getDay()); //retrieve day
   display.print("/");
   print2digits(rtc.getMonth()); //retrieve month
   display.print("/");
@@ -193,7 +193,7 @@ void print2digits(int number) {
 
 ## Testing It Out
 
-Great job. We should now have an accurate time and date printed on our OLED display, which will be accurate for as long as the board remains powered. If we take a look at the display, we can see that at the top row, the **day, month and year** is printed. In the second row, **seconds, minutes and hours** are printed. 
+Great job. We should now have an accurate time and date printed on our OLED display, which will be accurate for as long as the board remains powered. If we take a look at the display, we can see that at the top row, the **day, month and year** is printed. In the second row, **seconds, minutes and hours** are printed.
 
 ![Time and date printed on the OLED display.](assets/MKRZERO_T2_IMG_03.png)
 
@@ -208,5 +208,5 @@ If the code is not working, there are some common issues we can troubleshoot:
 
 ## Conclusion
 
-This tutorial covers some basics on RTC and how to print the time and date continuously on an OLED display. But these technologies are used heavily in modern designs, and knowing just the basics can be very beneficial. 
+This tutorial covers some basics on RTC and how to print the time and date continuously on an OLED display. But these technologies are used heavily in modern designs, and knowing just the basics can be very beneficial.
 

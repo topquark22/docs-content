@@ -3,7 +3,7 @@ title: 'Tone on Multiple Speakers'
 compatible-products: [all-boards]
 difficulty: beginner
 description: 'Play tones on multiple speakers sequentially using the tone() command.'
-tags: 
+tags:
   - Digital
   - Output
   - Piezo

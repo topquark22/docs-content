@@ -34,7 +34,7 @@ ___
 - Arduino IDE ([online](https://create.arduino.cc/) or [offline](https://www.arduino.cc/en/main/software)).
 - [WiFiNINA](https://www.arduino.cc/en/Reference/WiFiNINA) library.
 - Arduino MKR WiFi 1010 ([link to store](https://store.arduino.cc/mkr-wifi-1010)).
-- Generic LED 
+- Generic LED
 - 220 ohm resistor
 - Breadboard
 - Jumper wires
@@ -74,13 +74,13 @@ And that is the summary of the configuration we will be using in this tutorial. 
 
 ## Creating the Program
 
-**1.** First, let's make sure we have the drivers installed. If we are using the Web Editor, we do not need to install anything. If we are using an offline editor, we need to install it manually. This can be done by navigating to **Tools > Board > Board Manager...**. Here we need to look for the **Arduino SAMD boards (32-bits ARM Cortex M0+)** and install it. 
+**1.** First, let's make sure we have the drivers installed. If we are using the Web Editor, we do not need to install anything. If we are using an offline editor, we need to install it manually. This can be done by navigating to **Tools > Board > Board Manager...**. Here we need to look for the **Arduino SAMD boards (32-bits ARM Cortex M0+)** and install it.
 
 **2.** Now, we need to install the library needed. If we are using the Web Editor, there is no need to install anything. If we are using an offline editor, simply go to **Tools > Manage libraries..**, and search for **WiFiNINA** and install it.
 
 ### Code Explanation
 
->**Note:** This section is optional, you can find the complete code further down on this tutorial. 
+>**Note:** This section is optional, you can find the complete code further down on this tutorial.
 
 The initialization begins by including the **WiFiNINA** library, afterwards we need to enter our credentials to our network.
 
@@ -191,7 +191,7 @@ Now, we will look at the core of this program: the `printWEB()` function, which 
 Here, we first begin by checking if `client` is available, and if it is, we enter a `while()` loop. Inside the while loop, we will use `client.print` to start printing HTML code that can be viewed from the browser. To not overload the Arduino's board memory, we use a very basic setup: two links that turn an LED either ON or OFF.
 
 - This line of code is used to turn **ON** the LED, by adding **/H** to the end of the URL.
- 
+
 `client.print("Click <a href=\"/H\">here</a> turn the LED on<br>");`
 
 - This line of code is used to turn **OFF** the LED, by adding **/L** to the end of the URL.

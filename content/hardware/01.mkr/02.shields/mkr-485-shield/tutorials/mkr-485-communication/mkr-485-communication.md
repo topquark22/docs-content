@@ -7,7 +7,7 @@ tags:
   - RS485
   - Industrial
 author: 'Karl Söderby'
-libraries: 
+libraries:
   - name: Arduino RS485
     url: https://www.arduino.cc/en/Reference/ArduinoRS485
 hardware:
@@ -21,7 +21,7 @@ software:
 featuredImage: 'chip'
 ---
 
-## Introduction 
+## Introduction
 
 In this tutorial, we will take a look at how we can send data between two boards, using the RS485 standard. This will be achieved by using two [MKR 485 Shields](https://store.arduino.cc/arduino-mkr-485-shield), mounted on top of two [MKR family boards](https://store.arduino.cc/arduino-genuino/arduino-genuino-mkr-family). RS485 is commonly used in industrial applications, and is used to request, send and receive data from various devices using a protocol such as Modbus.
 
@@ -30,7 +30,7 @@ In this tutorial, we will take a look at how we can send data between two boards
 
 The goals of this project are:
 
-- Learn some basic functionality of the Arduino RS485 library. 
+- Learn some basic functionality of the Arduino RS485 library.
 - Send a simple message between two boards, using RS485.
 
 ## Hardware & Software Needed
@@ -44,16 +44,16 @@ The goals of this project are:
 
 ## The RS485 Standard
 
-RS485 is used as a physical layer for many industrial automation protocols, such as the **Modbus** protocol. It was created for the purpose of transferring data at high speeds in noisy electrical environments, typically industrial facilities. It is also commonly known as TIA-485 and EIA-485, whose names derive from the **Telecommunications Industry Association** and **Electronic Industries Alliance**. These organizations also collaborate on publishing the standard. 
+RS485 is used as a physical layer for many industrial automation protocols, such as the **Modbus** protocol. It was created for the purpose of transferring data at high speeds in noisy electrical environments, typically industrial facilities. It is also commonly known as TIA-485 and EIA-485, whose names derive from the **Telecommunications Industry Association** and **Electronic Industries Alliance**. These organizations also collaborate on publishing the standard.
 
 RS485 is able to provide speeds of up to 10 Mbps for short distances (15 meters, 50 feet), but distances can be extended if the speed is reduced to around 100 Kbps (1200 meters, 4000 feet). A common setup is to have one controller* device, with several peripheral* devices.
 
->**Note:** Controller/peripheral is formerly known as **master/slave**. Arduino no longer supports the use of this terminology. 
+>**Note:** Controller/peripheral is formerly known as **master/slave**. Arduino no longer supports the use of this terminology.
 
 The controller device can be configured to request information from the peripheral devices. For example, let's imagine we have several sensors as part of an industrial system. It could for example be:
 
 - Temperature sensor A: reads the temperature inside a machine.
-- Temperature sensor B: reads external temperature of e.g. pipes. 
+- Temperature sensor B: reads external temperature of e.g. pipes.
 - Water tank level: reads amount of water left in e.g. a cooling system.
 
 In this case, keeping the machine's internal temperature level (Temperature sensor A) is essential for keeping production going. In case temperatures are too high, the machine might overheat and stop the production. The machine operates in very cold conditions, so we need to monitor the pipes of the machine to always stay above a minimum temperature (Temperature sensor B), so they don't freeze. The cooling system for the machine is essential, and uses water from a tank to cool it down. If the water runs out, it means the engine could overheat, and cause a stop in production. All of these sensors can be referred to as **peripheral devices.**
@@ -97,9 +97,9 @@ The numbering is very small, but can be found on the switches.
 
 ## Programming the Board
 
-We will now get to the programming part of this tutorial. We will need to program two Arduino boards, one sender and one receiver device. 
+We will now get to the programming part of this tutorial. We will need to program two Arduino boards, one sender and one receiver device.
 
-**1.** First, let's make sure we have the drivers installed for the board we are using. If we are using the Web Editor, we do not need to install anything. If we are using an offline editor, we need to install it manually. This can be done by navigating to **Tools > Board > Board Manager...**. Here we need to look for the **Arduino SAMD boards (32-bits ARM Cortex M0+)** and install it. 
+**1.** First, let's make sure we have the drivers installed for the board we are using. If we are using the Web Editor, we do not need to install anything. If we are using an offline editor, we need to install it manually. This can be done by navigating to **Tools > Board > Board Manager...**. Here we need to look for the **Arduino SAMD boards (32-bits ARM Cortex M0+)** and install it.
 
 **2.** Now, we need to install the library needed. If we are using the Web Editor, there is no need to install anything. If we are using an offline editor, simply go to **Tools > Manage libraries..**, and search for **ArduinoRS485** and install it.
 
@@ -174,7 +174,7 @@ Now that we have uploaded the sketches to our sender and receiver boards, we can
 
 ![Choosing the receiver device.](assets/MKR485_T1_IMG04.png)
 
-Once we open the Serial Monitor, and everything is working properly, we should see the incoming data. The data is very basic, it only consists of the text `hello` followed by an increasing number. 
+Once we open the Serial Monitor, and everything is working properly, we should see the incoming data. The data is very basic, it only consists of the text `hello` followed by an increasing number.
 
 ![Receiving the data.](assets/MKR485_T1_IMG05.png)
 

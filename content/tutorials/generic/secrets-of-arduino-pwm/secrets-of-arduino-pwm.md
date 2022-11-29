@@ -1,9 +1,9 @@
 ---
 title: 'Secrets of Arduino PWM'
 description: 'Learn about Pulse Width Modulation techniques '
-tags: 
+tags:
   - PWM
-  - LED 
+  - LED
 software:
   - ide-v1
   - ide-v2
@@ -17,11 +17,11 @@ Pulse-width modulation (PWM) can be implemented on the Arduino in several ways. 
 ## Goals
 
 - About Pulse Width Modulation techniques.
-  
+
 
  ## Hardware & Software needed
 
-- Arduino Board with an ATmega168 or ATmega328 chip. 
+- Arduino Board with an ATmega168 or ATmega328 chip.
 - Arduino IDE ([online](https://create.arduino.cc/) or [offline](https://www.arduino.cc/en/main/software)).
 
 
@@ -130,7 +130,7 @@ On the Arduino Duemilanove, these values yield:
 * Output A duty cycle: (180+1) / 256 = 70.7%
 * Output B frequency: 16 MHz / 64 / 256 = 976.5625Hz
 * Output B duty cycle: (50+1) / 256 = 19.9%
-  
+
 The output frequency is the 16MHz system clock frequency, divided by the prescaler value (64), divided by the 256 cycles it takes for the timer to wrap around. Note that fast PWM holds the output high one cycle longer than the compare register value.
 
 **Phase-Correct PWM**

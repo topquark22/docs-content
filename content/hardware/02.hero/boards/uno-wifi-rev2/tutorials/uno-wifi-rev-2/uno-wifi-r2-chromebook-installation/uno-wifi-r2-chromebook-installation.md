@@ -2,7 +2,7 @@
 title: 'UNO WiFi Rev 2 Chromebook Setup'
 difficulty: beginner
 description: 'A quick tutorial on how to setup your UNO WiFi Rev 2 board with a Chromebook, using the Web Editor & the Arduino Chrome App.'
-tags: 
+tags:
   - Chromebook
   - Installation
 author: 'Karl Söderby'
@@ -12,7 +12,7 @@ software:
   - web-editor
 ---
 
-## Introduction 
+## Introduction
 
 > This tutorial is only relevant for Chromebook users that uses an Arduino UNO WiFi Rev 2 board.
 
@@ -38,9 +38,9 @@ The goals of this project are:
 
 ## Upgrading Firmware
 
-Since Chromebooks cannot run executables, the firmware upgrade for the UNO WiFi Rev 2 needs to be done through a Windows/Mac/Linux computer. 
+Since Chromebooks cannot run executables, the firmware upgrade for the UNO WiFi Rev 2 needs to be done through a Windows/Mac/Linux computer.
 
-First download the [optiboot_atmega4.hex](/resources/firmware/optiboot_atmega4809.hex) file, and move it to your **Desktop folder**. 
+First download the [optiboot_atmega4.hex](/resources/firmware/optiboot_atmega4809.hex) file, and move it to your **Desktop folder**.
 
 ![.hex file in your Desktop folder.](assets/hex-file-desktop.png)
 
@@ -50,7 +50,7 @@ Connect your UNO WiFi Rev2 board to your computer and follow the instructions fo
 
 ### Mac
 
-**1.** Download the [AVRDUDE tool for Mac (.zip file)](https://downloads.arduino.cc/tools/avrdude-6.3.0-arduino17-x86_64-apple-darwin12.tar.bz2) and unzip it to your Desktop folder. 
+**1.** Download the [AVRDUDE tool for Mac (.zip file)](https://downloads.arduino.cc/tools/avrdude-6.3.0-arduino17-x86_64-apple-darwin12.tar.bz2) and unzip it to your Desktop folder.
 
 **2.** Open a terminal, and run the following command:
 
@@ -60,7 +60,7 @@ Connect your UNO WiFi Rev2 board to your computer and follow the instructions fo
 
 ### Windows
 
-**1.** Download the [AVRDUDE tool for Windows (.zip file)](https://downloads.arduino.cc/tools/avrdude-6.3.0-arduino17-i686-w64-mingw32.zip) and unzip it to your Desktop folder. 
+**1.** Download the [AVRDUDE tool for Windows (.zip file)](https://downloads.arduino.cc/tools/avrdude-6.3.0-arduino17-i686-w64-mingw32.zip) and unzip it to your Desktop folder.
 
 **2.** Open a command prompt (CMD), and run the following command:
 
@@ -70,7 +70,7 @@ Connect your UNO WiFi Rev2 board to your computer and follow the instructions fo
 
 ### Linux
 
-**1.** Download the [AVRDUDE tool for Linux (.zip file)](https://downloads.arduino.cc/tools/avrdude-6.3.0-arduino17-x86_64-pc-linux-gnu.tar.bz2) and unzip it to your Desktop folder. 
+**1.** Download the [AVRDUDE tool for Linux (.zip file)](https://downloads.arduino.cc/tools/avrdude-6.3.0-arduino17-x86_64-pc-linux-gnu.tar.bz2) and unzip it to your Desktop folder.
 
 **2.** Open a terminal, navigate to your root directory.
 
@@ -86,15 +86,15 @@ cd /
 
 ### Expected Outcome
 
-This will start a process of uploading the `.hex` file to your board. This will not take long, but make sure you do not disconnect the board from your computer. When finished, you should see the following output in the terminal (screen capture from Windows): 
+This will start a process of uploading the `.hex` file to your board. This will not take long, but make sure you do not disconnect the board from your computer. When finished, you should see the following output in the terminal (screen capture from Windows):
 
 ![Successful upgrade](assets/windows-success.png)
 
-Now that your firmware is upgraded, you should see your board blinking (1 second off, followed by a quick blink). This is another proof that it was successful. You can now disconnect your board, and **plug it into your Chromebook.** 
+Now that your firmware is upgraded, you should see your board blinking (1 second off, followed by a quick blink). This is another proof that it was successful. You can now disconnect your board, and **plug it into your Chromebook.**
 
 ### Check AVRDUDE Installation
 
-The above commands utilizes a tool called **AVRDUDE**, which is included in each version of the IDE. To check whether it is accessible on your computer, you can run the following commands. 
+The above commands utilizes a tool called **AVRDUDE**, which is included in each version of the IDE. To check whether it is accessible on your computer, you can run the following commands.
 
 **Windows:**
 
@@ -146,7 +146,7 @@ To program your Arduino via a Chromebook, you will need the [Arduino Create for 
 
 ![Board discovered.](assets/board-discovered.png)
 
-**5.** Click the upload button. This will start the **compilation process**, and then upload the sketch to your board. 
+**5.** Click the upload button. This will start the **compilation process**, and then upload the sketch to your board.
 
 Congratulations, you have now uploaded a sketch to your UNO WiFi Rev 2 using the Web Editor on a Chromebook.
 

@@ -1,7 +1,7 @@
 ---
 title: 'Secure Boot on Portenta H7'
 description: 'Learn how to use secure boot on the Arduino Portenta H7.'
-tags: 
+tags:
   - Secure Boot
 author: 'Umberto Baldi'
 hardware:
@@ -57,7 +57,7 @@ Remember to **save the keys and keep them in a secure location** and not to lose
 ### 2. Upload the Custom Keys to the Board
 Once the keys have been generated, they have to be uploaded to the Portenta H7. This procedure has to be done only once, because it is persistent. To extract the public\private key and encode it in to a "C" byte array inside a `.h` header file you can use:
 ```
-imgtool getpriv -k my-encrypt-keyfile.pem > ecsda-p256-encrypt-priv-key.h 
+imgtool getpriv -k my-encrypt-keyfile.pem > ecsda-p256-encrypt-priv-key.h
 imgtool getpub -k my-sign-keyfile.pem > ecsda-p256-signing-pub-key.h
 ```
 

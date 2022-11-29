@@ -12,7 +12,7 @@ Decorating your home with plants is an easy way to bring some life into your day
 
 ## How It Works
 
-The MKR IoT Carrier has built in relays that can let you control circuits that are powered separately. In this tutorial we will be using one of the relay modules on the carrier to control a pump that can provide one of your plants with water from the Arduino IoT Cloud thanks to the functionality of the [Arduino MKR WiFi 1010](https://store.arduino.cc/products/arduino-mkr-wifi-1010). 
+The MKR IoT Carrier has built in relays that can let you control circuits that are powered separately. In this tutorial we will be using one of the relay modules on the carrier to control a pump that can provide one of your plants with water from the Arduino IoT Cloud thanks to the functionality of the [Arduino MKR WiFi 1010](https://store.arduino.cc/products/arduino-mkr-wifi-1010).
 
 We will also connect a soil moisture sensor, and together with the sensors onboard the MKR IoT Carrier, we will create a sophisticated smart garden setup, capable of:
 
@@ -42,7 +42,7 @@ We will also connect a soil moisture sensor, and together with the sensors onboa
 
 Begin by connecting the MKR WiFi 1010 board to the MKR IoT Carrier. Then, we need to connect the moisture sensor via a Grove cable to the "A6" connector.
 
-From the open ended USB cable, connect the positive wire (+) directly to relay 1 on the carrier, labelled "NO" (normally open). Connect the negative wire (-) together with the pump's negative wire. 
+From the open ended USB cable, connect the positive wire (+) directly to relay 1 on the carrier, labelled "NO" (normally open). Connect the negative wire (-) together with the pump's negative wire.
 
 Finally, connect the pump's positive wire, to the "COM" (common) pin on the relay. As a result, you have created a circuit that can be switched on/off via a relay. See next section for the full circuit.
 
@@ -56,13 +56,13 @@ To connect the wires to the relay, see the image below:
 
 ![Connecting the wires to relay 1.](assets/relay-connection.png)
 
-***Tip: to connect the power, pump & relay, you can use a connector strip. This will make your connections much more reliable & sturdy.*** 
+***Tip: to connect the power, pump & relay, you can use a connector strip. This will make your connections much more reliable & sturdy.***
 
 ## IoT Cloud Setup
 
-***If you are new to the Arduino IoT Cloud, please refer to the [Getting Started Guide](https://docs.arduino.cc/cloud/iot-cloud/tutorials/iot-cloud-getting-started) or visit the [full documentation](https://docs.arduino.cc/cloud/iot-cloud) to learn more about the service.*** 
+***If you are new to the Arduino IoT Cloud, please refer to the [Getting Started Guide](https://docs.arduino.cc/cloud/iot-cloud/tutorials/iot-cloud-getting-started) or visit the [full documentation](https://docs.arduino.cc/cloud/iot-cloud) to learn more about the service.***
 
-Begin by navigating to the [Arduino IoT Cloud](https://create.arduino.cc/iot/things). You will need to have a registered account with Arduino to use it. Follow the steps below to set up the Arduino IoT Cloud. 
+Begin by navigating to the [Arduino IoT Cloud](https://create.arduino.cc/iot/things). You will need to have a registered account with Arduino to use it. Follow the steps below to set up the Arduino IoT Cloud.
 
 **1.** Create a new Thing, and select/configure the MKR WiFi 1010 board. Note that the board needs to be connected to your computer during this setup.
 
@@ -76,7 +76,7 @@ Begin by navigating to the [Arduino IoT Cloud](https://create.arduino.cc/iot/thi
 | temperature | float     | Read temperature                       | Read Only    |
 | humidity    | float     | Read humidity                          | Read Only    |
 
-**3.** Enter your credentials to your Wi-Fi network in the network section. 
+**3.** Enter your credentials to your Wi-Fi network in the network section.
 
 **4.** Your Thing overview should now look like the following:
 
@@ -102,7 +102,7 @@ Begin by navigating to the [Arduino IoT Cloud](https://create.arduino.cc/iot/thi
   - USB Adapter with 2x slots
   - Micro USB Cable
   - Open ended USB Cable
-  - Grove cable 
+  - Grove cable
 
   Code by (c) Alessandro Ranelucci for Arduino.
 */
@@ -161,7 +161,7 @@ void loop() {
   ArduinoCloud.update();
   app.loop();
 
-  // Read the sensor and convert its value to a percentage 
+  // Read the sensor and convert its value to a percentage
   // (0% = dry; 100% = wet)
   int raw_moisture = analogRead(moistPin);
   moisture = map(raw_moisture, 0, 1023, 0, 100);
@@ -238,7 +238,7 @@ We have now assembled the hardware + configured the Arduino IoT Cloud, and we ar
 
 ![Plant setup.](assets/smart-garden-setup.png)
 
-**4.** Finally, plug in the USB adapter into the wall. This will now power the MKR IoT Carrier, which should now connect to the IoT Cloud, via your Wi-Fi network. And that is it, you now have a Smart Garden setup! 
+**4.** Finally, plug in the USB adapter into the wall. This will now power the MKR IoT Carrier, which should now connect to the IoT Cloud, via your Wi-Fi network. And that is it, you now have a Smart Garden setup!
 
 ## Usage
 
@@ -255,7 +255,7 @@ Let's take a look at what our Smart Garden can do. To control it, we can either 
 
 **Moisture:** monitor the moisture of your plant: if it is low, turn on the pump, and watch the moisture levels rise. The moisture of your plant can be viewed in the cloud dashboard, on the carrier's display or through the LED indiciator (red is bad, green is good).
 
-**Display, buttons:** you can also view the moisture level locally, and activate the pump through the capacitive buttons. 
+**Display, buttons:** you can also view the moisture level locally, and activate the pump through the capacitive buttons.
 
 **Temperature:** check temperature levels. Note that this may be inaccurate if placed directly in a sunny window!
 

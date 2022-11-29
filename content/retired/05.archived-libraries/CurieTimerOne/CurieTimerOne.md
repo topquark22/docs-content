@@ -6,7 +6,7 @@ author: Arduino
 
 ## Overview
 
-***This library is included in the [Arc32 core](https://github.com/arduino/ArduinoCore-arc32/tree/master/libraries). This core can be installed through the Arduino IDEs , where the package is named "Intel Curie Boards".*** 
+***This library is included in the [Arc32 core](https://github.com/arduino/ArduinoCore-arc32/tree/master/libraries). This core can be installed through the Arduino IDEs , where the package is named "Intel Curie Boards".***
 
 This library allows to use Timer functions on Arduino and Genuino 101 boards. With this library you can add and manage events based on timer functions. The timer is set up with a number of microseconds and every time this number is reached, a counter is incremented and an interrupt, if set, is asserted. This means that you may program recurring interrupts setting up their frequency. This library supports also PWM signal generation with 1024 steps of resolution and a period that can be set up in microseconds.
 

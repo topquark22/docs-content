@@ -35,13 +35,13 @@ If you have never used the **WiFiNINA** library, you can check out [this tutoria
 -   Arduino MKR WiFi 1010
 -   Micro USB cable
 -   Generic LED
--   82 ohm resistor 
+-   82 ohm resistor
 -   Breadboard
 -   Jumper wires
 -   Arduino IDE (offline and online versions available)
 -   Arduino SAMD core installed, [follow this link for instructions](https://www.arduino.cc/en/Guide/MKRWiFi1010#installing-drivers-for-the-mkr-wifi-1010)
 -   WiFiNINA library (explained later in this tutorial)
- 
+
 You can also use the built-in LED on the MKR WiFi 1010.
 
 ### Circuit
@@ -82,7 +82,7 @@ And that is the configuration we will be using in this tutorial. There are a few
 
 > **NOTE:** This section is optional, you can find the complete code further down on this tutorial.
 
-The initialization begins by including the WiFiNINA library, after which we need to enter our credentials to our network. If you want to, you can create a **secret** tab to store your credentials. This can be useful if you want to share your sketch online, and don't want anyone to see your credentials. 
+The initialization begins by including the WiFiNINA library, after which we need to enter our credentials to our network. If you want to, you can create a **secret** tab to store your credentials. This can be useful if you want to share your sketch online, and don't want anyone to see your credentials.
 
 Simply replace `"yourNetwork"` and `"yourPassword"` with a network name and password of your choice.
 

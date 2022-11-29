@@ -51,7 +51,7 @@ The setup to use this code is very simple. You just have to:
 * load the code on the board using the Arduino Java or Web IDE;
 * open the Serial Monitor;
 * call the board and enjoy!
-  
+
 ## Code
 <iframe src='https://create.arduino.cc/editor/Arduino_Genuino/98e9e261-0626-4994-98d9-8efcd21ed5ec/preview?embed&snippet' style='height:510px;width:100%;margin:10px 0' frameborder='0'></iframe>
 

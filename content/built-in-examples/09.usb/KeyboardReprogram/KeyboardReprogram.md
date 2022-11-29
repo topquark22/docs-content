@@ -3,7 +3,7 @@ title: 'Keyboard Reprogram'
 compatible-products: [due, micro, leonardo]
 difficulty: intermediate
 description: 'Opens a new window in the Arduino IDE and reprograms the Leonardo with a simple blink program.'
-tags: 
+tags:
   - USB
   - Keyboard
   - Pushbutton

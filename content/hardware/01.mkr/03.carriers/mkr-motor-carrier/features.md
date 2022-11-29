@@ -1,7 +1,7 @@
 
 <FeatureDescription>
 
-The MKR Motor Carrier features a **ATSAMD11** processor for automated control of the outputs, two **MC33926** DC / servo motor drivers and two **DRV8871** DC motor drivers. It also features screw terminals for motor outputs, male header pins for motor outputs, an I2C connector, encoder inputs, LiPo battery connector and battery reading capabilities. 
+The MKR Motor Carrier features a **ATSAMD11** processor for automated control of the outputs, two **MC33926** DC / servo motor drivers and two **DRV8871** DC motor drivers. It also features screw terminals for motor outputs, male header pins for motor outputs, an I2C connector, encoder inputs, LiPo battery connector and battery reading capabilities.
 
 </FeatureDescription>
 
@@ -16,14 +16,14 @@ The MKR Motor Carrier features the ATSAMD11 (Arm Cortex-M0+) as an on-board proc
 <Feature title="MC33926" image="mcu">
 
 DC / Servo motor driver capable of handling peak currents up to 5A.
- 
+
 <FeatureLink title="Datasheet" url="https://www.nxp.com/docs/en/data-sheet/MC33926.pdf" download blank/>
 </Feature>
 
 
 <Feature title="DRV8871" image="mcu">
 
-DC motor driver with PWM control that can handle peak currents up to 3A. 
+DC motor driver with PWM control that can handle peak currents up to 3A.
 
 <FeatureLink title="Datasheet" url="https://www.ti.com/document-viewer/DRV8871/datasheet/features" download blank/>
 </Feature>
@@ -42,7 +42,7 @@ The carrier features two inputs for encoders.
 
 <Feature title="LiPo battery connector" image="power">
 
-Connect a 6.5V - 11.1V battery to either the male headers (2S and 3S compatible) or to the screw terminals. 
+Connect a 6.5V - 11.1V battery to either the male headers (2S and 3S compatible) or to the screw terminals.
 
 </Feature>
 

@@ -1,7 +1,7 @@
 ---
 title: 'Bootloader'
 description: 'The bootloader is a small piece of software that allows uploading of sketches onto the Arduino board. It comes preprogrammed on the microcontrollers on Arduino boards.'
-tags: 
+tags:
   - Bootloader
 ---
 

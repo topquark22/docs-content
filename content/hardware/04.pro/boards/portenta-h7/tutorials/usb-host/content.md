@@ -46,13 +46,13 @@ It is possible to configure the Portenta H7 to act as a USB host in a way that a
 -   USB cable compatible with the Arduino Arduino MKR WiFi 1010 (or the board you have selected)
 -   3 jumper wires
 
-## USB Host and Client Mode 
+## USB Host and Client Mode
 
-When using the Portenta H7 as a USB host, it can receive and manage the information provided by other USB peripherals connected to it through a hub. In this scenario, the Portenta H7 is referred to as "USB host" or "controller" device, and the peripheral is called the "client" device (usually a mouse or a keyboard). 
+When using the Portenta H7 as a USB host, it can receive and manage the information provided by other USB peripherals connected to it through a hub. In this scenario, the Portenta H7 is referred to as "USB host" or "controller" device, and the peripheral is called the "client" device (usually a mouse or a keyboard).
 
 Computers are by default USB hosts too, as they receive the information the USB peripherals provide. PCs follow a “plug and play” mechanism, this means that, whenever a USB device is connected, the host detects the device and loads the appropriate drivers for the device to establish a communication channel over the serial bus.
 
-In contrast of being the host point for peripherals, the Portenta H7 can also be connected to the computer as the "client". In this case, the PC is the USB host and the Portenta H7 the peripheral. You can see this scenario whenever you upload sketches to the board or when you monitor data through the Serial Monitor. 
+In contrast of being the host point for peripherals, the Portenta H7 can also be connected to the computer as the "client". In this case, the PC is the USB host and the Portenta H7 the peripheral. You can see this scenario whenever you upload sketches to the board or when you monitor data through the Serial Monitor.
 
 Furthermore, the Portenta H7 can also be set to be a mouse or keyboard itself. With the corresponding sketch, circuitry and components, you could send keyboard or mouse data to a PC (not covered in this tutorial).
 

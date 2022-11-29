@@ -23,7 +23,7 @@ SoftwareSerial library has the following known limitations:
 * If using multiple software serial ports, only one can receive data at a time.
 * Not all pins on the Mega and Mega 2560 boards support change interrupts, so only the following can be used for RX: 10, 11, 12, 13, 14, 15, 50, 51, 52, 53, A8 (62), A9 (63), A10 (64), A11 (65), A12 (66), A13 (67), A14 (68), A15 (69).
 Not all pins on the Leonardo and Micro boards support change interrupts, so only the following can be used for RX: 8, 9, 10, 11, 14 (MISO), 15 (SCK), 16 (MOSI).
-* On Arduino or Genuino 101 boards the current maximum RX speed is 57600bps. 
+* On Arduino or Genuino 101 boards the current maximum RX speed is 57600bps.
 * On Arduino or Genuino 101 boards RX doesn't work on digital pin 13.
 
 If your project requires simultaneous data flows, see Paul Stoffregen's [AltSoftSerial library](https://www.pjrc.com/teensy/td_libs_AltSoftSerial.html).
@@ -39,7 +39,7 @@ If your project requires simultaneous data flows, see Paul Stoffregen's [AltSoft
 
 Create an instance of a SoftwareSerial object. Multiple SoftwareSerial objects may be created, however only one can be active at a given moment.
 
-#### Syntax 
+#### Syntax
 
 ```
 SoftwareSerial(rxPin, txPin, inverse_logic)
@@ -84,7 +84,7 @@ SoftwareSerial mySerial (rxPin, txPin);
 
 Get the number of bytes (characters) available for reading from a software serial port. This is data that has already arrived and stored in the serial receive buffer.
 
-#### Syntax 
+#### Syntax
 
 ```
 mySerial.available()
@@ -113,7 +113,7 @@ void setup()  {
     // Define pin modes for TX and RX
     pinMode(rxPin, INPUT);
     pinMode(txPin, OUTPUT);
-    
+
     // Set the baud rate for the SoftwareSerial object
     mySerial.begin(9600);
 }
@@ -142,7 +142,7 @@ void loop() {
 
 Sets the speed (baud rate) for the serial communication. Supported baud rates are: 300, 600, 1200, 2400, 4800, 9600, 14400, 19200, 28800, 31250, 38400, 57600, and 115200 bauds.
 
-#### Syntax 
+#### Syntax
 
 ```
 mySerial.begin(speed)
@@ -198,7 +198,7 @@ void loop() {
 
 Tests to see if requested software serial object is actively listening.
 
-#### Syntax 
+#### Syntax
 
 ```
 mySerial.isListening()
@@ -229,7 +229,7 @@ void setup() {
 }
 
 void loop() {
-    if (portOne.isListening()) { 
+    if (portOne.isListening()) {
         Serial.println("portOne is listening!");
     }
 
@@ -253,7 +253,7 @@ void loop() {
 
 Tests to see if a SoftwareSerial buffer overflow has occurred. Calling this function clears the overflow flag, meaning that subsequent calls will return false unless another byte of data has been received and discarded in the meantime. The SoftwareSerial buffer can hold up to 64 bytes.
 
-#### Syntax 
+#### Syntax
 
 ```
 mySerial.overflow()
@@ -308,7 +308,7 @@ void loop() {
 
 Return a character that was received on the RX pin of the software serial port. Unlike read(), however, subsequent calls to this function will return the same character. Note that only one SoftwareSerial object can receive incoming data at a time (select which one with the listen() function).
 
-#### Syntax 
+#### Syntax
 
 ```
 mySerial.peek()
@@ -357,7 +357,7 @@ void loop() {
 
 Return a character that was received on the RX pin of the SoftwareSerial objecto. Note that only one SoftwareSerial object can receive incoming data at a time (select which one with the listen() function).
 
-#### Syntax 
+#### Syntax
 
 ```
 mySerial.read()
@@ -406,7 +406,7 @@ void loop() {
 
 Prints data to the transmit pin of the SoftwareSerial object. Works the same as the Serial.print() function.
 
-#### Syntax 
+#### Syntax
 
 ```
 mySerial.print(val)
@@ -454,7 +454,7 @@ void loop() {
                                          // value in 4 because analogRead() function returns numbers
                                          // from 0 to 1023, but a byte can only hold values up to 255)
 
-    mySerial.print("\t");                // Print a tab character    
+    mySerial.print("\t");                // Print a tab character
     mySerial.println();                  // Print a line feed character
 
     // Pause for 10 milliseconds before the next reading
@@ -480,7 +480,7 @@ void loop() {
 
 Prints data to the transmit pin of the SoftwareSerial object followed by a carriage return and line feed. Works the same as the Serial.println() function.
 
-#### Syntax 
+#### Syntax
 
 ```
 mySerial.println(val)
@@ -528,7 +528,7 @@ void loop() {
                                          // value in 4 because analogRead() function returns numbers
                                          // from 0 to 1023, but a byte can only hold values up to 255)
 
-    mySerial.print("\t");                // Print a tab character    
+    mySerial.print("\t");                // Print a tab character
     mySerial.println();                  // Print a line feed character
 
     // Pause for 10 milliseconds before the next reading
@@ -553,7 +553,7 @@ void loop() {
 
 Enables the selected SoftwareSerial object to listen. Only one SoftwareSerial object can listen at a time; data that arrives for other ports will be discarded. Any data already received is discarded during the call to listen() function (unless the given instance is already listening).
 
-#### Syntax 
+#### Syntax
 
 ```
 mySerial.listen()
@@ -590,7 +590,7 @@ void setup() {
 void loop() {
     // Enable SoftwareSerial object to listen
     portOne.listen();
-    
+
     if (portOne.isListening()) {
         Serial.println("portOne is listening!");
     } else {
@@ -622,7 +622,7 @@ void loop() {
 
 Prints data to the transmit pin of the SoftwareSerial object as raw bytes. Works the same as the Serial.write()function.
 
-#### Syntax 
+#### Syntax
 
 ```
 mySerial.write(val)

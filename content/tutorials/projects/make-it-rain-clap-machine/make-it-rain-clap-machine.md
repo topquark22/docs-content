@@ -33,9 +33,9 @@ source: "https://create.arduino.cc/projecthub/Arduino_Genuino/make-it-rain-clap-
 
 ## About This Project
 
-### Introduction 
+### Introduction
 
-With this project, you will be able to create a fun **Make it rain** clap machine. To activate the machine just clap your hands and the machine will start running! The sketch uses the new [ArduinoSound library](https://www.arduino.cc/en/Reference/I2S) to interface with an I2S digital microphone. A DC motor and a standard servo motor are used to push the money out. We used a laser cutter to make the MDF pieces for the box. A rubber band and a little bit of hot glue and your machine will be ready to go. Check the video below to see it in action! 
+With this project, you will be able to create a fun **Make it rain** clap machine. To activate the machine just clap your hands and the machine will start running! The sketch uses the new [ArduinoSound library](https://www.arduino.cc/en/Reference/I2S) to interface with an I2S digital microphone. A DC motor and a standard servo motor are used to push the money out. We used a laser cutter to make the MDF pieces for the box. A rubber band and a little bit of hot glue and your machine will be ready to go. Check the video below to see it in action!
 
 ![The Make it rain clap machine!](assets/kzqxXXQ4MuIZviDpgyxB.jpg)
 
@@ -57,15 +57,15 @@ The I2S DAC used in this example needs only 3 wires for the I2S bus (plus power 
 * SCK (Serial Clock) on pin 2
 * FS (Frame or Word Select) on pin 3
 
-Follow the diagram to build your circuit. Notice that in order to make the diagram more clear we used a full size breadboard that will not fit into the box. Use a medium size breadboard instead. 
+Follow the diagram to build your circuit. Notice that in order to make the diagram more clear we used a full size breadboard that will not fit into the box. Use a medium size breadboard instead.
 
 ## Uploading the Code
 
-Okay, now you should have all the electronics in place. It's time to upload the sketch to the MKRZero board. For this project you will need the new [AudioSound library](https://www.arduino.cc/en/Reference/I2S), make sure you have it in libraries->ArduinoSound. The library will allow us to decode the I2S message from the digital microphone. Now you need to download the sketch for the Make-it-Rain clap machine and place it in the sketchbook folder. 
+Okay, now you should have all the electronics in place. It's time to upload the sketch to the MKRZero board. For this project you will need the new [AudioSound library](https://www.arduino.cc/en/Reference/I2S), make sure you have it in libraries->ArduinoSound. The library will allow us to decode the I2S message from the digital microphone. Now you need to download the sketch for the Make-it-Rain clap machine and place it in the sketchbook folder.
 
 You can find the sketch and schematics below. Open your Arduino IDE and use the Boards Manager to install the MKRZero board. Once installation is finished you should be able to select the MKRZero board from the menu Tools->Board. Now connect the MKRZero to your computer using the USB cable. In the IDE, go to `File->Sketchbook->MKRZero_MakeItRainMachine` and open the sketch. Compile and upload to the board!
 
-## Code 
+## Code
 
 <iframe src='https://create.arduino.cc/editor/Arduino_Genuino/381d524a-61c4-404f-b3c0-38b5c6958d3e/preview?embed&snippet' style='height:510px;width:100%;margin:10px 0' frameborder='0'></iframe>
 
@@ -77,7 +77,7 @@ You can find the sketch and schematics below. Open your Arduino IDE and use the 
 
 To assemble the Make It Rain box:
 
-**Note**: You will need to adjust the pieces to fit your particular components. Use hot glue to secure any loose parts. 
+**Note**: You will need to adjust the pieces to fit your particular components. Use hot glue to secure any loose parts.
 
 **You can find the laser cutter template [here!](https://hacksterio.s3.amazonaws.com/uploads/attachments/234082/I6neCvVZL9MBbADnderV.rar)**
 
@@ -92,7 +92,7 @@ To assemble the Make It Rain box:
 * Assemble the electronics and connect the motors.
 * Upload the code.
 * Place bills onto the Make It Rain box and test!
-  
+
 
 ![Rubber band and card stock detail](assets/hdpFltVCXnnEG4CE55EI.jpg)
 

@@ -1,7 +1,7 @@
 ---
 title: 'Monitor Your Energy Bill with Modbus and the Arduino IoT Cloud'
 description: 'Connect a Modbus energy meter to an Arduino® MKR WiFi 1010 board and a MKR 485 Shield and monitor the power consumption of your home via an Arduino Cloud IoT dashboard.'
-tags: 
+tags:
   - Modbus
   - RS-485
   - Energy meter
@@ -12,11 +12,11 @@ author: 'Officine Innesto, José Bagur'
 
 ## Introduction
 
-If you really want to make your home smarter, you'll probably want start from your monthly bills (for example, energy, gas, etc...). As some say: **good for the planet, the wallet and the bottom line**. In this tutorial, we are going to learn how to connect a Modbus energy meter to the Arduino Cloud IoT using an Arduino® MKR WiFi 1010 board and an Arduino® MKR 485 Shield. 
+If you really want to make your home smarter, you'll probably want start from your monthly bills (for example, energy, gas, etc...). As some say: **good for the planet, the wallet and the bottom line**. In this tutorial, we are going to learn how to connect a Modbus energy meter to the Arduino Cloud IoT using an Arduino® MKR WiFi 1010 board and an Arduino® MKR 485 Shield.
 
 ## Goals
 
-The goals with this tutorial are: 
+The goals with this tutorial are:
 
 - Learn how to connect a Modbus energy meter to the [Arduino Cloud IoT](https://create.arduino.cc/iot).
 - Learn how to use the [Arduino® MKR 485 Shield](https://store.arduino.cc/arduino-mkr-485-shield) with an [Arduino® MKR WiFi 1010 board](https://store.arduino.cc/arduino-mkr-wifi-1010).
@@ -36,13 +36,13 @@ The hardware and software used in this tutorial:
 
 ## Electric Meters a.k.a Energy Meters
 
-**Energy consumption awareness** is a key factor to **reduce energy costs and improve energy efficiency**; we can measure energy consuption using **electric meters**, a.k.a **energy meters**. 
+**Energy consumption awareness** is a key factor to **reduce energy costs and improve energy efficiency**; we can measure energy consuption using **electric meters**, a.k.a **energy meters**.
 
-![An analog energy meter (source: General Electric)](assets/modbus-energy-meter_img01.png) 
+![An analog energy meter (source: General Electric)](assets/modbus-energy-meter_img01.png)
 
 Electric meters, also known as energy meters, are **electronic devices that can measure the amount of energy consumed by an electrically powered equipment** such as a refrigerator or a lamp. Energy meters can be use also to measure the energy consuption of houses and buildings. While different types of energy meters exist, in this tutorial we choose a [Finder Type 7E.64 Energy Meter](https://www.findernet.com/en/usa/series/7e-series-energy-meters/type/type-7e64-energy-meter/). This energy meter is designed for DIN rail use and fits perfectly in the main cabinet of our house. Also, this energy meter has a **RS-485 Modbus interface**, this is an industrial communication protocol that can be decoded in Arduino boards using an [Arduino MKR 485 Shield](https://store.arduino.cc/arduino-mkr-485-shield) and the [Arduino Modbus library](https://www.arduino.cc/en/ArduinoModbus/ArduinoModbus).
 
-![Finder Type 73.64 Energy Meter (source: Finder)](assets/modbus-energy-meter_img02.png) 
+![Finder Type 73.64 Energy Meter (source: Finder)](assets/modbus-energy-meter_img02.png)
 
 ## Setting Up the Finder Type 7E.64 Energy Meter
 
@@ -52,13 +52,13 @@ First, you must install the energy meter in your electrical cabinet. To ensure y
 
 Place the energy meter inside your cabinet and connect the live and neutral wires from the main breaker to the input of the meter, remember to use the standard color convention (blue for neutral and brown/black/grey for live in EU. The output has to be connected to the rest of the system.
 
-![Main voltage connections. Wires above are inputs, wires below are outputs](assets/modbus-energy-meter_img03.png) 
+![Main voltage connections. Wires above are inputs, wires below are outputs](assets/modbus-energy-meter_img03.png)
 
 Now  it is time make the connection between the energy meter and our MKR WiFi 1010 board! For this, we will use twisted single pair cable with ground. This type of cable is typically used for phone lines, so it can be used to transmit electrical signals over long distances (up to 1.2 km). However, we are going to use a cable long enough to exit the cabinet and place our MKR WiFi 1010 board in an accessible place.
 
 ![Energy meter RS-485 interface connections](assets/modbus-energy-meter_img04.png)
 
-The RS-485 standard names its terminals **A**, **B** and **COM**. A common de-facto standard is the use of **TX+/RX+ (or D+) as an alternative for B** (high for mark i.e. idle) and **TX-/RX- (or D-) as an alternative for A** (low for mark i.e. idle). As shown in the image above, we connected the **red cable to the D+ terminal**, the **white cable to the D- terminal** and the **brown cable to the COM terminal** of the energy meter.  You can read more about the RS-485 standard [here](https://en.wikipedia.org/wiki/RS-485). 
+The RS-485 standard names its terminals **A**, **B** and **COM**. A common de-facto standard is the use of **TX+/RX+ (or D+) as an alternative for B** (high for mark i.e. idle) and **TX-/RX- (or D-) as an alternative for A** (low for mark i.e. idle). As shown in the image above, we connected the **red cable to the D+ terminal**, the **white cable to the D- terminal** and the **brown cable to the COM terminal** of the energy meter.  You can read more about the RS-485 standard [here](https://en.wikipedia.org/wiki/RS-485).
 
 The Finder energy meter supports **half-duplex communication**, this means that **data can move in two directions, but not at the same time**. The MKR 485 Shield supports both half and full-duplex communication (this means data moving in two directions simultaneously), so we need to set up the shield for half-duplex communication. **In the MKR 485 Shield, half-duplex communication uses Y and Z terminals**, **Y terminal is B or D+ and Z terminal y A or D-**, this means that the red cable must be connected to Y terminal and the white cable to Z terminal; the brown cable (COM) must be connected to ISOGND terminal. Also, we need to set the second switch to HALF (2 to OFF) and the third switch to Y-Z (3 to ON): the first switch is not used in half-duplex communication. The third switch is used for setting up the termination, this is a resistor connecting the two data terminals that is used for dampening interferences. The complete shield setup is shown in the image below:
 
@@ -108,7 +108,7 @@ After our board is configured in the Arduino Cloud IoT, we can move on to the ne
 
 ![Creation of a "Thing" in the Arduino Cloud IoT complete](assets/modbus-energy-meter_img13.png)
 
-We will be redirected to a page with our "Thing" configuration overview. Here we can define our "Thing" name, select to what network we are connecting to, what device we are using with out "Thing" and create variables that we want to to connect from our board to our "Thing" in the Arduino Cloud IoT. 
+We will be redirected to a page with our "Thing" configuration overview. Here we can define our "Thing" name, select to what network we are connecting to, what device we are using with out "Thing" and create variables that we want to to connect from our board to our "Thing" in the Arduino Cloud IoT.
 
 ![Overview of a "Thing" in the Arduino Cloud IoT](assets/modbus-energy-meter_img14.png)
 
@@ -147,17 +147,17 @@ The created variables should appear now in the "Energy Thing" overview.
 
 ### Network Credentials for a "Thing" in the Arduino Cloud IoT
 
-Now that we have created the variables for the "Energy Thing", we can configure the network details. This can be done by selecting the "**Configure**" button in the "Network" section. This will open up a window where we can add the network SSID and its password. 
+Now that we have created the variables for the "Energy Thing", we can configure the network details. This can be done by selecting the "**Configure**" button in the "Network" section. This will open up a window where we can add the network SSID and its password.
 
 ![Network credentiales of the "Energy Thing"](assets/modbus-energy-meter_img19.png)
 
 ### Creating an Sketch for a "Thing" in the Arduino Cloud IoT
 
-Once we are finished with all the configurations of the "Energy Thing", we can move on to creating the sketch that we are going to upload to our MKR WiFi 1010 board. To do so, we first need to go to the "**Sketch**" tab. But before, let's talk about **Modbus**. 
+Once we are finished with all the configurations of the "Energy Thing", we can move on to creating the sketch that we are going to upload to our MKR WiFi 1010 board. To do so, we first need to go to the "**Sketch**" tab. But before, let's talk about **Modbus**.
 
 ![Sketch tab in the Arduino Cloud IoT](assets/modbus-energy-meter_img20.png)
 
-Modbus is an open source communication protocol designed specifically for industrial sensors and machines. In simple terms, it is a method used for transmitting information over serial lines between electronic devices. Our MKR WiFi 1010 board can talk Modbus using the [Arduino Modbus library](https://www.arduino.cc/en/ArduinoModbus/ArduinoModbus). This library packs all the handlers and makes hooking up any Modbus device to some of the Arduino® boards (like the MKR family boards) really fast and easy. You can read more about Modbus [here](https://en.wikipedia.org/wiki/Modbus). 
+Modbus is an open source communication protocol designed specifically for industrial sensors and machines. In simple terms, it is a method used for transmitting information over serial lines between electronic devices. Our MKR WiFi 1010 board can talk Modbus using the [Arduino Modbus library](https://www.arduino.cc/en/ArduinoModbus/ArduinoModbus). This library packs all the handlers and makes hooking up any Modbus device to some of the Arduino® boards (like the MKR family boards) really fast and easy. You can read more about Modbus [here](https://en.wikipedia.org/wiki/Modbus).
 
 ***In the datasheet of the energy meter we can find all the Modbus related information we need like its function codes, address of its registers and also their sizes.***
 
@@ -177,7 +177,7 @@ In this structure:
 The Arduino Modbus library handles this structure. For example, for reading the register of the energy meter that holds information about current, we have the following function that uses the `requestFrom()` function of the Arduino Modbus library:
 
 ```arduino
-/* 
+/*
 Function readCurrent()
 Description: read current value from the Finder energy meter holding registers
 
@@ -193,7 +193,7 @@ float readCurrent() {
       Serial.print("- Failed to read the current! ");
       Serial.println(ModbusRTUClient.lastError());
     } else {
-      // Response handler 
+      // Response handler
       uint16_t word1 = ModbusRTUClient.read();  // Read word1 from buffer
       uint16_t word2 = ModbusRTUClient.read();  // Read word2 from buffer
       int32_t milliamp = word1 << 16 | word2;   // Join word1 and word2 to retrieve current value in milliampere
@@ -211,14 +211,14 @@ The complete sketch we are going to upload to out MKR WiFi 1010 board can be fou
 /* -----------------------------------------
  * Finder Energy Meter to Arduino Cloud IoT
  * -----------------------------------------
- * This sketch provides a full bridge between the Finder energy meter and the 
- * Arduino Cloud IoT. This sketch was developed to monitor electricity costs 
+ * This sketch provides a full bridge between the Finder energy meter and the
+ * Arduino Cloud IoT. This sketch was developed to monitor electricity costs
  * and usage in Casa Jasmina.
  *
  * Created by Alberto Perro (Officine Innesto)
  * Modified by José Bagur
 */
- 
+
 #include <ArduinoRS485.h>
 #include <ArduinoModbus.h>
 
@@ -233,7 +233,7 @@ unsigned long lastMillis = 0;
 void setup() {
   // Initialize serial port at 9600 bauds and wait for it to open
   Serial.begin(9600);
-  delay(1500); 
+  delay(1500);
 
   // Defined in thingProperties.h
   initProperties();
@@ -286,19 +286,19 @@ void loop() {
  * For more information: https://gfinder.findernet.com/public/attachments/7E/EN/PRT_Modbus_7E_64_68_78_86EN.pdf
  */
 
-/* 
+/*
 Function readVoltage()
 Description: read voltage value from the Finder energy meter holding registers
-*/ 
+*/
 float readVoltage() {
   float volt = 0.;
-  // Send reading request over RS485 
+  // Send reading request over RS485
   if (!ModbusRTUClient.requestFrom(0x01, HOLDING_REGISTERS, 0x000C, 2)) {
     // Error handling
     Serial.print("- Failed to read the voltage! ");
-    Serial.println(ModbusRTUClient.lastError()); 
+    Serial.println(ModbusRTUClient.lastError());
   } else {
-    // Response handler 
+    // Response handler
     uint16_t word1 = ModbusRTUClient.read();  // Read word1 from buffer
     uint16_t word2 = ModbusRTUClient.read();  // Read word2 from buffer
     uint32_t millivolt = word1 << 16 | word2; // Join word1 and word2 to retrieve voltage value in millivolts
@@ -308,7 +308,7 @@ float readVoltage() {
   return volt;
 }
 
-/* 
+/*
 Function readCurrent()
 Description: read current value from the Finder energy meter holding registers
 */
@@ -330,7 +330,7 @@ float readCurrent() {
   return ampere;
 }
 
-/* 
+/*
 Function readPower()
 Description: read power value from the Finder energy meter holding registers
 */
@@ -342,7 +342,7 @@ double readPower() {
     Serial.print("- Failed to read power! ");
     Serial.println(ModbusRTUClient.lastError());
   } else {
-    // Response handler 
+    // Response handler
     uint16_t word1 = ModbusRTUClient.read();  // Read word1 from buffer
     uint16_t word2 = ModbusRTUClient.read();  // Read word2 from buffer
     uint16_t word3 = ModbusRTUClient.read();  // Read word3 from buffer
@@ -363,7 +363,7 @@ double readPower() {
   return watt;
 }
 
-/* 
+/*
 Function readFreq()
 Description: read frequency value from the Finder energy meter holding registers
 */
@@ -375,14 +375,14 @@ float readFreq() {
     Serial.print("- Failed to read frequency! ");
     Serial.println(ModbusRTUClient.lastError());
   } else {
-    // Response handler 
+    // Response handler
     uint16_t word1 = ModbusRTUClient.read();  // Read word1 from buffer
     freq = word1/1000.0;                      // Retrieve frequency value
   }
   return freq;
 }
 
-/* 
+/*
 Function readEnergy()
 Description: read energy value from the Finder energy meter holding registers
 */
@@ -394,7 +394,7 @@ double readEnergy() {
     Serial.print("- Failed to read energy! ");
     Serial.println(ModbusRTUClient.lastError());
   } else {
-    // Response handler 
+    // Response handler
     uint16_t word1 = ModbusRTUClient.read();            // Read word1 from buffer
     uint16_t word2 = ModbusRTUClient.read();            // Read word2 from buffer
     uint16_t word3 = ModbusRTUClient.read();            // Read word3 from buffer
@@ -431,8 +431,8 @@ Sometimes errors occur, if the code is not working or data is not in the to the 
 
 - Missing a bracket or a semicolon.
 - Accidental interruption of cable connection.
-- Wrong network credentials. 
-- No variable linked to a widget. 
+- Wrong network credentials.
+- No variable linked to a widget.
 
 ## Conclusion
 

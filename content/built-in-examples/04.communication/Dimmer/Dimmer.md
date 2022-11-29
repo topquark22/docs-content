@@ -3,7 +3,7 @@ title: 'Create a LED Dimmer'
 compatible-products: [all-boards]
 difficulty: intermediate
 description: 'Move the mouse to change the brightness of an LED.'
-tags: 
+tags:
   - Communication
   - Input
   - LED

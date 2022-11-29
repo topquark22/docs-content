@@ -1,8 +1,8 @@
 ---
 title: 'Update the Bootloader on the Arduino Zero'
 description: 'How to update the Arduino Zero bootloader.'
-tags: 
-  - Bootloader 
+tags:
+  - Bootloader
 difficulty: beginner
 hardware:
   - hardware/02.hero/boards/zero
@@ -61,7 +61,7 @@ The last step of the setup is choosing the proper programmer under **Tools > Pro
 
 ## Programming the Bootloader
 
-If all the settings of the Arduino Software (IDE) are as described above, you may go ahead and update the bootloader of your Zero Board. Go to **Tools > Burn Bootloader** and wait until you get on the status line the **Done burning bootloader** message. 
+If all the settings of the Arduino Software (IDE) are as described above, you may go ahead and update the bootloader of your Zero Board. Go to **Tools > Burn Bootloader** and wait until you get on the status line the **Done burning bootloader** message.
 
 ## Testing It Out
 

@@ -3,7 +3,7 @@ title: 'Serial Call and Response (handshaking)'
 compatible-products: [all-boards]
 difficulty: intermediate
 description: 'Send multiple variables using a call-and-response (handshaking) method.'
-tags: 
+tags:
   - Communication
   - Input
   - Call and response

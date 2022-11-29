@@ -3,7 +3,7 @@ title: 'Analog In, Out Serial'
 compatible-products: [all-boards]
 difficulty: beginner
 description: 'Read an analog input pin, map the result, and then use that data to dim or brighten an LED.'
-tags: 
+tags:
   - Analog
   - Input
   - Output

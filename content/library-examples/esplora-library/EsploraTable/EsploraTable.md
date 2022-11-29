@@ -23,7 +23,7 @@ Only your Arduino Esplora is needed for this example.
 
 ![Esplora datalogging setup](./assets/Esplora_Table.png)
 
- 
+
 
 ## Code
 

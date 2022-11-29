@@ -3,7 +3,7 @@ title: 'Analog Input'
 compatible-products: [all-boards]
 difficulty: beginner
 description: 'Use a potentiometer to control the blinking of an LED.'
-tags: 
+tags:
   - Analog
   - Input
   - LED

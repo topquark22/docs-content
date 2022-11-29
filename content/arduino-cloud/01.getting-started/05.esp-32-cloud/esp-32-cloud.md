@@ -22,14 +22,14 @@ In this tutorial, we will go through the steps necessary to set up an **ESP32 / 
 
 >**Please note:** the support for ESP32 microcontroller is currently in an experimental stage. For reporting issues, please refer to Arduino Forum.
 
-- [Report Arduino Cloud IoT ESP32 issues on the Forum.](https://forum.arduino.cc/c/software/iot-cloud/152) 
+- [Report Arduino Cloud IoT ESP32 issues on the Forum.](https://forum.arduino.cc/c/software/iot-cloud/152)
 
 ## Goals
 
 The goals of this project are:
 
 - Send data to the cloud from the board.
-- Turn ON/OFF an LED on the board through the cloud. 
+- Turn ON/OFF an LED on the board through the cloud.
 
 ## Hardware & Software needed
 
@@ -63,7 +63,7 @@ To start, we will need to head over to the [Arduino Cloud IoT](https://create.ar
 
 ![Adding a device.](assets/cloud-esp32-img-03.png)
 
-**2.** Then, click on **"Set up a 3rd party device"**. 
+**2.** Then, click on **"Set up a 3rd party device"**.
 
 ![Setting up a third party device.](assets/cloud-esp32-img-04.png)
 
@@ -85,7 +85,7 @@ Congratulations! You have now configured your ESP32 board with the Arduino Cloud
 
 ### Step 2: Creating a Thing
 
-The next step is to create a Thing. This is done by navigating to the **"Things"** tab. 
+The next step is to create a Thing. This is done by navigating to the **"Things"** tab.
 
 ![Go to the Thing tab.](assets/cloud-esp32-img-09.png)
 
@@ -143,7 +143,7 @@ void setup() {
   // Initialize serial and wait for port to open:
   Serial.begin(9600);
   // This delay gives the chance to wait for a Serial Monitor without blocking if none is found
-  delay(1500); 
+  delay(1500);
 
   // Defined in thingProperties.h
   initProperties();
@@ -164,7 +164,7 @@ void setup() {
 
 void loop() {
   ArduinoCloud.update();
-  // Your code here 
+  // Your code here
   random_value = random(0, 500);
   delay(500);
 }
@@ -187,21 +187,21 @@ If the upload was successful, we should see it printed in the console at the bot
 
 ## Creating a dashboard
 
-Now that the sketch is running on the ESP32 / ESP8266 board, we can move on to the final step, which is creating a dashboard. 
+Now that the sketch is running on the ESP32 / ESP8266 board, we can move on to the final step, which is creating a dashboard.
 
 First, navigate to the **"Dashboards"** tab.
 
 ![Navigating to the dashboards tab.](assets/cloud-esp32-img-18.png)
 
-Then, click on the **"Build dashboard"** button. 
+Then, click on the **"Build dashboard"** button.
 
 ![Click on the "Build dashboard" button.](assets/cloud-esp32-img-19.png)
 
-To edit the dashboard, click on the pencil icon at the top left icon, select **"Things"** and search for your Thing. Select it, and click on **"Add widgets"** as shown in the image below. 
+To edit the dashboard, click on the pencil icon at the top left icon, select **"Things"** and search for your Thing. Select it, and click on **"Add widgets"** as shown in the image below.
 
 ![Adding widgets.](assets/cloud-esp32-img-20.png)
 
-We should now have two widgets that are linked to your ESP32 / ESP8266 board. 
+We should now have two widgets that are linked to your ESP32 / ESP8266 board.
 
 - `random_value` - whenever the `random_value` updates on the board, it also updates here.
 - `led_switch` - when we activate this switch, we turn ON the LED connected to the board (pin 13).
@@ -217,7 +217,7 @@ If you are having issues completing this tutorial, make sure that the following 
 - We have entered the right **network name** and **password** in the credentials window.
 - We have selected the right device (if you have multiple devices registered in the cloud, you may have selected the wrong device).
 
->**Note:** The Arduino Cloud IoT's support for the ESP32 is in an experimental stage. 
+>**Note:** The Arduino Cloud IoT's support for the ESP32 is in an experimental stage.
 
 
 ## Conclusion

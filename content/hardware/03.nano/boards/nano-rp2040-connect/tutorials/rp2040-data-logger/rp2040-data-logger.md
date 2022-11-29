@@ -3,7 +3,7 @@ title: 'Nano RP2040 Datalogger with MicroPython'
 difficulty: beginner
 compatible-products: [nano-rp2040-connect]
 description: 'Learn how to save data in .csv format on the Nano RP2040 Connect, using MicroPython.'
-tags: 
+tags:
   - Datalogger
   - MicroPython
 author: 'Karl Söderby'
@@ -13,11 +13,11 @@ software:
   - web-editor
 ---
 
-## Introduction 
+## Introduction
 
-The [Nano RP2040 Connect](https://store.arduino.cc/nano-rp2040-connect) board has on-board storage that allows you to turn the device into a data logger without any extra components. 
+The [Nano RP2040 Connect](https://store.arduino.cc/nano-rp2040-connect) board has on-board storage that allows you to turn the device into a data logger without any extra components.
 
-In order to utilize this feature, we need to install the latest release of [OpenMV's flavor of MicroPython](https://github.com/openmv/openmv/). 
+In order to utilize this feature, we need to install the latest release of [OpenMV's flavor of MicroPython](https://github.com/openmv/openmv/).
 
 This tutorial can be completed with only the Nano RP2040 Connect board and open-source software.
 
@@ -51,7 +51,7 @@ The goals of this tutorial are:
 
 ![Thonny board/port selection.](assets/thonny-select-interpreter.png)
 
-If your board appears, it has been successful. In this case, it is called `Board in FS mode (/dev/cu.usbmodem11201)`. 
+If your board appears, it has been successful. In this case, it is called `Board in FS mode (/dev/cu.usbmodem11201)`.
 
 ## Data Logger Example
 
@@ -73,30 +73,30 @@ import machine
 from machine import Pin
 import time
 
-adc_pin = machine.Pin(29) 
+adc_pin = machine.Pin(29)
 adc = machine.ADC(adc_pin)
 led = Pin(6, Pin.OUT)
 readings = 0
 
 # create a file named "data.csv"
-file=open("data.csv","w") 
+file=open("data.csv","w")
 file.write("data"+"\n")
 
 while True:
-    
+
     led.value(1)
-    reading = adc.read_u16()     
+    reading = adc.read_u16()
     print("ADC: ",reading)
-    
+
     time.sleep_ms(100)
-    
+
     # convert and write the reading from the analog pin
     file.write(str(reading)+"\n")
-    
+
     led.value(0)
     time.sleep_ms(100)
     readings += 1
-    
+
     # if 25 readings are done, finish the program
     if readings >= 25:
         file.close()
@@ -117,13 +117,13 @@ Once done, navigate to Finder / Explorer, and locate a drive called **"NO NAME"*
 
 ![The "NO NAME" drive with a data.csv file.](assets/storage-device.png)
 
-Congratulations, you have now successfully recorded data and stored it in a `.csv` file onboard the Nano RP2040 Connect. 
+Congratulations, you have now successfully recorded data and stored it in a `.csv` file onboard the Nano RP2040 Connect.
 
 ***Please note that you should never open this file whenever a file management operation is ongoing. This will most likely corrupt your file and you won't be able to obtain the data. Best practice is to record the data, wait a little, and then open up the `data.csv` file.***
 
 ## Conclusion
 
-In this tutorial, we turned a Nano RP2040 Connect board into a data logger, without the use of any external components (such as an SD card). 
+In this tutorial, we turned a Nano RP2040 Connect board into a data logger, without the use of any external components (such as an SD card).
 
 This is an incredibly useful tool whenever you are working with data collection, and the script found in this tutorial can be easily be altered to fit your project.
 

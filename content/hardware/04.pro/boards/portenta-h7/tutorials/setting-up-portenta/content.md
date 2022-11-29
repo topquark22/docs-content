@@ -94,7 +94,7 @@ For Portenta H7 LED_BUILTIN represents the built-in RGB LED on the board in gree
 
 **Note:** The individual colors of the built-in RGB LED can be accessed and controlled separately. In the tutorial [Dual core processing](dual-core-processing) you will learn how to control the LED to light it in different colors
 
-### 4. Upload the Blink Sketch 
+### 4. Upload the Blink Sketch
 Now it's time to upload the sketch and see if the LED will start to blink. Make sure you select Arduino Portenta H7 (M7 core) as the board and the port to which the Portenta H7 is connected. If the Portenta H7 doesn't show up in the list of ports, go back to step 1 and make sure that the drivers are installed correctly. Once selected click Upload. Once uploaded the built-in LED should start blinking with an interval of 1 second.
 
 **Note:** The Portenta H7 has an M7 and an M4 processor which run separate cores. That's why you need to select the one to which you want to upload your sketch to (check out the tutorial [Dual core processing](dual-core-processing) to learn more about Portenta's processors).
@@ -123,7 +123,7 @@ If you would like to use a USB hub to connect other devices to the Portenta make
 If you're having troubles getting your Portenta to work on Ubuntu you can try the following:
 
 - Make sure **modemmanager** is not installed. Otherwise remove it with `sudo apt-get remove modemmanager`
-- Add the following rules to you udev rules 
+- Add the following rules to you udev rules
 ```cpp
 SUBSYSTEM=="usb", ATTRS{idVendor}=="2341", MODE="0666"
 SUBSYSTEM=="usb", ATTRS{idVendor}=="1fc9", MODE="0666"
@@ -132,5 +132,5 @@ SUBSYSTEM=="usb", ATTRS{idVendor}=="0525", MODE="0666"
 
 - Reboot your PC
 - You may use the following commands to create a new udev rule from scratch:
-`echo 'SUBSYSTEMS=="usb", ATTR{idVendor}=="2341", MODE:="0666"' > 20-portenta.rules` 
+`echo 'SUBSYSTEMS=="usb", ATTR{idVendor}=="2341", MODE:="0666"' > 20-portenta.rules`
 `sudo mv 20-portenta.rules /etc/udev/rules.d/`

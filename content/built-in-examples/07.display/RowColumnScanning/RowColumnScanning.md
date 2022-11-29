@@ -3,7 +3,7 @@ title: 'Control an 8x8 matrix of LEDs.'
 compatible-products: [all-boards]
 difficulty: intermediate
 description: 'Row-column Scanning to control an 8x8 LED Matrix.'
-tags: 
+tags:
   - Display
   - Output
   - LED

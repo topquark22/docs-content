@@ -55,7 +55,7 @@ The Nano 33 BLE Sense can be programmed through the **Classic Arduino IDE 1.8.X*
 
 - [Installing the Arduino Mbed OS Nano Boards core](/software/ide-v1/tutorials/getting-started/cores/arduino-mbed_nano)
 
-### Arduino IDE 2.0.X 
+### Arduino IDE 2.0.X
 
 The Nano 33 BLE Sense can be programmed through the **Arduino IDE 2.0.X**. To install your board, you can check out the guide below:
 
@@ -332,13 +332,13 @@ If you want to learn more on how to use the temperature and humidity sensor, ple
 
 ![The MP34DT05 microphone](assets/Nano33_ble_sense_microphone.png)
 
-### MP34DT05 
+### MP34DT05
 
 The **MP34DT05** is a compact, low-power omnidirectional digital MEMS microphone with an IC interface. It has a 64 dB signal-to-noise ratio, is capable of sensing acoustic waves and can operate in temperatures of -40 °C to +85 °C.
 
 ### PDM Library
 
-To access the data from the MP34DT05, we need to use the [PDM](https://www.arduino.cc/en/Reference/PDM) library that is included in the **Arduino Mbed OS Nano Boards** core. If the core is installed, you will find an example that works by browsing **File > Examples > PDM > PDMSerialPlotter**. 
+To access the data from the MP34DT05, we need to use the [PDM](https://www.arduino.cc/en/Reference/PDM) library that is included in the **Arduino Mbed OS Nano Boards** core. If the core is installed, you will find an example that works by browsing **File > Examples > PDM > PDMSerialPlotter**.
 
 ***Please note: The sampling frequency in the PDMSerialPlotter example is set to 16000 Hz. If the microphone appears to not be working (monitor is printing a value of -128), try to change this rate to 20000 Hz. You can change this at the top of the PDMSerialPlotter example sketch.***
 
@@ -373,9 +373,9 @@ digitalWrite(LEDB, LOW); //BLUE
 We can also choose a value between 255 - 0 to write to the LED:
 
 ```arduino
-analogWrite(LEDR, 72);  //GREEN 
-analogWrite(LEDG, 122); //BLUE 
-analogWrite(LEDB, 234); //RED 
+analogWrite(LEDR, 72);  //GREEN
+analogWrite(LEDG, 122); //BLUE
+analogWrite(LEDB, 234); //RED
 ```
 
 ## Communication
@@ -433,14 +433,14 @@ To use I2C, we can use the [Wire](https://www.arduino.cc/en/Reference/wire) libr
 Inside `void setup()` we need to initialize the library.
 
 ```arduino
-Wire.begin(); 
+Wire.begin();
 ```
 
 And to write something to a device connected via I2C, we can use the following commands:
 
 ```arduino
   Wire.beginTransmission(1); //begin transmit to device 1
-  Wire.write(byte(0x00)); //send instruction byte 
+  Wire.write(byte(0x00)); //send instruction byte
   Wire.write(val); //send a value
   Wire.endTransmission(); //stop transmit
 ```
@@ -476,7 +476,7 @@ Serial1.write("Hello world!");
 
 ## Connectivity
 
-The Nano 33 BLE Sense supports Bluetooth® through the [u-blox NINA-B306](https://docs.arduino.cc/resources/datasheets/NINA-B3-series.pdf) module. To use this module, we can use the [ArduinoBLE](https://www.arduino.cc/en/Reference/ArduinoBLE) library. 
+The Nano 33 BLE Sense supports Bluetooth® through the [u-blox NINA-B306](https://docs.arduino.cc/resources/datasheets/NINA-B3-series.pdf) module. To use this module, we can use the [ArduinoBLE](https://www.arduino.cc/en/Reference/ArduinoBLE) library.
 
 ![ Bluetooth® module.](assets/Nano33_ble_sense_ble.png)
 

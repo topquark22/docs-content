@@ -3,12 +3,12 @@ title: 'BLE Device to Device with Nano RP2040 Connect'
 difficulty: advanced
 compatible-products: [nano-rp2040-connect]
 description: 'Learn how to connect 2x Nano RP2040 Connect boards with each other, using Bluetooth® Low Energy.'
-tags: 
+tags:
   - Bluetooth® Low Energy
   - Button
   - LED
 author: 'Karl Söderby'
-libraries: 
+libraries:
   - name: ArduinoBLE
     url: https://www.arduino.cc/en/Reference/ArduinoBLE
 hardware:
@@ -22,9 +22,9 @@ software:
   - web-editor
 ---
 
-## Introduction 
+## Introduction
 
-In this tutorial, we will learn how to turn on the blue pixel onboard the Arduino® Nano RP2040 Connect board, from another board. For this, we will need two Bluetooth® Low Energy compatible boards, such as the Nano RP2040 Connect board, where we will use the [ArduinoBLE](https://www.arduino.cc/en/Reference/ArduinoLSM6DS3) library to make the connection. 
+In this tutorial, we will learn how to turn on the blue pixel onboard the Arduino® Nano RP2040 Connect board, from another board. For this, we will need two Bluetooth® Low Energy compatible boards, such as the Nano RP2040 Connect board, where we will use the [ArduinoBLE](https://www.arduino.cc/en/Reference/ArduinoLSM6DS3) library to make the connection.
 
 >**Note:** if you need help setting up your environment to use your Arduino Nano RP2040 board, please refer to [this installation guide](/software/ide-v1/tutorials/getting-started/cores/arduino-mbed_nano).
 
@@ -58,16 +58,16 @@ For the central device, we do not need any additional circuit.
 
 ## Programming the Board
 
-We will now get to the programming part of this tutorial. 
+We will now get to the programming part of this tutorial.
 
-1. First, let's make sure we have the drivers installed. If we are using the Web Editor, we do not need to install anything. If we are using an offline editor, we need to install it manually. This can be done by navigating to **Tools > Board > Board Manager...**. Here we need to look for the **Arduino Mbed OS Nano Boards** and install it. 
+1. First, let's make sure we have the drivers installed. If we are using the Web Editor, we do not need to install anything. If we are using an offline editor, we need to install it manually. This can be done by navigating to **Tools > Board > Board Manager...**. Here we need to look for the **Arduino Mbed OS Nano Boards** and install it.
 
 2. Now, we need to install the libraries needed. If we are using the Web Editor, there is no need to install anything. If we are using an offline editor, simply go to **Tools > Manage libraries..**, and search for **ArduinoBLE** and install it.
 
 3. We can now take a look at some of the core functions of the sketches we will use:
 
 - `BLE.begin()` - initializes the library
-- `BLE.scanForUuid("19b10000-e8f2-537e-4f6c-d104768a1214")` - scans for Bluetooth® Low Energy peripherals until the one inside parenthesis is found. 
+- `BLE.scanForUuid("19b10000-e8f2-537e-4f6c-d104768a1214")` - scans for Bluetooth® Low Energy peripherals until the one inside parenthesis is found.
 - `BLEDevice peripheral = BLE.available()` checks whether peripheral has been discovered.
 - `BLEDevice central = BLE.available()` checks whether peripheral has been discovered.
 - `while (peripheral.connected())` - while a peripheral is connected, enter a while loop.
@@ -235,7 +235,7 @@ void controlLed(BLEDevice peripheral) {
 
 After we have uploaded both the **central** and **peripheral** sketches to our boards, we can test out our application.
 
-Let's start by opening the Serial Monitor of the central device. Since we are using the `while(!Serial);` command, the program will not initialize until we open the Serial Monitor. This is done so we don't miss any important information in the Serial Monitor. 
+Let's start by opening the Serial Monitor of the central device. Since we are using the `while(!Serial);` command, the program will not initialize until we open the Serial Monitor. This is done so we don't miss any important information in the Serial Monitor.
 
 When we open it, the central device will start looking for peripherals. When it finds one, it will attempt to connect to it. If all goes well, we should now start receiving the state of the button from the **peripheral device**. In this case, it is OFF, which we can see being updated continuously.
 
@@ -255,4 +255,4 @@ If the code is not working, there are some common issues we can troubleshoot:
 
 ## Conclusion
 
-In this tutorial, we have created a simple device-to-device application over Bluetooth®. We set up a **peripheral device** with a button, and used the built-in RGB on the **central device**. With this, we can simply turn ON and OFF the LED using Bluetooth® Low Energy, with the same button.  
+In this tutorial, we have created a simple device-to-device application over Bluetooth®. We set up a **peripheral device** with a button, and used the built-in RGB on the **central device**. With this, we can simply turn ON and OFF the LED using Bluetooth® Low Energy, with the same button.

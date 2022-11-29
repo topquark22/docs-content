@@ -6,7 +6,7 @@ description: 'Learn how to scan nearby GSM networks in your area, and print them
 tags:
   - GSM
 author: 'Karl Söderby'
-libraries: 
+libraries:
   - name: MKRGSM
     url: https://www.arduino.cc/reference/en/libraries/mkrgsm/
 hardware:
@@ -19,11 +19,11 @@ software:
   - web-editor
 ---
 
-## Introduction 
+## Introduction
 
-In this tutorial, we will perform a scan of available GSM networks in the area. The networks available will then be printed in the Serial Monitor along with the signal strength. 
+In this tutorial, we will perform a scan of available GSM networks in the area. The networks available will then be printed in the Serial Monitor along with the signal strength.
 
->**Note:** This tutorial was created in Sweden, and as a result, the available networks are only Swedish network operators. The results will vary depending on what location we are in. 
+>**Note:** This tutorial was created in Sweden, and as a result, the available networks are only Swedish network operators. The results will vary depending on what location we are in.
 
 ## Goals
 
@@ -41,13 +41,13 @@ The goals of this project are:
 
 ## The uBlox SARA-02 Module
 
-As every other MKR family board, the MKR GSM 1400 board has a specific module for connectivity. It is called uBlox SARA-02, and is designed to communicate over the GSM network. The High Speed Packet (HSPA) data rates can reach downlink speeds of 7.2 Mbit/s and 5.76 Mbit/s for uplink. 
+As every other MKR family board, the MKR GSM 1400 board has a specific module for connectivity. It is called uBlox SARA-02, and is designed to communicate over the GSM network. The High Speed Packet (HSPA) data rates can reach downlink speeds of 7.2 Mbit/s and 5.76 Mbit/s for uplink.
 
 ![The uBlox SARA-02 module.](assets/MKRGSM_T2_IMG00.png)
 
 It is also designed to operate in temperature conditions between -40 °C to +85 °C, making it quite the durable component. It is also low on power consumption, making it ideal to use with batteries in different weather conditions!
 
-The module also provides an interface for SIM cards, and supports both 1.8V and 3V SIM cards, which can be automatically detected. 
+The module also provides an interface for SIM cards, and supports both 1.8V and 3V SIM cards, which can be automatically detected.
 
 You can find out much more information about this component in the <a href="https://www.u-blox.com/sites/default/files/SARA-U2_DataSheet_(UBX-13005287).pdf" target="_blank">uBlox SARA-02 datasheet</a>.
 
@@ -57,13 +57,13 @@ You can find out much more information about this component in the <a href="http
 
 ## Programming the Board
 
-We will now get to the programming part of this tutorial. 
+We will now get to the programming part of this tutorial.
 
-**1.** First, let's make sure we have the drivers installed. If we are using the Web Editor, we do not need to install anything. If we are using an offline editor, we need to install it manually. This can be done by navigating to **Tools > Board > Board Manager...**. Here we need to look for the **Arduino SAMD boards (32-bits ARM Cortex M0+)** and install it. 
+**1.** First, let's make sure we have the drivers installed. If we are using the Web Editor, we do not need to install anything. If we are using an offline editor, we need to install it manually. This can be done by navigating to **Tools > Board > Board Manager...**. Here we need to look for the **Arduino SAMD boards (32-bits ARM Cortex M0+)** and install it.
 
 **2.** Now, we need to install the libraries needed. If we are using the Web Editor, there is no need to install anything. If we are using an offline editor, simply go to **Tools > Manage libraries..**, and search for **MKRGSM** and install it.
 
-**3.** After the library is installed, we can now navigate to **File > Examples > MKRGSM > Tools > GsmScanNetworks**. This will open a new sketch window (or direct you to the sketch if you are using the Web Editor). There will also be a separate tab called `arduino_secrets.h`. Here we will simply fill in the pin number of our SIM card. 
+**3.** After the library is installed, we can now navigate to **File > Examples > MKRGSM > Tools > GsmScanNetworks**. This will open a new sketch window (or direct you to the sketch if you are using the Web Editor). There will also be a separate tab called `arduino_secrets.h`. Here we will simply fill in the pin number of our SIM card.
 
 ![The arduino_secrets.h file.](assets/SECRET_TAB.png)
 
@@ -82,7 +82,7 @@ We will now get to the programming part of this tutorial.
 ```cpp
 #include <MKRGSM.h>
 
-#include "arduino_secrets.h" 
+#include "arduino_secrets.h"
 // Please enter your sensitive data in the Secret tab or arduino_secrets.h
 // PIN Number
 const char PINNUMBER[] = SECRET_PINNUMBER;
@@ -153,7 +153,7 @@ void loop() {
 
 ## Testing It Out
 
-Once we have uploaded the code to the board, we can proceed by opening the Serial Monitor. This will initialize the program, and a scanning of the network will shortly begin. 
+Once we have uploaded the code to the board, we can proceed by opening the Serial Monitor. This will initialize the program, and a scanning of the network will shortly begin.
 
 If the board fails to connect to the GSM network, it will print `"Not connected"` in the Serial Monitor. This could be a problem with the SIM card, or that we are simply not within range of a network.
 

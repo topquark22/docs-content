@@ -12,7 +12,7 @@ software:
   - openmv
 ---
 
-## Overview 
+## Overview
 
 This tutorial explains how to connect your Portenta H7 to The Things Network (TTN) using the Vision Shield's LoRa® Connectivity feature. A data communication channel will be enabled between the H7 and a TTN application that will be configured on your TTN console.
 
@@ -28,7 +28,7 @@ This tutorial explains how to connect your Portenta H7 to The Things Network (TT
 
 - [Portenta H7](https://store.arduino.cc/portenta-h7)
 - [Portenta Vision Shield - LoRa](https://store.arduino.cc/portenta-vision-shield-lora)
-- 1x [Dipole Pentaband antenna](https://store.arduino.cc/antenna) or a UFL Antenna of the H7 
+- 1x [Dipole Pentaband antenna](https://store.arduino.cc/antenna) or a UFL Antenna of the H7
 - [OpenMV IDE](https://openmv.io/pages/download)
 - Arduino IDE 1.8.10+ or Arduino Pro IDE 0.0.4+ or Arduino CLI 0.13.0+
 - 1x USB-C® cable (either USB-A to USB-C® or USB-C® to USB-C®)
@@ -76,7 +76,7 @@ To be able to use the LoRa® functionality, you need to first update the modems 
 
 ![Select the Arduino Portenta H7 (M7 core) in the board selector.](assets/por_ard_gs_upload_sketch.png)
 
-The code you need to upload and run is from the **MKRWAN** library and its name is **MKRWANFWUpdate_standalone**. With the Portenta M7 selected, upload the **MKRWANFWUpdate_standalone** sketch. 
+The code you need to upload and run is from the **MKRWAN** library and its name is **MKRWANFWUpdate_standalone**. With the Portenta M7 selected, upload the **MKRWANFWUpdate_standalone** sketch.
 
 ![Upload code to IDE](assets/vs_mp_select_example.png)
 
@@ -234,7 +234,7 @@ while (True):
 ### Next Steps
 
 - Experiment your Vision Shield's capabilities with OpenMV and the examples from the dedicated library for Arduino. You can continue with [this tutorial](https://docs.arduino.cc/tutorials/portenta-vision-shield/blob-detection) from the Arduino DOCS site.
--  Combine LoRaWAN® protocol with an OpenMV example to develop your own IoT application. Take advantage of the Vision Shield's camera to detect, filter, classify images, read QR codes or more.     
+-  Combine LoRaWAN® protocol with an OpenMV example to develop your own IoT application. Take advantage of the Vision Shield's camera to detect, filter, classify images, read QR codes or more.
 
 ## Troubleshooting
 

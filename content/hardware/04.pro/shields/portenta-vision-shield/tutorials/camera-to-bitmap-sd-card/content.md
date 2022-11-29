@@ -18,7 +18,7 @@ software:
 ---
 
 ## Overview
-This tutorial shows you how to capture a frame from the Portenta Vision Shield Camera module and save the output as a bitmap image. It will allow you to see the output directly on your computer without using any third party tool.  
+This tutorial shows you how to capture a frame from the Portenta Vision Shield Camera module and save the output as a bitmap image. It will allow you to see the output directly on your computer without using any third party tool.
 
 ## Goals
 
@@ -131,7 +131,7 @@ void mountSDCard(){
     if (error){
         Serial.println("Trying to reformat...");
         int formattingError = fileSystem.reformat(&blockDevice);
-        if (formattingError) {            
+        if (formattingError) {
             Serial.println("No SD Card found");
             while (1);
         }
@@ -187,7 +187,7 @@ On the following function it sets the color map as a grayscale of RGB colors fro
 void setColorMap(unsigned char *colorMap){
     //Init the palette with zeroes
     memset(colorMap, (unsigned char)(0), PALETTE_SIZE);
-    
+
     // Gray scale color palette, 4 bytes per color (R, G, B, 0x00)
     for (int i = 0; i < PALETTE_COLORS_AMOUNT; i++) {
         colorMap[i * 4] = i;
@@ -208,7 +208,7 @@ void saveImage(unsigned char *imageData, const char* imagePath){
     // Bitmap structure (Head + DIB Head + ColorMap + binary image)
     unsigned char bitmapFileHeader[BITMAP_FILE_HEADER_SIZE];
     unsigned char bitmapDIBHeader[DIB_HEADER_SIZE];
-    unsigned char colorMap[PALETTE_SIZE]; // Needed for <= 8bpp grayscale bitmaps    
+    unsigned char colorMap[PALETTE_SIZE]; // Needed for <= 8bpp grayscale bitmaps
 
     setFileHeaders(bitmapFileHeader, bitmapDIBHeader, fileSize);
     setColorMap(colorMap);
@@ -240,7 +240,7 @@ Now that you have all the functions to be used, inside the `setup()` its call th
 void setup(){
     Serial.begin(115200);
     while (!Serial && millis() < 5000);
-    
+
     Serial.println("Mounting SD Card...");
     mountSDCard();
     Serial.println("SD Card mounted.");
@@ -253,10 +253,10 @@ void setup(){
     countDownBlink();
     Serial.println("Fetching camera image...");
     unsigned char *imageData = captureImage();
-    
+
     Serial.println("Saving image to SD card...");
     saveImage(imageData, IMAGE_PATH);
-    
+
     fileSystem.unmount();
     Serial.println("Done. You can now remove the SD card.");
 }
@@ -265,7 +265,7 @@ The `loop()` is empty, as it only does one shot when the Serial Monitor is open 
 
 ### 3. Upload the Sketch
 
-Select the right serial port on your IDE and upload the Arduino sketch to your Portenta H7. 
+Select the right serial port on your IDE and upload the Arduino sketch to your Portenta H7.
 
 ### 4. Try It Out
 
@@ -312,7 +312,7 @@ FrameBuffer frameBuffer; // Buffer to save the camera stream
 void setup(){
     Serial.begin(115200);
     while (!Serial && millis() < 5000);
-    
+
     Serial.println("Mounting SD Card...");
     mountSDCard();
     Serial.println("SD Card mounted.");
@@ -325,10 +325,10 @@ void setup(){
     Serial.println("Fetching camera image...");
     unsigned char *imageData = captureImage();
     digitalWrite(LEDB, HIGH);
-    
+
     Serial.println("Saving image to SD card...");
     saveImage(imageData, IMAGE_PATH);
-    
+
     fileSystem.unmount();
     Serial.println("Done. You can now remove the SD card.");
 }
@@ -342,7 +342,7 @@ void mountSDCard(){
     if (error){
         Serial.println("Trying to reformat...");
         int formattingError = fileSystem.reformat(&blockDevice);
-        if (formattingError) {            
+        if (formattingError) {
             Serial.println("No SD Card found");
             while (1);
         }
@@ -386,7 +386,7 @@ void setFileHeaders(unsigned char *bitmapFileHeader, unsigned char *bitmapDIBHea
 void setColorMap(unsigned char *colorMap){
     //Init the palette with zeroes
     memset(colorMap, (unsigned char)(0), PALETTE_SIZE);
-    
+
     // Gray scale color palette, 4 bytes per color (R, G, B, 0x00)
     for (int i = 0; i < PALETTE_COLORS_AMOUNT; i++) {
         colorMap[i * 4] = i;
@@ -403,7 +403,7 @@ void saveImage(unsigned char *imageData, const char* imagePath){
     // Bitmap structure (Head + DIB Head + ColorMap + binary image)
     unsigned char bitmapFileHeader[BITMAP_FILE_HEADER_SIZE];
     unsigned char bitmapDIBHeader[DIB_HEADER_SIZE];
-    unsigned char colorMap[PALETTE_SIZE]; // Needed for <= 8bpp grayscale bitmaps    
+    unsigned char colorMap[PALETTE_SIZE]; // Needed for <= 8bpp grayscale bitmaps
 
     setFileHeaders(bitmapFileHeader, bitmapDIBHeader, fileSize);
     setColorMap(colorMap);
@@ -430,7 +430,7 @@ void countDownBlink(){
 
 ## Conclusion
 
-In this tutorial you learned how to capture frames with your Vision Shield's Camera in the Arduino IDE, encode it with the bitmap standards and save it to an SD Card. 
+In this tutorial you learned how to capture frames with your Vision Shield's Camera in the Arduino IDE, encode it with the bitmap standards and save it to an SD Card.
 
 ## Next Steps
 

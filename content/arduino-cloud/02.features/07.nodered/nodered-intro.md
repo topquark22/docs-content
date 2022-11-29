@@ -143,14 +143,14 @@ Follow the steps below to set up the Thing:
   MKRIoTCarrier carrier;
 
   #include <dht.h> // include this library, named: "dht library"
-  dht DHT; 
+  dht DHT;
   #define DHT11_PIN 7 // define DHT pin
 
   void setup() {
   // Initialize serial and wait for port to open:
     Serial.begin(9600);
     // This delay gives the chance to wait for a Serial Monitor without blocking if none is found
-    delay(1500); 
+    delay(1500);
 
     // Defined in thingProperties.h
     initProperties();
@@ -205,7 +205,7 @@ Use the steps below to use Node-RED with the Arduino IoT Cloud:
 
 ### Creating a Flow
 
-Now that you have a node pulling data from the Arduino IoT Cloud, you need to use the *Inject* node in order to manipulate and send the data. All you need to do is dragging the *Inject* node and connect it to the property out node, then double-clicking on the inject node to ensure that the right Thing and property are selected. 
+Now that you have a node pulling data from the Arduino IoT Cloud, you need to use the *Inject* node in order to manipulate and send the data. All you need to do is dragging the *Inject* node and connect it to the property out node, then double-clicking on the inject node to ensure that the right Thing and property are selected.
 
 Finally, we will add a debug node from the top of the palette menu, to print the values coming from the Arduino IoT Cloud into the console. You will now be able to see the values from the humidity sensor printed into the Node-RED console.
 

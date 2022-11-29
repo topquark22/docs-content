@@ -1,7 +1,7 @@
 ---
 title: ATmega168/328P-Arduino Pin Mapping
 description:  a diagram showing the correspondence between the pins on an Arduino board and those of the ATmega168/328P microcontroller.
-tags: 
+tags:
   - ATmega168
   - ATmega328P
 ---

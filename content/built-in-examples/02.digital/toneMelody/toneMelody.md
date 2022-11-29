@@ -3,7 +3,7 @@ title: 'Play a Melody using the tone() function'
 compatible-products: [all-boards]
 difficulty: beginner
 description: 'Play a melody with a Piezo speaker.'
-tags: 
+tags:
   - Digital
   - Output
   - Piezo

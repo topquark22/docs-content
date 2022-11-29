@@ -7,15 +7,15 @@ tags: [IoT Cloud, Create Agent]
 
 ## Using the Arduino IoT Cloud
 
-With the Arduino IoT Cloud desktop or mobile platform, you can quickly connect, manage and monitor your devices from anywhere in the world. 
+With the Arduino IoT Cloud desktop or mobile platform, you can quickly connect, manage and monitor your devices from anywhere in the world.
 
-Arduino IoT Cloud allows you to automatically create any code to program your device with - just add a couple of lines to customize it how you want. If you’re new to Arduino don’t worry there’s example code for hundreds of sensors and actuators. 
+Arduino IoT Cloud allows you to automatically create any code to program your device with - just add a couple of lines to customize it how you want. If you’re new to Arduino don’t worry there’s example code for hundreds of sensors and actuators.
 
 The following steps will guide you to start using the Arduino IoT Cloud:
 
 **1.** Install the [Arduino Create Agent](https://create.arduino.cc/getting-started/plugin/welcome) plugin.
 
-**2.** Check if you have a **cloud compatible board**. The picture below shows all official Arduino boards that are compatible. 
+**2.** Check if you have a **cloud compatible board**. The picture below shows all official Arduino boards that are compatible.
 
 ![Arduino IoT Cloud compatible boards](./assets/iot-cloud-compatible-boards.png)
 
@@ -43,7 +43,7 @@ The following steps will guide you to start using the Arduino IoT Cloud:
 
 **4.** Finally, we need to **connect to a Wi-Fi network** by simply clicking the **Configure** button in the network section. Enter your network credentials and click **Save**. This information will also be generated into your sketch file!
 
-### Building the Sketch 
+### Building the Sketch
 
 Now that you are all set up, **let’s have a look at the interface!**
 
@@ -55,7 +55,7 @@ When we are happy with our sketch, we can **upload** it to our board, by clickin
 
 ![Editing a sketch in the cloud editor](./assets/sketchoverview.png)
 
-After we have successfully uploaded the code, we can open the **Serial Monitor** tab to view information regarding our connection. If it is successful, it will print **connected to network_name** and **connected to cloud**. 
+After we have successfully uploaded the code, we can open the **Serial Monitor** tab to view information regarding our connection. If it is successful, it will print **connected to network_name** and **connected to cloud**.
 
 If it fails to connect, it will print the errors here as well.
 Now that we have configured the device & network, created variables, completed the sketch and successfully uploaded the code, we can move on to the fun part, the **dashboard**!
@@ -64,7 +64,7 @@ Now that we have configured the device & network, created variables, completed t
 
 ![IoT CLoud Dashboards](./assets/dashboard1.png)
 
-Dashboards are visual user interfaces for interacting with your boards over the Cloud, and we can set up many different setups depending on what your IoT project needs. 
+Dashboards are visual user interfaces for interacting with your boards over the Cloud, and we can set up many different setups depending on what your IoT project needs.
 
 We can access our dashboards by clicking on the **Dashboards** tab at the top of the Arduino IoT Cloud interface, where we can create new dashboards, and see a list of dashboards created for other Things.
 
@@ -74,7 +74,7 @@ If we click on **Create new dashboard**, we enter a dashboard editor. Here, we c
 
 ![The different widgets available.](./assets/dashboard2.png)
 
-When we create widgets, we also need to **link them to our variables**. This is done by clicking on a widget we create, selecting a Thing, and selecting a variable that we want to link. 
+When we create widgets, we also need to **link them to our variables**. This is done by clicking on a widget we create, selecting a Thing, and selecting a variable that we want to link.
 
 Once it is linked, we can either interact with it, for example a button, or we can monitor a value from a sensor. As long as our board is connected to the cloud, the values will update automatically!
 

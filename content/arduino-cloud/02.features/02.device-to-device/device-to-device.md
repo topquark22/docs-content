@@ -26,7 +26,7 @@ The goals of this project are:
 
 - [Arduino IoT Cloud](https://create.arduino.cc/iot/).
 - 2x [Arduino MKR WiFi 1010](https://store.arduino.cc/mkr-wifi-1010) or,
-- 2x [Arduino MKR WiFi 1000](https://store.arduino.cc/arduino-mkr1000-wifi) or, 
+- 2x [Arduino MKR WiFi 1000](https://store.arduino.cc/arduino-mkr1000-wifi) or,
 - 2x [Arduino Nano 33 IoT](https://store.arduino.cc/arduino-nano-33-iot) or,
 - 2x [Arduino Nano RP2040 Connect](https://store.arduino.cc/nano-rp2040-connect-with-headers).
 - Micro USB cable.
@@ -68,7 +68,7 @@ It is a good idea to place a label on the physical board to remember which one i
 
 ### Step 2: Creating the first Thing
 
-Let's start by creating a new Thing, for simplicity, let's name it **Remote Light One**. 
+Let's start by creating a new Thing, for simplicity, let's name it **Remote Light One**.
 
 ![The Thing overview.](assets/device-to-device-img-02-1.png)
 
@@ -87,7 +87,7 @@ The final overview should look something like this:
 
 ### Step 3: Program the first Thing
 
-Now, we also need to complete the sketch for our first Thing. First, let's head over to the **"Sketch"** tab in the Arduino IoT Cloud. 
+Now, we also need to complete the sketch for our first Thing. First, let's head over to the **"Sketch"** tab in the Arduino IoT Cloud.
 
 ![Click on the "Sketch" tab to edit the sketch.](assets/device-to-device-img-04.png)
 
@@ -109,7 +109,7 @@ void setup() {
   // Initialize serial and wait for port to open:
   Serial.begin(9600);
   // This delay gives the chance to wait for a Serial Monitor without blocking if none is found
-  delay(1500); 
+  delay(1500);
 
   // Defined in thingProperties.h
   initProperties();
@@ -130,7 +130,7 @@ void setup() {
 
 void loop() {
   ArduinoCloud.update();
-  // Your code here 
+  // Your code here
 
   int buttonState = digitalRead(buttonPin);
 
@@ -159,9 +159,9 @@ void onSwitch1Change() {
 
 ### Step 5: Creating the second Thing
 
-After we have successfully uploaded the code to our first board, we can go on to create our **second Thing.** 
+After we have successfully uploaded the code to our first board, we can go on to create our **second Thing.**
 
-To create our second Thing, we need to click on the **"Things"** tab, and click on **"Create Thing"**. We can name this one **Remote Light Two**. 
+To create our second Thing, we need to click on the **"Things"** tab, and click on **"Create Thing"**. We can name this one **Remote Light Two**.
 
 ![Creating the second thing.](assets/device-to-device-img-05.png)
 
@@ -179,11 +179,11 @@ Then, click on the **"Add Variable"** button.
 
 Next, we can repeat the same process for the boolean variable, but instead of selecting the **switch_2** variable to sync with, select the **boolean_sync** variable. Now we should have two variables that are synced with our other Thing.
 
-Here we will also need to enter our network details, and select our device (which should be **Device_2**). 
+Here we will also need to enter our network details, and select our device (which should be **Device_2**).
 
 ### Step 6: Program the second Thing
 
-Now we will need to edit the sketch for our second Thing. This sketch is almost identical to the previous sketch we made, but the only difference is that we switched places on the **boolean variables**. 
+Now we will need to edit the sketch for our second Thing. This sketch is almost identical to the previous sketch we made, but the only difference is that we switched places on the **boolean variables**.
 
 This means that whenever the button is pressed, `switch_2` will change. As it is synced, it will turn ON / OFF the LED on the other board. Similarly, we check if `switch_1` has changed, and turn ON / OFF the LED on this board.
 
@@ -207,7 +207,7 @@ void setup() {
   // Initialize serial and wait for port to open:
   Serial.begin(9600);
   // This delay gives the chance to wait for a Serial Monitor without blocking if none is found
-  delay(1500); 
+  delay(1500);
 
   // Defined in thingProperties.h
   initProperties();
@@ -228,7 +228,7 @@ void setup() {
 
 void loop() {
   ArduinoCloud.update();
-  // Your code here 
+  // Your code here
 
   int buttonState = digitalRead(buttonPin);
 
@@ -266,7 +266,7 @@ Just to re-cap here's what we have done so far:
 - Synced the variables between the Things.
 - Uploaded the sketches to **Device_1** and **Device_2**.
 
-If everything is working properly, and the circuit is wired correctly, we should be able to control both LEDs on each board, by **pressing the button on the opposite board.** 
+If everything is working properly, and the circuit is wired correctly, we should be able to control both LEDs on each board, by **pressing the button on the opposite board.**
 
 - The button on **Device_1** will control the LED on **Device_2.**
 - The button on **Device_2** will control the LED on **Device_1.**
@@ -286,9 +286,9 @@ The logic behind it is that one button is each linked to one of the booleans. If
 
 ## Conclusion
 
-In this tutorial, we created a connection between two Arduino boards, using the Arduino IoT Cloud. We set up two identical circuits, and uploaded two almost identical sketches to the boards. 
+In this tutorial, we created a connection between two Arduino boards, using the Arduino IoT Cloud. We set up two identical circuits, and uploaded two almost identical sketches to the boards.
 
-The connection between the boards is made through the **syncing of variables**, which allows two Things to communicate with each other. In this case, whenever a boolean is activated on one device, it is also activated on the other device. This **remote ON/OFF switch** is a great building block for creating other cool IoT projects. 
+The connection between the boards is made through the **syncing of variables**, which allows two Things to communicate with each other. In this case, whenever a boolean is activated on one device, it is also activated on the other device. This **remote ON/OFF switch** is a great building block for creating other cool IoT projects.
 
 ### More tutorials
 

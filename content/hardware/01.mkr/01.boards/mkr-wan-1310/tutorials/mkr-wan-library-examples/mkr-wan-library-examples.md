@@ -9,7 +9,7 @@ These examples will show you how to set up your board to use the LoRa® network 
 
 ## Hardware Required
 
-- [Arduino MKR WAN 1300](https://store.arduino.cc/mkr-wan-1300) or 
+- [Arduino MKR WAN 1300](https://store.arduino.cc/mkr-wan-1300) or
 - [Arduino MKR WAN 1310](https://store.arduino.cc/mkr-wan-1310)
 - [Antenna](https://store.arduino.cc/products/dipole-pentaband-waterproof-antenna)
 

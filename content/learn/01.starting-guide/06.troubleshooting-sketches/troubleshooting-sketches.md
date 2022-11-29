@@ -32,7 +32,7 @@ The online Arduino Web Editor detects your board and port automatically, but if 
 
 Drivers provide a way for the software on your computer (i.e. the Arduino software) to talk to any hardware you connect to it (i.e. the Arduino board).
 
-The easiest way to check if the drivers for your board are installed correctly is by opening the **Tools > Serial Port** menu in the Arduino software with the Arduino board connected to your computer. 
+The easiest way to check if the drivers for your board are installed correctly is by opening the **Tools > Serial Port** menu in the Arduino software with the Arduino board connected to your computer.
 
 Additional menu items should appear relative to when you open the menu without the Arduino connected to your computer. Note that it shouldn't matter what name the Arduino board's serial port gets assigned as long as that's the one you pick from the menu.
 

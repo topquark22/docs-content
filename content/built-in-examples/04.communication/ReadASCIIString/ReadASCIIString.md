@@ -3,7 +3,7 @@ title: 'Read ASCII String'
 compatible-products: [all-boards]
 difficulty: intermediate
 description: 'Parse a comma-separated string of integers to fade an LED.'
-tags: 
+tags:
   - Communication
   - Input
   - LED

@@ -23,7 +23,7 @@ Only your Arduino Esplora is needed for this example. Connect the Esplora to you
 
 ![Esplora as SuperTuxKart game controller](./assets/Esplora_kart.jpg)
 
- 
+
 
 ## Code
 

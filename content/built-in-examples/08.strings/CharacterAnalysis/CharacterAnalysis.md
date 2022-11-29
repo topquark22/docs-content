@@ -3,7 +3,7 @@ title: 'Character Analysis'
 compatible-products: [all-boards]
 difficulty: intermediate
 description: 'Use the operators to recognise the type of character we are dealing with.'
-tags: 
+tags:
   - Strings
   - Input
   - Serial monitor

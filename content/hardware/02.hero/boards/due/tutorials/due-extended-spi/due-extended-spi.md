@@ -2,7 +2,7 @@
 title: 'Extended SPI Library Usage with the Arduino Due'
 difficulty: advanced
 description: 'The SAM3X has advanced SPI capabilities. It is possible to use these extended methods, or the AVR-based ones.'
-tags: 
+tags:
   - SPI
 hardware:
   - hardware/02.hero/boards/due

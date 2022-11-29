@@ -44,7 +44,7 @@ In this section you can find the complete **docker-compose.yml** file that we wi
 
 ```
 version: "3.9"
-    
+
 services:
   db:
     image: mariadb:latest
@@ -60,7 +60,7 @@ services:
     volumes:
       - db_data:/var/lib/mysql
     restart: unless-stopped
-    
+
   Wordpress:
     depends_on:
       - db

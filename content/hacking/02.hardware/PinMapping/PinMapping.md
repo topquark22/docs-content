@@ -1,7 +1,7 @@
 ---
 title: 'ATmega8-Arduino Pin Mapping'
 description:  'A diagram showing the correspondence between the pins on an Arduino board and those of the ATmega8 microcontroller.'
-tags: 
+tags:
   - ATmega8
 ---
 

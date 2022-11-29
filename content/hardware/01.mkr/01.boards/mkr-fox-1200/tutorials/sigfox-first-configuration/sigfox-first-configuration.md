@@ -7,7 +7,7 @@ tags:
   - SigFox
   - First Configuration
 author: 'Arturo Guadalupi'
-libraries: 
+libraries:
   - name: Sigfox
     url: https://www.arduino.cc/reference/en/libraries/arduino-sigfox-for-mkrfox1200/
 hardware:

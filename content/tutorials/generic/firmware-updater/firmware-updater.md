@@ -2,7 +2,7 @@
 title: 'Firmware Updater'
 description: 'Update the firmware or loading certificates on your MKR1000 WiFi board or WiFi Shield 101'
 difficulty: beginner
-tags: 
+tags:
   - Firmware
   - Loading certificates
 hardware:

@@ -7,7 +7,7 @@ tags:
   - GSM
   - Voice call
 author: 'Karl Söderby'
-libraries: 
+libraries:
   - name: MKRGSM
     url: https://www.arduino.cc/reference/en/libraries/mkrgsm/
 hardware:
@@ -20,7 +20,7 @@ software:
   - web-editor
 ---
 
-## Introduction 
+## Introduction
 
 In this tutorial, we will use the **ReceiveVoiceCall** example from the [MKRGSM](https://www.arduino.cc/en/Reference/GSM) library. It will show how to set up our MKR GSM 1400 board to handle incoming calls, and uses the Serial Monitor to provide information regarding the call.
 
@@ -34,14 +34,14 @@ The goals of this project are:
 ## Hardware & Software Needed
 
 - Arduino IDE ([online](https://create.arduino.cc/) or [offline](https://www.arduino.cc/en/main/software)).
-- [MKRGSM](https://www.arduino.cc/en/Reference/GSM) library installed. 
+- [MKRGSM](https://www.arduino.cc/en/Reference/GSM) library installed.
 - [Arduino MKR GSM 1400](https://store.arduino.cc/mkr-gsm-1400).
 - [Antenna](https://store.arduino.cc/antenna).
 - SIM card from an operator in your country.
 
 ## Voice Calls
 
-As the MKR GSM 1400 board is capable of connecting to the GSM network, we also have the possibility to place and receive calls. This feature can be incredibly useful for remotely controlling devices, particularly those in rural / inaccessible areas. 
+As the MKR GSM 1400 board is capable of connecting to the GSM network, we also have the possibility to place and receive calls. This feature can be incredibly useful for remotely controlling devices, particularly those in rural / inaccessible areas.
 
 As most of us know, the past decades has seen a massive increase in the use of smart phones, and with it, the infrastructure for cellular communication has developed significantly. This means more coverage and more reliable services, and an ideal platform to use for IoT projects.
 
@@ -53,7 +53,7 @@ Some useful scenarios for using the voice call feature includes:
 
 - **Trigger something** - whenever a call comes in, we can configure a sketch to for example execute a function.
 
-- **Retrieve data** - we can also configure a sketch that, when a call comes in, we can do a reading on X amount of sensors, and send it back to the callers number using the **GSM_SMS** class. 
+- **Retrieve data** - we can also configure a sketch that, when a call comes in, we can do a reading on X amount of sensors, and send it back to the callers number using the **GSM_SMS** class.
 
 ### Circuit
 
@@ -63,7 +63,7 @@ Some useful scenarios for using the voice call feature includes:
 
 We will now get to the programming part of this tutorial.
 
-**1.** First, let's make sure we have the drivers installed. If we are using the Web Editor, we do not need to install anything. If we are using an offline editor, we need to install it manually. This can be done by navigating to **Tools > Board > Board Manager...**. Here we need to look for the **Arduino SAMD boards (32-bits ARM Cortex M0+)** and install it. 
+**1.** First, let's make sure we have the drivers installed. If we are using the Web Editor, we do not need to install anything. If we are using an offline editor, we need to install it manually. This can be done by navigating to **Tools > Board > Board Manager...**. Here we need to look for the **Arduino SAMD boards (32-bits ARM Cortex M0+)** and install it.
 
 **2.** Now, we need to install the libraries needed. If we are using the Web Editor, there is no need to install anything. If we are using an offline editor, simply go to **Tools > Manage libraries..**, and search for **MKRGSM** and install it.
 
@@ -84,7 +84,7 @@ The pin number is often 1234 or 0000, but for more information, check the SIM pl
 - `GSM gsmAccess` - base class for all GSM functions.
 - `GSMVoiceCall vcs` - base class for GSM voice call functions.
 - `vcs.getvoiceCallStatus()` - checks if there's a call, and returns: `IDLE_CALL` (no call), `RECEIVINGCALL` (a call is incoming) or `TALKING` (a call is happening).
-- `vcs.retrieveCallingNumber( , 20)` - retrieves the number of the caller and store in `numtel` variable. 
+- `vcs.retrieveCallingNumber( , 20)` - retrieves the number of the caller and store in `numtel` variable.
 - `vcs.answerCall()` - used to answer incoming calls.
 - `vcs.hangCall()` - used to hang up on current calls.
 
@@ -94,7 +94,7 @@ The sketch can also be found in the snippet below. Upload the sketch to the boar
 // Include the GSM library
 #include <MKRGSM.h>
 
-#include "arduino_secrets.h" 
+#include "arduino_secrets.h"
 // Please enter your sensitive data in the Secret tab or arduino_secrets.h
 // PIN Number
 const char PINNUMBER[] = SECRET_PINNUMBER;
@@ -185,7 +185,7 @@ Now, all we need to do is placing a call to the MKR GSM 1400 board. Simply check
 
 Now, in the Serial Monitor, we have the option to hang up on the call by simply pressing enter. This is a configuration in the sketch example. When we press enter, the text `"Hanging up and waiting for the next call."` will be printed. This means the call has ended, and the board is again listening for incoming calls.
 
->**Note:** This setup is not designed to support a "real" phone call between two devices. There is no speaker or microphone component on the MKR 1400 GSM board, and no function in the **MKRGSM** library supports this feature. 
+>**Note:** This setup is not designed to support a "real" phone call between two devices. There is no speaker or microphone component on the MKR 1400 GSM board, and no function in the **MKRGSM** library supports this feature.
 
 ### Troubleshoot
 

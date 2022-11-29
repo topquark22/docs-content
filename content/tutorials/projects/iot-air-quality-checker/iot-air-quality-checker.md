@@ -59,7 +59,7 @@ Thanks to this platform, the dashboard creation will be really easy, and the bas
 
 This is one of the feature of Arduino IoT Cloud, many interesting others are described in [this official blog post](https://blog.arduino.cc/2021/06/18/14-awesome-arduino-cloud-features-you-never-knew-existed)!
 
-The very first steps to use Arduino IoT Cloud are well described in the [official "Getting started" guide](https://docs.arduino.cc/cloud/iot-cloud/tutorials/iot-cloud-getting-started). 
+The very first steps to use Arduino IoT Cloud are well described in the [official "Getting started" guide](https://docs.arduino.cc/cloud/iot-cloud/tutorials/iot-cloud-getting-started).
 
 First step is to create a *thing*, in which we'll configure the board we are going to use, the variables used for the measurements and the wifi credentials.
 
@@ -89,7 +89,7 @@ For each variable we have to define:
 * If it's read only (most of the variables are used only to show values), or if it's read & write - in this case we can interact from the dashboard with the local board.
 * The update policy - in this case we'll use "on change", since we'll use a reasonable interval between variables update in the main sketch.
 
-Let's see the creation of the variable for the Grove Air Quality Sensor. 
+Let's see the creation of the variable for the Grove Air Quality Sensor.
 
 For this measurement we'll use an `analogRead()`.
 
@@ -165,7 +165,7 @@ if (air_quality > 700) {
 }
 ```
 
-Then we can add the code for the Dust Sensor. 
+Then we can add the code for the Dust Sensor.
 
 [Here](https://wiki.seeedstudio.com/Grove-Dust_Sensor/) we can find a good example on how to use it
 
@@ -204,10 +204,10 @@ The dust concentration calculation is based on the same [example](https://wiki.s
         } else {
           air_quality_desc = "Fresh Air";
         }
-    
+
        //dust sensor
        ratio = lowpulseoccupancy/(sampletime_ms*10.0);  // Integer percentage 0=>100
-       dust_concentration = 1.1*pow(ratio,3)-3.8*pow(ratio,2)+520*ratio+0.62; 
+       dust_concentration = 1.1*pow(ratio,3)-3.8*pow(ratio,2)+520*ratio+0.62;
        lowpulseoccupancy = 0;
        starttime = millis();
    }
@@ -217,9 +217,9 @@ The dust concentration calculation is based on the same [example](https://wiki.s
 
 Now we can go on with the Oled Display.
 
-We'll use it to display measurements, but because of we'll have a shared dashboard, we could use it to visualize messages from the online dashboard! 
+We'll use it to display measurements, but because of we'll have a shared dashboard, we could use it to visualize messages from the online dashboard!
 
-We have to use the *Grove Oled Display 0.96* library, and we can install it from the Library Manager. Just search for "oled" and then star the library, in order to have it available! 
+We have to use the *Grove Oled Display 0.96* library, and we can install it from the Library Manager. Just search for "oled" and then star the library, in order to have it available!
 
 ![Search for the oled library.](assets/image_ViO3iy1h3Y.png)
 
@@ -240,7 +240,7 @@ Let's create a char array variable used for the conversion of all the `String` v
 
 ```  arduino
 //max chars per row: 16, plus 1 char for string termination
-char oled_text[17]; 
+char oled_text[17];
 ```
 
 and then initialize the display in the setup and clear it at least at the beginning:
@@ -259,7 +259,7 @@ Let's print on the display a welcome message too, with the name of the project (
  SeeedOled.setTextXY(0, 0);
  SeeedOled.putString("IOT AIR QUALITY");
  SeeedOled.setTextXY(1, 0);
- SeeedOled.putString("   CHECKER"); 
+ SeeedOled.putString("   CHECKER");
 ```
 
 Now we can use the OLED in our loop.
@@ -274,7 +274,7 @@ For every element we want to display, we have to specify :
 
 Every time we want to update a value in the OLED, we have to `clear` it from the previous written values.
 
-In order to do this, instead to use the `clearDisplay()` function, we clear the specific row by putting a string of spaces. 
+In order to do this, instead to use the `clearDisplay()` function, we clear the specific row by putting a string of spaces.
 
 Let's create an easy function for this:
 
@@ -298,7 +298,7 @@ So in the `if` in which we do the measurements, we can add these rows:
    clearRow(0);
    SeeedOled.setTextXY(0, 0);
    SeeedOled.putString("AIR QUALITY:");
-   
+
    air_quality_desc.toCharArray(oled_text, 64);
    clearRow(1);
    SeeedOled.setTextXY(1, 0);
@@ -318,7 +318,7 @@ The [toCharArray()](https://www.arduino.cc/reference/en/language/variables/data-
 
 For the custom message we have 3 rows available; the first will be used as descripion, and the last 2 for the message itself.
 
-Each row can display 16 characters, so we'll have to split the message in chunks of that dimension using the [substring()](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/substring/) function. 
+Each row can display 16 characters, so we'll have to split the message in chunks of that dimension using the [substring()](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/substring/) function.
 
 For this we use a `for` loop, shifting of 16 chars in each iteration (2 at the moment).
 
@@ -333,7 +333,7 @@ For this we use a `for` loop, shifting of 16 chars in each iteration (2 at the m
    subString.toCharArray(oled_text, 17);
    SeeedOled.putString(oled_text);
  }
- display_text = ""; 
+ display_text = "";
 ```
 
 In this gallery the OLED display e few seconds after reset, in normal usage, and after reveiving a message from the dashboard:
@@ -414,7 +414,7 @@ Now you can share your dashboard with other Arduino IoT users, and let them see 
 
 ### Next Steps
 
-Don't stop now, and go on creating and inventing interactive circuits and dashboard to share! 
+Don't stop now, and go on creating and inventing interactive circuits and dashboard to share!
 
 You could connect your app to external services using the [webhook](https://support.arduino.cc/hc/en-us/articles/360016119339-Available-Webhook-Platforms)!
 

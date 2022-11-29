@@ -3,7 +3,7 @@ title: 'LED Bar Graph'
 compatible-products: [all-boards]
 difficulty: intermediate
 description: 'Learn how to make an LED bar graph - a series of LEDs in a line.'
-tags: 
+tags:
   - Display
   - Analog
   - Output

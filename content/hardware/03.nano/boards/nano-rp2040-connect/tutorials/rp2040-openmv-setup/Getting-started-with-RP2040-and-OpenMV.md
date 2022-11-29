@@ -48,7 +48,7 @@ If everything went correctly you should see a green "play" button appear instead
 
 ## Creating the Blink Script
 
-Now let's create a version of the classic Arduino blink example with MicroPython in OpenMV. 
+Now let's create a version of the classic Arduino blink example with MicroPython in OpenMV.
 
 ### Importing MicroPython Modules
 

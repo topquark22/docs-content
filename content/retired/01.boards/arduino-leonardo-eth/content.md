@@ -34,7 +34,7 @@ You can find in the [Getting Started section](https://www.arduino.cc/en/Guide/Ho
 
 The Arduino Leonardo ETH is open-source hardware! You can build your own board using the following files (Please note that the schematics are revision 1):
 
-[EAGLE FILES IN .ZIP](https://content.arduino.cc/assets/LeonardoEth_V1.0.zip) 
+[EAGLE FILES IN .ZIP](https://content.arduino.cc/assets/LeonardoEth_V1.0.zip)
 
 [SCHEMATICS IN .PDF](https://content.arduino.cc/assets/LeonardoEth_V1.0_sch.pdf)
 

@@ -26,7 +26,7 @@ Arduino Opta is available in three variants:
 <Feature title="Connectivity" image="wifi-bluetooth">
 
   Multiple choices are available for network connectivity, including USB, Ethernet, and Wi-Fi/BLE in addition to industry specific protocols such as RS485.
-  
+
 </Feature>
 
 <Feature title="Industrial temperature range" image="temperature-sensor">

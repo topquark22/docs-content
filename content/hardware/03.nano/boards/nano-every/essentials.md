@@ -25,9 +25,9 @@ This library allows you to communicate with I2C / TWI devices.
 </EssentialsColumn>
 
 <EssentialsColumn title="Arduino Basics">
-  
+
   <EssentialElement title="Built-in Examples" type="tutorial" link="/built-in-examples/">
-    Built-in Examples are sketches included in the Arduino IDE and demonstrate all basic Arduino commands. 
+    Built-in Examples are sketches included in the Arduino IDE and demonstrate all basic Arduino commands.
   </EssentialElement>
 
   <EssentialElement title="Learn" type="resource" link="/learn/">

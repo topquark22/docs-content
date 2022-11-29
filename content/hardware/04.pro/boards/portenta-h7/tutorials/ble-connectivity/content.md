@@ -34,7 +34,7 @@ In this tutorial we will enable low energy Bluetooth® on the Portenta H7 to all
 
 - [Portenta H7 (ABX00042)](https://store.arduino.cc/portenta-h7) or [Portenta H7 Lite Connected (ABX00046)](https://store.arduino.cc/products/portenta-h7-lite-connected)
 - USB C cable (either USB A to USB C or USB C to USB C)
-- Arduino IDE 1.8.13+  or Arduino Pro IDE 0.0.4+ 
+- Arduino IDE 1.8.13+  or Arduino Pro IDE 0.0.4+
 - Mobile device, phone or tablet
 - [nRFconnect](https://www.nordicsemi.com/Software-and-tools/Development-Tools/nRF-Connect-for-mobile) or equivalent tool downloaded on your mobile device: [nRF Connect for iOS](https://itunes.apple.com/us/app/nrf-connect/id1054362403?ls=1&mt=8) or [nRF Connect for android](https://play.google.com/store/apps/details?id=no.nordicsemi.android.mcp)
 
@@ -46,7 +46,7 @@ The onboard Wi-Fi/Bluetooth® module of the Portenta H7 offers low energy Blueto
 ### Configuring the Development Environment
 To communicate with the Portenta H7 via Bluetooth®, you need to upload a pre-built sketch that starts a Bluetooth® network and allows your mobile device, which will be used to control the LEDs, to connect to it. The sketch uses the [ArduinoBLE](https://www.arduino.cc/en/Reference/ArduinoBLE) Library that enables the Bluetooth® Low Energy module and handles important functions, such as scanning, connecting and interacting with services provided by other devices. You will also be using a third party application (e.g. [nRF Connect](https://www.nordicsemi.com/Software-and-tools/Development-Tools/nRF-Connect-for-mobile)), running on your mobile device in order to connect your device to the board and help you control the built-in LED.
 
-![BLE Configuration Scheme](assets/por_ard_ble_configuration.svg) 
+![BLE Configuration Scheme](assets/por_ard_ble_configuration.svg)
 
 ### 1. The Basic Setup
 
@@ -54,7 +54,7 @@ Begin by plugging in your Portenta board to the computer using a USB-C® cable a
 
 ![The Portenta H7 can be connected to the computer using an appropriate USB-C® cable](assets/por_ard_ble_basic_setup.svg)
 
-### 2. Install the ArduinoBLE Library 
+### 2. Install the ArduinoBLE Library
 
 You will need to install the ArduinoBLE library in the Arduino IDE you are using. To install the library go to : **Tools > Manage Libraries...** type **ArduinoBLE** and click **Install**. Make sure you install ArduinoBLE version 1.1.3 or higher.
 
@@ -139,16 +139,16 @@ void loop() {
         if (switchCharacteristic.value()) {   // Any value other than 0
           Serial.println("LED on");
           digitalWrite(ledPin, LOW);          // Will turn the Portenta LED on
-        } else {                             
+        } else {
           Serial.println("LED off");
-          digitalWrite(ledPin, HIGH);         // Will turn the Portenta LED off          
+          digitalWrite(ledPin, HIGH);         // Will turn the Portenta LED off
         }
       }
     }
 
     // When the central disconnects, print it out:
     Serial.print("Disconnected from central: ");
-    Serial.println(central.address());    
+    Serial.println(central.address());
     digitalWrite(LEDB, HIGH);
     delay(100);
     digitalWrite(LEDB, LOW);
@@ -158,7 +158,7 @@ void loop() {
 }
 ```
 
-In this example, you use a pre-defined Bluetooth® number code pre-setup for controlling a device's LED. This code can also be referred to as [GATT codes](https://www.bluetooth.com/specifications/gatt/services/), which define how two Bluetooth® low energy devices transfer data. Once a connection is established with a device, its respective GATT code, which is a 16 bit identifier, is stored in a lookup table for future reference. 
+In this example, you use a pre-defined Bluetooth® number code pre-setup for controlling a device's LED. This code can also be referred to as [GATT codes](https://www.bluetooth.com/specifications/gatt/services/), which define how two Bluetooth® low energy devices transfer data. Once a connection is established with a device, its respective GATT code, which is a 16 bit identifier, is stored in a lookup table for future reference.
 
 These GATT codes are very long, but, in this example, it is always the same code:
 
@@ -166,9 +166,9 @@ These GATT codes are very long, but, in this example, it is always the same code
 
 ***Remember that on the Portenta the built-in LED is turned on by setting it to LOW and turned off by setting it to HIGH, the opposite of most other Arduino boards.***
 
-### 4. Upload the Sketch 
+### 4. Upload the Sketch
 
-Double press the reset button so the built-in LED is slowly pulsing green. Then, select your board in the menu: **Tools > Board > Arduino Portenta H7 (M7 core)** 
+Double press the reset button so the built-in LED is slowly pulsing green. Then, select your board in the menu: **Tools > Board > Arduino Portenta H7 (M7 core)**
 
 ![Select the Arduino Portenta H7 (M7 core) in the board selector.](assets/por_ard_ble_select_board_h7.png)
 
@@ -182,10 +182,10 @@ On your mobile device install **nRF Connect** or an equivalent app that allows f
 
 ![Download the nRF Connect app from the Apple App Store or Google Play Store.](assets/por_ard_ble_download_nrfapp.png)
 
-Once you have downloaded the nRF application on your mobile device, look for your Portenta in the device list. You may filter the list by "Portenta" to easierly find your board in case you are using **nRF Connect**. 
+Once you have downloaded the nRF application on your mobile device, look for your Portenta in the device list. You may filter the list by "Portenta" to easierly find your board in case you are using **nRF Connect**.
 
-- When you found your board in the list tap "Connect". 
-- Navigate to the "Services" screen and tap the arrow up button. 
+- When you found your board in the list tap "Connect".
+- Navigate to the "Services" screen and tap the arrow up button.
 - Switch to "Bool" type and move the toggle to "True". Confirm the dialog with a tap on "Write" and you should see the built-in LED turned on. If you do the same procedure again but setting the toggle switch to "False", it will turn off the LED.
 
 ![In the nRF Connect app use a Bool toggle switch to toggle the built-in LED.](assets/por_ard_ble_nrf_connect.png)

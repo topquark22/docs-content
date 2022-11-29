@@ -16,7 +16,7 @@ The Arduino Nicla Sense ME is our smallest form factor yet.
   An AI smart sensor hub with integrated 6-axis IMU (3-Axis Accelerometer + 3-Axis Gyroscope) for activity detection, powered by a 32 Bit Synopsys DesignWare ARC™ EM4™ CPU.
 
 <FeatureLink title="Datasheet" url="https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bhi260ap-ds000.pdf" download blank/>
-  
+
 </Feature>
 
 <Feature title="BMP390" image="pressure-sensor">
@@ -27,7 +27,7 @@ The Arduino Nicla Sense ME is our smallest form factor yet.
 
 <Feature title="BMM150" image="magnetometer">
 
-  A low noise magnetometer with a typical range of ±1300μT in the X,Y axis and ±2500μT in the Z axis. 
+  A low noise magnetometer with a typical range of ±1300μT in the X,Y axis and ±2500μT in the Z axis.
 
 <FeatureLink title="Datasheet" url="https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bmm150-ds001.pdf" download blank/>
 </Feature>

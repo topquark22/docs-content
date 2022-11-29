@@ -7,7 +7,7 @@ tags:
   - IMU
   - Accelerometer
 author: 'Nefeli Alushi'
-libraries: 
+libraries:
   - name: Arduino LSM6DS3
     url: https://www.arduino.cc/en/Reference/ArduinoLSM6DS3
 hardware:

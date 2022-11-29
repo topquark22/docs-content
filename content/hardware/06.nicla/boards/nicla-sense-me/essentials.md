@@ -11,7 +11,7 @@
 <EssentialsColumn title="Suggested Libraries">
 
   <EssentialElement title="ArduinoBLE" type="library" link="https://www.arduino.cc/en/Reference/ArduinoBLE">
-The ArduinoBLE library is designed for Arduino boards that have hardware enabled for Bluetooth® Low Energy and Bluetooth® 4.0 and above. 
+The ArduinoBLE library is designed for Arduino boards that have hardware enabled for Bluetooth® Low Energy and Bluetooth® 4.0 and above.
   </EssentialElement>
 
   <EssentialElement title="Arduino_BHY2" type="library" link="https://github.com/arduino/nicla-sense-me-fw/tree/main/Arduino_BHY2">
@@ -26,7 +26,7 @@ The ArduinoBLE library is designed for Arduino boards that have hardware enabled
 
 <EssentialsColumn title="Arduino Basics">
   <EssentialElement title="Built-in Examples" type="tutorial" link="https://www.arduino.cc/en/Tutorial/BuiltInExamples">
-    Built-in Examples are sketches included in the Arduino IDE and demonstrate all basic Arduino commands. 
+    Built-in Examples are sketches included in the Arduino IDE and demonstrate all basic Arduino commands.
   </EssentialElement>
   <EssentialElement title="Learn" type="resource" link="/learn/">
     Discover interesting articles, principles and techniques related to the Arduino ecosystem.

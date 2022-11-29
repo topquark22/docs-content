@@ -41,7 +41,7 @@ This sketch is the first thing you see when starting the robot. It gives you a w
 
 ![Fill in your and the robot's names while listening to music](assets/LottieLemon_hello_user_780.png)
 
- 
+
 
 ## Code
 

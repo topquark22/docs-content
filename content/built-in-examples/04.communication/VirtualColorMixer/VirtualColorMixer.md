@@ -3,7 +3,7 @@ title: 'Virtual Color Mixer'
 compatible-products: [all-boards]
 difficulty: intermediate
 description: 'This example demonstrates how to send multiple values from the Arduino board to the computer.'
-tags: 
+tags:
   - Communication
   - Analog
   - Input

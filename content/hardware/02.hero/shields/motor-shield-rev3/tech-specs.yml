@@ -2,7 +2,7 @@ Shield:
   Name: Arduino® Motor Shield Rev 3
   SKU: A000079
   Compatibility: UNO
-  Motor controller: L298P 
+  Motor controller: L298P
 Power:
   Operating voltage: 5-12V
   Max current: 2A per channel or 4A max (with external power supply)

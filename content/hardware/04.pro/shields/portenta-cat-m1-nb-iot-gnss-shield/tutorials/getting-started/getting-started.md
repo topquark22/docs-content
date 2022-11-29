@@ -19,7 +19,7 @@ software:
   - web-editor
 ---
 
-## Introduction 
+## Introduction
 
 This tutorial will show how to connect the Arduino® Portenta Cat. M1/NB IoT GNSS shield to the Arduino® Portenta H7, connect to a website using NB IoT or Cat. M1 technology and print the website's HTML content in the Serial Monitor. This will help you quickly find out if the setup successfully connects to mobile networks.
 

@@ -35,11 +35,11 @@ Arduino supports the OpenMV build of MicroPython to be used with the Portenta H7
 
 ### Potential Issues
 
-Sometimes the board is not detected even when the board is connected to your computer. This can be solved through the following steps: 
+Sometimes the board is not detected even when the board is connected to your computer. This can be solved through the following steps:
 
-1. Disconnect the board from your computer by removing the USB cable.  
-2. Reconnect the board to your computer.   
-3. If it still doesn't show up, double-press the reset button, to activate the bootloader mode.  
+1. Disconnect the board from your computer by removing the USB cable.
+2. Reconnect the board to your computer.
+3. If it still doesn't show up, double-press the reset button, to activate the bootloader mode.
 4. Re-install the OpenMV firmware
 
 ### Libraries
@@ -333,7 +333,7 @@ Create a timer for the PWM, where you set the ID and the frequency.
 timer1 = Timer(3, freq=1000)
 ```
 
-Then you need to start a PWM channel with the timer object. 
+Then you need to start a PWM channel with the timer object.
 
 ```python
 channel1 = timer1.channel(1, Timer.PWM, pin=pin1, pulse_width=0)
@@ -592,7 +592,7 @@ To use micro_speech, you first need to create a micro_speech object. You can cre
 speech = micro_speech.MicroSpeech()
 ```
 
-Next you can start streaming audio into the `micro_speech` object, to do this you can call `audio.start_streaming()`. Here you can pass the `micro_speech` object as the argument, this will fill the object with audio samples. The MicroSpeech module will compute the FFT of the audio samples and keep a sliding window internally of the FFT the last 100ms or so of audio samples received as features for voice recognition. 
+Next you can start streaming audio into the `micro_speech` object, to do this you can call `audio.start_streaming()`. Here you can pass the `micro_speech` object as the argument, this will fill the object with audio samples. The MicroSpeech module will compute the FFT of the audio samples and keep a sliding window internally of the FFT the last 100ms or so of audio samples received as features for voice recognition.
 
 ```python
 audio.start_streaming(speech.audio_callback)

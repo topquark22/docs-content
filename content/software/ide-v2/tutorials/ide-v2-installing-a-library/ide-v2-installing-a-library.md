@@ -13,25 +13,25 @@ A large part of the Arduino programming experience is the **use of libraries.** 
 
 In this tutorial, we will go through how to install a library using the library manager in the Arduino IDE 2.0. We will also show how to access examples from a library that you have installed.
 
-You can easily download the editor from the [Arduino Software page](https://www.arduino.cc/en/software). 
+You can easily download the editor from the [Arduino Software page](https://www.arduino.cc/en/software).
 
 You can also follow the [downloading and installing the Arduino IDE 2.0](/software/ide-v2/tutorials/getting-started/ide-v2-downloading-and-installing) tutorial for more detailed guide on how to install the editor.
 
 ## Requirements
 
-- Arduino IDE 2.0 installed. 
+- Arduino IDE 2.0 installed.
 
 ## Why Use Libraries?
 
-Libraries are incredibly useful when creating a project of any type. They make our development experience much smoother, and there almost an infinite amount out there. They are used to interface with many different sensors, RTCs, Wi-Fi modules, RGB matrices and of course with other components on your board. 
+Libraries are incredibly useful when creating a project of any type. They make our development experience much smoother, and there almost an infinite amount out there. They are used to interface with many different sensors, RTCs, Wi-Fi modules, RGB matrices and of course with other components on your board.
 
-Arduino has many official libraries, but the real heroes are the Arduino community, who develop, maintain and improve their libraries on a regular basis. 
+Arduino has many official libraries, but the real heroes are the Arduino community, who develop, maintain and improve their libraries on a regular basis.
 
 ## Installing a Library
 
-Installing a library is quick and easy, but let's take a look at what we need to do. 
+Installing a library is quick and easy, but let's take a look at what we need to do.
 
-**1.** Open the Arduino IDE 2.0. 
+**1.** Open the Arduino IDE 2.0.
 
 **2.** With the editor open, let's take a look at the left column. Here, we can see a couple of icons. Let's click the on the **"library"** icon.
 
@@ -41,7 +41,7 @@ Installing a library is quick and easy, but let's take a look at what we need to
 
 ![Navigating the library manager.](assets/installing-a-library-img02.png)
 
-**4.** This process should not take too long, but allow up to a minute to install it. 
+**4.** This process should not take too long, but allow up to a minute to install it.
 
 ![Installing a library.](assets/installing-a-library-img03.png)
 

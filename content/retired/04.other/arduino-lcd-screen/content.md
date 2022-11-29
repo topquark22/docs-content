@@ -30,7 +30,7 @@ You can find in the [Getting Started section](https://www.arduino.cc/en/Guide/Ho
 
 Arduino LCD Screen is open-source hardware! You can build your own board using the following files:
 
-[EAGLE FILES IN .ZIP](https://www.arduino.cc/en/uploads/Main/LCD_Rev-4.zip) 
+[EAGLE FILES IN .ZIP](https://www.arduino.cc/en/uploads/Main/LCD_Rev-4.zip)
 
 [SCHEMATICS IN .PDF](https://www.arduino.cc/en/uploads/Main/GLCD_sch.pdf)
 

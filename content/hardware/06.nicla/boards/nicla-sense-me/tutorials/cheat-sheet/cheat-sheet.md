@@ -33,7 +33,7 @@ featuredImage: 'gear'
 
 ![The Arduino Nicla Sense ME](assets/hero.png)
 
-The Arduino® Nicla Sense ME is our smallest form factor yet, with a range of industrial grade sensors packed into a tiny footprint. It features 4 industrial grade Bosch sensors that can accurately measure rotation, acceleration, pressure, humidity, temperature, air quality and CO2 levels. 
+The Arduino® Nicla Sense ME is our smallest form factor yet, with a range of industrial grade sensors packed into a tiny footprint. It features 4 industrial grade Bosch sensors that can accurately measure rotation, acceleration, pressure, humidity, temperature, air quality and CO2 levels.
 
 ## Goals
 
@@ -51,7 +51,7 @@ The Nicla Sense ME can be programmed through the **Classic Arduino IDE 1.8.X**. 
 
 - [Installing the Arduino Mbed OS Nicla Boards core](/software/ide-v1/tutorials/getting-started/cores/arduino-mbed_nicla)
 
-### Arduino IDE 2.0.X 
+### Arduino IDE 2.0.X
 
 The Nicla Sense ME can be programmed through the **Arduino IDE 2.0.X**. To install your board, you can check out the guide below:
 
@@ -65,11 +65,11 @@ The Nicla Sense ME can be programmed through the **Web Editor**. To get started 
 
 ### Board Not Detected
 
-Sometimes the board is not detected even when the board is connected to your computer. This can be solved through the following steps: 
+Sometimes the board is not detected even when the board is connected to your computer. This can be solved through the following steps:
 
-**1.** Disconnect the board from your computer by removing the USB cable.  
-**2.** Reconnect the board to your computer.  
-**3.** If it still doesn't show up, double-tap the reset button, to activate the bootloader mode. 
+**1.** Disconnect the board from your computer by removing the USB cable.
+**2.** Reconnect the board to your computer.
+**3.** If it still doesn't show up, double-tap the reset button, to activate the bootloader mode.
 
 ## Pins
 
@@ -156,7 +156,7 @@ void loop() {
   leds.setColor(green);
   delay(1000);
   leds.setColor(blue);
-  delay(1000);  
+  delay(1000);
 }
 ```
 
@@ -177,7 +177,7 @@ void loop() {
   leds.setColor(red, green, blue);
   delay(1000);
   leds.setColor(off);
-  delay(1000); 
+  delay(1000);
 }
 ```
 
@@ -203,7 +203,7 @@ In the following section, you can see how these ID's are used in an Arduino sket
 - **SensorQuaternion**: Can be used to handle sensors with the quaternion format, can be used to calculate rotation vector, game rotation vector and geomagnetic rotation vector. You can access the `x`, `y`, `z` and `w` property using this class.
 - **SensorActivity**: Use this class to handle sensors with the activity format. The activity is encoded as ID and can be retrieved from the `value` property. Use `getActivity` to get a human readable version of the activity e.g. "Walking activity started".
 - **SensorBSEC**: BSEC stands for Bosch Sensortec Environmental Cluster, basically you can access the air quality (IAQ) level and it contains the following data:
-  
+
   | Function     | Description                         | Data type       |
   | ------------ | ----------------------------------- | --------------- |
   | `iaq()`      | IAQ value for regular use case      | unsigned 16bit  |
@@ -348,7 +348,7 @@ void loop(){
   // Update function should be continuously polled
   BHY2.update();
 
-  // Check sensor values every second  
+  // Check sensor values every second
   if (millis() - lastCheck >= 1000) {
     lastCheck = millis();
 
@@ -405,7 +405,7 @@ void loop(){
   static auto lastCheck= millis();
   BHY2.update();
 
-  // Check sensor values every second  
+  // Check sensor values every second
   if (millis() - lastCheck >= 1000) {
     lastCheck = millis();
     Serial.println(String("temperature: ") + String(int(temperature.value())));
@@ -448,7 +448,7 @@ void loop(){
   static auto lastCheck= millis();
   BHY2.update();
 
-  // Check sensor values every second  
+  // Check sensor values every second
   if (millis() - lastCheck >= 1000) {
     lastCheck = millis();
     Serial.println(String("gas: ") + String(gas.value()));
@@ -491,7 +491,7 @@ void loop(){
   static auto lastCheck= millis();
   BHY2.update();
 
-  // Check sensor values every second  
+  // Check sensor values every second
   if (millis() - lastCheck >= 1000) {
     lastCheck = millis();
     Serial.println(String("pressure: ") + pressure.toString());
@@ -698,11 +698,11 @@ Sensor id: 10   name: GYRO_PASS   values: x : -13.000000   y : 12.000000   z : -
 ### Sensor Data Over WebBLE
 
 Sensor data from the Nicla Sense ME can also be retrieved through Bluetooth® Low Energy in the web browser. For that you can use the bhy tool. Please follow steps 1 - 3 from the "Sensor Data Over ESLOV" section. Then execute the following command to start the webserver: `./bhy webserver`.
-When the server has started, you can open the landing page in your browser: [http://localhost:8000/](http://localhost:8000/). Click on "Open sensor page". 
+When the server has started, you can open the landing page in your browser: [http://localhost:8000/](http://localhost:8000/). Click on "Open sensor page".
 
 ![Sensor page in the browser](assets/web-ble-unpaired.png)
 
-Then click the "Connect" button and pair your computer with the Nicla Sense ME board. 
+Then click the "Connect" button and pair your computer with the Nicla Sense ME board.
 
 ***For this feature to work, make sure that Web Bluetooth® Low Energy is both supported and enabled! In Google Chrome go to [chrome://flags]() and enable "Experimental Web Platform features".***
 
@@ -749,7 +749,7 @@ And to write to the device:
 
 ```arduino
   digitalWrite(chipSelectPin, LOW); //pull down the CS pin
-  
+
   SPI.transfer(address); // address for device, for example 0x00
   SPI.transfer(value); // value to write
 
@@ -775,14 +775,14 @@ To use I2C, you can use the [Wire](https://www.arduino.cc/en/Reference/wire) lib
 Inside `void setup()` you need to initialize the library.
 
 ```arduino
-Wire.begin(); 
+Wire.begin();
 ```
 
 And to write something to a device connected via I2C, you can use the following commands:
 
 ```arduino
   Wire.beginTransmission(1); //begin transmit to device 1
-  Wire.write(byte(0x00)); //send instruction byte 
+  Wire.write(byte(0x00)); //send instruction byte
   Wire.write(val); //send a value
   Wire.endTransmission(); //stop transmit
 ```
@@ -845,7 +845,7 @@ void loop(){
   static auto lastCheck= millis();
   BHY2Host.update();
 
-  // Check sensor values every second  
+  // Check sensor values every second
   if (millis() - lastCheck >= 1000) {
     lastCheck = millis();
     Serial.println(String("temperature: ") + String(int(temperature.value())));
@@ -900,7 +900,7 @@ BLE.advertise();
 
 Listen for BLE peripherals to connect:
 
-```arduino  
+```arduino
 BLEDevice central = BLE.central();
 ```
 

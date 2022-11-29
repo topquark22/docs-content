@@ -98,7 +98,7 @@ There are times when your code compiles perfectly but is unable to upload. If yo
 
 ```cpp
 dfu-util: error get_status: LIBUSB_ERROR_IO
-Opening DFU capable USB device... 
+Opening DFU capable USB device...
 ```
 
 Unplug and plug in the board to re-initiate the USB interface and you should be able to upload the code without issues.

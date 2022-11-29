@@ -12,18 +12,18 @@
 <EssentialsColumn title="Suggested Libraries">
 
   <EssentialElement title="ArduinoBLE" type="library" link="https://www.arduino.cc/en/Reference/ArduinoBLE">
-The ArduinoBLE library is designed for Arduino boards that have hardware enabled for Bluetooth® Low Energy and Bluetooth® 4.0 and above. 
+The ArduinoBLE library is designed for Arduino boards that have hardware enabled for Bluetooth® Low Energy and Bluetooth® 4.0 and above.
   </EssentialElement>
 
   <EssentialElement title="Arduino_LSM9DS1" type="library" link="https://www.arduino.cc/en/Reference/ArduinoLSM9DS1">
-The Arduino_LSM9DS1 library is designed to be used with the LSM9DS1 IMU module, which includes a 3-axis accelerometer, 3-axis gyroscope and a 3-axis magnetometer. 
+The Arduino_LSM9DS1 library is designed to be used with the LSM9DS1 IMU module, which includes a 3-axis accelerometer, 3-axis gyroscope and a 3-axis magnetometer.
   </EssentialElement>
 
 </EssentialsColumn>
 
 <EssentialsColumn title="Arduino Basics">
   <EssentialElement title="Built-in Examples" type="tutorial" link="/built-in-examples/">
-    Built-in Examples are sketches included in the Arduino IDE and demonstrate all basic Arduino commands. 
+    Built-in Examples are sketches included in the Arduino IDE and demonstrate all basic Arduino commands.
   </EssentialElement>
   <EssentialElement title="Learn" type="resource" link="/learn/">
     Discover interesting articles, principles and techniques related to the Arduino ecosystem.

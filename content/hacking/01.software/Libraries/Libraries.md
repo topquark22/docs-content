@@ -1,7 +1,7 @@
 ---
 title: 'Arduino Libraries'
 description: 'Libraries are files which provide your sketches with extra functionality.'
-tags: 
+tags:
   - Libraries
 ---
 Libraries are files written in C or C++ (.c, .cpp) which provide your sketches with extra functionality (e.g. the ability to control an LED matrix, or read an encoder, etc.). They were introduced in Arduino 0004.

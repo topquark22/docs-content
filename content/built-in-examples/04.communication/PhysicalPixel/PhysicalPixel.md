@@ -3,7 +3,7 @@ title: 'Physical Pixel'
 compatible-products: [all-boards]
 difficulty: intermediate
 description: 'Turn a LED on and off by sending data to your Arduino from Processing or Max/MSP.'
-tags: 
+tags:
   - Communication
   - Output
   - Input

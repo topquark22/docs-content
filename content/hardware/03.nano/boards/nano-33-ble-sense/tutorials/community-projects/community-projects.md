@@ -13,7 +13,7 @@ The Nano BLE Sense is a fantastic, versatile board that can be used for environm
 
 <iframe width="100%" height="400" src="https://www.youtube.com/embed/b7wzFEDU0U8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-Picovoice is a platform for creating voice AI applications, and they have implemented support for the Nano BLE Sense. The example above teaches us how to set different parameters on the board, such as **speed, iterations** and **color**, using only our voice. 
+Picovoice is a platform for creating voice AI applications, and they have implemented support for the Nano BLE Sense. The example above teaches us how to set different parameters on the board, such as **speed, iterations** and **color**, using only our voice.
 
 - [Offline Voice AI on Arduino](https://medium.com/picovoice/offline-voice-ai-on-arduino-4a7f7e572bfb) (external link).
 
@@ -21,7 +21,7 @@ Picovoice is a platform for creating voice AI applications, and they have implem
 
 <iframe width="100%" height="400" src="https://www.youtube.com/embed/Lfv3WJnYhX0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-The AI-Powered Magic Wand by Andri Yadi is a great project to undertake with your Nano BLE Sense. Learn how to turn your board into a magic wand and channel your inner Harry Potter (or Hermione Granger). You can learn more about this project through the links below: 
+The AI-Powered Magic Wand by Andri Yadi is a great project to undertake with your Nano BLE Sense. Learn how to turn your board into a magic wand and channel your inner Harry Potter (or Hermione Granger). You can learn more about this project through the links below:
 
 - [AI-Powered Magic Wand](https://medium.com/picovoice/offline-voice-ai-on-arduino-4a7f7e572bfb) (external link).
 - [Link to GitHub repository](https://github.com/andriyadi/MagicWand-TFLite-Arduino).

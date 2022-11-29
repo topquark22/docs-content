@@ -8,7 +8,7 @@ The **Arduino Portenta Vision Shield** is an addon board providing machine visio
 <FeatureList>
 <Feature title="Arduino Portenta Vision Shield" image="nano-form-factor">
 
-  The Arduino Portenta Vision Shield is an addon board providing machine vision capabilities and additional connectivity to the Portenta family  
+  The Arduino Portenta Vision Shield is an addon board providing machine vision capabilities and additional connectivity to the Portenta family
 
   <FeatureLink title="Datasheet" url="https://content.arduino.cc/assets/ASX00021-ASX00026-Datasheet.pdf" download blank/>
 </Feature>

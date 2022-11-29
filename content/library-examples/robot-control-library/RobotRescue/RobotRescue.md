@@ -50,19 +50,19 @@ Place your obstacles on the track. The robot can push some weight, like empty so
 
 ![Place the obstacles](assets/LottieLemon_Rescue_2_780.png)
 
- 
+
 
 Put the robot on the track and turn it on to see if it can solve the challenge.
 
 ![Put the robot to run](assets/LottieLemon_Rescue_3_780.png)
 
- 
+
 
 In front of an obstacle, the robot slows down, starts pushing the object, backs up and starts racing again.
 
 ![Robot pushing the obstacle away](assets/LottieLemon_Rescue_4_780.png)
 
- 
+
 
 ## Code
 

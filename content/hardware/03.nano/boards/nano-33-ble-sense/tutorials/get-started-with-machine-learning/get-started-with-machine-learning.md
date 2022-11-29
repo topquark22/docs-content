@@ -7,7 +7,7 @@ tags:
   - Machine learning
   - Tensorflow Lite Micro
 author: 'Sandeep Mistry and Dominic Pajak'
-libraries: 
+libraries:
   - name: Arduino_TensorFlowLite
     url: https://www.arduino.cc/reference/en/libraries/arduino_tensorflowlite/
   - name: Arduino_LSM9DS1
@@ -19,7 +19,7 @@ software:
   - Arduino IDE
   - Google Colab
 ---
-***This post was originally published by Sandeep Mistry and Dominic Pajak on the [TensorFlow blog](https://medium.com/tensorflow/how-to-get-started-with-machine-learning-on-arduino-7daf95b4157).*** 
+***This post was originally published by Sandeep Mistry and Dominic Pajak on the [TensorFlow blog](https://medium.com/tensorflow/how-to-get-started-with-machine-learning-on-arduino-7daf95b4157).***
 ## Introduction
 
 [Arduino](https://www.arduino.cc/) is on a mission to make machine learning simple enough for anyone to use. We’ve been working with the TensorFlow Lite team over the past few months and are excited to show you what we’ve been up to together: bringing TensorFlow Lite Micro to the [Arduino Nano 33 BLE Sense](https://store.arduino.cc/arduino-nano-33-ble-sense). In this article, we’ll show you how to install and run several new [TensorFlow Lite Micro](https://www.tensorflow.org/lite/microcontrollers/overview) examples that are now available in the [Arduino Library Manager](https://www.arduino.cc/en/guide/libraries).
@@ -28,9 +28,9 @@ The first tutorial below shows you how to install a neural network on your Ardui
 
 ![Example 1: Running thepre-trained micro_speech inference example](assets/micro.gif)
 
-Next, we’ll introduce a more in-depth tutorial you can use to train your own custom gesture recognition model for Arduino using TensorFlow in Colab. This material is based on a practical workshop held by Sandeep Mistry and Don Coleman, an updated version of which is [now online](https://github.com/arduino/ArduinoTensorFlowLiteTutorials/tree/master/GestureToEmoji). 
+Next, we’ll introduce a more in-depth tutorial you can use to train your own custom gesture recognition model for Arduino using TensorFlow in Colab. This material is based on a practical workshop held by Sandeep Mistry and Don Coleman, an updated version of which is [now online](https://github.com/arduino/ArduinoTensorFlowLiteTutorials/tree/master/GestureToEmoji).
 
-If you have previous experience with Arduino, you may be able to get these tutorials working within a couple of hours. If you’re entirely new to microcontrollers, it may take a bit longer. 
+If you have previous experience with Arduino, you may be able to get these tutorials working within a couple of hours. If you’re entirely new to microcontrollers, it may take a bit longer.
 
 ![Example 2: Training your own gesture classification model.](assets/ezgif-1-c5bdaa9f0bee.gif)
 
@@ -40,7 +40,7 @@ We’re excited to share some of the first examples and tutorials, and to see wh
 
 **Note:** The following projects are based on TensorFlow Lite for Microcontrollers which is currently experimental within the [TensorFlow repo](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/lite/experimental/micro). This is still a new and emerging field!
 
-## Goals 
+## Goals
 - Learn the fundamentals of TinyML implementation and training.
 - Use the [Arduino_LSM9DS1](https://www.arduino.cc/en/Reference/ArduinoLSM9DS1) and [Arduino_TensorFlowLite](https://www.arduino.cc/reference/en/libraries/arduino_tensorflowlite/) libraries
 
@@ -67,7 +67,7 @@ Arduino is an open-source platform and community focused on making microcontroll
 
 ![Arduino Nano 33 BLE Sense board is smaller than a stick of gum.](assets/nanosenseble.png)
 
-There are practical reasons you might want to squeeze ML on microcontrollers, including: 
+There are practical reasons you might want to squeeze ML on microcontrollers, including:
 
 - Function – wanting a smart device to act quickly and locally (independent of the Internet).
 - Cost – accomplishing this with simple, lower cost hardware.
@@ -76,13 +76,13 @@ There are practical reasons you might want to squeeze ML on microcontrollers, in
 
 There’s a final goal which we’re building towards that is very important:
 
-- Machine learning can make microcontrollers accessible to developers who don’t have a background in embedded development 
+- Machine learning can make microcontrollers accessible to developers who don’t have a background in embedded development
 
-On the machine learning side, there are techniques you can use to fit neural network models into memory constrained devices like microcontrollers. One of the key steps is the [quantization of the weights](https://petewarden.com/2016/05/03/how-to-quantize-neural-networks-with-tensorflow/) from floating point to 8-bit integers. This also has the effect of making inference quicker to calculate and more applicable to lower clock-rate devices. 
+On the machine learning side, there are techniques you can use to fit neural network models into memory constrained devices like microcontrollers. One of the key steps is the [quantization of the weights](https://petewarden.com/2016/05/03/how-to-quantize-neural-networks-with-tensorflow/) from floating point to 8-bit integers. This also has the effect of making inference quicker to calculate and more applicable to lower clock-rate devices.
 
 TinyML is an emerging field and there is still work to do – but what’s exciting is there’s a vast unexplored application space out there. Billions of microcontrollers combined with all sorts of sensors in all sorts of places which can lead to some seriously creative and valuable TinyML applications in the future.
 
-## TensorFlow Lite for Microcontrollers Examples 
+## TensorFlow Lite for Microcontrollers Examples
 The inference examples for TensorFlow Lite for Microcontrollers are now packaged and available through the Arduino Library Manager making it possible to include and run them on Arduino in a few clicks. In this section we’ll show you how to run them. The examples are:
 
 - micro_speech – speech recognition using the onboard microphone
@@ -91,7 +91,7 @@ The inference examples for TensorFlow Lite for Microcontrollers are now packaged
 
 For more background on the examples you can take a look at the source in the [TensorFlow repository](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/lite/experimental/micro). The models in these examples were previously trained. The tutorials below show you how to deploy and run them on an Arduino. In the next section, we’ll discuss training.
 
-## How to Run the Examples Using Arduino Create Web Editor. 
+## How to Run the Examples Using Arduino Create Web Editor.
 Once you connect your Arduino Nano 33 BLE Sense to your desktop machine with a USB cable you will be able to compile and run the following TensorFlow examples on the board by using the [Arduino Create](https://create.arduino.cc/editor) web editor:
 
 ![Compiling an example from the Arduino_TensorFlowLite library.](assets/create-lib.gif)
@@ -127,11 +127,11 @@ We’ve adapted the tutorial below, so no additional hardware is needed – the 
 
 ## IDE Setup
 
-**1.** First, let's make sure we have the drivers for the Nano 33 BLE boards installed. If we are using the online IDE, there is no need to install anything, if you are using the offline IDE, we need to install it manually. This can be done by navigating to **Tools > Board > Board Manager...**, search for **Arduino Mbed OS Nano Boards**, and install it. 
+**1.** First, let's make sure we have the drivers for the Nano 33 BLE boards installed. If we are using the online IDE, there is no need to install anything, if you are using the offline IDE, we need to install it manually. This can be done by navigating to **Tools > Board > Board Manager...**, search for **Arduino Mbed OS Nano Boards**, and install it.
 
 ![Install Nano BLE board](assets/BoardsManager.png)
 
-**2.** Also, let's make sure we have all the libraries we need installed. If we are using the online IDE, there is no need to install anything. If we are using the offline IDE, this can be done by navigating to **Tools > Manage libraries...**, search for **Arduino_TensorFlowLite** and **Arduino:LSM9DS1**, and install them both. 
+**2.** Also, let's make sure we have all the libraries we need installed. If we are using the online IDE, there is no need to install anything. If we are using the offline IDE, this can be done by navigating to **Tools > Manage libraries...**, search for **Arduino_TensorFlowLite** and **Arduino:LSM9DS1**, and install them both.
 
 ![Install the necessary libraries](assets/libManager.png)
 
@@ -141,13 +141,13 @@ There are more detailed [Getting Started](https://www.arduino.cc/en/Guide/NANO33
 
 First, we need to capture some training data. You can capture sensor data logs from the Arduino board over the same USB cable you use to program the board with your laptop or PC.
 
-Arduino boards run small applications (also called sketches) which are compiled from .ino format Arduino source code, and programmed onto the board using the Arduino IDE or Arduino Create. 
+Arduino boards run small applications (also called sketches) which are compiled from .ino format Arduino source code, and programmed onto the board using the Arduino IDE or Arduino Create.
 
 With the sketch we are creating we will do the following:
 
-- Monitor the board’s accelerometer and gyroscope 
-- Trigger a sample window on detecting significant linear acceleration of the board 
-- Sample for one second at 119Hz, outputting CSV format data over USB 
+- Monitor the board’s accelerometer and gyroscope
+- Trigger a sample window on detecting significant linear acceleration of the board
+- Sample for one second at 119Hz, outputting CSV format data over USB
 - Loop back and monitor for the next gesture
 
 **The sensors we choose to read from the board, the sample rate, the trigger threshold, and whether we stream data output as CSV, JSON, binary or some other format are all customizable in the sketch running on the Arduino. There is also scope to perform signal preprocessing and filtering on the device before the data is output to the log – this we can cover in another blog. For now, you can just upload the sketch and get sampling.**
@@ -247,9 +247,9 @@ void loop() {
 ## Visualizing Live Sensor Data Log From the Arduino Board
 With that done we can now visualize the data coming off the board. We’re not capturing data yet this is just to give you a feel for how the sensor data capture is triggered and how long a sample window is. This will help when it comes to collecting training samples.
 
-- In the Arduino IDE, open the Serial Plotter **Tools > Serial Plotter** 
+- In the Arduino IDE, open the Serial Plotter **Tools > Serial Plotter**
 - If you get an error that the board is not available, reselect the port:
-**Tools > Port > portname (Arduino Nano 33 BLE)** 
+**Tools > Port > portname (Arduino Nano 33 BLE)**
 - Pick up the board and practice your punch and flex gestures
 - You’ll see it only sample for a one second window, then wait for the next gesture
 - You should see a live graph of the sensor data capture (see GIF below)
@@ -265,20 +265,20 @@ To capture data as a CSV log to upload to TensorFlow, you can use **Arduino IDE 
 - Pick up the board in one hand (picking it up later will trigger sampling)
 - In the Arduino IDE, open the Serial Monitor Tools > Serial Monitor
 - If you get an error that the board is not available, reselect the port:
-- Tools > Port > portname (Arduino Nano 33 BLE) 
+- Tools > Port > portname (Arduino Nano 33 BLE)
 - Make a punch gesture with the board in your hand (Be careful whilst doing this!)
 - Make the outward punch quickly enough to trigger the capture
-- Return to a neutral position slowly so as not to trigger the capture again 
+- Return to a neutral position slowly so as not to trigger the capture again
 - Repeat the gesture capture step 10 or more times to gather more data
-- Copy and paste the data from the Serial Console to new text file called punch.csv 
-- Clear the console window output and repeat all the steps above, this time with a flex gesture in a file called flex.csv 
+- Copy and paste the data from the Serial Console to new text file called punch.csv
+- Clear the console window output and repeat all the steps above, this time with a flex gesture in a file called flex.csv
 - Make the inward flex fast enough to trigger capture returning slowly each time
 
 **Note:** the first line of your two csv files should contain the fields aX,aY,aZ,gX,gY,gZ.
 
 ![Data recorded by your movements](assets/trainingData.png)
 
-***Linux tip:*** *If you prefer you can redirect the sensor log outputform the Arduino straight to  .csv file on the command line. With the Serial Plotter / Serial MOnitor windows close use: 
+***Linux tip:*** *If you prefer you can redirect the sensor log outputform the Arduino straight to  .csv file on the command line. With the Serial Plotter / Serial MOnitor windows close use:
 ```
  $ cat /dev/cu.usbmodem[nnnnn] > sensorlog.csv
 ```
@@ -290,7 +290,7 @@ We’re going to use [Google Colab](https://colab.research.google.com/) to train
 
 
 - Set up Python® environment
-- Upload the punch.csv and flex.csv data 
+- Upload the punch.csv and flex.csv data
 - Parse and prepare the data
 - Build and train the model
 - Convert the trained model to TensorFlow Lite

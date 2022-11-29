@@ -7,7 +7,7 @@ author: Ali Jahangiri
 
 ![Nicla Sense ME](assets/featured.png)
 
-# Description 
+# Description
 The **Arduino® Nicla Sense ME** is our smallest form factor yet, with a range of industrial grade sensors packed into a tiny footprint. Measure process parameters such as temperature, humidity and movement. Dive into edge computing with powerful data fusion capabilities. Make your own industrial grade wireless sensing network with the onboard BHI260AP, BMP390, BMM150 and BME688 Bosch sensors.
 
 # Target areas:
@@ -16,7 +16,7 @@ wireless sensor networks, data fusion, artificial intelligence, gas detection
 # Features
 - **ANNA-B112** Bluetooth®  Module
   - **nRF52832** System-on-chip
-    - 64 MHz ARM® Cortex-M4F microcontroller 
+    - 64 MHz ARM® Cortex-M4F microcontroller
     - 64 KB SRAM
     - 512 KB Flash
     - RAM mapped FIFOs using EasyDMA
@@ -41,7 +41,7 @@ wireless sensor networks, data fusion, artificial intelligence, gas detection
     - Pedestrian dead reckoning
     - Relative and absolute orientation
   - External 2MB FLASH connected via QSPI
-  
+
 - **Bosch BMP390** High-performance pressure sensor
   - Operation range: 300-1250 hPa
   - Absolute accuracy pressure (typ.): ± 0.5 hPa
@@ -84,7 +84,7 @@ wireless sensor networks, data fusion, artificial intelligence, gas detection
 ### Application Examples
 The Arduino® Nicla Sense ME is your gateway to develop wireless networking solutions with rapid development and high robustness. Get real-time insight into the operational characteristics of your processes. Take advantage of the high quality sensors and networking capabilities to evaluate novel WSN architectures. Ultra low power consumption and integrated battery management allows for deployment in various capabilities. WebBLE allows for easy OTA update of the firmware as well as remote monitoring.
 
-- **Warehouse & Inventory Management**: 
+- **Warehouse & Inventory Management**:
 The environmental sensor of the Arduino® Nicla Sense ME is able to detect the ripening state of fruits, vegetable and meat allowing for intelligent management of perishable assets alongside the Arduino Cloud.
 
 - **Distributed Industrial Sensing**:
@@ -157,7 +157,7 @@ The Nicla form factor has been specifically developed at Arduino® as a standard
 | J5       | SM05B-SRSS-TB(LF)(SN) 5-pin Eslov connector | J7       | microUSB connector                           |
 
 ### Microcontroller
-The Arduino® Nicla Sense ME is powered by a nRF52832 SoC within the ANNA-B112 module (MD1). The nRF52832 SoC is built around an ARM® Cortex-M4 microcontroller with floating point unit running at 64 MHz. Sketches are stored inside the nRF52832 internal 512 KB FLASH which is shared with the bootloader. 64 KB SRAM is available to the user. The ANNA-B112 acts as SPI host for the data logging 2MB flash (U7) and the BHI260 6-axis IMU (U5). It is also the secondary for the BHI260 (U5) I2C and SPI connection. While the module itself runs at 1.8V, a level shifter can adjust the logic level between 1.8V and 3.3V depending on the LDO set in BQ25120 (U9). An external oscillator (Y1) provides a 32 KHz signal. 
+The Arduino® Nicla Sense ME is powered by a nRF52832 SoC within the ANNA-B112 module (MD1). The nRF52832 SoC is built around an ARM® Cortex-M4 microcontroller with floating point unit running at 64 MHz. Sketches are stored inside the nRF52832 internal 512 KB FLASH which is shared with the bootloader. 64 KB SRAM is available to the user. The ANNA-B112 acts as SPI host for the data logging 2MB flash (U7) and the BHI260 6-axis IMU (U5). It is also the secondary for the BHI260 (U5) I2C and SPI connection. While the module itself runs at 1.8V, a level shifter can adjust the logic level between 1.8V and 3.3V depending on the LDO set in BQ25120 (U9). An external oscillator (Y1) provides a 32 KHz signal.
 ### Bosch BHI260 Smart Sensor System with Built-in 6-Axis IMU
 The Bosch BHI260 is a ultra low power programmable sensor, combining a Fuser2 core processor, 6-axis IMU (gyroscope and accelerometer) together with a sensor fusion software framework. The BHI260 is a smart sensor core (hosting a programmable recognition system), that handles communication with other sensors on the **Arduino Nicla Sense ME** via I2C and SPI connections. There is also a dedicated 2MB Flash (U2) used to store execute in place (XiP) code as well as data storage, such as Bosch sensor fusion algorithm (BSX) calibration data. The BHI 260 is capable of loading custom algorithms that can be trained on a PC. The generated smart algorithm then operates on this chip.
 ### Bosch BME688 Environmental Sensor
@@ -167,7 +167,7 @@ Industrial grade accuracy and stability in pressure measurements is provided by 
 ### Bosch BMM150 3-Axis Magnetometer
 The Bosch BMM150 (U4) provides accurate 3-axis measurements of magnetic field with compass-level accuracy. Combined with the BHI260 IMU (U2), Bosch sensor fusion can be used to obtain high accuracy spatial orientation and motion vectors for detection of heading in autonomous robots as well as predictive maintenance. There is a dedicated I2C connection to the BHI260 (U2), acting as the host.
 ### RGB LED
-An I2C LED driver (U8) drives the RGB LED (DL1), and is capable of a maximum output of 40 mA. It is driven by the ANN-B112 (U5) microcontroller. 
+An I2C LED driver (U8) drives the RGB LED (DL1), and is capable of a maximum output of 40 mA. It is driven by the ANN-B112 (U5) microcontroller.
 
 ### USB Bridge
 The SAMD11 microcontroller (U1) is dedicated to act as both the USB bridge as well as the JTAG controller for the ANNA-B112. A logic level translator (U13) acts as an in between to translate 3.3V logic to 1.8V for the ANNA-B112. The 3.3V voltage is generated from the USB voltage by a LDO (U14).
@@ -175,7 +175,7 @@ The SAMD11 microcontroller (U1) is dedicated to act as both the USB bridge as we
 ### Power Tree
 ![Nicla Sense ME Back View](assets/niclaSenseMEPowerTree.svg)
 
-The **Arduino Nicla Sense ME** can be powered via micro USB (J7), ESLOV (J5) or VIN. This is converted into the relevant voltages via the BQ2512BAYFPR IC (U9). A Schottky diode provides reverse polarity protection to the USB and ESLOV voltages. When voltage is supplied via the microUSB, a linear 3.3V regulator also provides power to the SAMD11 microcontroller used for programming the board as well as for JTAG and SWD. The LED driver (U8) and RGB Leds (DL1) are driven by a boost voltage of 5V. All other components operate off the 1.8V rail regulated by a buck converter. PMID acts as an OR switch between VIN and BATT and operates the LED driver. All I/O broken out to the pins are fed through a bi-direction voltage translator running at V<sub>DDIO_EXT</sub>. 
+The **Arduino Nicla Sense ME** can be powered via micro USB (J7), ESLOV (J5) or VIN. This is converted into the relevant voltages via the BQ2512BAYFPR IC (U9). A Schottky diode provides reverse polarity protection to the USB and ESLOV voltages. When voltage is supplied via the microUSB, a linear 3.3V regulator also provides power to the SAMD11 microcontroller used for programming the board as well as for JTAG and SWD. The LED driver (U8) and RGB Leds (DL1) are driven by a boost voltage of 5V. All other components operate off the 1.8V rail regulated by a buck converter. PMID acts as an OR switch between VIN and BATT and operates the LED driver. All I/O broken out to the pins are fed through a bi-direction voltage translator running at V<sub>DDIO_EXT</sub>.
 
 Additionally, the BQ25120AYFPR (U9) also provides support for a single cell 3.7V LiPo/Li-ion battery pack connected to J4, allowing use of the board as a wireless sensor network. The battery charging current is set to 40mA with a termination current of 4mA (10%).
 
@@ -184,7 +184,7 @@ Additionally, the BQ25120AYFPR (U9) also provides support for a single cell 3.7V
 If you want to program your Arduino® Nicla Sense ME while offline you need to install the Arduino® Desktop IDE **[1]** To connect the Arduino® Nicla Sense ME to your computer, you’ll need a micro USB cable. This also provides power to the board, as indicated by the LED. The Arduino core is operated on the ANNA-B112 while the Bosch Smart Sensor framework operates on the BHI260.
 
 ### Getting Started - Arduino Web Editor
-All Arduino® boards, including this one, work out-of-the-box on the Arduino® Web Editor **[2]**, by just installing a simple plugin. 
+All Arduino® boards, including this one, work out-of-the-box on the Arduino® Web Editor **[2]**, by just installing a simple plugin.
 
 The Arduino® Web Editor is hosted online, therefore it will always be up-to-date with the latest features and support for all boards. Follow **[3]** to start coding on the browser and upload your sketches onto your board.
 
@@ -268,10 +268,10 @@ All Arduino® boards have a built-in bootloader which allows flashing the board 
 
 ## Certifications
 ### Declaration of Conformity CE DoC (EU)
-We declare under our sole responsibility that the products above are in conformity with the essential requirements of the following EU Directives and therefore qualify for free movement within markets comprising the European Union (EU) and European Economic Area (EEA). 
+We declare under our sole responsibility that the products above are in conformity with the essential requirements of the following EU Directives and therefore qualify for free movement within markets comprising the European Union (EU) and European Economic Area (EEA).
 
 ### Declaration of Conformity to EU RoHS & REACH 211 01/19/2021
-Arduino boards are in compliance with RoHS 2 Directive 2011/65/EU of the European Parliament and RoHS 3 Directive 2015/863/EU of the Council of 4 June 2015 on the restriction of the use of certain hazardous substances in electrical and electronic equipment. 
+Arduino boards are in compliance with RoHS 2 Directive 2011/65/EU of the European Parliament and RoHS 3 Directive 2015/863/EU of the Council of 4 June 2015 on the restriction of the use of certain hazardous substances in electrical and electronic equipment.
 
 | **Substance**                          | **Maximum Limit (ppm)** |
 | -------------------------------------- | ----------------------- |
@@ -286,17 +286,17 @@ Arduino boards are in compliance with RoHS 2 Directive 2011/65/EU of the Europea
 | Dibutyl phthalate (DBP)                | 1000                    |
 | Diisobutyl phthalate (DIBP)            | 1000                    |
 
-Exemptions : No exemptions are claimed. 
+Exemptions : No exemptions are claimed.
 
 Arduino Boards are fully compliant with the related requirements of European Union Regulation (EC) 1907 /2006 concerning the Registration, Evaluation, Authorization and Restriction of Chemicals (REACH). We declare none of the SVHCs (https://echa.europa.eu/web/guest/candidate-list-table), the Candidate List of Substances of Very High Concern for authorization currently released by ECHA, is present in all products (and also package) in quantities totaling in a concentration equal or above 0.1%. To the best of our knowledge, we also declare that our products do not contain any of the substances listed on the "Authorization List" (Annex XIV of the REACH regulations) and Substances of Very High Concern (SVHC) in any significant amounts as specified by the Annex XVII of Candidate list published by ECHA (European Chemical Agency) 1907 /2006/EC.
 
-### Conflict Minerals Declaration 
-As a global supplier of electronic and electrical components, Arduino is aware of our obligations with regards to laws and regulations regarding Conflict Minerals, specifically the Dodd-Frank Wall Street Reform and Consumer Protection Act, Section 1502. Arduino does not directly source or process conflict minerals such as Tin, Tantalum, Tungsten, or Gold. Conflict minerals are contained in our products in the form of solder, or as a component in metal alloys. As part of our reasonable due diligence Arduino has contacted component suppliers within our supply chain to verify their continued compliance with the regulations. Based on the information received thus far we declare that our products contain Conflict Minerals sourced from conflict-free areas. 
+### Conflict Minerals Declaration
+As a global supplier of electronic and electrical components, Arduino is aware of our obligations with regards to laws and regulations regarding Conflict Minerals, specifically the Dodd-Frank Wall Street Reform and Consumer Protection Act, Section 1502. Arduino does not directly source or process conflict minerals such as Tin, Tantalum, Tungsten, or Gold. Conflict minerals are contained in our products in the form of solder, or as a component in metal alloys. As part of our reasonable due diligence Arduino has contacted component suppliers within our supply chain to verify their continued compliance with the regulations. Based on the information received thus far we declare that our products contain Conflict Minerals sourced from conflict-free areas.
 
 ## FCC Caution
 Any Changes or modifications not expressly approved by the party responsible for compliance could void the user’s authority to operate the equipment.
 
-This device complies with part 15 of the FCC Rules. Operation is subject to the following two conditions: 
+This device complies with part 15 of the FCC Rules. Operation is subject to the following two conditions:
 
 (1) This device may not cause harmful interference
 
@@ -310,14 +310,14 @@ This device complies with part 15 of the FCC Rules. Operation is subject to the 
 
 3. This equipment should be installed and operated with minimum distance 20cm between the radiator & your body.
 
-English: 
+English:
 User manuals for license-exempt radio apparatus shall contain the following or equivalent notice in a conspicuous location in the user manual or alternatively on the device or both. This device complies with Industry Canada license-exempt RSS standard(s). Operation is subject to the following two conditions:
 
 (1) this device may not cause interference
 
 (2) this device must accept any interference, including interference that may cause undesired operation of the device.
 
-French: 
+French:
 Le présent appareil est conforme aux CNR d’Industrie Canada applicables aux appareils radio exempts de licence. L’exploitation est autorisée aux deux conditions suivantes:
 
 (1) l’appareil nedoit pas produire de brouillage
@@ -326,15 +326,15 @@ Le présent appareil est conforme aux CNR d’Industrie Canada applicables aux a
 
 **IC SAR Warning:**
 
-English 
-This equipment should be installed and operated with minimum distance 20 cm between the radiator and your body.  
+English
+This equipment should be installed and operated with minimum distance 20 cm between the radiator and your body.
 
-French: 
+French:
 Lors de l’ installation et de l’ exploitation de ce dispositif, la distance entre le radiateur et le corps est d ’au moins 20 cm.
 
 **Important:** The operating temperature of the EUT can’t exceed 85℃ and shouldn’t be lower than -40℃.
 
-Hereby, Arduino S.r.l. declares that this product is in compliance with essential requirements and other relevant provisions of Directive 201453/EU. This product is allowed to be used in all EU member states. 
+Hereby, Arduino S.r.l. declares that this product is in compliance with essential requirements and other relevant provisions of Directive 201453/EU. This product is allowed to be used in all EU member states.
 
 | Frequency bands      | Typical Output Power |
 | -------------------- | -------------------- |
@@ -384,7 +384,7 @@ ARDUINO DOES NOT ALWAYS ENCRYPT COMMUNICATIONS BETWEEN PRODUCTS AND THEIR PERIPH
 
 THE ABILITY OF ARDUINO PRODUCTS AND SOFTWARE TO WORK PROPERLY DEPENDS ON A NUMBER OF PRODUCTS AND SERVICES MADE AVAILABLE BY THIRD PARTIES OVER WHICH ARDUINO HAS NO CONTROL INCLUDING, BUT NOT LIMITED TO, INTERNET, CELLULAR AND LANDLINE CONNECTIVITY; MOBILE DEVICE AND OPERATING SYSTEM COMPATIBILITY; AND PROPER INSTALLATION AND MAINTENANCE. ARDUINO SHALL NOT BE LIABLE FOR ANY DAMAGES CAUSED BY ACTIONS OR OMISSIONS OF THIRD PARTIES.
 
-BATTERY OPERATED SENSORS, DETECTORS, KEYFOBS, DEVICES AND OTHER PANEL ACCESSORIES HAVE A LIMITED BATTERY LIFE.  WHILE THESE PRODUCTS MAY BE DESIGNED TO PROVIDE SOME WARNING OF IMMINENT BATTERY DEPLETION, THE ABILITY TO DELIVER SUCH WARNINGS IS LIMITED AND SUCH WARNINGS MAY NOT BE PROVIDED IN ALL CIRCUMSTANCES.  PERIODIC TESTING OF THE SYSTEM IN ACCORDANCE WITH PRODUCT DOCUMENTATION IS THE ONLY WAY TO DETERMINE IF ALL SENSORS, DETECTORS, KEYFOBS, DEVICES AND OTHER PANEL ACCESSORIES ARE FUNCTIONING PROPERLY. 
+BATTERY OPERATED SENSORS, DETECTORS, KEYFOBS, DEVICES AND OTHER PANEL ACCESSORIES HAVE A LIMITED BATTERY LIFE.  WHILE THESE PRODUCTS MAY BE DESIGNED TO PROVIDE SOME WARNING OF IMMINENT BATTERY DEPLETION, THE ABILITY TO DELIVER SUCH WARNINGS IS LIMITED AND SUCH WARNINGS MAY NOT BE PROVIDED IN ALL CIRCUMSTANCES.  PERIODIC TESTING OF THE SYSTEM IN ACCORDANCE WITH PRODUCT DOCUMENTATION IS THE ONLY WAY TO DETERMINE IF ALL SENSORS, DETECTORS, KEYFOBS, DEVICES AND OTHER PANEL ACCESSORIES ARE FUNCTIONING PROPERLY.
 
 CERTAIN SENSORS, DEVICES AND OTHER PANEL ACCESSORIES MAY BE PROGRAMMED INTO PANEL AS “SUPERVISORY” SO THAT THE PANEL WILL INDICATE IF IT DOES NOT RECEIVE A REGULAR SIGNAL FROM THE DEVICE WITHIN A CERTAIN PERIOD OF TIME.  CERTAIN DEVICES CANNOT BE PROGRAMMED AS SUPERVISORY. DEVICES CAPABLE OF BEING PROGRAMMED AS SUPERVISORY MAY NOT BE PROPERLY PROGRAMMED AT INSTALLATION, RESULTING IN A FAILURE TO REPORT TROUBLE WHICH COULD RESULT IN DEATH, SERIOUS INJURY AND/OR PROPERTY DAMAGE.
 
@@ -394,7 +394,7 @@ BUYER SHALL PASS ON THE FOREGOING INFORMATION ON PRODUCT RISKS, WARNINGS AND DIS
 
 **WARRANTY DISCLAIMERS AND OTHER DISCLAIMERS**
 
-ARDUINO HEREBY DISCLAIMS ALL WARRANTIES AND REPRESENTATIONS, WHETHER EXPRESS, IMPLIED, STATUTORY OR OTHERWISE INCLUDING (BUT NOT LIMITED TO) ANY WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE WITH RESPECT TO ITS PRODUCTS AND RELATED SOFTWARE.   
+ARDUINO HEREBY DISCLAIMS ALL WARRANTIES AND REPRESENTATIONS, WHETHER EXPRESS, IMPLIED, STATUTORY OR OTHERWISE INCLUDING (BUT NOT LIMITED TO) ANY WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE WITH RESPECT TO ITS PRODUCTS AND RELATED SOFTWARE.
 
 ARDUINO MAKES NO REPRESENTATION, WARRANTY, COVENANT OR PROMISE THAT  ITS PRODUCTS AND/OR RELATED SOFTWARE (I) WILL NOT BE HACKED, COMPROMISED AND/OR CIRCUMVENTED; (II) WILL PREVENT, OR PROVIDE ADEQUATE WARNING OR PROTECTION FROM, BREAK-INS, BURGLARY, ROBBERY, FIRE; OR (III) WILL WORK PROPERLY IN ALL ENVIRONMENTS AND APPLICATIONS.
 

@@ -2,7 +2,7 @@
 title: 'MKR WiFi 1010 Bluetooth® Low Energy'
 difficulty: intermediate
 compatible-products: [mkr-wifi-1010]
-description: 'Learn how to access your board from your phone via Bluetooth®.' 
+description: 'Learn how to access your board from your phone via Bluetooth®.'
 tags:
   - Bluetooth®, Bluetooth® Low Energy
 author: Karl Söderby
@@ -22,7 +22,7 @@ software:
 ---
 
 ## Enabling Bluetooth® Low Energy
-Bluetooth® Low Energy separates itself from what is now known as “Bluetooth® Classic” by being optimized to use low power with low data rates. There are two different types of Bluetooth® devices: central or peripheral. A central Bluetooth® device is designed to read data from peripheral devices, while the peripheral devices are designed to do the opposite. Peripheral devices continuously post data for other devices to read, and it is precisely what we will be focusing on today. 
+Bluetooth® Low Energy separates itself from what is now known as “Bluetooth® Classic” by being optimized to use low power with low data rates. There are two different types of Bluetooth® devices: central or peripheral. A central Bluetooth® device is designed to read data from peripheral devices, while the peripheral devices are designed to do the opposite. Peripheral devices continuously post data for other devices to read, and it is precisely what we will be focusing on today.
 
 This tutorial is a great starting point for any maker interested in creating their own Bluetooth® projects.
 
@@ -41,18 +41,18 @@ This tutorial is a great starting point for any maker interested in creating the
 
 ## Service & Characteristics
 
-A service can be made up of different data measurements. For example, if we have a device that measures wind speed, temperature and humidity, we can set up a service that is called “Weather Data”. Let’s say the device also records battery level and energy consumption, we can set up a service that is called “Energy information”. These services can then be subscribed to central Bluetooth® devices. 
+A service can be made up of different data measurements. For example, if we have a device that measures wind speed, temperature and humidity, we can set up a service that is called “Weather Data”. Let’s say the device also records battery level and energy consumption, we can set up a service that is called “Energy information”. These services can then be subscribed to central Bluetooth® devices.
 
-Characteristics are components of the service we mentioned above. For example, the temperature or battery level are both characteristics, which record data and update continuously. 
+Characteristics are components of the service we mentioned above. For example, the temperature or battery level are both characteristics, which record data and update continuously.
 
 ## Unique Universal Identifier (UUID)
 
-When we read data from a service, it is important to know what type of data we are reading. For this, we use UUIDs, who basically give a name to the characteristics. For example, if we are recording temperature, we want to label that characteristic as temperature, and to do that, we have to find the UUID, which in this case is “2A6E”. When we are connecting to the device, this service will then appear as “temperature”. This is very useful when tracking multiple values. 
+When we read data from a service, it is important to know what type of data we are reading. For this, we use UUIDs, who basically give a name to the characteristics. For example, if we are recording temperature, we want to label that characteristic as temperature, and to do that, we have to find the UUID, which in this case is “2A6E”. When we are connecting to the device, this service will then appear as “temperature”. This is very useful when tracking multiple values.
 
 If you want to read more about UUIDs, services, and characteristics, check the links below:
 
-- <a href="https://www.bluetooth.com/specifications/gatt/services/" target="_blank">GATT services</a>. 
-- <a href="https://www.bluetooth.com/specifications/gatt/characteristics/" target="_blank">GATT characteristics</a>. 
+- <a href="https://www.bluetooth.com/specifications/gatt/services/" target="_blank">GATT services</a>.
+- <a href="https://www.bluetooth.com/specifications/gatt/characteristics/" target="_blank">GATT characteristics</a>.
 
 ___
 
@@ -73,7 +73,7 @@ ___
 
 ## Creating the Program
 
-The goal with this tutorial is to be able to access our MKR WiFi 1010 board via Bluetooth®, and control an LED onboard it.  We will also retrieve the latest readings from an analog pin. We will then use UUIDs from the official Bluetooth® page, that are compliant with GATT (Generic Attribute Profile). This way, when we access our device later, the service and characteristics can be recognized! 
+The goal with this tutorial is to be able to access our MKR WiFi 1010 board via Bluetooth®, and control an LED onboard it.  We will also retrieve the latest readings from an analog pin. We will then use UUIDs from the official Bluetooth® page, that are compliant with GATT (Generic Attribute Profile). This way, when we access our device later, the service and characteristics can be recognized!
 
 We will go through the following steps in order to create our sketch:
 
@@ -86,7 +86,7 @@ We will go through the following steps in order to create our sketch:
 - Create a conditional that turns on an LED over Bluetooth®.
 - Read an analog pin over Bluetooth®.
 
-**1.** First, let's make sure we have the drivers installed. If we are using the Web Editor, we do not need to install anything. If we are using an offline editor, we need to install it manually. This can be done by navigating to **Tools > Board > Board Manager...**. Here we need to look for the **Arduino SAMD boards (32-bits ARM Cortex M0+)** and install it. 
+**1.** First, let's make sure we have the drivers installed. If we are using the Web Editor, we do not need to install anything. If we are using an offline editor, we need to install it manually. This can be done by navigating to **Tools > Board > Board Manager...**. Here we need to look for the **Arduino SAMD boards (32-bits ARM Cortex M0+)** and install it.
 
 **2.** Now, we need to install the library needed. If we are using the Web Editor, there is no need to install anything. If we are using an offline editor, simply go to **Tools > Manage libraries..**, and search for **ArduinoBLE** and install it.
 
@@ -98,9 +98,9 @@ ___
 
 ### Code Explanation
 
->**NOTE:** This section is optional, you can find the complete code further down on this tutorial. 
+>**NOTE:** This section is optional, you can find the complete code further down on this tutorial.
 
-First, we need to include the **ArduinoBLE** library, and create a new service. We will name the service **"180A"** which is translated to **"Device Information"**.  We will then create two characteristics, one for the LED, and one for the analog pin. The name **"2A57"** is translated to **"Digital Output"** and **"2A58** is translated to **"Analog"**. 
+First, we need to include the **ArduinoBLE** library, and create a new service. We will name the service **"180A"** which is translated to **"Device Information"**.  We will then create two characteristics, one for the LED, and one for the analog pin. The name **"2A57"** is translated to **"Digital Output"** and **"2A58** is translated to **"Analog"**.
 
 ```arduino
 #include <ArduinoBLE.h
@@ -152,11 +152,11 @@ void setup() {
 }
 ```
 
-In the `loop()` we will use the command `BLEDevice central = BLE.central();` to start waiting for a connection. When a device connects, the address of the connecting device (the central) will be printed in the Serial Monitor, and the in-built LED will turn ON. 
+In the `loop()` we will use the command `BLEDevice central = BLE.central();` to start waiting for a connection. When a device connects, the address of the connecting device (the central) will be printed in the Serial Monitor, and the in-built LED will turn ON.
 
 After this, we use a `while` loop that only runs as long as a device is connected. Here, we do a reading of Analog pin 1, which will record random values between 0 and 1023. We then use a conditional to check if there's an incoming value: if any value other than 0 comes in, the LED turns ON, but if 0 comes in, it turns it OFF.
 
-If our device (smartphone) disconnects, we exit the `while` loop. Once it exits, it turns off the in-built LED and the message **"Disconnected from central"** prints in the Serial Monitor. 
+If our device (smartphone) disconnects, we exit the `while` loop. Once it exits, it turns off the in-built LED and the message **"Disconnected from central"** prints in the Serial Monitor.
 
 ```cpp
 void loop() {
@@ -175,7 +175,7 @@ void loop() {
     while (central.connected()) { // while the central is connected:
       long currentMillis = millis();
 
-      if (currentMillis - previousMillis >= 200) { 
+      if (currentMillis - previousMillis >= 200) {
         previousMillis = currentMillis;
 
         int randomValue = analogRead(A1);
@@ -289,17 +289,17 @@ void loop() {
 
 ## Testing It Out
 
-Once we are finished with the coding, we can upload the sketch to the board. When it has been successfully uploaded, open the Serial Monitor. In the Serial Monitor, the text **" Bluetooth® device active, waiting for connections..."** will appear. 
+Once we are finished with the coding, we can upload the sketch to the board. When it has been successfully uploaded, open the Serial Monitor. In the Serial Monitor, the text **" Bluetooth® device active, waiting for connections..."** will appear.
 
 ![Waiting for connections.](assets/mkr_tutorial_05_img_04.png)
 
-We can now discover our MKR WiFi 1010 board in the list of available Bluetooth® devices. To access the service and characteristic we recommend using the **LightBlue** application. Follow <a href="https://apps.apple.com/us/app/lightblue/id557428110">this link for iPhones</a> or <a href="https://play.google.com/store/apps/details?id=com.punchthrough.lightblueexplorer&hl=en">this link for Android phones</a>. 
+We can now discover our MKR WiFi 1010 board in the list of available Bluetooth® devices. To access the service and characteristic we recommend using the **LightBlue** application. Follow <a href="https://apps.apple.com/us/app/lightblue/id557428110">this link for iPhones</a> or <a href="https://play.google.com/store/apps/details?id=com.punchthrough.lightblueexplorer&hl=en">this link for Android phones</a>.
 
 Once we have the application open, follow the image below for instructions:
 
 ![Connecting to your device through a smartphone.](assets/mkr_tutorial_05_img_05.png)
 
-To control the LED, we simply need to write any value other than 0 to turn it on, and 0 to turn it off. This is within the **"Digital Output"** characteristic, which is located under **"Device Information"**. We can also go into the **"Analog"** characteristic, where we need to change the data format to **"Unsigned Little-Endian"**, and click the **"Read Again"** button. Once we click the button, we will retrieve the latest value. 
+To control the LED, we simply need to write any value other than 0 to turn it on, and 0 to turn it off. This is within the **"Digital Output"** characteristic, which is located under **"Device Information"**. We can also go into the **"Analog"** characteristic, where we need to change the data format to **"Unsigned Little-Endian"**, and click the **"Read Again"** button. Once we click the button, we will retrieve the latest value.
 
 
 ### Troubleshoot
@@ -313,7 +313,7 @@ If the code is not working, there are some common issues we can troubleshoot:
 - The device you are using to connect has its Bluetooth® turned off.
 
 ## Conclusion
-In this tutorial we have created a basic Bluetooth® peripheral device. We learned how to create services and characteristics, and how to use UUIDs from the official Bluetooth® documentation. In this tutorial, we did two practical things: turning an LED, ON and OFF, and reading a value from an analog pin. You can now start experimenting with this code, and create your own amazing Bluetooth® applications! 
+In this tutorial we have created a basic Bluetooth® peripheral device. We learned how to create services and characteristics, and how to use UUIDs from the official Bluetooth® documentation. In this tutorial, we did two practical things: turning an LED, ON and OFF, and reading a value from an analog pin. You can now start experimenting with this code, and create your own amazing Bluetooth® applications!
 
 Now that you have learned a little bit how to use the **ArduinoBLE** library, you can try out some of our other tutorials for the MKR WiFi 1010 board. You can also check out the [ArduinoBLE](https://www.arduino.cc/en/Reference/ArduinoBLE) library for more examples and inspiration for creating Bluetooth® projects!
 

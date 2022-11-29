@@ -10,7 +10,7 @@ Thanks to its form factor, it can be attached to a Din Rail mount system, provid
 <Feature title="Enclosure Temperature" image="temperature-sensor">
 
   The Edge Control Enclosure Kit is operating at industrial temperature ranges (-40 °C to +85 °C) that doesn’t require any external cooling.
-  
+
 </Feature>
 
 <Feature title="Enclosure IP Standard" image="world-map">

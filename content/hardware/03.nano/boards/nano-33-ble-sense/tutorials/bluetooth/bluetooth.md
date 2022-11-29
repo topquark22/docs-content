@@ -7,7 +7,7 @@ tags:
   - Bluetooth®
   - Bluetooth® Low Energy
 author: 'Fabricio Troya'
-libraries: 
+libraries:
   - name: ArduinoBLE
     url: https://www.arduino.cc/en/Reference/ArduinoBLE
 hardware:
@@ -83,9 +83,9 @@ BLEService ledService("180A"); // BLE LED Service
 BLEByteCharacteristic switchCharacteristic("2A57", BLERead | BLEWrite);
 ```
 
-In the `setup()` after initializing the serial communication we set the LED's pins as `OUTPUT`, and then turn them OFF, including the `LED_BUILTIN` that we will use to show if we are connected to the board. 
+In the `setup()` after initializing the serial communication we set the LED's pins as `OUTPUT`, and then turn them OFF, including the `LED_BUILTIN` that we will use to show if we are connected to the board.
 
-```arduino 
+```arduino
 
 // set LED pin to output mode
 pinMode(LEDR, OUTPUT);
@@ -110,7 +110,7 @@ In the `BLE.setLocalName()` we need to change the name to `"Nano 33 BLE Sense"` 
   BLE.setAdvertisedService(ledService);
 ```
 
-Now, in the `loop()` after the `Serial.println(central.address());` we need to set the `LED_BUILTIN` to `HIGH` to turn on the LED when the phone is connected to the board. 
+Now, in the `loop()` after the `Serial.println(central.address());` we need to set the `LED_BUILTIN` to `HIGH` to turn on the LED when the phone is connected to the board.
 
 
 ```arduino
@@ -156,7 +156,7 @@ switch (switchCharacteristic.value()) {   // any value other than 0
     digitalWrite(LEDB, HIGH);         // will turn the LED off
     break;
     }
-  } 
+  }
 }
 ```
 
